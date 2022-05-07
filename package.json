@@ -24,6 +24,7 @@
     "@mui/styled-engine": "npm:@mui/styled-engine-sc"
   },
   "scripts": {
+    "start": "react-scripts start",
     "lint": "eslint \"**/*.{ts,tsx}\"",
     "lint:fix": "yarn lint --fix"
   },

@@ -6,7 +6,7 @@ import { StyledTabs } from './tabs.styled';
  * The `Tabs` component props
  */
 interface Props extends BaseProps {
-  value: string;
+  value?: string;
 }
 
 /**

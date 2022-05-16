@@ -15,3 +15,22 @@ export enum ColourPalette {
 export enum IconId {
   HOME = 'HOME',
 }
+
+/**
+ * The `Box` component direction used to determine
+ * how the content is displayed along the main axis
+ */
+export enum BoxDirection {
+  ROW = 'row',
+  COLUMN = 'column',
+}
+
+/**
+ * The `Box` component alignment used to determine
+ * how the content is displayed along the cross axis
+ */
+export enum BoxAlignment {
+  START = 'flex-start',
+  CENTER = 'center',
+  END = 'flex-end',
+}

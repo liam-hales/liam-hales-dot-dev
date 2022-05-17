@@ -9,6 +9,18 @@ export enum ColourPalette {
 }
 
 /**
+ * The size used to describe the
+ * different screen sizes
+ */
+export enum ScreenSize {
+  EXTRA_SMALL = 'xs',
+  SMALL = 'sm',
+  MEDIUM = 'md',
+  LARGE = 'lg',
+  EXTRA_LARGE = 'xl',
+}
+
+/**
  * The navigation key used for the `TopNav`
  * and `BottomNav` components
  */

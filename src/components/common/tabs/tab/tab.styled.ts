@@ -1,7 +1,9 @@
-import { styled, Tab as MuiTab } from '@mui/material';
+import styled from 'styled-components';
+import { Tab as MuiTab } from '@mui/material';
 
 /**
- * The styled `Tab` component from `@mui/material`
+ * The styled `Tab` component
+ * from `@mui/material`
  */
 export const StyledTab = styled(MuiTab)`
   font-weight: 800;

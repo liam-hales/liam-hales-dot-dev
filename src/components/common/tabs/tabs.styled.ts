@@ -1,8 +1,10 @@
-import { styled, Tabs as MuiTabs } from '@mui/material';
+import styled from 'styled-components';
+import { Tabs as MuiTabs } from '@mui/material';
 import { ColourPalette } from '../../../enums';
 
 /**
- * The styled `Tabs` component from `@mui/material`
+ * The styled `Tabs` component
+ * from `@mui/material`
  */
 export const StyledTabs = styled(MuiTabs)`
 

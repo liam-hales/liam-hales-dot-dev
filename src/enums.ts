@@ -9,6 +9,28 @@ export enum ColourPalette {
 }
 
 /**
+ * The navigation key used for the `TopNav`
+ * and `BottomNav` components
+ */
+export enum NavKey {
+  HOME = 'home',
+  BLOG = 'blog',
+  CV = 'cv',
+  BRAND = 'brand',
+}
+
+/**
+ * The navigation route used to describe
+ * the route for each page of the app
+ */
+export enum NavRoute {
+  HOME = '/',
+  CV = '/cv',
+  BLOG = '/blog',
+  BRAND = '/brand',
+}
+
+/**
  * The icon ID used for the `Icon` component
  * to determine which icon is rendered
  */

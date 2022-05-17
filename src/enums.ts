@@ -48,6 +48,9 @@ export enum NavRoute {
  */
 export enum IconId {
   HOME = 'HOME',
+  DOCUMENT = 'DOCUMENT',
+  MESSAGE = 'MESSAGE',
+  PAINT_BRUSH = 'PAINT_BRUSH',
 }
 
 /**

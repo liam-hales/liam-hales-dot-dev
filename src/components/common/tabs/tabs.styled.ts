@@ -3,8 +3,8 @@ import { Tabs as MuiTabs } from '@mui/material';
 import { ColourPalette } from '../../../enums';
 
 /**
- * The styled `Tabs` component
- * from `@mui/material`
+ * The styled `Tabs` component from `@mui/material`
+ * used for the `Tabs` component
  */
 export const StyledTabs = styled(MuiTabs)`
 
@@ -17,8 +17,8 @@ export const StyledTabs = styled(MuiTabs)`
     span {
       width: 100%;
       height: 100%;
-      border-radius: 2px;
       max-width: 42px;
+      border-radius: 2px;
       background-color: ${ColourPalette.BLUE};
     }
   };

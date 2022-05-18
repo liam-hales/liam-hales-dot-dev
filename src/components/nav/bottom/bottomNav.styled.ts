@@ -5,7 +5,7 @@ import { ColourPalette } from '../../../enums';
 
 /**
  * The styled `Box` component used
- * for the `BottomBav` component
+ * for the `BottomNav` component
  */
 export const StyledBottomNav = styled(Box)`
   position: sticky;
@@ -20,8 +20,8 @@ export const StyledBottomNav = styled(Box)`
 `;
 
 /**
- * The styled `BottomNavigation`
- * component from `@mui/material`
+ * The styled `BottomNavigation` component from `@mui/material`
+ * used for the `BottomNav` component
  */
 export const StyledBottomNavigation = styled(MuiBottomNavigation)`
   width: 100%;
@@ -29,8 +29,8 @@ export const StyledBottomNavigation = styled(MuiBottomNavigation)`
 `;
 
 /**
- * The styled `BottomNavigationAction`
- * component from `@mui/material`
+ * The styled `BottomNavigationAction` component from `@mui/material`
+ * used for the `BottomNav` component
  */
 export const StyledBottomNavigationAction = styled(MuiBottomNavigationAction)`
   border-radius: 10px;
@@ -47,8 +47,8 @@ export const StyledBottomNavigationAction = styled(MuiBottomNavigationAction)`
 `;
 
 /**
- * The styled `Icon` component used
- * for the nav action icon
+ * The styled `Icon` component used for
+ * the `BottomNav` component icon
  */
 export const StyledIcon = styled(Icon)`
   font-size: 20px;

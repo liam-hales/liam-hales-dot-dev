@@ -3,8 +3,8 @@ import { ColourPalette } from '../../../enums';
 import { Box } from '../../common';
 
 /**
- * The styled `Box` component used
- * for the `TopNav` component
+ * The styled `Box` component used for
+ * the `TopNav` component background
  */
 export const StyledBackground = styled(Box)`
   position: sticky;

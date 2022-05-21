@@ -8,6 +8,7 @@ import { StyledBox, StyledImage } from './image.styled';
 interface Props extends BaseProps {
   path: string;
   alt: string;
+  circle?: boolean;
 }
 
 /**
@@ -17,9 +18,19 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `Image` component
  */
-const Image: FunctionComponent<Props> = ({ className, path, alt }): ReactElement<Props> => {
+const Image: FunctionComponent<Props> = (props): ReactElement<Props> => {
+  const {
+    className,
+    path,
+    alt,
+    circle = false,
+  } = props;
+
   return (
-    <StyledBox className={className}>
+    <StyledBox
+      className={className}
+      circle={circle}
+    >
       <StyledImage
         src={path}
         alt={alt}

@@ -2,11 +2,18 @@ import styled from 'styled-components';
 import { Box } from '..';
 
 /**
+ * The `StyledBox` component props
+ */
+interface StyledBoxProps {
+  circle: boolean;
+}
+
+/**
  * The styled `Box` component used
  * for the `Image` component
  */
-export const StyledBox = styled(Box)`
-  border-radius: 16px;
+export const StyledBox = styled(Box)<StyledBoxProps>`
+  border-radius: ${(props) => (props.circle === true) ? '50%' : '16px'};
   overflow: hidden;
 `;
 

@@ -7,8 +7,8 @@ import { StyledTab } from './tab.styled';
  * The `Tab` component props
  */
 interface Props extends BaseProps {
-  value: string;
-  onClick: () => void;
+  readonly value: string;
+  readonly onClick: () => void;
 }
 
 /**

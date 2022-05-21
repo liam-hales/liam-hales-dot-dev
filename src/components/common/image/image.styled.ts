@@ -5,7 +5,7 @@ import { Box } from '..';
  * The `StyledBox` component props
  */
 interface StyledBoxProps {
-  circle: boolean;
+  readonly circle: boolean;
 }
 
 /**

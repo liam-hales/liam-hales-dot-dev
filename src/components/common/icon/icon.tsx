@@ -9,12 +9,12 @@ import { IconId } from '../../../enums';
  * The `Icon` component props
  */
 interface Props extends BaseProps {
-  id: IconId;
-  onClick?: () => void;
+  readonly id: IconId;
+  readonly onClick?: () => void;
 }
 
 /**
- * The common `Icon` component used acorss
+ * The common `Icon` component used within
  * the app to render an icon
  *
  * @param props The component props

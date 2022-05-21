@@ -7,8 +7,8 @@ import { StyledBox } from './box.styled';
  * The `Box` component props
  */
 interface Props extends BaseProps {
-  direction?: BoxDirection;
-  alignment?: BoxAlignment;
+  readonly direction?: BoxDirection;
+  readonly alignment?: BoxAlignment;
 }
 
 /**

@@ -5,8 +5,8 @@ import { NavKey, NavRoute } from '../enums';
  * The `useNav` hook response
  */
 interface UseNavResponse {
-  navKey?: NavKey;
-  navRoute?: NavRoute;
+  readonly navKey?: NavKey;
+  readonly navRoute?: NavRoute;
 }
 
 /**

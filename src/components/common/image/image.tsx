@@ -6,9 +6,9 @@ import { StyledBox, StyledImage } from './image.styled';
  * The `Image` component props
  */
 interface Props extends BaseProps {
-  path: string;
-  alt: string;
-  circle?: boolean;
+  readonly path: string;
+  readonly alt: string;
+  readonly circle?: boolean;
 }
 
 /**

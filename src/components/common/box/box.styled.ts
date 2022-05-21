@@ -5,8 +5,8 @@ import { BoxAlignment, BoxDirection } from '../../../enums';
  * The `StyledBox` component props
  */
 interface StyledBoxProps {
-  direction: BoxDirection;
-  alignment: BoxAlignment;
+  readonly direction: BoxDirection;
+  readonly alignment: BoxAlignment;
 }
 
 /**

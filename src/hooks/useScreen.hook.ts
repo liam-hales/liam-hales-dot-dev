@@ -5,7 +5,7 @@ import { ScreenSize } from '../enums';
  * The `useScreen` hook response
  */
 interface UseScreenResponse {
-  screenSize: ScreenSize;
+  readonly screenSize: ScreenSize;
 }
 
 /**

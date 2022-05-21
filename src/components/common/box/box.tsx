@@ -20,13 +20,15 @@ interface Props extends BaseProps {
  */
 const Box: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
-    direction = BoxDirection.ROW,
+    className,
+    direction = BoxDirection.COLUMN,
     alignment = BoxAlignment.CENTER,
     children,
   } = props;
 
   return (
     <StyledBox
+      className={className}
       direction={direction}
       alignment={alignment}
     >

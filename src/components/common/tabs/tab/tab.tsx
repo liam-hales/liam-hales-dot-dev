@@ -1,5 +1,6 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { BaseProps } from '../../../../types';
+import { Text } from '../..';
 import { StyledTab } from './tab.styled';
 
 /**
@@ -21,7 +22,11 @@ const Tab: FunctionComponent<Props> = ({ value, onClick, children }): ReactEleme
   return (
     <StyledTab
       value={value}
-      label={children}
+      label={(
+        <Text bold={true}>
+          {children}
+        </Text>
+      )}
       onClick={onClick}
     />
   );

@@ -2,6 +2,7 @@ import { FunctionComponent, ReactElement } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { IconId, NavKey, NavRoute } from '../../../enums';
 import { useNav } from '../../../hooks';
+import { Text } from '../../common';
 import {
   StyledBottomNav,
   StyledBottomNavigation,
@@ -26,7 +27,11 @@ const BottomNav: FunctionComponent = (): ReactElement => {
         <StyledBottomNavigationAction
           value={NavKey.HOME}
           onClick={() => navigate(NavRoute.HOME)}
-          label="Home"
+          label={(
+            <Text bold={true}>
+              Home
+            </Text>
+          )}
           icon={
             <StyledIcon id={IconId.HOME} />
           }
@@ -34,7 +39,11 @@ const BottomNav: FunctionComponent = (): ReactElement => {
         <StyledBottomNavigationAction
           value={NavKey.CV}
           onClick={() => navigate(NavRoute.CV)}
-          label="CV"
+          label={(
+            <Text bold={true}>
+              CV
+            </Text>
+          )}
           icon={
             <StyledIcon id={IconId.DOCUMENT} />
           }
@@ -42,7 +51,11 @@ const BottomNav: FunctionComponent = (): ReactElement => {
         <StyledBottomNavigationAction
           value={NavKey.BLOG}
           onClick={() => navigate(NavRoute.BLOG)}
-          label="Blog"
+          label={(
+            <Text bold={true}>
+              Blog
+            </Text>
+          )}
           icon={
             <StyledIcon id={IconId.MESSAGE} />
           }
@@ -50,7 +63,11 @@ const BottomNav: FunctionComponent = (): ReactElement => {
         <StyledBottomNavigationAction
           value={NavKey.BRAND}
           onClick={() => navigate(NavRoute.BRAND)}
-          label="Brand"
+          label={(
+            <Text bold={true}>
+              Brand
+            </Text>
+          )}
           icon={
             <StyledIcon id={IconId.PAINT_BRUSH} />
           }

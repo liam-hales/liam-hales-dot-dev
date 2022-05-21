@@ -39,11 +39,6 @@ export const StyledBottomNavigationAction = styled(MuiBottomNavigationAction)`
   .MuiTouchRipple-root {
     color: ${ColourPalette.WHITE};
   };
-
-  .MuiBottomNavigationAction-label {
-    font-weight: 800;
-    color: ${ColourPalette.WHITE};
-  };
 `;
 
 /**

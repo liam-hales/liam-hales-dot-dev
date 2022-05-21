@@ -71,3 +71,22 @@ export enum BoxAlignment {
   CENTER = 'center',
   END = 'flex-end',
 }
+
+/**
+ * The `Text` component` appearance used to determine
+ * the colour and opacity of the text
+ */
+export enum TextAppearance {
+  PRIMARY = 'PRIMARY',
+  SECONDARY = 'SECONDARY',
+  SUBTLE = 'SUBTLE',
+}
+
+/**
+ * The `Text` component` element used to determine
+ * what HTML element is used to render the text
+ */
+export enum TextElement {
+  H1 = 'h1',
+  PARAGRAPH = 'body1',
+}

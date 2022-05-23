@@ -17,7 +17,7 @@ export const StyledTabs = styled(MuiTabs)`
     span {
       width: 100%;
       height: 100%;
-      max-width: 42px;
+      max-width: 30px;
       border-radius: 2px;
       background-color: ${ColourPalette.BLUE};
     }

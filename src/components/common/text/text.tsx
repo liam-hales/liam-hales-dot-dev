@@ -22,6 +22,7 @@ interface Props extends BaseProps {
  */
 const Text: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
+    className,
     appearance = TextAppearance.PRIMARY,
     element = TextElement.PARAGRAPH,
     bold = false,
@@ -31,6 +32,7 @@ const Text: FunctionComponent<Props> = (props): ReactElement<Props> => {
 
   return (
     <StyledTypography
+      className={className}
       variant={element}
       appearance={appearance}
       bold={bold}

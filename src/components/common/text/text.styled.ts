@@ -26,6 +26,7 @@ const textColourMap: Record<TextAppearance, ColourPalette> = {
  * used for the `Text` component
  */
 export const StyledTypography = styled(MuiTypography)<StyledTypographyProps>`
+  display: inline;
   font-weight: ${(props) => (props.bold === true) ? 800 : 400};
   font-style: ${(props) => (props.italic === true) ? 'italic' : 'normal'};
   color: ${(props) => textColourMap[props.appearance]};

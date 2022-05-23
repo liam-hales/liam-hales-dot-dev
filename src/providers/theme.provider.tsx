@@ -22,12 +22,8 @@ const ThemeProvider: FunctionComponent<Props> = ({ children }): ReactElement<Pro
       background: {
         default: ColourPalette.BLACK,
       },
-      text: {
-        primary: ColourPalette.WHITE,
-      },
       primary: {
         main: ColourPalette.BLUE,
-        contrastText: ColourPalette.WHITE,
       },
     },
     typography: {

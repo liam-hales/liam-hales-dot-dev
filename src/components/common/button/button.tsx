@@ -6,7 +6,7 @@ import { StyledButton } from './button.styled';
 /**
  * The `Button` component props
  */
-interface Props extends BaseProps {
+interface Props extends BaseProps<string> {
   readonly onClick: () => void;
 }
 

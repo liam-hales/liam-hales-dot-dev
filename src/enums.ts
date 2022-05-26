@@ -75,6 +75,17 @@ export enum BoxAlignment {
 }
 
 /**
+ * The `Box` component content justification used to determine
+ * how the content is justified along the main axis
+ */
+export enum BoxJustify {
+  START = 'flex-start',
+  END = 'flex-end',
+  CENTER = 'center',
+  SPACE_BETWEEN = 'space-between',
+}
+
+/**
  * The `Text` component` appearance used to determine
  * the colour and opacity of the text
  */

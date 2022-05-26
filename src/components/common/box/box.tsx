@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { BoxAlignment, BoxDirection } from '../../../enums';
+import { BoxAlignment, BoxDirection, BoxJustify } from '../../../enums';
 import { BaseProps } from '../../../types';
 import { StyledBox } from './box.styled';
 
@@ -9,6 +9,7 @@ import { StyledBox } from './box.styled';
 interface Props extends BaseProps {
   readonly direction?: BoxDirection;
   readonly alignment?: BoxAlignment;
+  readonly justify?: BoxJustify;
 }
 
 /**
@@ -23,6 +24,7 @@ const Box: FunctionComponent<Props> = (props): ReactElement<Props> => {
     className,
     direction = BoxDirection.COLUMN,
     alignment = BoxAlignment.CENTER,
+    justify = BoxJustify.START,
     children,
   } = props;
 
@@ -31,6 +33,7 @@ const Box: FunctionComponent<Props> = (props): ReactElement<Props> => {
       className={className}
       direction={direction}
       alignment={alignment}
+      justify={justify}
     >
       {children}
     </StyledBox>

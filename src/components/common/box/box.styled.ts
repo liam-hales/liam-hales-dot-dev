@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BoxAlignment, BoxDirection } from '../../../enums';
+import { BoxAlignment, BoxDirection, BoxJustify } from '../../../enums';
 
 /**
  * The `StyledBox` component props
@@ -7,6 +7,7 @@ import { BoxAlignment, BoxDirection } from '../../../enums';
 interface StyledBoxProps {
   readonly direction: BoxDirection;
   readonly alignment: BoxAlignment;
+  readonly justify: BoxJustify;
 }
 
 /**
@@ -17,4 +18,5 @@ export const StyledBox = styled.div<StyledBoxProps>`
   display: flex;
   flex-direction: ${(props) => props.direction};
   align-items: ${(props) => props.alignment};
+  justify-content: ${(props) => props.justify};
 `;

@@ -1,6 +1,7 @@
 import Box from './box/box';
 import Text from './text/text';
 import Button from './button/button';
+import Card from './card/card';
 import Image from './image/image';
 import Icon from './icon/icon';
 import Tabs from './tabs/tabs';
@@ -10,6 +11,7 @@ export {
   Box,
   Text,
   Button,
+  Card,
   Image,
   Icon,
   Tabs,

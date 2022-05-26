@@ -53,6 +53,9 @@ export enum IconId {
   DOCUMENT = 'DOCUMENT',
   MESSAGE = 'MESSAGE',
   PAINT_BRUSH = 'PAINT_BRUSH',
+  PAINT_FILL = 'PAINT_FILL',
+  CODE = 'CODE',
+  SERVER = 'SERVER',
 }
 
 /**

@@ -11,8 +11,8 @@ interface Props extends BaseProps<string> {
 }
 
 /**
- * The common `Button` component used within the
- * app to render a button to perform actions
+ * The common `Button` component used to
+ * render a button to perform an action
  *
  * @param props The component props
  * @returns The `Button` component

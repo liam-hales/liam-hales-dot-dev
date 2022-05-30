@@ -1,4 +1,13 @@
 /**
+ * The app environment used to describe what
+ * environment the app is running in
+ */
+export enum Env {
+  LOCAL = 'LOCAL',
+  PROD = 'PROD',
+}
+
+/**
  * The colour palette used to describe
  * the colours for the app
  */
@@ -20,6 +29,17 @@ export enum ScreenSize {
   MEDIUM = 'md',
   LARGE = 'lg',
   EXTRA_LARGE = 'xl',
+}
+
+/**
+ * The request satus used for
+ * the `useRequest` hook
+ */
+export enum RequestStatus {
+  PENDING = 'PENDING',
+  LOADING = 'LOADING',
+  SUCCESS = 'SUCCESS',
+  ERROR = 'ERROR',
 }
 
 /**

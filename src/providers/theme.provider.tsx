@@ -14,6 +14,13 @@ type Props = BaseProps;
  *
  * @param props The component props
  * @returns The `ThemeProvider` component
+ * @example
+ *
+ * return (
+ *   <ThemeProvider>
+ *     { ... }
+ *   </ThemeProvider>
+ * );
  */
 const ThemeProvider: FunctionComponent<Props> = ({ children }): ReactElement<Props> => {
 

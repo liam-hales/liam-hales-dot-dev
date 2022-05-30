@@ -1,3 +1,4 @@
+import { GraphQLClient } from 'graphql-request';
 import { ReactNode } from 'react';
 
 /**
@@ -9,4 +10,12 @@ import { ReactNode } from 'react';
 export interface BaseProps<T = ReactNode> {
   readonly className?: string;
   readonly children?: T;
+}
+
+/**
+ * Describes the GraphQL state for the
+ * `GraphQLContext` and `GraphQLProvider`
+ */
+export interface GraphQLState {
+  readonly client: GraphQLClient;
 }

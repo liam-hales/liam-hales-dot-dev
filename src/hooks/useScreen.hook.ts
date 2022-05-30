@@ -13,6 +13,9 @@ interface UseScreenResponse {
  * such as the `screenSize`
  *
  * @returns The `useScreen` hook response
+ * @example
+ *
+ * const { screenSize } = useScreen();
  */
 const useScreen = (): UseScreenResponse => {
 

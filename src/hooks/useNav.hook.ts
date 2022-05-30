@@ -14,6 +14,9 @@ interface UseNavResponse {
  * such as the `navKey` and `navRoute`
  *
  * @returns The `useNav` hook response
+ * @example
+ *
+ * const { navKey, navRoute } = useNav();
  */
 const useNav = (): UseNavResponse => {
   const { pathname } = useLocation();

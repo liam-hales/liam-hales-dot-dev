@@ -9,6 +9,8 @@
     "@mui/material": "^5.7.0",
     "@mui/styled-engine": "npm:@mui/styled-engine-sc",
     "@mui/styled-engine-sc": "^5.7.0",
+    "graphql": "^16.5.0",
+    "graphql-request": "^4.3.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",

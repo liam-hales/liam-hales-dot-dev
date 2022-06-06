@@ -32,10 +32,10 @@ export enum ScreenSize {
 }
 
 /**
- * The request satus used for
- * the `useRequest` hook
+ * The query satus used for
+ * the `useQuery` hook
  */
-export enum RequestStatus {
+export enum QueryStatus {
   PENDING = 'PENDING',
   LOADING = 'LOADING',
   SUCCESS = 'SUCCESS',

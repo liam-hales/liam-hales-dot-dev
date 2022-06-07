@@ -17,9 +17,10 @@ interface Props extends BaseProps<string> {
  * @param props The component props
  * @returns The `Button` component
  */
-const Button: FunctionComponent<Props> = ({ onClick, children }): ReactElement<Props> => {
+const Button: FunctionComponent<Props> = ({ className, onClick, children }): ReactElement<Props> => {
   return (
     <StyledButton
+      className={className}
       variant="contained"
       disableElevation={true}
       onClick={onClick}

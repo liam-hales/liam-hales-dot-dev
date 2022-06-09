@@ -4,7 +4,7 @@
  */
 export enum Env {
   LOCAL = 'LOCAL',
-  PROD = 'PROD',
+  DEPLOYED = 'DEPLOYED',
 }
 
 /**

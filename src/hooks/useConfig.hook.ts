@@ -16,7 +16,7 @@ interface UseConfigResponse {
  */
 const useConfig = (): UseConfigResponse => {
   return {
-    env: process.env.REACT_APP_ENV as Env,
+    env: (process.env.NODE_ENV === 'development') ? Env.LOCAL : Env.DEPLOYED,
     apiUrl: process.env.REACT_APP_API_URL as string,
   };
 };

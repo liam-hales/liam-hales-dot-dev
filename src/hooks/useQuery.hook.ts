@@ -39,9 +39,7 @@ const useQuery = <
   // Stringify and base64 encode the variables
   // to act as the cache key for the request
   const keyData = JSON.stringify(variables);
-  const cacheKey = Buffer
-    .from(keyData)
-    .toString('base64');
+  const cacheKey = window.btoa(keyData);
 
   const { client } = useContext(GraphQLContext);
   const { status, data } = _useQuery<T>({

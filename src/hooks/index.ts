@@ -3,6 +3,7 @@ import useContext from './useContext.hook';
 import useNav from './useNav.hook';
 import useScreen from './useScreen.hook';
 import useQuery from './useQuery.hook';
+import usePageQuery from './usePageQuery.hook';
 
 export {
   useConfig,
@@ -10,4 +11,5 @@ export {
   useNav,
   useScreen,
   useQuery,
+  usePageQuery,
 };

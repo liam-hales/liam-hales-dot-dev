@@ -1,5 +1,6 @@
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { GraphQLClient } from 'graphql-request';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { GraphQLContext } from '../context';
 import { BaseProps, GraphQLState } from '../types';
 import { useConfig } from '../hooks';
@@ -10,7 +11,8 @@ import { useConfig } from '../hooks';
  type Props = BaseProps;
 
 /**
- * Provides the GraphQL state and dispatch
+ * Used to provide the GraphQL state and wrap the
+ * `children` in the `QueryClientProvider`
  *
  * @param props The component props
  * @returns The `GraphQLProvider` component
@@ -25,13 +27,24 @@ import { useConfig } from '../hooks';
 const GraphQLProvider: FunctionComponent<Props> = ({ children }): ReactElement<Props> => {
 
   const { apiUrl } = useConfig();
-  const [state] = useState<GraphQLState>({
-    client: new GraphQLClient(apiUrl),
+  const [state] = useState<GraphQLState>(() => {
+    return {
+      client: new GraphQLClient(apiUrl),
+      queryClient: new QueryClient({
+        defaultOptions: {
+          queries: {
+            refetchOnWindowFocus: false,
+          },
+        },
+      }),
+    };
   });
 
   return (
     <GraphQLContext.Provider value={state}>
-      {children}
+      <QueryClientProvider client={state.queryClient}>
+        {children}
+      </QueryClientProvider>
     </GraphQLContext.Provider>
   );
 };

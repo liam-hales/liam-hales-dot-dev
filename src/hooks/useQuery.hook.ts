@@ -37,7 +37,7 @@ const useQuery = <
 ): UseQueryResponse<T> => {
 
   // Stringify and base64 encode the variables
-  // to act as the cache key for the request
+  // to generate the cache key for the query
   const keyData = JSON.stringify(variables);
   const cacheKey = window.btoa(keyData);
 

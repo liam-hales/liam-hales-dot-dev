@@ -21,7 +21,9 @@ interface UsePageQueryResponse<T extends PageSlug> {
  * @returns The `usePageQuery` hook response
  * @example
  *
- * const { status, data } = usePageQuery<PageSlug.GLOBAL>(PageSlug.GLOBAL);
+ * const { status, data } = usePageQuery<PageSlug.GLOBAL>({
+ *   slug: PageSlug.GLOBAL
+ * });
  */
 const usePageQuery = <T extends PageSlug>(
   variables: PageVariables<T>,

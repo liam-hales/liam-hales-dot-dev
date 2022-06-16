@@ -16,9 +16,10 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `Tabs` component
  */
-const Tabs: FunctionComponent<Props> = ({ value, children }): ReactElement<Props> => {
+const Tabs: FunctionComponent<Props> = ({ className, value, children }): ReactElement<Props> => {
   return (
     <StyledTabs
+      className={className}
       value={value}
       TabIndicatorProps={
         {

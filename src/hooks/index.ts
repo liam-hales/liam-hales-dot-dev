@@ -4,6 +4,7 @@ import useNav from './useNav.hook';
 import useScreen from './useScreen.hook';
 import useQuery from './useQuery.hook';
 import usePageQuery from './usePageQuery.hook';
+import usePageContent from './usePageContent.hook';
 
 export {
   useConfig,
@@ -12,4 +13,5 @@ export {
   useScreen,
   useQuery,
   usePageQuery,
+  usePageContent,
 };

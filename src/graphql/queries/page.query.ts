@@ -1,4 +1,5 @@
 import { gql } from 'graphql-request';
+import { globalContentFragment, homeContentFragment } from '../fragments';
 
 /**
  * The GraphQL query for fetching the page
@@ -20,10 +21,20 @@ const pageQuery = gql`
       id
       slug
       name
+      content {
+        ... on GlobalContent {
+          ...GlobalContentFields
+        }
+        ... on HomeContent {
+          ...HomeContentFields
+        }
+      }
       createdAt
       updatedAt
     }
   }
+  ${globalContentFragment}
+  ${homeContentFragment}
 `;
 
 export default pageQuery;

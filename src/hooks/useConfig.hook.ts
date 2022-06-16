@@ -13,6 +13,9 @@ interface UseConfigResponse {
  * loaded in via the `.env` file
  *
  * @returns The `useConfig` hook response
+ * @example
+ *
+ * const { env } = useConfig();
  */
 const useConfig = (): UseConfigResponse => {
   return {

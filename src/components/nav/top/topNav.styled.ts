@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { ColourPalette } from '../../../enums';
-import { Box } from '../../common';
+import { LogoSvg } from '../../../svgs';
+import { Box, Tabs } from '../../common';
 
 /**
  * The styled `Box` component used for
@@ -20,8 +21,25 @@ export const StyledBackground = styled(Box)`
  */
 export const StyledTopNav = styled(Box)`
   width: 100%;
-  max-width: 740px;
-  padding-top: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
+  max-width: 800px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 42px;
+  padding-right: 42px;
+`;
+
+/**
+ * The styled `LogoSvg` component used
+ * for the `TopNav` component
+ */
+export const StyledLogoSvg = styled(LogoSvg)`
+  width: 24px;
+`;
+
+/**
+ * The styled `LogoSvg` component used
+ * for the `TopNav` component
+ */
+export const StyledTabs = styled(Tabs)`
+  padding-left: 28px;
 `;

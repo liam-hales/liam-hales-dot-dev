@@ -1,3 +1,4 @@
+import { Moment } from 'moment';
 import { PageSlug } from './enums';
 
 /**
@@ -40,6 +41,7 @@ export interface GlobalPageContent extends BasePageContent {
 export interface HomePageContent extends BasePageContent {
   slug: PageSlug.HOME;
   aboutMeText: string;
+  careerStartDate: Moment;
 }
 
 /**

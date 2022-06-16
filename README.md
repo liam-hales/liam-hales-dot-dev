@@ -8,14 +8,17 @@ https://liamhales.dev
 # Getting Started (Prerequisites)
 
 - Download and install [Node Version Manager (NVM)]
-- Install and use a version of node >= v16
+- Install and use a version of node >= v16.15 (npm >= v8.11)
 
 ```sh
-$ nvm install 16
-$ nvm use 16
+$ nvm install 16.15
+$ nvm use 16.15
 
 $ node --version
-v16.15.0
+v16.15.1
+
+$ npm --version
+v8.11.0
 ```
 
 - Download and install [Yarn Package Manager] and [AWS CLI]

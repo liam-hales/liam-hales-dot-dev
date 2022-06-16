@@ -21,6 +21,8 @@
     "max-len": "off",
     "padded-blocks": "off",
     "arrow-body-style": "off",
+    "no-confusing-arrow": "off",
+    "@typescript-eslint/no-shadow": "off",
     "import/prefer-default-export": "off",
     "import/no-cycle": "off",
     "react/require-default-props": "off",

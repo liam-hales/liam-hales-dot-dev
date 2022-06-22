@@ -1,7 +1,7 @@
 import ThemeProvider from './theme.provider';
-import GraphQLProvider from './graphql.provider';
+import QueryProvider from './query.provider';
 
 export {
   ThemeProvider,
-  GraphQLProvider,
+  QueryProvider,
 };

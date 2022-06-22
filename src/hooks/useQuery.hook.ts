@@ -1,8 +1,8 @@
 import { useQuery as _useQuery, QueryStatus as _QueryStatus } from 'react-query';
+import { request } from 'graphql-request';
 import { dataTransformer } from '../helpers';
 import { QueryStatus } from '../enums';
-import { GraphQLContext } from '../context';
-import { useContext } from '.';
+import { useConfig } from '.';
 
 /**
  * The `useQuery` hook response.
@@ -14,8 +14,8 @@ interface UseQueryResponse<T extends Record<keyof T, unknown>> {
 }
 
 /**
- * Used to make a request to the GraphQL API using the
- * `client` from the `GraphQLContext`.
+ * Used to make a request to the GraphQL API using
+ * `graphql-request` and `react-query` under the hood
  *
  * Generic type `T` for the response data.
  * Generic Type `V` for the request variables.
@@ -41,14 +41,14 @@ const useQuery = <
   const keyData = JSON.stringify(variables);
   const cacheKey = window.btoa(keyData);
 
-  const { client } = useContext(GraphQLContext);
+  const { apiUrl } = useConfig();
   const { status, data } = _useQuery<T>({
     queryKey: cacheKey,
     queryFn: async () => {
 
       // Make the GraphQL request and get
       // the first key from the response
-      const repsonse = await client.request<{ [key: string]: T }, V>(document, variables);
+      const repsonse = await request<{ [key: string]: T }, V>(apiUrl, document, variables);
       const [key] = Object.keys(repsonse);
 
       // Stringify the respone and pasre it

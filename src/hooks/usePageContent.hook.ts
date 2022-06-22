@@ -1,7 +1,6 @@
-import { GraphQLContext } from '../context';
+import { useQueryClient } from 'react-query';
 import { PageSlug } from '../graphql/enums';
 import { PageContent, PageData, PageVariables } from '../graphql/types';
-import { useContext } from '.';
 
 /**
  * Finds the page data from the query cache for
@@ -26,8 +25,8 @@ const usePageContent = <T extends PageSlug>(
   const keyData = JSON.stringify(variables);
   const cacheKey = window.btoa(keyData);
 
-  const { queryClient } = useContext(GraphQLContext);
-  const page = queryClient.getQueryData<PageData<T>>(cacheKey);
+  const client = useQueryClient();
+  const page = client.getQueryData<PageData<T>>(cacheKey);
 
   // Check if the page exists
   // If not then throw an error

@@ -9,8 +9,8 @@ import { BaseProps } from '../types';
 type Props = BaseProps;
 
 /**
- * Used to create and provide the
- * theme for the app to use
+ * Used to create and provide the theme for the app and wrap
+ * the `children` in the `ThemeProvider` from `@mui/material`
  *
  * @param props The component props
  * @returns The `ThemeProvider` component

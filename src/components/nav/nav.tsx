@@ -22,11 +22,7 @@ const Nav: FunctionComponent<Props> = ({ children }): ReactElement<Props> => {
   const { screenSize } = useScreen();
   return (
     <BrowserRouter>
-      {
-        (screenSize !== ScreenSize.EXTRA_SMALL) && (
-          <TopNav />
-        )
-      }
+      <TopNav />
       {children}
       {
         (screenSize === ScreenSize.EXTRA_SMALL) && (

@@ -1,6 +1,6 @@
 import { useQuery as _useQuery, QueryStatus as _QueryStatus } from 'react-query';
 import { request } from 'graphql-request';
-import { dataTransformer } from '../helpers';
+import { dataTransformer, generateCacheKey } from '../helpers';
 import { QueryStatus } from '../enums';
 import { useConfig } from '.';
 
@@ -36,10 +36,9 @@ const useQuery = <
   variables: V,
 ): UseQueryResponse<T> => {
 
-  // Stringify and base64 encode the variables
-  // to generate the cache key for the query
-  const keyData = JSON.stringify(variables);
-  const cacheKey = window.btoa(keyData);
+  // Generate a cache key from the query variables
+  // which will be used as the cache key for the query
+  const cacheKey = generateCacheKey(variables);
 
   const { apiUrl } = useConfig();
   const { status, data } = _useQuery<T>({

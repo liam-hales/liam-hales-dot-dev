@@ -1,6 +1,7 @@
 import { useQueryClient } from 'react-query';
 import { PageSlug } from '../graphql/enums';
 import { PageContent, PageData, PageVariables } from '../graphql/types';
+import { generateCacheKey } from '../helpers';
 
 /**
  * Finds the page data from the query cache for
@@ -20,11 +21,9 @@ const usePageContent = <T extends PageSlug>(
   variables: PageVariables<T>,
 ): PageContent<T> => {
 
-  // Stringify and base64 encode the variables
-  // to generate the cache key for the query
-  const keyData = JSON.stringify(variables);
-  const cacheKey = window.btoa(keyData);
-
+  // Generate the cache key from the page variables and get
+  // the query data from the client cache using the cache key
+  const cacheKey = generateCacheKey(variables);
   const client = useQueryClient();
   const page = client.getQueryData<PageData<T>>(cacheKey);
 

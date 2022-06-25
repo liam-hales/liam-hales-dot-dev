@@ -5,7 +5,7 @@ import { BaseProps } from '../types';
 /**
  * The `QueryProvider` component props
  */
- type Props = BaseProps;
+type Props = BaseProps;
 
 /**
  * Used to wrap the `children` in the

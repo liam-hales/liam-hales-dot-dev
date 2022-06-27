@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BottomNavigation as MuiBottomNavigation, BottomNavigationAction as MuiBottomNavigationAction } from '@mui/material';
+import { BottomNavigation, BottomNavigationAction } from '@mui/material';
 import { Box, Icon } from '../../common';
 import { ColourPalette } from '../../../enums';
 
@@ -23,7 +23,7 @@ export const StyledBottomNav = styled(Box)`
  * The styled `BottomNavigation` component from `@mui/material`
  * used for the `BottomNav` component
  */
-export const StyledBottomNavigation = styled(MuiBottomNavigation)`
+export const StyledBottomNavigation = styled(BottomNavigation)`
   width: 100%;
   background-color: transparent;
 `;
@@ -32,7 +32,7 @@ export const StyledBottomNavigation = styled(MuiBottomNavigation)`
  * The styled `BottomNavigationAction` component from `@mui/material`
  * used for the `BottomNav` component
  */
-export const StyledBottomNavigationAction = styled(MuiBottomNavigationAction)`
+export const StyledBottomNavigationAction = styled(BottomNavigationAction)`
   border-radius: 10px;
   color: ${ColourPalette.WHITE};
 

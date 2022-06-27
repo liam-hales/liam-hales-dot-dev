@@ -2,6 +2,7 @@ import App from './app/app';
 import Content from './content/content';
 import Loader from './loader/loader';
 import Global from './global/global';
+import AboutMe from './home/aboutMe/aboutMe';
 import Nav from './nav/nav';
 import TopNav from './nav/top/topNav';
 import BottomNav from './nav/bottom/bottomNav';
@@ -12,6 +13,7 @@ export {
   Content,
   Loader,
   Global,
+  AboutMe,
   Nav,
   TopNav,
   BottomNav,

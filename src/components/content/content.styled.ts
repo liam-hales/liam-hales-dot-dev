@@ -7,7 +7,7 @@ import { Box } from '../common';
  */
 export const StyledContent = styled(Box)`
   width: 100%;
-  max-width: 740px;
-  padding-left: 20px;
-  padding-right: 20px;
+  max-width: 800px;
+  padding-left: 24px;
+  padding-right: 24px;
 `;

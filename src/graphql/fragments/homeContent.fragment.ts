@@ -6,6 +6,9 @@ import { gql } from 'graphql-request';
  */
 const homeContentFragment = gql`
   fragment HomeContentFields on HomeContent {
+    headerImage {
+      ...AssetFields
+    }
     aboutMeText
     careerStartDate
   }

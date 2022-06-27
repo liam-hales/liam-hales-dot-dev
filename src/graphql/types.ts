@@ -41,6 +41,7 @@ export interface GlobalPageContent extends BasePageContent {
  */
 export interface HomePageContent extends BasePageContent {
   slug: PageSlug.HOME;
+  headerImage: Asset;
   aboutMeText: string;
   careerStartDate: Moment;
 }

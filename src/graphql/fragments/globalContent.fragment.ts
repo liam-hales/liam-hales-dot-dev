@@ -1,4 +1,5 @@
 import { gql } from 'graphql-request';
+import { assetFragment } from '.';
 
 /**
  * The GraphQL fragment for the `GlobalContent` type
@@ -12,7 +13,11 @@ const globalContentFragment = gql`
     linkedInUrl
     stackOverflowUrl
     buyMeCoffeeUrl
+    meImage {
+      ...AssetFields
+    }
   }
+  ${assetFragment}
 `;
 
 export default globalContentFragment;

@@ -32,6 +32,7 @@ export interface GlobalPageContent extends BasePageContent {
   linkedInUrl: string;
   stackOverflowUrl: string;
   buyMeCoffeeUrl: string;
+  meImage: Asset;
 }
 
 /**
@@ -51,6 +52,15 @@ export interface HomePageContent extends BasePageContent {
 export type PageContent<T extends PageSlug> =
   T extends PageSlug.GLOBAL ? GlobalPageContent :
     T extends PageSlug.HOME ? HomePageContent : never;
+
+/**
+ * Describes the image asset which is used
+ * within the page data or content
+ */
+export interface Asset {
+  fileName: string;
+  url: string;
+}
 
 /**
  * Describes the page variables used

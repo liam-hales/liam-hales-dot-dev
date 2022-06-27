@@ -1,8 +1,8 @@
+import Footer from './footer/footer';
 import App from './app/app';
 import Content from './content/content';
 import Loader from './loader/loader';
 import Global from './global/global';
-import Footer from './footer/footer';
 import AboutMe from './home/aboutMe/aboutMe';
 import Nav from './nav/nav';
 import TopNav from './nav/top/topNav';
@@ -10,11 +10,11 @@ import BottomNav from './nav/bottom/bottomNav';
 import StatusHandler from './statusHandler/statusHandler';
 
 export {
+  Footer,
   App,
   Content,
   Loader,
   Global,
-  Footer,
   AboutMe,
   Nav,
   TopNav,

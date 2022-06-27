@@ -1,5 +1,9 @@
 import { gql } from 'graphql-request';
-import { globalContentFragment, homeContentFragment } from '../fragments';
+import {
+  assetFragment,
+  globalContentFragment,
+  homeContentFragment,
+} from '../fragments';
 
 /**
  * The GraphQL query for fetching the page
@@ -33,6 +37,7 @@ const pageQuery = gql`
       updatedAt
     }
   }
+  ${assetFragment}
   ${globalContentFragment}
   ${homeContentFragment}
 `;

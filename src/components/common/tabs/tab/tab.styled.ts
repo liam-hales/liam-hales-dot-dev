@@ -1,11 +1,11 @@
 import styled from 'styled-components';
-import { Tab as MuiTab } from '@mui/material';
+import { Tab } from '@mui/material';
 
 /**
  * The styled `Tab` component from `@mui/material`
  * used for the `Tab` component
  */
-export const StyledTab = styled(MuiTab)`
+export const StyledTab = styled(Tab)`
   border-radius: 10px;
   opacity: 1.0;
 `;

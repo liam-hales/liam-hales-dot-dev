@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { Tabs as MuiTabs } from '@mui/material';
+import { Tabs } from '@mui/material';
 import { ColourPalette } from '../../../enums';
 
 /**
  * The styled `Tabs` component from `@mui/material`
  * used for the `Tabs` component
  */
-export const StyledTabs = styled(MuiTabs)`
+export const StyledTabs = styled(Tabs)`
 
   .MuiTabs-indicator {
     height: 4px;

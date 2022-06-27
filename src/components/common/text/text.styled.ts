@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Typography as MuiTypography } from '@mui/material';
+import { Typography } from '@mui/material';
 import { ColourPalette, TextAppearance } from '../../../enums';
 
 /**
@@ -25,7 +25,7 @@ const textColourMap: Record<TextAppearance, ColourPalette> = {
  * The styled `Typography` component from `@mui/material`
  * used for the `Text` component
  */
-export const StyledTypography = styled(MuiTypography)<StyledTypographyProps>`
+export const StyledTypography = styled(Typography)<StyledTypographyProps>`
   display: inline;
   font-weight: ${(props) => (props.bold === true) ? 800 : 400};
   font-style: ${(props) => (props.italic === true) ? 'italic' : 'normal'};

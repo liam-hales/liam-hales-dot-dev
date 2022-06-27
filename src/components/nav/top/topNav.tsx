@@ -1,6 +1,6 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BoxDirection, BoxAlignment, NavKey, NavRoute, ScreenSize } from '../../../enums';
+import { BoxDirection, BoxAlignment, NavKey, NavRoute, ScreenSize, BoxJustify } from '../../../enums';
 import { useNav, useScreen } from '../../../hooks';
 import { Tab } from '../../common';
 import { StyledBackground, StyledTopNav, StyledLogoSvg, StyledTabs } from './topNav.styled';
@@ -25,6 +25,11 @@ const TopNav: FunctionComponent = (): ReactElement => {
           (screenSize === ScreenSize.EXTRA_SMALL)
             ? BoxDirection.COLUMN
             : BoxDirection.ROW
+        }
+        justify={
+          (screenSize === ScreenSize.EXTRA_SMALL)
+            ? BoxJustify.CENTER
+            : BoxJustify.START
         }
       >
         <StyledLogoSvg />

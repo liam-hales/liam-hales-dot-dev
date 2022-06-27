@@ -21,9 +21,8 @@ export const StyledBackground = styled(Box)`
  */
 export const StyledTopNav = styled(Box)`
   width: 100%;
+  height: 72px;
   max-width: 800px;
-  padding-top: 12px;
-  padding-bottom: 12px;
   padding-left: 42px;
   padding-right: 42px;
 `;

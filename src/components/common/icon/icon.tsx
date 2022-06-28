@@ -1,10 +1,10 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faHome, faFileCode, faPaintBrush, faComments, faCode, faServer, faFillDrip, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 import { BaseProps } from '../../../types';
 import { IconId } from '../../../enums';
+import { StyledIcon } from './icon.styled';
 
 /**
  * The `Icon` component props
@@ -37,10 +37,11 @@ const Icon: FunctionComponent<Props> = ({ className, id, onClick }): ReactElemen
   };
 
   return (
-    <FontAwesomeIcon
+    <StyledIcon
       className={className}
       icon={iconMap[id]}
       onClick={onClick}
+      clickable={onClick != null}
     />
   );
 };

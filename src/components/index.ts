@@ -3,6 +3,7 @@ import App from './app/app';
 import Content from './content/content';
 import Loader from './loader/loader';
 import Global from './global/global';
+import SocialIcons from './socialIcons/socialIcons';
 import AboutMe from './home/aboutMe/aboutMe';
 import Nav from './nav/nav';
 import TopNav from './nav/top/topNav';
@@ -15,6 +16,7 @@ export {
   Content,
   Loader,
   Global,
+  SocialIcons,
   AboutMe,
   Nav,
   TopNav,

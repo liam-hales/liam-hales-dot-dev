@@ -76,6 +76,9 @@ export enum IconId {
   PAINT_FILL = 'PAINT_FILL',
   CODE = 'CODE',
   SERVER = 'SERVER',
+  ENVELOPE = 'ENVELOPE',
+  LINKED_IN = 'LINKED_IN',
+  STACK_OVERFLOW = 'STACK_OVERFLOW',
 }
 
 /**

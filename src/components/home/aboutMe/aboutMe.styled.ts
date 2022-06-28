@@ -24,14 +24,6 @@ export const StyledFactBox = styled(Box)`
 
 /**
  * The styled `Text` component used for
- * the `AboutMe` component title text
- */
-export const StyledTitle = styled(Text)`
-  font-size: 34px;
-`;
-
-/**
- * The styled `Text` component used for
  * the `AboutMe` component subtitle text
  */
 export const StyledSubtitle = styled(Text)`

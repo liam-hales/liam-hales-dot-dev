@@ -4,14 +4,13 @@ import { BoxAlignment, BoxDirection, TextAppearance } from '../../../enums';
 import { PageSlug } from '../../../graphql';
 import { usePageContent } from '../../../hooks';
 import { BaseProps } from '../../../types';
-import { Box } from '../../common';
+import { Box, Title } from '../../common';
 import {
   StyledDescription,
   StyledFactBox,
   StyledFactNumber,
   StyledMeImage,
   StyledSubtitle,
-  StyledTitle,
 } from './aboutMe.styled';
 
 /**
@@ -53,9 +52,9 @@ const AboutMe: FunctionComponent<Props> = ({ className }): ReactElement<Props> =
         circle={true}
       />
       <Box alignment={BoxAlignment.START}>
-        <StyledTitle bold={true}>
-          About me.
-        </StyledTitle>
+        <Title>
+          About me
+        </Title>
         <StyledDescription appearance={TextAppearance.SECONDARY}>
           {aboutMeText}
         </StyledDescription>

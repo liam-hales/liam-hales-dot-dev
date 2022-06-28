@@ -6,10 +6,10 @@ import { PageSlug } from './enums';
  * Generic type `T` for the page slug
  */
 export interface PageData<T extends PageSlug = never> {
-  id: string;
-  name: string;
-  slug: PageSlug;
-  content: PageContent<T>;
+  readonly id: string;
+  readonly name: string;
+  readonly slug: PageSlug;
+  readonly content: PageContent<T>;
 }
 
 /**
@@ -17,7 +17,7 @@ export interface PageData<T extends PageSlug = never> {
  * Each page content should `extends` this
  */
 export interface BasePageContent {
-  slug: PageSlug;
+  readonly slug: PageSlug;
 }
 
 /**
@@ -25,14 +25,14 @@ export interface BasePageContent {
  * is used for each page within the app
  */
 export interface GlobalPageContent extends BasePageContent {
-  slug: PageSlug.GLOBAL;
-  footerText: string;
-  builtUsingText: string;
-  email: string;
-  linkedInUrl: string;
-  stackOverflowUrl: string;
-  buyMeCoffeeUrl: string;
-  meImage: Asset;
+  readonly slug: PageSlug.GLOBAL;
+  readonly footerText: string;
+  readonly builtUsingText: string;
+  readonly email: string;
+  readonly linkedInUrl: string;
+  readonly stackOverflowUrl: string;
+  readonly buyMeCoffeeUrl: string;
+  readonly meImage: Asset;
 }
 
 /**
@@ -40,10 +40,10 @@ export interface GlobalPageContent extends BasePageContent {
  * is specific to the home page only
  */
 export interface HomePageContent extends BasePageContent {
-  slug: PageSlug.HOME;
-  headerImage: Asset;
-  aboutMeText: string;
-  careerStartDate: Moment;
+  readonly slug: PageSlug.HOME;
+  readonly headerImage: Asset;
+  readonly aboutMeText: string;
+  readonly careerStartDate: Moment;
 }
 
 /**
@@ -59,8 +59,8 @@ export type PageContent<T extends PageSlug> =
  * within the page data or content
  */
 export interface Asset {
-  fileName: string;
-  url: string;
+  readonly fileName: string;
+  readonly url: string;
 }
 
 /**
@@ -71,12 +71,12 @@ export interface Asset {
  */
 export type PageVariables<T extends PageSlug> =
   {
-    slug: T;
+    readonly slug: T;
   }
   & (
     T extends PageSlug.BLOG
       ? {
-        blogPostSlug?: string;
+        readonly blogPostSlug?: string;
       }
       : unknown
   );

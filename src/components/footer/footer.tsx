@@ -1,6 +1,6 @@
 import { FunctionComponent, ReactElement } from 'react';
 import moment from 'moment';
-import { Content } from '..';
+import { Content, SocialIcons } from '..';
 import { BoxDirection, BoxAlignment, TextAppearance, BoxJustify } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { usePageContent } from '../../hooks';
@@ -54,6 +54,7 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
             <StyledDescription appearance={TextAppearance.SECONDARY}>
               {footerText}
             </StyledDescription>
+            <SocialIcons />
           </StyledInfoBox>
           <StyledLogoSvg />
         </StyledBox>

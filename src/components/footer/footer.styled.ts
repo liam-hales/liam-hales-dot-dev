@@ -44,7 +44,7 @@ export const StyledTitle = styled(Text)`
 */
 export const StyledDescription = styled(Text)`
   padding-top: 8px;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 `;
 
 /**

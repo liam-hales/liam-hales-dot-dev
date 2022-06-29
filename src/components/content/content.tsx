@@ -1,4 +1,5 @@
 import { FunctionComponent, ReactElement } from 'react';
+import { BoxAlignment, BoxDirection } from '../../enums';
 import { BaseProps } from '../../types';
 import { Box } from '../common';
 import { StyledContent } from './content.styled';
@@ -6,7 +7,10 @@ import { StyledContent } from './content.styled';
 /**
  * The `Content` component props
  */
-type Props = BaseProps;
+interface Props extends BaseProps {
+  readonly direction?: BoxDirection;
+  readonly alignment?: BoxAlignment
+}
 
 /**
  * Used to render the app content center aligned
@@ -15,10 +19,14 @@ type Props = BaseProps;
  * @param props The component props
  * @returns The `Content` component
  */
-const Content: FunctionComponent<Props> = ({ className, children }): ReactElement<Props> => {
+const Content: FunctionComponent<Props> = ({ className, direction, alignment, children }): ReactElement<Props> => {
   return (
     <Box>
-      <StyledContent className={className}>
+      <StyledContent
+        className={className}
+        direction={direction}
+        alignment={alignment}
+      >
         {children}
       </StyledContent>
     </Box>

@@ -7,6 +7,7 @@ import SocialIcons from './socialIcons/socialIcons';
 import HomeHeader from './home/header/homeHeader';
 import AboutMe from './home/aboutMe/aboutMe';
 import HomeRoute from './home/route/homeRoute';
+import Router from './router/router';
 import Nav from './nav/nav';
 import TopNav from './nav/top/topNav';
 import BottomNav from './nav/bottom/bottomNav';
@@ -22,6 +23,7 @@ export {
   HomeHeader,
   AboutMe,
   HomeRoute,
+  Router,
   Nav,
   TopNav,
   BottomNav,

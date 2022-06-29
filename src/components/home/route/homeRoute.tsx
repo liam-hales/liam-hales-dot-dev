@@ -2,7 +2,12 @@ import { FunctionComponent, ReactElement } from 'react';
 import { StatusHandler, Content, HomeHeader } from '../..';
 import { PageSlug } from '../../../graphql';
 import { usePageQuery } from '../../../hooks';
-import { StyledAboutMe } from './homeRoute.styled';
+import {
+  StyledAboutMe,
+  StyledSkillAreas,
+  StyledProStatement,
+  StyledStillInterested,
+} from './homeRoute.styled';
 
 /**
  * Fetches the home page data and renders the
@@ -21,6 +26,9 @@ const HomeRoute: FunctionComponent = (): ReactElement => {
       <HomeHeader />
       <Content>
         <StyledAboutMe />
+        <StyledSkillAreas />
+        <StyledProStatement />
+        <StyledStillInterested />
       </Content>
     </StatusHandler>
   );

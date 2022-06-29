@@ -19,7 +19,7 @@ import {
 type Props = BaseProps;
 
 /**
- * Renders the about me section of the home page which
+ * Renders the about me section for the home page which
  * is rendered within the `HomeRoute` component
  *
  * @param props The component props

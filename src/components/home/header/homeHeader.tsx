@@ -10,8 +10,8 @@ import { StyledContent, StyledImage } from './homeHeader.styled';
 type Props = BaseProps;
 
 /**
- * Used to render the home page header which
- * consists of the main image and name title text
+ * Renders the header for the home page which
+ * is rendered within the `HomeRoute` component
  *
  * @param props The component props
  * @returns The `HomeHeader` component

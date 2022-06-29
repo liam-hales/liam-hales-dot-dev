@@ -42,7 +42,7 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
   return (
     <div className={className}>
       <StyledDivider />
-      <Content>
+      <Content alignment={BoxAlignment.START}>
         <StyledBox
           direction={BoxDirection.ROW}
           justify={BoxJustify.SPACE_BETWEEN}
@@ -54,10 +54,10 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
             <StyledDescription appearance={TextAppearance.SECONDARY}>
               {footerText}
             </StyledDescription>
-            <SocialIcons />
           </StyledInfoBox>
           <StyledLogoSvg />
         </StyledBox>
+        <SocialIcons />
         <StyledCopyrightBox>
           <Text bold={true}>
             {`${year} • Liam Hales`}

@@ -18,7 +18,8 @@ export const StyledDivider = styled(Divider)`
  */
 export const StyledBox = styled(Box)`
   width: 100%;
-  padding-top: 40px;
+  padding-top: 50px;
+  padding-bottom: 20px;
 `;
 
 /**
@@ -44,7 +45,6 @@ export const StyledTitle = styled(Text)`
 */
 export const StyledDescription = styled(Text)`
   padding-top: 8px;
-  padding-bottom: 20px;
 `;
 
 /**
@@ -61,6 +61,7 @@ export const StyledLogoSvg = styled(LogoSvg)`
  * the `Footer` component copyright
  */
 export const StyledCopyrightBox = styled(Box)`
+  width: 100%;
   padding-top: 60px;
   padding-bottom: 20px;
 `;

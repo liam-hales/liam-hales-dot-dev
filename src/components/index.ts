@@ -6,6 +6,7 @@ import Global from './global/global';
 import SocialIcons from './socialIcons/socialIcons';
 import HomeHeader from './home/header/homeHeader';
 import AboutMe from './home/aboutMe/aboutMe';
+import HomeRoute from './home/route/homeRoute';
 import Nav from './nav/nav';
 import TopNav from './nav/top/topNav';
 import BottomNav from './nav/bottom/bottomNav';
@@ -20,6 +21,7 @@ export {
   SocialIcons,
   HomeHeader,
   AboutMe,
+  HomeRoute,
   Nav,
   TopNav,
   BottomNav,

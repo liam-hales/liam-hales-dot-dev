@@ -1,7 +1,7 @@
 import { CssBaseline } from '@mui/material';
 import { FunctionComponent, ReactElement } from 'react';
 import { ThemeProvider, QueryProvider } from '../../providers';
-import { Nav, Loader, Global } from '..';
+import { Nav, Loader, Global, Router } from '..';
 import { StyledFooter } from './app.styled';
 
 /**
@@ -18,6 +18,7 @@ const App: FunctionComponent = (): ReactElement => {
         <Loader />
         <Global>
           <Nav>
+            <Router />
             <StyledFooter />
           </Nav>
         </Global>

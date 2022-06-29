@@ -11,6 +11,11 @@ const homeContentFragment = gql`
     }
     aboutMeText
     careerStartDate
+    frontendText
+    backendText
+    designText
+    proStatementText
+    stillInterestedText
   }
 `;
 

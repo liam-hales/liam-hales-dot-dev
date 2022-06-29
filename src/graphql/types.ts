@@ -44,6 +44,11 @@ export interface HomePageContent extends BasePageContent {
   readonly headerImage: Asset;
   readonly aboutMeText: string;
   readonly careerStartDate: Moment;
+  readonly frontendText: string;
+  readonly backendText: string;
+  readonly designText: string;
+  readonly proStatementText: string;
+  readonly stillInterestedText: string;
 }
 
 /**
@@ -52,7 +57,8 @@ export interface HomePageContent extends BasePageContent {
  */
 export type PageContent<T extends PageSlug> =
   T extends PageSlug.GLOBAL ? GlobalPageContent :
-    T extends PageSlug.HOME ? HomePageContent : never;
+    T extends PageSlug.HOME ? HomePageContent :
+      never;
 
 /**
  * Describes the image asset which is used

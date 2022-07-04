@@ -21,6 +21,12 @@
     "jsx": "react-jsx"
   },
   "include": [
-    "src"
-  ]
+    "src",
+    "scripts"
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  }
 }

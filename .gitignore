@@ -7,7 +7,8 @@ src/react-app-env.d.ts
 
 # Public
 public/index.html
-public/favicon.ico
+public/*.ico
+public/*.png
 
 # Environment
 .env*

@@ -47,7 +47,6 @@
   "scripts": {
     "start": "react-scripts start",
     "lint": "eslint \"**/*.{ts,tsx}\"",
-    "lint:fix": "yarn lint --fix",
     "unused-code": "ts-prune --error --ignore index.ts"
   },
   "browserslist": {

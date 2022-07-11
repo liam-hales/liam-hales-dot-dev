@@ -50,7 +50,9 @@
   "scripts": {
     "start": "react-scripts start",
     "lint": "eslint \"**/*.{ts,tsx}\"",
-    "unused-code": "ts-prune index.ts --error --ignore"
+    "unused-code": "ts-prune index.ts --error --ignore",
+    "build-images": "ts-node ./scripts/buildImages.script.ts",
+    "build-index": "ts-node ./scripts/buildIndex.script.tsx"
   },
   "browserslist": {
     "production": [

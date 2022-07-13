@@ -3,12 +3,11 @@ node_modules/
 
 # React
 build/
-src/react-app-env.d.ts
 
 # Public
 public/index.html
 public/*.ico
-public/*/*.png
+public/icons/*
 
 # Environment
 .env*

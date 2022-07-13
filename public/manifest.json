@@ -8,8 +8,8 @@
       "sizes": "64x64"
     },
     {
-      "src": "icons/icon-180x180.png",
-      "type": "image/png",
+      "src": "icons/icon-180x180.webp",
+      "type": "image/webp",
       "sizes": "180x180"
     }
   ],

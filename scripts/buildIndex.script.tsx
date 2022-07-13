@@ -18,7 +18,7 @@ const Index: FunctionComponent = (): ReactElement => {
 
   const publicPath = join(process.cwd(), '/public');
   const iconsPath = join(publicPath, '/icons');
-  const coverPath = `${publicPath}/cover.png`;
+  const coverPath = `${publicPath}/cover.webp`;
 
   return (
     <html lang="en">
@@ -45,7 +45,7 @@ const Index: FunctionComponent = (): ReactElement => {
         <meta name="twitter:image" content={coverPath} />
         <meta name="twitter:url" content={url} />
 
-        <link rel="apple-touch-icon" href={`${iconsPath}/icon-180x180.png`} />
+        <link rel="apple-touch-icon" href={`${iconsPath}/icon-180x180.webp`} />
       </head>
       <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>

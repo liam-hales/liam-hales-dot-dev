@@ -22,9 +22,15 @@
   },
   "include": [
     "src",
-    "scripts"
+    "scripts",
+    "types",
+    "node_modules/react-scripts",
   ],
+  "paths": {
+    "@mui/styled-engine": ["./node_modules/@mui/styled-engine-sc"]
+  },
   "ts-node": {
+    "files": true,
     "compilerOptions": {
       "module": "commonjs"
     }

@@ -29,6 +29,10 @@ const Index: FunctionComponent = (): ReactElement => {
         <link rel="icon" href="favicon.ico" />
         <link rel="manifest" href="manifest.json" />
 
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,800;1,400;1,800&display=swap" rel="stylesheet" />
+
         <title>{title}</title>
         <meta name="description" content={description} />
 

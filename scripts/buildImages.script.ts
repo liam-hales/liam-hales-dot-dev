@@ -1,5 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-
 import { existsSync, mkdirSync } from 'fs';
 import { join } from 'path';
 import sharp from 'sharp';

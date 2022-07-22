@@ -1,8 +1,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { BoxAlignment, BoxDirection } from '../../enums';
 import { BaseProps } from '../../types';
-import { Box } from '../common';
-import { StyledContent } from './content.styled';
+import { StyledBox, StyledContent } from './content.styled';
 
 /**
  * The `Content` component props
@@ -21,7 +20,7 @@ interface Props extends BaseProps {
  */
 const Content: FunctionComponent<Props> = ({ className, direction, alignment, children }): ReactElement<Props> => {
   return (
-    <Box>
+    <StyledBox>
       <StyledContent
         className={className}
         direction={direction}
@@ -29,7 +28,7 @@ const Content: FunctionComponent<Props> = ({ className, direction, alignment, ch
       >
         {children}
       </StyledContent>
-    </Box>
+    </StyledBox>
   );
 };
 

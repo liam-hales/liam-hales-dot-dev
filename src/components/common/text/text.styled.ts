@@ -27,7 +27,7 @@ const textColourMap: Record<TextAppearance, ColourPalette> = {
  */
 export const StyledTypography = styled(Typography)<StyledTypographyProps>`
   display: inline;
-  font-weight: ${(props) => (props.bold === true) ? 800 : 400};
+  font-weight: ${(props) => (props.bold === true) ? 'bold' : 'normal'};
   font-style: ${(props) => (props.italic === true) ? 'italic' : 'normal'};
   color: ${(props) => textColourMap[props.appearance]};
   opacity: ${(props) => ((props.appearance === TextAppearance.SUBTLE) ? 0.48 : 1)};

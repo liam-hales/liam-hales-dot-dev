@@ -42,6 +42,7 @@ export interface GlobalPageContent extends BasePageContent {
 export interface HomePageContent extends BasePageContent {
   readonly slug: PageSlug.HOME;
   readonly headerImage: Asset;
+  readonly headerOverlayImage: Asset;
   readonly aboutMeText: string;
   readonly careerStartDate: Moment;
   readonly frontendText: string;

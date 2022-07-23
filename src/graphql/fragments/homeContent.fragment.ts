@@ -9,6 +9,9 @@ const homeContentFragment = gql`
     headerImage {
       ...AssetFields
     }
+    headerOverlayImage {
+      ...AssetFields
+    }
     aboutMeText
     careerStartDate
     frontendText

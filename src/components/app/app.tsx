@@ -16,12 +16,12 @@ const App: FunctionComponent = (): ReactElement => {
       <CssBaseline />
       <QueryProvider>
         <Loader />
-        <Global>
-          <Nav>
+        <Nav>
+          <Global>
             <Router />
             <StyledFooter />
-          </Nav>
-        </Global>
+          </Global>
+        </Nav>
       </QueryProvider>
     </ThemeProvider>
   );

@@ -9,6 +9,7 @@ interface StyledTypographyProps {
   readonly appearance: TextAppearance;
   readonly bold: boolean;
   readonly italic: boolean;
+  readonly clickable: boolean;
 }
 
 /**
@@ -27,8 +28,21 @@ const textColourMap: Record<TextAppearance, ColourPalette> = {
  */
 export const StyledTypography = styled(Typography)<StyledTypographyProps>`
   display: inline;
-  font-weight: ${(props) => (props.bold === true) ? 'bold' : 'normal'};
-  font-style: ${(props) => (props.italic === true) ? 'italic' : 'normal'};
+  font-weight: ${(props) => {
+    return (props.bold === true)
+      ? 'bold'
+      : 'normal';
+  }};
+  font-style: ${(props) => {
+    return (props.italic === true)
+      ? 'italic'
+      : 'normal';
+  }};
+  cursor: ${(props) => {
+    return (props.clickable === true)
+      ? 'pointer'
+      : 'unset';
+  }};
   color: ${(props) => textColourMap[props.appearance]};
   opacity: ${(props) => ((props.appearance === TextAppearance.SUBTLE) ? 0.48 : 1)};
   text-transform: none;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from '@mui/material';
 
 /**
  * The `StyledImageProps` component props
@@ -11,7 +11,7 @@ interface StyledImageProps {
  * The styled `img` element used
  * for the `Image` component
  */
-export const StyledImage = styled.img<StyledImageProps>`
+export const StyledImage = styled('img')<StyledImageProps>`
   width: 100%;
   height: 100%;
   object-fit: cover;

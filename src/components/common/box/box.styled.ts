@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from '@mui/material';
 import { BoxAlignment, BoxDirection, BoxJustify } from '../../../enums';
 
 /**
@@ -14,7 +14,7 @@ interface StyledBoxProps {
  * The styled `div` element used
  * for the `Box` component
  */
-export const StyledBox = styled.div<StyledBoxProps>`
+export const StyledBox = styled('div')<StyledBoxProps>`
   display: flex;
   flex-direction: ${(props) => props.direction};
   align-items: ${(props) => props.alignment};

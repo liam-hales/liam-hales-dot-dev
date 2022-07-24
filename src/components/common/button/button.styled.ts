@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-import { Button } from '@mui/material';
+import { styled, Button } from '@mui/material';
 
 /**
  * The styled `Button` component from `@mui/material`

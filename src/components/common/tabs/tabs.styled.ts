@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-import { Tabs } from '@mui/material';
+import { styled, Tabs } from '@mui/material';
 import { ColourPalette } from '../../../enums';
 
 /**

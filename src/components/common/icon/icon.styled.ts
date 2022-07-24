@@ -1,5 +1,5 @@
+import { styled } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styled from 'styled-components';
 
 /**
  * The `StyledIcon` component props

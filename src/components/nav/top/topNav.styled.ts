@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from '@mui/material';
 import { ColourPalette } from '../../../enums';
 import { LogoSvg } from '../../../svgs';
 import { Box, Tabs } from '../../common';

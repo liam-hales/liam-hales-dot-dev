@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-import { Typography } from '@mui/material';
+import { styled, Typography } from '@mui/material';
 import { ColourPalette, TextAppearance } from '../../../enums';
 
 /**

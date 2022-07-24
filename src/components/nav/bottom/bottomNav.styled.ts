@@ -1,5 +1,4 @@
-import styled from 'styled-components';
-import { BottomNavigation, BottomNavigationAction } from '@mui/material';
+import { styled, BottomNavigation, BottomNavigationAction } from '@mui/material';
 import { Box, Icon } from '../../common';
 import { ColourPalette } from '../../../enums';
 

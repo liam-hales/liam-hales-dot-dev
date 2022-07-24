@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import { styled } from '@mui/material';
 import { AboutMe, SkillAreas, ProStatement, StillInterested } from '../..';
 
 /**

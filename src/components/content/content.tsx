@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { BoxAlignment, BoxDirection } from '../../enums';
+import { BoxAlignment, BoxDirection, BoxJustify } from '../../enums';
 import { BaseProps } from '../../types';
 import { StyledBox, StyledContent } from './content.styled';
 
@@ -8,7 +8,8 @@ import { StyledBox, StyledContent } from './content.styled';
  */
 interface Props extends BaseProps {
   readonly direction?: BoxDirection;
-  readonly alignment?: BoxAlignment
+  readonly alignment?: BoxAlignment;
+  readonly justify?: BoxJustify;
 }
 
 /**
@@ -18,13 +19,14 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `Content` component
  */
-const Content: FunctionComponent<Props> = ({ className, direction, alignment, children }): ReactElement<Props> => {
+const Content: FunctionComponent<Props> = ({ className, direction, alignment, justify, children }): ReactElement<Props> => {
   return (
     <StyledBox>
       <StyledContent
         className={className}
         direction={direction}
         alignment={alignment}
+        justify={justify}
       >
         {children}
       </StyledContent>

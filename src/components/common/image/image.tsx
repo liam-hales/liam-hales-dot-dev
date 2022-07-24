@@ -1,6 +1,7 @@
 import { FunctionComponent, ReactElement } from 'react';
+import { Box } from '..';
 import { BaseProps } from '../../../types';
-import { StyledBox, StyledImage } from './image.styled';
+import { StyledImage } from './image.styled';
 
 /**
  * The `Image` component props
@@ -27,15 +28,13 @@ const Image: FunctionComponent<Props> = (props): ReactElement<Props> => {
   } = props;
 
   return (
-    <StyledBox
-      className={className}
-      circle={circle}
-    >
+    <Box className={className}>
       <StyledImage
         src={path}
         alt={alt}
+        circle={circle}
       />
-    </StyledBox>
+    </Box>
   );
 };
 

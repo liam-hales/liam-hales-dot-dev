@@ -11,7 +11,7 @@ interface Props extends BaseProps {
 
 /**
  * The common `Tabs` component used to
- * render a number of tabs
+ * render multiple tabs
  *
  * @param props The component props
  * @returns The `Tabs` component

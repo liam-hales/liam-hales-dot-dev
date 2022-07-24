@@ -15,8 +15,8 @@ interface Props extends BaseProps {
 }
 
 /**
- * The common `Icon` component used within
- * the app to render an icon
+ * The common `Icon` component used to
+ * render icons within the app
  *
  * @param props The component props
  * @returns The `Icon` component

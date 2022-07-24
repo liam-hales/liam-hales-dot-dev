@@ -2,7 +2,18 @@ import { FunctionComponent, ReactElement } from 'react';
 import { PageSlug } from '../../../graphql';
 import { usePageContent } from '../../../hooks';
 import { BaseProps } from '../../../types';
-import { StyledContent, StyledImage } from './homeHeader.styled';
+import { BoxAlignment, BoxJustify } from '../../../enums';
+import {
+  StyledOuterContent,
+  StyledImage,
+  StyledOverlayImage,
+  StyledContent,
+  StyledSubtitleBox,
+  StyledTitle,
+  StyledSubtitleOne,
+  StyledSubtitleTwo,
+  StyledCapturedBy,
+} from './homeHeader.styled';
 
 /**
  * The `HomeHeader` component props
@@ -18,17 +29,47 @@ type Props = BaseProps;
  */
 const HomeHeader: FunctionComponent<Props> = ({ className }): ReactElement<Props> => {
 
-  const { headerImage } = usePageContent({
+  const { headerImage, headerOverlayImage } = usePageContent({
     slug: PageSlug.HOME,
   });
 
   return (
-    <StyledContent className={className}>
+    <StyledOuterContent className={className}>
       <StyledImage
         path={headerImage.url}
         alt="Liam Hales - Header"
       />
-    </StyledContent>
+      <StyledOverlayImage
+        path={headerOverlayImage.url}
+        alt="Liam Hales - Header"
+      />
+      <StyledContent
+        alignment={BoxAlignment.START}
+        justify={BoxJustify.END}
+      >
+        <StyledTitle bold={true}>
+          Liam Hales.
+        </StyledTitle>
+        <StyledSubtitleBox alignment={BoxAlignment.START}>
+          <StyledSubtitleOne bold={true}>
+            Software Engineer
+          </StyledSubtitleOne>
+          <StyledSubtitleTwo>
+            from Manchester
+          </StyledSubtitleTwo>
+        </StyledSubtitleBox>
+        <StyledCapturedBy>
+          Captured by
+          {' '}
+          <StyledCapturedBy
+            bold={true}
+            onClick={() => {}}
+          >
+            Shayan Rastegar
+          </StyledCapturedBy>
+        </StyledCapturedBy>
+      </StyledContent>
+    </StyledOuterContent>
   );
 };
 

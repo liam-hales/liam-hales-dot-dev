@@ -1,6 +1,7 @@
-import { Backdrop, CircularProgress } from '@mui/material';
+import { CircularProgress } from '@mui/material';
 import { FunctionComponent, ReactElement } from 'react';
 import { useIsFetching } from 'react-query';
+import { StyledBackgrop } from './loader.styled';
 
 /**
  * Used to indicate that the app is fetching
@@ -18,9 +19,9 @@ const Loader: FunctionComponent = (): ReactElement => {
   });
 
   return (
-    <Backdrop open={count > 0}>
+    <StyledBackgrop open={count > 0}>
       <CircularProgress />
-    </Backdrop>
+    </StyledBackgrop>
   );
 };
 

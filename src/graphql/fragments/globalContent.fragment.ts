@@ -12,6 +12,7 @@ const globalContentFragment = gql`
     linkedInUrl
     stackOverflowUrl
     buyMeCoffeeUrl
+    shayanRastegarUrl
     meImage {
       ...AssetFields
     }

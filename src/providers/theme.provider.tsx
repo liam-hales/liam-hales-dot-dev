@@ -1,6 +1,6 @@
 import { createTheme, ThemeProvider as MuiThemeProvider } from '@mui/material';
 import { FunctionComponent, ReactElement } from 'react';
-import { ColourPalette } from '../enums';
+import { ColourPalette, ScreenSize } from '../enums';
 import { BaseProps } from '../types';
 
 /**
@@ -31,6 +31,15 @@ const ThemeProvider: FunctionComponent<Props> = ({ children }): ReactElement<Pro
       },
       primary: {
         main: ColourPalette.BLUE,
+      },
+    },
+    breakpoints: {
+      values: {
+        [ScreenSize.EXTRA_SMALL]: 0,
+        [ScreenSize.SMALL]: 500,
+        [ScreenSize.MEDIUM]: 600,
+        [ScreenSize.LARGE]: 700,
+        [ScreenSize.EXTRA_LARGE]: 800,
       },
     },
     typography: {

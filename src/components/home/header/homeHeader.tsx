@@ -33,6 +33,10 @@ const HomeHeader: FunctionComponent<Props> = ({ className }): ReactElement<Props
     slug: PageSlug.HOME,
   });
 
+  const { shayanRastegarUrl } = usePageContent({
+    slug: PageSlug.GLOBAL,
+  });
+
   return (
     <StyledOuterContent className={className}>
       <StyledImage
@@ -63,7 +67,7 @@ const HomeHeader: FunctionComponent<Props> = ({ className }): ReactElement<Props
           {' '}
           <StyledCapturedBy
             bold={true}
-            onClick={() => {}}
+            onClick={() => window.open(shayanRastegarUrl, '_blank')}
           >
             Shayan Rastegar
           </StyledCapturedBy>

@@ -1,7 +1,8 @@
+import { useMediaQuery, useTheme } from '@mui/material';
 import { FunctionComponent, ReactElement } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BoxDirection, BoxAlignment, NavKey, NavRoute, ScreenSize, BoxJustify } from '../../../enums';
-import { useNav, useScreen } from '../../../hooks';
+import { BoxDirection, NavKey, NavRoute, ScreenSize, BoxJustify } from '../../../enums';
+import { useNav } from '../../../hooks';
 import { Tab } from '../../common';
 import { StyledBackground, StyledTopNav, StyledLogoSvg, StyledTabs } from './topNav.styled';
 
@@ -13,28 +14,29 @@ import { StyledBackground, StyledTopNav, StyledLogoSvg, StyledTabs } from './top
  */
 const TopNav: FunctionComponent = (): ReactElement => {
 
-  const navigate = useNavigate();
   const { navKey } = useNav();
-  const { screenSize } = useScreen();
+  const { breakpoints } = useTheme();
+
+  const navigate = useNavigate();
+  const belowMedium = useMediaQuery(breakpoints.down(ScreenSize.MEDIUM));
 
   return (
     <StyledBackground>
       <StyledTopNav
-        alignment={BoxAlignment.CENTER}
         direction={
-          (screenSize === ScreenSize.EXTRA_SMALL)
+          (belowMedium === true)
             ? BoxDirection.COLUMN
             : BoxDirection.ROW
         }
         justify={
-          (screenSize === ScreenSize.EXTRA_SMALL)
+          (belowMedium === true)
             ? BoxJustify.CENTER
             : BoxJustify.START
         }
       >
         <StyledLogoSvg />
         {
-          (screenSize !== ScreenSize.EXTRA_SMALL) && (
+          (belowMedium === false) && (
             <StyledTabs value={navKey}>
               <Tab
                 value={NavKey.HOME}

@@ -1,9 +1,9 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import { useMediaQuery, useTheme } from '@mui/material';
 import { BaseProps } from '../../types';
 import { ScreenSize } from '../../enums';
 import { TopNav, BottomNav } from '..';
-import { useScreen } from '../../hooks';
 
 /**
  * The `Nav` component props
@@ -19,13 +19,15 @@ type Props = BaseProps;
  */
 const Nav: FunctionComponent<Props> = ({ children }): ReactElement<Props> => {
 
-  const { screenSize } = useScreen();
+  const { breakpoints } = useTheme();
+  const belowMedium = useMediaQuery(breakpoints.down(ScreenSize.MEDIUM));
+
   return (
     <BrowserRouter>
       <TopNav />
       {children}
       {
-        (screenSize === ScreenSize.EXTRA_SMALL) && (
+        (belowMedium === true) && (
           <BottomNav />
         )
       }

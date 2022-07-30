@@ -2,6 +2,7 @@ import { writeFileSync } from 'fs';
 import { join } from 'path';
 import { FunctionComponent, ReactElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
+import { ColourPalette } from '../src/enums';
 
 /**
  * The component used to build the public `index.html` file
@@ -35,6 +36,7 @@ const Index: FunctionComponent = (): ReactElement => {
 
         <title>{title}</title>
         <meta name="description" content={description} />
+        <meta name="theme-color" content={ColourPalette.BLACK} />
 
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />

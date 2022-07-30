@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { BoxAlignment, BoxDirection } from '../../../enums';
+import { BoxAlignment, BoxDirection, BoxJustify } from '../../../enums';
 import { BaseProps } from '../../../types';
 import { StyledCard } from './card.styled';
 
@@ -9,6 +9,7 @@ import { StyledCard } from './card.styled';
 interface Props extends BaseProps {
   readonly direction?: BoxDirection;
   readonly alignment?: BoxAlignment;
+  readonly justify?: BoxJustify;
 }
 
 /**
@@ -18,12 +19,13 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `Card` component
  */
-const Card: FunctionComponent<Props> = ({ className, direction, alignment, children }): ReactElement<Props> => {
+const Card: FunctionComponent<Props> = ({ className, direction, alignment, justify, children }): ReactElement<Props> => {
   return (
     <StyledCard
       className={className}
       direction={direction}
       alignment={alignment}
+      justify={justify}
     >
       {children}
     </StyledCard>

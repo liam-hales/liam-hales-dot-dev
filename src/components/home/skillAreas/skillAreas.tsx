@@ -1,7 +1,7 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { BoxDirection, BoxJustify, IconId, TextAppearance } from '../../../enums';
+import { BoxDirection, BoxJustify, IconId, ScreenSize, TextAppearance } from '../../../enums';
 import { PageSlug } from '../../../graphql';
-import { usePageContent } from '../../../hooks';
+import { usePageContent, useScreen } from '../../../hooks';
 import { BaseProps } from '../../../types';
 import { Box } from '../../common';
 import { StyledCard, StyledDescription, StyledIcon, StyledTitle } from './skillAreas.styled';
@@ -20,6 +20,7 @@ type Props = BaseProps;
  */
 const SkillAreas: FunctionComponent<Props> = ({ className }): ReactElement<Props> => {
 
+  const { screenSize } = useScreen();
   const { frontendText, backendText, designText } = usePageContent({
     slug: PageSlug.HOME,
   });
@@ -28,9 +29,17 @@ const SkillAreas: FunctionComponent<Props> = ({ className }): ReactElement<Props
     <Box
       className={className}
       direction={BoxDirection.ROW}
-      justify={BoxJustify.SPACE_BETWEEN}
+      justify={
+        (screenSize === ScreenSize.EXTRA_SMALL)
+          ? BoxJustify.CENTER
+          : BoxJustify.SPACE_BETWEEN
+      }
+      wrap={true}
     >
-      <StyledCard>
+      <StyledCard
+        justify={BoxJustify.CENTER}
+        screenSize={screenSize}
+      >
         <StyledIcon id={IconId.CODE} />
         <StyledTitle bold={true}>
           Frontend
@@ -39,7 +48,10 @@ const SkillAreas: FunctionComponent<Props> = ({ className }): ReactElement<Props
           {frontendText}
         </StyledDescription>
       </StyledCard>
-      <StyledCard>
+      <StyledCard
+        justify={BoxJustify.CENTER}
+        screenSize={screenSize}
+      >
         <StyledIcon id={IconId.SERVER} />
         <StyledTitle bold={true}>
           Backend
@@ -48,7 +60,10 @@ const SkillAreas: FunctionComponent<Props> = ({ className }): ReactElement<Props
           {backendText}
         </StyledDescription>
       </StyledCard>
-      <StyledCard>
+      <StyledCard
+        justify={BoxJustify.CENTER}
+        screenSize={screenSize}
+      >
         <StyledIcon id={IconId.PAINT_FILL} />
         <StyledTitle bold={true}>
           Design

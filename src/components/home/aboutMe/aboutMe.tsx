@@ -1,6 +1,7 @@
+import { useMediaQuery, useTheme } from '@mui/material';
 import moment from 'moment';
 import { FunctionComponent, ReactElement } from 'react';
-import { BoxAlignment, BoxDirection, TextAppearance } from '../../../enums';
+import { BoxAlignment, BoxDirection, ScreenSize, TextAppearance } from '../../../enums';
 import { PageSlug } from '../../../graphql';
 import { usePageContent } from '../../../hooks';
 import { BaseProps } from '../../../types';
@@ -27,6 +28,9 @@ type Props = BaseProps;
  */
 const AboutMe: FunctionComponent<Props> = ({ className }): ReactElement<Props> => {
 
+  const { breakpoints } = useTheme();
+  const aboveSmall = useMediaQuery(breakpoints.up(ScreenSize.MEDIUM));
+
   const { meImage } = usePageContent({
     slug: PageSlug.GLOBAL,
   });
@@ -46,11 +50,15 @@ const AboutMe: FunctionComponent<Props> = ({ className }): ReactElement<Props> =
       direction={BoxDirection.ROW}
       alignment={BoxAlignment.START}
     >
-      <StyledMeImage
-        path={meImage.url}
-        alt="Liam Hales"
-        circle={true}
-      />
+      {
+        (aboveSmall === true) && (
+          <StyledMeImage
+            path={meImage.url}
+            alt="Liam Hales"
+            circle={true}
+          />
+        )
+      }
       <Box alignment={BoxAlignment.START}>
         <Title>
           About me

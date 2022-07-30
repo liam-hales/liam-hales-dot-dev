@@ -8,6 +8,8 @@ import { ColourPalette } from '../../../enums';
  */
 export const StyledTitle = styled(Text)`
   font-size: 34px;
+  line-height: 42px;
+  text-align: center;
 `;
 
 /**

@@ -7,7 +7,7 @@ import { Text } from '../../common';
  */
 export const StyledText = styled(Text)`
   max-width: 340px;
-  padding-top: 8px;
+  padding-top: 16px;
   padding-bottom: 32px;
   text-align: center;
 `;

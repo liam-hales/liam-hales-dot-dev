@@ -6,7 +6,7 @@ import { Text } from '../../common';
  * the `ProStatement` component statement text
  */
 export const StyledStatement = styled(Text)`
-  padding-top: 8px;
+  padding-top: 16px;
   padding-bottom: 20px;
   text-align: center;
 `;

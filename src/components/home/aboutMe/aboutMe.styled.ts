@@ -36,7 +36,7 @@ export const StyledSubtitle = styled(Text)`
  * the `AboutMe` component description text
  */
 export const StyledDescription = styled(Text)`
-  padding-top: 8px;
+  padding-top: 16px;
   padding-bottom: 10px;
 `;
 

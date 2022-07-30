@@ -8,6 +8,7 @@ interface StyledBoxProps {
   readonly direction: BoxDirection;
   readonly alignment: BoxAlignment;
   readonly justify: BoxJustify;
+  readonly wrap: boolean;
 }
 
 /**
@@ -19,4 +20,9 @@ export const StyledBox = styled('div')<StyledBoxProps>`
   flex-direction: ${(props) => props.direction};
   align-items: ${(props) => props.alignment};
   justify-content: ${(props) => props.justify};
+  flex-wrap: ${(props) => {
+    return (props.wrap === true)
+      ? 'wrap'
+      : 'nowrap';
+  }};
 `;

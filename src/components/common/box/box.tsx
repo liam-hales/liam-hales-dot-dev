@@ -10,6 +10,7 @@ interface Props extends BaseProps {
   readonly direction?: BoxDirection;
   readonly alignment?: BoxAlignment;
   readonly justify?: BoxJustify;
+  readonly wrap?: boolean;
 }
 
 /**
@@ -25,6 +26,7 @@ const Box: FunctionComponent<Props> = (props): ReactElement<Props> => {
     direction = BoxDirection.COLUMN,
     alignment = BoxAlignment.CENTER,
     justify = BoxJustify.START,
+    wrap = false,
     children,
   } = props;
 
@@ -34,6 +36,7 @@ const Box: FunctionComponent<Props> = (props): ReactElement<Props> => {
       direction={direction}
       alignment={alignment}
       justify={justify}
+      wrap={wrap}
     >
       {children}
     </StyledBox>

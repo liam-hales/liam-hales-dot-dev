@@ -1,6 +1,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { QueryStatus } from '../../enums';
 import { BaseProps } from '../../types';
+import { Error } from '..';
 
 /**
  * The `StatusHandler` component props
@@ -25,6 +26,14 @@ const StatusHandler: FunctionComponent<Props> = ({ status, children }): ReactEle
       <>
         {children}
       </>
+    );
+  }
+
+  // If the status is ERROR
+  // Render the Error component
+  if (status === QueryStatus.ERROR) {
+    return (
+      <Error />
     );
   }
 

@@ -15,6 +15,8 @@ import Nav from './nav/nav';
 import TopNav from './nav/top/topNav';
 import BottomNav from './nav/bottom/bottomNav';
 import StatusHandler from './statusHandler/statusHandler';
+import NotFound from './notFound/notFound';
+import Error from './error/error';
 
 export {
   Footer,
@@ -34,4 +36,6 @@ export {
   TopNav,
   BottomNav,
   StatusHandler,
+  NotFound,
+  Error,
 };

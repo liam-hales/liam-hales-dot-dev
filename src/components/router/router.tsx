@@ -1,7 +1,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { NavRoute } from '../../enums';
-import { HomeRoute } from '..';
+import { HomeRoute, NotFound } from '..';
 
 /**
  * Used to handle each app navigation route
@@ -16,6 +16,12 @@ const Router: FunctionComponent = (): ReactElement => {
         path={NavRoute.HOME}
         element={(
           <HomeRoute />
+        )}
+      />
+      <Route
+        path="*"
+        element={(
+          <NotFound />
         )}
       />
     </Routes>

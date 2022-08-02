@@ -7,7 +7,7 @@ import { ColourPalette } from '../../../enums';
  * for the `BottomNav` component
  */
 export const StyledBottomNav = styled(Box)`
-  position: sticky;
+  position: fixed;
   width: 100%;
   bottom: 0px;
   padding-top: 10px;

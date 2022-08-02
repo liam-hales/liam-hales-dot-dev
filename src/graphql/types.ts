@@ -33,6 +33,8 @@ export interface GlobalPageContent extends BasePageContent {
   readonly stackOverflowUrl: string;
   readonly buyMeCoffeeUrl: string;
   readonly shayanRastegarUrl: string;
+  readonly notFoundText: string;
+  readonly notFoundImage: Asset;
   readonly meImage: Asset;
 }
 

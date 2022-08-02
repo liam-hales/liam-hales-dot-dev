@@ -13,6 +13,10 @@ const globalContentFragment = gql`
     stackOverflowUrl
     buyMeCoffeeUrl
     shayanRastegarUrl
+    notFoundText
+    notFoundImage {
+      ...AssetFields
+    }
     meImage {
       ...AssetFields
     }

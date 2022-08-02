@@ -73,3 +73,11 @@ export const StyledBuiltUsing = styled(Text)`
   padding-top: 4px;
   font-size: 11px;
 `;
+
+/**
+ * The styled `div` component used for the `Footer` component
+ * spacer to fill the areas behind the `BottomNav`
+ */
+export const StyledSpacer = styled('div')`
+  height: 76px;
+`;

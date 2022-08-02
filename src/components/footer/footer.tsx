@@ -1,7 +1,8 @@
 import { FunctionComponent, ReactElement } from 'react';
 import moment from 'moment';
+import { useMediaQuery, useTheme } from '@mui/material';
 import { Content, SocialIcons } from '..';
-import { BoxDirection, BoxAlignment, TextAppearance, BoxJustify } from '../../enums';
+import { BoxDirection, BoxAlignment, TextAppearance, BoxJustify, ScreenSize } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { usePageContent } from '../../hooks';
 import { Text } from '../common';
@@ -15,6 +16,7 @@ import {
   StyledLogoSvg,
   StyledCopyrightBox,
   StyledBuiltUsing,
+  StyledSpacer,
 } from './footer.styled';
 
 /**
@@ -31,10 +33,12 @@ type Props = BaseProps;
  */
 const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> => {
 
+  const { breakpoints } = useTheme();
   const { footerText, builtUsingText } = usePageContent({
     slug: PageSlug.GLOBAL,
   });
 
+  const belowMedium = useMediaQuery(breakpoints.down(ScreenSize.MEDIUM));
   const year = moment
     .utc()
     .format('YYYY');
@@ -67,6 +71,11 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
           </StyledBuiltUsing>
         </StyledCopyrightBox>
       </Content>
+      {
+        (belowMedium === true) && (
+          <StyledSpacer />
+        )
+      }
     </div>
   );
 };

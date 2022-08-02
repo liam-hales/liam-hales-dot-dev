@@ -42,7 +42,7 @@ const AboutMe: FunctionComponent<Props> = ({ className }): ReactElement<Props> =
   // Calculate the years programming and
   // experience from the career start date
   const yearsExperience = moment.utc().diff(careerStartDate, 'years');
-  const yearsProgramming = yearsExperience + 2;
+  const yearsProgramming = (yearsExperience + 2).toString();
 
   return (
     <Box
@@ -64,7 +64,7 @@ const AboutMe: FunctionComponent<Props> = ({ className }): ReactElement<Props> =
           About me
         </Title>
         <StyledDescription appearance={TextAppearance.SECONDARY}>
-          {aboutMeText}
+          {aboutMeText.replace(/yearsProgramming/g, yearsProgramming)}
         </StyledDescription>
         <Box direction={BoxDirection.ROW}>
           <StyledFactBox direction={BoxDirection.ROW}>

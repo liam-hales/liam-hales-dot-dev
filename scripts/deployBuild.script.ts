@@ -4,6 +4,24 @@ import { join } from 'path';
 import { S3Client } from '@aws-sdk/client-s3';
 import { fromIni } from '@aws-sdk/credential-providers';
 import S3SyncClient from 's3-sync-client';
+import mime from 'mime-types';
+
+/**
+ * Attempts to lookup the correct content type
+ * (mime type) for the file key
+ *
+ * @param input The file input
+ * @returns The file content type
+ */
+const getContentType = (input: { Key: string }): string | undefined => {
+
+  // Lookup the content type from the file key and check
+  // if one has been found before returning it
+  const mimeType = mime.lookup(input.Key);
+  return (mimeType === false)
+    ? undefined
+    : mimeType;
+};
 
 /**
  * Used to deploy and sync the build files to the production
@@ -45,6 +63,7 @@ import S3SyncClient from 's3-sync-client';
     commandInput: {
       ServerSideEncryption: 'AES256',
       CacheControl: 'no-cache',
+      ContentType: getContentType,
     },
     filters: [
       {
@@ -60,6 +79,7 @@ import S3SyncClient from 's3-sync-client';
     commandInput: {
       ServerSideEncryption: 'AES256',
       CacheControl: 'max-age=31536000',
+      ContentType: getContentType,
     },
   });
 })();

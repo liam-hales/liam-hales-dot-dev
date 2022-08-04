@@ -30,6 +30,7 @@
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.128.0",
     "@aws-sdk/credential-providers": "^3.128.0",
+    "@types/mime-types": "^2.1.1",
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
@@ -40,6 +41,7 @@
     "eslint": "^8.14.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
+    "mime-types": "^2.1.35",
     "react-scripts": "5.0.1",
     "s3-sync-client": "^3.0.2",
     "sharp": "^0.30.7",

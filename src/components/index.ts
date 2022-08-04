@@ -17,6 +17,7 @@ import BottomNav from './nav/bottom/bottomNav';
 import StatusHandler from './statusHandler/statusHandler';
 import NotFound from './notFound/notFound';
 import Error from './error/error';
+import ComingSoon from './comingSoon/comingSoon';
 
 export {
   Footer,
@@ -38,4 +39,5 @@ export {
   StatusHandler,
   NotFound,
   Error,
+  ComingSoon,
 };

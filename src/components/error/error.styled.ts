@@ -1,5 +1,5 @@
 import { styled } from '@mui/material';
-import { Box, Text } from '../common';
+import { Text } from '../common';
 import { Content } from '..';
 
 /**
@@ -19,12 +19,4 @@ export const StyledText = styled(Text)`
   padding-top: 16px;
   padding-bottom: 38px;
   text-align: center;
-`;
-
-/**
- * The styled `Box` component used for
- * the `Error` component image
- */
-export const StyledButtonBox = styled(Box)`
-  width: 210px;
 `;

@@ -1,5 +1,5 @@
 import { styled } from '@mui/material';
-import { Box, Text, Image } from '../common';
+import { Text, Image } from '../common';
 import { Content } from '..';
 
 /**
@@ -38,12 +38,4 @@ export const StyledImage = styled(Image)`
   width: 320px;
   margin-top: 38px;
   margin-Bottom: 38px;
-`;
-
-/**
- * The styled `Box` component used for
- * the `NotFound` component image
- */
-export const StyledButtonBox = styled(Box)`
-  width: 210px;
 `;

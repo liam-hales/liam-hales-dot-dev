@@ -1,8 +1,8 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { Button, Title } from '../common';
 import { useRouter } from '../../hooks';
-import { TextAppearance, NavRoute, BoxDirection, BoxJustify } from '../../enums';
-import { StyledContent, StyledText, StyledButtonBox } from './error.styled';
+import { TextAppearance, NavRoute } from '../../enums';
+import { StyledContent, StyledText } from './error.styled';
 
 /**
  * Used to display an error message to the
@@ -12,7 +12,7 @@ import { StyledContent, StyledText, StyledButtonBox } from './error.styled';
  */
 const Error: FunctionComponent = (): ReactElement => {
 
-  const { goTo, goBack } = useRouter();
+  const { goTo } = useRouter();
   return (
     <StyledContent>
       <Title>
@@ -21,17 +21,9 @@ const Error: FunctionComponent = (): ReactElement => {
       <StyledText appearance={TextAppearance.SECONDARY}>
         Oops, looks like something went wrong. Please try refreshing the page.
       </StyledText>
-      <StyledButtonBox
-        direction={BoxDirection.ROW}
-        justify={BoxJustify.SPACE_BETWEEN}
-      >
-        <Button onClick={goBack}>
-          Go Back
-        </Button>
-        <Button onClick={() => goTo(NavRoute.HOME)}>
-          Return Home
-        </Button>
-      </StyledButtonBox>
+      <Button onClick={() => goTo(NavRoute.HOME)}>
+        Return Home
+      </Button>
     </StyledContent>
   );
 };

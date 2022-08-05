@@ -1,8 +1,7 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { NavRoute, TextAppearance } from '../../../enums';
 import { PageSlug } from '../../../graphql';
-import { usePageContent } from '../../../hooks';
+import { usePageContent, useRouter } from '../../../hooks';
 import { BaseProps } from '../../../types';
 import { Box, Button, Title } from '../../common';
 import { StyledText } from './stillInterested.styled';
@@ -21,7 +20,7 @@ type Props = BaseProps;
  */
 const StillInterested: FunctionComponent<Props> = ({ className }): ReactElement<Props> => {
 
-  const navigate = useNavigate();
+  const { goTo } = useRouter();
   const { stillInterestedText } = usePageContent({
     slug: PageSlug.HOME,
   });
@@ -34,7 +33,7 @@ const StillInterested: FunctionComponent<Props> = ({ className }): ReactElement<
       <StyledText appearance={TextAppearance.SECONDARY}>
         {stillInterestedText}
       </StyledText>
-      <Button onClick={() => navigate(NavRoute.CV)}>
+      <Button onClick={() => goTo(NavRoute.CV)}>
         Curriculum Vitae
       </Button>
     </Box>

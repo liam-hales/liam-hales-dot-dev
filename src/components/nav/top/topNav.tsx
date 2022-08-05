@@ -1,8 +1,7 @@
 import { useMediaQuery, useTheme } from '@mui/material';
 import { FunctionComponent, ReactElement } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { BoxDirection, NavKey, NavRoute, ScreenSize, BoxJustify } from '../../../enums';
-import { useNav } from '../../../hooks';
+import { useNav, useRouter } from '../../../hooks';
 import { Tab } from '../../common';
 import { StyledBackground, StyledTopNav, StyledLogoSvg, StyledTabs } from './topNav.styled';
 
@@ -16,8 +15,8 @@ const TopNav: FunctionComponent = (): ReactElement => {
 
   const { navKey } = useNav();
   const { breakpoints } = useTheme();
+  const { goTo } = useRouter();
 
-  const navigate = useNavigate();
   const belowMedium = useMediaQuery(breakpoints.down(ScreenSize.MEDIUM));
 
   return (
@@ -40,25 +39,25 @@ const TopNav: FunctionComponent = (): ReactElement => {
             <StyledTabs value={navKey}>
               <Tab
                 value={NavKey.HOME}
-                onClick={() => navigate(NavRoute.HOME)}
+                onClick={() => goTo(NavRoute.HOME)}
               >
                 Home
               </Tab>
               <Tab
                 value={NavKey.CV}
-                onClick={() => navigate(NavRoute.CV)}
+                onClick={() => goTo(NavRoute.CV)}
               >
                 CV
               </Tab>
               <Tab
                 value={NavKey.BLOG}
-                onClick={() => navigate(NavRoute.BLOG)}
+                onClick={() => goTo(NavRoute.BLOG)}
               >
                 Blog
               </Tab>
               <Tab
                 value={NavKey.BRAND}
-                onClick={() => navigate(NavRoute.BRAND)}
+                onClick={() => goTo(NavRoute.BRAND)}
               >
                 Brand
               </Tab>

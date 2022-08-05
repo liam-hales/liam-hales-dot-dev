@@ -1,7 +1,6 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { IconId, NavKey, NavRoute } from '../../../enums';
-import { useNav } from '../../../hooks';
+import { useNav, useRouter } from '../../../hooks';
 import { Text } from '../../common';
 import {
   StyledBottomNav,
@@ -18,7 +17,7 @@ import {
  */
 const BottomNav: FunctionComponent = (): ReactElement => {
 
-  const navigate = useNavigate();
+  const { goTo } = useRouter();
   const { navKey } = useNav();
 
   return (
@@ -26,7 +25,7 @@ const BottomNav: FunctionComponent = (): ReactElement => {
       <StyledBottomNavigation value={navKey}>
         <StyledBottomNavigationAction
           value={NavKey.HOME}
-          onClick={() => navigate(NavRoute.HOME)}
+          onClick={() => goTo(NavRoute.HOME)}
           label={(
             <Text bold={true}>
               Home
@@ -38,7 +37,7 @@ const BottomNav: FunctionComponent = (): ReactElement => {
         />
         <StyledBottomNavigationAction
           value={NavKey.CV}
-          onClick={() => navigate(NavRoute.CV)}
+          onClick={() => goTo(NavRoute.CV)}
           label={(
             <Text bold={true}>
               CV
@@ -50,7 +49,7 @@ const BottomNav: FunctionComponent = (): ReactElement => {
         />
         <StyledBottomNavigationAction
           value={NavKey.BLOG}
-          onClick={() => navigate(NavRoute.BLOG)}
+          onClick={() => goTo(NavRoute.BLOG)}
           label={(
             <Text bold={true}>
               Blog
@@ -62,7 +61,7 @@ const BottomNav: FunctionComponent = (): ReactElement => {
         />
         <StyledBottomNavigationAction
           value={NavKey.BRAND}
-          onClick={() => navigate(NavRoute.BRAND)}
+          onClick={() => goTo(NavRoute.BRAND)}
           label={(
             <Text bold={true}>
               Brand

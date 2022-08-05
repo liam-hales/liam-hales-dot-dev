@@ -17,12 +17,34 @@ import sharp from 'sharp';
     mkdirSync(iconsPath);
   }
 
+  // Define the favicon size and rect used to
+  // cut out the icon so it has rounded corners
+  const faviconSize = 64;
+  const faviconRect = Buffer.from(
+    `<svg>
+      <rect
+        x="0"
+        y="0"
+        width="${faviconSize}"
+        height="${faviconSize}"
+        rx="10"
+        ry="10"
+      />
+    </svg>`,
+  );
+
   // Use sharp to convert the SVG files to WebP files, resize
   // and output them to file within the public directory
 
   await sharp(logoIconPath)
     .webp()
-    .resize(64, 64)
+    .resize(faviconSize, faviconSize)
+    .composite([
+      {
+        input: faviconRect,
+        blend: 'dest-in',
+      },
+    ])
     .toFile(`${publicPath}/favicon.ico`);
 
   await sharp(logoIconPath)

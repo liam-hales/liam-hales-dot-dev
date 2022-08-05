@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { NavRoute } from '../enums';
+import { useNav } from '.';
 
 /**
  * The `UseRouter` hook response
@@ -23,8 +24,16 @@ interface UseRouterResponse {
 const useRouter = (): UseRouterResponse => {
 
   const navigate = useNavigate();
+  const { navRoute } = useNav();
 
   const goTo = (route: NavRoute): void => {
+
+    // Just return if the user is already on said route to avoid
+    // scrolling to the top of a page they are already oon
+    if (navRoute === route) {
+      return;
+    }
+
     window.scrollTo(0, 0);
     navigate(route);
   };

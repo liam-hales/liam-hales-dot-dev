@@ -36,7 +36,6 @@ export enum ScreenSize {
  * the `useQuery` hook
  */
 export enum QueryStatus {
-  PENDING = 'PENDING',
   LOADING = 'LOADING',
   SUCCESS = 'SUCCESS',
   ERROR = 'ERROR',

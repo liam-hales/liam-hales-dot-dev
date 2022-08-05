@@ -1,13 +1,13 @@
 import { CircularProgress } from '@mui/material';
 import { FunctionComponent, ReactElement } from 'react';
-import { useIsFetching } from 'react-query';
+import { useIsFetching } from '@tanstack/react-query';
 import { StyledBackgrop } from './loader.styled';
 
 /**
  * Used to indicate that the app is fetching
  * data by rendering a progress spinner.
  *
- * Uses the `useIsFetching` hook from `react-query`
+ * Uses the `useIsFetching` hook from `@tanstack/react-query`
  * to determine if a query is being fetched
  *
  * @returns The `Loader` component
@@ -15,7 +15,16 @@ import { StyledBackgrop } from './loader.styled';
 const Loader: FunctionComponent = (): ReactElement => {
 
   const count = useIsFetching({
-    fetching: false,
+    predicate: (query) => {
+
+      // The `status` is only 'loading' on initial load which is
+      // when we want to display the loader. This is not the case
+      // for the `fetchStatus` when set to `fetching
+      const { state } = query;
+      const { status } = state;
+
+      return (status === 'loading');
+    },
   });
 
   return (

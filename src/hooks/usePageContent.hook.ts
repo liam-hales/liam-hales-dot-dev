@@ -1,4 +1,4 @@
-import { useQueryClient } from 'react-query';
+import { useQueryClient } from '@tanstack/react-query';
 import { PageSlug } from '../graphql/enums';
 import { PageContent, PageData, PageVariables } from '../graphql/types';
 import { generateCacheKey } from '../helpers';
@@ -25,7 +25,7 @@ const usePageContent = <T extends PageSlug>(
   // the query data from the client cache using the cache key
   const cacheKey = generateCacheKey(variables);
   const client = useQueryClient();
-  const page = client.getQueryData<PageData<T>>(cacheKey);
+  const page = client.getQueryData<PageData<T>>([cacheKey]);
 
   // Check if the page exists
   // If not then throw an error

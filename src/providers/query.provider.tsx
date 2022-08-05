@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { BaseProps } from '../types';
 
 /**
@@ -9,7 +9,7 @@ type Props = BaseProps;
 
 /**
  * Used to wrap the `children` in the
- * `QueryClientProvider` from `react-query`
+ * `QueryClientProvider` from `@tanstack/react-query`
  *
  * @param props The component props
  * @returns The `QueryProvider` component

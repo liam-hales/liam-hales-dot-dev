@@ -1,4 +1,4 @@
-import { useQuery as _useQuery, QueryStatus as _QueryStatus } from 'react-query';
+import { useQuery as _useQuery, QueryStatus as _QueryStatus } from '@tanstack/react-query';
 import { request } from 'graphql-request';
 import { dataTransformer, generateCacheKey } from '../helpers';
 import { QueryStatus } from '../enums';
@@ -15,7 +15,7 @@ interface UseQueryResponse<T extends Record<keyof T, unknown>> {
 
 /**
  * Used to make a request to the GraphQL API using
- * `graphql-request` and `react-query` under the hood
+ * `graphql-request` and `@tanstack/react-query` under the hood
  *
  * Generic type `T` for the response data.
  * Generic Type `V` for the request variables.
@@ -42,7 +42,7 @@ const useQuery = <
 
   const { apiUrl } = useConfig();
   const { status, data } = _useQuery<T>({
-    queryKey: cacheKey,
+    queryKey: [cacheKey],
     queryFn: async () => {
 
       // Make the GraphQL request and get
@@ -59,10 +59,9 @@ const useQuery = <
     },
   });
 
-  // Define the status map to map between the react-query
+  // Define the status map to map between the @tanstack/react-query
   // query status and the app query status
   const statusMap: Record<_QueryStatus, QueryStatus> = {
-    idle: QueryStatus.PENDING,
     loading: QueryStatus.LOADING,
     success: QueryStatus.SUCCESS,
     error: QueryStatus.ERROR,

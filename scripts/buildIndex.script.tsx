@@ -16,10 +16,7 @@ const Index: FunctionComponent = (): ReactElement => {
   const title = `${name}, Software Engineer | Manchester`;
   const description = 'Software Engineer from Manchester. My job is to craft clean looking front end apps and build robust backend API\'s that scale and house the brains of an application.';
   const url = 'https://liamhales.dev';
-
-  const publicPath = join(process.cwd(), '/public');
-  const iconsPath = join(publicPath, '/icons');
-  const coverPath = `${publicPath}/cover.webp`;
+  const coverUrl = `${url}/cover.webp`;
 
   return (
     <html lang="en">
@@ -35,23 +32,24 @@ const Index: FunctionComponent = (): ReactElement => {
         <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,400;0,800;1,400;1,800&display=swap" rel="stylesheet" />
 
         <title>{title}</title>
+        <meta name="title" content={title} />
         <meta name="description" content={description} />
         <meta name="theme-color" content={ColourPalette.BLACK} />
 
         <meta property="og:type" content="website" />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content={coverPath} />
+        <meta property="og:image" content={coverUrl} />
         <meta property="og:url" content={url} />
         <meta property="og:site_name" content={name} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={coverPath} />
+        <meta name="twitter:image" content={coverUrl} />
         <meta name="twitter:url" content={url} />
 
-        <link rel="apple-touch-icon" href={`${iconsPath}/icon-180x180.webp`} />
+        <link rel="apple-touch-icon" href="/icons/icon-180x180.webp" />
       </head>
       <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>

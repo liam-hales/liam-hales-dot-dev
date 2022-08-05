@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { TextAppearance } from '../../../enums';
+import { BoxAlignment, TextAppearance } from '../../../enums';
 import { PageSlug } from '../../../graphql';
 import { usePageContent } from '../../../hooks';
 import { BaseProps } from '../../../types';
@@ -25,14 +25,14 @@ const ProStatement: FunctionComponent<Props> = ({ className }): ReactElement<Pro
   });
 
   return (
-    <Box className={className}>
+    <Box
+      className={className}
+      alignment={BoxAlignment.START}
+    >
       <Title>
         Professional Statement
       </Title>
-      <StyledStatement
-        appearance={TextAppearance.SECONDARY}
-        italic={true}
-      >
+      <StyledStatement appearance={TextAppearance.SECONDARY}>
         {proStatementText}
       </StyledStatement>
       <Text bold={true}>

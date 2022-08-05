@@ -8,5 +8,4 @@ import { Text } from '../../common';
 export const StyledStatement = styled(Text)`
   padding-top: 16px;
   padding-bottom: 20px;
-  text-align: center;
 `;

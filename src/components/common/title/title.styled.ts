@@ -7,9 +7,8 @@ import { ColourPalette } from '../../../enums';
  * the `Title` component title text
  */
 export const StyledTitle = styled(Text)`
-  font-size: 34px;
-  line-height: 42px;
-  text-align: center;
+  font-size: 38px;
+  line-height: 46px;
 `;
 
 /**

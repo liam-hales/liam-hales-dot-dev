@@ -6,6 +6,7 @@ import Global from './global/global';
 import SocialIcons from './socialIcons/socialIcons';
 import HomeHeader from './home/header/homeHeader';
 import AboutMe from './home/aboutMe/aboutMe';
+import SkillAreaCard from './home/skillAreaCard/skillAreaCard';
 import SkillAreas from './home/skillAreas/skillAreas';
 import ProStatement from './home/proStatement/proStatement';
 import StillInterested from './home/stillInterested/stillInterested';
@@ -28,6 +29,7 @@ export {
   SocialIcons,
   HomeHeader,
   AboutMe,
+  SkillAreaCard,
   SkillAreas,
   ProStatement,
   StillInterested,

@@ -47,8 +47,8 @@ export enum QueryStatus {
  */
 export enum NavKey {
   HOME = 'home',
-  BLOG = 'blog',
   CV = 'cv',
+  BLOG = 'blog',
   BRAND = 'brand',
 }
 

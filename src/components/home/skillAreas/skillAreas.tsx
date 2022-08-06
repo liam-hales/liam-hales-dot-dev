@@ -1,10 +1,10 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { BoxDirection, BoxJustify, IconId, ScreenSize, TextAppearance } from '../../../enums';
+import { BoxDirection, BoxJustify, IconId, ScreenSize } from '../../../enums';
 import { PageSlug } from '../../../graphql';
 import { usePageContent, useScreen } from '../../../hooks';
 import { BaseProps } from '../../../types';
 import { Box } from '../../common';
-import { StyledCard, StyledDescription, StyledIcon, StyledTitle } from './skillAreas.styled';
+import { SkillAreaCard } from '../..';
 
 /**
  * The `SkillAreas` component props
@@ -36,42 +36,21 @@ const SkillAreas: FunctionComponent<Props> = ({ className }): ReactElement<Props
       }
       wrap={true}
     >
-      <StyledCard
-        justify={BoxJustify.CENTER}
-        screenSize={screenSize}
-      >
-        <StyledIcon id={IconId.CODE} />
-        <StyledTitle bold={true}>
-          Frontend
-        </StyledTitle>
-        <StyledDescription appearance={TextAppearance.SECONDARY}>
-          {frontendText}
-        </StyledDescription>
-      </StyledCard>
-      <StyledCard
-        justify={BoxJustify.CENTER}
-        screenSize={screenSize}
-      >
-        <StyledIcon id={IconId.SERVER} />
-        <StyledTitle bold={true}>
-          Backend
-        </StyledTitle>
-        <StyledDescription appearance={TextAppearance.SECONDARY}>
-          {backendText}
-        </StyledDescription>
-      </StyledCard>
-      <StyledCard
-        justify={BoxJustify.CENTER}
-        screenSize={screenSize}
-      >
-        <StyledIcon id={IconId.PAINT_FILL} />
-        <StyledTitle bold={true}>
-          Design
-        </StyledTitle>
-        <StyledDescription appearance={TextAppearance.SECONDARY}>
-          {designText}
-        </StyledDescription>
-      </StyledCard>
+      <SkillAreaCard
+        title="Frontend"
+        description={frontendText}
+        iconId={IconId.CODE}
+      />
+      <SkillAreaCard
+        title="Backend"
+        description={backendText}
+        iconId={IconId.SERVER}
+      />
+      <SkillAreaCard
+        title="Design"
+        description={designText}
+        iconId={IconId.PAINT_FILL}
+      />
     </Box>
   );
 };

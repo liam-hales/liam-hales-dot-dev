@@ -17,8 +17,8 @@ interface StyledTypographyProps {
  */
 const textColourMap: Record<TextAppearance, ColourPalette> = {
   [TextAppearance.PRIMARY]: ColourPalette.WHITE,
-  [TextAppearance.SECONDARY]: ColourPalette.GREY,
-  [TextAppearance.SUBTLE]: ColourPalette.GREY,
+  [TextAppearance.SECONDARY]: ColourPalette.LIGHT_GREY,
+  [TextAppearance.SUBTLE]: ColourPalette.LIGHT_GREY,
 };
 
 /**

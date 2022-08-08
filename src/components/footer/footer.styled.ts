@@ -8,7 +8,7 @@ import { Box, Text } from '../common';
  * the `Footer` component
  */
 export const StyledDivider = styled(Divider)`
-  background-color: ${ColourPalette.DARK_GREY};
+  background-color: ${ColourPalette.GREY};
 `;
 
 /**

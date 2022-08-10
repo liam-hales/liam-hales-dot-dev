@@ -7,6 +7,7 @@ import Image from './image/image';
 import Icon from './icon/icon';
 import Tabs from './tabs/tabs';
 import Tab from './tabs/tab/tab';
+import Typewriter from './typewriter/typewriter';
 
 export {
   Box,
@@ -18,4 +19,5 @@ export {
   Icon,
   Tabs,
   Tab,
+  Typewriter,
 };

@@ -3,6 +3,7 @@ import { PageSlug } from '../../../graphql';
 import { usePageContent } from '../../../hooks';
 import { BaseProps } from '../../../types';
 import { BoxAlignment, BoxJustify } from '../../../enums';
+import { Typewriter } from '../../common';
 import {
   StyledOuterContent,
   StyledImage,
@@ -10,8 +11,7 @@ import {
   StyledContent,
   StyledSubtitleBox,
   StyledTitle,
-  StyledSubtitleOne,
-  StyledSubtitleTwo,
+  StyledSubtitle,
   StyledCapturedBy,
 } from './homeHeader.styled';
 
@@ -55,12 +55,26 @@ const HomeHeader: FunctionComponent<Props> = ({ className }): ReactElement<Props
           Liam Hales.
         </StyledTitle>
         <StyledSubtitleBox alignment={BoxAlignment.START}>
-          <StyledSubtitleOne bold={true}>
-            Software Engineer
-          </StyledSubtitleOne>
-          <StyledSubtitleTwo>
-            from Manchester
-          </StyledSubtitleTwo>
+          <StyledSubtitle bold={true}>
+            <Typewriter
+              onInit={(typewriter) => {
+                typewriter
+                  .typeString('Software dev')
+                  .pauseFor(100)
+                  .deleteChars(4)
+                  .typeString('<br/>Engineer from<br/>manny')
+                  .pauseFor(200)
+                  .deleteChars(5)
+                  .typeString('Manchester.')
+                  .pauseFor(10000)
+                  .typeString('<br/>¯\\_(ツ)_/¯')
+                  .pauseFor(1000)
+                  .deleteChars(10)
+                  .typeString('.')
+                  .start();
+              }}
+            />
+          </StyledSubtitle>
         </StyledSubtitleBox>
         <StyledCapturedBy>
           Captured by

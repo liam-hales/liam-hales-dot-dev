@@ -47,7 +47,7 @@ export const StyledContent = styled(Content)`
  */
 export const StyledSubtitleBox = styled(Box)`
   padding-top: 22px;
-  padding-bottom: 156px;
+  padding-bottom: 74px;
   padding-left: 6px;
 `;
 
@@ -65,18 +65,10 @@ export const StyledTitle = styled(Text)`
  * The styled `Text` component used for
  * the `HomeHeader` component subtitle text
  */
-export const StyledSubtitleOne = styled(Text)`
-  font-size: 28px;
-  line-height: 30px;
-`;
-
-/**
- * The styled `Text` component used for
- * the `HomeHeader` component subtitle text
- */
-export const StyledSubtitleTwo = styled(Text)`
-  font-size: 20px;
-  line-height: 30px;
+export const StyledSubtitle = styled(Text)`
+  height: 140px;
+  font-size: clamp(28px, 7vw, 42px);
+  line-height: 110%;
 `;
 
 /**

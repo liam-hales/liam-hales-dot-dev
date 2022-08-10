@@ -11,7 +11,7 @@ export const StyledBottomNav = styled(Box)`
   width: 100%;
   bottom: 0px;
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: calc(10px + env(safe-area-inset-bottom));
   padding-left: 10px;
   padding-right: 10px;
   z-index: 1;

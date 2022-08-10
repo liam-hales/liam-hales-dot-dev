@@ -1,5 +1,6 @@
 import Footer from './footer/footer';
 import App from './app/app';
+import SafeArea from './safeArea/safeArea';
 import Content from './content/content';
 import Loader from './loader/loader';
 import Global from './global/global';
@@ -23,6 +24,7 @@ import ComingSoon from './comingSoon/comingSoon';
 export {
   Footer,
   App,
+  SafeArea,
   Content,
   Loader,
   Global,

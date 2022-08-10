@@ -15,7 +15,7 @@ export const StyledAboutMe = styled(AboutMe)`
  */
 export const StyledSkillAreas = styled(SkillAreas)`
   width: 100%;
-  padding-top: 68px;
+  padding-top: 48px;
 `;
 
 /**
@@ -23,7 +23,7 @@ export const StyledSkillAreas = styled(SkillAreas)`
  * for the `HomeRoute` component
  */
 export const StyledProStatement = styled(ProStatement)`
-  padding-top: 96px;
+  padding-top: 60px;
 `;
 
 /**

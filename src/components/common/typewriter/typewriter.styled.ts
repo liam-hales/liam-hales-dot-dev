@@ -2,7 +2,7 @@ import { styled } from '@mui/material';
 
 /**
  * The styled `div` component used for
- * the `Typewriter` componet
+ * the `Typewriter` component
  */
 export const StyledDiv = styled('div')`
   @keyframes cursor {

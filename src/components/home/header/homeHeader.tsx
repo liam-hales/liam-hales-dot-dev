@@ -2,7 +2,7 @@ import { FunctionComponent, ReactElement } from 'react';
 import { PageSlug } from '../../../graphql';
 import { usePageContent } from '../../../hooks';
 import { BaseProps } from '../../../types';
-import { BoxAlignment, BoxJustify } from '../../../enums';
+import { BoxAlignment, BoxJustify, TextElement } from '../../../enums';
 import { Typewriter } from '../../common';
 import {
   StyledOuterContent,
@@ -51,11 +51,17 @@ const HomeHeader: FunctionComponent<Props> = ({ className }): ReactElement<Props
         alignment={BoxAlignment.START}
         justify={BoxJustify.END}
       >
-        <StyledTitle bold={true}>
+        <StyledTitle
+          bold={true}
+          element={TextElement.H1}
+        >
           Liam Hales.
         </StyledTitle>
         <StyledSubtitleBox alignment={BoxAlignment.START}>
-          <StyledSubtitle bold={true}>
+          <StyledSubtitle
+            bold={true}
+            element={TextElement.H2}
+          >
             <Typewriter
               onInit={(typewriter) => {
                 typewriter

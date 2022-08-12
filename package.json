@@ -57,7 +57,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "lint": "eslint \"**/*.{ts,tsx}\"",
-    "unused-code": "ts-prune index.ts --error --ignore",
+    "unused-code": "ts-prune --error --ignore index.ts",
     "build-images": "ts-node ./scripts/buildImages.script.ts",
     "build-index": "ts-node ./scripts/buildIndex.script.tsx",
     "deploy-build": "ts-node ./scripts/deployBuild.script.ts",

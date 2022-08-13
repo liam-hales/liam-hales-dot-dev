@@ -1,15 +1,6 @@
-import { styled, Divider } from '@mui/material';
-import { ColourPalette } from '../../enums';
+import { styled } from '@mui/material';
 import { LogoSvg } from '../../svgs';
 import { Box, Text } from '../common';
-
-/**
- * The styled `Divider` component used for
- * the `Footer` component
- */
-export const StyledDivider = styled(Divider)`
-  background-color: ${ColourPalette.GREY};
-`;
 
 /**
  * The styled `Box` component used for

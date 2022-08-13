@@ -5,10 +5,9 @@ import { Content, SocialIcons } from '..';
 import { BoxDirection, BoxAlignment, TextAppearance, BoxJustify, ScreenSize } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { usePageContent } from '../../hooks';
-import { Text } from '../common';
+import { Divider, Text } from '../common';
 import { BaseProps } from '../../types';
 import {
-  StyledDivider,
   StyledBox,
   StyledInfoBox,
   StyledTitle,
@@ -45,7 +44,7 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
 
   return (
     <div className={className}>
-      <StyledDivider />
+      <Divider />
       <Content alignment={BoxAlignment.START}>
         <StyledBox
           direction={BoxDirection.ROW}

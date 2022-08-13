@@ -8,6 +8,7 @@ import Icon from './icon/icon';
 import Tabs from './tabs/tabs';
 import Tab from './tabs/tab/tab';
 import Typewriter from './typewriter/typewriter';
+import Divider from './divider/divider';
 
 export {
   Box,
@@ -20,4 +21,5 @@ export {
   Tabs,
   Tab,
   Typewriter,
+  Divider,
 };

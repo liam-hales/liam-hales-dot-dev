@@ -4,9 +4,9 @@ import { ColourPalette } from '../../../enums';
 
 /**
  * The styled `Text` component used for
- * the `Title` component title text
+ * the `Title` component text
  */
-export const StyledTitle = styled(Text)`
+export const StyledText = styled(Text)`
   font-size: 38px;
   line-height: 122%;
 `;

@@ -1,7 +1,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { TextElement } from '../../../enums';
 import { BaseProps } from '../../../types';
-import { StyledTitle, StyledFullStop } from './title.styled';
+import { StyledText, StyledFullStop } from './title.styled';
 
 /**
  * The `Title` component props
@@ -17,7 +17,7 @@ type Props = BaseProps;
  */
 const Title: FunctionComponent<Props> = ({ className, children }): ReactElement<Props> => {
   return (
-    <StyledTitle
+    <StyledText
       className={className}
       bold={true}
       element={TextElement.H2}
@@ -26,7 +26,7 @@ const Title: FunctionComponent<Props> = ({ className, children }): ReactElement<
       <StyledFullStop bold={true}>
         .
       </StyledFullStop>
-    </StyledTitle>
+    </StyledText>
   );
 };
 

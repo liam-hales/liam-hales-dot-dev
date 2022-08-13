@@ -21,7 +21,7 @@ import {
 type Props = BaseProps;
 
 /**
- * Renders the header for the home page which
+ * Renders the header used for the home page which
  * is rendered within the `HomeRoute` component
  *
  * @param props The component props

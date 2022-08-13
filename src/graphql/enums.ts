@@ -5,7 +5,7 @@
 export enum PageSlug {
   GLOBAL = 'GLOBAL',
   HOME = 'HOME',
-  CURRICULUM_VITAE = 'CURRICULUM_VITAE',
+  CV = 'CV',
   BLOG = 'BLOG',
   BRANDING = 'BRANDING',
 }

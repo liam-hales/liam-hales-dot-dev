@@ -5,6 +5,7 @@ import Content from './content/content';
 import Loader from './loader/loader';
 import Global from './global/global';
 import SocialIcons from './socialIcons/socialIcons';
+import Header from './header/header';
 import HomeHeader from './home/header/homeHeader';
 import AboutMe from './home/aboutMe/aboutMe';
 import SkillAreaCard from './home/skillAreaCard/skillAreaCard';
@@ -29,6 +30,7 @@ export {
   Loader,
   Global,
   SocialIcons,
+  Header,
   HomeHeader,
   AboutMe,
   SkillAreaCard,

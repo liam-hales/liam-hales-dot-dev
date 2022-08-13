@@ -7,11 +7,9 @@ import { usePageContent } from '../../../hooks';
 import { BaseProps } from '../../../types';
 import { Box, Title } from '../../common';
 import {
-  StyledDescription,
-  StyledFactBox,
-  StyledFactNumber,
   StyledMeImage,
-  StyledSubtitle,
+  StyledDescription,
+  StyledStat,
 } from './aboutMe.styled';
 
 /**
@@ -42,7 +40,7 @@ const AboutMe: FunctionComponent<Props> = ({ className }): ReactElement<Props> =
   // Calculate the years programming and
   // experience from the career start date
   const yearsExperience = moment.utc().diff(careerStartDate, 'years');
-  const yearsProgramming = (yearsExperience + 2).toString();
+  const yearsProgramming = yearsExperience + 2;
 
   return (
     <Box
@@ -64,25 +62,17 @@ const AboutMe: FunctionComponent<Props> = ({ className }): ReactElement<Props> =
           About me
         </Title>
         <StyledDescription appearance={TextAppearance.SECONDARY}>
-          {aboutMeText.replace(/yearsProgramming/g, yearsProgramming)}
+          {aboutMeText.replace(/yearsProgramming/g, yearsProgramming.toString())}
         </StyledDescription>
         <Box direction={BoxDirection.ROW}>
-          <StyledFactBox direction={BoxDirection.ROW}>
-            <StyledFactNumber bold={true}>
-              {yearsProgramming}
-            </StyledFactNumber>
-            <StyledSubtitle bold={true}>
-              Years Of Programming
-            </StyledSubtitle>
-          </StyledFactBox>
-          <StyledFactBox direction={BoxDirection.ROW}>
-            <StyledFactNumber bold={true}>
-              {yearsExperience}
-            </StyledFactNumber>
-            <StyledSubtitle bold={true}>
-              Years Of Experience
-            </StyledSubtitle>
-          </StyledFactBox>
+          <StyledStat
+            value={yearsProgramming}
+            text="Years Of Programming"
+          />
+          <StyledStat
+            value={yearsExperience}
+            text="Years Of Experience"
+          />
         </Box>
       </Box>
     </Box>

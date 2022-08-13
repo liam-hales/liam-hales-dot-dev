@@ -1,6 +1,6 @@
 import { styled } from '@mui/material';
-import { ColourPalette } from '../../../enums';
-import { Box, Text, Image } from '../../common';
+import { Text, Image } from '../../common';
+import { Stat } from '../..';
 
 /**
  * The styled `Image` component used
@@ -15,23 +15,6 @@ export const StyledMeImage = styled(Image)`
 `;
 
 /**
- * The styled `Box` component used for
- * the `AboutMe` component facts
- */
-export const StyledFactBox = styled(Box)`
-  padding-right: 42px;
-`;
-
-/**
- * The styled `Text` component used for
- * the `AboutMe` component subtitle text
- */
-export const StyledSubtitle = styled(Text)`
-  max-width: 100px;
-  padding-left: 10px;
-`;
-
-/**
  * The styled `Text` component used for
  * the `AboutMe` component description text
  */
@@ -41,10 +24,9 @@ export const StyledDescription = styled(Text)`
 `;
 
 /**
- * The styled `Text` component used for
- * the `AboutMe` component fact number text
+ * The styled `Box` component used for
+ * the `AboutMe` component stat
  */
-export const StyledFactNumber = styled(Text)`
-  font-size: 56px;
-  color: ${ColourPalette.BLUE};
+export const StyledStat = styled(Stat)`
+  padding-right: 42px;
 `;

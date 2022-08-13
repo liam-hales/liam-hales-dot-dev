@@ -5,6 +5,7 @@ import Content from './content/content';
 import Loader from './loader/loader';
 import Global from './global/global';
 import SocialIcons from './socialIcons/socialIcons';
+import Stat from './stat/stat';
 import Header from './header/header';
 import HomeHeader from './home/header/homeHeader';
 import AboutMe from './home/aboutMe/aboutMe';
@@ -30,6 +31,7 @@ export {
   Loader,
   Global,
   SocialIcons,
+  Stat,
   Header,
   HomeHeader,
   AboutMe,

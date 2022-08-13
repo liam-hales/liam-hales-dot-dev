@@ -17,7 +17,7 @@ export const StyledContent = styled(Content)`
 export const Styled404 = styled(Text)`
   padding-right: 6px;
   font-size: 110px;
-  line-height: 110px;
+  line-height: 100%;
 `;
 
 /**

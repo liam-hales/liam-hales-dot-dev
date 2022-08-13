@@ -8,7 +8,7 @@ import { ColourPalette } from '../../../enums';
  */
 export const StyledTitle = styled(Text)`
   font-size: 38px;
-  line-height: 46px;
+  line-height: 122%;
 `;
 
 /**
@@ -16,7 +16,7 @@ export const StyledTitle = styled(Text)`
  * the `Title` component full stop text
  */
 export const StyledFullStop = styled(Text)`
-  font-size: 54px;
+  font-size: 56px;
   line-height: 0px;
   color: ${ColourPalette.BLUE};
 `;

@@ -16,7 +16,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mui/material": "^5.7.0",
-    "@mui/styled-engine": "npm:@mui/styled-engine-sc",
+    "@mui/styled-engine": "npm:@mui/styled-engine-sc@^5.7.0",
     "@mui/styled-engine-sc": "^5.7.0",
     "@tanstack/react-query": "^4.0.10",
     "graphql": "^16.5.0",
@@ -51,7 +51,7 @@
     "typescript": "^4.4.2"
   },
   "resolutions": {
-    "@mui/styled-engine": "npm:@mui/styled-engine-sc"
+    "@mui/styled-engine": "npm:@mui/styled-engine-sc@^5.7.0"
   },
   "scripts": {
     "start": "react-scripts start",

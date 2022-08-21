@@ -33,26 +33,23 @@ const CurrentPosition: FunctionComponent<Props> = ({ className }): ReactElement<
   return (
     <Box
       className={className}
-      direction={BoxDirection.ROW}
       alignment={BoxAlignment.START}
     >
-      <Box alignment={BoxAlignment.START}>
-        <Title>
-          Current Position
-        </Title>
-        <StyledDescription appearance={TextAppearance.SECONDARY}>
-          {currentPositionText}
-        </StyledDescription>
-        <Box direction={BoxDirection.ROW}>
-          <StyledStat
-            value={yearsInIndustry}
-            text="Years in the Industry"
-          />
-          <StyledStat
-            value={yearsAtCompany}
-            text="Years at ANS Group"
-          />
-        </Box>
+      <Title>
+        Current Position
+      </Title>
+      <StyledDescription appearance={TextAppearance.SECONDARY}>
+        {currentPositionText}
+      </StyledDescription>
+      <Box direction={BoxDirection.ROW}>
+        <StyledStat
+          value={yearsInIndustry}
+          text="Years in the Industry"
+        />
+        <StyledStat
+          value={yearsAtCompany}
+          text="Years at ANS Group"
+        />
       </Box>
     </Box>
   );

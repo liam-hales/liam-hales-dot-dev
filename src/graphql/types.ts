@@ -56,13 +56,25 @@ export interface HomePageContent extends BasePageContent {
 }
 
 /**
+ * Describes the curriculum vitae page content which
+ * is specific to the curriculum vitae page only
+ */
+export interface CurriculumVitaePageContent extends BasePageContent {
+  readonly slug: PageSlug.CV;
+  readonly currentPositionText: string;
+  readonly careerStartDate: Moment;
+  readonly companyStartDate: Moment;
+}
+
+/**
  * The union type for all page content types.
  * Generic type `T` for the page slug
  */
 export type PageContent<T extends PageSlug> =
   T extends PageSlug.GLOBAL ? GlobalPageContent :
     T extends PageSlug.HOME ? HomePageContent :
-      never;
+      T extends PageSlug.CV ? CurriculumVitaePageContent :
+        never;
 
 /**
  * Describes the image asset which is used

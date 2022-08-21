@@ -6,5 +6,5 @@ import { CurrentPosition } from '../..';
  * for the `CurriculumVitaeRoute` component
  */
 export const StyledCurrentPosition = styled(CurrentPosition)`
-  padding-top: 60px;
+  padding-top: 50px;
 `;

@@ -8,8 +8,8 @@ import { Text } from '../common';
  * the `Header` component content
  */
 export const StyledContent = styled(Content)`
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 60px;
+  padding-bottom: 50px;
 `;
 
 /**
@@ -17,6 +17,7 @@ export const StyledContent = styled(Content)`
  * the `Header` component title text
  */
 export const StyledTitle = styled(Text)`
+  max-width: 400px;
   font-size: clamp(58px, 15vw, 78px);
   line-height: 100%;
 `;

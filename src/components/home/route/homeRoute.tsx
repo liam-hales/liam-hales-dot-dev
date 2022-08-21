@@ -11,7 +11,7 @@ import {
 
 /**
  * Fetches the home page data and renders the
- * components that make up the apps home page
+ * components that make up the app home page
  *
  * @returns The `HomeRoute` component
  */

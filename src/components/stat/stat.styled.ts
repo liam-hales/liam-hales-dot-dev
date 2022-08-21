@@ -16,6 +16,6 @@ export const StyledValue = styled(Text)`
  * the `Stat` component text
  */
 export const StyledText = styled(Text)`
-  max-width: 100px;
+  max-width: 90px;
   padding-left: 10px;
 `;

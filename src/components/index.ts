@@ -14,6 +14,7 @@ import SkillAreas from './home/skillAreas/skillAreas';
 import ProStatement from './home/proStatement/proStatement';
 import StillInterested from './home/stillInterested/stillInterested';
 import HomeRoute from './home/route/homeRoute';
+import CurrentPosition from './curriculumVitae/currentPosition/currentPosition';
 import Router from './router/router';
 import Nav from './nav/nav';
 import TopNav from './nav/top/topNav';
@@ -40,6 +41,7 @@ export {
   ProStatement,
   StillInterested,
   HomeRoute,
+  CurrentPosition,
   Router,
   Nav,
   TopNav,

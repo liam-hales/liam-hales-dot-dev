@@ -7,4 +7,5 @@ import { ColourPalette } from '../../../enums';
  */
 export const StyledDivider = styled(Divider)`
   background-color: ${ColourPalette.GREY};
+  opacity: 0.46;
 `;

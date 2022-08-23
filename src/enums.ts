@@ -15,7 +15,7 @@ export enum ColourPalette {
   WHITE = '#ffffff',
   BLACK = '#000000',
   LIGHT_GREY = '#aaaaaa',
-  GREY = '#121212',
+  GREY = '#262626',
   DARK_GREY = '#0e0e0e',
   BLUE = '#66a2c6',
 }

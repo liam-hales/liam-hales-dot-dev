@@ -10,6 +10,7 @@ import Tab from './tabs/tab/tab';
 import Typewriter from './typewriter/typewriter';
 import Divider from './divider/divider';
 import Timeline from './timeline/timeline';
+import TimelineEvent from './timeline/event/timelineEvent';
 
 export {
   Box,
@@ -24,4 +25,5 @@ export {
   Typewriter,
   Divider,
   Timeline,
+  TimelineEvent,
 };

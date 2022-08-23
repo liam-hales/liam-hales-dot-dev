@@ -9,6 +9,7 @@ import Tabs from './tabs/tabs';
 import Tab from './tabs/tab/tab';
 import Typewriter from './typewriter/typewriter';
 import Divider from './divider/divider';
+import Timeline from './timeline/timeline';
 
 export {
   Box,
@@ -22,4 +23,5 @@ export {
   Tab,
   Typewriter,
   Divider,
+  Timeline,
 };

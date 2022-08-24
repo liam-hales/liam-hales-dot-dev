@@ -11,28 +11,13 @@ interface ScreenSizeProps {
 }
 
 /**
- * The card width map for the dfferent
- * `ScreenSize` values
- */
-const cardWidthMap: Record<ScreenSize, string> = {
-  [ScreenSize.EXTRA_SMALL]: '100%',
-  [ScreenSize.SMALL]: 'calc((100% / 2) - 10px)',
-  [ScreenSize.MEDIUM]: 'calc((100% / 2) - 10px)',
-  [ScreenSize.LARGE]: 'calc((100% / 3) - 10px)',
-  [ScreenSize.EXTRA_LARGE]: 'calc((100% / 3) - 10px)',
-};
-
-/**
  * The styled `Card` component used for
  * the `SkillAreaCard` component
  */
 export const StyledCard = styled(Card)<ScreenSizeProps>`
-  width: ${(props) => cardWidthMap[props.screenSize]};
   height: ${(props) => (props.screenSize === ScreenSize.EXTRA_SMALL) ? 120 : 200}px;
   padding-left: 20px;
   padding-right: 20px;
-  margin-top: 10px;
-  margin-bottom: 10px;
 `;
 
 /**

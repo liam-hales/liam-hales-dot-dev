@@ -4,7 +4,7 @@ import { PageSlug } from '../../../graphql';
 import { usePageContent, useScreen } from '../../../hooks';
 import { BaseProps } from '../../../types';
 import { Box } from '../../common';
-import { SkillAreaCard } from '../..';
+import { StyledCard } from './skillAreas.styled';
 
 /**
  * The `SkillAreas` component props
@@ -36,20 +36,23 @@ const SkillAreas: FunctionComponent<Props> = ({ className }): ReactElement<Props
       }
       wrap={true}
     >
-      <SkillAreaCard
+      <StyledCard
         title="Frontend"
         description={frontendText}
         iconId={IconId.CODE}
+        screenSize={screenSize}
       />
-      <SkillAreaCard
+      <StyledCard
         title="Backend"
         description={backendText}
         iconId={IconId.SERVER}
+        screenSize={screenSize}
       />
-      <SkillAreaCard
+      <StyledCard
         title="Design"
         description={designText}
         iconId={IconId.PAINT_FILL}
+        screenSize={screenSize}
       />
     </Box>
   );

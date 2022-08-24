@@ -21,11 +21,12 @@ interface Props extends BaseProps {
   * @param props The component props
   * @returns The `SkillAreaCard` component
   */
-const SkillAreaCard: FunctionComponent<Props> = ({ title, description, iconId }): ReactElement<Props> => {
+const SkillAreaCard: FunctionComponent<Props> = ({ className, title, description, iconId }): ReactElement<Props> => {
 
   const { screenSize } = useScreen();
   return (
     <StyledCard
+      className={className}
       direction={
         (screenSize === ScreenSize.EXTRA_SMALL)
           ? BoxDirection.ROW

@@ -8,6 +8,7 @@ import { StyledItemBox, StyledChildBox, StyledDot, StyledConnector } from './tim
  * The `Timeline` component props
  */
 interface Props extends BaseProps {
+  trailingConnector?: boolean;
   children: ReactElement[];
 }
 
@@ -18,7 +19,13 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `Timeline` component
  */
-const Timeline: FunctionComponent<Props> = ({ className, children }): ReactElement<Props> => {
+const Timeline: FunctionComponent<Props> = (props): ReactElement<Props> => {
+  const {
+    className,
+    trailingConnector = false,
+    children,
+  } = props;
+
   return (
     <Box
       className={className}
@@ -34,7 +41,11 @@ const Timeline: FunctionComponent<Props> = ({ className, children }): ReactEleme
             >
               <StyledConnector
                 first={index === 0}
-                last={index === (children.length - 1)}
+                last={
+                  (trailingConnector === false)
+                    ? index === (children.length - 1)
+                    : false
+                }
               />
               <StyledDot />
               <StyledChildBox>

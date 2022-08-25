@@ -15,6 +15,7 @@ import ProStatement from './home/proStatement/proStatement';
 import StillInterested from './home/stillInterested/stillInterested';
 import HomeRoute from './home/route/homeRoute';
 import CurrentPosition from './curriculumVitae/currentPosition/currentPosition';
+import LifeTimelinePreview from './curriculumVitae/lifeTimelinePreview/lifeTimelinePreview';
 import CurriculumVitaeRoute from './curriculumVitae/route/curriculumVitaeRoute';
 import Router from './router/router';
 import Nav from './nav/nav';
@@ -43,6 +44,7 @@ export {
   StillInterested,
   HomeRoute,
   CurrentPosition,
+  LifeTimelinePreview,
   CurriculumVitaeRoute,
   Router,
   Nav,

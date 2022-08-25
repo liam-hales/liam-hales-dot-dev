@@ -60,6 +60,7 @@ export enum NavKey {
 export enum NavRoute {
   HOME = '/',
   CV = '/cv',
+  LIFE_TIMELINE = '/cv/life-timeline',
   BLOG = '/blog',
   BRAND = '/brand',
 }

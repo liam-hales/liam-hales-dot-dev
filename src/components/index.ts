@@ -13,10 +13,8 @@ import SkillAreaCard from './home/skillAreaCard/skillAreaCard';
 import SkillAreas from './home/skillAreas/skillAreas';
 import ProStatement from './home/proStatement/proStatement';
 import StillInterested from './home/stillInterested/stillInterested';
-import HomeRoute from './home/route/homeRoute';
 import CurrentPosition from './curriculumVitae/currentPosition/currentPosition';
 import LifeTimelinePreview from './curriculumVitae/lifeTimelinePreview/lifeTimelinePreview';
-import CurriculumVitaeRoute from './curriculumVitae/route/curriculumVitaeRoute';
 import Router from './router/router';
 import Nav from './nav/nav';
 import TopNav from './nav/top/topNav';
@@ -42,10 +40,8 @@ export {
   SkillAreas,
   ProStatement,
   StillInterested,
-  HomeRoute,
   CurrentPosition,
   LifeTimelinePreview,
-  CurriculumVitaeRoute,
   Router,
   Nav,
   TopNav,

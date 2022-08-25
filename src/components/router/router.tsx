@@ -1,7 +1,8 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { NavRoute } from '../../enums';
-import { HomeRoute, CurriculumVitaeRoute, ComingSoon, NotFound } from '..';
+import { ComingSoon, NotFound } from '..';
+import { HomeRoute, CurriculumVitaeRoute } from '../route';
 
 /**
  * Used to handle each app navigation route

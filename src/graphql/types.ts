@@ -64,6 +64,8 @@ export interface CurriculumVitaePageContent extends BasePageContent {
   readonly currentPositionText: string;
   readonly careerStartDate: Moment;
   readonly companyStartDate: Moment;
+  readonly lifeTimelineText: string;
+  readonly lifeTimelineEvents: TimelineEvent[];
 }
 
 /**
@@ -77,12 +79,22 @@ export type PageContent<T extends PageSlug> =
         never;
 
 /**
- * Describes the image asset which is used
- * within the page data or content
+ * Describes the asset which contains data
+ * about the uploaded asset such as the URL
  */
 export interface Asset {
   readonly fileName: string;
   readonly url: string;
+}
+
+/**
+ * Describes a specific event
+ * in a timeline
+ */
+export interface TimelineEvent {
+  readonly title: string;
+  readonly description: string;
+  readonly date: Moment;
 }
 
 /**

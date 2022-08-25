@@ -9,6 +9,10 @@ const curriculumVitaeContentFragment = gql`
     currentPositionText
     careerStartDate
     companyStartDate
+    lifeTimelineText
+    lifeTimelineEvents {
+      ...TimelineEventFields
+    }
   }
 `;
 

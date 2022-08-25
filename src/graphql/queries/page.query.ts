@@ -1,6 +1,7 @@
 import { gql } from 'graphql-request';
 import {
   assetFragment,
+  timelineEventFragment,
   globalContentFragment,
   homeContentFragment,
   curriculumVitaeContentFragment,
@@ -42,6 +43,7 @@ const pageQuery = gql`
     }
   }
   ${assetFragment}
+  ${timelineEventFragment}
   ${globalContentFragment}
   ${homeContentFragment}
   ${curriculumVitaeContentFragment}

@@ -19,9 +19,15 @@ const dataTransformer = (
   // Check if the value is a string
   if (typeof value === 'string') {
 
-    // Check if the key includes 'Date'
-    // If so then parse the value with moment and return it
-    if (key.includes('Date') === true) {
+    // Check if the key (lowercased)
+    // includes the 'date'
+    const isDate = key
+      .toLowerCase()
+      .includes('date');
+
+    // If the value is a date then parse
+    // he it with moment and return it
+    if (isDate === true) {
       return moment.utc(value);
     }
   }

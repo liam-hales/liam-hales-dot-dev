@@ -1,6 +1,6 @@
 import { styled } from '@mui/material';
-import { SkillAreaCard } from '../..';
-import { ScreenSize } from '../../../enums';
+import { SkillAreaCard } from '..';
+import { ScreenSize } from '../../enums';
 
 /**
  * The `StyledCard` component props

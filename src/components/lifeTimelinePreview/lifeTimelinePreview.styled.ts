@@ -1,5 +1,5 @@
 import { styled } from '@mui/material';
-import { Button, Text, Timeline } from '../../common';
+import { Button, Text, Timeline } from '../common';
 
 /**
  * The styled `Text` component used for

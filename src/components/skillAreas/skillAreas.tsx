@@ -1,9 +1,9 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { BoxDirection, BoxJustify, IconId, ScreenSize } from '../../../enums';
-import { PageSlug } from '../../../graphql';
-import { usePageContent, useScreen } from '../../../hooks';
-import { BaseProps } from '../../../types';
-import { Box } from '../../common';
+import { BoxDirection, BoxJustify, IconId, ScreenSize } from '../../enums';
+import { PageSlug } from '../../graphql';
+import { usePageContent, useScreen } from '../../hooks';
+import { BaseProps } from '../../types';
+import { Box } from '../common';
 import { StyledCard } from './skillAreas.styled';
 
 /**

@@ -1,5 +1,5 @@
 import { styled } from '@mui/material';
-import { Text } from '../../common';
+import { Text } from '../common';
 
 /**
  * The styled `Text` component used

@@ -1,9 +1,9 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { NavRoute, TextAppearance } from '../../../enums';
-import { PageSlug } from '../../../graphql';
-import { usePageContent, useRouter } from '../../../hooks';
-import { BaseProps } from '../../../types';
-import { Box, Button, Title } from '../../common';
+import { NavRoute, TextAppearance } from '../../enums';
+import { PageSlug } from '../../graphql';
+import { usePageContent, useRouter } from '../../hooks';
+import { BaseProps } from '../../types';
+import { Box, Button, Title } from '../common';
 import { StyledText } from './stillInterested.styled';
 
 /**

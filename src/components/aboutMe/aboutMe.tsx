@@ -1,16 +1,12 @@
 import { useMediaQuery, useTheme } from '@mui/material';
 import moment from 'moment';
 import { FunctionComponent, ReactElement } from 'react';
-import { BoxAlignment, BoxDirection, ScreenSize, TextAppearance } from '../../../enums';
-import { PageSlug } from '../../../graphql';
-import { usePageContent } from '../../../hooks';
-import { BaseProps } from '../../../types';
-import { Box, Title } from '../../common';
-import {
-  StyledMeImage,
-  StyledDescription,
-  StyledStat,
-} from './aboutMe.styled';
+import { BoxAlignment, BoxDirection, ScreenSize, TextAppearance } from '../../enums';
+import { PageSlug } from '../../graphql';
+import { usePageContent } from '../../hooks';
+import { BaseProps } from '../../types';
+import { Box, Title } from '../common';
+import { StyledMeImage, StyledDescription, StyledStat } from './aboutMe.styled';
 
 /**
  * The `AboutMe` component props

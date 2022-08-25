@@ -1,9 +1,9 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { BoxAlignment, TextAppearance } from '../../../enums';
-import { PageSlug } from '../../../graphql';
-import { usePageContent } from '../../../hooks';
-import { BaseProps } from '../../../types';
-import { Box, Title, Text } from '../../common';
+import { BoxAlignment, TextAppearance } from '../../enums';
+import { PageSlug } from '../../graphql';
+import { usePageContent } from '../../hooks';
+import { BaseProps } from '../../types';
+import { Box, Title, Text } from '../common';
 import { StyledStatement } from './proStatement.styled';
 
 /**

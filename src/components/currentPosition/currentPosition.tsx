@@ -1,10 +1,10 @@
 import { FunctionComponent, ReactElement } from 'react';
 import moment from 'moment';
-import { BoxAlignment, BoxDirection, TextAppearance } from '../../../enums';
-import { PageSlug } from '../../../graphql';
-import { usePageContent } from '../../../hooks';
-import { BaseProps } from '../../../types';
-import { Box, Title } from '../../common';
+import { BoxAlignment, BoxDirection, TextAppearance } from '../../enums';
+import { PageSlug } from '../../graphql';
+import { usePageContent } from '../../hooks';
+import { BaseProps } from '../../types';
+import { Box, Title } from '../common';
 import { StyledDescription, StyledStat } from './currentPosition.styled';
 
 /**

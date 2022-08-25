@@ -1,6 +1,6 @@
 import { styled } from '@mui/material';
-import { Text, Image } from '../../common';
-import { Stat } from '../..';
+import { Text, Image } from '../common';
+import { Stat } from '..';
 
 /**
  * The styled `Image` component used

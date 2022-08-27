@@ -24,7 +24,7 @@ export const StyledTimeline = styled(Timeline)`
 
 /**
  * The styled `Button` component used for the
- * `LifeTimelinePreview` component see mre button
+ * `LifeTimelinePreview` component see more button
  */
 export const StyledButton = styled(Button)`
   margin-left: 26px;

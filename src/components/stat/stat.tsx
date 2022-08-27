@@ -13,7 +13,7 @@ interface Props extends BaseProps {
 }
 
 /**
- * Used to display a stat and render
+ * Used to render a stat and display
  * it's value and description text
  *
  * @param props The component props

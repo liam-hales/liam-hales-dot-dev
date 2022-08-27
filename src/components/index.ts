@@ -7,6 +7,7 @@ import Global from './global/global';
 import SocialIcons from './socialIcons/socialIcons';
 import Stat from './stat/stat';
 import Grid from './grid/grid';
+import SkillCard from './skills/card/skillCard';
 import Header from './header/header';
 import HomeHeader from './header/home/homeHeader';
 import AboutMe from './aboutMe/aboutMe';
@@ -35,6 +36,7 @@ export {
   SocialIcons,
   Stat,
   Grid,
+  SkillCard,
   Header,
   HomeHeader,
   AboutMe,

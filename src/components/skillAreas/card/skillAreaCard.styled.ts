@@ -14,8 +14,10 @@ interface ScreenSizeProps {
  * The styled `Card` component used for
  * the `SkillAreaCard` component
  */
-export const StyledCard = styled(Card)<ScreenSizeProps>`
-  height: ${(props) => (props.screenSize === ScreenSize.EXTRA_SMALL) ? 120 : 200}px;
+export const StyledCard = styled(Card)`
+  width: 100%;
+  padding-top: 24px;
+  padding-bottom: 24px;
   padding-left: 20px;
   padding-right: 20px;
 `;

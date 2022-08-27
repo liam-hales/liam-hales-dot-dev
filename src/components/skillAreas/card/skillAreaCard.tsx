@@ -33,7 +33,6 @@ const SkillAreaCard: FunctionComponent<Props> = ({ className, title, description
           : BoxDirection.COLUMN
       }
       justify={BoxJustify.CENTER}
-      screenSize={screenSize}
     >
       <StyledIcon
         id={iconId}

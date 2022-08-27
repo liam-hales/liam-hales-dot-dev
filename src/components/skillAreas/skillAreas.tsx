@@ -1,10 +1,9 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { BoxDirection, BoxJustify, IconId, ScreenSize } from '../../enums';
+import { IconId } from '../../enums';
 import { PageSlug } from '../../graphql';
-import { usePageContent, useScreen } from '../../hooks';
+import { usePageContent } from '../../hooks';
 import { BaseProps } from '../../types';
-import { Box } from '../common';
-import { StyledCard } from './skillAreas.styled';
+import { Grid, SkillAreaCard } from '..';
 
 /**
  * The `SkillAreas` component props
@@ -20,41 +19,28 @@ type Props = BaseProps;
  */
 const SkillAreas: FunctionComponent<Props> = ({ className }): ReactElement<Props> => {
 
-  const { screenSize } = useScreen();
   const { frontendText, backendText, designText } = usePageContent({
     slug: PageSlug.HOME,
   });
 
   return (
-    <Box
-      className={className}
-      direction={BoxDirection.ROW}
-      justify={
-        (screenSize === ScreenSize.EXTRA_SMALL)
-          ? BoxJustify.CENTER
-          : BoxJustify.SPACE_BETWEEN
-      }
-      wrap={true}
-    >
-      <StyledCard
+    <Grid className={className}>
+      <SkillAreaCard
         title="Frontend"
         description={frontendText}
         iconId={IconId.CODE}
-        screenSize={screenSize}
       />
-      <StyledCard
+      <SkillAreaCard
         title="Backend"
         description={backendText}
         iconId={IconId.SERVER}
-        screenSize={screenSize}
       />
-      <StyledCard
+      <SkillAreaCard
         title="Design"
         description={designText}
         iconId={IconId.PAINT_FILL}
-        screenSize={screenSize}
       />
-    </Box>
+    </Grid>
   );
 };
 

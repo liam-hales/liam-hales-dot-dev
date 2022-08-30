@@ -61,6 +61,7 @@ export enum NavRoute {
   HOME = '/',
   CV = '/cv',
   LIFE_TIMELINE = '/cv/life-timeline',
+  SKILLS = '/cv/skills',
   BLOG = '/blog',
   BRAND = '/brand',
 }

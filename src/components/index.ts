@@ -17,6 +17,7 @@ import ProStatement from './proStatement/proStatement';
 import StillInterested from './stillInterested/stillInterested';
 import CurrentPosition from './currentPosition/currentPosition';
 import LifeTimelinePreview from './lifeTimelinePreview/lifeTimelinePreview';
+import SkillsPreview from './skills/preview/skillsPreview';
 import Router from './router/router';
 import Nav from './nav/nav';
 import TopNav from './nav/top/topNav';
@@ -46,6 +47,7 @@ export {
   StillInterested,
   CurrentPosition,
   LifeTimelinePreview,
+  SkillsPreview,
   Router,
   Nav,
   TopNav,

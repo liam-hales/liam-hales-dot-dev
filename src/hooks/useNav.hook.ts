@@ -27,7 +27,7 @@ const useNav = (): UseNavResponse => {
     ? NavKey.HOME
     : Object
       .values(NavKey)
-      .find((value) => pathname.includes(value));
+      .find((value) => pathname.split('/')[1] === value);
 
   // Attempt to match the path with one
   // of the nav route enum values

@@ -76,9 +76,9 @@ export interface CurriculumVitaePageContent extends BasePageContent {
  */
 export type PageContent<T extends PageSlug> =
   T extends PageSlug.GLOBAL ? GlobalPageContent :
-    T extends PageSlug.HOME ? HomePageContent :
-      T extends PageSlug.CV ? CurriculumVitaePageContent :
-        never;
+  T extends PageSlug.HOME ? HomePageContent :
+  T extends PageSlug.CV ? CurriculumVitaePageContent :
+  never;
 
 /**
  * Describes the asset which contains data
@@ -121,7 +121,7 @@ export type PageVariables<T extends PageSlug> =
   & (
     T extends PageSlug.BLOG
       ? {
-        readonly blogPostSlug?: string;
-      }
+          readonly blogPostSlug?: string;
+        }
       : unknown
   );

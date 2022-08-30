@@ -2,7 +2,11 @@ import { FunctionComponent, ReactElement } from 'react';
 import { StatusHandler, Header, Content } from '../..';
 import { PageSlug } from '../../../graphql';
 import { usePageQuery } from '../../../hooks';
-import { StyledCurrentPosition, StyledLifeTimelinePreview } from './curriculumVitaeRoute.styled';
+import {
+  StyledCurrentPosition,
+  StyledSkillsPreview,
+  StyledLifeTimelinePreview,
+} from './curriculumVitaeRoute.styled';
 
 /**
  * Fetches the curriculum vitae page data and renders the
@@ -21,6 +25,7 @@ const CurriculumVitaeRoute: FunctionComponent = (): ReactElement => {
       <Header title="Curriculum Vitae" />
       <Content>
         <StyledCurrentPosition />
+        <StyledSkillsPreview />
         <StyledLifeTimelinePreview />
       </Content>
     </StatusHandler>

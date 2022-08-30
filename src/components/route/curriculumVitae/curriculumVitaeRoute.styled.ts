@@ -1,5 +1,5 @@
 import { styled } from '@mui/material';
-import { CurrentPosition, LifeTimelinePreview } from '../..';
+import { CurrentPosition, LifeTimelinePreview, SkillsPreview } from '../..';
 
 /**
  * The styled `CurrentPosition` component used
@@ -10,9 +10,17 @@ export const StyledCurrentPosition = styled(CurrentPosition)`
 `;
 
 /**
+ * The styled `SkillsPreview` component used
+ * for the `CurriculumVitaeRoute` component
+ */
+export const StyledSkillsPreview = styled(SkillsPreview)`
+  padding-top: 70px;
+`;
+
+/**
  * The styled `LifeTimelinePreview` component used
  * for the `CurriculumVitaeRoute` component
  */
 export const StyledLifeTimelinePreview = styled(LifeTimelinePreview)`
-  padding-top: 60px;
+ padding-top: 80px;
 `;

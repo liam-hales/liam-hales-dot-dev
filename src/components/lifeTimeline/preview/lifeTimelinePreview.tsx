@@ -1,9 +1,9 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { BoxAlignment, NavRoute, TextAppearance } from '../../enums';
-import { PageSlug } from '../../graphql';
-import { usePageContent, useRouter } from '../../hooks';
-import { BaseProps } from '../../types';
-import { Box, Title, TimelineEvent } from '../common';
+import { BoxAlignment, NavRoute, TextAppearance } from '../../../enums';
+import { PageSlug } from '../../../graphql';
+import { usePageContent, useRouter } from '../../../hooks';
+import { BaseProps } from '../../../types';
+import { Box, Title, TimelineEvent } from '../../common';
 import { StyledDescription, StyledTimeline, StyledButton } from './lifeTimelinePreview.styled';
 
 /**

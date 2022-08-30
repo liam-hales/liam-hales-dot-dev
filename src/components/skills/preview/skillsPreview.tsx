@@ -45,7 +45,7 @@ const SkillsPreview: FunctionComponent<Props> = ({ className }): ReactElement<Pr
             .map((skill) => {
 
               // Destructure the skill and return
-              // the skill card compnent
+              // the skill card component
               const { name, type, image } = skill;
               return (
                 <SkillCard

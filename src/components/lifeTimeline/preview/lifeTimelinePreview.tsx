@@ -41,7 +41,7 @@ const LifeTimelinePreview: FunctionComponent<Props> = ({ className }): ReactElem
           lifeTimelineEvents.map((event) => {
 
             // Destructure the timeline event and
-            // return the timeline event compnent
+            // return the timeline event component
             const { title, description, date } = event;
             return (
               <TimelineEvent

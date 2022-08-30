@@ -54,7 +54,7 @@ const LifeTimelinePreview: FunctionComponent<Props> = ({ className }): ReactElem
         }
       </StyledTimeline>
       <StyledButton onClick={() => goTo(NavRoute.LIFE_TIMELINE)}>
-        See More
+        See full timeline
       </StyledButton>
     </Box>
   );

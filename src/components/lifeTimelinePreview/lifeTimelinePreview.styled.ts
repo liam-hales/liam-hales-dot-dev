@@ -17,7 +17,7 @@ export const StyledTimeline = styled(Timeline)`
   padding-top: 46px;
   mask-image: linear-gradient(
     to bottom,
-    black 50%,
+    black 36%,
     transparent 100%
   );
 `;
@@ -27,5 +27,6 @@ export const StyledTimeline = styled(Timeline)`
  * `LifeTimelinePreview` component see more button
  */
 export const StyledButton = styled(Button)`
-  margin-left: 26px;
+  margin-top: -12px;
+  align-self: center;
 `;

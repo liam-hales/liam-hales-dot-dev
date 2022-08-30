@@ -71,6 +71,15 @@ export interface CurriculumVitaePageContent extends BasePageContent {
 }
 
 /**
+ * Describes the life timeline page content which
+ * is specific to the life timeline page only
+ */
+export interface LifeTimelinePageContent extends BasePageContent {
+  readonly slug: PageSlug.LIFE_TIMELINE;
+  readonly timelineEvents: TimelineEvent[];
+}
+
+/**
  * The union type for all page content types.
  * Generic type `T` for the page slug
  */
@@ -78,6 +87,7 @@ export type PageContent<T extends PageSlug> =
   T extends PageSlug.GLOBAL ? GlobalPageContent :
   T extends PageSlug.HOME ? HomePageContent :
   T extends PageSlug.CV ? CurriculumVitaePageContent :
+  T extends PageSlug.LIFE_TIMELINE ? LifeTimelinePageContent :
   never;
 
 /**

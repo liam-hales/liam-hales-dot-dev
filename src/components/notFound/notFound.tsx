@@ -34,7 +34,7 @@ const NotFound: FunctionComponent = (): ReactElement => {
         alt="Not found image"
       />
       <Button onClick={() => goTo(NavRoute.HOME)}>
-        Return Home
+        Return home
       </Button>
     </StyledContent>
   );

@@ -17,7 +17,8 @@ const TopNav: FunctionComponent = (): ReactElement => {
   const { breakpoints } = useTheme();
   const { goTo } = useRouter();
 
-  const belowMedium = useMediaQuery(breakpoints.down(ScreenSize.MEDIUM));
+  const mediaQuery = breakpoints.down(ScreenSize.MEDIUM);
+  const belowMedium = useMediaQuery(mediaQuery);
 
   return (
     <StyledBackground>

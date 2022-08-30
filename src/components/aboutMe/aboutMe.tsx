@@ -1,7 +1,7 @@
 import { useMediaQuery, useTheme } from '@mui/material';
 import moment from 'moment';
 import { FunctionComponent, ReactElement } from 'react';
-import { BoxAlignment, BoxDirection, ScreenSize, TextAppearance } from '../../enums';
+import { BoxAlignment, BoxDirection, ImageRoundness, ScreenSize, TextAppearance } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { usePageContent } from '../../hooks';
 import { BaseProps } from '../../types';
@@ -23,7 +23,9 @@ type Props = BaseProps;
 const AboutMe: FunctionComponent<Props> = ({ className }): ReactElement<Props> => {
 
   const { breakpoints } = useTheme();
-  const aboveSmall = useMediaQuery(breakpoints.up(ScreenSize.MEDIUM));
+
+  const mediaQuery = breakpoints.up(ScreenSize.MEDIUM);
+  const aboveSmall = useMediaQuery(mediaQuery);
 
   const { meImage } = usePageContent({
     slug: PageSlug.GLOBAL,
@@ -49,7 +51,7 @@ const AboutMe: FunctionComponent<Props> = ({ className }): ReactElement<Props> =
           <StyledMeImage
             path={meImage.url}
             alt="Liam Hales"
-            circle={true}
+            roundness={ImageRoundness.CIRCLE}
           />
         )
       }

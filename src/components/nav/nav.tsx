@@ -20,7 +20,9 @@ type Props = BaseProps;
 const Nav: FunctionComponent<Props> = ({ children }): ReactElement<Props> => {
 
   const { breakpoints } = useTheme();
-  const belowMedium = useMediaQuery(breakpoints.down(ScreenSize.MEDIUM));
+
+  const mediaQuery = breakpoints.down(ScreenSize.MEDIUM);
+  const belowMedium = useMediaQuery(mediaQuery);
 
   return (
     <BrowserRouter>

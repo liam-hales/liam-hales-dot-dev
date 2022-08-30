@@ -31,7 +31,7 @@ const ComingSoon: FunctionComponent = (): ReactElement => {
         for this infomation.
       </StyledText>
       <Button onClick={() => goTo(NavRoute.HOME)}>
-        Return Home
+        Return home
       </Button>
     </StyledContent>
   );

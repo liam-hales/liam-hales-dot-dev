@@ -22,7 +22,7 @@ const Error: FunctionComponent = (): ReactElement => {
         Oops, looks like something went wrong. Please try refreshing the page.
       </StyledText>
       <Button onClick={() => goTo(NavRoute.HOME)}>
-        Return Home
+        Return home
       </Button>
     </StyledContent>
   );

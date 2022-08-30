@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { BoxAlignment, BoxDirection, BoxJustify, TextAppearance } from '../../../enums';
+import { BoxAlignment, BoxDirection, BoxJustify, ImageRoundness, TextAppearance } from '../../../enums';
 import { BaseProps } from '../../../types';
 import { Box, Text } from '../../common';
 import { StyledCard, StyledName, StyledImage } from './skillCard.styled';
@@ -40,6 +40,7 @@ const SkillCard: FunctionComponent<Props> = ({ className, name, type, imageUrl }
           <StyledImage
             path={imageUrl}
             alt={name}
+            roundness={ImageRoundness.NONE}
           />
         )
       }

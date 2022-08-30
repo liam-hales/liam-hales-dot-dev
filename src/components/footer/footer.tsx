@@ -37,7 +37,9 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
     slug: PageSlug.GLOBAL,
   });
 
-  const belowMedium = useMediaQuery(breakpoints.down(ScreenSize.MEDIUM));
+  const mediaQuery = breakpoints.down(ScreenSize.MEDIUM);
+  const belowMedium = useMediaQuery(mediaQuery);
+
   const year = moment
     .utc()
     .format('YYYY');

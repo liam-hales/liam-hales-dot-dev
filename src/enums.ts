@@ -132,3 +132,13 @@ export enum TextElement {
   H2 = 'h2',
   PARAGRAPH = 'body1',
 }
+
+/**
+ * The `image` component style used to determine
+ * the corner roundness of the image rendered
+ */
+export enum ImageRoundness {
+  NONE = 'NONE',
+  ROUNDED = 'ROUNDED',
+  CIRCLE = 'CIRCLE',
+}

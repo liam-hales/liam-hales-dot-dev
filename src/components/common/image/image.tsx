@@ -1,5 +1,6 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { Box } from '..';
+import { ImageRoundness } from '../../../enums';
 import { BaseProps } from '../../../types';
 import { StyledImage } from './image.styled';
 
@@ -9,7 +10,7 @@ import { StyledImage } from './image.styled';
 interface Props extends BaseProps {
   readonly path: string;
   readonly alt: string;
-  readonly circle?: boolean;
+  readonly roundness?: ImageRoundness;
 }
 
 /**
@@ -24,7 +25,7 @@ const Image: FunctionComponent<Props> = (props): ReactElement<Props> => {
     className,
     path,
     alt,
-    circle = false,
+    roundness = ImageRoundness.ROUNDED,
   } = props;
 
   return (
@@ -32,7 +33,7 @@ const Image: FunctionComponent<Props> = (props): ReactElement<Props> => {
       <StyledImage
         src={path}
         alt={alt}
-        circle={circle}
+        roundness={roundness}
       />
     </Box>
   );

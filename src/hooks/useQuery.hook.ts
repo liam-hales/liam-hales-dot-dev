@@ -47,7 +47,7 @@ const useQuery = <
 
       // Make the GraphQL request and get
       // the first key from the response
-      const repsonse = await request<{ [key: string]: T }, V>(apiUrl, document, variables);
+      const repsonse = await request<{ [key: string]: T }>(apiUrl, document, variables);
       const [key] = Object.keys(repsonse);
 
       // Stringify the respone and pasre it

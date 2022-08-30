@@ -13,6 +13,10 @@ const curriculumVitaeContentFragment = gql`
     lifeTimelineEvents {
       ...TimelineEventFields
     }
+    skillsText
+    skills {
+      ...SkillFields
+    }
   }
 `;
 

@@ -66,6 +66,8 @@ export interface CurriculumVitaePageContent extends BasePageContent {
   readonly companyStartDate: Moment;
   readonly lifeTimelineText: string;
   readonly lifeTimelineEvents: TimelineEvent[];
+  readonly skillsText: string;
+  readonly skills: Skill[];
 }
 
 /**
@@ -95,6 +97,15 @@ export interface TimelineEvent {
   readonly title: string;
   readonly description: string;
   readonly date: Moment;
+}
+
+/**
+ * Describes a specific skill
+ */
+export interface Skill {
+  readonly name: string;
+  readonly type: string;
+  readonly image?: Asset;
 }
 
 /**

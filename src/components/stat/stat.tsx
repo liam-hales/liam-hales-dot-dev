@@ -8,8 +8,8 @@ import { StyledText, StyledValue } from './stat.styled';
  * The `Stat` component props
  */
 interface Props extends BaseProps {
-  value: number;
-  text: string;
+  readonly value: number;
+  readonly text: string;
 }
 
 /**

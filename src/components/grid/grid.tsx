@@ -8,7 +8,7 @@ import { StyledBox, StyledChildBox } from './grid.styled';
  * The `Grid` component props
  */
 interface Props extends BaseProps {
-  children: ReactElement[];
+  readonly children: ReactElement[];
 }
 
 /**

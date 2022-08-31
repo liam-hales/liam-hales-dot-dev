@@ -7,7 +7,7 @@ import { StyledDiv } from './typewriter.styled';
  * The `Typewriter` component props
  */
 interface Props extends BaseProps {
-  onInit: (typewriter: TypewriterClass) => void;
+  readonly onInit: (typewriter: TypewriterClass) => void;
 }
 
 /**

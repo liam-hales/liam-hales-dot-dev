@@ -8,7 +8,7 @@ import { StyledContent, StyledTitle, StyledFullStop } from './header.styled';
  * The `Header` component props
  */
 interface Props extends BaseProps {
-  title: string;
+  readonly title: string;
 }
 
 /**

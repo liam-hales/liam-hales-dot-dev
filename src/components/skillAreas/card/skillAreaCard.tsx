@@ -9,9 +9,9 @@ import { StyledCard, StyledIcon, StyledTitle, StyledDescription } from './skillA
  * The `SkillAreaCard` component props
  */
 interface Props extends BaseProps {
-  title: string;
-  description: string;
-  iconId: IconId;
+  readonly title: string;
+  readonly description: string;
+  readonly iconId: IconId;
 }
 
 /**

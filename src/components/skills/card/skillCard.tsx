@@ -8,9 +8,9 @@ import { StyledCard, StyledName, StyledImage } from './skillCard.styled';
  * The `SkillCard` component props
  */
 interface Props extends BaseProps {
-  name: string;
-  type: string;
-  imageUrl?: string;
+  readonly name: string;
+  readonly type: string;
+  readonly imageUrl?: string;
 }
 
 /**

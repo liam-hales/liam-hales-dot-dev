@@ -16,8 +16,9 @@ import SkillAreas from './skillAreas/skillAreas';
 import ProStatement from './proStatement/proStatement';
 import StillInterested from './stillInterested/stillInterested';
 import CurrentPosition from './currentPosition/currentPosition';
-import LifeTimelinePreview from './lifeTimelinePreview/lifeTimelinePreview';
+import LifeTimelinePreview from './lifeTimeline/preview/lifeTimelinePreview';
 import SkillsPreview from './skills/preview/skillsPreview';
+import LifeTimeline from './lifeTimeline/lifeTimeline';
 import Router from './router/router';
 import Nav from './nav/nav';
 import TopNav from './nav/top/topNav';
@@ -48,6 +49,7 @@ export {
   CurrentPosition,
   LifeTimelinePreview,
   SkillsPreview,
+  LifeTimeline,
   Router,
   Nav,
   TopNav,

@@ -5,8 +5,8 @@ import { usePageQuery } from '../../../hooks';
 import { StyledLifeTimeline } from './lifeTimelineRoute.styled';
 
 /**
- * Fetches the life timeline page data and renders the
- * components that make up the app life timeline page
+ * Used as the entry point for the life timeline page.
+ * Fetches the page data and renders it's components
  *
  * @returns The `LifeTimelineRoute` component
  */

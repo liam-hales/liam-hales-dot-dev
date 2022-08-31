@@ -10,8 +10,8 @@ import {
 } from './homeRoute.styled';
 
 /**
- * Fetches the home page data and renders the
- * components that make up the app home page
+ * Used as the entry point for the home page.
+ * Fetches the page data and renders it's components
  *
  * @returns The `HomeRoute` component
  */

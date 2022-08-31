@@ -9,8 +9,8 @@ import {
 } from './curriculumVitaeRoute.styled';
 
 /**
- * Fetches the curriculum vitae page data and renders the
- * components that make up the app curriculum vitae page
+ * Used as the entry point for the curriculum vitae page.
+ * Fetches the page data and renders it's components
  *
  * @returns The `CurriculumVitaeRoute` component
  */
@@ -21,14 +21,16 @@ const CurriculumVitaeRoute: FunctionComponent = (): ReactElement => {
   });
 
   return (
-    <StatusHandler status={status}>
+    <>
       <Header title="Curriculum Vitae" />
-      <Content>
-        <StyledCurrentPosition />
-        <StyledSkillsPreview />
-        <StyledLifeTimelinePreview />
-      </Content>
-    </StatusHandler>
+      <StatusHandler status={status}>
+        <Content>
+          <StyledCurrentPosition />
+          <StyledSkillsPreview />
+          <StyledLifeTimelinePreview />
+        </Content>
+      </StatusHandler>
+    </>
   );
 };
 

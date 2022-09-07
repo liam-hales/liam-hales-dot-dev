@@ -2,7 +2,7 @@ import { FunctionComponent, ReactElement } from 'react';
 import { BoxAlignment } from '../../enums';
 import { BaseProps } from '../../types';
 import { Divider } from '../common';
-import { StyledContent, StyledTitle, StyledFullStop } from './header.styled';
+import { StyledContent, StyledTitle, StyledFullStop, StyledChildren } from './header.styled';
 
 /**
  * The `Header` component props
@@ -18,13 +18,20 @@ interface Props extends BaseProps {
   * @param props The component props
   * @returns The `Header` component
   */
-const Header: FunctionComponent<Props> = ({ className, title }): ReactElement<Props> => {
+const Header: FunctionComponent<Props> = ({ className, title, children }): ReactElement<Props> => {
   return (
     <>
       <StyledContent
         className={className}
         alignment={BoxAlignment.START}
       >
+        {
+          (children != null) && (
+            <StyledChildren alignment={BoxAlignment.START}>
+              {children}
+            </StyledChildren>
+          )
+        }
         <StyledTitle bold={true}>
           {title}
           <StyledFullStop bold={true}>

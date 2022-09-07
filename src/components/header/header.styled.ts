@@ -1,14 +1,14 @@
 import { styled } from '@mui/material';
 import { Content } from '..';
 import { ColourPalette } from '../../enums';
-import { Text } from '../common';
+import { Box, Text } from '../common';
 
 /**
  * The styled `Content` component used for
  * the `Header` component content
  */
 export const StyledContent = styled(Content)`
-  padding-top: 60px;
+  padding-top: 42px;
   padding-bottom: 50px;
 `;
 
@@ -30,4 +30,12 @@ export const StyledFullStop = styled(Text)`
   font-size: clamp(76px, 15vw, 96px);
   line-height: 0px;
   color: ${ColourPalette.BLUE};
+`;
+
+/**
+ * The styled `Box` component used for
+ * the `Header` component children
+ */
+export const StyledChildren = styled(Box)`
+  padding-bottom: 46px;
 `;

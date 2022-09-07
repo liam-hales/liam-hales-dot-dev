@@ -19,7 +19,7 @@ export const StyledCard = styled(Card)`
  */
 export const StyledName = styled(Text)`
   font-size: 20px;
-  line-height: 120%;
+  line-height: 122%;
 `;
 
 /**

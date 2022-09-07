@@ -11,6 +11,8 @@ import Typewriter from './typewriter/typewriter';
 import Divider from './divider/divider';
 import Timeline from './timeline/timeline';
 import TimelineEvent from './timeline/event/timelineEvent';
+import Breadcrumbs from './breadcrumbs/breadcrumbs';
+import BreadcrumbItem from './breadcrumbs/item/breadcrumbItem';
 
 export {
   Box,
@@ -26,4 +28,6 @@ export {
   Divider,
   Timeline,
   TimelineEvent,
+  Breadcrumbs,
+  BreadcrumbItem,
 };

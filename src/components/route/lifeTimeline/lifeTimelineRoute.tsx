@@ -1,7 +1,9 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { StatusHandler, Header, Content } from '../..';
+import { NavRoute } from '../../../enums';
 import { PageSlug } from '../../../graphql';
 import { usePageQuery } from '../../../hooks';
+import { Breadcrumbs, BreadcrumbItem } from '../../common';
 import { StyledLifeTimeline } from './lifeTimelineRoute.styled';
 
 /**
@@ -18,7 +20,19 @@ const LifeTimelineRoute: FunctionComponent = (): ReactElement => {
 
   return (
     <>
-      <Header title="Life Timeline" />
+      <Header title="Life Timeline">
+        <Breadcrumbs>
+          <BreadcrumbItem route={NavRoute.CV}>
+            Curriculum Vitae
+          </BreadcrumbItem>
+          <BreadcrumbItem
+            route={NavRoute.LIFE_TIMELINE}
+            active={true}
+          >
+            Life Timeline
+          </BreadcrumbItem>
+        </Breadcrumbs>
+      </Header>
       <StatusHandler status={status}>
         <Content>
           <StyledLifeTimeline />

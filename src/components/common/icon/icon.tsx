@@ -1,6 +1,6 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import { faHome, faFileCode, faPaintBrush, faComments, faCode, faServer, faFillDrip, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faFileCode, faPaintBrush, faComments, faCode, faServer, faFillDrip, faEnvelope, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 import { BaseProps } from '../../../types';
 import { IconId } from '../../../enums';
@@ -32,6 +32,7 @@ const Icon: FunctionComponent<Props> = ({ className, id, onClick }): ReactElemen
     [IconId.CODE]: faCode,
     [IconId.SERVER]: faServer,
     [IconId.ENVELOPE]: faEnvelope,
+    [IconId.CARET_RIGHT]: faCaretRight,
     [IconId.LINKED_IN]: faLinkedin,
     [IconId.STACK_OVERFLOW]: faStackOverflow,
   };

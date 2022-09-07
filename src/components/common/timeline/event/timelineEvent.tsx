@@ -12,6 +12,7 @@ interface Props extends BaseProps {
   readonly title: string;
   readonly description: string;
   readonly date: Moment;
+  readonly first?: boolean;
 }
 
 /**
@@ -21,7 +22,13 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `TimelineEvent` component
  */
-const TimelineEvent: FunctionComponent<Props> = ({ title, description, date }): ReactElement<Props> => {
+const TimelineEvent: FunctionComponent<Props> = (props): ReactElement<Props> => {
+  const {
+    title,
+    description,
+    date,
+    first = false,
+  } = props;
 
   // Format the date into a human readable timestamp
   // The year, month and how long ag the date was from the current date
@@ -34,7 +41,10 @@ const TimelineEvent: FunctionComponent<Props> = ({ title, description, date }): 
       <StyledTimestamp appearance={TextAppearance.SUBTLE}>
         {timestamp}
       </StyledTimestamp>
-      <StyledTitle bold={true}>
+      <StyledTitle
+        bold={true}
+        first={first}
+      >
         {title}
       </StyledTitle>
       <Text appearance={TextAppearance.SECONDARY}>

@@ -25,7 +25,7 @@ const LifeTimeline: FunctionComponent<Props> = ({ className }): ReactElement<Pro
   return (
     <Timeline className={className}>
       {
-        timelineEvents.map((event) => {
+        timelineEvents.map((event, index) => {
 
           // Destructure the timeline event and
           // return the timeline event component
@@ -35,6 +35,7 @@ const LifeTimeline: FunctionComponent<Props> = ({ className }): ReactElement<Pro
               title={title}
               description={description}
               date={date}
+              first={index === 0}
             />
           );
         })

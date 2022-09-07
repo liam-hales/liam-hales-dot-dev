@@ -7,7 +7,7 @@ import { Card, Text, Icon } from '../../common';
  * the screen size
  */
 interface ScreenSizeProps {
-  screenSize: ScreenSize;
+  readonly screenSize: ScreenSize;
 }
 
 /**

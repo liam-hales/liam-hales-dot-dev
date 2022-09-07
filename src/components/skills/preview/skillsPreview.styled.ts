@@ -7,7 +7,7 @@ import { ScreenSize } from '../../../enums';
  * The `StyledButton` component props
  */
 interface StyledButtonProps {
-  screenSize: ScreenSize;
+  readonly screenSize: ScreenSize;
 }
 
 /**

@@ -6,8 +6,8 @@ import { ColourPalette } from '../../../enums';
  * The `StyledContainer` component props
  */
 interface StyledContainerProps {
-  first: boolean;
-  last: boolean;
+  readonly first: boolean;
+  readonly last: boolean;
 }
 
 /**

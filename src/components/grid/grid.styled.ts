@@ -6,7 +6,7 @@ import { Box } from '../common';
  * The `StyledCard` component props
  */
 interface StyledChildBoxProps {
-  screenSize: ScreenSize;
+  readonly screenSize: ScreenSize;
 }
 
 /**

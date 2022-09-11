@@ -20,6 +20,8 @@ export const StyledBox = styled(Box)`
  * for the `Input` component
  */
 export const StyledInput = styled(InputBase)`
+  width: 100%;
+
   .MuiInputBase-input {
     color: ${ColourPalette.WHITE};
     font-size: 16px;
@@ -33,10 +35,20 @@ export const StyledInput = styled(InputBase)`
 
 /**
  * The styled `Icon` component used
- * for the `Input` component icn
+ * for the `Input` component icon
  */
 export const StyledIcon = styled(Icon)`
   padding-right: 12px;
   font-size: 18px;
   color: ${ColourPalette.BLUE};
+`;
+
+/**
+ * The styled `Icon` component used
+ * for the `Input` component clear icon
+ */
+export const StyledClearIcon = styled(Icon)`
+  padding-left: 12px;
+  font-size: 18px;
+  color: ${ColourPalette.WHITE};
 `;

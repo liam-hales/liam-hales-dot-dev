@@ -1,7 +1,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { BoxDirection, IconId } from '../../../enums';
 import { BaseProps } from '../../../types';
-import { StyledBox, StyledInput, StyledIcon } from './input.styled';
+import { StyledBox, StyledInput, StyledIcon, StyledClearIcon } from './input.styled';
 
 /**
  * The `Input` component props
@@ -45,6 +45,14 @@ const Input: FunctionComponent<Props> = ({ className, value, placeholder, iconId
           onChange(value);
         }}
       />
+      {
+        (value !== '') && (
+          <StyledClearIcon
+            id={IconId.CROSS}
+            onClick={() => onChange('')}
+          />
+        )
+      }
     </StyledBox>
   );
 };

@@ -1,6 +1,6 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { StatusHandler, Header, Content } from '../..';
-import { NavRoute } from '../../../enums';
+import { BoxAlignment, NavRoute } from '../../../enums';
 import { PageSlug } from '../../../graphql';
 import { usePageQuery } from '../../../hooks';
 import { Breadcrumbs, BreadcrumbItem } from '../../common';
@@ -34,7 +34,7 @@ const LifeTimelineRoute: FunctionComponent = (): ReactElement => {
         </Breadcrumbs>
       </Header>
       <StatusHandler status={status}>
-        <Content>
+        <Content alignment={BoxAlignment.START}>
           <StyledLifeTimeline />
         </Content>
       </StatusHandler>

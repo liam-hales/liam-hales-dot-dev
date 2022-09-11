@@ -34,9 +34,8 @@ export const StyledChildBox = styled(Box)`
 export const StyledConnector = styled('div')<StyledContainerProps>`
   position: absolute;
   width: 2px;
-  height: ${(props) => (props.last === true) ? '38px' : 'unset'};
   top: ${(props) => (props.first === true) ? 38 : 0}px;
-  bottom: ${(props) => (props.last === true) ? 'unset' : '0px'};
+  bottom: ${(props) => (props.last === true) ? 'calc(100% - 38px)' : '0px'};
   left: 9px;
   background-color: ${ColourPalette.GREY};
   z-index: -1;

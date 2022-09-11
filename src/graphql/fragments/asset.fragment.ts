@@ -6,6 +6,7 @@ import { gql } from 'graphql-request';
  */
 const assetFragment = gql`
   fragment AssetFields on Asset {
+    id
     fileName
     url
   }

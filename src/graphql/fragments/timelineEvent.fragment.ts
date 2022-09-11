@@ -6,6 +6,7 @@ import { gql } from 'graphql-request';
  */
 const timelineEventFragment = gql`
   fragment TimelineEventFields on TimelineEvent {
+    id
     title
     description
     date

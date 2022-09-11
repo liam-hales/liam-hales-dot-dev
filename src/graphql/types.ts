@@ -95,6 +95,7 @@ export type PageContent<T extends PageSlug> =
  * about the uploaded asset such as the URL
  */
 export interface Asset {
+  readonly id: string;
   readonly fileName: string;
   readonly url: string;
 }
@@ -104,6 +105,7 @@ export interface Asset {
  * in a timeline
  */
 export interface TimelineEvent {
+  readonly id: string;
   readonly title: string;
   readonly description: string;
   readonly date: Moment;
@@ -113,6 +115,7 @@ export interface TimelineEvent {
  * Describes a specific skill
  */
 export interface Skill {
+  readonly id: string;
   readonly name: string;
   readonly type: string;
   readonly image?: Asset;

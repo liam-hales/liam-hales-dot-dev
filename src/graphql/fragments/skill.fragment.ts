@@ -6,6 +6,7 @@ import { gql } from 'graphql-request';
  */
 const skillFragment = gql`
   fragment SkillFields on Skill {
+    id
     name
     type
     image {

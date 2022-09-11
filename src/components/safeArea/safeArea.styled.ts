@@ -1,7 +1,7 @@
 import { styled } from '@mui/material';
 
 /**
- * The styled `div` component used for
+ * The styled `div` element used for
  * the `SafeArea` component
  */
 export const StyledDiv = styled('div')`

@@ -66,7 +66,7 @@ export const StyledBuiltUsing = styled(Text)`
 `;
 
 /**
- * The styled `div` component used for the `Footer` component
+ * The styled `div` element used for the `Footer` component
  * spacer to fill the areas behind the `BottomNav`
  */
 export const StyledSpacer = styled('div')`

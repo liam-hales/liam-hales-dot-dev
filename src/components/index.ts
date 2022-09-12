@@ -19,6 +19,7 @@ import CurrentPosition from './currentPosition/currentPosition';
 import LifeTimelinePreview from './lifeTimeline/preview/lifeTimelinePreview';
 import SkillsPreview from './skills/preview/skillsPreview';
 import LifeTimeline from './lifeTimeline/lifeTimeline';
+import Skills from './skills/skills';
 import Router from './router/router';
 import Nav from './nav/nav';
 import TopNav from './nav/top/topNav';
@@ -50,6 +51,7 @@ export {
   LifeTimelinePreview,
   SkillsPreview,
   LifeTimeline,
+  Skills,
   Router,
   Nav,
   TopNav,

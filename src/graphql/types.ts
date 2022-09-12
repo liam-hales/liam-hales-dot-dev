@@ -80,6 +80,15 @@ export interface LifeTimelinePageContent extends BasePageContent {
 }
 
 /**
+ * Describes the skills page content which
+ * is specific to the skills page only
+ */
+export interface SkillsPageContent extends BasePageContent {
+  readonly slug: PageSlug.SKILLS;
+  readonly skills: Skill[];
+}
+
+/**
  * The union type for all page content types.
  * Generic type `T` for the page slug
  */
@@ -88,6 +97,7 @@ export type PageContent<T extends PageSlug> =
   T extends PageSlug.HOME ? HomePageContent :
   T extends PageSlug.CV ? CurriculumVitaePageContent :
   T extends PageSlug.LIFE_TIMELINE ? LifeTimelinePageContent :
+  T extends PageSlug.SKILLS ? SkillsPageContent :
   never;
 
 /**

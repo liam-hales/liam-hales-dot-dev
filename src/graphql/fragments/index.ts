@@ -5,6 +5,7 @@ import globalContentFragment from './globalContent.fragment';
 import homeContentFragment from './homeContent.fragment';
 import curriculumVitaeContentFragment from './curriculumVitaeContent.fragment';
 import lifeTimelineContentFragment from './lifeTimelineContent.fragment';
+import skillsContentFragment from './skillsContent.fragment';
 
 export {
   assetFragment,
@@ -14,4 +15,5 @@ export {
   homeContentFragment,
   curriculumVitaeContentFragment,
   lifeTimelineContentFragment,
+  skillsContentFragment,
 };

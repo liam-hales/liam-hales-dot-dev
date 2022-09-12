@@ -2,7 +2,7 @@ import { FunctionComponent, ReactElement } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { NavRoute } from '../../enums';
 import { ComingSoon, NotFound } from '..';
-import { HomeRoute, CurriculumVitaeRoute, LifeTimelineRoute } from '../route';
+import { HomeRoute, CurriculumVitaeRoute, LifeTimelineRoute, SkillsRoute } from '../route';
 
 /**
  * Used to handle each app navigation route
@@ -29,6 +29,12 @@ const Router: FunctionComponent = (): ReactElement => {
         path={NavRoute.LIFE_TIMELINE}
         element={(
           <LifeTimelineRoute />
+        )}
+      />
+      <Route
+        path={NavRoute.SKILLS}
+        element={(
+          <SkillsRoute />
         )}
       />
       <Route

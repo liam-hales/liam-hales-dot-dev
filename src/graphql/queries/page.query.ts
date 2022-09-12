@@ -7,6 +7,7 @@ import {
   homeContentFragment,
   curriculumVitaeContentFragment,
   lifeTimelineContentFragment,
+  skillsContentFragment,
 } from '../fragments';
 
 /**
@@ -42,6 +43,9 @@ const pageQuery = gql`
         ... on LifeTimelineContent {
           ...LifeTimelineContentFields
         }
+        ... on SkillsContent {
+          ...SkillsContentFields
+        }
       }
       createdAt
       updatedAt
@@ -54,6 +58,7 @@ const pageQuery = gql`
   ${homeContentFragment}
   ${curriculumVitaeContentFragment}
   ${lifeTimelineContentFragment}
+  ${skillsContentFragment}
 `;
 
 export default pageQuery;

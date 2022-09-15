@@ -35,6 +35,7 @@ const BreadcrumbItem: FunctionComponent<Props> = (props): ReactElement<Props> =>
           : TextAppearance.SUBTLE
       }
       bold={true}
+      hoverUnderline={active !== true}
       onClick={
         (active === false)
           ? () => goTo(route)

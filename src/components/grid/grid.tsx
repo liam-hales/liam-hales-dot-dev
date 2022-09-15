@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { BoxDirection, BoxJustify } from '../../enums';
+import { BoxDirection } from '../../enums';
 import { useScreen } from '../../hooks';
 import { BaseProps } from '../../types';
 import { StyledBox, StyledChildBox } from './grid.styled';
@@ -25,7 +25,6 @@ const Grid: FunctionComponent<Props> = ({ className, children }): ReactElement<P
     <StyledBox
       className={className}
       direction={BoxDirection.ROW}
-      justify={BoxJustify.SPACE_BETWEEN}
       wrap={true}
     >
       {

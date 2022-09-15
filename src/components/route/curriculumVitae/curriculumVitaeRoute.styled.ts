@@ -22,5 +22,5 @@ export const StyledSkillsPreview = styled(SkillsPreview)`
  * for the `CurriculumVitaeRoute` component
  */
 export const StyledLifeTimelinePreview = styled(LifeTimelinePreview)`
- padding-top: 80px;
+  padding-top: 80px;
 `;

@@ -6,5 +6,6 @@ import { LifeTimeline } from '../..';
  * for the `LifeTimelineRooute` component
  */
 export const StyledLifeTimeline = styled(LifeTimeline)`
+  width: 100%;
   padding-top: 50px;
 `;

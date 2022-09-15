@@ -6,5 +6,6 @@ import { Skills } from '../..';
  * for the `SkillsRooute` component
  */
 export const StyledSkills = styled(Skills)`
+  width: 100%;
   padding-top: 50px;
 `;

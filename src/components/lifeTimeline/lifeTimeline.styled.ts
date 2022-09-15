@@ -10,12 +10,12 @@ interface StyledSearchInputProps {
 }
 
 /**
- * The max width map for the dfferent
+ * The width map for the dfferent
  * `ScreenSize` values
  */
-const maxWidthMap: Record<ScreenSize, string> = {
-  [ScreenSize.EXTRA_SMALL]: 'unset',
-  [ScreenSize.SMALL]: 'unset',
+const widthMap: Record<ScreenSize, string> = {
+  [ScreenSize.EXTRA_SMALL]: '100%',
+  [ScreenSize.SMALL]: '100%',
   [ScreenSize.MEDIUM]: '350px',
   [ScreenSize.LARGE]: '350px',
   [ScreenSize.EXTRA_LARGE]: '350px',
@@ -26,7 +26,6 @@ const maxWidthMap: Record<ScreenSize, string> = {
  * `LifeTimeline` component search input
  */
 export const StyledSearchInput = styled(Input)<StyledSearchInputProps>`
-  width: 100%;
-  max-width: ${(props) => maxWidthMap[props.screenSize]};
+  width: ${(props) => widthMap[props.screenSize]};
   margin-bottom: 50px;
 `;

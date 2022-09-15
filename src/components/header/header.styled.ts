@@ -37,5 +37,5 @@ export const StyledFullStop = styled(Text)`
  * the `Header` component children
  */
 export const StyledChildren = styled(Box)`
-  padding-bottom: 46px;
+  padding-top: 40px;
 `;

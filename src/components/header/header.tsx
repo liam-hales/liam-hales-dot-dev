@@ -25,6 +25,12 @@ const Header: FunctionComponent<Props> = ({ className, title, children }): React
         className={className}
         alignment={BoxAlignment.START}
       >
+        <StyledTitle bold={true}>
+          {title}
+          <StyledFullStop bold={true}>
+            .
+          </StyledFullStop>
+        </StyledTitle>
         {
           (children != null) && (
             <StyledChildren alignment={BoxAlignment.START}>
@@ -32,12 +38,6 @@ const Header: FunctionComponent<Props> = ({ className, title, children }): React
             </StyledChildren>
           )
         }
-        <StyledTitle bold={true}>
-          {title}
-          <StyledFullStop bold={true}>
-            .
-          </StyledFullStop>
-        </StyledTitle>
       </StyledContent>
       <Divider />
     </>

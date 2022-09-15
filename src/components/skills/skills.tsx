@@ -5,6 +5,7 @@ import { PageSlug } from '../../graphql';
 import { usePageContent, useScreen } from '../../hooks';
 import { BaseProps } from '../../types';
 import { Grid, SkillCard } from '..';
+import { searchFilter } from '../../helpers';
 import { StyledSearchInput } from './skills.styled';
 
 /**
@@ -22,6 +23,7 @@ type Props = BaseProps;
 const Skills: FunctionComponent<Props> = ({ className }): ReactElement<Props> => {
 
   const [params, setParams] = useSearchParams();
+  const searchText = params.get('search') ?? '';
 
   const { screenSize } = useScreen();
   const { skills } = usePageContent({
@@ -31,7 +33,7 @@ const Skills: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
   return (
     <div className={className}>
       <StyledSearchInput
-        value={params.get('search') ?? ''}
+        value={searchText}
         placeholder="Search"
         iconId={IconId.MAGNIFYING_GLASS}
         onChange={(value) => {
@@ -45,19 +47,21 @@ const Skills: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
       />
       <Grid>
         {
-          skills.map((skill) => {
+          skills
+            .filter((skill) => searchFilter(searchText, skill, ['name']))
+            .map((skill) => {
 
-            // Destructure the skill and return
-            // the skill card component
-            const { name, type, image } = skill;
-            return (
-              <SkillCard
-                name={name}
-                type={type}
-                imageUrl={image?.url}
-              />
-            );
-          })
+              // Destructure the skill and return
+              // the skill card component
+              const { name, type, image } = skill;
+              return (
+                <SkillCard
+                  name={name}
+                  type={type}
+                  imageUrl={image?.url}
+                />
+              );
+            })
         }
       </Grid>
     </div>

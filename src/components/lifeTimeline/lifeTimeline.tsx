@@ -2,6 +2,7 @@ import { FunctionComponent, ReactElement } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { IconId } from '../../enums';
 import { PageSlug } from '../../graphql';
+import { searchFilter } from '../../helpers';
 import { usePageContent, useScreen } from '../../hooks';
 import { BaseProps } from '../../types';
 import { Timeline, TimelineEvent } from '../common';
@@ -22,6 +23,7 @@ type Props = BaseProps;
 const LifeTimeline: FunctionComponent<Props> = ({ className }): ReactElement<Props> => {
 
   const [params, setParams] = useSearchParams();
+  const searchText = params.get('search') ?? '';
 
   const { screenSize } = useScreen();
   const { timelineEvents } = usePageContent({
@@ -31,7 +33,7 @@ const LifeTimeline: FunctionComponent<Props> = ({ className }): ReactElement<Pro
   return (
     <div className={className}>
       <StyledSearchInput
-        value={params.get('search') ?? ''}
+        value={searchText}
         placeholder="Search"
         iconId={IconId.MAGNIFYING_GLASS}
         onChange={(value) => {
@@ -46,20 +48,7 @@ const LifeTimeline: FunctionComponent<Props> = ({ className }): ReactElement<Pro
       <Timeline>
         {
           timelineEvents
-            .filter((event) => {
-              const { title, description } = event;
-
-              // Join the event title and description into one text string
-              // Lowercase the text to search and the search text itself
-              const text = `${title} ${description}`.toLowerCase();
-              const search = (params.get('search') ?? '')
-                .toLowerCase()
-                .split(' ');
-
-              // Filter out events that do not include one
-              // of the words from the search string
-              return search.every((word) => text.includes(word));
-            })
+            .filter((event) => searchFilter(searchText, event, ['title', 'description']))
             .map((event, index) => {
 
               // Destructure the timeline event and get the first

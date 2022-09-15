@@ -1,4 +1,4 @@
-import { styled, Typography } from '@mui/material';
+import { css, styled, Typography } from '@mui/material';
 import { ColourPalette, TextAppearance } from '../../../enums';
 
 /**
@@ -8,6 +8,7 @@ interface StyledTypographyProps {
   readonly appearance: TextAppearance;
   readonly bold: boolean;
   readonly italic: boolean;
+  readonly hoverUnderline: boolean;
   readonly clickable: boolean;
 }
 
@@ -20,6 +21,18 @@ const textColourMap: Record<TextAppearance, ColourPalette> = {
   [TextAppearance.SECONDARY]: ColourPalette.LIGHT_GREY,
   [TextAppearance.SUBTLE]: ColourPalette.LIGHT_GREY,
 };
+
+/**
+ * The CSS for underlining
+ * the text on hover
+ */
+const hoverUnderlineCss = css`
+  :hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1.8px;
+    text-underline-offset: 3px;
+  };
+`;
 
 /**
  * The styled `Typography` component from `@mui/material`
@@ -47,4 +60,10 @@ export const StyledTypography = styled(Typography)<StyledTypographyProps>`
   text-transform: none;
   white-space: pre-line;
   font-size: 14px;
+
+  ${(props) => {
+    if (props.hoverUnderline === true) {
+      return hoverUnderlineCss;
+    }
+  }}
 `;

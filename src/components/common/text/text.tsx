@@ -11,6 +11,7 @@ interface Props extends BaseProps {
   readonly element?: TextElement;
   readonly bold?: boolean;
   readonly italic?: boolean;
+  readonly hoverUnderline?: boolean;
   readonly onClick?: () => void;
 }
 
@@ -28,6 +29,7 @@ const Text: FunctionComponent<Props> = (props): ReactElement<Props> => {
     element = TextElement.PARAGRAPH,
     bold = false,
     italic = false,
+    hoverUnderline = false,
     onClick,
     children,
   } = props;
@@ -39,6 +41,7 @@ const Text: FunctionComponent<Props> = (props): ReactElement<Props> => {
       appearance={appearance}
       bold={bold}
       italic={italic}
+      hoverUnderline={hoverUnderline}
       onClick={onClick}
       clickable={onClick != null}
     >

@@ -56,7 +56,7 @@ export const StyledTypography = styled(Typography)<StyledTypographyProps>`
       : 'unset';
   }};
   color: ${(props) => textColourMap[props.appearance]};
-  opacity: ${(props) => ((props.appearance === TextAppearance.SUBTLE) ? 0.48 : 1)};
+  opacity: ${(props) => ((props.appearance === TextAppearance.SUBTLE) ? 0.52 : 1)};
   text-transform: none;
   white-space: pre-line;
   font-size: 14px;

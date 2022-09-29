@@ -3,6 +3,8 @@
 Built using [React], [TypeScript] and [Material UI]
 https://liamhales.dev
 
+---
+
 <br/>
 
 # Getting Started (Prerequisites)
@@ -27,11 +29,57 @@ $ nvm alias default 16.17
 ```
 
 - Download and install [Yarn Package Manager] and [AWS CLI]
-- From the repo root directory run `yarn`
+- From the project root run `yarn`
 
 ```sh
 $ npm install --global yarn
 $ yarn
+```
+
+<br/>
+
+# First Steps
+
+- Create a `.env` file in the project root
+
+```sh
+REACT_APP_API_URL = 'https://${region}.graphcms.com/v2/${id}/master'
+```
+
+- Run `yarn build-index` to build the `index.html` file
+- Run `yarn build-images` to build the images
+
+```sh
+$ yarn build-index
+$ yarn build-images
+```
+
+> _**NOTE:** These steps only need to be followed once. However if any of the logo `.svg` files change, run `yarn build-images` again_
+
+<br/>
+
+# Starting Locally (Development)
+
+- Follow the steps in the [First Steps](#first-steps) section
+- Run `yarn start` to start the app locally
+
+```sh
+$ yarn start
+```
+
+<br/>
+
+# Building & Deploying (Production)
+
+- Follow the steps in the [First Steps](#first-steps) section
+- Run `yarn build` to build the app for production
+- Run `yarn deploy-build` to deploy the build to AWS S3
+- Run `yarn cleanup` to cleanup after the build (optional)
+
+```sh
+$ yarn build
+$ yarn deploy-build
+$ yarn cleanup
 ```
 
 [React]: https://reactjs.org

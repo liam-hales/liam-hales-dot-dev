@@ -1,12 +1,12 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { IconId } from '../../enums';
+import { BoxAlignment, IconId, TextAppearance } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { usePageContent, useScreen } from '../../hooks';
 import { BaseProps } from '../../types';
-import { Grid, SkillCard } from '..';
+import { SkillCard } from '..';
 import { searchFilter } from '../../helpers';
-import { StyledSearchInput } from './skills.styled';
+import { StyledBox, StyledSearchInput, StyledDisclaimerText, StyledGrid } from './skills.styled';
 
 /**
  * The `Skills` component props
@@ -26,12 +26,15 @@ const Skills: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
   const searchText = params.get('search') ?? '';
 
   const { screenSize } = useScreen();
-  const { skills } = usePageContent({
+  const { disclaimerText, skills } = usePageContent({
     slug: PageSlug.SKILLS,
   });
 
   return (
-    <div className={className}>
+    <StyledBox
+      className={className}
+      alignment={BoxAlignment.START}
+    >
       <StyledSearchInput
         value={searchText}
         placeholder="Search"
@@ -45,7 +48,10 @@ const Skills: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
         }}
         screenSize={screenSize}
       />
-      <Grid>
+      <StyledDisclaimerText appearance={TextAppearance.SECONDARY}>
+        {disclaimerText}
+      </StyledDisclaimerText>
+      <StyledGrid>
         {
           skills
             .filter((skill) => searchFilter(searchText, skill, ['name']))
@@ -63,8 +69,8 @@ const Skills: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
               );
             })
         }
-      </Grid>
-    </div>
+      </StyledGrid>
+    </StyledBox>
   );
 };
 

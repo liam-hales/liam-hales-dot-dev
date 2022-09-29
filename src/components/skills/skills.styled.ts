@@ -1,6 +1,7 @@
 import { styled } from '@mui/material';
 import { ScreenSize } from '../../enums';
-import { Input } from '../common';
+import { Box, Input, Text } from '../common';
+import { Grid } from '..';
 
 /**
  * The `StyledSearchInput` component props
@@ -22,10 +23,33 @@ const widthMap: Record<ScreenSize, string> = {
 };
 
 /**
+ * The styled `Box` component used for
+ * the `Skills` component box
+ */
+export const StyledBox = styled(Box)`
+  row-gap: 40px;
+`;
+
+/**
  * The styled `Inout` component used for the
  * `Skills` component search input
  */
 export const StyledSearchInput = styled(Input)<StyledSearchInputProps>`
   width: ${(props) => widthMap[props.screenSize]};
-  margin-bottom: 50px;
+`;
+
+/**
+ * The styled `Text` component used for
+ * the `Skills` component disclaimer text
+ */
+export const StyledDisclaimerText = styled(Text)`
+  max-width: 450px;
+`;
+
+/**
+ * The styled `Grid` component used for
+ * the `Skills` component grid
+ */
+export const StyledGrid = styled(Grid)`
+  width: 100%;
 `;

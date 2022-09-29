@@ -17,6 +17,7 @@ const curriculumVitaeContentFragment = gql`
     skills {
       ...SkillFields
     }
+    disclaimerText
   }
 `;
 

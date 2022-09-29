@@ -6,6 +6,7 @@ import { gql } from 'graphql-request';
  */
 const skillsContentFragment = gql`
   fragment SkillsContentFields on SkillsContent {
+    disclaimerText
     skills {
       ...SkillFields
     }

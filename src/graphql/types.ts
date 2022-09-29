@@ -68,6 +68,7 @@ export interface CurriculumVitaePageContent extends BasePageContent {
   readonly lifeTimelineEvents: TimelineEvent[];
   readonly skillsText: string;
   readonly skills: Skill[];
+  readonly disclaimerText: string;
 }
 
 /**
@@ -85,6 +86,7 @@ export interface LifeTimelinePageContent extends BasePageContent {
  */
 export interface SkillsPageContent extends BasePageContent {
   readonly slug: PageSlug.SKILLS;
+  readonly disclaimerText: string;
   readonly skills: Skill[];
 }
 

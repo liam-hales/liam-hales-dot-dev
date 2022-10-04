@@ -7,7 +7,7 @@ import { Box, Icon } from '../common';
  * for the `SocialIcons` component
  */
 export const StyledBox = styled(Box)`
-  width: 100px;
+  column-gap: 12px;
 `;
 
 /**

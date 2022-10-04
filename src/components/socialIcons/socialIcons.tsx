@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { BoxDirection, BoxJustify, IconId } from '../../enums';
+import { BoxDirection, IconId } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { usePageContent } from '../../hooks';
 import { StyledBox, StyledIcon } from './socialIcons.styled';
@@ -17,10 +17,7 @@ const SocialIcons: FunctionComponent = (): ReactElement => {
   });
 
   return (
-    <StyledBox
-      direction={BoxDirection.ROW}
-      justify={BoxJustify.SPACE_BETWEEN}
-    >
+    <StyledBox direction={BoxDirection.ROW}>
       <StyledIcon
         id={IconId.ENVELOPE}
       />

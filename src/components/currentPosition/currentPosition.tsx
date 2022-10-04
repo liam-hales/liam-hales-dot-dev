@@ -19,7 +19,7 @@ type Props = BaseProps;
  * @param props The component props
  * @returns The `CurrentPosition` component
  */
-const CurrentPosition: FunctionComponent<Props> = ({ className }): ReactElement<Props> => {
+const CurrentPosition: FunctionComponent<Props> = ({ reference, className }): ReactElement<Props> => {
 
   const { currentPositionText, careerStartDate } = usePageContent({
     slug: PageSlug.CV,
@@ -32,6 +32,7 @@ const CurrentPosition: FunctionComponent<Props> = ({ className }): ReactElement<
 
   return (
     <Box
+      reference={reference}
       className={className}
       alignment={BoxAlignment.START}
     >

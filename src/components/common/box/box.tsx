@@ -22,6 +22,7 @@ interface Props extends BaseProps {
  */
 const Box: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
+    reference,
     className,
     direction = BoxDirection.COLUMN,
     alignment = BoxAlignment.CENTER,
@@ -32,6 +33,7 @@ const Box: FunctionComponent<Props> = (props): ReactElement<Props> => {
 
   return (
     <StyledBox
+      ref={reference}
       className={className}
       direction={direction}
       alignment={alignment}

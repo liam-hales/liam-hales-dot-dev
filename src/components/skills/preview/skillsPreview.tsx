@@ -19,7 +19,7 @@ type Props = BaseProps;
  * @param props The component props
  * @returns The `SkillsPreview` component
  */
-const SkillsPreview: FunctionComponent<Props> = ({ className }): ReactElement<Props> => {
+const SkillsPreview: FunctionComponent<Props> = ({ reference, className }): ReactElement<Props> => {
 
   const { goTo } = useRouter();
   const { screenSize } = useScreen();
@@ -29,6 +29,7 @@ const SkillsPreview: FunctionComponent<Props> = ({ className }): ReactElement<Pr
 
   return (
     <Box
+      reference={reference}
       className={className}
       alignment={BoxAlignment.START}
     >

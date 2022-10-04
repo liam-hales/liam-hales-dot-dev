@@ -18,7 +18,7 @@ type Props = BaseProps;
  * @param props The component props
  * @returns The `LifeTimelinePreview` component
  */
-const LifeTimelinePreview: FunctionComponent<Props> = ({ className }): ReactElement<Props> => {
+const LifeTimelinePreview: FunctionComponent<Props> = ({ reference, className }): ReactElement<Props> => {
 
   const { goTo } = useRouter();
   const { lifeTimelineText, lifeTimelineEvents } = usePageContent({
@@ -27,6 +27,7 @@ const LifeTimelinePreview: FunctionComponent<Props> = ({ className }): ReactElem
 
   return (
     <Box
+      reference={reference}
       className={className}
       alignment={BoxAlignment.START}
     >

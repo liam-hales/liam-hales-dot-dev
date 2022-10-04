@@ -39,13 +39,14 @@ const LifeTimelinePreview: FunctionComponent<Props> = ({ reference, className })
       </StyledDescription>
       <StyledTimeline trailingConnector={true}>
         {
-          lifeTimelineEvents.map((event) => {
+          lifeTimelineEvents.map((event, index) => {
 
             // Destructure the timeline event and
             // return the timeline event component
             const { title, description, date } = event;
             return (
               <TimelineEvent
+                key={`life-timeline-item-${index}`}
                 title={title}
                 description={description}
                 date={date}

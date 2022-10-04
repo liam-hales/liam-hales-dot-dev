@@ -56,13 +56,14 @@ const Skills: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
         {
           skills
             .filter((skill) => searchFilter(searchText, skill, ['name']))
-            .map((skill) => {
+            .map((skill, index) => {
 
               // Destructure the skill and return
               // the skill card component
               const { name, type, image } = skill;
               return (
                 <SkillCard
+                  key={`skill-item-${index}`}
                   name={name}
                   type={type}
                   imageUrl={image?.url}

@@ -33,8 +33,9 @@ const LifeTimeline: FunctionComponent<Props> = ({ className }): ReactElement<Pro
   return (
     <div className={className}>
       <StyledSearchInput
-        value={searchText}
+        defaultValue={searchText}
         placeholder="Search"
+        delay={500}
         iconId={IconId.MAGNIFYING_GLASS}
         onChange={(value) => {
           setParams({

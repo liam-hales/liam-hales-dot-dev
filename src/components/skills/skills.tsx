@@ -36,8 +36,9 @@ const Skills: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
       alignment={BoxAlignment.START}
     >
       <StyledSearchInput
-        value={searchText}
+        defaultValue={searchText}
         placeholder="Search"
+        delay={500}
         iconId={IconId.MAGNIFYING_GLASS}
         onChange={(value) => {
           setParams({

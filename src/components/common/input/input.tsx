@@ -1,5 +1,6 @@
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, useState } from 'react';
 import { BoxDirection, IconId } from '../../../enums';
+import { useDebounce } from '../../../hooks';
 import { BaseProps } from '../../../types';
 import { StyledBox, StyledInput, StyledIcon, StyledClearIcon } from './input.styled';
 
@@ -7,8 +8,9 @@ import { StyledBox, StyledInput, StyledIcon, StyledClearIcon } from './input.sty
  * The `Input` component props
  */
 interface Props extends BaseProps {
-  readonly value: string;
+  readonly defaultValue: string;
   readonly placeholder: string;
+  readonly delay: number;
   readonly iconId?: IconId;
   readonly onChange: (value: string) => void;
 }
@@ -20,7 +22,11 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `Input` component
  */
-const Input: FunctionComponent<Props> = ({ className, value, placeholder, iconId, onChange }): ReactElement<Props> => {
+const Input: FunctionComponent<Props> = ({ className, defaultValue, placeholder, iconId, delay, onChange }): ReactElement<Props> => {
+
+  const [value, setValue] = useState(defaultValue);
+  useDebounce(() => onChange(value), delay);
+
   return (
     <StyledBox
       className={className}
@@ -42,14 +48,20 @@ const Input: FunctionComponent<Props> = ({ className, value, placeholder, iconId
           const { target } = event;
           const { value } = target;
 
-          onChange(value);
+          setValue(value);
         }}
       />
       {
         (value !== '') && (
           <StyledClearIcon
             id={IconId.CROSS}
-            onClick={() => onChange('')}
+            onClick={() => {
+
+              // Reset the value state and call the on change
+              // function to clear the input instantly
+              setValue('');
+              onChange('');
+            }}
           />
         )
       }

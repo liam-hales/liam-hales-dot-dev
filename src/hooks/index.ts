@@ -6,6 +6,7 @@ import useRouter from './useRouter.hook';
 import useQuery from './useQuery.hook';
 import usePageQuery from './usePageQuery.hook';
 import usePageContent from './usePageContent.hook';
+import useDebounce from './useDebounce.hook';
 
 export {
   useConfig,
@@ -16,4 +17,5 @@ export {
   useQuery,
   usePageQuery,
   usePageContent,
+  useDebounce,
 };

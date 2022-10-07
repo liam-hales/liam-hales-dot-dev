@@ -2,8 +2,9 @@ import { FunctionComponent, ReactElement } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { useMediaQuery, useTheme } from '@mui/material';
 import { BaseProps } from '../../types';
-import { ScreenSize } from '../../enums';
+import { BoxJustify, ScreenSize } from '../../enums';
 import { TopNav, BottomNav } from '..';
+import { StyledLogoBox, StyledLogoSvg } from './nav.styled';
 
 /**
  * The `Nav` component props
@@ -26,7 +27,18 @@ const Nav: FunctionComponent<Props> = ({ children }): ReactElement<Props> => {
 
   return (
     <BrowserRouter>
-      <TopNav />
+      {
+        (belowMedium === true) && (
+          <StyledLogoBox justify={BoxJustify.CENTER}>
+            <StyledLogoSvg />
+          </StyledLogoBox>
+        )
+      }
+      {
+        (belowMedium === false) && (
+          <TopNav />
+        )
+      }
       {children}
       {
         (belowMedium === true) && (

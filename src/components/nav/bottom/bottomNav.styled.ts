@@ -10,12 +10,11 @@ export const StyledBottomNav = styled(Box)`
   position: fixed;
   width: 100%;
   bottom: 0px;
-  padding-top: 10px;
-  padding-bottom: calc(10px + env(safe-area-inset-bottom));
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-top: 12px;
+  padding-bottom: calc(12px + env(safe-area-inset-bottom));
+  padding-left: 12px;
+  padding-right: 12px;
   z-index: 1;
-  background-color: ${ColourPalette.BLACK};
 `;
 
 /**
@@ -24,7 +23,12 @@ export const StyledBottomNav = styled(Box)`
  */
 export const StyledBottomNavigation = styled(BottomNavigation)`
   width: 100%;
-  background-color: transparent;
+  height: 72px;
+  border-style: solid;
+  border-color: ${ColourPalette.DARK_GREY};
+  border-width: 1px;
+  border-radius: 36px;
+  background-color: ${ColourPalette.BLACK};
 `;
 
 /**
@@ -32,7 +36,7 @@ export const StyledBottomNavigation = styled(BottomNavigation)`
  * used for the `BottomNav` component
  */
 export const StyledBottomNavigationAction = styled(BottomNavigationAction)`
-  border-radius: 10px;
+  border-radius: 36px;
   color: ${ColourPalette.WHITE};
 
   .MuiTouchRipple-root {

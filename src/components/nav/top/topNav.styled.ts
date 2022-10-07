@@ -11,8 +11,12 @@ export const StyledBackground = styled(Box)`
   position: sticky;
   width: 100%;
   top: 0px;
+  padding-top: 12px;
+  padding-bottom: 18px;
+  padding-left: 12px;
+  padding-right: 12px;
   z-index: 1;
-  background-color: ${ColourPalette.BLACK};
+  background-color: transparent;
 `;
 
 /**
@@ -25,6 +29,11 @@ export const StyledTopNav = styled(Box)`
   max-width: 800px;
   padding-left: 42px;
   padding-right: 42px;
+  background-color: ${ColourPalette.BLACK};
+  border-style: solid;
+  border-color: ${ColourPalette.DARK_GREY};
+  border-width: 1px;
+  border-radius: 36px;
 `;
 
 /**

@@ -1,39 +1,12 @@
 import { styled } from '@mui/material';
-import { ScreenSize } from '../../enums';
-import { Box } from '../common';
 
 /**
- * The `StyledCard` component props
+ * The styled `div` element used
+ * for the `Grid` component
  */
-interface StyledChildBoxProps {
-  readonly screenSize: ScreenSize;
-}
-
-/**
- * The width map for the dfferent
- * `ScreenSize` values
- */
-const widthMap: Record<ScreenSize, string> = {
-  [ScreenSize.EXTRA_SMALL]: '100%',
-  [ScreenSize.SMALL]: 'calc((100% / 2) - 6px)',
-  [ScreenSize.MEDIUM]: 'calc((100% / 2) - 6px)',
-  [ScreenSize.LARGE]: 'calc((100% / 3) - 8px)',
-  [ScreenSize.EXTRA_LARGE]: 'calc((100% / 3) - 8px)',
-};
-
-/**
- * The styled `Box` component used
- * for the `Grid` component box
- */
-export const StyledBox = styled(Box)`
+export const StyledGrid = styled('div')`
+  display: grid;
   row-gap: 12px;
   column-gap: 12px;
-`;
-
-/**
- * The styled `Box` component used for
- * the `Grid` component child box
- */
-export const StyledChildBox = styled(Box)<StyledChildBoxProps>`
-  width: ${(props) => widthMap[props.screenSize]};
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 `;

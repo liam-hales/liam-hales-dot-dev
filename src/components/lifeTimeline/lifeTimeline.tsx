@@ -38,9 +38,13 @@ const LifeTimeline: FunctionComponent<Props> = ({ className }): ReactElement<Pro
         delay={500}
         iconId={IconId.MAGNIFYING_GLASS}
         onChange={(value) => {
+
+          // Trim the value and set the correct query params
+          // or clearing them if the value is an empty string
+          const trimmed = value.trim();
           setParams({
-            ...(value !== '') && {
-              search: value,
+            ...(trimmed !== '') && {
+              search: trimmed,
             },
           });
         }}

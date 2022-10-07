@@ -23,6 +23,7 @@ export const StyledDescription = styled(Text)`
  * the `SkillsPreview` component skills grid
  */
 export const StyledGrid = styled(Grid)`
+  width: 100%;
   padding-top: 46px;
   mask-image: linear-gradient(
     to bottom,

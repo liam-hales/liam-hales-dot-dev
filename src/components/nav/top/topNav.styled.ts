@@ -12,7 +12,7 @@ export const StyledBackground = styled(Box)`
   width: 100%;
   top: 0px;
   padding-top: 12px;
-  padding-bottom: 18px;
+  padding-bottom: 20px;
   padding-left: 12px;
   padding-right: 12px;
   z-index: 1;

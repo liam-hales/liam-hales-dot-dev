@@ -8,7 +8,7 @@ import { Box, Text, Image } from '../../common';
  */
 export const StyledOuterContent = styled(Content)`
   position: relative;
-  max-width: 960px;
+  max-width: 910px;
   height: 500px;
   padding: 0px;
 `;
@@ -40,8 +40,6 @@ export const StyledOverlayImage = styled(StyledImage)`
 export const StyledContent = styled(Content)`
   height: 100%;
   padding-bottom: 20px;
-  padding-left: 32px;
-  padding-right: 32px;
 `;
 
 /**
@@ -59,7 +57,7 @@ export const StyledSubtitleBox = styled(Box)`
  * the `HomeHeader` component title text
  */
 export const StyledTitle = styled(Text)`
-  font-size: clamp(70px, 15.8vw, 140px);
+  font-size: clamp(70px, 17.4vw, 140px);
   line-height: 92%;
   z-index: -2;
 `;

@@ -18,3 +18,11 @@ export const StyledLogoBox = styled(Box)`
 export const StyledLogoSvg = styled(LogoSvg)`
   width: 24px;
 `;
+
+/**
+ * The styled `div` element used for the `Nav` component
+ * spacer to fill the area behind the `BottomNav`
+ */
+export const StyledBottmSpacer = styled('div')`
+  height: 84px;
+`;

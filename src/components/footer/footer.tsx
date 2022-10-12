@@ -1,9 +1,9 @@
 import { FunctionComponent, ReactElement } from 'react';
 import moment from 'moment';
 import { Content, SocialIcons } from '..';
-import { BoxDirection, BoxAlignment, TextAppearance, BoxJustify, ScreenSize } from '../../enums';
+import { BoxDirection, BoxAlignment, TextAppearance, BoxJustify } from '../../enums';
 import { PageSlug } from '../../graphql';
-import { usePageContent, useScreen } from '../../hooks';
+import { usePageContent } from '../../hooks';
 import { Divider, Text } from '../common';
 import { BaseProps } from '../../types';
 import {
@@ -14,7 +14,6 @@ import {
   StyledLogoSvg,
   StyledCopyrightBox,
   StyledBuiltUsing,
-  StyledSpacer,
 } from './footer.styled';
 
 /**
@@ -31,7 +30,6 @@ type Props = BaseProps;
  */
 const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> => {
 
-  const { screenSize } = useScreen();
   const { footerText, builtUsingText } = usePageContent({
     slug: PageSlug.GLOBAL,
   });
@@ -68,11 +66,6 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
           </StyledBuiltUsing>
         </StyledCopyrightBox>
       </Content>
-      {
-        (screenSize === ScreenSize.SMALL) && (
-          <StyledSpacer />
-        )
-      }
     </div>
   );
 };

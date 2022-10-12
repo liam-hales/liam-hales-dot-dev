@@ -4,7 +4,7 @@ import { BaseProps } from '../../types';
 import { BoxJustify, ScreenSize } from '../../enums';
 import { TopNav, BottomNav } from '..';
 import { useScreen } from '../../hooks';
-import { StyledLogoBox, StyledLogoSvg } from './nav.styled';
+import { StyledLogoBox, StyledLogoSvg, StyledBottmSpacer } from './nav.styled';
 
 /**
  * The `Nav` component props
@@ -38,7 +38,10 @@ const Nav: FunctionComponent<Props> = ({ children }): ReactElement<Props> => {
       {children}
       {
         (screenSize === ScreenSize.SMALL) && (
-          <BottomNav />
+          <>
+            <BottomNav />
+            <StyledBottmSpacer />
+          </>
         )
       }
     </BrowserRouter>

@@ -21,16 +21,8 @@ const useScreen = (): UseScreenResponse => {
 
   const { breakpoints } = useTheme();
 
-  const extraSmall = useMediaQuery(breakpoints.only(ScreenSize.EXTRA_SMALL));
   const small = useMediaQuery(breakpoints.only(ScreenSize.SMALL));
   const medium = useMediaQuery(breakpoints.only(ScreenSize.MEDIUM));
-  const large = useMediaQuery(breakpoints.only(ScreenSize.LARGE));
-
-  if (extraSmall === true) {
-    return {
-      screenSize: ScreenSize.EXTRA_SMALL,
-    };
-  }
 
   if (small === true) {
     return {
@@ -44,16 +36,10 @@ const useScreen = (): UseScreenResponse => {
     };
   }
 
-  if (large === true) {
-    return {
-      screenSize: ScreenSize.LARGE,
-    };
-  }
-
-  // Return extra large as the default screen size
+  // Return large as the default screen size
   // if none of the screen sizes are true
   return {
-    screenSize: ScreenSize.EXTRA_LARGE,
+    screenSize: ScreenSize.LARGE,
   };
 };
 

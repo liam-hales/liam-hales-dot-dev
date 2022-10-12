@@ -28,7 +28,7 @@ const SkillAreaCard: FunctionComponent<Props> = ({ className, title, description
     <StyledCard
       className={className}
       direction={
-        (screenSize === ScreenSize.EXTRA_SMALL)
+        (screenSize === ScreenSize.SMALL)
           ? BoxDirection.ROW
           : BoxDirection.COLUMN
       }
@@ -39,7 +39,7 @@ const SkillAreaCard: FunctionComponent<Props> = ({ className, title, description
         screenSize={screenSize}
       />
       <Box alignment={
-        (screenSize === ScreenSize.EXTRA_SMALL)
+        (screenSize === ScreenSize.SMALL)
           ? BoxAlignment.START
           : BoxAlignment.CENTER
       }

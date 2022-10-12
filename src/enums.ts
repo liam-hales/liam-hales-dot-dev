@@ -25,11 +25,9 @@ export enum ColourPalette {
  * different screen sizes
  */
 export enum ScreenSize {
-  EXTRA_SMALL = 'xs',
-  SMALL = 'sm',
-  MEDIUM = 'md',
-  LARGE = 'lg',
-  EXTRA_LARGE = 'xl',
+  SMALL = 'SMALL',
+  MEDIUM = 'MEDIUM',
+  LARGE = 'LARGE',
 }
 
 /**

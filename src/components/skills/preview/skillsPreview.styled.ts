@@ -37,6 +37,6 @@ export const StyledGrid = styled(Grid)`
  * `SkillsPreview` component see more button
  */
 export const StyledButton = styled(Button)<StyledButtonProps>`
-  margin-top: ${(props) => (props.screenSize === ScreenSize.EXTRA_SMALL) ? -26 : 10}px;
+  margin-top: ${(props) => (props.screenSize === ScreenSize.SMALL) ? -26 : 10}px;
   align-self: center;
 `;

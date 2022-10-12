@@ -1,9 +1,9 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { useMediaQuery, useTheme } from '@mui/material';
 import { BaseProps } from '../../types';
 import { BoxJustify, ScreenSize } from '../../enums';
 import { TopNav, BottomNav } from '..';
+import { useScreen } from '../../hooks';
 import { StyledLogoBox, StyledLogoSvg } from './nav.styled';
 
 /**
@@ -20,28 +20,24 @@ type Props = BaseProps;
  */
 const Nav: FunctionComponent<Props> = ({ children }): ReactElement<Props> => {
 
-  const { breakpoints } = useTheme();
-
-  const mediaQuery = breakpoints.down(ScreenSize.MEDIUM);
-  const belowMedium = useMediaQuery(mediaQuery);
-
+  const { screenSize } = useScreen();
   return (
     <BrowserRouter>
       {
-        (belowMedium === true) && (
+        (screenSize === ScreenSize.SMALL) && (
           <StyledLogoBox justify={BoxJustify.CENTER}>
             <StyledLogoSvg />
           </StyledLogoBox>
         )
       }
       {
-        (belowMedium === false) && (
+        (screenSize !== ScreenSize.SMALL) && (
           <TopNav />
         )
       }
       {children}
       {
-        (belowMedium === true) && (
+        (screenSize === ScreenSize.SMALL) && (
           <BottomNav />
         )
       }

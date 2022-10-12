@@ -11,18 +11,6 @@ interface StyledSearchInputProps {
 }
 
 /**
- * The input width map for the
- * dfferent `ScreenSize` values
- */
-const inputWidthMap: Record<ScreenSize, string> = {
-  [ScreenSize.EXTRA_SMALL]: '100%',
-  [ScreenSize.SMALL]: '100%',
-  [ScreenSize.MEDIUM]: '350px',
-  [ScreenSize.LARGE]: '350px',
-  [ScreenSize.EXTRA_LARGE]: '350px',
-};
-
-/**
  * The styled `Box` component used for
  * the `Skills` component box
  */
@@ -35,7 +23,7 @@ export const StyledBox = styled(Box)`
  * `Skills` component search input
  */
 export const StyledSearchInput = styled(Input)<StyledSearchInputProps>`
-  width: ${(props) => inputWidthMap[props.screenSize]};
+  width: ${(props) => (props.screenSize === ScreenSize.SMALL) ? '100%' : '350px'};
 `;
 
 /**

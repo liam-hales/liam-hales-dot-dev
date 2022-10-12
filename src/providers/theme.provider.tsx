@@ -35,11 +35,9 @@ const ThemeProvider: FunctionComponent<Props> = ({ children }): ReactElement<Pro
     },
     breakpoints: {
       values: {
-        [ScreenSize.EXTRA_SMALL]: 0,
-        [ScreenSize.SMALL]: 500,
-        [ScreenSize.MEDIUM]: 600,
-        [ScreenSize.LARGE]: 700,
-        [ScreenSize.EXTRA_LARGE]: 800,
+        [ScreenSize.SMALL]: 0,
+        [ScreenSize.MEDIUM]: 500,
+        [ScreenSize.LARGE]: 1024,
       },
     },
     typography: {

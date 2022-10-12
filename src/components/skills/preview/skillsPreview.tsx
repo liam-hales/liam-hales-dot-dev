@@ -42,7 +42,7 @@ const SkillsPreview: FunctionComponent<Props> = ({ reference, className }): Reac
       <StyledGrid>
         {
           skills
-            .slice(0, (screenSize === ScreenSize.EXTRA_SMALL) ? -2 : skills.length)
+            .slice(0, (screenSize === ScreenSize.SMALL) ? -2 : skills.length)
             .map((skill, index) => {
 
               // Destructure the skill and return

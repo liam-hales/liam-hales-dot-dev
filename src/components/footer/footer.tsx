@@ -1,10 +1,9 @@
 import { FunctionComponent, ReactElement } from 'react';
 import moment from 'moment';
-import { useMediaQuery, useTheme } from '@mui/material';
 import { Content, SocialIcons } from '..';
 import { BoxDirection, BoxAlignment, TextAppearance, BoxJustify, ScreenSize } from '../../enums';
 import { PageSlug } from '../../graphql';
-import { usePageContent } from '../../hooks';
+import { usePageContent, useScreen } from '../../hooks';
 import { Divider, Text } from '../common';
 import { BaseProps } from '../../types';
 import {
@@ -32,13 +31,10 @@ type Props = BaseProps;
  */
 const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> => {
 
-  const { breakpoints } = useTheme();
+  const { screenSize } = useScreen();
   const { footerText, builtUsingText } = usePageContent({
     slug: PageSlug.GLOBAL,
   });
-
-  const mediaQuery = breakpoints.down(ScreenSize.MEDIUM);
-  const belowMedium = useMediaQuery(mediaQuery);
 
   const year = moment
     .utc()
@@ -73,7 +69,7 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
         </StyledCopyrightBox>
       </Content>
       {
-        (belowMedium === true) && (
+        (screenSize === ScreenSize.SMALL) && (
           <StyledSpacer />
         )
       }

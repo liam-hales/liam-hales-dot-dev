@@ -11,6 +11,7 @@ interface Props extends BaseProps {
   readonly alignment?: BoxAlignment;
   readonly justify?: BoxJustify;
   readonly wrap?: boolean;
+  readonly onClick?: () => void;
 }
 
 /**
@@ -28,6 +29,7 @@ const Box: FunctionComponent<Props> = (props): ReactElement<Props> => {
     alignment = BoxAlignment.CENTER,
     justify = BoxJustify.START,
     wrap = false,
+    onClick,
     children,
   } = props;
 
@@ -39,6 +41,8 @@ const Box: FunctionComponent<Props> = (props): ReactElement<Props> => {
       alignment={alignment}
       justify={justify}
       wrap={wrap}
+      onClick={onClick}
+      clickable={onClick != null}
     >
       {children}
     </StyledBox>

@@ -9,6 +9,7 @@ interface StyledBoxProps {
   readonly alignment: BoxAlignment;
   readonly justify: BoxJustify;
   readonly wrap: boolean;
+  readonly clickable: boolean;
 }
 
 /**
@@ -24,5 +25,10 @@ export const StyledBox = styled('div')<StyledBoxProps>`
     return (props.wrap === true)
       ? 'wrap'
       : 'nowrap';
+  }};
+  cursor: ${(props) => {
+    return (props.clickable === true)
+      ? 'pointer'
+      : 'unset';
   }};
 `;

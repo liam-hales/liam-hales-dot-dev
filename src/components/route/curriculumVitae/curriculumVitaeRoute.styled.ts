@@ -1,12 +1,23 @@
 import { styled } from '@mui/material';
 import { CurrentPosition, LifeTimelinePreview, SkillsPreview } from '../..';
+import { Box } from '../../common';
+
+/**
+ * The styled `Box` component used for the
+ * `CurriculumVitaeRoute` component header buttons
+ */
+export const StyledHeaderButtons = styled(Box)`
+  column-gap: 12px;
+`;
 
 /**
  * The styled `CurrentPosition` component used
  * for the `CurriculumVitaeRoute` component
  */
 export const StyledCurrentPosition = styled(CurrentPosition)`
-  padding-top: 50px;
+  // Margin is applied here and not padding so
+  // the auto scroll works correctly
+  margin-top: 50px;
 `;
 
 /**
@@ -14,7 +25,9 @@ export const StyledCurrentPosition = styled(CurrentPosition)`
  * for the `CurriculumVitaeRoute` component
  */
 export const StyledSkillsPreview = styled(SkillsPreview)`
-  padding-top: 70px;
+  // Margin is applied here and not padding so
+  // the auto scroll works correctly
+  margin-top: 70px;
 `;
 
 /**
@@ -22,5 +35,7 @@ export const StyledSkillsPreview = styled(SkillsPreview)`
  * for the `CurriculumVitaeRoute` component
  */
 export const StyledLifeTimelinePreview = styled(LifeTimelinePreview)`
-  padding-top: 80px;
+  // Margin is applied here and not padding so
+  // the auto scroll works correctly
+  margin-top: 80px;
 `;

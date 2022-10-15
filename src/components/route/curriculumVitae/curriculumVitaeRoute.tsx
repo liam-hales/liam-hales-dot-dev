@@ -1,8 +1,11 @@
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, useRef } from 'react';
 import { StatusHandler, Header, Content } from '../..';
+import { Button } from '../../common';
 import { PageSlug } from '../../../graphql';
-import { usePageQuery } from '../../../hooks';
+import { usePageQuery, useScreen } from '../../../hooks';
+import { BoxDirection } from '../../../enums';
 import {
+  StyledHeaderButtons,
   StyledCurrentPosition,
   StyledSkillsPreview,
   StyledLifeTimelinePreview,
@@ -16,18 +19,35 @@ import {
  */
 const CurriculumVitaeRoute: FunctionComponent = (): ReactElement => {
 
+  const currentPositionRef = useRef<HTMLDivElement>(null);
+  const skillsPreviewRef = useRef<HTMLDivElement>(null);
+  const lifeTimelinePreviewRef = useRef<HTMLDivElement>(null);
+
+  const { scrollTo } = useScreen();
   const { status } = usePageQuery({
     slug: PageSlug.CV,
   });
 
   return (
     <>
-      <Header title="Curriculum Vitae" />
+      <Header title="Curriculum Vitae">
+        <StyledHeaderButtons direction={BoxDirection.ROW}>
+          <Button onClick={() => scrollTo(currentPositionRef)}>
+            Current Position
+          </Button>
+          <Button onClick={() => scrollTo(skillsPreviewRef)}>
+            Skills
+          </Button>
+          <Button onClick={() => scrollTo(lifeTimelinePreviewRef)}>
+            Life Timeline
+          </Button>
+        </StyledHeaderButtons>
+      </Header>
       <StatusHandler status={status}>
         <Content>
-          <StyledCurrentPosition />
-          <StyledSkillsPreview />
-          <StyledLifeTimelinePreview />
+          <StyledCurrentPosition reference={currentPositionRef} />
+          <StyledSkillsPreview reference={skillsPreviewRef} />
+          <StyledLifeTimelinePreview reference={lifeTimelinePreviewRef} />
         </Content>
       </StatusHandler>
     </>

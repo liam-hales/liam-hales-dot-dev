@@ -6,19 +6,23 @@ import { useNav } from '.';
  * The `UseRouter` hook response
  */
 interface UseRouterResponse {
-  goTo: (route: NavRoute) => void;
-  goForward: () => void;
-  goBack: () => void;
+  /**
+   * Navigates to a given `route` and resets
+   * the scroll position back to the top
+   *
+   * @param route The route
+   */
+  readonly goTo: (route: NavRoute) => void;
 }
 
 /**
- * Used to access the router and perfom actions such as navigating
- * to a different route and going forward/back a page
+ * Used to access the router and perfom actions
+ * such as navigating to a given route
  *
  * @returns The `useRouter` hook response
  * @example
  *
- * const { goTo, goForward, goBack } = useChangeRoute();
+ * const { goTo } = useChangeRoute();
  * goTo(NavRoute.home);
  */
 const useRouter = (): UseRouterResponse => {
@@ -26,6 +30,12 @@ const useRouter = (): UseRouterResponse => {
   const navigate = useNavigate();
   const { navRoute } = useNav();
 
+  /**
+   * Navigates to a given `route` and resets
+   * the scroll position back to the top
+   *
+   * @param route The route
+   */
   const goTo = (route: NavRoute): void => {
 
     // Just return if the user is already on said route to avoid
@@ -38,18 +48,8 @@ const useRouter = (): UseRouterResponse => {
     navigate(route);
   };
 
-  const goForward = (): void => {
-    navigate(1);
-  };
-
-  const goBack = (): void => {
-    navigate(-1);
-  };
-
   return {
     goTo: goTo,
-    goForward: goForward,
-    goBack: goBack,
   };
 };
 

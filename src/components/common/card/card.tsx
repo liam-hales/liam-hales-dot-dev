@@ -10,6 +10,7 @@ interface Props extends BaseProps {
   readonly direction?: BoxDirection;
   readonly alignment?: BoxAlignment;
   readonly justify?: BoxJustify;
+  readonly onClick?: ()=> void;
 }
 
 /**
@@ -19,13 +20,14 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `Card` component
  */
-const Card: FunctionComponent<Props> = ({ className, direction, alignment, justify, children }): ReactElement<Props> => {
+const Card: FunctionComponent<Props> = ({ className, direction, alignment, justify, onClick, children }): ReactElement<Props> => {
   return (
     <StyledCard
       className={className}
       direction={direction}
       alignment={alignment}
       justify={justify}
+      onClick={onClick}
     >
       {children}
     </StyledCard>

@@ -11,6 +11,7 @@ interface Props extends BaseProps {
   readonly name: string;
   readonly type: string;
   readonly imageUrl?: string;
+  readonly onClick?: () => void;
 }
 
 /**
@@ -20,12 +21,13 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `SkillCard` component
  */
-const SkillCard: FunctionComponent<Props> = ({ className, name, type, imageUrl }): ReactElement<Props> => {
+const SkillCard: FunctionComponent<Props> = ({ className, name, type, imageUrl, onClick }): ReactElement<Props> => {
   return (
     <StyledCard
       className={className}
       direction={BoxDirection.ROW}
       justify={BoxJustify.SPACE_BETWEEN}
+      onClick={onClick}
     >
       <Box alignment={BoxAlignment.START}>
         <StyledName bold={true}>

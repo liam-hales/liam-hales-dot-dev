@@ -14,6 +14,7 @@ import Timeline from './timeline/timeline';
 import TimelineEvent from './timeline/event/timelineEvent';
 import Breadcrumbs from './breadcrumbs/breadcrumbs';
 import BreadcrumbItem from './breadcrumbs/item/breadcrumbItem';
+import Modal from './modal/modal';
 
 export {
   Box,
@@ -32,4 +33,5 @@ export {
   TimelineEvent,
   Breadcrumbs,
   BreadcrumbItem,
+  Modal,
 };

@@ -18,9 +18,7 @@ export const StyledCard = styled(Card)`
  * the `SkillCard` component name text
  */
 export const StyledName = styled(Text)`
-  padding-bottom: 2px;
   font-size: 20px;
-  line-height: 122%;
 `;
 
 /**

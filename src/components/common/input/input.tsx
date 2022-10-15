@@ -24,7 +24,7 @@ interface Props extends BaseProps {
  */
 const Input: FunctionComponent<Props> = ({ className, defaultValue, placeholder, iconId, delay, onChange }): ReactElement<Props> => {
 
-  const [value, setValue] = useState(defaultValue);
+  const [value, setValue] = useState<string>(defaultValue);
   useDebounce(() => onChange(value), delay);
 
   return (

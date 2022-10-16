@@ -9,6 +9,8 @@ const skillFragment = gql`
     id
     name
     type
+    description
+    url
     image {
       ...AssetFields
     }

@@ -130,6 +130,8 @@ export interface Skill {
   readonly id: string;
   readonly name: string;
   readonly type: string;
+  readonly description: string;
+  readonly url: string;
   readonly image?: Asset;
 }
 

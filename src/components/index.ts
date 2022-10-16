@@ -20,6 +20,7 @@ import LifeTimelinePreview from './lifeTimeline/preview/lifeTimelinePreview';
 import SkillsPreview from './skills/preview/skillsPreview';
 import LifeTimeline from './lifeTimeline/lifeTimeline';
 import Skills from './skills/skills';
+import SkillModal from './skills/modal/skillModal';
 import Router from './router/router';
 import Nav from './nav/nav';
 import TopNav from './nav/top/topNav';
@@ -52,6 +53,7 @@ export {
   SkillsPreview,
   LifeTimeline,
   Skills,
+  SkillModal,
   Router,
   Nav,
   TopNav,

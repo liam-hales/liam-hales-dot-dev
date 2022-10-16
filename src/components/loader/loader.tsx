@@ -17,9 +17,9 @@ const Loader: FunctionComponent = (): ReactElement => {
   const count = useIsFetching({
     predicate: (query) => {
 
-      // The `status` is only 'loading' on initial load which is
-      // when we want to display the loader. This is not the case
-      // for the `fetchStatus` when set to `fetching
+      // The `status` is only 'loading' for the initial query which is
+      // when we want to display the loader. The `fetchStatus` however
+      // is set to `fetching` for every request
       const { state } = query;
       const { status } = state;
 

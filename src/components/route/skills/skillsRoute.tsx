@@ -19,7 +19,7 @@ const SkillsRoute: FunctionComponent = (): ReactElement => {
   });
 
   return (
-    <>
+    <StatusHandler status={status}>
       <Header title="Skills">
         <Breadcrumbs>
           <BreadcrumbItem route={NavRoute.CV}>
@@ -33,12 +33,10 @@ const SkillsRoute: FunctionComponent = (): ReactElement => {
           </BreadcrumbItem>
         </Breadcrumbs>
       </Header>
-      <StatusHandler status={status}>
-        <Content alignment={BoxAlignment.START}>
-          <StyledSkills />
-        </Content>
-      </StatusHandler>
-    </>
+      <Content alignment={BoxAlignment.START}>
+        <StyledSkills />
+      </Content>
+    </StatusHandler>
   );
 };
 

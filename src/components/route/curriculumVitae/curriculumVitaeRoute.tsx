@@ -29,7 +29,7 @@ const CurriculumVitaeRoute: FunctionComponent = (): ReactElement => {
   });
 
   return (
-    <>
+    <StatusHandler status={status}>
       <Header title="Curriculum Vitae">
         <StyledHeaderButtons direction={BoxDirection.ROW}>
           <Button onClick={() => scrollTo(currentPositionRef)}>
@@ -43,14 +43,12 @@ const CurriculumVitaeRoute: FunctionComponent = (): ReactElement => {
           </Button>
         </StyledHeaderButtons>
       </Header>
-      <StatusHandler status={status}>
-        <Content>
-          <StyledCurrentPosition reference={currentPositionRef} />
-          <StyledSkillsPreview reference={skillsPreviewRef} />
-          <StyledLifeTimelinePreview reference={lifeTimelinePreviewRef} />
-        </Content>
-      </StatusHandler>
-    </>
+      <Content>
+        <StyledCurrentPosition reference={currentPositionRef} />
+        <StyledSkillsPreview reference={skillsPreviewRef} />
+        <StyledLifeTimelinePreview reference={lifeTimelinePreviewRef} />
+      </Content>
+    </StatusHandler>
   );
 };
 

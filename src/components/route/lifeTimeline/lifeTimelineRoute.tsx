@@ -19,7 +19,7 @@ const LifeTimelineRoute: FunctionComponent = (): ReactElement => {
   });
 
   return (
-    <>
+    <StatusHandler status={status}>
       <Header title="Life Timeline">
         <Breadcrumbs>
           <BreadcrumbItem route={NavRoute.CV}>
@@ -33,12 +33,10 @@ const LifeTimelineRoute: FunctionComponent = (): ReactElement => {
           </BreadcrumbItem>
         </Breadcrumbs>
       </Header>
-      <StatusHandler status={status}>
-        <Content alignment={BoxAlignment.START}>
-          <StyledLifeTimeline />
-        </Content>
-      </StatusHandler>
-    </>
+      <Content alignment={BoxAlignment.START}>
+        <StyledLifeTimeline />
+      </Content>
+    </StatusHandler>
   );
 };
 

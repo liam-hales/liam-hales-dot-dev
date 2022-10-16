@@ -1,6 +1,6 @@
 import { styled } from '@mui/material';
 import { CurrentPosition, LifeTimelinePreview, SkillsPreview } from '../..';
-import { Box } from '../../common';
+import { Box, Text } from '../../common';
 
 /**
  * The styled `Box` component used for the
@@ -38,4 +38,15 @@ export const StyledLifeTimelinePreview = styled(LifeTimelinePreview)`
   // Margin is applied here and not padding so
   // the auto scroll works correctly
   margin-top: 80px;
+`;
+
+/**
+ * The styled `Text` component used for
+ * the `CurriculumVitaeRoute` disclaimer text
+ */
+export const StyledDisclaimerText = styled(Text)`
+  max-width: 500px;
+  padding-top: 65px;
+  font-size: 12px;
+  text-align: center;
 `;

@@ -3,12 +3,13 @@ import { StatusHandler, Header, Content } from '../..';
 import { Button } from '../../common';
 import { PageSlug } from '../../../graphql';
 import { usePageQuery, useScreen } from '../../../hooks';
-import { BoxDirection } from '../../../enums';
+import { BoxDirection, QueryStatus, TextAppearance } from '../../../enums';
 import {
   StyledHeaderButtons,
   StyledCurrentPosition,
   StyledSkillsPreview,
   StyledLifeTimelinePreview,
+  StyledDisclaimerText,
 } from './curriculumVitaeRoute.styled';
 
 /**
@@ -24,7 +25,7 @@ const CurriculumVitaeRoute: FunctionComponent = (): ReactElement => {
   const lifeTimelinePreviewRef = useRef<HTMLDivElement>(null);
 
   const { scrollTo } = useScreen();
-  const { status } = usePageQuery({
+  const { status, data } = usePageQuery({
     slug: PageSlug.CV,
   });
 
@@ -47,6 +48,22 @@ const CurriculumVitaeRoute: FunctionComponent = (): ReactElement => {
         <StyledCurrentPosition reference={currentPositionRef} />
         <StyledSkillsPreview reference={skillsPreviewRef} />
         <StyledLifeTimelinePreview reference={lifeTimelinePreviewRef} />
+        {
+          (() => {
+            if (status !== QueryStatus.SUCCESS) {
+              return null;
+            }
+
+            const { content } = data;
+            const { disclaimerText } = content;
+
+            return (
+              <StyledDisclaimerText appearance={TextAppearance.SUBTLE}>
+                {disclaimerText}
+              </StyledDisclaimerText>
+            );
+          })()
+        }
       </Content>
     </StatusHandler>
   );

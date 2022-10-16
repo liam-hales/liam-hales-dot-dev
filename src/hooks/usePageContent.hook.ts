@@ -7,6 +7,9 @@ import { generateCacheKey } from '../helpers';
  * Finds the page data from the query cache for
  * the `variables` and returns it's `content`.
  *
+ * **NOTE:** It's important to only use this hook in a
+ * component that has been wrapped in the `StatusHandler`
+ *
  * Generic type `T` for the page slug
  *
  * @param variables The page variables
@@ -30,7 +33,7 @@ const usePageContent = <T extends PageSlug>(
   // Check if the page exists
   // If not then throw an error
   if (page == null) {
-    throw new Error(`No page data for cache key ${cacheKey}`);
+    throw new Error(`No page data for cache key ${cacheKey}. Make sure "usePageContent" is used within a component that has been wrapped in the "StatusHandler"`);
   }
 
   const { content } = page;

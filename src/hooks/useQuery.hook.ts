@@ -1,17 +1,9 @@
-import { useQuery as _useQuery, QueryStatus as _QueryStatus } from '@tanstack/react-query';
+import { useQuery as _useQuery } from '@tanstack/react-query';
 import { request } from 'graphql-request';
 import { dataTransformer, generateCacheKey } from '../helpers';
 import { QueryStatus } from '../enums';
+import { UseQueryResponse } from '../types';
 import { useConfig } from '.';
-
-/**
- * The `useQuery` hook response.
- * Generic type `T for the response data
- */
-interface UseQueryResponse<T extends Record<keyof T, unknown>> {
-  readonly status: QueryStatus;
-  readonly data?: T;
-}
 
 /**
  * Used to make a request to the GraphQL API using
@@ -41,7 +33,7 @@ const useQuery = <
   const cacheKey = generateCacheKey(variables);
 
   const { apiUrl } = useConfig();
-  const { status, data } = _useQuery<T>({
+  const { isLoading, isError, data } = _useQuery<T>({
     queryKey: [cacheKey],
     queryFn: async () => {
 
@@ -59,16 +51,26 @@ const useQuery = <
     },
   });
 
-  // Define the status map to map between the @tanstack/react-query
-  // query status and the app query status
-  const statusMap: Record<_QueryStatus, QueryStatus> = {
-    loading: QueryStatus.LOADING,
-    success: QueryStatus.SUCCESS,
-    error: QueryStatus.ERROR,
-  };
+  // Check if the query is loading and
+  // if so return the loading status
+  if (isLoading === true) {
+    return {
+      status: QueryStatus.LOADING,
+    };
+  }
 
+  // Check if the query has errored and
+  // if so return the error status
+  if (isError === true) {
+    return {
+      status: QueryStatus.ERROR,
+    };
+  }
+
+  // Return the success status
+  // and the defined data
   return {
-    status: statusMap[status],
+    status: QueryStatus.SUCCESS,
     data: data,
   };
 };

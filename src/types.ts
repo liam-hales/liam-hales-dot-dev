@@ -1,5 +1,5 @@
 import { ReactNode, RefObject } from 'react';
-import { ScreenSize } from './enums';
+import { QueryStatus, ScreenSize } from './enums';
 
 /**
  * Override the existing `BreakpointOverrides` interface
@@ -28,4 +28,39 @@ export interface BaseProps<T = ReactNode> {
   readonly reference?: RefObject<HTMLDivElement>;
   readonly className?: string;
   readonly children?: T;
+}
+
+/**
+ * The union type for all `useQuery` hook responses.
+ * This type can also used other query hooks.
+ *
+ * Generic type `T` for the `data`
+ */
+export type UseQueryResponse<T extends Record<keyof T, unknown>> =
+  | LoadingUseQueryResponse
+  | SuccessUseQueryResponse<T>
+  | ErrorUseQueryResponse;
+
+/**
+ * Describes the `useQuery` hook success response
+ */
+interface SuccessUseQueryResponse<T extends Record<keyof T, unknown>> {
+  readonly status: QueryStatus.SUCCESS;
+  readonly data: T
+}
+
+/**
+ * Describes the `useQuery` hook loading response
+ */
+interface LoadingUseQueryResponse {
+  readonly status: QueryStatus.LOADING;
+  readonly data?: undefined;
+}
+
+/**
+ * Describes the `useQuery` hook error response
+ */
+interface ErrorUseQueryResponse {
+  readonly status: QueryStatus.ERROR;
+  readonly data?: undefined;
 }

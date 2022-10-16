@@ -1,15 +1,6 @@
-import { QueryStatus } from '../enums';
 import { PageData, pageQuery, PageSlug, PageVariables } from '../graphql';
+import { UseQueryResponse } from '../types';
 import { useQuery } from '.';
-
-/**
- * The `usePageQuery` hook response.
- * Generic type `T for the page slug
- */
-interface UsePageQueryResponse<T extends PageSlug> {
-  readonly status: QueryStatus;
-  readonly data?: PageData<T>;
-}
 
 /**
  * Used to make a request to the GraphQL API
@@ -27,7 +18,7 @@ interface UsePageQueryResponse<T extends PageSlug> {
  */
 const usePageQuery = <T extends PageSlug>(
   variables: PageVariables<T>,
-): UsePageQueryResponse<T> => {
+): UseQueryResponse<PageData<T>> => {
 
   // Use the useQuery hook to make the page
   // request and return the response

@@ -1,7 +1,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { ImageRoundness, TextAppearance } from '../../../enums';
 import { BaseProps } from '../../../types';
-import { Box, Button, Modal, Text } from '../../common';
+import { Button, Modal, Text } from '../../common';
 import { StyledImage, StyledName, StyledDescription } from './skillModal.styled';
 
 /**
@@ -30,29 +30,27 @@ const SkillModal: FunctionComponent<Props> = ({ open, name, type, description, u
       open={open}
       onClose={onClose}
     >
-      <Box>
-        {
-          (imageUrl != null) && (
-            <StyledImage
-              path={imageUrl}
-              alt={name}
-              roundness={ImageRoundness.NONE}
-            />
-          )
-        }
-        <StyledName bold={true}>
-          {name}
-        </StyledName>
-        <Text appearance={TextAppearance.SECONDARY}>
-          {type}
-        </Text>
-        <StyledDescription appearance={TextAppearance.SECONDARY}>
-          {description}
-        </StyledDescription>
-        <Button onClick={() => window.open(url, '_blank')}>
-          Visit website
-        </Button>
-      </Box>
+      {
+        (imageUrl != null) && (
+          <StyledImage
+            path={imageUrl}
+            alt={name}
+            roundness={ImageRoundness.NONE}
+          />
+        )
+      }
+      <StyledName bold={true}>
+        {name}
+      </StyledName>
+      <Text appearance={TextAppearance.SECONDARY}>
+        {type}
+      </Text>
+      <StyledDescription appearance={TextAppearance.SECONDARY}>
+        {description}
+      </StyledDescription>
+      <Button onClick={() => window.open(url, '_blank')}>
+        Visit website
+      </Button>
     </Modal>
   );
 };

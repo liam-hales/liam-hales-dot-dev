@@ -1,8 +1,8 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { ScreenSize } from '../../../enums';
+import { Slide } from '@mui/material';
 import { useScreen } from '../../../hooks';
 import { BaseProps } from '../../../types';
-import { StyledDialog, StyledCard } from './modal.styled';
+import { StyledModal, StyledCard } from './modal.styled';
 
 /**
  * The `Modal` component props
@@ -17,24 +17,42 @@ interface Props extends BaseProps {
  * display infomation and for the user to interact with
  *
  * @param props The cmponent props
- * @returns
+ * @returns The `Modal` component
  */
 const Modal: FunctionComponent<Props> = ({ className, open, onClose, children }): ReactElement<Props> => {
 
   const { screenSize } = useScreen();
   return (
-    <StyledDialog
+    <StyledModal
       className={className}
       open={open}
       onClose={onClose}
       keepMounted={true}
-      maxWidth={ScreenSize.MEDIUM}
-      screenSize={screenSize}
+      disableAutoFocus={true}
     >
-      <StyledCard>
-        {children}
-      </StyledCard>
-    </StyledDialog>
+      <Slide
+        in={open}
+        direction="up"
+        timeout={{
+          enter: 460,
+          exit: 160,
+        }}
+        easing={{
+          enter: 'cubic-bezier(0.16, 1, 0.3, 1)',
+          exit: 'cubic-bezier(0.12, 0, 0.39, 0)',
+        }}
+      >
+        {/**
+         * The `div` element is here to accept the reference
+         * forwarded from the `Slide` transition compnent
+         */}
+        <div>
+          <StyledCard screenSize={screenSize}>
+            {children}
+          </StyledCard>
+        </div>
+      </Slide>
+    </StyledModal>
   );
 };
 

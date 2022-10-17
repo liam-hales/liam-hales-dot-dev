@@ -1,7 +1,8 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { ScreenSize } from '../../../enums';
+import { useScreen } from '../../../hooks';
 import { BaseProps } from '../../../types';
-import { StyledDialog } from './modal.styled';
+import { StyledDialog, StyledCard } from './modal.styled';
 
 /**
  * The `Modal` component props
@@ -19,6 +20,8 @@ interface Props extends BaseProps {
  * @returns
  */
 const Modal: FunctionComponent<Props> = ({ className, open, onClose, children }): ReactElement<Props> => {
+
+  const { screenSize } = useScreen();
   return (
     <StyledDialog
       className={className}
@@ -26,8 +29,11 @@ const Modal: FunctionComponent<Props> = ({ className, open, onClose, children })
       onClose={onClose}
       keepMounted={true}
       maxWidth={ScreenSize.MEDIUM}
+      screenSize={screenSize}
     >
-      {children}
+      <StyledCard>
+        {children}
+      </StyledCard>
     </StyledDialog>
   );
 };

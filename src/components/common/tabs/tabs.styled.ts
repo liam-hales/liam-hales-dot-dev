@@ -19,6 +19,6 @@ export const StyledTabs = styled(Tabs)`
       max-width: 30px;
       border-radius: 2px;
       background-color: ${ColourPalette.BLUE};
-    }
+    };
   };
 `;

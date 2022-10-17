@@ -16,8 +16,8 @@ export const StyledBox = styled(Box)`
 `;
 
 /**
- * The styled `InputBase` component used
- * for the `Input` component
+ * The styled `InputBase` component from `@mui/material`
+ * used for the `Input` component
  */
 export const StyledInput = styled(InputBase)`
   width: 100%;
@@ -29,8 +29,8 @@ export const StyledInput = styled(InputBase)`
 
     ::placeholder {
       opacity: 0.22;
-    }
-  }
+    };
+  };
 `;
 
 /**

@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { Slide } from '@mui/material';
 import { useScreen } from '../../../hooks';
 import { BaseProps } from '../../../types';
@@ -7,7 +7,7 @@ import { StyledModal, StyledCard } from './modal.styled';
 /**
  * The `Modal` component props
  */
-interface Props extends BaseProps {
+interface Props extends BaseProps<ReactNode, true> {
   readonly open: boolean;
   readonly onClose: () => void;
 }
@@ -29,6 +29,7 @@ const Modal: FunctionComponent<Props> = ({ className, open, onClose, children })
       onClose={onClose}
       keepMounted={true}
       disableAutoFocus={true}
+      screenSize={screenSize}
     >
       <Slide
         in={open}
@@ -47,7 +48,7 @@ const Modal: FunctionComponent<Props> = ({ className, open, onClose, children })
          * forwarded from the `Slide` transition compnent
          */}
         <div>
-          <StyledCard screenSize={screenSize}>
+          <StyledCard>
             {children}
           </StyledCard>
         </div>

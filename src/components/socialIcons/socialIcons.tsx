@@ -2,7 +2,7 @@ import { FunctionComponent, ReactElement } from 'react';
 import { BoxDirection, IconId } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { usePageContent } from '../../hooks';
-import { StyledBox, StyledIcon } from './socialIcons.styled';
+import { StyledIconsBox, StyledIcon } from './socialIcons.styled';
 
 /**
  * Renders the social icons which link out to profiles on different
@@ -17,7 +17,7 @@ const SocialIcons: FunctionComponent = (): ReactElement => {
   });
 
   return (
-    <StyledBox direction={BoxDirection.ROW}>
+    <StyledIconsBox direction={BoxDirection.ROW}>
       <StyledIcon
         id={IconId.ENVELOPE}
       />
@@ -29,7 +29,7 @@ const SocialIcons: FunctionComponent = (): ReactElement => {
         id={IconId.STACK_OVERFLOW}
         onClick={() => window.open(stackOverflowUrl, '_blank')}
       />
-    </StyledBox>
+    </StyledIconsBox>
   );
 };
 

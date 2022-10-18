@@ -3,10 +3,10 @@ import { ColourPalette } from '../../enums';
 import { Box, Icon } from '../common';
 
 /**
- * The styled `Box` component used
- * for the `SocialIcons` component
+ * The styled `Box` component used for
+ * the `SocialIcons` component icons box
  */
-export const StyledBox = styled(Box)`
+export const StyledIconsBox = styled(Box)`
   column-gap: 12px;
 `;
 

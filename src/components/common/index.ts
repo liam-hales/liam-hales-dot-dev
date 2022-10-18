@@ -1,10 +1,10 @@
 import Box from './box/box';
 import Text from './text/text';
 import Title from './title/title';
+import Icon from './icon/icon';
 import Button from './button/button';
 import Card from './card/card';
 import Image from './image/image';
-import Icon from './icon/icon';
 import Input from './input/input';
 import Tabs from './tabs/tabs';
 import Tab from './tabs/tab/tab';
@@ -20,10 +20,10 @@ export {
   Box,
   Text,
   Title,
+  Icon,
   Button,
   Card,
   Image,
-  Icon,
   Input,
   Tabs,
   Tab,

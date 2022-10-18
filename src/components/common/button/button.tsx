@@ -1,12 +1,14 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { BaseProps } from '../../../types';
 import { Text } from '..';
-import { StyledButton } from './button.styled';
+import { IconId } from '../../../enums';
+import { StyledButton, StyledIcon } from './button.styled';
 
 /**
  * The `Button` component props
  */
 interface Props extends BaseProps<string> {
+  readonly iconId?: IconId;
   readonly onClick: () => void;
 }
 
@@ -17,7 +19,7 @@ interface Props extends BaseProps<string> {
  * @param props The component props
  * @returns The `Button` component
  */
-const Button: FunctionComponent<Props> = ({ className, onClick, children }): ReactElement<Props> => {
+const Button: FunctionComponent<Props> = ({ className, iconId, onClick, children }): ReactElement<Props> => {
   return (
     <StyledButton
       className={className}
@@ -25,6 +27,11 @@ const Button: FunctionComponent<Props> = ({ className, onClick, children }): Rea
       disableElevation={true}
       onClick={onClick}
     >
+      {
+        (iconId != null) && (
+          <StyledIcon id={iconId} />
+        )
+      }
       <Text bold={true}>
         {children}
       </Text>

@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { BoxAlignment, BoxDirection, BoxJustify } from '../../../enums';
 import { BaseProps } from '../../../types';
 import { StyledBox } from './box.styled';
@@ -6,7 +6,7 @@ import { StyledBox } from './box.styled';
 /**
  * The `Box` component props
  */
-interface Props extends BaseProps {
+interface Props extends BaseProps<ReactNode, true> {
   readonly direction?: BoxDirection;
   readonly alignment?: BoxAlignment;
   readonly justify?: BoxJustify;

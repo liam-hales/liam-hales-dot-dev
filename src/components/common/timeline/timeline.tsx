@@ -7,9 +7,8 @@ import { StyledItemBox, StyledChildBox, StyledDot, StyledConnector } from './tim
 /**
  * The `Timeline` component props
  */
-interface Props extends BaseProps {
+interface Props extends BaseProps<ReactElement[], true> {
   readonly trailingConnector?: boolean;
-  readonly children: ReactElement[];
 }
 
 /**

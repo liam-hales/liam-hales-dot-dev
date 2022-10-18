@@ -23,12 +23,23 @@ declare module '@mui/material/styles' {
  * props should `extends`.
  *
  * Generic type `T` for the `children`
+ *
+ * Generic type `R` for if `children` is required
  */
-export interface BaseProps<T = ReactNode> {
-  readonly reference?: RefObject<HTMLDivElement>;
-  readonly className?: string;
-  readonly children?: T;
-}
+export type BaseProps<T = ReactNode, R extends boolean = false> =
+  {
+    readonly reference?: RefObject<HTMLDivElement>;
+    readonly className?: string;
+  }
+  & (
+    R extends true
+      ? {
+          children: T
+        }
+      : {
+          children?: T
+        }
+  );
 
 /**
  * The union type for all `useQuery` hook responses.

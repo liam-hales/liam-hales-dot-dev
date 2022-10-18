@@ -5,9 +5,7 @@ import { StyledGrid } from './grid.styled';
 /**
  * The `Grid` component props
  */
-interface Props extends BaseProps {
-  readonly children: ReactElement[];
-}
+type Props = BaseProps<ReactElement[], true>;
 
 /**
  * Used to render the `children` in an evenly

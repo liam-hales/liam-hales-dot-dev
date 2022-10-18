@@ -1,6 +1,6 @@
 import { styled, Modal } from '@mui/material';
-import { ScreenSize } from '../../../enums';
-import { Card } from '..';
+import { ColourPalette, ScreenSize } from '../../../enums';
+import { Card, Icon } from '..';
 
 /**
  * The `StyledModal` component props
@@ -29,4 +29,14 @@ export const StyledCard = styled(Card)`
   padding: 28px;
   margin-left: 20px;
   margin-right: 20px;
+`;
+
+/**
+ * The styled `Icon` component used
+ * for the `Modal` component close icon
+ */
+export const StyledIcon = styled(Icon)`
+  font-size: 20px;
+  align-self: flex-end;
+  color: ${ColourPalette.LIGHT_GREY};
 `;

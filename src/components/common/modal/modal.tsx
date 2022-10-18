@@ -2,7 +2,8 @@ import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { Slide } from '@mui/material';
 import { useScreen } from '../../../hooks';
 import { BaseProps } from '../../../types';
-import { StyledModal, StyledCard } from './modal.styled';
+import { IconId } from '../../../enums';
+import { StyledModal, StyledCard, StyledIcon } from './modal.styled';
 
 /**
  * The `Modal` component props
@@ -49,6 +50,10 @@ const Modal: FunctionComponent<Props> = ({ className, open, onClose, children })
          */}
         <div>
           <StyledCard>
+            <StyledIcon
+              id={IconId.CROSS}
+              onClick={onClose}
+            />
             {children}
           </StyledCard>
         </div>

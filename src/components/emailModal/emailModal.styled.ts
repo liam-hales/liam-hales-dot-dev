@@ -1,12 +1,11 @@
 import { styled } from '@mui/material';
-import { Box, Text } from '../common';
+import { Box, Title } from '../common';
 
 /**
- * The styled `Text` component used for
+ * The styled `Title` component used for
  * the `EmailModal` component title text
  */
-export const StyledTitle = styled(Text)`
-  font-size: 28px;
+export const StyledTitle = styled(Title)`
   padding-bottom: 14px;
 `;
 

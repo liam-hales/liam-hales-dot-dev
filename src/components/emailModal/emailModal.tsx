@@ -33,8 +33,8 @@ const EmailModal: FunctionComponent<Props> = ({ open, onClose }): ReactElement<P
       alignment={BoxAlignment.START}
       onClose={onClose}
     >
-      <StyledTitle bold={true}>
-        Before you email...
+      <StyledTitle>
+        Before you email
       </StyledTitle>
       <Text appearance={TextAppearance.SECONDARY}>
         {emailText}

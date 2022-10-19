@@ -25,6 +25,7 @@ export const StyledModal = styled(Modal)<StyledModalProps>`
  * for the `Modal` component
  */
 export const StyledCard = styled(Card)`
+  position: relative;
   max-width: 420px;
   padding: 28px;
   margin-left: 20px;
@@ -36,6 +37,7 @@ export const StyledCard = styled(Card)`
  * for the `Modal` component close icon
  */
 export const StyledIcon = styled(Icon)`
+  position: absolute;
   font-size: 20px;
   align-self: flex-end;
   color: ${ColourPalette.LIGHT_GREY};

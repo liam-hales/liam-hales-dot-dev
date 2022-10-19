@@ -29,6 +29,7 @@ export interface GlobalPageContent extends BasePageContent {
   readonly footerText: string;
   readonly builtUsingText: string;
   readonly email: string;
+  readonly emailText: string;
   readonly linkedInUrl: string;
   readonly stackOverflowUrl: string;
   readonly buyMeCoffeeUrl: string;

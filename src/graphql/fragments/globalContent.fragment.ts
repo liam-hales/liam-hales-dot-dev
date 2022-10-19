@@ -9,6 +9,7 @@ const globalContentFragment = gql`
     footerText
     builtUsingText
     email
+    emailText
     linkedInUrl
     stackOverflowUrl
     buyMeCoffeeUrl

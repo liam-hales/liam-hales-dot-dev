@@ -7,6 +7,6 @@ import { ColourPalette } from '../../../enums';
  * for the `Card` component
  */
 export const StyledCard = styled(Box)`
-  border-radius: 8px;
+  border-radius: 10px;
   background-color: ${ColourPalette.DARK_GREY};
 `;

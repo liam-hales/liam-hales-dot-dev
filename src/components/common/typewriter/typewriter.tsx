@@ -23,6 +23,7 @@ const Typewriter: FunctionComponent<Props> = ({ onInit }): ReactElement<Props> =
       <TypewriterEffect
         onInit={onInit}
         options={{
+          cursor: '_',
           deleteSpeed: 30,
           wrapperClassName: 'TypewriterWrapper',
           cursorClassName: 'TypewriterCursor',

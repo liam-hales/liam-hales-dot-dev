@@ -2,7 +2,7 @@ import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { Slide } from '@mui/material';
 import { useScreen } from '../../../hooks';
 import { BaseProps } from '../../../types';
-import { IconId } from '../../../enums';
+import { BoxDirection, BoxAlignment, BoxJustify, IconId } from '../../../enums';
 import { StyledModal, StyledCard, StyledIcon } from './modal.styled';
 
 /**
@@ -10,6 +10,9 @@ import { StyledModal, StyledCard, StyledIcon } from './modal.styled';
  */
 interface Props extends BaseProps<ReactNode, true> {
   readonly open: boolean;
+  readonly direction?: BoxDirection;
+  readonly alignment?: BoxAlignment;
+  readonly justify?: BoxJustify;
   readonly onClose: () => void;
 }
 
@@ -20,7 +23,7 @@ interface Props extends BaseProps<ReactNode, true> {
  * @param props The cmponent props
  * @returns The `Modal` component
  */
-const Modal: FunctionComponent<Props> = ({ className, open, onClose, children }): ReactElement<Props> => {
+const Modal: FunctionComponent<Props> = ({ className, open, direction, alignment, justify, onClose, children }): ReactElement<Props> => {
 
   const { screenSize } = useScreen();
   return (
@@ -49,7 +52,11 @@ const Modal: FunctionComponent<Props> = ({ className, open, onClose, children })
          * forwarded from the `Slide` transition compnent
          */}
         <div>
-          <StyledCard>
+          <StyledCard
+            direction={direction}
+            alignment={alignment}
+            justify={justify}
+          >
             <StyledIcon
               id={IconId.CROSS}
               onClick={onClose}

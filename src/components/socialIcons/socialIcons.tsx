@@ -1,7 +1,8 @@
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, useState } from 'react';
 import { BoxDirection, IconId } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { usePageContent } from '../../hooks';
+import { EmailModal } from '..';
 import { StyledIconsBox, StyledIcon } from './socialIcons.styled';
 
 /**
@@ -12,24 +13,32 @@ import { StyledIconsBox, StyledIcon } from './socialIcons.styled';
  */
 const SocialIcons: FunctionComponent = (): ReactElement => {
 
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
   const { linkedInUrl, stackOverflowUrl } = usePageContent({
     slug: PageSlug.GLOBAL,
   });
 
   return (
-    <StyledIconsBox direction={BoxDirection.ROW}>
-      <StyledIcon
-        id={IconId.ENVELOPE}
+    <>
+      <EmailModal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
       />
-      <StyledIcon
-        id={IconId.LINKED_IN}
-        onClick={() => window.open(linkedInUrl, '_blank')}
-      />
-      <StyledIcon
-        id={IconId.STACK_OVERFLOW}
-        onClick={() => window.open(stackOverflowUrl, '_blank')}
-      />
-    </StyledIconsBox>
+      <StyledIconsBox direction={BoxDirection.ROW}>
+        <StyledIcon
+          id={IconId.ENVELOPE}
+          onClick={() => setModalOpen(true)}
+        />
+        <StyledIcon
+          id={IconId.LINKED_IN}
+          onClick={() => window.open(linkedInUrl, '_blank')}
+        />
+        <StyledIcon
+          id={IconId.STACK_OVERFLOW}
+          onClick={() => window.open(stackOverflowUrl, '_blank')}
+        />
+      </StyledIconsBox>
+    </>
   );
 };
 

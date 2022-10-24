@@ -33,9 +33,9 @@ const Button: FunctionComponent<Props> = (props): ReactElement<Props> => {
     <StyledButton
       className={className}
       variant="contained"
+      color={appearance}
       disableElevation={true}
       onClick={onClick}
-      appearance={appearance}
     >
       {
         (iconId != null) && (

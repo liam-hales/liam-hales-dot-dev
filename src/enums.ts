@@ -139,8 +139,8 @@ export enum TextElement {
  * the appearance of the button such as the colour
  */
 export enum ButtonAppearance {
-  PRIMARY = 'PRIMARY',
-  SECONDARY = 'SECONDARY',
+  PRIMARY = 'primary',
+  SECONDARY = 'secondary',
 }
 
 /**

@@ -47,6 +47,7 @@ const Skills: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
               url={url}
               imageUrl={image?.url}
               onClose={() => setModalOpen(false)}
+              onClosed={() => setSelectedSkill(undefined)}
             />
           );
         })()

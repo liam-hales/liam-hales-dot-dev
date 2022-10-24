@@ -15,6 +15,7 @@ interface Props extends BaseProps {
   readonly url: string;
   readonly imageUrl?: string;
   readonly onClose: () => void;
+  readonly onClosed: () => void;
 }
 
 /**
@@ -24,11 +25,12 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `SkillModal` component
  */
-const SkillModal: FunctionComponent<Props> = ({ open, name, type, description, url, imageUrl, onClose }): ReactElement<Props> => {
+const SkillModal: FunctionComponent<Props> = ({ open, name, type, description, url, imageUrl, onClose, onClosed }): ReactElement<Props> => {
   return (
     <Modal
       open={open}
       onClose={onClose}
+      onClosed={onClosed}
     >
       {
         (imageUrl != null) && (

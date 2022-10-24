@@ -1,10 +1,10 @@
-import { FunctionComponent, ReactElement } from 'react';
-import { BoxAlignment, BoxDirection, BoxJustify, ButtonAppearance, TextAppearance } from '../../enums';
+import { FunctionComponent, ReactElement, useState } from 'react';
+import { BoxDirection, BoxJustify, ButtonAppearance, TextAppearance } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { usePageContent } from '../../hooks';
 import { BaseProps } from '../../types';
-import { Modal, Text, Button } from '../common';
-import { StyledTitle, StyledButtons } from './emailModal.styled';
+import { Modal, Button } from '../common';
+import { StyledTitle, StyledText, StyledCopyText, StyledButtons } from './emailModal.styled';
 
 /**
  * The `EmailModal` component props
@@ -23,6 +23,7 @@ interface Props extends BaseProps {
  */
 const EmailModal: FunctionComponent<Props> = ({ open, onClose }): ReactElement<Props> => {
 
+  const [showEmail, setShowEmail] = useState<boolean>(false);
   const { email, emailText } = usePageContent({
     slug: PageSlug.GLOBAL,
   });
@@ -30,29 +31,45 @@ const EmailModal: FunctionComponent<Props> = ({ open, onClose }): ReactElement<P
   return (
     <Modal
       open={open}
-      alignment={BoxAlignment.START}
       onClose={onClose}
+      onClosed={() => setShowEmail(false)}
     >
       <StyledTitle>
         Before you email
       </StyledTitle>
-      <Text appearance={TextAppearance.SECONDARY}>
+      <StyledText appearance={TextAppearance.SECONDARY}>
         {emailText}
-      </Text>
-      <StyledButtons
-        direction={BoxDirection.ROW}
-        justify={BoxJustify.END}
-      >
-        <Button
-          appearance={ButtonAppearance.SECONDARY}
-          onClick={onClose}
-        >
-          I&apos;m a recruiter
-        </Button>
-        <Button onClick={() => window.open(`mailto:${email}`)}>
-          OK, got it
-        </Button>
-      </StyledButtons>
+      </StyledText>
+      {
+        (showEmail === true) && (
+          <>
+            <Button onClick={() => navigator.clipboard.writeText(email)}>
+              {email}
+            </Button>
+            <StyledCopyText appearance={TextAppearance.SECONDARY}>
+              Click to copy to clipboard
+            </StyledCopyText>
+          </>
+        )
+      }
+      {
+        (showEmail === false) && (
+          <StyledButtons
+            direction={BoxDirection.ROW}
+            justify={BoxJustify.END}
+          >
+            <Button
+              appearance={ButtonAppearance.SECONDARY}
+              onClick={onClose}
+            >
+              I&apos;m a recruiter
+            </Button>
+            <Button onClick={() => setShowEmail(true)}>
+              OK, got it
+            </Button>
+          </StyledButtons>
+        )
+      }
     </Modal>
   );
 };

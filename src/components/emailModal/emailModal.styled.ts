@@ -1,12 +1,30 @@
 import { styled } from '@mui/material';
-import { Box, Title } from '../common';
+import { Box, Title, Text } from '../common';
 
 /**
  * The styled `Title` component used for
- * the `EmailModal` component title text
+ * the `EmailModal` component title
  */
 export const StyledTitle = styled(Title)`
-  padding-bottom: 14px;
+  align-self: flex-start;
+`;
+
+/**
+ * The styled `Text` component used for
+ * the `EmailModal` component text
+ */
+export const StyledText = styled(Text)`
+  padding-top: 16px;
+  padding-bottom: 28px;
+`;
+
+/**
+ * The styled `Text` component used for the
+ * `EmailModal` component copy to clipboard text
+ */
+export const StyledCopyText = styled(Text)`
+  padding-top: 6px;
+  font-size: 11px;
 `;
 
 /**
@@ -15,6 +33,5 @@ export const StyledTitle = styled(Title)`
  */
 export const StyledButtons = styled(Box)`
   width: 100%;
-  padding-top: 28px;
   column-gap: 12px;
 `;

@@ -13,7 +13,8 @@ interface Props extends BaseProps<ReactNode, true> {
   readonly direction?: BoxDirection;
   readonly alignment?: BoxAlignment;
   readonly justify?: BoxJustify;
-  readonly onClose: () => void;
+  readonly onClose?: () => void;
+  readonly onClosed?: () => void;
 }
 
 /**
@@ -23,7 +24,7 @@ interface Props extends BaseProps<ReactNode, true> {
  * @param props The cmponent props
  * @returns The `Modal` component
  */
-const Modal: FunctionComponent<Props> = ({ className, open, direction, alignment, justify, onClose, children }): ReactElement<Props> => {
+const Modal: FunctionComponent<Props> = ({ className, open, direction, alignment, justify, onClose, onClosed, children }): ReactElement<Props> => {
 
   const { screenSize } = useScreen();
   return (
@@ -38,6 +39,7 @@ const Modal: FunctionComponent<Props> = ({ className, open, direction, alignment
       <Slide
         in={open}
         direction="up"
+        onExited={onClosed}
         timeout={{
           enter: 460,
           exit: 160,

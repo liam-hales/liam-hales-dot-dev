@@ -32,6 +32,9 @@ const ThemeProvider: FunctionComponent<Props> = ({ children }): ReactElement<Pro
       primary: {
         main: ColourPalette.BLUE,
       },
+      secondary: {
+        main: ColourPalette.GREY,
+      },
     },
     breakpoints: {
       values: {

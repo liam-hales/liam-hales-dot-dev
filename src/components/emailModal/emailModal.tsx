@@ -3,7 +3,7 @@ import { BoxDirection, BoxJustify, ButtonAppearance, TextAppearance } from '../.
 import { PageSlug } from '../../graphql';
 import { usePageContent } from '../../hooks';
 import { BaseProps } from '../../types';
-import { Modal, Button } from '../common';
+import { Modal, Button, Popover } from '../common';
 import { StyledTitle, StyledText, StyledCopyText, StyledButtons } from './emailModal.styled';
 
 /**
@@ -24,6 +24,8 @@ interface Props extends BaseProps {
 const EmailModal: FunctionComponent<Props> = ({ open, onClose }): ReactElement<Props> => {
 
   const [showEmail, setShowEmail] = useState<boolean>(false);
+  const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
+
   const { email, emailText } = usePageContent({
     slug: PageSlug.GLOBAL,
   });
@@ -43,9 +45,20 @@ const EmailModal: FunctionComponent<Props> = ({ open, onClose }): ReactElement<P
       {
         (showEmail === true) && (
           <>
-            <Button onClick={() => navigator.clipboard.writeText(email)}>
-              {email}
-            </Button>
+            <Popover
+              text="Coppied"
+              open={popoverOpen}
+              onClose={() => setPopoverOpen(false)}
+            >
+              <Button
+                onClick={() => {
+                  setPopoverOpen(true);
+                  navigator.clipboard.writeText(email);
+                }}
+              >
+                {email}
+              </Button>
+            </Popover>
             <StyledCopyText appearance={TextAppearance.SECONDARY}>
               Click to copy to clipboard
             </StyledCopyText>

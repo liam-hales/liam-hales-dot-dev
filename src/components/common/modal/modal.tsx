@@ -21,7 +21,7 @@ interface Props extends BaseProps<ReactNode, true> {
  * The common `Modal` component used to render a modal to
  * display infomation and for the user to interact with
  *
- * @param props The cmponent props
+ * @param props The component props
  * @returns The `Modal` component
  */
 const Modal: FunctionComponent<Props> = ({ className, open, direction, alignment, justify, onClose, onClosed, children }): ReactElement<Props> => {
@@ -51,7 +51,7 @@ const Modal: FunctionComponent<Props> = ({ className, open, direction, alignment
       >
         {/**
          * The `div` element is here to accept the reference
-         * forwarded from the `Slide` transition compnent
+         * forwarded from the `Slide` transition component
          */}
         <div>
           <StyledCard

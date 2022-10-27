@@ -2,7 +2,7 @@ import { styled } from '@mui/material';
 import { ImageRoundness } from '../../../enums';
 
 /**
- * The `StyledImageProps` component props
+ * The `StyledImage` component props
  */
 interface StyledImageProps {
   readonly roundness: ImageRoundness;

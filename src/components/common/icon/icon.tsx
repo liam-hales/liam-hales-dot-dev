@@ -1,17 +1,16 @@
 import { FunctionComponent, ReactElement } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faHome, faFileCode, faPaintBrush, faCode, faServer, faFillDrip, faEnvelope, faCaretRight, faMagnifyingGlass, faXmark, faMessage } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 import { BaseProps } from '../../../types';
 import { IconId } from '../../../enums';
-import { StyledIcon } from './icon.styled';
 
 /**
  * The `Icon` component props
  */
 interface Props extends BaseProps {
   readonly id: IconId;
-  readonly onClick?: () => void;
 }
 
 /**
@@ -21,7 +20,7 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `Icon` component
  */
-const Icon: FunctionComponent<Props> = ({ className, id, onClick }): ReactElement<Props> => {
+const Icon: FunctionComponent<Props> = ({ className, id }): ReactElement<Props> => {
 
   const iconMap: Record<IconId, IconDefinition> = {
     [IconId.HOME]: faHome,
@@ -40,11 +39,9 @@ const Icon: FunctionComponent<Props> = ({ className, id, onClick }): ReactElemen
   };
 
   return (
-    <StyledIcon
+    <FontAwesomeIcon
       className={className}
       icon={iconMap[id]}
-      onClick={onClick}
-      clickable={onClick != null}
     />
   );
 };

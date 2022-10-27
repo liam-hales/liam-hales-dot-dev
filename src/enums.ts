@@ -119,9 +119,8 @@ export enum BoxJustify {
  * appearance of the text such as the colour and opacity
  */
 export enum TextAppearance {
-  PRIMARY = 'PRIMARY',
-  SECONDARY = 'SECONDARY',
-  SUBTLE = 'SUBTLE',
+  PRIMARY = 'textPrimary',
+  SECONDARY = 'textSecondary',
 }
 
 /**

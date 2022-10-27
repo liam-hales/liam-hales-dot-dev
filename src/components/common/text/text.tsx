@@ -37,8 +37,8 @@ const Text: FunctionComponent<Props> = (props): ReactElement<Props> => {
   return (
     <StyledTypography
       className={className}
+      color={appearance}
       variant={element}
-      appearance={appearance}
       bold={bold}
       italic={italic}
       hoverUnderline={hoverUnderline}

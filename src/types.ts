@@ -2,19 +2,20 @@ import { ReactNode, RefObject } from 'react';
 import { QueryStatus, ScreenSize } from './enums';
 
 /**
- * Override the existing `BreakpointOverrides` interface
- * from `@mui/material` to replace the breakpoint value keys
+ * Override types from `@mui/material`
  */
 declare module '@mui/material/styles' {
-  interface BreakpointOverrides {
-    xs: false;
-    sm: false;
-    md: false;
-    lg: false;
-    xl: false;
-    [ScreenSize.SMALL]: true;
-    [ScreenSize.MEDIUM]: true;
-    [ScreenSize.LARGE]: true;
+
+  /**
+   * Override the existing `BreakpointOverrides` interface
+   * from `@mui/material` to replace the breakpoint value keys
+   */
+  interface BreakpointOverrides extends Record<ScreenSize, true> {
+    readonly xs: false;
+    readonly sm: false;
+    readonly md: false;
+    readonly lg: false;
+    readonly xl: false;
   }
 }
 
@@ -34,10 +35,10 @@ export type BaseProps<T = ReactNode, R extends boolean = false> =
   & (
     R extends true
       ? {
-          children: T
+          readonly children: T
         }
       : {
-          children?: T
+          readonly children?: T
         }
   );
 

@@ -49,4 +49,5 @@ export const StyledDisclaimerText = styled(Text)`
   padding-top: 65px;
   font-size: 12px;
   text-align: center;
+  opacity: 0.52;
 `;

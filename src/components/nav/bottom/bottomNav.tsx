@@ -31,9 +31,9 @@ const BottomNav: FunctionComponent = (): ReactElement => {
               Home
             </Text>
           )}
-          icon={
+          icon={(
             <StyledIcon id={IconId.HOME} />
-          }
+          )}
         />
         <StyledBottomNavigationAction
           value={NavKey.CV}
@@ -43,9 +43,9 @@ const BottomNav: FunctionComponent = (): ReactElement => {
               CV
             </Text>
           )}
-          icon={
+          icon={(
             <StyledIcon id={IconId.DOCUMENT} />
-          }
+          )}
         />
         <StyledBottomNavigationAction
           value={NavKey.BLOG}
@@ -55,9 +55,9 @@ const BottomNav: FunctionComponent = (): ReactElement => {
               Blog
             </Text>
           )}
-          icon={
+          icon={(
             <StyledIcon id={IconId.MESSAGE} />
-          }
+          )}
         />
         <StyledBottomNavigationAction
           value={NavKey.BRAND}
@@ -67,9 +67,9 @@ const BottomNav: FunctionComponent = (): ReactElement => {
               Brand
             </Text>
           )}
-          icon={
+          icon={(
             <StyledIcon id={IconId.PAINT_BRUSH} />
-          }
+          )}
         />
       </StyledBottomNavigation>
     </StyledBottomNav>

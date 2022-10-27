@@ -38,7 +38,7 @@ const TimelineEvent: FunctionComponent<Props> = (props): ReactElement<Props> => 
 
   return (
     <Box alignment={BoxAlignment.START}>
-      <StyledTimestamp appearance={TextAppearance.SUBTLE}>
+      <StyledTimestamp appearance={TextAppearance.SECONDARY}>
         {timestamp}
       </StyledTimestamp>
       <StyledTitle

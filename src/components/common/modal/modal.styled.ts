@@ -1,6 +1,6 @@
 import { styled, Modal } from '@mui/material';
-import { ColourPalette, ScreenSize } from '../../../enums';
-import { Card, Icon } from '..';
+import { ScreenSize, ColourPalette } from '../../../enums';
+import { Card, IconButton } from '..';
 
 /**
  * The `StyledModal` component props
@@ -33,12 +33,11 @@ export const StyledCard = styled(Card)`
 `;
 
 /**
- * The styled `Icon` component used
- * for the `Modal` component close icon
+ * The styled `IconButton` component used
+ * for the `Modal` component close icon button
  */
-export const StyledIcon = styled(Icon)`
+export const StyledCloseButton = styled(IconButton)`
   position: absolute;
-  font-size: 20px;
   align-self: flex-end;
   color: ${ColourPalette.LIGHT_GREY};
 `;

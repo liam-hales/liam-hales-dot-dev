@@ -1,5 +1,5 @@
 import { styled, InputBase } from '@mui/material';
-import { Box, Icon } from '..';
+import { Box, Icon, IconButton } from '..';
 import { ColourPalette } from '../../../enums';
 
 /**
@@ -23,7 +23,6 @@ export const StyledInput = styled(InputBase)`
   width: 100%;
 
   .MuiInputBase-input {
-    color: ${ColourPalette.WHITE};
     font-size: 16px;
     font-weight: bold;
 
@@ -44,11 +43,10 @@ export const StyledIcon = styled(Icon)`
 `;
 
 /**
- * The styled `Icon` component used
- * for the `Input` component clear icon
+ * The styled `IconButton` component used
+ * for the `Input` component clear icon button
  */
-export const StyledClearIcon = styled(Icon)`
-  padding-left: 12px;
-  font-size: 18px;
-  color: ${ColourPalette.WHITE};
+export const StyledClearButton = styled(IconButton)`
+  margin-left: 8px;
+  color: ${ColourPalette.LIGHT_GREY};
 `;

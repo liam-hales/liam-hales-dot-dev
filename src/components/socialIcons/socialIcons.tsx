@@ -3,7 +3,8 @@ import { BoxDirection, IconId } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { usePageContent } from '../../hooks';
 import { EmailModal } from '..';
-import { StyledIconsBox, StyledIcon } from './socialIcons.styled';
+import { IconButton } from '../common';
+import { StyledIconsBox } from './socialIcons.styled';
 
 /**
  * Renders the social icons which link out to profiles on different
@@ -25,15 +26,15 @@ const SocialIcons: FunctionComponent = (): ReactElement => {
         onClose={() => setModalOpen(false)}
       />
       <StyledIconsBox direction={BoxDirection.ROW}>
-        <StyledIcon
+        <IconButton
           id={IconId.ENVELOPE}
           onClick={() => setModalOpen(true)}
         />
-        <StyledIcon
+        <IconButton
           id={IconId.LINKED_IN}
           onClick={() => window.open(linkedInUrl, '_blank')}
         />
-        <StyledIcon
+        <IconButton
           id={IconId.STACK_OVERFLOW}
           onClick={() => window.open(stackOverflowUrl, '_blank')}
         />

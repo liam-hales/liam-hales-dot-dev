@@ -36,11 +36,11 @@ export const StyledBottomNavigation = styled(BottomNavigation)`
  * used for the `BottomNav` component
  */
 export const StyledBottomNavigationAction = styled(BottomNavigationAction)`
-  border-radius: 36px;
   color: ${ColourPalette.WHITE};
 
   .MuiTouchRipple-root {
     color: ${ColourPalette.WHITE};
+    border-radius: 36px;
   };
 `;
 

@@ -2,7 +2,7 @@ import { FunctionComponent, ReactElement, useState } from 'react';
 import { BoxDirection, IconId } from '../../../enums';
 import { useDebounce } from '../../../hooks';
 import { BaseProps } from '../../../types';
-import { StyledBox, StyledInput, StyledIcon, StyledClearIcon } from './input.styled';
+import { StyledBox, StyledInput, StyledIcon, StyledClearButton } from './input.styled';
 
 /**
  * The `Input` component props
@@ -53,7 +53,7 @@ const Input: FunctionComponent<Props> = ({ className, defaultValue, placeholder,
       />
       {
         (value !== '') && (
-          <StyledClearIcon
+          <StyledClearButton
             id={IconId.CROSS}
             onClick={() => {
 

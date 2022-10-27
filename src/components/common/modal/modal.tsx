@@ -3,7 +3,7 @@ import { Slide } from '@mui/material';
 import { useScreen } from '../../../hooks';
 import { BaseProps } from '../../../types';
 import { BoxDirection, BoxAlignment, BoxJustify, IconId } from '../../../enums';
-import { StyledModal, StyledCard, StyledIcon } from './modal.styled';
+import { StyledModal, StyledCard, StyledCloseButton } from './modal.styled';
 
 /**
  * The `Modal` component props
@@ -13,7 +13,7 @@ interface Props extends BaseProps<ReactNode, true> {
   readonly direction?: BoxDirection;
   readonly alignment?: BoxAlignment;
   readonly justify?: BoxJustify;
-  readonly onClose?: () => void;
+  readonly onClose: () => void;
   readonly onClosed?: () => void;
 }
 
@@ -59,7 +59,7 @@ const Modal: FunctionComponent<Props> = ({ className, open, direction, alignment
             alignment={alignment}
             justify={justify}
           >
-            <StyledIcon
+            <StyledCloseButton
               id={IconId.CROSS}
               onClick={onClose}
             />

@@ -3,6 +3,7 @@ import Text from './text/text';
 import Title from './title/title';
 import Icon from './icon/icon';
 import Button from './button/button';
+import IconButton from './iconButton/iconButton';
 import Card from './card/card';
 import Image from './image/image';
 import Input from './input/input';
@@ -23,6 +24,7 @@ export {
   Title,
   Icon,
   Button,
+  IconButton,
   Card,
   Image,
   Input,

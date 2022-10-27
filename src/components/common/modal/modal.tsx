@@ -3,7 +3,7 @@ import { Slide } from '@mui/material';
 import { useScreen } from '../../../hooks';
 import { BaseProps } from '../../../types';
 import { BoxDirection, BoxAlignment, BoxJustify, IconId } from '../../../enums';
-import { StyledModal, StyledCard, StyledCloseButton } from './modal.styled';
+import { StyledBackdrop, StyledModal, StyledCard, StyledCloseButton } from './modal.styled';
 
 /**
  * The `Modal` component props
@@ -35,6 +35,10 @@ const Modal: FunctionComponent<Props> = ({ className, open, direction, alignment
       keepMounted={true}
       disableAutoFocus={true}
       screenSize={screenSize}
+      components={{
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        Backdrop: StyledBackdrop,
+      }}
     >
       <Slide
         in={open}

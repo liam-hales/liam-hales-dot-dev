@@ -1,4 +1,4 @@
-import { styled, Modal } from '@mui/material';
+import { styled, Backdrop, Modal } from '@mui/material';
 import { ScreenSize, ColourPalette } from '../../../enums';
 import { Card, IconButton } from '..';
 
@@ -8,6 +8,14 @@ import { Card, IconButton } from '..';
 interface StyledModalProps {
   readonly screenSize: ScreenSize;
 }
+
+/**
+ * The styled `Backdrop` component from `@mui/material`
+ * used for the `Modal` component backdrop
+ */
+export const StyledBackdrop = styled(Backdrop)`
+  backdrop-filter: blur(4px);
+`;
 
 /**
  * The styled `Modal` component from `@mui/material`

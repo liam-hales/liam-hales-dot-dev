@@ -1,14 +1,14 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { BaseProps } from '../../../types';
 import { Text } from '..';
-import { ButtonAppearance, IconId } from '../../../enums';
+import { ColourPalette, IconId } from '../../../enums';
 import { StyledButton, StyledIcon } from './button.styled';
 
 /**
  * The `Button` component props
  */
 interface Props extends BaseProps<string> {
-  readonly appearance?: ButtonAppearance;
+  readonly colour?: ColourPalette;
   readonly iconId?: IconId;
   readonly onClick: () => void;
 }
@@ -23,8 +23,8 @@ interface Props extends BaseProps<string> {
 const Button: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
     className,
+    colour = ColourPalette.BLUE,
     iconId,
-    appearance = ButtonAppearance.PRIMARY,
     onClick,
     children,
   } = props;
@@ -33,13 +33,16 @@ const Button: FunctionComponent<Props> = (props): ReactElement<Props> => {
     <StyledButton
       className={className}
       variant="contained"
-      color={appearance}
+      color={colour}
       disableElevation={true}
       onClick={onClick}
     >
       {
         (iconId != null) && (
-          <StyledIcon id={iconId} />
+          <StyledIcon
+            id={iconId}
+            colour={ColourPalette.WHITE}
+          />
         )
       }
       <Text bold={true}>

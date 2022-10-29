@@ -115,15 +115,6 @@ export enum BoxJustify {
 }
 
 /**
- * The `Text` component appearance used to determine the
- * appearance of the text such as the colour and opacity
- */
-export enum TextAppearance {
-  PRIMARY = 'textPrimary',
-  SECONDARY = 'textSecondary',
-}
-
-/**
  * The `Text` component element used to determine
  * what HTML element is used to render the text
  */
@@ -131,15 +122,6 @@ export enum TextElement {
   H1 = 'h1',
   H2 = 'h2',
   PARAGRAPH = 'body1',
-}
-
-/**
- * The `Button` component appearance used to determine
- * the appearance of the button such as the colour
- */
-export enum ButtonAppearance {
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary',
 }
 
 /**

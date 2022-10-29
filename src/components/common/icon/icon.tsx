@@ -1,16 +1,17 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { faHome, faFileCode, faPaintBrush, faCode, faServer, faFillDrip, faEnvelope, faCaretRight, faMagnifyingGlass, faXmark, faMessage } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 import { BaseProps } from '../../../types';
-import { IconId } from '../../../enums';
+import { ColourPalette, IconId } from '../../../enums';
+import { StyledIcon } from './icon.styled';
 
 /**
  * The `Icon` component props
  */
 interface Props extends BaseProps {
   readonly id: IconId;
+  readonly colour?: ColourPalette;
 }
 
 /**
@@ -20,7 +21,12 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `Icon` component
  */
-const Icon: FunctionComponent<Props> = ({ className, id }): ReactElement<Props> => {
+const Icon: FunctionComponent<Props> = (props): ReactElement<Props> => {
+  const {
+    className,
+    id,
+    colour = ColourPalette.BLUE,
+  } = props;
 
   const iconMap: Record<IconId, IconDefinition> = {
     [IconId.HOME]: faHome,
@@ -39,9 +45,10 @@ const Icon: FunctionComponent<Props> = ({ className, id }): ReactElement<Props> 
   };
 
   return (
-    <FontAwesomeIcon
+    <StyledIcon
       className={className}
       icon={iconMap[id]}
+      colour={colour}
     />
   );
 };

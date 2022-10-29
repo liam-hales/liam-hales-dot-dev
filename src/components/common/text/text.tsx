@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { TextAppearance, TextElement } from '../../../enums';
+import { ColourPalette, TextElement } from '../../../enums';
 import { BaseProps } from '../../../types';
 import { StyledTypography } from './text.styled';
 
@@ -7,7 +7,7 @@ import { StyledTypography } from './text.styled';
  * The `Text` component props
  */
 interface Props extends BaseProps {
-  readonly appearance?: TextAppearance;
+  readonly colour?: ColourPalette;
   readonly element?: TextElement;
   readonly bold?: boolean;
   readonly italic?: boolean;
@@ -25,7 +25,7 @@ interface Props extends BaseProps {
 const Text: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
     className,
-    appearance = TextAppearance.PRIMARY,
+    colour = ColourPalette.WHITE,
     element = TextElement.PARAGRAPH,
     bold = false,
     italic = false,
@@ -37,7 +37,7 @@ const Text: FunctionComponent<Props> = (props): ReactElement<Props> => {
   return (
     <StyledTypography
       className={className}
-      color={appearance}
+      colour={colour}
       variant={element}
       bold={bold}
       italic={italic}

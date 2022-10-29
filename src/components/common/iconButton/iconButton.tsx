@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { IconId } from '../../../enums';
+import { ColourPalette, IconId } from '../../../enums';
 import { BaseProps } from '../../../types';
 import { StyledIconButton, StyledIcon } from './iconButton.styled';
 
@@ -8,6 +8,7 @@ import { StyledIconButton, StyledIcon } from './iconButton.styled';
  */
 interface Props extends BaseProps {
   readonly id: IconId;
+  readonly colour?: ColourPalette;
   readonly onClick: () => void;
 }
 
@@ -22,17 +23,21 @@ const IconButton: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
     className,
     id,
+    colour = ColourPalette.BLUE,
     onClick,
   } = props;
 
   return (
     <StyledIconButton
       className={className}
-      color="primary"
+      color={colour}
       size="medium"
       onClick={onClick}
     >
-      <StyledIcon id={id} />
+      <StyledIcon
+        id={id}
+        colour={colour}
+      />
     </StyledIconButton>
   );
 };

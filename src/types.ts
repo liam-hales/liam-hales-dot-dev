@@ -1,10 +1,10 @@
 import { ReactNode, RefObject } from 'react';
-import { QueryStatus, ScreenSize } from './enums';
+import { ColourPalette, QueryStatus, ScreenSize } from './enums';
 
 /**
  * Override types from `@mui/material`
  */
-declare module '@mui/material/styles' {
+declare module '@mui/material' {
 
   /**
    * Override the existing `BreakpointOverrides` interface
@@ -16,6 +16,35 @@ declare module '@mui/material/styles' {
     readonly md: false;
     readonly lg: false;
     readonly xl: false;
+  }
+
+  /**
+   * Override the existing `ButtonPropsColorOverrides` interface
+   * from `@mui/material` to replace the button colour prop values
+   */
+  interface ButtonPropsColorOverrides extends Record<ColourPalette, true> {
+    readonly inherit: false;
+    readonly primary: false;
+    readonly secondary: false;
+    readonly success: false;
+    readonly error: false;
+    readonly info: false;
+    readonly warning: false;
+  }
+
+  /**
+   * Override the existing `IconButtonPropsColorOverrides` interface
+   * from `@mui/material` to replace the button colour prop values
+   */
+  interface IconButtonPropsColorOverrides extends Record<ColourPalette, true> {
+    readonly inherit: false;
+    readonly default: false;
+    readonly primary: false;
+    readonly secondary: false;
+    readonly success: false;
+    readonly error: false;
+    readonly info: false;
+    readonly warning: false;
   }
 }
 

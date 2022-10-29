@@ -1,9 +1,11 @@
 import { css, styled, Typography } from '@mui/material';
+import { ColourPalette } from '../../../enums';
 
 /**
  * The `StyledTypography` component props
  */
 interface StyledTypographyProps {
+  readonly colour: ColourPalette;
   readonly bold: boolean;
   readonly italic: boolean;
   readonly hoverUnderline: boolean;
@@ -30,6 +32,7 @@ export const StyledTypography = styled(Typography)<StyledTypographyProps>`
   display: inline;
   text-transform: none;
   white-space: pre-line;
+  color: ${(props) => props.colour};
   font-size: 14px;
   font-weight: ${(props) => {
     return (props.bold === true)

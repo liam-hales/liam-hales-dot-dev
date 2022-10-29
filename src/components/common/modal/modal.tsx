@@ -2,7 +2,7 @@ import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { Slide } from '@mui/material';
 import { useScreen } from '../../../hooks';
 import { BaseProps } from '../../../types';
-import { BoxDirection, BoxAlignment, BoxJustify, IconId } from '../../../enums';
+import { BoxDirection, BoxAlignment, BoxJustify, IconId, ColourPalette } from '../../../enums';
 import { StyledBackdrop, StyledModal, StyledCard, StyledCloseButton } from './modal.styled';
 
 /**
@@ -65,6 +65,7 @@ const Modal: FunctionComponent<Props> = ({ className, open, direction, alignment
           >
             <StyledCloseButton
               id={IconId.CROSS}
+              colour={ColourPalette.LIGHT_GREY}
               onClick={onClose}
             />
             {children}

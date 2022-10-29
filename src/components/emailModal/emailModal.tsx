@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement, useState } from 'react';
-import { BoxDirection, BoxJustify, ButtonAppearance, TextAppearance } from '../../enums';
+import { BoxDirection, BoxJustify, ColourPalette } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { usePageContent } from '../../hooks';
 import { BaseProps } from '../../types';
@@ -39,7 +39,7 @@ const EmailModal: FunctionComponent<Props> = ({ open, onClose }): ReactElement<P
       <StyledTitle>
         Before you email
       </StyledTitle>
-      <StyledText appearance={TextAppearance.SECONDARY}>
+      <StyledText colour={ColourPalette.LIGHT_GREY}>
         {emailText}
       </StyledText>
       {
@@ -59,7 +59,7 @@ const EmailModal: FunctionComponent<Props> = ({ open, onClose }): ReactElement<P
                 {email}
               </Button>
             </Popover>
-            <StyledCopyText appearance={TextAppearance.SECONDARY}>
+            <StyledCopyText colour={ColourPalette.LIGHT_GREY}>
               Click to copy to clipboard
             </StyledCopyText>
           </>
@@ -72,7 +72,7 @@ const EmailModal: FunctionComponent<Props> = ({ open, onClose }): ReactElement<P
             justify={BoxJustify.END}
           >
             <Button
-              appearance={ButtonAppearance.SECONDARY}
+              colour={ColourPalette.GREY}
               onClick={onClose}
             >
               I&apos;m a recruiter

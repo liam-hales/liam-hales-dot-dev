@@ -47,5 +47,4 @@ export const StyledCard = styled(Card)`
 export const StyledCloseButton = styled(IconButton)`
   position: absolute;
   align-self: flex-end;
-  color: ${ColourPalette.LIGHT_GREY};
 `;

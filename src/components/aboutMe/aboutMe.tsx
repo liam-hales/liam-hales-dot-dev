@@ -1,6 +1,6 @@
 import moment from 'moment';
 import { FunctionComponent, ReactElement } from 'react';
-import { BoxAlignment, BoxDirection, ImageRoundness, ScreenSize, TextAppearance } from '../../enums';
+import { BoxAlignment, BoxDirection, ColourPalette, ImageRoundness, ScreenSize } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { usePageContent, useScreen } from '../../hooks';
 import { BaseProps } from '../../types';
@@ -54,7 +54,7 @@ const AboutMe: FunctionComponent<Props> = ({ className }): ReactElement<Props> =
         <Title>
           About me
         </Title>
-        <StyledDescription appearance={TextAppearance.SECONDARY}>
+        <StyledDescription colour={ColourPalette.LIGHT_GREY}>
           {aboutMeText.replace(/yearsProgramming/g, yearsProgramming.toString())}
         </StyledDescription>
         <Box direction={BoxDirection.ROW}>

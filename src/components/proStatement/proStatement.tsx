@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { BoxAlignment, TextAppearance } from '../../enums';
+import { BoxAlignment, ColourPalette } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { usePageContent } from '../../hooks';
 import { BaseProps } from '../../types';
@@ -32,7 +32,7 @@ const ProStatement: FunctionComponent<Props> = ({ className }): ReactElement<Pro
       <Title>
         Professional Statement
       </Title>
-      <StyledStatement appearance={TextAppearance.SECONDARY}>
+      <StyledStatement colour={ColourPalette.LIGHT_GREY}>
         {proStatementText}
       </StyledStatement>
       <Text bold={true}>

@@ -29,7 +29,6 @@ export const StyledTitle = styled(Text)`
 export const StyledFullStop = styled(Text)`
   font-size: clamp(76px, 15vw, 96px);
   line-height: 0px;
-  color: ${ColourPalette.BLUE};
 `;
 
 /**

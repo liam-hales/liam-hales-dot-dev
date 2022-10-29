@@ -29,7 +29,6 @@ export const StyledCard = styled(Card)`
 export const StyledIcon = styled(Icon)<ScreenSizeProps>`
   padding-right: ${(props) => (props.screenSize === ScreenSize.SMALL) ? 24 : 0}px;
   font-size: 42px;
-  color: ${ColourPalette.BLUE};
 `;
 
 /**

@@ -1,6 +1,6 @@
 import { FunctionComponent, ReactElement } from 'react';
 import moment from 'moment';
-import { BoxAlignment, BoxDirection, TextAppearance } from '../../enums';
+import { BoxAlignment, BoxDirection, ColourPalette } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { usePageContent } from '../../hooks';
 import { BaseProps } from '../../types';
@@ -39,7 +39,7 @@ const CurrentPosition: FunctionComponent<Props> = ({ reference, className }): Re
       <Title>
         Current Position
       </Title>
-      <StyledDescription appearance={TextAppearance.SECONDARY}>
+      <StyledDescription colour={ColourPalette.LIGHT_GREY}>
         {currentPositionText}
       </StyledDescription>
       <Box direction={BoxDirection.ROW}>

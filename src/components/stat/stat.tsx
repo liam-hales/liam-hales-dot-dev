@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { BoxDirection } from '../../enums';
+import { BoxDirection, ColourPalette } from '../../enums';
 import { BaseProps } from '../../types';
 import { Box } from '../common';
 import { StyledText, StyledValue } from './stat.styled';
@@ -25,7 +25,10 @@ const Stat: FunctionComponent<Props> = ({ className, value, text }): ReactElemen
       className={className}
       direction={BoxDirection.ROW}
     >
-      <StyledValue bold={true}>
+      <StyledValue
+        bold={true}
+        colour={ColourPalette.BLUE}
+      >
         {value}
       </StyledValue>
       <StyledText bold={true}>

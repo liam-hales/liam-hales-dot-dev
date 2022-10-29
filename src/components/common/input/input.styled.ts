@@ -39,7 +39,6 @@ export const StyledInput = styled(InputBase)`
 export const StyledIcon = styled(Icon)`
   padding-right: 12px;
   font-size: 18px;
-  color: ${ColourPalette.BLUE};
 `;
 
 /**
@@ -48,5 +47,4 @@ export const StyledIcon = styled(Icon)`
  */
 export const StyledClearButton = styled(IconButton)`
   margin-left: 8px;
-  color: ${ColourPalette.LIGHT_GREY};
 `;

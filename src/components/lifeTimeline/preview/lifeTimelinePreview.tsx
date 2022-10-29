@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { BoxAlignment, NavRoute, TextAppearance } from '../../../enums';
+import { BoxAlignment, NavRoute, ColourPalette } from '../../../enums';
 import { PageSlug } from '../../../graphql';
 import { usePageContent, useRouter } from '../../../hooks';
 import { BaseProps } from '../../../types';
@@ -34,7 +34,7 @@ const LifeTimelinePreview: FunctionComponent<Props> = ({ reference, className })
       <Title>
         Life Timeline
       </Title>
-      <StyledDescription appearance={TextAppearance.SECONDARY}>
+      <StyledDescription colour={ColourPalette.LIGHT_GREY}>
         {lifeTimelineText}
       </StyledDescription>
       <StyledTimeline trailingConnector={true}>

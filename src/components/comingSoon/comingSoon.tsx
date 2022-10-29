@@ -1,7 +1,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { Button, Title, Text } from '../common';
 import { useRouter } from '../../hooks';
-import { TextAppearance, NavRoute } from '../../enums';
+import { ColourPalette, NavRoute } from '../../enums';
 import { StyledContent, StyledText } from './comingSoon.styled';
 
 /**
@@ -18,7 +18,7 @@ const ComingSoon: FunctionComponent = (): ReactElement => {
       <Title>
         Coming Soon
       </Title>
-      <StyledText appearance={TextAppearance.SECONDARY}>
+      <StyledText colour={ColourPalette.LIGHT_GREY}>
         This page is coming soon. For now you can visit my old website
         {' '}
         <Text

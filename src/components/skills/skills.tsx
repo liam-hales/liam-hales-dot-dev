@@ -1,6 +1,6 @@
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { BoxAlignment, IconId, TextAppearance } from '../../enums';
+import { BoxAlignment, IconId, ColourPalette } from '../../enums';
 import { PageSlug, Skill } from '../../graphql';
 import { usePageContent, useScreen } from '../../hooks';
 import { BaseProps } from '../../types';
@@ -74,7 +74,7 @@ const Skills: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
           }}
           screenSize={screenSize}
         />
-        <StyledDisclaimerText appearance={TextAppearance.SECONDARY}>
+        <StyledDisclaimerText colour={ColourPalette.LIGHT_GREY}>
           {disclaimerText}
         </StyledDisclaimerText>
         <StyledGrid>

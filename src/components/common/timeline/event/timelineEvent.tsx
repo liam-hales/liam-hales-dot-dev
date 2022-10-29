@@ -2,7 +2,7 @@ import { FunctionComponent, ReactElement } from 'react';
 import { Moment } from 'moment';
 import { BaseProps } from '../../../../types';
 import { Box, Text } from '../..';
-import { BoxAlignment, TextAppearance } from '../../../../enums';
+import { BoxAlignment, ColourPalette } from '../../../../enums';
 import { StyledTimestamp, StyledTitle } from './timelineEvent.styled';
 
 /**
@@ -38,7 +38,7 @@ const TimelineEvent: FunctionComponent<Props> = (props): ReactElement<Props> => 
 
   return (
     <Box alignment={BoxAlignment.START}>
-      <StyledTimestamp appearance={TextAppearance.SECONDARY}>
+      <StyledTimestamp colour={ColourPalette.LIGHT_GREY}>
         {timestamp}
       </StyledTimestamp>
       <StyledTitle
@@ -47,7 +47,7 @@ const TimelineEvent: FunctionComponent<Props> = (props): ReactElement<Props> => 
       >
         {title}
       </StyledTitle>
-      <Text appearance={TextAppearance.SECONDARY}>
+      <Text colour={ColourPalette.LIGHT_GREY}>
         {description}
       </Text>
     </Box>

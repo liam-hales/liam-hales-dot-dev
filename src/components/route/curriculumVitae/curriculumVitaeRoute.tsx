@@ -3,7 +3,7 @@ import { StatusHandler, Header, Content } from '../..';
 import { Button } from '../../common';
 import { PageSlug } from '../../../graphql';
 import { usePageQuery, useScreen } from '../../../hooks';
-import { BoxDirection, QueryStatus, TextAppearance } from '../../../enums';
+import { BoxDirection, QueryStatus, ColourPalette } from '../../../enums';
 import {
   StyledHeaderButtons,
   StyledCurrentPosition,
@@ -58,7 +58,7 @@ const CurriculumVitaeRoute: FunctionComponent = (): ReactElement => {
             const { disclaimerText } = content;
 
             return (
-              <StyledDisclaimerText appearance={TextAppearance.SECONDARY}>
+              <StyledDisclaimerText colour={ColourPalette.LIGHT_GREY}>
                 {disclaimerText}
               </StyledDisclaimerText>
             );

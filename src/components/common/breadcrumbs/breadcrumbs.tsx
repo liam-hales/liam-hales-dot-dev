@@ -1,7 +1,8 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { BaseProps } from '../../../types';
 import { IconId } from '../../../enums';
-import { StyledBreadcrumbs, StyledIcon } from './breadcrumbs.styled';
+import { Icon } from '..';
+import { StyledBreadcrumbs } from './breadcrumbs.styled';
 
 /**
  * The `Breadcrumbs` component props
@@ -19,9 +20,9 @@ const Breadcrumbs: FunctionComponent<Props> = ({ className, children }): ReactEl
   return (
     <StyledBreadcrumbs
       className={className}
-      separator={
-        <StyledIcon id={IconId.CARET_RIGHT} />
-      }
+      separator={(
+        <Icon id={IconId.CARET_RIGHT} />
+      )}
     >
       {children}
     </StyledBreadcrumbs>

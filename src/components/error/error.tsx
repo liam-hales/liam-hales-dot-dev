@@ -1,7 +1,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { Button, Title } from '../common';
 import { useRouter } from '../../hooks';
-import { TextAppearance, NavRoute } from '../../enums';
+import { ColourPalette, NavRoute } from '../../enums';
 import { StyledContent, StyledText } from './error.styled';
 
 /**
@@ -18,7 +18,7 @@ const Error: FunctionComponent = (): ReactElement => {
       <Title>
         Something went wrong
       </Title>
-      <StyledText appearance={TextAppearance.SECONDARY}>
+      <StyledText colour={ColourPalette.LIGHT_GREY}>
         Oops, looks like something went wrong. Please try refreshing the page.
       </StyledText>
       <Button onClick={() => goTo(NavRoute.HOME)}>

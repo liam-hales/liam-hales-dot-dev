@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { NavRoute, TextAppearance } from '../../enums';
+import { NavRoute, ColourPalette } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { usePageContent, useRouter } from '../../hooks';
 import { BaseProps } from '../../types';
@@ -30,7 +30,7 @@ const StillInterested: FunctionComponent<Props> = ({ className }): ReactElement<
       <Title>
         Still interested?
       </Title>
-      <StyledText appearance={TextAppearance.SECONDARY}>
+      <StyledText colour={ColourPalette.LIGHT_GREY}>
         {stillInterestedText}
       </StyledText>
       <Button onClick={() => goTo(NavRoute.CV)}>

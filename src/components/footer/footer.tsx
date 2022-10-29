@@ -1,7 +1,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import moment from 'moment';
 import { Content, SocialIcons } from '..';
-import { BoxDirection, BoxAlignment, TextAppearance, BoxJustify } from '../../enums';
+import { BoxDirection, BoxAlignment, ColourPalette, BoxJustify } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { usePageContent } from '../../hooks';
 import { Divider, Text } from '../common';
@@ -50,7 +50,7 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
             <StyledTitle bold={true}>
               Liam Hales
             </StyledTitle>
-            <StyledDescription appearance={TextAppearance.SECONDARY}>
+            <StyledDescription colour={ColourPalette.LIGHT_GREY}>
               {footerText}
             </StyledDescription>
           </StyledInfoBox>
@@ -61,7 +61,7 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
           <Text bold={true}>
             {`${year} • Liam Hales`}
           </Text>
-          <StyledBuiltUsing appearance={TextAppearance.SECONDARY}>
+          <StyledBuiltUsing colour={ColourPalette.LIGHT_GREY}>
             {builtUsingText}
           </StyledBuiltUsing>
         </StyledCopyrightBox>

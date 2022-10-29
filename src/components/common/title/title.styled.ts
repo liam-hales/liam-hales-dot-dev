@@ -1,6 +1,5 @@
 import { styled } from '@mui/material';
 import { Text } from '..';
-import { ColourPalette } from '../../../enums';
 
 /**
  * The styled `Text` component used for
@@ -18,5 +17,4 @@ export const StyledText = styled(Text)`
 export const StyledFullStop = styled(Text)`
   font-size: 56px;
   line-height: 0px;
-  color: ${ColourPalette.BLUE};
 `;

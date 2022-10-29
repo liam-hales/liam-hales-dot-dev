@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { BoxAlignment, BoxDirection, BoxJustify, IconId, ScreenSize, TextAppearance } from '../../../enums';
+import { BoxAlignment, BoxDirection, BoxJustify, IconId, ScreenSize, ColourPalette } from '../../../enums';
 import { useScreen } from '../../../hooks';
 import { BaseProps } from '../../../types';
 import { Box } from '../../common';
@@ -51,7 +51,7 @@ const SkillAreaCard: FunctionComponent<Props> = ({ className, title, description
           {title}
         </StyledTitle>
         <StyledDescription
-          appearance={TextAppearance.SECONDARY}
+          colour={ColourPalette.LIGHT_GREY}
           screenSize={screenSize}
         >
           {description}

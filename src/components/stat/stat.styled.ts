@@ -1,5 +1,4 @@
 import { styled } from '@mui/material';
-import { ColourPalette } from '../../enums';
 import { Text } from '../common';
 
 /**
@@ -8,7 +7,6 @@ import { Text } from '../common';
  */
 export const StyledValue = styled(Text)`
   font-size: 56px;
-  color: ${ColourPalette.BLUE};
 `;
 
 /**

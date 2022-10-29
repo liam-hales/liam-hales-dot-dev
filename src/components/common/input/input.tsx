@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement, useState } from 'react';
-import { BoxDirection, IconId } from '../../../enums';
+import { BoxDirection, ColourPalette, IconId } from '../../../enums';
 import { useDebounce } from '../../../hooks';
 import { BaseProps } from '../../../types';
 import { StyledBox, StyledInput, StyledIcon, StyledClearButton } from './input.styled';
@@ -55,6 +55,7 @@ const Input: FunctionComponent<Props> = ({ className, defaultValue, placeholder,
         (value !== '') && (
           <StyledClearButton
             id={IconId.CROSS}
+            colour={ColourPalette.LIGHT_GREY}
             onClick={() => {
 
               // Reset the value state and call the on change

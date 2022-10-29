@@ -1,7 +1,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { Button, Title } from '../common';
 import { usePageContent, useRouter } from '../../hooks';
-import { TextAppearance, NavRoute } from '../../enums';
+import { ColourPalette, NavRoute } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { StyledContent, Styled404, StyledText, StyledImage } from './notFound.styled';
 
@@ -26,7 +26,7 @@ const NotFound: FunctionComponent = (): ReactElement => {
       <Title>
         Page not found
       </Title>
-      <StyledText appearance={TextAppearance.SECONDARY}>
+      <StyledText colour={ColourPalette.LIGHT_GREY}>
         {notFoundText}
       </StyledText>
       <StyledImage

@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { BoxAlignment } from '../../enums';
+import { BoxAlignment, ColourPalette } from '../../enums';
 import { BaseProps } from '../../types';
 import { Divider } from '../common';
 import { StyledContent, StyledTitle, StyledFullStop, StyledChildren } from './header.styled';
@@ -27,7 +27,10 @@ const Header: FunctionComponent<Props> = ({ className, title, children }): React
       >
         <StyledTitle bold={true}>
           {title}
-          <StyledFullStop bold={true}>
+          <StyledFullStop
+            colour={ColourPalette.BLUE}
+            bold={true}
+          >
             .
           </StyledFullStop>
         </StyledTitle>

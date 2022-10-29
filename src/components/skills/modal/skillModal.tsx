@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { ImageRoundness, TextAppearance } from '../../../enums';
+import { ImageRoundness, ColourPalette } from '../../../enums';
 import { BaseProps } from '../../../types';
 import { Button, Modal, Text } from '../../common';
 import { StyledImage, StyledName, StyledDescription } from './skillModal.styled';
@@ -44,10 +44,10 @@ const SkillModal: FunctionComponent<Props> = ({ open, name, type, description, u
       <StyledName bold={true}>
         {name}
       </StyledName>
-      <Text appearance={TextAppearance.SECONDARY}>
+      <Text colour={ColourPalette.LIGHT_GREY}>
         {type}
       </Text>
-      <StyledDescription appearance={TextAppearance.SECONDARY}>
+      <StyledDescription colour={ColourPalette.LIGHT_GREY}>
         {description}
       </StyledDescription>
       <Button onClick={() => window.open(url, '_blank')}>

@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { TextElement } from '../../../enums';
+import { ColourPalette, TextElement } from '../../../enums';
 import { BaseProps } from '../../../types';
 import { StyledText, StyledFullStop } from './title.styled';
 
@@ -23,7 +23,10 @@ const Title: FunctionComponent<Props> = ({ className, children }): ReactElement<
       element={TextElement.H2}
     >
       {children}
-      <StyledFullStop bold={true}>
+      <StyledFullStop
+        colour={ColourPalette.BLUE}
+        bold={true}
+      >
         .
       </StyledFullStop>
     </StyledText>

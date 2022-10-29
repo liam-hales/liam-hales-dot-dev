@@ -1,4 +1,4 @@
-import { createTheme, ThemeProvider as MuiThemeProvider } from '@mui/material';
+import { createTheme, PaletteOptions, ThemeProvider as MuiThemeProvider } from '@mui/material';
 import { FunctionComponent, ReactElement } from 'react';
 import { ColourPalette, ScreenSize } from '../enums';
 import { BaseProps } from '../types';
@@ -24,8 +24,22 @@ type Props = BaseProps;
  */
 const ThemeProvider: FunctionComponent<Props> = ({ children }): ReactElement<Props> => {
 
+  // Recuce the values from the `ColourPalette` enum
+  // into a palette options object for the theme
+  const palette = Object
+    .values(ColourPalette)
+    .reduce<PaletteOptions>((map, value) => {
+      return {
+        ...map,
+        [value]: {
+          main: value,
+        },
+      };
+    }, {});
+
   const theme = createTheme({
     palette: {
+      ...palette,
       background: {
         default: ColourPalette.BLACK,
       },
@@ -34,10 +48,6 @@ const ThemeProvider: FunctionComponent<Props> = ({ children }): ReactElement<Pro
       },
       secondary: {
         main: ColourPalette.GREY,
-      },
-      text: {
-        primary: ColourPalette.WHITE,
-        secondary: ColourPalette.LIGHT_GREY,
       },
     },
     breakpoints: {

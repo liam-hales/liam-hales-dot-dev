@@ -15,7 +15,7 @@ import {
   faCheck,
   faArrowLeft,
   faArrowRight,
-  faArrowPointer,
+  faArrowUpRightFromSquare,
 } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 import { BaseProps } from '../../../types';
@@ -59,7 +59,7 @@ const Icon: FunctionComponent<Props> = (props): ReactElement<Props> => {
     [IconId.MAGNIFYING_GLASS]: faMagnifyingGlass,
     [IconId.CROSS]: faXmark,
     [IconId.TICK]: faCheck,
-    [IconId.CURSOR]: faArrowPointer,
+    [IconId.ARROW_RIGHT_SQUARE]: faArrowUpRightFromSquare,
     [IconId.LINKED_IN]: faLinkedin,
     [IconId.STACK_OVERFLOW]: faStackOverflow,
   };

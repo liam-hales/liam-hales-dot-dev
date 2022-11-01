@@ -51,7 +51,7 @@ const SkillModal: FunctionComponent<Props> = ({ open, name, type, description, u
         {description}
       </StyledDescription>
       <Button
-        iconId={IconId.CURSOR}
+        iconId={IconId.ARROW_RIGHT_SQUARE}
         onClick={() => window.open(url, '_blank')}
       >
         Visit website

@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { BoxAlignment, NavRoute, ColourPalette } from '../../../enums';
+import { BoxAlignment, NavRoute, ColourPalette, IconId } from '../../../enums';
 import { PageSlug } from '../../../graphql';
 import { usePageContent, useRouter, useScreen } from '../../../hooks';
 import { BaseProps } from '../../../types';
@@ -58,6 +58,7 @@ const SkillsPreview: FunctionComponent<Props> = ({ reference, className }): Reac
         }
       </StyledGrid>
       <StyledButton
+        iconId={IconId.ARROW_RIGHT}
         onClick={() => goTo(NavRoute.SKILLS)}
         screenSize={screenSize}
       >

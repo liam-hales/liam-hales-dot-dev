@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { NavRoute, ColourPalette } from '../../enums';
+import { NavRoute, ColourPalette, IconId } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { usePageContent, useRouter } from '../../hooks';
 import { BaseProps } from '../../types';
@@ -33,7 +33,10 @@ const StillInterested: FunctionComponent<Props> = ({ className }): ReactElement<
       <StyledText colour={ColourPalette.LIGHT_GREY}>
         {stillInterestedText}
       </StyledText>
-      <Button onClick={() => goTo(NavRoute.CV)}>
+      <Button
+        iconId={IconId.DOCUMENT}
+        onClick={() => goTo(NavRoute.CV)}
+      >
         Curriculum Vitae
       </Button>
     </Box>

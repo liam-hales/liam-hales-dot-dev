@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { BoxAlignment, NavRoute, ColourPalette } from '../../../enums';
+import { BoxAlignment, NavRoute, ColourPalette, IconId } from '../../../enums';
 import { PageSlug } from '../../../graphql';
 import { usePageContent, useRouter } from '../../../hooks';
 import { BaseProps } from '../../../types';
@@ -55,7 +55,10 @@ const LifeTimelinePreview: FunctionComponent<Props> = ({ reference, className })
           })
         }
       </StyledTimeline>
-      <StyledButton onClick={() => goTo(NavRoute.LIFE_TIMELINE)}>
+      <StyledButton
+        iconId={IconId.ARROW_RIGHT}
+        onClick={() => goTo(NavRoute.LIFE_TIMELINE)}
+      >
         See full timeline
       </StyledButton>
     </Box>

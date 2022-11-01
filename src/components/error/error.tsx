@@ -1,7 +1,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { Button, Title } from '../common';
 import { useRouter } from '../../hooks';
-import { ColourPalette, NavRoute } from '../../enums';
+import { ColourPalette, IconId, NavRoute } from '../../enums';
 import { StyledContent, StyledText } from './error.styled';
 
 /**
@@ -21,7 +21,10 @@ const Error: FunctionComponent = (): ReactElement => {
       <StyledText colour={ColourPalette.LIGHT_GREY}>
         Oops, looks like something went wrong. Please try refreshing the page.
       </StyledText>
-      <Button onClick={() => goTo(NavRoute.HOME)}>
+      <Button
+        iconId={IconId.ARROW_LEFT}
+        onClick={() => goTo(NavRoute.HOME)}
+      >
         Return home
       </Button>
     </StyledContent>

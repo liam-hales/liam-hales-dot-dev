@@ -1,7 +1,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { Button, Title } from '../common';
 import { usePageContent, useRouter } from '../../hooks';
-import { ColourPalette, NavRoute } from '../../enums';
+import { ColourPalette, IconId, NavRoute } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { StyledContent, Styled404, StyledText, StyledImage } from './notFound.styled';
 
@@ -33,7 +33,10 @@ const NotFound: FunctionComponent = (): ReactElement => {
         path={notFoundImage.url}
         alt="Not found image"
       />
-      <Button onClick={() => goTo(NavRoute.HOME)}>
+      <Button
+        iconId={IconId.ARROW_LEFT}
+        onClick={() => goTo(NavRoute.HOME)}
+      >
         Return home
       </Button>
     </StyledContent>

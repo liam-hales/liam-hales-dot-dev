@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement, useState } from 'react';
-import { BoxDirection, BoxJustify, ColourPalette } from '../../enums';
+import { BoxDirection, BoxJustify, ColourPalette, IconId } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { usePageContent } from '../../hooks';
 import { BaseProps } from '../../types';
@@ -73,11 +73,15 @@ const EmailModal: FunctionComponent<Props> = ({ open, onClose }): ReactElement<P
           >
             <Button
               colour={ColourPalette.GREY}
+              iconId={IconId.ARROW_LEFT}
               onClick={onClose}
             >
               I&apos;m a recruiter
             </Button>
-            <Button onClick={() => setShowEmail(true)}>
+            <Button
+              iconId={IconId.TICK}
+              onClick={() => setShowEmail(true)}
+            >
               OK, got it
             </Button>
           </StyledButtons>

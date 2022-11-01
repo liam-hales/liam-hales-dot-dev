@@ -1,7 +1,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { Button, Title, Text } from '../common';
 import { useRouter } from '../../hooks';
-import { ColourPalette, NavRoute } from '../../enums';
+import { ColourPalette, IconId, NavRoute } from '../../enums';
 import { StyledContent, StyledText } from './comingSoon.styled';
 
 /**
@@ -30,7 +30,10 @@ const ComingSoon: FunctionComponent = (): ReactElement => {
         {' '}
         for this infomation.
       </StyledText>
-      <Button onClick={() => goTo(NavRoute.HOME)}>
+      <Button
+        iconId={IconId.ARROW_LEFT}
+        onClick={() => goTo(NavRoute.HOME)}
+      >
         Return home
       </Button>
     </StyledContent>

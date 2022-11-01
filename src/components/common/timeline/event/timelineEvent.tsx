@@ -38,7 +38,7 @@ const TimelineEvent: FunctionComponent<Props> = (props): ReactElement<Props> => 
 
   return (
     <Box alignment={BoxAlignment.START}>
-      <StyledTimestamp colour={ColourPalette.LIGHT_GREY}>
+      <StyledTimestamp colour={ColourPalette.GREY}>
         {timestamp}
       </StyledTimestamp>
       <StyledTitle

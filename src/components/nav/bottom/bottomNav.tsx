@@ -1,5 +1,5 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { IconId, NavKey, NavRoute } from '../../../enums';
+import { ColourPalette, IconId, NavKey, NavRoute } from '../../../enums';
 import { useNav, useRouter } from '../../../hooks';
 import { Text } from '../../common';
 import {
@@ -32,7 +32,14 @@ const BottomNav: FunctionComponent = (): ReactElement => {
             </Text>
           )}
           icon={(
-            <StyledIcon id={IconId.HOME} />
+            <StyledIcon
+              id={IconId.HOME}
+              colour={
+                (navKey === NavKey.HOME)
+                  ? ColourPalette.BLUE
+                  : ColourPalette.WHITE
+              }
+            />
           )}
         />
         <StyledBottomNavigationAction
@@ -44,7 +51,14 @@ const BottomNav: FunctionComponent = (): ReactElement => {
             </Text>
           )}
           icon={(
-            <StyledIcon id={IconId.DOCUMENT} />
+            <StyledIcon
+              id={IconId.DOCUMENT}
+              colour={
+                (navKey === NavKey.CV)
+                  ? ColourPalette.BLUE
+                  : ColourPalette.WHITE
+              }
+            />
           )}
         />
         <StyledBottomNavigationAction
@@ -56,7 +70,14 @@ const BottomNav: FunctionComponent = (): ReactElement => {
             </Text>
           )}
           icon={(
-            <StyledIcon id={IconId.MESSAGE} />
+            <StyledIcon
+              id={IconId.MESSAGE}
+              colour={
+                (navKey === NavKey.BLOG)
+                  ? ColourPalette.BLUE
+                  : ColourPalette.WHITE
+              }
+            />
           )}
         />
         <StyledBottomNavigationAction
@@ -68,7 +89,14 @@ const BottomNav: FunctionComponent = (): ReactElement => {
             </Text>
           )}
           icon={(
-            <StyledIcon id={IconId.PAINT_BRUSH} />
+            <StyledIcon
+              id={IconId.PAINT_BRUSH}
+              colour={
+                (navKey === NavKey.BLOG)
+                  ? ColourPalette.BLUE
+                  : ColourPalette.WHITE
+              }
+            />
           )}
         />
       </StyledBottomNavigation>

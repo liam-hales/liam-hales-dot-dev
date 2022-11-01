@@ -58,7 +58,7 @@ const CurriculumVitaeRoute: FunctionComponent = (): ReactElement => {
             const { disclaimerText } = content;
 
             return (
-              <StyledDisclaimerText colour={ColourPalette.LIGHT_GREY}>
+              <StyledDisclaimerText colour={ColourPalette.GREY}>
                 {disclaimerText}
               </StyledDisclaimerText>
             );

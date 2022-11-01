@@ -61,7 +61,7 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
           <Text bold={true}>
             {`${year} • Liam Hales`}
           </Text>
-          <StyledBuiltUsing colour={ColourPalette.LIGHT_GREY}>
+          <StyledBuiltUsing colour={ColourPalette.GREY}>
             {builtUsingText}
           </StyledBuiltUsing>
         </StyledCopyrightBox>

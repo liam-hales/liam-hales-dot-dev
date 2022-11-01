@@ -1,6 +1,6 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { BaseProps } from '../../../../types';
-import { NavRoute } from '../../../../enums';
+import { ColourPalette, NavRoute } from '../../../../enums';
 import { useRouter } from '../../../../hooks';
 import { StyledText } from './breadcrumbItem.styled';
 
@@ -32,6 +32,11 @@ const BreadcrumbItem: FunctionComponent<Props> = (props): ReactElement<Props> =>
       bold={true}
       active={active}
       hoverUnderline={active !== true}
+      colour={
+        (active === true)
+          ? ColourPalette.WHITE
+          : ColourPalette.GREY
+      }
       onClick={
         (active === false)
           ? () => goTo(route)

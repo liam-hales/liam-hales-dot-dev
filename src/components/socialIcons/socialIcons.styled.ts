@@ -6,5 +6,5 @@ import { Box } from '../common';
  * the `SocialIcons` component icons box
  */
 export const StyledIconsBox = styled(Box)`
-  column-gap: 18px;
+  column-gap: 16px;
 `;

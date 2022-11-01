@@ -63,5 +63,4 @@ export const StyledCopyrightBox = styled(Box)`
 export const StyledBuiltUsing = styled(Text)`
   padding-top: 4px;
   font-size: 11px;
-  opacity: 0.52;
 `;

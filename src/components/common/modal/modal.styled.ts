@@ -1,5 +1,5 @@
 import { styled, Backdrop, Modal } from '@mui/material';
-import { ScreenSize, ColourPalette } from '../../../enums';
+import { ScreenSize } from '../../../enums';
 import { Card, IconButton } from '..';
 
 /**

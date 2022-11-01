@@ -14,7 +14,6 @@ interface StyledTitleProps {
  */
 export const StyledTimestamp = styled(Text)`
   font-size: 12px;
-  opacity: 0.52;
 `;
 
 /**

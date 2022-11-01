@@ -1,6 +1,5 @@
 import { styled } from '@mui/material';
 import { Content } from '..';
-import { ColourPalette } from '../../enums';
 import { Box, Text } from '../common';
 
 /**

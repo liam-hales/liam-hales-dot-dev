@@ -25,9 +25,10 @@ export const StyledInput = styled(InputBase)`
   .MuiInputBase-input {
     font-size: 16px;
     font-weight: bold;
+    color: ${ColourPalette.WHITE};
 
     ::placeholder {
-      opacity: 0.22;
+      color: ${ColourPalette.LIGHT_GREY};
     };
   };
 `;

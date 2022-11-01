@@ -36,7 +36,6 @@ export const StyledBottomNavigation = styled(BottomNavigation)`
  * used for the `BottomNav` component
  */
 export const StyledBottomNavigationAction = styled(BottomNavigationAction)`
-  color: ${ColourPalette.WHITE};
 
   .MuiTouchRipple-root {
     color: ${ColourPalette.WHITE};

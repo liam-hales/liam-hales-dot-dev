@@ -6,6 +6,5 @@ import { ColourPalette } from '../../../enums';
  * used for the `Divider` component
  */
 export const StyledDivider = styled(Divider)`
-  background-color: ${ColourPalette.GREY};
-  opacity: 0.46;
+  background-color: ${ColourPalette.DARK_GREY};
 `;

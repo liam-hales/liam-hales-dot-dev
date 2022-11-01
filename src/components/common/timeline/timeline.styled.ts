@@ -37,7 +37,7 @@ export const StyledConnector = styled('div')<StyledContainerProps>`
   top: ${(props) => (props.first === true) ? 38 : 0}px;
   bottom: ${(props) => (props.last === true) ? 'calc(100% - 38px)' : '0px'};
   left: 9px;
-  background-color: ${ColourPalette.GREY};
+  background-color: ${ColourPalette.DARK_GREY};
   z-index: -1;
 `;
 

@@ -14,5 +14,4 @@ interface StyledTextProps {
  */
 export const StyledText = styled(Text)<StyledTextProps>`
   font-size: 17px;
-  opacity: ${(props) => ((props.active === true) ? 1 : 0.52)};
 `;

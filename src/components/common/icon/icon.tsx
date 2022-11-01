@@ -1,6 +1,22 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import { faHome, faFileCode, faPaintBrush, faCode, faServer, faFillDrip, faEnvelope, faCaretRight, faMagnifyingGlass, faXmark, faMessage } from '@fortawesome/free-solid-svg-icons';
+import {
+  faHome,
+  faFileCode,
+  faPaintBrush,
+  faCode,
+  faServer,
+  faFillDrip,
+  faEnvelope,
+  faCaretRight,
+  faMagnifyingGlass,
+  faXmark,
+  faMessage,
+  faCheck,
+  faArrowLeft,
+  faArrowRight,
+  faArrowPointer,
+} from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 import { BaseProps } from '../../../types';
 import { ColourPalette, IconId } from '../../../enums';
@@ -38,8 +54,12 @@ const Icon: FunctionComponent<Props> = (props): ReactElement<Props> => {
     [IconId.SERVER]: faServer,
     [IconId.ENVELOPE]: faEnvelope,
     [IconId.CARET_RIGHT]: faCaretRight,
+    [IconId.ARROW_LEFT]: faArrowLeft,
+    [IconId.ARROW_RIGHT]: faArrowRight,
     [IconId.MAGNIFYING_GLASS]: faMagnifyingGlass,
     [IconId.CROSS]: faXmark,
+    [IconId.TICK]: faCheck,
+    [IconId.CURSOR]: faArrowPointer,
     [IconId.LINKED_IN]: faLinkedin,
     [IconId.STACK_OVERFLOW]: faStackOverflow,
   };

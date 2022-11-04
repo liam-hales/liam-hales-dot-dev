@@ -17,6 +17,7 @@ import {
   faArrowRight,
   faArrowUpRightFromSquare,
 } from '@fortawesome/free-solid-svg-icons';
+import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 import { faLinkedin, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 import { BaseProps } from '../../../types';
 import { ColourPalette, IconId } from '../../../enums';
@@ -60,6 +61,7 @@ const Icon: FunctionComponent<Props> = (props): ReactElement<Props> => {
     [IconId.CROSS]: faXmark,
     [IconId.TICK]: faCheck,
     [IconId.ARROW_RIGHT_SQUARE]: faArrowUpRightFromSquare,
+    [IconId.COPYRIGHT]: faCopyright,
     [IconId.LINKED_IN]: faLinkedin,
     [IconId.STACK_OVERFLOW]: faStackOverflow,
   };

@@ -74,13 +74,13 @@
       {
         "selector": "variable",
         "format": ["camelCase", "PascalCase"],
-        "leadingUnderscore": "forbid",
+        "leadingUnderscore": "allow",
         "trailingUnderscore": "forbid"
       },
       {
         "selector": "parameter",
         "format": ["camelCase"],
-        "leadingUnderscore": "allow",
+        "leadingUnderscore": "forbid",
         "trailingUnderscore": "forbid"
       },
       {

@@ -8,7 +8,7 @@ import { StyledBox, StyledInput, StyledIcon, StyledClearButton } from './input.s
  * The `Input` component props
  */
 interface Props extends BaseProps {
-  readonly defaultValue: string;
+  readonly value: string;
   readonly placeholder: string;
   readonly delay: number;
   readonly iconId?: IconId;
@@ -22,10 +22,19 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `Input` component
  */
-const Input: FunctionComponent<Props> = ({ className, defaultValue, placeholder, iconId, delay, onChange }): ReactElement<Props> => {
+const Input: FunctionComponent<Props> = ({ className, value, placeholder, iconId, delay, onChange }): ReactElement<Props> => {
 
-  const [value, setValue] = useState<string>(defaultValue);
-  useDebounce(() => onChange(value), delay);
+  const [_value, setValue] = useState<string>(value);
+
+  useDebounce(() => {
+
+    // Only call `onChange` if the value is different to the
+    // temp value so it's not called the first time the
+    // component renders as this causes a render loop
+    if (_value !== value) {
+      onChange(_value);
+    }
+  }, delay);
 
   return (
     <StyledBox
@@ -39,7 +48,7 @@ const Input: FunctionComponent<Props> = ({ className, defaultValue, placeholder,
       }
       <StyledInput
         type="text"
-        value={value}
+        value={_value}
         placeholder={placeholder}
         onChange={(event) => {
 
@@ -52,7 +61,7 @@ const Input: FunctionComponent<Props> = ({ className, defaultValue, placeholder,
         }}
       />
       {
-        (value !== '') && (
+        (_value !== '') && (
           <StyledClearButton
             id={IconId.CROSS}
             colour={ColourPalette.LIGHT_GREY}

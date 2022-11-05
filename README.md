@@ -9,45 +9,38 @@ https://liamhales.dev
 
 # Getting Started (Prerequisites)
 
-- Download and install [Node Version Manager (NVM)]
-- Install and use a version of Node.js `>= v16.17` and NPM `>= v8.15`
+1. Download and install [Node Version Manager]
+2. Install and use a version of Node.js `>= v18.12`
 
 ```sh
-$ nvm install 16.17
-$ nvm use 16.17
+$ nvm install 18.12
+$ nvm use 18.12
 
 $ node --version
-v16.17.0
+v18.12.0
 
 $ npm --version
-v8.15.0
+v8.19.1
 ```
 
-- Remember to set the default version alias for NVM
-```sh
-$ nvm alias default 16.17
-```
+3. Download and install [AWS CLI]
+4. Run `corepack enable` to enable [Corepack]
+5. Run `yarn` in the repo root directory
 
-- Download and install [Yarn Package Manager] and [AWS CLI]
-- From the project root run `yarn`
-
-```sh
-$ npm install --global yarn
-$ yarn
-```
+> _**NOTE:** You must use the [Yarn] package manager_
 
 <br/>
 
 # First Steps
 
-- Create a `.env` file in the project root
+1. Create a `.env` file in the project root
 
 ```sh
 REACT_APP_API_URL = 'https://${region}.graphcms.com/v2/${id}/master'
 ```
 
-- Run `yarn build-index` to build the `index.html` file
-- Run `yarn build-images` to build the images
+2. Run `yarn build-index` to build the `index.html` file
+3. Run `yarn build-images` to build the images
 
 ```sh
 $ yarn build-index
@@ -60,8 +53,8 @@ $ yarn build-images
 
 # Starting Locally (Development)
 
-- Follow the steps in the [First Steps](#first-steps) section
-- Run `yarn start` to start the app locally
+1. Follow the steps in the [First Steps](#first-steps) section
+2. Run `yarn start` to start the app locally
 
 ```sh
 $ yarn start
@@ -71,10 +64,10 @@ $ yarn start
 
 # Building & Deploying (Production)
 
-- Follow the steps in the [First Steps](#first-steps) section
-- Run `yarn build` to build the app for production
-- Run `yarn deploy-build` to deploy the build to AWS S3
-- Run `yarn cleanup` to cleanup after the build (optional)
+1. Follow the steps in the [First Steps](#first-steps) section
+2. Run `yarn build` to build the app for production
+3. Run `yarn deploy-build` to deploy the build to AWS S3
+4. Run `yarn cleanup` to cleanup after the build (optional)
 
 ```sh
 $ yarn build
@@ -83,8 +76,9 @@ $ yarn cleanup
 ```
 
 [React]: https://reactjs.org
-[Node Version Manager (NVM)]: https://github.com/nvm-sh/nvm
-[Yarn Package Manager]: https://yarnpkg.com
+[Node Version Manager]: https://github.com/nvm-sh/nvm
+[Yarn]: https://yarnpkg.com
+[Corepack]: https://nodejs.org/api/corepack.html
 [TypeScript]: https://typescriptlang.org
 [Material UI]: https://mui.com
 [AWS CLI]: https://aws.amazon.com/cli

@@ -19,4 +19,4 @@ public/icons/*
 *.log*
 
 # Yarn
-.yarn/*
+.yarn/

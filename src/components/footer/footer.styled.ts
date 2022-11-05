@@ -1,6 +1,6 @@
 import { styled } from '@mui/material';
 import { LogoSvg } from '../../svgs';
-import { Box, Text } from '../common';
+import { Box, Text, Icon } from '../common';
 
 /**
  * The styled `Box` component used for
@@ -54,6 +54,14 @@ export const StyledCopyrightBox = styled(Box)`
   width: 100%;
   padding-top: 60px;
   padding-bottom: 20px;
+`;
+
+/**
+ * The styled `Icon` component used for
+ * the `Footer` component copyright icon
+ */
+export const StyledCopyrightIcon = styled(Icon)`
+  padding-right: 2px;
 `;
 
 /**

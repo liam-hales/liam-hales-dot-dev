@@ -1,7 +1,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import moment from 'moment';
 import { Content, SocialIcons } from '..';
-import { BoxDirection, BoxAlignment, ColourPalette, BoxJustify } from '../../enums';
+import { BoxDirection, BoxAlignment, ColourPalette, BoxJustify, IconId } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { usePageContent } from '../../hooks';
 import { Divider, Text } from '../common';
@@ -13,6 +13,7 @@ import {
   StyledDescription,
   StyledLogoSvg,
   StyledCopyrightBox,
+  StyledCopyrightIcon,
   StyledBuiltUsing,
 } from './footer.styled';
 
@@ -59,7 +60,11 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
         <SocialIcons />
         <StyledCopyrightBox>
           <Text bold={true}>
-            {`${year} • Liam Hales`}
+            <StyledCopyrightIcon
+              id={IconId.COPYRIGHT}
+              colour={ColourPalette.WHITE}
+            />
+            {` ${year} - Liam Hales`}
           </Text>
           <StyledBuiltUsing colour={ColourPalette.GREY}>
             {builtUsingText}

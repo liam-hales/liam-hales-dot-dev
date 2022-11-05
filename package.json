@@ -10,7 +10,21 @@
     "darwin",
     "linux"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://git-codecommit.eu-west-1.amazonaws.com/v1/repos/liam-hales-dot-dev"
+  },
   "packageManager": "yarn@3.2.4",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "lint": "eslint \"**/*.{ts,tsx}\"",
+    "unused-code": "ts-prune --error --ignore index.ts",
+    "build-images": "ts-node ./scripts/buildImages.script.ts",
+    "build-index": "ts-node ./scripts/buildIndex.script.tsx",
+    "deploy-build": "ts-node ./scripts/deployBuild.script.ts",
+    "cleanup": "rm -rf build/"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
@@ -54,16 +68,6 @@
   },
   "resolutions": {
     "@mui/styled-engine": "npm:@mui/styled-engine-sc@^5.7.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "lint": "eslint \"**/*.{ts,tsx}\"",
-    "unused-code": "ts-prune --error --ignore index.ts",
-    "build-images": "ts-node ./scripts/buildImages.script.ts",
-    "build-index": "ts-node ./scripts/buildIndex.script.tsx",
-    "deploy-build": "ts-node ./scripts/deployBuild.script.ts",
-    "cleanup": "rm -rf build/"
   },
   "browserslist": {
     "production": [

@@ -1,7 +1,7 @@
 import { styled } from '@mui/material';
 import { ScreenSize } from '../../enums';
 import { Box, Input, Text } from '../common';
-import { Grid } from '..';
+import { Grid, NoResults } from '..';
 
 /**
  * The `StyledSearchInput` component props
@@ -40,4 +40,13 @@ export const StyledDisclaimerText = styled(Text)`
  */
 export const StyledGrid = styled(Grid)`
   width: 100%;
+`;
+
+/**
+ * The styled `NoResults` component used
+ * for the `Skills` component
+ */
+export const StyledNoResults = styled(NoResults)`
+  padding-top: 26px;
+  align-self: center;
 `;

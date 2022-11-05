@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactElement, useState } from 'react';
+import { FunctionComponent, ReactElement, useMemo, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { BoxAlignment, IconId, ColourPalette } from '../../enums';
 import { PageSlug, Skill } from '../../graphql';
@@ -6,7 +6,7 @@ import { usePageContent, useScreen } from '../../hooks';
 import { BaseProps } from '../../types';
 import { SkillModal, SkillCard } from '..';
 import { searchFilter } from '../../helpers';
-import { StyledBox, StyledSearchInput, StyledDisclaimerText, StyledGrid } from './skills.styled';
+import { StyledBox, StyledSearchInput, StyledDisclaimerText, StyledGrid, StyledNoResults } from './skills.styled';
 
 /**
  * The `Skills` component props
@@ -33,6 +33,22 @@ const Skills: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
     slug: PageSlug.SKILLS,
   });
 
+  const filteredSkills = useMemo(() => {
+    return skills
+      .filter((skill) => searchFilter(searchText, skill, ['name']))
+      .sort((a, b) => {
+
+        // Only sort into alphabetical order
+        // if the user is searching
+        return (searchText !== '')
+          ? a.name.localeCompare(b.name)
+          : 0;
+      });
+  }, [
+    skills,
+    searchText,
+  ]);
+
   return (
     <>
       {
@@ -57,7 +73,7 @@ const Skills: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
         alignment={BoxAlignment.START}
       >
         <StyledSearchInput
-          defaultValue={searchText}
+          value={searchText}
           placeholder="Search"
           delay={500}
           iconId={IconId.MAGNIFYING_GLASS}
@@ -74,31 +90,38 @@ const Skills: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
           }}
           screenSize={screenSize}
         />
-        <StyledDisclaimerText colour={ColourPalette.LIGHT_GREY}>
-          {disclaimerText}
-        </StyledDisclaimerText>
+        {
+          (filteredSkills.length > 0) && (
+            <StyledDisclaimerText colour={ColourPalette.LIGHT_GREY}>
+              {disclaimerText}
+            </StyledDisclaimerText>
+          )
+        }
+        {
+          (filteredSkills.length === 0) && (
+            <StyledNoResults searchText={searchText} />
+          )
+        }
         <StyledGrid>
           {
-            skills
-              .filter((skill) => searchFilter(searchText, skill, ['name']))
-              .map((skill, index) => {
+            filteredSkills.map((skill, index) => {
 
-                // Destructure the skill and return
-                // the skill card component
-                const { name, type, image } = skill;
-                return (
-                  <SkillCard
-                    key={`skill-item-${index}`}
-                    name={name}
-                    type={type}
-                    imageUrl={image?.url}
-                    onClick={() => {
-                      setSelectedSkill(skill);
-                      setModalOpen(true);
-                    }}
-                  />
-                );
-              })
+              // Destructure the skill and return
+              // the skill card component
+              const { name, type, image } = skill;
+              return (
+                <SkillCard
+                  key={`skill-item-${index}`}
+                  name={name}
+                  type={type}
+                  imageUrl={image?.url}
+                  onClick={() => {
+                    setSelectedSkill(skill);
+                    setModalOpen(true);
+                  }}
+                />
+              );
+            })
           }
         </StyledGrid>
       </StyledBox>

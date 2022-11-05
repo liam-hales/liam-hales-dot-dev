@@ -1,12 +1,12 @@
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { IconId } from '../../enums';
+import { BoxAlignment, IconId } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { searchFilter } from '../../helpers';
 import { usePageContent, useScreen } from '../../hooks';
 import { BaseProps } from '../../types';
 import { Timeline, TimelineEvent } from '../common';
-import { StyledSearchInput } from './lifeTimeline.styled';
+import { StyledBox, StyledSearchInput, StyledNoResults } from './lifeTimeline.styled';
 
 /**
  * The `LifeTimeline` component props
@@ -30,10 +30,21 @@ const LifeTimeline: FunctionComponent<Props> = ({ className }): ReactElement<Pro
     slug: PageSlug.LIFE_TIMELINE,
   });
 
+  const filteredEvents = useMemo(() => {
+    return timelineEvents
+      .filter((event) => searchFilter(searchText, event, ['title', 'description']));
+  }, [
+    timelineEvents,
+    searchText,
+  ]);
+
   return (
-    <div className={className}>
+    <StyledBox
+      className={className}
+      alignment={BoxAlignment.START}
+    >
       <StyledSearchInput
-        defaultValue={searchText}
+        value={searchText}
         placeholder="Search"
         delay={500}
         iconId={IconId.MAGNIFYING_GLASS}
@@ -52,28 +63,31 @@ const LifeTimeline: FunctionComponent<Props> = ({ className }): ReactElement<Pro
       />
       <Timeline>
         {
-          timelineEvents
-            .filter((event) => searchFilter(searchText, event, ['title', 'description']))
-            .map((event, index) => {
+          filteredEvents.map((event, index) => {
 
-              // Destructure the timeline event and get the first
-              // event from the original timeline events array
-              const { id, title, description, date } = event;
-              const [firstEvent] = timelineEvents;
+            // Destructure the timeline event and get the first
+            // event from the original timeline events array
+            const { id, title, description, date } = event;
+            const [firstEvent] = timelineEvents;
 
-              return (
-                <TimelineEvent
-                  key={`life-timeline-item-${index}`}
-                  title={title}
-                  description={description}
-                  date={date}
-                  first={id === firstEvent.id}
-                />
-              );
-            })
+            return (
+              <TimelineEvent
+                key={`life-timeline-item-${index}`}
+                title={title}
+                description={description}
+                date={date}
+                first={id === firstEvent.id}
+              />
+            );
+          })
         }
       </Timeline>
-    </div>
+      {
+        (filteredEvents.length === 0) && (
+          <StyledNoResults searchText={searchText} />
+        )
+      }
+    </StyledBox>
   );
 };
 

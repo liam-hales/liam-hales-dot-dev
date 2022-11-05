@@ -3,8 +3,8 @@ import { BoxAlignment, ColourPalette } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { usePageContent } from '../../hooks';
 import { BaseProps } from '../../types';
-import { Box, Title, Text } from '../common';
-import { StyledStatement } from './proStatement.styled';
+import { Box, Title } from '../common';
+import { StyledStatement, StyledName } from './proStatement.styled';
 
 /**
  * The `ProStatement` component props
@@ -35,9 +35,12 @@ const ProStatement: FunctionComponent<Props> = ({ className }): ReactElement<Pro
       <StyledStatement colour={ColourPalette.LIGHT_GREY}>
         {proStatementText}
       </StyledStatement>
-      <Text bold={true}>
+      <StyledName
+        bold={true}
+        italic={true}
+      >
         - Liam Hales
-      </Text>
+      </StyledName>
     </Box>
   );
 };

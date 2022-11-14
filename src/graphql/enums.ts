@@ -9,5 +9,5 @@ export enum PageSlug {
   LIFE_TIMELINE = 'LIFE_TIMELINE',
   SKILLS = 'SKILLS',
   BLOG = 'BLOG',
-  BRANDING = 'BRANDING',
+  BRAND = 'BRAND',
 }

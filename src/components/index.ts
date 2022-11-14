@@ -1,3 +1,4 @@
+import Logo from './logo/logo';
 import Footer from './footer/footer';
 import App from './app/app';
 import SafeArea from './safeArea/safeArea';
@@ -33,6 +34,7 @@ import Error from './error/error';
 import ComingSoon from './comingSoon/comingSoon';
 
 export {
+  Logo,
   Footer,
   App,
   SafeArea,

@@ -7,6 +7,9 @@ import { gql } from 'graphql-request';
 const brandContentFragment = gql`
   fragment BrandContentFields on BrandContent {
     logoText
+    logoLetterLText
+    logoReverseLetterLText
+    logoBarText
     typographyText
   }
 `;

@@ -98,6 +98,9 @@ export interface SkillsPageContent extends BasePageContent {
 export interface BrandPageContent extends BasePageContent {
   readonly slug: PageSlug.BRAND;
   readonly logoText: string;
+  readonly logoLetterLText: string;
+  readonly logoReverseLetterLText: string;
+  readonly logoBarText: string;
   readonly typographyText: string;
 }
 

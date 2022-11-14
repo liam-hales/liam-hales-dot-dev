@@ -92,6 +92,16 @@ export interface SkillsPageContent extends BasePageContent {
 }
 
 /**
+ * Describes the brand page content which
+ * is specific to the brand page only
+ */
+export interface BrandPageContent extends BasePageContent {
+  readonly slug: PageSlug.BRAND;
+  readonly logoText: string;
+  readonly typographyText: string;
+}
+
+/**
  * The union type for all page content types.
  * Generic type `T` for the page slug
  */
@@ -101,6 +111,7 @@ export type PageContent<T extends PageSlug> =
   T extends PageSlug.CV ? CurriculumVitaePageContent :
   T extends PageSlug.LIFE_TIMELINE ? LifeTimelinePageContent :
   T extends PageSlug.SKILLS ? SkillsPageContent :
+  T extends PageSlug.BRAND ? BrandPageContent :
   never;
 
 /**

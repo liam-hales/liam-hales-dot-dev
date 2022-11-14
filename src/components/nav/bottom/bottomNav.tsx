@@ -92,7 +92,7 @@ const BottomNav: FunctionComponent = (): ReactElement => {
             <StyledIcon
               id={IconId.PAINT_BRUSH}
               colour={
-                (navKey === NavKey.BLOG)
+                (navKey === NavKey.BRAND)
                   ? ColourPalette.BLUE
                   : ColourPalette.WHITE
               }

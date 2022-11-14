@@ -17,7 +17,7 @@ export const StyledDiv = styled('div')`
   .Typewriter .TypewriterCursor {
     font-weight: normal;
     animation-name: cursor;
-    animation-duration: 0.8s;
+    animation-duration: 800ms;
     animation-iteration-count: infinite;
   };
 `;

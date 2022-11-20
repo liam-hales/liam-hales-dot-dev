@@ -5,7 +5,8 @@
     "project": "./tsconfig.json"
   },
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "@emotion"
   ],
   "extends": [
     "eslint:recommended",

@@ -1,8 +1,10 @@
+/** @jsxImportSource @emotion/react */
+
 import { FunctionComponent, ReactElement } from 'react';
+import { Breadcrumbs as MuiBreadcrumbs, css } from '@mui/material';
 import { BaseProps } from '../../../types';
 import { IconId } from '../../../enums';
 import { Icon } from '..';
-import { StyledBreadcrumbs } from './breadcrumbs.styled';
 
 /**
  * The `Breadcrumbs` component props
@@ -18,14 +20,20 @@ type Props = BaseProps;
  */
 const Breadcrumbs: FunctionComponent<Props> = ({ className, children }): ReactElement<Props> => {
   return (
-    <StyledBreadcrumbs
+    <MuiBreadcrumbs
       className={className}
       separator={(
         <Icon id={IconId.CARET_RIGHT} />
       )}
+      css={css`
+        .MuiBreadcrumbs-separator {
+          margin-left: 12px;
+          margin-right: 12px;
+        };
+      `}
     >
       {children}
-    </StyledBreadcrumbs>
+    </MuiBreadcrumbs>
   );
 };
 

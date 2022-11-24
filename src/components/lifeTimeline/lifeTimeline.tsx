@@ -1,13 +1,15 @@
+/** @jsxImportSource @emotion/react */
+
 import { FunctionComponent, ReactElement, useMemo } from 'react';
+import { css } from '@mui/material';
 import { useSearchParams } from 'react-router-dom';
-import { BoxAlignment, IconId } from '../../enums';
+import { BoxAlignment, IconId, ScreenSize } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { searchFilter } from '../../helpers';
 import { usePageContent, useScreen } from '../../hooks';
 import { BaseProps } from '../../types';
-import { Timeline, TimelineEvent } from '../common';
-import { StyledBox, StyledSearchInput, StyledNoResults } from './lifeTimeline.styled';
-
+import { Box, Input, Timeline, TimelineEvent } from '../common';
+import { NoResults } from '..';
 /**
  * The `LifeTimeline` component props
  */
@@ -39,11 +41,14 @@ const LifeTimeline: FunctionComponent<Props> = ({ className }): ReactElement<Pro
   ]);
 
   return (
-    <StyledBox
+    <Box
       className={className}
       alignment={BoxAlignment.START}
+      css={css`
+        row-gap: 40px;
+      `}
     >
-      <StyledSearchInput
+      <Input
         value={searchText}
         placeholder="Search"
         delay={500}
@@ -59,8 +64,21 @@ const LifeTimeline: FunctionComponent<Props> = ({ className }): ReactElement<Pro
             },
           });
         }}
-        screenSize={screenSize}
+        css={css`
+          width: ${(screenSize === ScreenSize.SMALL) ? '100%' : '350px'};
+        `}
       />
+      {
+        (filteredEvents.length === 0) && (
+          <NoResults
+            searchText={searchText}
+            css={css`
+              padding-top: 26px;
+              align-self: center;
+            `}
+          />
+        )
+      }
       <Timeline>
         {
           filteredEvents.map((event, index) => {
@@ -82,12 +100,7 @@ const LifeTimeline: FunctionComponent<Props> = ({ className }): ReactElement<Pro
           })
         }
       </Timeline>
-      {
-        (filteredEvents.length === 0) && (
-          <StyledNoResults searchText={searchText} />
-        )
-      }
-    </StyledBox>
+    </Box>
   );
 };
 

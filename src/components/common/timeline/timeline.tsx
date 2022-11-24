@@ -1,8 +1,10 @@
+/** @jsxImportSource @emotion/react */
+
 import { FunctionComponent, ReactElement } from 'react';
+import { css } from '@mui/material';
 import { BaseProps } from '../../../types';
+import { BoxAlignment, BoxDirection, ColourPalette } from '../../../enums';
 import { Box } from '..';
-import { BoxAlignment, BoxDirection } from '../../../enums';
-import { StyledItemBox, StyledChildBox, StyledDot, StyledConnector } from './timeline.styled';
 
 /**
  * The `Timeline` component props
@@ -32,25 +34,51 @@ const Timeline: FunctionComponent<Props> = (props): ReactElement<Props> => {
     >
       {
         children.map((child, index) => {
+
+          const first = (index === 0);
+          const last = (trailingConnector === false)
+            ? index === (children.length - 1)
+            : false;
+
           return (
-            <StyledItemBox
+            <Box
               key={`timeline-item-${index}`}
               direction={BoxDirection.ROW}
               alignment={BoxAlignment.START}
+              css={css`
+                position: relative;
+              `}
             >
-              <StyledConnector
-                first={index === 0}
-                last={
-                  (trailingConnector === false)
-                    ? index === (children.length - 1)
-                    : false
-                }
+              <div css={css`
+                position: absolute;
+                width: 2px;
+                top: ${(first === true) ? 38 : 0}px;
+                bottom: ${(last === true) ? 'calc(100% - 38px)' : '0px'};
+                left: 9px;
+                background-color: ${ColourPalette.DARK_GREY};
+                z-index: -1;
+              `}
               />
-              <StyledDot />
-              <StyledChildBox>
+              <div css={css`
+                width: 20px;
+                height: 20px;
+                margin-top: 28px;
+                flex-shrink: 0;
+                border-style: solid;
+                border-color: ${ColourPalette.BLACK};
+                border-width: 4px;
+                border-radius: 50%;
+                background-color: ${ColourPalette.BLUE};
+              `}
+              />
+              <Box css={css`
+                padding-left: 12px;
+                padding-bottom: 40px;
+              `}
+              >
                 {child}
-              </StyledChildBox>
-            </StyledItemBox>
+              </Box>
+            </Box>
           );
         })
       }

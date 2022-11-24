@@ -1,8 +1,8 @@
-import HomeRoute from './home/homeRoute';
-import CurriculumVitaeRoute from './curriculumVitae/curriculumVitaeRoute';
-import LifeTimelineRoute from './lifeTimeline/lifeTimelineRoute';
-import SkillsRoute from './skills/skillsRoute';
-import BrandRoute from './brand/brandRoute';
+import HomeRoute from './homeRoute';
+import CurriculumVitaeRoute from './curriculumVitaeRoute';
+import LifeTimelineRoute from './lifeTimelineRoute';
+import SkillsRoute from './skillsRoute';
+import BrandRoute from './brandRoute';
 
 export {
   HomeRoute,

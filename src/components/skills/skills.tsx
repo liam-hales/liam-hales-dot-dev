@@ -1,12 +1,15 @@
+/** @jsxImportSource @emotion/react */
+
 import { FunctionComponent, ReactElement, useMemo, useState } from 'react';
+import { css } from '@mui/material';
 import { useSearchParams } from 'react-router-dom';
-import { BoxAlignment, IconId, ColourPalette } from '../../enums';
+import { BoxAlignment, IconId, ColourPalette, ScreenSize } from '../../enums';
 import { PageSlug, Skill } from '../../graphql';
 import { usePageContent, useScreen } from '../../hooks';
 import { BaseProps } from '../../types';
-import { SkillModal, SkillCard } from '..';
+import { SkillModal, SkillCard, Grid, NoResults } from '..';
 import { searchFilter } from '../../helpers';
-import { StyledBox, StyledSearchInput, StyledDisclaimerText, StyledGrid, StyledNoResults } from './skills.styled';
+import { Box, Text, Input } from '../common';
 
 /**
  * The `Skills` component props
@@ -68,11 +71,14 @@ const Skills: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
           );
         })()
       }
-      <StyledBox
+      <Box
         className={className}
         alignment={BoxAlignment.START}
+        css={css`
+          row-gap: 40px;
+        `}
       >
-        <StyledSearchInput
+        <Input
           value={searchText}
           placeholder="Search"
           delay={500}
@@ -88,21 +94,36 @@ const Skills: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
               },
             });
           }}
-          screenSize={screenSize}
+          css={css`
+            width: ${(screenSize === ScreenSize.SMALL) ? '100%' : '350px'};
+          `}
         />
         {
           (filteredSkills.length > 0) && (
-            <StyledDisclaimerText colour={ColourPalette.LIGHT_GREY}>
+            <Text
+              colour={ColourPalette.LIGHT_GREY}
+              css={css`
+                max-width: 450px;
+              `}
+            >
               {disclaimerText}
-            </StyledDisclaimerText>
+            </Text>
           )
         }
         {
           (filteredSkills.length === 0) && (
-            <StyledNoResults searchText={searchText} />
+            <NoResults
+              searchText={searchText}
+              css={css`
+                padding-top: 26px;
+                align-self: center;
+              `}
+            />
           )
         }
-        <StyledGrid>
+        <Grid css={css`
+          width: 100%;`}
+        >
           {
             filteredSkills.map((skill, index) => {
 
@@ -123,8 +144,8 @@ const Skills: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
               );
             })
           }
-        </StyledGrid>
-      </StyledBox>
+        </Grid>
+      </Box>
     </>
   );
 };

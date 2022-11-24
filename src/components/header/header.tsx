@@ -1,8 +1,11 @@
+/** @jsxImportSource @emotion/react */
+
 import { FunctionComponent, ReactElement } from 'react';
+import { css } from '@mui/material';
 import { BoxAlignment, ColourPalette, TextElement } from '../../enums';
 import { BaseProps } from '../../types';
-import { Divider } from '../common';
-import { StyledContent, StyledTitle, StyledFullStop, StyledChildren } from './header.styled';
+import { Divider, Text, Box } from '../common';
+import { Content } from '..';
 
 /**
  * The `Header` component props
@@ -21,30 +24,48 @@ interface Props extends BaseProps {
 const Header: FunctionComponent<Props> = ({ className, title, children }): ReactElement<Props> => {
   return (
     <>
-      <StyledContent
+      <Content
         className={className}
         alignment={BoxAlignment.START}
+        css={css`
+          padding-top: 42px;
+          padding-bottom: 50px;
+        `}
       >
-        <StyledTitle
+        <Text
           bold={true}
           element={TextElement.H1}
+          css={css`
+            max-width: 400px;
+            font-size: clamp(58px, 15vw, 78px);
+            line-height: 100%;
+          `}
         >
           {title}
-          <StyledFullStop
+          <Text
             colour={ColourPalette.BLUE}
             bold={true}
+            css={css`
+              font-size: clamp(76px, 15vw, 96px);
+              line-height: 0px;
+            `}
           >
             .
-          </StyledFullStop>
-        </StyledTitle>
+          </Text>
+        </Text>
         {
           (children != null) && (
-            <StyledChildren alignment={BoxAlignment.START}>
+            <Box
+              alignment={BoxAlignment.START}
+              css={css`
+                padding-top: 40px;
+              `}
+            >
               {children}
-            </StyledChildren>
+            </Box>
           )
         }
-      </StyledContent>
+      </Content>
       <Divider />
     </>
   );

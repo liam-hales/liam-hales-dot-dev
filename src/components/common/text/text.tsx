@@ -1,7 +1,9 @@
+/** @jsxImportSource @emotion/react */
+
+import { Typography, css } from '@mui/material';
 import { FunctionComponent, ReactElement } from 'react';
 import { ColourPalette, TextElement } from '../../../enums';
 import { BaseProps } from '../../../types';
-import { StyledTypography } from './text.styled';
 
 /**
  * The `Text` component props
@@ -35,18 +37,31 @@ const Text: FunctionComponent<Props> = (props): ReactElement<Props> => {
   } = props;
 
   return (
-    <StyledTypography
+    <Typography
       className={className}
-      colour={colour}
       variant={element}
-      bold={bold}
-      italic={italic}
-      hoverUnderline={hoverUnderline}
       onClick={onClick}
-      clickable={onClick != null}
+      css={css`
+        display: inline;
+        text-transform: none;
+        white-space: pre-line;
+        color: ${colour};
+        font-size: 14px;
+        font-weight: ${(bold === true) ? 'bold' : 'normal'};
+        font-style: ${(italic === true) ? 'italic' : 'normal'};
+        cursor: ${(onClick != null) ? 'pointer' : 'unset'};
+        
+        ${(hoverUnderline === true) && css`
+          :hover {
+            text-decoration: underline;
+            text-decoration-thickness: 1.8px;
+            text-underline-offset: 3px;
+          };
+        `}
+      `}
     >
       {children}
-    </StyledTypography>
+    </Typography>
   );
 };
 

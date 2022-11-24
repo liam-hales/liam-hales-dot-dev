@@ -1,22 +1,22 @@
-import Box from './box/box';
+import Box from './box';
 import Text from './text/text';
-import Title from './title/title';
-import Icon from './icon/icon';
-import Button from './button/button';
-import IconButton from './iconButton/iconButton';
-import Card from './card/card';
-import Image from './image/image';
-import Input from './input/input';
+import Title from './text/title';
+import Icon from './icon';
+import Button from './buttons/button';
+import IconButton from './buttons/iconButton';
+import Card from './card';
+import Image from './image';
+import Input from './input';
 import Tabs from './tabs/tabs';
-import Tab from './tabs/tab/tab';
-import Typewriter from './typewriter/typewriter';
-import Divider from './divider/divider';
+import Tab from './tabs/tab';
+import Typewriter from './text/typewriter';
+import Divider from './divider';
 import Timeline from './timeline/timeline';
-import TimelineEvent from './timeline/event/timelineEvent';
+import TimelineEvent from './timeline/timelineEvent';
 import Breadcrumbs from './breadcrumbs/breadcrumbs';
-import BreadcrumbItem from './breadcrumbs/item/breadcrumbItem';
-import Modal from './modal/modal';
-import Popover from './popover/popover';
+import BreadcrumbItem from './breadcrumbs/breadcrumbItem';
+import Modal from './modal';
+import Popover from './popover';
 
 export {
   Box,

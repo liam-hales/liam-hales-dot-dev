@@ -53,13 +53,17 @@ const EmailModal: FunctionComponent<Props> = ({ open, onClose }): ReactElement<P
       </Text>
       {
         (showEmail === true) && (
-          <>
+          <Box css={css`
+            width: 100%;
+          `}
+          >
             <Popover
               text="Coppied"
               open={popoverOpen}
               onClose={() => setPopoverOpen(false)}
             >
               <Button
+                iconId={IconId.COPY}
                 onClick={() => {
                   setPopoverOpen(true);
                   navigator.clipboard.writeText(email);
@@ -77,7 +81,7 @@ const EmailModal: FunctionComponent<Props> = ({ open, onClose }): ReactElement<P
             >
               Click to copy to clipboard
             </Text>
-          </>
+          </Box>
         )
       }
       {

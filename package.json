@@ -64,7 +64,8 @@
     "s3-sync-client": "^3.0.2",
     "sharp": "^0.31.0",
     "ts-node": "^10.8.2",
-    "typescript": "^4.4.2"
+    "typescript": "^4.4.2",
+    "typescript-styled-plugin": "^0.18.2"
   },
   "browserslist": {
     "production": [

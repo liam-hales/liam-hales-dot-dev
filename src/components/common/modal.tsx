@@ -5,7 +5,7 @@ import { Modal as MuiModal, css, Slide } from '@mui/material';
 import { useScreen } from '../../hooks';
 import { BaseProps } from '../../types';
 import { BoxDirection, BoxAlignment, BoxJustify, IconId, ColourPalette, ScreenSize } from '../../enums';
-import { Box, Card, IconButton } from '.';
+import { Box, Card, IconButton, Backdrop } from '.';
 
 /**
  * The `Modal` component props
@@ -36,6 +36,10 @@ const Modal: FunctionComponent<Props> = ({ className, open, direction, alignment
       onClose={onClose}
       keepMounted={true}
       disableAutoFocus={true}
+      components={{
+        // eslint-disable-next-line @typescript-eslint/naming-convention
+        Backdrop: Backdrop,
+      }}
     >
       <Box
         justify={BoxJustify.CENTER}

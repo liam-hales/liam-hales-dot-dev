@@ -34,6 +34,7 @@ import StatusHandler from './statusHandler';
 import NotFound from './notFound';
 import Error from './error';
 import ComingSoon from './comingSoon';
+import BuyMeCoffeeWidget from './buyMeCoffeeWidget';
 
 export {
   Logo,
@@ -72,4 +73,5 @@ export {
   NotFound,
   Error,
   ComingSoon,
+  BuyMeCoffeeWidget,
 };

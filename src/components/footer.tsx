@@ -3,7 +3,7 @@
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@mui/material';
 import moment from 'moment';
-import { BoxDirection, BoxAlignment, ColourPalette, BoxJustify, IconId } from '../enums';
+import { BoxDirection, BoxAlignment, ColourPalette, BoxJustify, IconId, SVGIconId } from '../enums';
 import { PageSlug } from '../graphql';
 import { usePageContent } from '../hooks';
 import { BaseProps } from '../types';
@@ -93,6 +93,14 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
           <IconButton
             id={IconId.LINKED_IN}
             onClick={() => window.open(linkedInUrl, '_blank')}
+          />
+          <IconButton
+            id={SVGIconId.BUY_ME_COFFEE}
+            onClick={() => {}}
+          />
+          <IconButton
+            id={SVGIconId.NOTION}
+            onClick={() => {}}
           />
         </Box>
         <Box css={css`

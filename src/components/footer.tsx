@@ -1,14 +1,14 @@
 /** @jsxImportSource @emotion/react */
 
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@mui/material';
 import moment from 'moment';
 import { BoxDirection, BoxAlignment, ColourPalette, BoxJustify, IconId } from '../enums';
 import { PageSlug } from '../graphql';
 import { usePageContent } from '../hooks';
 import { BaseProps } from '../types';
-import { Box, Divider, Icon, Text } from './common';
-import { Content, SocialIcons, Logo } from '.';
+import { Box, Divider, Icon, IconButton, Text } from './common';
+import { Content, Logo, EmailModal } from '.';
 
 /**
  * The `Footer` component props
@@ -24,7 +24,8 @@ type Props = BaseProps;
  */
 const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> => {
 
-  const { footerText, builtUsingText } = usePageContent({
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const { footerText, builtUsingText, linkedInUrl, stackOverflowUrl } = usePageContent({
     slug: PageSlug.GLOBAL,
   });
 
@@ -71,7 +72,29 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
           `}
           />
         </Box>
-        <SocialIcons />
+        <EmailModal
+          open={modalOpen}
+          onClose={() => setModalOpen(false)}
+        />
+        <Box
+          direction={BoxDirection.ROW}
+          css={css`
+            column-gap: 14px;
+          `}
+        >
+          <IconButton
+            id={IconId.ENVELOPE}
+            onClick={() => setModalOpen(true)}
+          />
+          <IconButton
+            id={IconId.STACK_OVERFLOW}
+            onClick={() => window.open(stackOverflowUrl, '_blank')}
+          />
+          <IconButton
+            id={IconId.LINKED_IN}
+            onClick={() => window.open(linkedInUrl, '_blank')}
+          />
+        </Box>
         <Box css={css`
           width: 100%;
           padding-top: 60px;

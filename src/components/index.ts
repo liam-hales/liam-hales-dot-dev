@@ -5,7 +5,6 @@ import SafeArea from './safeArea';
 import Content from './content';
 import Loader from './loader';
 import Global from './global';
-import SocialIcons from './socialIcons';
 import Stat from './stat';
 import Grid from './grid';
 import SkillCard from './skills/skillCard';
@@ -44,7 +43,6 @@ export {
   Content,
   Loader,
   Global,
-  SocialIcons,
   Stat,
   Grid,
   SkillCard,

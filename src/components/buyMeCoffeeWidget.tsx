@@ -53,10 +53,15 @@ const BuyMeCoffeeWidget: FunctionComponent = (): ReactElement => {
   return (
     <Global
       styles={css`
+        iframe {
+          bottom: ${(screenSize === ScreenSize.SMALL) ? 184 : 104}px;
+          left: 20px;
+        };
+
         #bmc-wbtn {
           bottom: ${(screenSize === ScreenSize.SMALL) ? 100 : 20}px;
           left: 20px;
-        }
+        };
       `}
     />
   );

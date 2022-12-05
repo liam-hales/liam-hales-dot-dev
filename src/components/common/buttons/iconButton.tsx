@@ -2,7 +2,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { IconButton as MuiIconButton, css } from '@mui/material';
-import { ColourPalette, IconId } from '../../../enums';
+import { ColourPalette, IconId, SVGIconId } from '../../../enums';
 import { BaseProps } from '../../../types';
 import { Icon } from '..';
 
@@ -10,7 +10,7 @@ import { Icon } from '..';
  * The `IconButton` component props
  */
 interface Props extends BaseProps {
-  readonly id: IconId;
+  readonly id: IconId | SVGIconId;
   readonly colour?: ColourPalette;
   readonly onClick: () => void;
 }

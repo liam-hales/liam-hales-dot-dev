@@ -7,7 +7,7 @@
  * @param searchText The search text
  * @param toSearch The object to search
  * @param keys The keys to search within the `toSearch`
- * @returns Value which determins if the search is a match
+ * @returns A `boolean` which determins if the search is a match
  * @example
  *
  * const isMatch = searchFilter(searchText, toSearch, ['key']);

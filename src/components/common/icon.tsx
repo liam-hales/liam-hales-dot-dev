@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, SVGProps } from 'react';
 import { css } from '@mui/material';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -25,13 +25,15 @@ import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 import { faLinkedin, faStackOverflow } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { BaseProps } from '../../types';
-import { ColourPalette, IconId } from '../../enums';
+import { ColourPalette, IconId, SVGIconId } from '../../enums';
+import { BuyMeCoffeeLogoSVG, NotionLogoSVG } from '../../svgs';
+import { isEnum } from '../../guards';
 
 /**
  * The `Icon` component props
  */
 interface Props extends BaseProps {
-  readonly id: IconId;
+  readonly id: IconId | SVGIconId;
   readonly colour?: ColourPalette;
 }
 
@@ -70,6 +72,26 @@ const Icon: FunctionComponent<Props> = (props): ReactElement<Props> => {
     [IconId.LINKED_IN]: faLinkedin,
     [IconId.STACK_OVERFLOW]: faStackOverflow,
   };
+
+  const SVGComponentMap: Record<SVGIconId, FunctionComponent<SVGProps<SVGSVGElement>>> = {
+    [SVGIconId.BUY_ME_COFFEE]: BuyMeCoffeeLogoSVG,
+    [SVGIconId.NOTION]: NotionLogoSVG,
+  };
+
+  // See if the ID prop is an SVG icon ID by checking
+  // if it belongs too the `SVGIconId` enum
+  if (isEnum(SVGIconId, id)) {
+
+    const SVGComponent = SVGComponentMap[id];
+    return (
+      <SVGComponent
+        className={className}
+        css={css`
+          fill: ${colour};
+        `}
+      />
+    );
+  }
 
   return (
     <FontAwesomeIcon

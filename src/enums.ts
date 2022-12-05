@@ -91,6 +91,15 @@ export enum IconId {
 }
 
 /**
+ * The SVG icon ID used for the `Icon` component
+ * to determine which SVG icon is rendered
+ */
+export enum SVGIconId {
+  BUY_ME_COFFEE = 'BUY_ME_COFFEE',
+  NOTION = 'NOTION',
+}
+
+/**
  * The `Box` component direction used to determine
  * how the content is displayed along the main axis
  */

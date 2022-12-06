@@ -25,7 +25,14 @@ type Props = BaseProps;
 const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> => {
 
   const [modalOpen, setModalOpen] = useState<boolean>(false);
-  const { footerText, builtUsingText, linkedInUrl, stackOverflowUrl } = usePageContent({
+  const {
+    footerText,
+    builtUsingText,
+    stackOverflowUrl,
+    linkedInUrl,
+    buyMeCoffeeUrl,
+    notionUrl,
+  } = usePageContent({
     slug: PageSlug.GLOBAL,
   });
 
@@ -96,11 +103,11 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
           />
           <IconButton
             id={SVGIconId.BUY_ME_COFFEE}
-            onClick={() => {}}
+            onClick={() => window.open(buyMeCoffeeUrl, '_blank')}
           />
           <IconButton
             id={SVGIconId.NOTION}
-            onClick={() => {}}
+            onClick={() => window.open(notionUrl, '_blank')}
           />
         </Box>
         <Box css={css`

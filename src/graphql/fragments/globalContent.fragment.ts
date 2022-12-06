@@ -13,6 +13,7 @@ const globalContentFragment = gql`
     linkedInUrl
     stackOverflowUrl
     buyMeCoffeeUrl
+    notionUrl
     shayanRastegarUrl
     notFoundText
     notFoundImage {

@@ -45,7 +45,7 @@ const LifeTimelinePreview: FunctionComponent<Props> = ({ reference, className })
         {lifeTimelineText}
       </Text>
       <Timeline
-        trailingConnector={true}
+        hasTrailingConnector={true}
         css={css`
           padding-top: 46px;
           mask-image: linear-gradient(

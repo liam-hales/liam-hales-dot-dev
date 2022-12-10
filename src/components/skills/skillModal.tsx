@@ -10,7 +10,7 @@ import { Button, Image, Modal, Text } from '../common';
  * The `SkillModal` component props
  */
 interface Props extends BaseProps {
-  readonly open: boolean;
+  readonly isOpen: boolean;
   readonly name: string;
   readonly type: string;
   readonly description: string;
@@ -27,10 +27,10 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `SkillModal` component
  */
-const SkillModal: FunctionComponent<Props> = ({ open, name, type, description, url, imageUrl, onClose, onClosed }): ReactElement<Props> => {
+const SkillModal: FunctionComponent<Props> = ({ isOpen, name, type, description, url, imageUrl, onClose, onClosed }): ReactElement<Props> => {
   return (
     <Modal
-      open={open}
+      isOpen={isOpen}
       onClose={onClose}
       onClosed={onClosed}
     >
@@ -48,7 +48,7 @@ const SkillModal: FunctionComponent<Props> = ({ open, name, type, description, u
         )
       }
       <Text
-        bold={true}
+        isBold={true}
         css={css`
           padding-top: 16px;
           font-size: 32px;

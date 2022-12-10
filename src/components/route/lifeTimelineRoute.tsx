@@ -29,7 +29,7 @@ const LifeTimelineRoute: FunctionComponent = (): ReactElement => {
           </BreadcrumbItem>
           <BreadcrumbItem
             route={NavRoute.LIFE_TIMELINE}
-            active={true}
+            isActive={true}
           >
             Life Timeline
           </BreadcrumbItem>

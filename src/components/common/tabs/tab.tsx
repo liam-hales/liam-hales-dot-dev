@@ -26,7 +26,7 @@ const Tab: FunctionComponent<Props> = ({ value, onClick, children }): ReactEleme
     <MuiTab
       value={value}
       label={(
-        <Text bold={true}>
+        <Text isBold={true}>
           {children}
         </Text>
       )}

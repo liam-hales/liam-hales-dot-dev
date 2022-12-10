@@ -12,7 +12,7 @@ import { Box, Modal, Button, Popover, Title, Text } from './common';
  * The `EmailModal` component props
  */
 interface Props extends BaseProps {
-  readonly open: boolean;
+  readonly isOpen: boolean;
   readonly onClose: () => void;
 }
 
@@ -23,7 +23,7 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `EmailModal` component
  */
-const EmailModal: FunctionComponent<Props> = ({ open, onClose }): ReactElement<Props> => {
+const EmailModal: FunctionComponent<Props> = ({ isOpen, onClose }): ReactElement<Props> => {
 
   const [showEmail, setShowEmail] = useState<boolean>(false);
   const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
@@ -35,7 +35,7 @@ const EmailModal: FunctionComponent<Props> = ({ open, onClose }): ReactElement<P
   return (
     <Modal
       alignment={BoxAlignment.START}
-      open={open}
+      isOpen={isOpen}
       onClose={onClose}
       onClosed={() => setShowEmail(false)}
     >
@@ -59,7 +59,7 @@ const EmailModal: FunctionComponent<Props> = ({ open, onClose }): ReactElement<P
           >
             <Popover
               text="Coppied"
-              open={popoverOpen}
+              isOpen={popoverOpen}
               onClose={() => setPopoverOpen(false)}
             >
               <Button

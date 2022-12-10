@@ -44,8 +44,8 @@ const ProStatement: FunctionComponent<Props> = ({ className }): ReactElement<Pro
         {proStatementText}
       </Text>
       <Text
-        bold={true}
-        italic={true}
+        isBold={true}
+        isItalic={true}
         css={css`
           font-size: 18px;
         `}

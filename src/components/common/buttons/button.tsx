@@ -54,7 +54,7 @@ const Button: FunctionComponent<Props> = (props): ReactElement<Props> => {
           />
         )
       }
-      <Text bold={true}>
+      <Text isBold={true}>
         {children}
       </Text>
     </MuiButton>

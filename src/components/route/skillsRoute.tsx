@@ -29,7 +29,7 @@ const SkillsRoute: FunctionComponent = (): ReactElement => {
           </BreadcrumbItem>
           <BreadcrumbItem
             route={NavRoute.SKILLS}
-            active={true}
+            isActive={true}
           >
             Skills
           </BreadcrumbItem>

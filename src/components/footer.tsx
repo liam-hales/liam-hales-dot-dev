@@ -61,7 +61,7 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
             `}
           >
             <Text
-              bold={true}
+              isBold={true}
               css={css`
                 font-size: 24px;
                 padding-bottom: 8px;
@@ -80,7 +80,7 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
           />
         </Box>
         <EmailModal
-          open={modalOpen}
+          isOpen={modalOpen}
           onClose={() => setModalOpen(false)}
         />
         <Box
@@ -116,7 +116,7 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
           padding-bottom: 20px;
         `}
         >
-          <Text bold={true}>
+          <Text isBold={true}>
             <Icon
               id={IconId.COPYRIGHT}
               colour={ColourPalette.WHITE}

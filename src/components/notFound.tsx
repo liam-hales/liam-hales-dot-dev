@@ -27,7 +27,7 @@ const NotFound: FunctionComponent = (): ReactElement => {
     `}
     >
       <Text
-        bold={true}
+        isBold={true}
         css={css`
           padding-right: 6px;
           font-size: 110px;

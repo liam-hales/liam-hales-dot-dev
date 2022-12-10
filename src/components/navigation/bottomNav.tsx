@@ -66,7 +66,7 @@ const BottomNav: FunctionComponent = (): ReactElement => {
           value={NavKey.HOME}
           onClick={() => goTo(NavRoute.HOME)}
           label={(
-            <Text bold={true}>
+            <Text isBold={true}>
               Home
             </Text>
           )}
@@ -87,7 +87,7 @@ const BottomNav: FunctionComponent = (): ReactElement => {
           value={NavKey.CV}
           onClick={() => goTo(NavRoute.CV)}
           label={(
-            <Text bold={true}>
+            <Text isBold={true}>
               CV
             </Text>
           )}
@@ -108,7 +108,7 @@ const BottomNav: FunctionComponent = (): ReactElement => {
           value={NavKey.BLOG}
           onClick={() => goTo(NavRoute.BLOG)}
           label={(
-            <Text bold={true}>
+            <Text isBold={true}>
               Blog
             </Text>
           )}
@@ -129,7 +129,7 @@ const BottomNav: FunctionComponent = (): ReactElement => {
           value={NavKey.BRAND}
           onClick={() => goTo(NavRoute.BRAND)}
           label={(
-            <Text bold={true}>
+            <Text isBold={true}>
               Brand
             </Text>
           )}

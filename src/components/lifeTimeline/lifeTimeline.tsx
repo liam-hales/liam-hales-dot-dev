@@ -94,7 +94,7 @@ const LifeTimeline: FunctionComponent<Props> = ({ className }): ReactElement<Pro
                 title={title}
                 description={description}
                 date={date}
-                first={id === firstEvent.id}
+                isFirst={id === firstEvent.id}
               />
             );
           })

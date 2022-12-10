@@ -40,7 +40,7 @@ const SkillCard: FunctionComponent<Props> = ({ className, name, type, imageUrl, 
     >
       <Box alignment={BoxAlignment.START}>
         <Text
-          bold={true}
+          isBold={true}
           css={css`
             font-size: 20px;
           `}

@@ -9,7 +9,7 @@ import { BaseProps } from '../types';
  * THe `Logo` component props
  */
 interface Props extends BaseProps {
-  readonly interactive?: boolean;
+  readonly isInteractive?: boolean;
   readonly activeSection?: LogoSection;
   readonly onChange?: (section?: LogoSection) => void;
 }
@@ -24,7 +24,7 @@ interface Props extends BaseProps {
 const Logo: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
     className,
-    interactive = false,
+    isInteractive = false,
     activeSection,
     onChange,
   } = props;
@@ -73,8 +73,8 @@ const Logo: FunctionComponent<Props> = (props): ReactElement<Props> => {
    */
   const pathCss = css`
     transition-duration: 300ms;
-    cursor: ${(interactive === true) ? 'pointer' : 'unset'};
-    pointer-events: ${(interactive === false) ? 'none' : 'unset'};
+    cursor: ${(isInteractive === true) ? 'pointer' : 'unset'};
+    pointer-events: ${(isInteractive === false) ? 'none' : 'unset'};
   `;
 
   return (

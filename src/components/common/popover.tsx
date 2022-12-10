@@ -10,7 +10,7 @@ import { Text } from '.';
  */
 interface Props extends BaseProps<ReactElement, true> {
   readonly text: string;
-  readonly open: boolean;
+  readonly isOpen: boolean;
   readonly onClose: () => void;
 }
 
@@ -21,13 +21,13 @@ interface Props extends BaseProps<ReactElement, true> {
  * @param props The component props
  * @returns The `Popover` component
  */
-const Popover: FunctionComponent<Props> = ({ text, open, onClose, children }): ReactElement<Props> => {
+const Popover: FunctionComponent<Props> = ({ text, isOpen, onClose, children }): ReactElement<Props> => {
   return (
     <ClickAwayListener onClickAway={onClose}>
       <Tooltip
         title={(
           <Text
-            bold={true}
+            isBold={true}
             css={css`
               font-size: 10px;
             `}
@@ -35,7 +35,7 @@ const Popover: FunctionComponent<Props> = ({ text, open, onClose, children }): R
             {text}
           </Text>
         )}
-        open={open}
+        open={isOpen}
         placement="top"
         arrow={true}
         disableFocusListener={true}

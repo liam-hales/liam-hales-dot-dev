@@ -11,9 +11,9 @@ import { BaseProps } from '../../../types';
 interface Props extends BaseProps {
   readonly colour?: ColourPalette;
   readonly element?: TextElement;
-  readonly bold?: boolean;
-  readonly italic?: boolean;
-  readonly hoverUnderline?: boolean;
+  readonly isBold?: boolean;
+  readonly isItalic?: boolean;
+  readonly hasHoverUnderline?: boolean;
   readonly onClick?: () => void;
 }
 
@@ -29,9 +29,9 @@ const Text: FunctionComponent<Props> = (props): ReactElement<Props> => {
     className,
     colour = ColourPalette.WHITE,
     element = TextElement.PARAGRAPH,
-    bold = false,
-    italic = false,
-    hoverUnderline = false,
+    isBold = false,
+    isItalic = false,
+    hasHoverUnderline = false,
     onClick,
     children,
   } = props;
@@ -47,11 +47,11 @@ const Text: FunctionComponent<Props> = (props): ReactElement<Props> => {
         white-space: pre-line;
         color: ${colour};
         font-size: 14px;
-        font-weight: ${(bold === true) ? 'bold' : 'normal'};
-        font-style: ${(italic === true) ? 'italic' : 'normal'};
+        font-weight: ${(isBold === true) ? 'bold' : 'normal'};
+        font-style: ${(isItalic === true) ? 'italic' : 'normal'};
         cursor: ${(onClick != null) ? 'pointer' : 'unset'};
         
-        ${(hoverUnderline === true) && css`
+        ${(hasHoverUnderline === true) && css`
           :hover {
             text-decoration: underline;
             text-decoration-thickness: 1.8px;

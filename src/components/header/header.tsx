@@ -33,7 +33,7 @@ const Header: FunctionComponent<Props> = ({ className, title, children }): React
         `}
       >
         <Text
-          bold={true}
+          isBold={true}
           element={TextElement.H1}
           css={css`
             max-width: 400px;
@@ -44,7 +44,7 @@ const Header: FunctionComponent<Props> = ({ className, title, children }): React
           {title}
           <Text
             colour={ColourPalette.BLUE}
-            bold={true}
+            isBold={true}
             css={css`
               font-size: clamp(76px, 15vw, 96px);
               line-height: 0px;

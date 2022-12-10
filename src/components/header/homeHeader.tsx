@@ -77,7 +77,7 @@ const HomeHeader: FunctionComponent<Props> = ({ className }): ReactElement<Props
         `}
       >
         <Text
-          bold={true}
+          isBold={true}
           element={TextElement.H1}
           css={css`
             font-size: clamp(70px, 17.4vw, 140px);
@@ -96,7 +96,7 @@ const HomeHeader: FunctionComponent<Props> = ({ className }): ReactElement<Props
           `}
         >
           <Text
-            bold={true}
+            isBold={true}
             element={TextElement.H2}
             css={css`
               height: 140px;
@@ -132,7 +132,7 @@ const HomeHeader: FunctionComponent<Props> = ({ className }): ReactElement<Props
           Captured by
           {' '}
           <Text
-            bold={true}
+            isBold={true}
             onClick={() => window.open(shayanRastegarUrl, '_blank')}
           >
             Shayan Rastegar

@@ -8,7 +8,7 @@ import { BaseProps } from '../../types';
  * The `Backdrop` component props
  */
 interface Props extends BaseProps {
-  readonly open: boolean;
+  readonly isOpen: boolean;
 }
 
 /**
@@ -18,10 +18,10 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `Backdrop` component
  */
-const Backdrop: FunctionComponent<Props> = ({ open, children }): ReactElement<Props> => {
+const Backdrop: FunctionComponent<Props> = ({ isOpen, children }): ReactElement<Props> => {
   return (
     <MuiBackdrop
-      open={open}
+      open={isOpen}
       css={css`
         backdrop-filter: blur(4px);
       `}

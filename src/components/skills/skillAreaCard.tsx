@@ -57,7 +57,7 @@ const SkillAreaCard: FunctionComponent<Props> = ({ className, title, description
       }
       >
         <Text
-          bold={true}
+          isBold={true}
           css={css`
             padding-top: ${(screenSize === ScreenSize.SMALL) ? 0 : 16}px;
             padding-bottom: ${(screenSize === ScreenSize.SMALL) ? 4 : 16}px;

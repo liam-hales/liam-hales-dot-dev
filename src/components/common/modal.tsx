@@ -11,7 +11,7 @@ import { Box, Card, IconButton, Backdrop } from '.';
  * The `Modal` component props
  */
 interface Props extends BaseProps<ReactNode, true> {
-  readonly open: boolean;
+  readonly isOpen: boolean;
   readonly direction?: BoxDirection;
   readonly alignment?: BoxAlignment;
   readonly justify?: BoxJustify;
@@ -26,13 +26,13 @@ interface Props extends BaseProps<ReactNode, true> {
  * @param props The component props
  * @returns The `Modal` component
  */
-const Modal: FunctionComponent<Props> = ({ className, open, direction, alignment, justify, onClose, onClosed, children }): ReactElement<Props> => {
+const Modal: FunctionComponent<Props> = ({ className, isOpen, direction, alignment, justify, onClose, onClosed, children }): ReactElement<Props> => {
 
   const { screenSize } = useScreen();
   return (
     <MuiModal
       className={className}
-      open={open}
+      open={isOpen}
       onClose={onClose}
       keepMounted={true}
       disableAutoFocus={true}
@@ -49,7 +49,7 @@ const Modal: FunctionComponent<Props> = ({ className, open, direction, alignment
         `}
       >
         <Slide
-          in={open}
+          in={isOpen}
           direction="up"
           onExited={onClosed}
           timeout={{

@@ -14,7 +14,7 @@ interface Props extends BaseProps {
   readonly title: string;
   readonly description: string;
   readonly date: Moment;
-  readonly first?: boolean;
+  readonly isFirst?: boolean;
 }
 
 /**
@@ -29,7 +29,7 @@ const TimelineEvent: FunctionComponent<Props> = (props): ReactElement<Props> => 
     title,
     description,
     date,
-    first = false,
+    isFirst = false,
   } = props;
 
   // Format the date into a human readable timestamp
@@ -49,12 +49,12 @@ const TimelineEvent: FunctionComponent<Props> = (props): ReactElement<Props> => 
         {timestamp}
       </Text>
       <Text
-        bold={true}
+        isBold={true}
         css={css`
-          max-width: ${(first === true) ? '580px' : 'unset'};
+          max-width: ${(isFirst === true) ? '580px' : 'unset'};
           padding-top: 4px;
           padding-bottom: 8px;
-          font-size: ${(first === true) ? 34 : 24}px;
+          font-size: ${(isFirst === true) ? 34 : 24}px;
           line-height: 122%;
         `}
       >

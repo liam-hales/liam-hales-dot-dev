@@ -22,7 +22,7 @@ const Title: FunctionComponent<Props> = ({ className, children }): ReactElement<
   return (
     <Text
       className={className}
-      bold={true}
+      isBold={true}
       element={TextElement.H2}
       css={css`
         font-size: 38px;
@@ -32,7 +32,7 @@ const Title: FunctionComponent<Props> = ({ className, children }): ReactElement<
       {children}
       <Text
         colour={ColourPalette.BLUE}
-        bold={true}
+        isBold={true}
         css={css`
           font-size: 56px;
           line-height: 0px;

@@ -12,7 +12,7 @@ import { Text } from '..';
  */
 interface Props extends BaseProps {
   readonly route: NavRoute;
-  readonly active?: boolean;
+  readonly isActive?: boolean;
 }
 
 /**
@@ -25,22 +25,22 @@ interface Props extends BaseProps {
 const BreadcrumbItem: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
     route,
-    active = false,
+    isActive = false,
     children,
   } = props;
 
   const { goTo } = useRouter();
   return (
     <Text
-      bold={true}
-      hoverUnderline={active !== true}
+      isBold={true}
+      hasHoverUnderline={isActive !== true}
       colour={
-        (active === true)
+        (isActive === true)
           ? ColourPalette.WHITE
           : ColourPalette.GREY
       }
       onClick={
-        (active === false)
+        (isActive === false)
           ? () => goTo(route)
           : undefined
       }

@@ -36,7 +36,7 @@ const ComingSoon: FunctionComponent = (): ReactElement => {
         This page is coming soon. For now you can visit my old website
         {' '}
         <Text
-          bold={true}
+          isBold={true}
           onClick={() => window.open('https://liamhales.io', '_blank')}
         >
           liamhales.io

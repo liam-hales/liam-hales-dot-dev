@@ -52,7 +52,7 @@ const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactEle
       `}
       >
         <Logo
-          interactive={true}
+          isInteractive={true}
           activeSection={activeLogoSection}
           onChange={(section) => setActiveLogoSection(section)}
           css={css`
@@ -77,7 +77,7 @@ const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactEle
         {
           (activeLogoSection === LogoSection.LETTER_L) && (
             <Text
-              bold={true}
+              isBold={true}
               css={css`
                 max-width: 340px;
                 padding-top: 40px;
@@ -92,7 +92,7 @@ const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactEle
         {
           (activeLogoSection === LogoSection.REVERSE_LETTER_L) && (
             <Text
-              bold={true}
+              isBold={true}
               css={css`
                 max-width: 340px;
                 padding-top: 40px;
@@ -107,7 +107,7 @@ const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactEle
         {
           (activeLogoSection === LogoSection.BAR) && (
             <Text
-              bold={true}
+              isBold={true}
               css={css`
                 max-width: 340px;
                 padding-top: 40px;

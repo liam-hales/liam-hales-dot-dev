@@ -10,7 +10,7 @@ import { Box } from '..';
  * The `Timeline` component props
  */
 interface Props extends BaseProps<ReactElement[], true> {
-  readonly trailingConnector?: boolean;
+  readonly hasTrailingConnector?: boolean;
 }
 
 /**
@@ -23,7 +23,7 @@ interface Props extends BaseProps<ReactElement[], true> {
 const Timeline: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
     className,
-    trailingConnector = false,
+    hasTrailingConnector = false,
     children,
   } = props;
 
@@ -36,7 +36,7 @@ const Timeline: FunctionComponent<Props> = (props): ReactElement<Props> => {
         children.map((child, index) => {
 
           const first = (index === 0);
-          const last = (trailingConnector === false)
+          const last = (hasTrailingConnector === false)
             ? index === (children.length - 1)
             : false;
 

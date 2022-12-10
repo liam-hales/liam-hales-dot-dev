@@ -59,7 +59,7 @@ const Skills: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
           const { name, type, description, url, image } = selectedSkill;
           return (
             <SkillModal
-              open={modalOpen}
+              isOpen={modalOpen}
               name={name}
               type={type}
               description={description}

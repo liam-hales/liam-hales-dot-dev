@@ -28,7 +28,7 @@ const Stat: FunctionComponent<Props> = ({ className, value, text }): ReactElemen
       direction={BoxDirection.ROW}
     >
       <Text
-        bold={true}
+        isBold={true}
         colour={ColourPalette.BLUE}
         css={css`
           font-size: 56px;
@@ -37,7 +37,7 @@ const Stat: FunctionComponent<Props> = ({ className, value, text }): ReactElemen
         {value}
       </Text>
       <Text
-        bold={true}
+        isBold={true}
         css={css`
           max-width: 90px;
           padding-left: 10px;

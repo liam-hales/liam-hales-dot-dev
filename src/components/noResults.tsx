@@ -35,7 +35,7 @@ const NoResults: FunctionComponent<Props> = ({ className, searchText }): ReactEl
       >
         No search results found for
         {' '}
-        <Text bold={true}>
+        <Text isBold={true}>
           {`"${searchText}"`}
         </Text>
         . Try searching for something else

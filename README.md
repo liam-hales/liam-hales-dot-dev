@@ -1,6 +1,6 @@
 # Liam Hales - Official Website
 
-Built using [React], [TypeScript] and [Material UI]
+Built in Manchester using [TypeScript], [React] and [Material UI]
 https://liamhales.dev
 
 ---
@@ -25,7 +25,6 @@ v8.19.1
 
 3. Download and install [AWS CLI]
 4. Run `corepack enable` to enable [Corepack]
-5. Run `yarn` in the repo root directory
 
 > _**NOTE:** You must use the [Yarn] package manager_
 
@@ -33,14 +32,15 @@ v8.19.1
 
 # First Steps
 
-1. Create a `.env` file in the project root
+1. Run `yarn` in the repo root directory
+2. Create a `.env` file in the project root
 
 ```sh
 REACT_APP_API_URL = 'https://${region}.graphcms.com/v2/${id}/master'
 ```
 
-2. Run `yarn build-index` to build the `index.html` file
-3. Run `yarn build-images` to build the images
+3. Run `yarn build-index` to build the `index.html` file
+4. Run `yarn build-images` to build the images
 
 ```sh
 $ yarn build-index

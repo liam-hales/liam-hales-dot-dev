@@ -43,6 +43,10 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
   return (
     <div className={className}>
       <Divider />
+      <EmailModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+      />
       <Content alignment={BoxAlignment.START}>
         <Box
           direction={BoxDirection.ROW}
@@ -79,10 +83,6 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
           `}
           />
         </Box>
-        <EmailModal
-          isOpen={modalOpen}
-          onClose={() => setModalOpen(false)}
-        />
         <Box
           direction={BoxDirection.ROW}
           css={css`

@@ -54,6 +54,7 @@ const BuyMeCoffeeWidget: FunctionComponent = (): ReactElement => {
     <Global
       styles={css`
         iframe {
+          height: calc(100% - 210px) !important;
           bottom: ${(screenSize === ScreenSize.SMALL) ? 184 : 104}px;
           left: 20px;
         };

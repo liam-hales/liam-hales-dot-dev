@@ -36,6 +36,11 @@ const Modal: FunctionComponent<Props> = ({ className, isOpen, direction, alignme
       onClose={onClose}
       keepMounted={true}
       disableAutoFocus={true}
+      componentsProps={{
+        backdrop: {
+          isOpen: isOpen,
+        },
+      }}
       components={{
         // eslint-disable-next-line @typescript-eslint/naming-convention
         Backdrop: Backdrop,

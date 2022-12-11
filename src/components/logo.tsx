@@ -2,6 +2,7 @@
 
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@mui/material';
+import { motion } from 'framer-motion';
 import { ColourPalette, LogoSection } from '../enums';
 import { BaseProps } from '../types';
 
@@ -69,10 +70,9 @@ const Logo: FunctionComponent<Props> = (props): ReactElement<Props> => {
 
   /**
    * The path CSS styles for
-   * the SVG path elements
+   * the SVG `path` elements
    */
   const pathCss = css`
-    transition-duration: 300ms;
     cursor: ${(isInteractive === true) ? 'pointer' : 'unset'};
     pointer-events: ${(isInteractive === false) ? 'none' : 'unset'};
   `;
@@ -82,35 +82,59 @@ const Logo: FunctionComponent<Props> = (props): ReactElement<Props> => {
       className={className}
       viewBox="0 0 891 1024"
     >
-      <path
+      <motion.path
         d={letterLPath}
         onClick={() => onClick(LogoSection.LETTER_L)}
         onMouseEnter={() => onEnter(LogoSection.LETTER_L)}
         onMouseLeave={() => onExit()}
-        css={css`
-          ${pathCss}
-          fill: ${(activeSection === LogoSection.LETTER_L || activeSection == null) ? ColourPalette.WHITE : ColourPalette.DARK_GREY};
-        `}
+        initial={{
+          fill: ColourPalette.WHITE,
+          scale: 1,
+        }}
+        animate={{
+          fill: (activeSection === LogoSection.LETTER_L || activeSection == null) ? ColourPalette.WHITE : ColourPalette.DARK_GREY,
+          scale: (activeSection === LogoSection.LETTER_L || activeSection == null) ? 1 : 0.96,
+        }}
+        transition={{
+          duration: 0.2,
+        }}
+        css={pathCss}
       />
-      <path
+      <motion.path
         d={reverseLetterLPath}
         onClick={() => onClick(LogoSection.REVERSE_LETTER_L)}
         onMouseEnter={() => onEnter(LogoSection.REVERSE_LETTER_L)}
         onMouseLeave={() => onExit()}
-        css={css`
-          ${pathCss}
-          fill: ${(activeSection === LogoSection.REVERSE_LETTER_L || activeSection == null) ? ColourPalette.WHITE : ColourPalette.DARK_GREY};
-        `}
+        initial={{
+          fill: ColourPalette.WHITE,
+          scale: 1,
+        }}
+        animate={{
+          fill: (activeSection === LogoSection.REVERSE_LETTER_L || activeSection == null) ? ColourPalette.WHITE : ColourPalette.DARK_GREY,
+          scale: (activeSection === LogoSection.REVERSE_LETTER_L || activeSection == null) ? 1 : 0.96,
+        }}
+        transition={{
+          duration: 0.2,
+        }}
+        css={pathCss}
       />
-      <path
+      <motion.path
         d={barPath}
         onClick={() => onClick(LogoSection.BAR)}
         onMouseEnter={() => onEnter(LogoSection.BAR)}
         onMouseLeave={() => onExit()}
-        css={css`
-          ${pathCss}
-          fill: ${(activeSection === LogoSection.BAR || activeSection == null) ? ColourPalette.WHITE : ColourPalette.DARK_GREY};
-        `}
+        initial={{
+          fill: ColourPalette.WHITE,
+          scale: 1,
+        }}
+        animate={{
+          fill: (activeSection === LogoSection.BAR || activeSection == null) ? ColourPalette.WHITE : ColourPalette.DARK_GREY,
+          scale: (activeSection === LogoSection.BAR || activeSection == null) ? 1 : 0.96,
+        }}
+        transition={{
+          duration: 0.2,
+        }}
+        css={pathCss}
       />
     </svg>
   );

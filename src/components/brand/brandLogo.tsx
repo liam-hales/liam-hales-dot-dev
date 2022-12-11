@@ -2,6 +2,7 @@
 
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@mui/material';
+import { motion } from 'framer-motion';
 import { BoxAlignment, ColourPalette, LogoSection } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { usePageContent } from '../../hooks';
@@ -47,78 +48,122 @@ const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactEle
       >
         {logoText}
       </Text>
+      <Logo
+        isInteractive={true}
+        activeSection={activeLogoSection}
+        onChange={(section) => setActiveLogoSection(section)}
+        css={css`
+          width: 180px;
+          align-self: center;
+        `}
+      />
       <Box css={css`
+        position: relative;
         width: 100%;
+        height: 88px;
+        padding-top: 40px;
       `}
       >
-        <Logo
-          isInteractive={true}
-          activeSection={activeLogoSection}
-          onChange={(section) => setActiveLogoSection(section)}
+        <motion.div
+          animate={{
+            y: (activeLogoSection == null) ? 0 : 50,
+            opacity: (activeLogoSection == null) ? 1 : 0,
+          }}
+          transition={{
+            type: 'spring',
+            stiffness: 116,
+            damping: 14,
+          }}
           css={css`
-            width: 180px;
+            max-width: 340px;
+            position: absolute;
+            text-align: center;
           `}
-        />
-        {
-          (activeLogoSection == null) && (
-            <Text
-              colour={ColourPalette.LIGHT_GREY}
-              css={css`
-                max-width: 340px;
-                padding-top: 40px;
-                font-size: 16px;
-                text-align: center;
-              `}
-            >
-              Select or hover over a section of the logo to inspect its purpose.
-            </Text>
-          )
-        }
-        {
-          (activeLogoSection === LogoSection.LETTER_L) && (
-            <Text
-              isBold={true}
-              css={css`
-                max-width: 340px;
-                padding-top: 40px;
-                font-size: 16px;
-                text-align: center;
-              `}
-            >
-              {logoLetterLText}
-            </Text>
-          )
-        }
-        {
-          (activeLogoSection === LogoSection.REVERSE_LETTER_L) && (
-            <Text
-              isBold={true}
-              css={css`
-                max-width: 340px;
-                padding-top: 40px;
-                font-size: 16px;
-                text-align: center;
-              `}
-            >
-              {logoReverseLetterLText}
-            </Text>
-          )
-        }
-        {
-          (activeLogoSection === LogoSection.BAR) && (
-            <Text
-              isBold={true}
-              css={css`
-                max-width: 340px;
-                padding-top: 40px;
-                font-size: 16px;
-                text-align: center;
-              `}
-            >
-              {logoBarText}
-            </Text>
-          )
-        }
+        >
+          <Text
+            colour={ColourPalette.LIGHT_GREY}
+            css={css`
+              font-size: 16px;
+            `}
+          >
+            Select or hover over a section of the logo to inspect its purpose.
+          </Text>
+        </motion.div>
+        <motion.div
+          animate={{
+            y: (activeLogoSection === LogoSection.LETTER_L) ? 0 : 50,
+            opacity: (activeLogoSection === LogoSection.LETTER_L) ? 1 : 0,
+          }}
+          transition={{
+            type: 'spring',
+            stiffness: 116,
+            damping: 14,
+          }}
+          css={css`
+            max-width: 340px;
+            position: absolute;
+            text-align: center;
+          `}
+        >
+          <Text
+            isBold={true}
+            css={css`
+              font-size: 16px;
+            `}
+          >
+            {logoLetterLText}
+          </Text>
+        </motion.div>
+        <motion.div
+          animate={{
+            y: (activeLogoSection === LogoSection.REVERSE_LETTER_L) ? 0 : 50,
+            opacity: (activeLogoSection === LogoSection.REVERSE_LETTER_L) ? 1 : 0,
+          }}
+          transition={{
+            type: 'spring',
+            stiffness: 116,
+            damping: 14,
+          }}
+          css={css`
+            max-width: 340px;
+            position: absolute;
+            text-align: center;
+          `}
+        >
+          <Text
+            isBold={true}
+            css={css`
+              font-size: 16px;
+            `}
+          >
+            {logoReverseLetterLText}
+          </Text>
+        </motion.div>
+        <motion.div
+          animate={{
+            y: (activeLogoSection === LogoSection.BAR) ? 0 : 50,
+            opacity: (activeLogoSection === LogoSection.BAR) ? 1 : 0,
+          }}
+          transition={{
+            type: 'spring',
+            stiffness: 116,
+            damping: 14,
+          }}
+          css={css`
+            max-width: 340px;
+            position: absolute;
+            text-align: center;
+          `}
+        >
+          <Text
+            isBold={true}
+            css={css`
+              font-size: 16px;
+            `}
+          >
+            {logoBarText}
+          </Text>
+        </motion.div>
       </Box>
     </Box>
   );

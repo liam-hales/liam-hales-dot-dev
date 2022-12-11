@@ -24,6 +24,7 @@ const Backdrop: FunctionComponent<Props> = ({ isOpen, children }): ReactElement<
       open={isOpen}
       css={css`
         backdrop-filter: blur(4px);
+        z-index: 2;
       `}
     >
       {children}

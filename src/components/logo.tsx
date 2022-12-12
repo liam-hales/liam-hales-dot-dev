@@ -2,7 +2,7 @@
 
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@mui/material';
-import { motion } from 'framer-motion';
+import { motion, Transition } from 'framer-motion';
 import { ColourPalette, LogoSection } from '../enums';
 import { BaseProps } from '../types';
 
@@ -77,6 +77,14 @@ const Logo: FunctionComponent<Props> = (props): ReactElement<Props> => {
     pointer-events: ${(isInteractive === false) ? 'none' : 'unset'};
   `;
 
+  /**
+   * The animation transition options
+   * for the `path` elements
+   */
+  const pathTransition: Transition = {
+    duration: 0.2,
+  };
+
   return (
     <svg
       className={className}
@@ -95,9 +103,7 @@ const Logo: FunctionComponent<Props> = (props): ReactElement<Props> => {
           fill: (activeSection === LogoSection.LETTER_L || activeSection == null) ? ColourPalette.WHITE : ColourPalette.DARK_GREY,
           scale: (activeSection === LogoSection.LETTER_L || activeSection == null) ? 1 : 0.96,
         }}
-        transition={{
-          duration: 0.2,
-        }}
+        transition={pathTransition}
         css={pathCss}
       />
       <motion.path
@@ -113,9 +119,7 @@ const Logo: FunctionComponent<Props> = (props): ReactElement<Props> => {
           fill: (activeSection === LogoSection.REVERSE_LETTER_L || activeSection == null) ? ColourPalette.WHITE : ColourPalette.DARK_GREY,
           scale: (activeSection === LogoSection.REVERSE_LETTER_L || activeSection == null) ? 1 : 0.96,
         }}
-        transition={{
-          duration: 0.2,
-        }}
+        transition={pathTransition}
         css={pathCss}
       />
       <motion.path
@@ -131,9 +135,7 @@ const Logo: FunctionComponent<Props> = (props): ReactElement<Props> => {
           fill: (activeSection === LogoSection.BAR || activeSection == null) ? ColourPalette.WHITE : ColourPalette.DARK_GREY,
           scale: (activeSection === LogoSection.BAR || activeSection == null) ? 1 : 0.96,
         }}
-        transition={{
-          duration: 0.2,
-        }}
+        transition={pathTransition}
         css={pathCss}
       />
     </svg>

@@ -2,7 +2,7 @@
 
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@mui/material';
-import { motion } from 'framer-motion';
+import { motion, Transition } from 'framer-motion';
 import { BoxAlignment, ColourPalette, LogoSection } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { usePageContent } from '../../hooks';
@@ -29,6 +29,18 @@ const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactEle
   const { logoText, logoLetterLText, logoReverseLetterLText, logoBarText } = usePageContent({
     slug: PageSlug.BRAND,
   });
+
+  /**
+   * The animation transition options
+   * for the `Text` components
+   */
+  const textTransition: Transition = {
+    y: {
+      type: 'spring',
+      stiffness: 116,
+      damping: 14,
+    },
+  };
 
   return (
     <Box
@@ -69,11 +81,7 @@ const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactEle
             y: (activeLogoSection == null) ? 0 : 50,
             opacity: (activeLogoSection == null) ? 1 : 0,
           }}
-          transition={{
-            type: 'spring',
-            stiffness: 116,
-            damping: 14,
-          }}
+          transition={textTransition}
           css={css`
             max-width: 340px;
             position: absolute;
@@ -94,11 +102,7 @@ const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactEle
             y: (activeLogoSection === LogoSection.LETTER_L) ? 0 : 50,
             opacity: (activeLogoSection === LogoSection.LETTER_L) ? 1 : 0,
           }}
-          transition={{
-            type: 'spring',
-            stiffness: 116,
-            damping: 14,
-          }}
+          transition={textTransition}
           css={css`
             max-width: 340px;
             position: absolute;
@@ -119,11 +123,7 @@ const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactEle
             y: (activeLogoSection === LogoSection.REVERSE_LETTER_L) ? 0 : 50,
             opacity: (activeLogoSection === LogoSection.REVERSE_LETTER_L) ? 1 : 0,
           }}
-          transition={{
-            type: 'spring',
-            stiffness: 116,
-            damping: 14,
-          }}
+          transition={textTransition}
           css={css`
             max-width: 340px;
             position: absolute;
@@ -144,11 +144,7 @@ const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactEle
             y: (activeLogoSection === LogoSection.BAR) ? 0 : 50,
             opacity: (activeLogoSection === LogoSection.BAR) ? 1 : 0,
           }}
-          transition={{
-            type: 'spring',
-            stiffness: 116,
-            damping: 14,
-          }}
+          transition={textTransition}
           css={css`
             max-width: 340px;
             position: absolute;

@@ -47,9 +47,11 @@ const Modal: FunctionComponent<Props> = ({ isOpen, direction, alignment, justify
             y: (isOpen === true) ? 0 : window.innerHeight,
           }}
           transition={{
-            type: (isOpen === true) ? 'spring' : 'just',
-            stiffness: 182,
-            damping: 22,
+            y: {
+              type: (isOpen === true) ? 'spring' : 'just',
+              stiffness: 182,
+              damping: 22,
+            },
           }}
           onAnimationComplete={() => {
 

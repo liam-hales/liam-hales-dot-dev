@@ -39,8 +39,14 @@ v8.19.1
 REACT_APP_API_URL = 'https://${region}.graphcms.com/v2/${id}/master'
 ```
 
-3. Run `yarn build-index` to build the `index.html` file
-4. Run `yarn build-images` to build the images
+3. Follow the steps in the [Building Public Assets](#building-public-assets) section
+
+<br/>
+
+# Building Public Assets
+
+1. Run `yarn build-index` to build the `index.html` file
+2. Run `yarn build-images` to build the images
 
 ```sh
 $ yarn build-index

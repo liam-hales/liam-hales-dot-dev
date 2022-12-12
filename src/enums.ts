@@ -1,13 +1,4 @@
 /**
- * The app environment used to describe what
- * environment the app is running in
- */
-export enum Env {
-  LOCAL = 'LOCAL',
-  DEPLOYED = 'DEPLOYED',
-}
-
-/**
  * The colour palette used to describe
  * the colours for the app
  */

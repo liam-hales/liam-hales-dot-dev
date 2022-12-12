@@ -1,10 +1,7 @@
-import { Env } from '../enums';
-
 /**
  * The `useConfig` hook response
  */
 interface UseConfigResponse {
-  readonly env: Env;
   readonly apiUrl: string;
 }
 
@@ -15,11 +12,10 @@ interface UseConfigResponse {
  * @returns The `useConfig` hook response
  * @example
  *
- * const { env } = useConfig();
+ * const { apiUrl } = useConfig();
  */
 const useConfig = (): UseConfigResponse => {
   return {
-    env: (process.env.NODE_ENV === 'development') ? Env.LOCAL : Env.DEPLOYED,
     apiUrl: process.env.REACT_APP_API_URL as string,
   };
 };

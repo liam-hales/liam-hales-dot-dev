@@ -3,9 +3,9 @@
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@mui/material';
 import { motion, Transition } from 'framer-motion';
-import { BoxAlignment, ColourPalette, LogoSection } from '../../enums';
+import { BoxAlignment, BoxJustify, ColourPalette, LogoSection, ScreenSize } from '../../enums';
 import { PageSlug } from '../../graphql';
-import { usePageContent } from '../../hooks';
+import { usePageContent, useScreen } from '../../hooks';
 import { BaseProps } from '../../types';
 import { Box, Text, Title } from '../common';
 import { Logo } from '..';
@@ -26,6 +26,7 @@ const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactEle
 
   const [activeLogoSection, setActiveLogoSection] = useState<LogoSection | undefined>();
 
+  const { screenSize } = useScreen();
   const { logoText, logoLetterLText, logoReverseLetterLText, logoBarText } = usePageContent({
     slug: PageSlug.BRAND,
   });
@@ -60,106 +61,117 @@ const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactEle
       >
         {logoText}
       </Text>
-      <Logo
-        isInteractive={true}
-        activeSection={activeLogoSection}
-        onChange={(section) => setActiveLogoSection(section)}
-        css={css`
-          width: 180px;
-          align-self: center;
-        `}
-      />
       <Box css={css`
-        position: relative;
         width: 100%;
-        height: 88px;
         padding-top: 40px;
+        padding-bottom: 40px;
+        border: solid;
+        border-width: 2px;
+        border-radius: 18px;
+        border-color: ${ColourPalette.DARK_GREY};
       `}
       >
-        <motion.div
-          animate={{
-            y: (activeLogoSection == null) ? 0 : 50,
-            opacity: (activeLogoSection == null) ? 1 : 0,
-          }}
-          transition={textTransition}
+        <Logo
+          isInteractive={true}
+          activeSection={activeLogoSection}
+          onChange={(section) => setActiveLogoSection(section)}
           css={css`
-            max-width: 340px;
-            position: absolute;
+            width: 170px;
+            align-self: center;
+          `}
+        />
+        <Box
+          justify={BoxJustify.CENTER}
+          css={css`
+            position: relative;
+            width: 100%;
+            height: ${screenSize === ScreenSize.SMALL ? 110 : 88}px;
+            max-width: ${screenSize === ScreenSize.SMALL ? 240 : 340}px;
+            padding-top: 40px;
             text-align: center;
           `}
         >
-          <Text
-            colour={ColourPalette.LIGHT_GREY}
+          <motion.div
+            animate={{
+              y: (activeLogoSection == null) ? 0 : 50,
+              opacity: (activeLogoSection == null) ? 1 : 0,
+            }}
+            transition={textTransition}
             css={css`
-              font-size: 16px;
+              width: 100%;
+              position: absolute;
             `}
           >
-            Select or hover over a section of the logo to inspect its purpose.
-          </Text>
-        </motion.div>
-        <motion.div
-          animate={{
-            y: (activeLogoSection === LogoSection.LETTER_L) ? 0 : 50,
-            opacity: (activeLogoSection === LogoSection.LETTER_L) ? 1 : 0,
-          }}
-          transition={textTransition}
-          css={css`
-            max-width: 340px;
-            position: absolute;
-            text-align: center;
-          `}
-        >
-          <Text
-            isBold={true}
+            <Text
+              colour={ColourPalette.LIGHT_GREY}
+              css={css`
+                font-size: 16px;
+              `}
+            >
+              Select or hover over a section of the logo to inspect its purpose.
+            </Text>
+          </motion.div>
+          <motion.div
+            animate={{
+              y: (activeLogoSection === LogoSection.LETTER_L) ? 0 : 50,
+              opacity: (activeLogoSection === LogoSection.LETTER_L) ? 1 : 0,
+            }}
+            transition={textTransition}
             css={css`
-              font-size: 16px;
+              width: 100%;
+              position: absolute;
             `}
           >
-            {logoLetterLText}
-          </Text>
-        </motion.div>
-        <motion.div
-          animate={{
-            y: (activeLogoSection === LogoSection.REVERSE_LETTER_L) ? 0 : 50,
-            opacity: (activeLogoSection === LogoSection.REVERSE_LETTER_L) ? 1 : 0,
-          }}
-          transition={textTransition}
-          css={css`
-            max-width: 340px;
-            position: absolute;
-            text-align: center;
-          `}
-        >
-          <Text
-            isBold={true}
+            <Text
+              isBold={true}
+              css={css`
+                font-size: 16px;
+              `}
+            >
+              {logoLetterLText}
+            </Text>
+          </motion.div>
+          <motion.div
+            animate={{
+              y: (activeLogoSection === LogoSection.REVERSE_LETTER_L) ? 0 : 50,
+              opacity: (activeLogoSection === LogoSection.REVERSE_LETTER_L) ? 1 : 0,
+            }}
+            transition={textTransition}
             css={css`
-              font-size: 16px;
+              width: 100%;
+              position: absolute;
             `}
           >
-            {logoReverseLetterLText}
-          </Text>
-        </motion.div>
-        <motion.div
-          animate={{
-            y: (activeLogoSection === LogoSection.BAR) ? 0 : 50,
-            opacity: (activeLogoSection === LogoSection.BAR) ? 1 : 0,
-          }}
-          transition={textTransition}
-          css={css`
-            max-width: 340px;
-            position: absolute;
-            text-align: center;
-          `}
-        >
-          <Text
-            isBold={true}
+            <Text
+              isBold={true}
+              css={css`
+                font-size: 16px;
+              `}
+            >
+              {logoReverseLetterLText}
+            </Text>
+          </motion.div>
+          <motion.div
+            animate={{
+              y: (activeLogoSection === LogoSection.BAR) ? 0 : 50,
+              opacity: (activeLogoSection === LogoSection.BAR) ? 1 : 0,
+            }}
+            transition={textTransition}
             css={css`
-              font-size: 16px;
+              width: 100%;
+              position: absolute;
             `}
           >
-            {logoBarText}
-          </Text>
-        </motion.div>
+            <Text
+              isBold={true}
+              css={css`
+                font-size: 16px;
+              `}
+            >
+              {logoBarText}
+            </Text>
+          </motion.div>
+        </Box>
       </Box>
     </Box>
   );

@@ -75,6 +75,7 @@ const Logo: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const pathCss = css`
     cursor: ${(isInteractive === true) ? 'pointer' : 'unset'};
     pointer-events: ${(isInteractive === false) ? 'none' : 'unset'};
+    fill: ${ColourPalette.WHITE}
   `;
 
   /**
@@ -96,11 +97,11 @@ const Logo: FunctionComponent<Props> = (props): ReactElement<Props> => {
         onMouseEnter={() => onEnter(LogoSection.LETTER_L)}
         onMouseLeave={() => onExit()}
         initial={{
-          fill: ColourPalette.WHITE,
+          opacity: 1,
           scale: 1,
         }}
         animate={{
-          fill: (activeSection === LogoSection.LETTER_L || activeSection == null) ? ColourPalette.WHITE : ColourPalette.DARK_GREY,
+          opacity: (activeSection === LogoSection.LETTER_L || activeSection == null) ? 1 : 0.1,
           scale: (activeSection === LogoSection.LETTER_L || activeSection == null) ? 1 : 0.96,
         }}
         transition={pathTransition}
@@ -112,11 +113,11 @@ const Logo: FunctionComponent<Props> = (props): ReactElement<Props> => {
         onMouseEnter={() => onEnter(LogoSection.REVERSE_LETTER_L)}
         onMouseLeave={() => onExit()}
         initial={{
-          fill: ColourPalette.WHITE,
+          opacity: 1,
           scale: 1,
         }}
         animate={{
-          fill: (activeSection === LogoSection.REVERSE_LETTER_L || activeSection == null) ? ColourPalette.WHITE : ColourPalette.DARK_GREY,
+          opacity: (activeSection === LogoSection.REVERSE_LETTER_L || activeSection == null) ? 1 : 0.1,
           scale: (activeSection === LogoSection.REVERSE_LETTER_L || activeSection == null) ? 1 : 0.96,
         }}
         transition={pathTransition}
@@ -128,11 +129,11 @@ const Logo: FunctionComponent<Props> = (props): ReactElement<Props> => {
         onMouseEnter={() => onEnter(LogoSection.BAR)}
         onMouseLeave={() => onExit()}
         initial={{
-          fill: ColourPalette.WHITE,
+          opacity: 1,
           scale: 1,
         }}
         animate={{
-          fill: (activeSection === LogoSection.BAR || activeSection == null) ? ColourPalette.WHITE : ColourPalette.DARK_GREY,
+          opacity: (activeSection === LogoSection.BAR || activeSection == null) ? 1 : 0.1,
           scale: (activeSection === LogoSection.BAR || activeSection == null) ? 1 : 0.96,
         }}
         transition={pathTransition}

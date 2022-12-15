@@ -37,7 +37,7 @@ const BreadcrumbItem: FunctionComponent<Props> = (props): ReactElement<Props> =>
       colour={
         (isActive === true)
           ? ColourPalette.WHITE
-          : ColourPalette.GREY
+          : ColourPalette.GREY_600
       }
       onClick={
         (isActive === false)

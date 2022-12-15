@@ -49,7 +49,7 @@ const Input: FunctionComponent<Props> = ({ className, value, placeholder, iconId
         padding-left: 21px;
         padding-right: 21px;
         border-radius: 1000px;
-        background-color: ${ColourPalette.DARK_GREY};
+        background-color: ${ColourPalette.GREY_800};
       `}
     >
       {
@@ -85,7 +85,7 @@ const Input: FunctionComponent<Props> = ({ className, value, placeholder, iconId
             color: ${ColourPalette.WHITE};
 
             ::placeholder {
-              color: ${ColourPalette.LIGHT_GREY};
+              color: ${ColourPalette.GREY_400};
             };
           };
         `}
@@ -94,7 +94,7 @@ const Input: FunctionComponent<Props> = ({ className, value, placeholder, iconId
         (_value !== '') && (
           <IconButton
             id={IconId.CROSS}
-            colour={ColourPalette.LIGHT_GREY}
+            colour={ColourPalette.GREY_400}
             onClick={() => {
 
               // Reset the value state and call the on change

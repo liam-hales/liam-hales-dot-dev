@@ -39,8 +39,10 @@ const Stat: FunctionComponent<Props> = ({ className, value, text }): ReactElemen
       <Text
         isBold={true}
         css={css`
-          max-width: 90px;
-          padding-left: 10px;
+          max-width: 100px;
+          padding-left: 12px;
+          font-size: 16px;
+          line-height: 132%;
         `}
       >
         {text}

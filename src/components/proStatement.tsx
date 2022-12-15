@@ -35,7 +35,7 @@ const ProStatement: FunctionComponent<Props> = ({ className }): ReactElement<Pro
         Professional Statement
       </Title>
       <Text
-        colour={ColourPalette.LIGHT_GREY}
+        colour={ColourPalette.GREY_400}
         css={css`
           padding-top: 16px;
           padding-bottom: 16px;

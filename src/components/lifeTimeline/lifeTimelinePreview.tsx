@@ -37,7 +37,7 @@ const LifeTimelinePreview: FunctionComponent<Props> = ({ reference, className })
         Life Timeline
       </Title>
       <Text
-        colour={ColourPalette.LIGHT_GREY}
+        colour={ColourPalette.GREY_400}
         css={css`
           padding-top: 16px;
         `}

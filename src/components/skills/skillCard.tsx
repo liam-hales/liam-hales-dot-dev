@@ -47,7 +47,7 @@ const SkillCard: FunctionComponent<Props> = ({ className, name, type, imageUrl, 
         >
           {name}
         </Text>
-        <Text colour={ColourPalette.LIGHT_GREY}>
+        <Text colour={ColourPalette.GREY_400}>
           {type}
         </Text>
       </Box>

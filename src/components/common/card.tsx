@@ -33,7 +33,7 @@ const Card: FunctionComponent<Props> = ({ className, direction, alignment, justi
       onClick={onClick}
       css={css`
         border-radius: 10px;
-        background-color: ${ColourPalette.DARK_GREY};
+        background-color: ${ColourPalette.GREY_800};
     `}
     >
       {children}

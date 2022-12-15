@@ -25,7 +25,7 @@ const ComingSoon: FunctionComponent = (): ReactElement => {
         Coming Soon
       </Title>
       <Text
-        colour={ColourPalette.LIGHT_GREY}
+        colour={ColourPalette.GREY_400}
         css={css`
           max-width: 300px;
           padding-top: 16px;

@@ -40,19 +40,14 @@ const TimelineEvent: FunctionComponent<Props> = (props): ReactElement<Props> => 
 
   return (
     <Box alignment={BoxAlignment.START}>
-      <Text
-        colour={ColourPalette.GREY}
-        css={css`
-          font-size: 12px;
-        `}
-      >
+      <Text colour={ColourPalette.GREY_600}>
         {timestamp}
       </Text>
       <Text
         isBold={true}
         css={css`
           max-width: ${(isFirst === true) ? '580px' : 'unset'};
-          padding-top: 4px;
+          padding-top: 6px;
           padding-bottom: 8px;
           font-size: ${(isFirst === true) ? 34 : 24}px;
           line-height: 122%;
@@ -60,7 +55,7 @@ const TimelineEvent: FunctionComponent<Props> = (props): ReactElement<Props> => 
       >
         {title}
       </Text>
-      <Text colour={ColourPalette.LIGHT_GREY}>
+      <Text colour={ColourPalette.GREY_400}>
         {description}
       </Text>
     </Box>

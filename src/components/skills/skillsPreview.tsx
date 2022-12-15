@@ -39,7 +39,7 @@ const SkillsPreview: FunctionComponent<Props> = ({ reference, className }): Reac
         Skills
       </Title>
       <Text
-        colour={ColourPalette.LIGHT_GREY}
+        colour={ColourPalette.GREY_400}
         css={css`
           padding-top: 16px;
         `}

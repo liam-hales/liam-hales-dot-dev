@@ -73,7 +73,7 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
             >
               Liam Hales
             </Text>
-            <Text colour={ColourPalette.LIGHT_GREY}>
+            <Text colour={ColourPalette.GREY_400}>
               {footerText}
             </Text>
           </Box>
@@ -127,7 +127,7 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
             {` ${year} - Liam Hales`}
           </Text>
           <Text
-            colour={ColourPalette.GREY}
+            colour={ColourPalette.GREY_600}
             css={css`
               padding-top: 4px;
               font-size: 11px;

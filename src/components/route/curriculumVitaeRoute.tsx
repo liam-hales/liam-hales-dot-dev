@@ -81,7 +81,7 @@ const CurriculumVitaeRoute: FunctionComponent = (): ReactElement => {
 
             return (
               <Text
-                colour={ColourPalette.GREY}
+                colour={ColourPalette.GREY_600}
                 css={css`
                   max-width: 500px;
                   padding-top: 65px;

@@ -56,11 +56,11 @@ const SkillModal: FunctionComponent<Props> = ({ isOpen, name, type, description,
       >
         {name}
       </Text>
-      <Text colour={ColourPalette.LIGHT_GREY}>
+      <Text colour={ColourPalette.GREY_400}>
         {type}
       </Text>
       <Text
-        colour={ColourPalette.LIGHT_GREY}
+        colour={ColourPalette.GREY_400}
         css={css`
           padding-top: 26px;
           padding-bottom: 34px;

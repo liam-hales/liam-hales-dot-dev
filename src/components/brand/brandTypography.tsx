@@ -36,7 +36,7 @@ const BrandTypography: FunctionComponent<Props> = ({ reference, className }): Re
         Typography
       </Title>
       <Text
-        colour={ColourPalette.LIGHT_GREY}
+        colour={ColourPalette.GREY_400}
         css={css`
           padding-top: 16px;
           padding-bottom: 36px;

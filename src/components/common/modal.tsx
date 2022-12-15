@@ -76,7 +76,7 @@ const Modal: FunctionComponent<Props> = ({ isOpen, direction, alignment, justify
           >
             <IconButton
               id={IconId.CROSS}
-              colour={ColourPalette.LIGHT_GREY}
+              colour={ColourPalette.GREY_400}
               onClick={onClose}
               css={css`
                 position: absolute;

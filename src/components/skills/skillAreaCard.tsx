@@ -67,7 +67,7 @@ const SkillAreaCard: FunctionComponent<Props> = ({ className, title, description
           {title}
         </Text>
         <Text
-          colour={ColourPalette.LIGHT_GREY}
+          colour={ColourPalette.GREY_400}
           css={css`
             max-width: ${(screenSize === ScreenSize.SMALL) ? 210 : 180}px;
             text-align: ${(screenSize === ScreenSize.SMALL) ? 'left' : 'center'};

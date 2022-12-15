@@ -25,7 +25,7 @@ const Error: FunctionComponent = (): ReactElement => {
         Something went wrong
       </Title>
       <Text
-        colour={ColourPalette.LIGHT_GREY}
+        colour={ColourPalette.GREY_400}
         css={css`
           max-width: 280px;
           padding-top: 16px;

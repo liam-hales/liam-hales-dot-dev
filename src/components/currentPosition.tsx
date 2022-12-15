@@ -43,7 +43,7 @@ const CurrentPosition: FunctionComponent<Props> = ({ reference, className }): Re
         Current Position
       </Title>
       <Text
-        colour={ColourPalette.LIGHT_GREY}
+        colour={ColourPalette.GREY_400}
         css={css`
           padding-top: 16px;
           padding-bottom: 10px;

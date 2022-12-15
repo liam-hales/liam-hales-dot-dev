@@ -53,7 +53,7 @@ const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactEle
         The Logo
       </Title>
       <Text
-        colour={ColourPalette.LIGHT_GREY}
+        colour={ColourPalette.GREY_400}
         css={css`
           padding-top: 16px;
           padding-bottom: 50px;
@@ -68,7 +68,7 @@ const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactEle
         border: solid;
         border-width: 2px;
         border-radius: 18px;
-        border-color: ${ColourPalette.DARK_GREY};
+        border-color: ${ColourPalette.GREY_800};
       `}
       >
         <Logo
@@ -103,7 +103,7 @@ const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactEle
             `}
           >
             <Text
-              colour={ColourPalette.LIGHT_GREY}
+              colour={ColourPalette.GREY_400}
               css={css`
                 font-size: 16px;
               `}

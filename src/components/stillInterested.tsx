@@ -33,7 +33,7 @@ const StillInterested: FunctionComponent<Props> = ({ className }): ReactElement<
         Still interested?
       </Title>
       <Text
-        colour={ColourPalette.LIGHT_GREY}
+        colour={ColourPalette.GREY_400}
         css={css`
           max-width: 340px;
           padding-top: 16px;

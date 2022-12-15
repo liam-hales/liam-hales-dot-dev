@@ -43,7 +43,7 @@ const EmailModal: FunctionComponent<Props> = ({ isOpen, onClose }): ReactElement
         Before you email
       </Title>
       <Text
-        colour={ColourPalette.LIGHT_GREY}
+        colour={ColourPalette.GREY_400}
         css={css`
           padding-top: 16px;
           padding-bottom: 28px;
@@ -73,7 +73,7 @@ const EmailModal: FunctionComponent<Props> = ({ isOpen, onClose }): ReactElement
               </Button>
             </Popover>
             <Text
-              colour={ColourPalette.LIGHT_GREY}
+              colour={ColourPalette.GREY_400}
               css={css`
                 padding-top: 6px;
                 font-size: 11px;
@@ -95,7 +95,7 @@ const EmailModal: FunctionComponent<Props> = ({ isOpen, onClose }): ReactElement
             `}
           >
             <Button
-              colour={ColourPalette.GREY}
+              colour={ColourPalette.GREY_700}
               iconId={IconId.ARROW_LEFT}
               onClick={onClose}
             >

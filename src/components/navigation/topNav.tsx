@@ -43,8 +43,8 @@ const TopNav: FunctionComponent = (): ReactElement => {
           border-style: solid;
           border-width: 1px;
           border-radius: 36px;
-          border-color: ${ColourPalette.DARK_GREY};
-          background-color: ${ColourPalette.BLACK};
+          border-color: ${ColourPalette.GREY_800};
+          background-color: ${ColourPalette.GREY_900};
         `}
       >
         <Logo css={css`

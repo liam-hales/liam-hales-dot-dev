@@ -13,7 +13,7 @@ import { ColourPalette } from '../../enums';
 const Divider: FunctionComponent = (): ReactElement => {
   return (
     <MuiDivider css={css`
-      background-color: ${ColourPalette.DARK_GREY};
+      background-color: ${ColourPalette.GREY_800};
     `}
     />
   );

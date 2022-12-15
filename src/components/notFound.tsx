@@ -40,7 +40,7 @@ const NotFound: FunctionComponent = (): ReactElement => {
         Page not found
       </Title>
       <Text
-        colour={ColourPalette.LIGHT_GREY}
+        colour={ColourPalette.GREY_400}
         css={css`
           max-width: 320px;
           padding-top: 16px;

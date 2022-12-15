@@ -55,7 +55,7 @@ const Timeline: FunctionComponent<Props> = (props): ReactElement<Props> => {
                 top: ${(first === true) ? 38 : 0}px;
                 bottom: ${(last === true) ? 'calc(100% - 38px)' : '0px'};
                 left: 9px;
-                background-color: ${ColourPalette.DARK_GREY};
+                background-color: ${ColourPalette.GREY_800};
                 z-index: -1;
               `}
               />
@@ -65,7 +65,7 @@ const Timeline: FunctionComponent<Props> = (props): ReactElement<Props> => {
                 margin-top: 28px;
                 flex-shrink: 0;
                 border-style: solid;
-                border-color: ${ColourPalette.BLACK};
+                border-color: ${ColourPalette.GREY_900};
                 border-width: 4px;
                 border-radius: 50%;
                 background-color: ${ColourPalette.BLUE};

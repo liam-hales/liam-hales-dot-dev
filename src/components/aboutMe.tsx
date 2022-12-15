@@ -65,7 +65,7 @@ const AboutMe: FunctionComponent<Props> = ({ className }): ReactElement<Props> =
           About me
         </Title>
         <Text
-          colour={ColourPalette.LIGHT_GREY}
+          colour={ColourPalette.GREY_400}
           css={css`
             padding-top: 16px;
             padding-bottom: 10px;

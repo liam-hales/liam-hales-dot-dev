@@ -101,7 +101,7 @@ const Skills: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
         {
           (filteredSkills.length > 0) && (
             <Text
-              colour={ColourPalette.LIGHT_GREY}
+              colour={ColourPalette.GREY_400}
               css={css`
                 max-width: 450px;
               `}

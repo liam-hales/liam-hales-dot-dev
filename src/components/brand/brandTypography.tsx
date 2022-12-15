@@ -48,7 +48,7 @@ const BrandTypography: FunctionComponent<Props> = ({ reference, className }): Re
         font-size: 28px;
       `}
       >
-        Urbanist Regular 400
+        Urbanist SemiBold 600
       </Text>
       <Text
         isItalic={true}
@@ -56,7 +56,7 @@ const BrandTypography: FunctionComponent<Props> = ({ reference, className }): Re
           font-size: 28px;
         `}
       >
-        Urbanist Regular 400 Italic
+        Urbanist SemiBold 600 Italic
       </Text>
       <Text
         isBold={true}
@@ -64,7 +64,7 @@ const BrandTypography: FunctionComponent<Props> = ({ reference, className }): Re
           font-size: 28px;
         `}
       >
-        Urbanist ExtraBold 800
+        Urbanist Black 900
       </Text>
       <Text
         isBold={true}
@@ -73,7 +73,7 @@ const BrandTypography: FunctionComponent<Props> = ({ reference, className }): Re
           font-size: 28px;
         `}
       >
-        Urbanist ExtraBold 800 Italic
+        Urbanist Black 900 Italic
       </Text>
     </Box>
   );

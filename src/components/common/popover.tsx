@@ -56,10 +56,12 @@ const Popover: FunctionComponent<Props> = ({ text, isOpen, onClose, children }):
             disablePortal: true,
           }}
         >
-          {/**
-         * The `div` element is here to accept the props from `Tooltip` component in
-         * order to function correctly as the child component may not accept said props
-         */}
+          {
+            /**
+             * This `div` element is here to accept the props from the `Tooltip` component in
+             * order to function correctly as the child component may not accept said props
+             */
+          }
           <div>
             {children}
           </div>

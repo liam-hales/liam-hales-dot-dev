@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import { FunctionComponent, ReactElement, useState } from 'react';
-import { css } from '@mui/material';
+import { ClickAwayListener, css } from '@mui/material';
 import { motion, Transition } from 'framer-motion';
 import { BoxAlignment, BoxJustify, ColourPalette, LogoSection, ScreenSize } from '../../enums';
 import { PageSlug } from '../../graphql';
@@ -71,15 +71,25 @@ const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactEle
         border-color: ${ColourPalette.GREY_800};
       `}
       >
-        <Logo
-          isInteractive={true}
-          activeSection={activeLogoSection}
-          onChange={(section) => setActiveLogoSection(section)}
-          css={css`
-            width: 170px;
-            align-self: center;
-          `}
-        />
+        <ClickAwayListener onClickAway={() => setActiveLogoSection(undefined)}>
+          {
+            /**
+             * This `div` element is here in order for the
+             * `ClickAwayListener` to function correctly
+             */
+          }
+          <div>
+            <Logo
+              isInteractive={true}
+              activeSection={activeLogoSection}
+              onChange={(section) => setActiveLogoSection(section)}
+              css={css`
+                width: 170px;
+                align-self: center;
+              `}
+            />
+          </div>
+        </ClickAwayListener>
         <Box
           justify={BoxJustify.CENTER}
           css={css`

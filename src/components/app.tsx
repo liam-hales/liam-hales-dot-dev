@@ -3,7 +3,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { CssBaseline, css } from '@mui/material';
 import { ThemeProvider, QueryProvider } from '../providers';
-import { SafeArea, Nav, Loader, Global, Router, Footer, BuyMeCoffeeWidget } from '.';
+import { SafeArea, Nav, Loader, Global, Router, Footer } from '.';
 
 /**
  * The root component to render into the
@@ -15,7 +15,6 @@ const App: FunctionComponent = (): ReactElement => {
   return (
     <ThemeProvider>
       <CssBaseline />
-      <BuyMeCoffeeWidget />
       <QueryProvider>
         <Loader />
         <SafeArea>

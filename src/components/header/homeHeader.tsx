@@ -134,6 +134,9 @@ const HomeHeader: FunctionComponent<Props> = ({ className }): ReactElement<Props
           <Text
             isBold={true}
             onClick={() => window.open(shayanRastegarUrl, '_blank')}
+            css={css`
+              font-size: 11px;
+            `}
           >
             Shayan Rastegar
           </Text>

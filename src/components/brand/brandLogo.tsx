@@ -65,7 +65,7 @@ const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactEle
         width: 100%;
         padding-top: 40px;
         padding-bottom: 40px;
-        border: solid;
+        border-style: solid;
         border-width: 2px;
         border-radius: 18px;
         border-color: ${ColourPalette.GREY_800};

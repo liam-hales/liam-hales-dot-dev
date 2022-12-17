@@ -1,4 +1,4 @@
-import { Moment } from 'moment';
+import { Dayjs } from 'dayjs';
 import { PageSlug } from './enums';
 
 /**
@@ -49,7 +49,7 @@ export interface HomePageContent extends BasePageContent {
   readonly headerImage: Asset;
   readonly headerOverlayImage: Asset;
   readonly aboutMeText: string;
-  readonly careerStartDate: Moment;
+  readonly careerStartDate: Dayjs;
   readonly frontendText: string;
   readonly backendText: string;
   readonly designText: string;
@@ -64,8 +64,8 @@ export interface HomePageContent extends BasePageContent {
 export interface CurriculumVitaePageContent extends BasePageContent {
   readonly slug: PageSlug.CV;
   readonly currentPositionText: string;
-  readonly careerStartDate: Moment;
-  readonly companyStartDate: Moment;
+  readonly careerStartDate: Dayjs;
+  readonly companyStartDate: Dayjs;
   readonly lifeTimelineText: string;
   readonly lifeTimelineEvents: TimelineEvent[];
   readonly skillsText: string;
@@ -136,7 +136,7 @@ export interface TimelineEvent {
   readonly id: string;
   readonly title: string;
   readonly description: string;
-  readonly date: Moment;
+  readonly date: Dayjs;
 }
 
 /**

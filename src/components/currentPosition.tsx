@@ -2,7 +2,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { BoxAlignment, BoxDirection, ColourPalette } from '../enums';
 import { PageSlug } from '../graphql';
 import { usePageContent } from '../hooks';
@@ -30,7 +30,7 @@ const CurrentPosition: FunctionComponent<Props> = ({ reference, className }): Re
 
   // Calculate the years in the industry and the number of years
   // at the company I work for from the career start date
-  const yearsInIndustry = moment.utc().diff(careerStartDate, 'years');
+  const yearsInIndustry = dayjs.utc().diff(careerStartDate, 'years');
   const yearsAtCompany = yearsInIndustry - 1;
 
   return (

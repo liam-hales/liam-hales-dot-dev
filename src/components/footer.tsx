@@ -2,7 +2,7 @@
 
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@mui/material';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { BoxDirection, BoxAlignment, ColourPalette, BoxJustify, IconId, SVGIconId } from '../enums';
 import { PageSlug } from '../graphql';
 import { usePageContent } from '../hooks';
@@ -36,7 +36,7 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
     slug: PageSlug.GLOBAL,
   });
 
-  const year = moment
+  const year = dayjs
     .utc()
     .format('YYYY');
 

@@ -2,7 +2,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { Moment } from 'moment';
+import { Dayjs } from 'dayjs';
 import { BaseProps } from '../../../types';
 import { BoxAlignment, ColourPalette } from '../../../enums';
 import { Box, Text } from '..';
@@ -13,7 +13,7 @@ import { Box, Text } from '..';
 interface Props extends BaseProps {
   readonly title: string;
   readonly description: string;
-  readonly date: Moment;
+  readonly date: Dayjs;
   readonly isFirst?: boolean;
 }
 

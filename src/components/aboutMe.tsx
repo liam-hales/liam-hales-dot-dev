@@ -2,7 +2,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { BoxAlignment, BoxDirection, ColourPalette, ImageRoundness, ScreenSize } from '../enums';
 import { PageSlug } from '../graphql';
 import { usePageContent, useScreen } from '../hooks';
@@ -35,7 +35,7 @@ const AboutMe: FunctionComponent<Props> = ({ className }): ReactElement<Props> =
 
   // Calculate the years programming and
   // experience from the career start date
-  const yearsExperience = moment.utc().diff(careerStartDate, 'years');
+  const yearsExperience = dayjs.utc().diff(careerStartDate, 'years');
   const yearsProgramming = yearsExperience + 2;
 
   return (

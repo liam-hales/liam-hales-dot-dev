@@ -1,8 +1,8 @@
-import moment from 'moment';
+import dayjs from 'dayjs';
 
 /**
  * Used with `JSON.parse` to transform the data
- * parsing any dates into `Moment` objects
+ * parsing any dates into `Dayjs` objects
  *
  * @param key The key
  * @param value The value for the `key`
@@ -26,9 +26,9 @@ const dataTransformer = (
       .includes('date');
 
     // If the value is a date then parse
-    // he it with moment and return it
+    // it with Day.js and return it
     if (isDate === true) {
-      return moment.utc(value);
+      return dayjs.utc(value);
     }
   }
 

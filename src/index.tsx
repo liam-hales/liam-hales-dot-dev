@@ -1,6 +1,13 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import relativeTime from 'dayjs/plugin/relativeTime';
 import { App } from './components';
+
+// Apply the Day.js UTC and relative time plugins
+dayjs.extend(utc);
+dayjs.extend(relativeTime);
 
 // Get the root DOM element and check if it exists
 // If not throw an error

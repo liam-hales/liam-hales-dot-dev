@@ -96,7 +96,7 @@ const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactEle
             position: relative;
             width: 100%;
             height: ${screenSize === ScreenSize.SMALL ? 110 : 88}px;
-            max-width: ${screenSize === ScreenSize.SMALL ? 240 : 340}px;
+            max-width: ${screenSize === ScreenSize.SMALL ? 260 : 300}px;
             padding-top: 40px;
             text-align: center;
           `}
@@ -118,7 +118,7 @@ const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactEle
                 font-size: 16px;
               `}
             >
-              Select or hover over a section of the logo to inspect its purpose.
+              Select or hover over a section of the logo to inspect it&apos;s purpose.
             </Text>
           </motion.div>
           <motion.div

@@ -2,7 +2,7 @@
 
 import { FunctionComponent, ReactElement, useRef } from 'react';
 import { css } from '@mui/material';
-import { StatusHandler, Content, Header, BrandLogo, BrandTypography } from '..';
+import { StatusHandler, Content, Header, BrandLogo, BrandTypography, BrandColourPalette } from '..';
 import { BoxDirection } from '../../enums';
 import { PageSlug } from '../../graphql';
 import { usePageQuery, useScreen } from '../../hooks';
@@ -18,6 +18,7 @@ const BrandRoute: FunctionComponent = (): ReactElement => {
 
   const brandLogoRef = useRef<HTMLDivElement>(null);
   const brandTypographyRef = useRef<HTMLDivElement>(null);
+  const brandColourPaletteRef = useRef<HTMLDivElement>(null);
 
   const { scrollTo } = useScreen();
   const { status } = usePageQuery({
@@ -39,7 +40,7 @@ const BrandRoute: FunctionComponent = (): ReactElement => {
           <Button onClick={() => scrollTo(brandTypographyRef)}>
             Typography
           </Button>
-          <Button onClick={() => {}}>
+          <Button onClick={() => scrollTo(brandColourPaletteRef)}>
             Colour Palette
           </Button>
         </Box>
@@ -58,7 +59,15 @@ const BrandRoute: FunctionComponent = (): ReactElement => {
           css={css`
             // Margin is applied here and not padding so
             // the auto scroll works correctly
-            margin-top: 80px;
+            margin-top: 90px;
+          `}
+        />
+        <BrandColourPalette
+          reference={brandColourPaletteRef}
+          css={css`
+            // Margin is applied here and not padding so
+            // the auto scroll works correctly
+            margin-top: 100px;
           `}
         />
       </Content>

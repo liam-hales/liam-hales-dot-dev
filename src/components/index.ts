@@ -23,6 +23,7 @@ import LifeTimeline from './lifeTimeline/lifeTimeline';
 import Skills from './skills/skills';
 import BrandLogo from './brand/brandLogo';
 import BrandTypography from './brand/brandTypography';
+import BrandColourPalette from './brand/brandColourPalette';
 import SkillModal from './skills/skillModal';
 import EmailModal from './emailModal';
 import Router from './router';
@@ -61,6 +62,7 @@ export {
   Skills,
   BrandLogo,
   BrandTypography,
+  BrandColourPalette,
   SkillModal,
   EmailModal,
   Router,

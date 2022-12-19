@@ -17,8 +17,8 @@ import { Box, Button } from '../common';
 const BrandRoute: FunctionComponent = (): ReactElement => {
 
   const brandLogoRef = useRef<HTMLDivElement>(null);
-  const brandTypographyRef = useRef<HTMLDivElement>(null);
   const brandColourPaletteRef = useRef<HTMLDivElement>(null);
+  const brandTypographyRef = useRef<HTMLDivElement>(null);
 
   const { scrollTo } = useScreen();
   const { status } = usePageQuery({
@@ -37,11 +37,11 @@ const BrandRoute: FunctionComponent = (): ReactElement => {
           <Button onClick={() => scrollTo(brandLogoRef)}>
             The Logo
           </Button>
-          <Button onClick={() => scrollTo(brandTypographyRef)}>
-            Typography
-          </Button>
           <Button onClick={() => scrollTo(brandColourPaletteRef)}>
             Colour Palette
+          </Button>
+          <Button onClick={() => scrollTo(brandTypographyRef)}>
+            Typography
           </Button>
         </Box>
       </Header>
@@ -54,16 +54,16 @@ const BrandRoute: FunctionComponent = (): ReactElement => {
             margin-top: 50px;
           `}
         />
-        <BrandTypography
-          reference={brandTypographyRef}
+        <BrandColourPalette
+          reference={brandColourPaletteRef}
           css={css`
             // Margin is applied here and not padding so
             // the auto scroll works correctly
             margin-top: 90px;
           `}
         />
-        <BrandColourPalette
-          reference={brandColourPaletteRef}
+        <BrandTypography
+          reference={brandTypographyRef}
           css={css`
             // Margin is applied here and not padding so
             // the auto scroll works correctly

@@ -24,6 +24,7 @@ import Skills from './skills/skills';
 import BrandLogo from './brand/brandLogo';
 import BrandTypography from './brand/brandTypography';
 import BrandColourPalette from './brand/brandColourPalette';
+import ColourCard from './colourCard';
 import SkillModal from './skills/skillModal';
 import EmailModal from './emailModal';
 import Router from './router';
@@ -63,6 +64,7 @@ export {
   BrandLogo,
   BrandTypography,
   BrandColourPalette,
+  ColourCard,
   SkillModal,
   EmailModal,
   Router,

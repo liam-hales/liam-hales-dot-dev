@@ -103,6 +103,7 @@ export interface BrandPageContent extends BasePageContent {
   readonly logoReverseLetterLText: string;
   readonly logoBarText: string;
   readonly typographyText: string;
+  readonly colourPaletteText: string;
 }
 
 /**

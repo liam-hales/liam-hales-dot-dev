@@ -11,6 +11,7 @@ const brandContentFragment = gql`
     logoReverseLetterLText
     logoBarText
     typographyText
+    colourPaletteText
   }
 `;
 

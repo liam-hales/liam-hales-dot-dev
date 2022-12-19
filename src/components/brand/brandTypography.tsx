@@ -61,6 +61,7 @@ const BrandTypography: FunctionComponent<Props> = ({ reference, className }): Re
       <Text
         isBold={true}
         css={css`
+          padding-top: 18px;
           font-size: 28px;
         `}
       >
@@ -74,6 +75,24 @@ const BrandTypography: FunctionComponent<Props> = ({ reference, className }): Re
         `}
       >
         Urbanist Black 900 Italic
+      </Text>
+      <Text
+        isMono={true}
+        css={css`
+          padding-top: 18px;
+          font-size: 28px;
+        `}
+      >
+        Fira Code Regular 400
+      </Text>
+      <Text
+        isMono={true}
+        isBold={true}
+        css={css`
+          font-size: 28px;
+        `}
+      >
+        Fira Code SemiBold 600
       </Text>
     </Box>
   );

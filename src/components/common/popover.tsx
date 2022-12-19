@@ -12,6 +12,7 @@ import { Text } from '.';
 interface Props extends BaseProps<ReactElement, true> {
   readonly text: string;
   readonly isOpen: boolean;
+  readonly colour?: ColourPalette;
   readonly onClose: () => void;
 }
 
@@ -22,16 +23,25 @@ interface Props extends BaseProps<ReactElement, true> {
  * @param props The component props
  * @returns The `Popover` component
  */
-const Popover: FunctionComponent<Props> = ({ text, isOpen, onClose, children }): ReactElement<Props> => {
+const Popover: FunctionComponent<Props> = (props): ReactElement<Props> => {
+  const {
+    text,
+    isOpen,
+    colour = ColourPalette.BLUE,
+    onClose,
+    children,
+  } = props;
+
   return (
     <ClickAwayListener onClickAway={onClose}>
       <div css={css`
         .MuiTooltip-tooltip {
-          background-color: ${ColourPalette.GREY_700};
+          border-radius: 6px;
+          background-color: ${colour};
         };
 
         .MuiTooltip-arrow {
-          color: ${ColourPalette.GREY_700};
+          color: ${colour};
         };
       `}
       >
@@ -40,8 +50,9 @@ const Popover: FunctionComponent<Props> = ({ text, isOpen, onClose, children }):
             <Text
               isBold={true}
               css={css`
-              font-size: 10px;
-            `}
+                font-size: 10px;
+                color: ${(colour === ColourPalette.WHITE) ? ColourPalette.BLUE : ColourPalette.WHITE};
+              `}
             >
               {text}
             </Text>

@@ -13,6 +13,7 @@ interface Props extends BaseProps {
   readonly element?: TextElement;
   readonly isBold?: boolean;
   readonly isItalic?: boolean;
+  readonly isMono?: boolean;
   readonly hasHoverUnderline?: boolean;
   readonly onClick?: () => void;
 }
@@ -31,6 +32,7 @@ const Text: FunctionComponent<Props> = (props): ReactElement<Props> => {
     element = TextElement.PARAGRAPH,
     isBold = false,
     isItalic = false,
+    isMono = false,
     hasHoverUnderline = false,
     onClick,
     children,
@@ -50,6 +52,10 @@ const Text: FunctionComponent<Props> = (props): ReactElement<Props> => {
         font-weight: ${(isBold === true) ? 'bold' : 'normal'};
         font-style: ${(isItalic === true) ? 'italic' : 'normal'};
         cursor: ${(onClick != null) ? 'pointer' : 'unset'};
+
+        ${(isMono === true) && css`
+          font-family: 'Fira Code', monospace;
+        `}
         
         ${(hasHoverUnderline === true) && css`
           :hover {

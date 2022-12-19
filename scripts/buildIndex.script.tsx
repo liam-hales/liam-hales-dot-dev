@@ -30,6 +30,7 @@ const Index: FunctionComponent = (): ReactElement => {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,600;0,900;1,600;1,900&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet" />
 
         <title>{title}</title>
         <meta name="title" content={title} />

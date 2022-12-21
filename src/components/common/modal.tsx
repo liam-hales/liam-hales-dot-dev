@@ -2,7 +2,6 @@
 
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css } from '@mui/material';
-import { motion } from 'framer-motion';
 import { useScreen } from '../../hooks';
 import { BaseProps } from '../../types';
 import { BoxDirection, BoxAlignment, BoxJustify, IconId, ColourPalette, ScreenSize } from '../../enums';
@@ -39,7 +38,10 @@ const Modal: FunctionComponent<Props> = ({ isOpen, direction, alignment, justify
           padding-bottom: ${(screenSize === ScreenSize.SMALL) ? 128 : 0}px;
         `}
       >
-        <motion.div
+        <Card
+          direction={direction}
+          alignment={alignment}
+          justify={justify}
           initial={{
             y: window.innerHeight,
           }}
@@ -61,31 +63,25 @@ const Modal: FunctionComponent<Props> = ({ isOpen, direction, alignment, justify
               onClosed?.();
             }
           }}
+          css={css`
+            position: relative;
+            max-width: 418px;
+            padding: 28px;
+            margin-left: 20px;
+            margin-right: 20px;
+          `}
         >
-          <Card
-            direction={direction}
-            alignment={alignment}
-            justify={justify}
+          <IconButton
+            id={IconId.CROSS}
+            colour={ColourPalette.GREY_400}
+            onClick={onClose}
             css={css`
-              position: relative;
-              max-width: 418px;
-              padding: 28px;
-              margin-left: 20px;
-              margin-right: 20px;
+              position: absolute;
+              align-self: flex-end;
             `}
-          >
-            <IconButton
-              id={IconId.CROSS}
-              colour={ColourPalette.GREY_400}
-              onClick={onClose}
-              css={css`
-                position: absolute;
-                align-self: flex-end;
-              `}
-            />
-            {children}
-          </Card>
-        </motion.div>
+          />
+          {children}
+        </Card>
       </Box>
     </Backdrop>
   );

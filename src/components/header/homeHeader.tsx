@@ -2,7 +2,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useScroll, useTransform } from 'framer-motion';
 import { PageSlug } from '../../graphql';
 import { usePageContent } from '../../hooks';
 import { BaseProps } from '../../types';
@@ -56,25 +56,18 @@ const HomeHeader: FunctionComponent<Props> = ({ className }): ReactElement<Props
           z-index: -3;
         `}
       >
-        <motion.div
+        <Image
+          path={headerBackgroundImage.url}
+          alt="Liam Hales - Header"
           style={{
             y: backgroundY,
           }}
           css={css`
             width: 100%;
             height: 100%;
+            border-radius: 16px;
           `}
-        >
-          <Image
-            path={headerBackgroundImage.url}
-            alt="Liam Hales - Header"
-            css={css`
-              width: 100%;
-              height: 100%;
-              border-radius: 16px;
-            `}
-          />
-        </motion.div>
+        />
       </div>
       <div
         css={css`
@@ -86,7 +79,9 @@ const HomeHeader: FunctionComponent<Props> = ({ className }): ReactElement<Props
           z-index: -1;
         `}
       >
-        <motion.div
+        <Image
+          path={headerForegroundImage.url}
+          alt="Liam Hales - Header"
           style={{
             y: foregroundY,
           }}
@@ -94,16 +89,7 @@ const HomeHeader: FunctionComponent<Props> = ({ className }): ReactElement<Props
             width: 100%;
             height: 100%;
           `}
-        >
-          <Image
-            path={headerForegroundImage.url}
-            alt="Liam Hales - Header"
-            css={css`
-              width: 100%;
-              height: 100%;
-            `}
-          />
-        </motion.div>
+        />
       </div>
       <Content
         alignment={BoxAlignment.START}

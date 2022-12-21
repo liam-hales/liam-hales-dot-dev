@@ -13,7 +13,7 @@ import { Stat } from '.';
 /**
  * The `CurrentPosition` component props
  */
-type Props = BaseProps;
+type Props = BaseProps<HTMLDivElement>;
 
 /**
  * Renders the current position section for the curriculum vitae

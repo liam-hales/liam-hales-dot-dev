@@ -11,7 +11,7 @@ import { Box, Text, Title } from '../common';
 /**
  * The `BrandTypography` component props
  */
-type Props = BaseProps;
+type Props = BaseProps<HTMLDivElement>;
 
 /**
  * Renders the brand logo section for the brand page which

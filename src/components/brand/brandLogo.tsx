@@ -13,7 +13,7 @@ import { Logo } from '..';
 /**
  * The `BrandLogo` component props
  */
-type Props = BaseProps;
+type Props = BaseProps<HTMLDivElement>;
 
 /**
  * Renders the brand logo section for the brand page which

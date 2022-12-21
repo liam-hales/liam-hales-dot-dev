@@ -12,7 +12,7 @@ import { Grid, ColourCard } from '..';
 /**
  * The `BrandColourPalette` component props
  */
-type Props = BaseProps;
+type Props = BaseProps<HTMLDivElement>;
 
 /**
  * Renders the brand colour palette section for the brand page

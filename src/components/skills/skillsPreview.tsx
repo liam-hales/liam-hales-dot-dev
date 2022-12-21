@@ -12,7 +12,7 @@ import { Grid, SkillCard } from '..';
 /**
  * The `SkillsPreview` component props
  */
-type Props = BaseProps;
+type Props = BaseProps<HTMLDivElement>;
 
 /**
  * Renders the skills preview section for the curriculum vitae page

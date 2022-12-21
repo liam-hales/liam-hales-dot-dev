@@ -11,7 +11,7 @@ import { Box } from '..';
  */
 interface Props extends BaseProps {
   readonly value?: string;
-  readonly children: string;
+  readonly children: ReactElement[];
 }
 
 /**

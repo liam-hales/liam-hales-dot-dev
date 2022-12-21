@@ -11,7 +11,7 @@ import { Box, Title, TimelineEvent, Text, Timeline, Button } from '../common';
 /**
  * The `LifeTimelinePreview` component props
  */
-type Props = BaseProps;
+type Props = BaseProps<HTMLDivElement>;
 
 /**
  * Renders the life timeline preview section for the curriculum vitae

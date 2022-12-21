@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { Backdrop as MuiBackdrop, css } from '@mui/material';
 import { BaseProps } from '../../types';
 
@@ -9,6 +9,7 @@ import { BaseProps } from '../../types';
  */
 interface Props extends BaseProps {
   readonly isOpen: boolean;
+  readonly children: ReactNode;
 }
 
 /**

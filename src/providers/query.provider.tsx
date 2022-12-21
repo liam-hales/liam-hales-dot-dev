@@ -1,11 +1,13 @@
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { BaseProps } from '../types';
 
 /**
  * The `QueryProvider` component props
  */
-type Props = BaseProps;
+interface Props extends BaseProps {
+  readonly children: ReactNode;
+}
 
 /**
  * Used to wrap the `children` in the

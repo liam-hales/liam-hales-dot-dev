@@ -9,10 +9,11 @@ import { Text, Icon } from '..';
 /**
  * The `Button` component props
  */
-interface Props extends BaseProps<string> {
+interface Props extends BaseProps {
   readonly colour?: ColourPalette;
   readonly iconId?: IconId;
   readonly onClick: () => void;
+  readonly children: string;
 }
 
 /**

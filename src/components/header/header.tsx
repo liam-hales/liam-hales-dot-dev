@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css } from '@mui/material';
 import { BoxAlignment, ColourPalette, TextElement } from '../../enums';
 import { BaseProps } from '../../types';
@@ -12,6 +12,7 @@ import { Content } from '..';
  */
 interface Props extends BaseProps {
   readonly title: string;
+  readonly children: ReactNode;
 }
 
 /**

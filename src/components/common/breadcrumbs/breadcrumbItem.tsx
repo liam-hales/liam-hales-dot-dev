@@ -13,6 +13,7 @@ import { Text } from '..';
 interface Props extends BaseProps {
   readonly route: NavRoute;
   readonly isActive?: boolean;
+  readonly children: string;
 }
 
 /**

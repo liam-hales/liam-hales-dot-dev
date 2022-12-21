@@ -7,7 +7,9 @@ import { BaseProps } from '../types';
 /**
  * The `Grid` component props
  */
-type Props = BaseProps<ReactElement[], true>;
+interface Props extends BaseProps {
+  readonly children: ReactElement[];
+}
 
 /**
  * Used to render the `children` in an evenly

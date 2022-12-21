@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { PageSlug } from '../graphql';
 import { usePageQuery } from '../hooks';
 import { BaseProps } from '../types';
@@ -7,7 +7,9 @@ import { StatusHandler } from '.';
 /**
  * The `Global` component props
  */
-type Props = BaseProps;
+interface Props extends BaseProps {
+  readonly children: ReactNode;
+}
 
 /**
  * Used to fetch the global page data

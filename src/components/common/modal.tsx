@@ -10,13 +10,14 @@ import { Box, Card, IconButton, Backdrop } from '.';
 /**
  * The `Modal` component props
  */
-interface Props extends BaseProps<ReactNode, true> {
+interface Props extends BaseProps {
   readonly isOpen: boolean;
   readonly direction?: BoxDirection;
   readonly alignment?: BoxAlignment;
   readonly justify?: BoxJustify;
   readonly onClose: () => void;
   readonly onClosed?: () => void;
+  readonly children: ReactNode;
 }
 
 /**

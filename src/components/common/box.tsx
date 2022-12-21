@@ -9,12 +9,13 @@ import { BaseProps } from '../../types';
 /**
  * The `Box` component props
  */
-interface Props extends MotionProps, BaseProps<ReactNode, true> {
+interface Props extends MotionProps, BaseProps<HTMLDivElement> {
   readonly direction?: BoxDirection;
   readonly alignment?: BoxAlignment;
   readonly justify?: BoxJustify;
   readonly wrap?: boolean;
   readonly onClick?: () => void;
+  readonly children: ReactNode;
 }
 
 /**

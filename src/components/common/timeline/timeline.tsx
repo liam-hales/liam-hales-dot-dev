@@ -9,8 +9,9 @@ import { Box } from '..';
 /**
  * The `Timeline` component props
  */
-interface Props extends BaseProps<ReactElement[], true> {
+interface Props extends BaseProps {
   readonly hasTrailingConnector?: boolean;
+  readonly children: ReactElement[];
 }
 
 /**

@@ -1,12 +1,14 @@
 import { createTheme, PaletteOptions, ThemeProvider as MuiThemeProvider } from '@mui/material';
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { ColourPalette, ScreenSize } from '../enums';
 import { BaseProps } from '../types';
 
 /**
  * The `ThemeProvider` component props
  */
-type Props = BaseProps;
+interface Props extends BaseProps {
+  readonly children: ReactNode;
+}
 
 /**
  * Used to create and provide the theme for the app and wrap

@@ -9,7 +9,9 @@ import { Text } from '..';
 /**
  * The `Title` component props
  */
-type Props = BaseProps;
+interface Props extends BaseProps {
+  readonly children: string;
+}
 
 /**
  * Renders the title text followed by a trailing full stop

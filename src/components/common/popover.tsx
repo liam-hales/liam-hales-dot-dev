@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import { ClickAwayListener, Tooltip, css } from '@mui/material';
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { BaseProps } from '../../types';
 import { ColourPalette } from '../../enums';
 import { Text } from '.';
@@ -9,11 +9,12 @@ import { Text } from '.';
 /**
  * The `Popover` component props
  */
-interface Props extends BaseProps<ReactElement, true> {
+interface Props extends BaseProps {
   readonly text: string;
   readonly isOpen: boolean;
   readonly colour?: ColourPalette;
   readonly onClose: () => void;
+  readonly children: ReactNode;
 }
 
 /**

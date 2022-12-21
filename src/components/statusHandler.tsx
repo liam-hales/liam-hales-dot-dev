@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { QueryStatus } from '../enums';
 import { BaseProps } from '../types';
 import { Error } from '.';
@@ -8,6 +8,7 @@ import { Error } from '.';
  */
 interface Props extends BaseProps {
   readonly status: QueryStatus;
+  readonly children: ReactNode;
 }
 
 /**

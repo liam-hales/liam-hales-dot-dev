@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
 import { Typography, css } from '@mui/material';
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { ColourPalette, TextElement } from '../../../enums';
 import { BaseProps } from '../../../types';
 
@@ -16,6 +16,7 @@ interface Props extends BaseProps {
   readonly isMono?: boolean;
   readonly hasHoverUnderline?: boolean;
   readonly onClick?: () => void;
+  readonly children: ReactNode;
 }
 
 /**

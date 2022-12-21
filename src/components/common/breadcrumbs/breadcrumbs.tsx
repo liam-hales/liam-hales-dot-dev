@@ -9,7 +9,9 @@ import { Icon } from '..';
 /**
  * The `Breadcrumbs` component props
  */
-type Props = BaseProps;
+interface Props extends BaseProps {
+  readonly children: ReactElement[];
+}
 
 /**
  * Renders breadcrumbs with each child

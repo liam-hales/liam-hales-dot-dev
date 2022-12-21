@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css } from '@mui/material';
 import { BoxAlignment, BoxDirection, BoxJustify } from '../enums';
 import { BaseProps } from '../types';
@@ -13,6 +13,7 @@ interface Props extends BaseProps {
   readonly direction?: BoxDirection;
   readonly alignment?: BoxAlignment;
   readonly justify?: BoxJustify;
+  readonly children: ReactNode;
 }
 
 /**

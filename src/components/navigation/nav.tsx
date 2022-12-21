@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css } from '@mui/material';
 import { BrowserRouter } from 'react-router-dom';
 import { BaseProps } from '../../types';
@@ -12,7 +12,9 @@ import { Box } from '../common';
 /**
  * The `Nav` component props
  */
-type Props = BaseProps;
+interface Props extends BaseProps {
+  readonly children: ReactNode;
+}
 
 /**
  * Controls the navigation for the app and what navigation

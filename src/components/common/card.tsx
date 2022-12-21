@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css } from '@mui/material';
 import { MotionProps } from 'framer-motion';
 import { BoxAlignment, BoxDirection, BoxJustify, ColourPalette } from '../../enums';
@@ -10,11 +10,12 @@ import { Box } from '.';
 /**
  * The `Card` component props
  */
-interface Props extends MotionProps, BaseProps {
+interface Props extends MotionProps, BaseProps<HTMLDivElement> {
   readonly direction?: BoxDirection;
   readonly alignment?: BoxAlignment;
   readonly justify?: BoxJustify;
   readonly onClick?: ()=> void;
+  readonly children: ReactNode;
 }
 
 /**
@@ -26,6 +27,7 @@ interface Props extends MotionProps, BaseProps {
  */
 const Card: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
+    reference,
     className,
     direction,
     alignment,
@@ -38,6 +40,7 @@ const Card: FunctionComponent<Props> = (props): ReactElement<Props> => {
   return (
     <Box
       {...motionProps}
+      reference={reference}
       className={className}
       direction={direction}
       alignment={alignment}
@@ -46,7 +49,7 @@ const Card: FunctionComponent<Props> = (props): ReactElement<Props> => {
       css={css`
         border-radius: 10px;
         background-color: ${ColourPalette.GREY_800};
-    `}
+      `}
     >
       {children}
     </Box>

@@ -9,9 +9,10 @@ import { Text } from '..';
 /**
  * The `Tab` component props
  */
-interface Props extends BaseProps<string> {
+interface Props extends BaseProps {
   readonly value: string;
   readonly onClick: () => void;
+  readonly children: string;
 }
 
 /**

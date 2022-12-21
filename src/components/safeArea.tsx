@@ -1,13 +1,15 @@
 /** @jsxImportSource @emotion/react */
 
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css } from '@mui/material';
 import { BaseProps } from '../types';
 
 /**
  * The `SafeArea` component props
  */
-type Props = BaseProps;
+interface Props extends BaseProps {
+  readonly children: ReactNode;
+}
 
 /**
  * Used to wrap the `children` in a `div` that applies the

@@ -2,6 +2,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { PageSlug } from '../../graphql';
 import { usePageQuery } from '../../hooks';
 import {
@@ -22,13 +23,21 @@ import {
  */
 const HomeRoute: FunctionComponent = (): ReactElement => {
 
+  const { scrollYProgress } = useScroll();
   const { status } = usePageQuery({
     slug: PageSlug.HOME,
   });
 
+  const headerY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
+
   return (
     <StatusHandler status={status}>
-      <HomeHeader />
+      <motion.div style={{
+        y: headerY,
+      }}
+      >
+        <HomeHeader />
+      </motion.div>
       <Content>
         <AboutMe css={css`
           padding-top: 60px;

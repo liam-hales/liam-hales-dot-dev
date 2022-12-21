@@ -2,23 +2,13 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { PageSlug } from '../../graphql';
 import { usePageContent } from '../../hooks';
 import { BaseProps } from '../../types';
 import { BoxAlignment, BoxJustify, TextElement } from '../../enums';
 import { Image, Typewriter, Text, Box } from '../common';
 import { Content } from '..';
-
-/**
- * The image CSS styles for
- * the header images
- */
-const imageCss = css`
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  padding: inherit;
-`;
 
 /**
  * The `HomeHeader` component props
@@ -34,13 +24,17 @@ type Props = BaseProps;
  */
 const HomeHeader: FunctionComponent<Props> = ({ className }): ReactElement<Props> => {
 
-  const { headerImage, headerOverlayImage } = usePageContent({
+  const { scrollYProgress } = useScroll();
+  const { headerForegroundImage, headerBackgroundImage } = usePageContent({
     slug: PageSlug.HOME,
   });
 
   const { shayanRastegarUrl } = usePageContent({
     slug: PageSlug.GLOBAL,
   });
+
+  const foregroundY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
+  const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '46%']);
 
   return (
     <Content
@@ -52,22 +46,65 @@ const HomeHeader: FunctionComponent<Props> = ({ className }): ReactElement<Props
         padding: 0px;
       `}
     >
-      <Image
-        path={headerImage.url}
-        alt="Liam Hales - Header"
+      <div
         css={css`
-          ${imageCss}
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          border-radius: 16px;
           z-index: -3;
         `}
-      />
-      <Image
-        path={headerOverlayImage.url}
-        alt="Liam Hales - Header"
+      >
+        <motion.div
+          style={{
+            y: backgroundY,
+          }}
+          css={css`
+            width: 100%;
+            height: 100%;
+          `}
+        >
+          <Image
+            path={headerBackgroundImage.url}
+            alt="Liam Hales - Header"
+            css={css`
+              width: 100%;
+              height: 100%;
+              border-radius: 16px;
+            `}
+          />
+        </motion.div>
+      </div>
+      <div
         css={css`
-          ${imageCss}
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          border-radius: 16px;
           z-index: -1;
         `}
-      />
+      >
+        <motion.div
+          style={{
+            y: foregroundY,
+          }}
+          css={css`
+            width: 100%;
+            height: 100%;
+          `}
+        >
+          <Image
+            path={headerForegroundImage.url}
+            alt="Liam Hales - Header"
+            css={css`
+              width: 100%;
+              height: 100%;
+            `}
+          />
+        </motion.div>
+      </div>
       <Content
         alignment={BoxAlignment.START}
         justify={BoxJustify.END}
@@ -90,8 +127,8 @@ const HomeHeader: FunctionComponent<Props> = ({ className }): ReactElement<Props
         <Box
           alignment={BoxAlignment.START}
           css={css`
-            padding-top: 22px;
-            padding-bottom: 74px;
+            padding-top: 28px;
+            padding-bottom: 68px;
             padding-left: 6px;
           `}
         >

@@ -3,7 +3,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
 import dayjs from 'dayjs';
-import { BoxAlignment, BoxDirection, ColourPalette, ImageRoundness, ScreenSize } from '../enums';
+import { BoxAlignment, BoxDirection, ColourPalette, ScreenSize } from '../enums';
 import { PageSlug } from '../graphql';
 import { usePageContent, useScreen } from '../hooks';
 import { BaseProps } from '../types';
@@ -49,10 +49,10 @@ const AboutMe: FunctionComponent<Props> = ({ className }): ReactElement<Props> =
           <Image
             path={meImage.url}
             alt="Liam Hales"
-            roundness={ImageRoundness.CIRCLE}
             css={css`
               width: 116px;
               height: 116px;
+              border-radius: 50%;
               margin-top: 16px;
               margin-right: 40px;
               flex-shrink: 0;

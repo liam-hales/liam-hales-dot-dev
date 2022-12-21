@@ -2,7 +2,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { ImageRoundness, ColourPalette, IconId } from '../../enums';
+import { ColourPalette, IconId } from '../../enums';
 import { BaseProps } from '../../types';
 import { Button, Image, Modal, Text } from '../common';
 
@@ -39,7 +39,6 @@ const SkillModal: FunctionComponent<Props> = ({ isOpen, name, type, description,
           <Image
             path={imageUrl}
             alt={name}
-            roundness={ImageRoundness.NONE}
             css={css`
               width: 68px;
               height: 68px;

@@ -2,19 +2,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { ImageRoundness } from '../../enums';
 import { BaseProps } from '../../types';
-import { Box } from '.';
-
-/**
- * The image border radius map for the
- * dfferent `ImageRoundness` values
- */
-const borderRadiusMap: Record<ImageRoundness, string> = {
-  [ImageRoundness.NONE]: '0px',
-  [ImageRoundness.ROUNDED]: '16px',
-  [ImageRoundness.CIRCLE]: '50%',
-};
 
 /**
  * The `Image` component props
@@ -22,7 +10,6 @@ const borderRadiusMap: Record<ImageRoundness, string> = {
 interface Props extends BaseProps {
   readonly path: string;
   readonly alt: string;
-  readonly roundness?: ImageRoundness;
 }
 
 /**
@@ -37,22 +24,17 @@ const Image: FunctionComponent<Props> = (props): ReactElement<Props> => {
     className,
     path,
     alt,
-    roundness = ImageRoundness.ROUNDED,
   } = props;
 
   return (
-    <Box className={className}>
-      <img
-        src={path}
-        alt={alt}
-        css={css`
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          border-radius: ${borderRadiusMap[roundness]};
-        `}
-      />
-    </Box>
+    <img
+      className={className}
+      src={path}
+      alt={alt}
+      css={css`
+        object-fit: cover;
+      `}
+    />
   );
 };
 

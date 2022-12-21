@@ -132,16 +132,6 @@ export enum TextElement {
 }
 
 /**
- * The `Image` component style used to determine
- * the corner roundness of the image rendered
- */
-export enum ImageRoundness {
-  NONE = 'NONE',
-  ROUNDED = 'ROUNDED',
-  CIRCLE = 'CIRCLE',
-}
-
-/**
  * Describes each individual section of the logo
  * used for the `Logo` component
  */

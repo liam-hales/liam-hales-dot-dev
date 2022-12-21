@@ -2,7 +2,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { BoxAlignment, BoxDirection, BoxJustify, ImageRoundness, ColourPalette } from '../../enums';
+import { BoxAlignment, BoxDirection, BoxJustify, ColourPalette } from '../../enums';
 import { BaseProps } from '../../types';
 import { Box, Card, Image, Text } from '../common';
 
@@ -56,7 +56,6 @@ const SkillCard: FunctionComponent<Props> = ({ className, name, type, imageUrl, 
           <Image
             path={imageUrl}
             alt={name}
-            roundness={ImageRoundness.NONE}
             css={css`
               width: 46px;
               height: 46px;

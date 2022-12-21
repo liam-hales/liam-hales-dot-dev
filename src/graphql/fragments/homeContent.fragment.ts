@@ -6,10 +6,10 @@ import { gql } from 'graphql-request';
  */
 const homeContentFragment = gql`
   fragment HomeContentFields on HomeContent {
-    headerImage {
+    headerForegroundImage {
       ...AssetFields
     }
-    headerOverlayImage {
+    headerBackgroundImage {
       ...AssetFields
     }
     aboutMeText

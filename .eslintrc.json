@@ -18,8 +18,6 @@
     "plugin:react/jsx-runtime"
   ],
   "rules": {
-
-    // Disabled rules
     "max-len": "off",
     "padded-blocks": "off",
     "arrow-body-style": "off",
@@ -31,7 +29,6 @@
     "react/require-default-props": "off",
     "react/no-array-index-key": "off",
     
-    // Overridden rules
     "object-shorthand": ["error", "never"],
     "object-curly-newline": [
       "error",
@@ -130,11 +127,14 @@
       }
     ],
     "react/jsx-boolean-value": ["error", "always"],
-    "react/function-component-definition": [
+    "react/jsx-props-no-spreading": [
       "error",
       {
-        "namedComponents": "arrow-function",
-        "unnamedComponents": "arrow-function"
+        "exceptions": [
+          "motion.div",
+          "motion.img",
+          "Box"
+        ]
       }
     ],
     "react/jsx-no-useless-fragment": [
@@ -143,22 +143,17 @@
         "allowExpressions": true
       }
     ],
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
     "react/no-unknown-property": [
       "error",
       {
         "ignore": ["css"]
-      }
-    ],
-    "jsx-a11y/no-static-element-interactions": [
-      "error",
-      {
-        "allowExpressionValues": true
-      }
-    ],
-    "jsx-a11y/no-noninteractive-tabindex": [
-      "error",
-      {
-        "allowExpressionValues": true
       }
     ]
   }

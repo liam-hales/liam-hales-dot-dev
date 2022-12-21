@@ -2,13 +2,14 @@
 
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css } from '@mui/material';
+import { motion, MotionProps } from 'framer-motion';
 import { BoxAlignment, BoxDirection, BoxJustify } from '../../enums';
 import { BaseProps } from '../../types';
 
 /**
  * The `Box` component props
  */
-interface Props extends BaseProps<ReactNode, true> {
+interface Props extends MotionProps, BaseProps<ReactNode, true> {
   readonly direction?: BoxDirection;
   readonly alignment?: BoxAlignment;
   readonly justify?: BoxJustify;
@@ -33,16 +34,15 @@ const Box: FunctionComponent<Props> = (props): ReactElement<Props> => {
     wrap = false,
     onClick,
     children,
+    ...motionProps
   } = props;
 
   return (
-    <div
+    <motion.div
+      {...motionProps}
       ref={reference}
       className={className}
       onClick={onClick}
-      onKeyDown={onClick}
-      role={(onClick != null) ? 'button' : undefined}
-      tabIndex={(onClick != null) ? 0 : undefined}
       css={css`
         display: flex;
         flex-direction: ${direction};
@@ -53,7 +53,7 @@ const Box: FunctionComponent<Props> = (props): ReactElement<Props> => {
       `}
     >
       {children}
-    </div>
+    </motion.div>
   );
 };
 

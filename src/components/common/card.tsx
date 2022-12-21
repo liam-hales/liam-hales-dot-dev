@@ -2,6 +2,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
+import { MotionProps } from 'framer-motion';
 import { BoxAlignment, BoxDirection, BoxJustify, ColourPalette } from '../../enums';
 import { BaseProps } from '../../types';
 import { Box } from '.';
@@ -9,7 +10,7 @@ import { Box } from '.';
 /**
  * The `Card` component props
  */
-interface Props extends BaseProps {
+interface Props extends MotionProps, BaseProps {
   readonly direction?: BoxDirection;
   readonly alignment?: BoxAlignment;
   readonly justify?: BoxJustify;
@@ -23,9 +24,20 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `Card` component
  */
-const Card: FunctionComponent<Props> = ({ className, direction, alignment, justify, onClick, children }): ReactElement<Props> => {
+const Card: FunctionComponent<Props> = (props): ReactElement<Props> => {
+  const {
+    className,
+    direction,
+    alignment,
+    justify,
+    onClick,
+    children,
+    ...motionProps
+  } = props;
+
   return (
     <Box
+      {...motionProps}
       className={className}
       direction={direction}
       alignment={alignment}

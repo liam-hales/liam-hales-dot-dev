@@ -51,7 +51,7 @@ const SkillsPreview: FunctionComponent<Props> = ({ reference, className }): Reac
         padding-top: 46px;
         mask-image: linear-gradient(
           to bottom,
-          black 36%,
+          black 46%,
           transparent 100%
         );
       `}

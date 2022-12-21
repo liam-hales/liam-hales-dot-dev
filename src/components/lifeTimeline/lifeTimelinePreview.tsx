@@ -50,8 +50,8 @@ const LifeTimelinePreview: FunctionComponent<Props> = ({ reference, className })
           padding-top: 46px;
           mask-image: linear-gradient(
             to bottom,
-            black 36%,
-            transparent 100%
+            black 50%,
+            transparent 88%
           );
         `}
       >

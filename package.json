@@ -41,6 +41,7 @@
     "graphql-request": "^5.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-markdown": "^8.0.4",
     "react-router-dom": "^6.3.0",
     "typewriter-effect": "^2.19.0"
   },

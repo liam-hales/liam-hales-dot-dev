@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 
 import { FunctionComponent, ReactElement } from 'react';
-import { IconButton as MuiIconButton, css } from '@mui/material';
+import { css } from '@mui/material';
 import { ColourPalette, IconId, SVGIconId } from '../../../enums';
 import { BaseProps } from '../../../types';
-import { Icon } from '..';
+import { Box, Icon } from '..';
 
 /**
  * The `IconButton` component props
@@ -31,14 +31,9 @@ const IconButton: FunctionComponent<Props> = (props): ReactElement<Props> => {
   } = props;
 
   return (
-    <MuiIconButton
+    <Box
       className={className}
-      color={colour}
-      size="medium"
       onClick={onClick}
-      css={css`
-        margin: -8px;
-      `}
     >
       <Icon
         id={id}
@@ -49,7 +44,7 @@ const IconButton: FunctionComponent<Props> = (props): ReactElement<Props> => {
           font-size: 20px;
         `}
       />
-    </MuiIconButton>
+    </Box>
   );
 };
 

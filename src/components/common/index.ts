@@ -18,6 +18,7 @@ import BreadcrumbItem from './breadcrumbs/breadcrumbItem';
 import Modal from './modal';
 import Popover from './popover';
 import Backdrop from './backdrop';
+import Markdown from './markdown';
 
 export {
   Box,
@@ -40,4 +41,5 @@ export {
   Modal,
   Popover,
   Backdrop,
+  Markdown,
 };

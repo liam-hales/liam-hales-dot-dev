@@ -140,3 +140,12 @@ export enum LogoSection {
   REVERSE_LETTER_L = 'REVERSE_LETTERL',
   BAR = 'BAR',
 }
+
+/**
+ * Describes the code languages supported by the
+ * `CodeSnippet` component for syntax highlighting
+ */
+export enum CodeLanguage {
+  TS = 'ts',
+  TSX = 'tsx',
+}

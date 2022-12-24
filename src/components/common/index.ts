@@ -19,6 +19,7 @@ import Modal from './modal';
 import Popover from './popover';
 import Backdrop from './backdrop';
 import Markdown from './markdown';
+import CodeSnippet from './code/codeSnippet';
 
 export {
   Box,
@@ -42,4 +43,5 @@ export {
   Popover,
   Backdrop,
   Markdown,
+  CodeSnippet,
 };

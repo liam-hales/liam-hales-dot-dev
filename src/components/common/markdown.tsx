@@ -5,8 +5,8 @@ import { FunctionComponent, ReactElement } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { css } from '@mui/material';
 import { BaseProps } from '../../types';
-import { BoxAlignment, ColourPalette } from '../../enums';
-import { Box, Text } from '.';
+import { BoxAlignment, CodeLanguage, ColourPalette } from '../../enums';
+import { Box, Text, CodeSnippet } from '.';
 
 /**
  * The `Markdown` component props
@@ -24,9 +24,11 @@ interface Props extends BaseProps {
  */
 const Markdown: FunctionComponent<Props> = ({ className, children }): ReactElement<Props> => {
   return (
-    <Box alignment={BoxAlignment.START}>
+    <Box
+      className={className}
+      alignment={BoxAlignment.START}
+    >
       <ReactMarkdown
-        className={className}
         components={{
           h1: ({ children }) => {
             return (
@@ -79,6 +81,33 @@ const Markdown: FunctionComponent<Props> = ({ className, children }): ReactEleme
               <Text isItalic={true}>
                 {children}
               </Text>
+            );
+          },
+          code: ({ className, children }) => {
+            // Get the code langauge from the class name and see if it matches
+            // one of the code langauges from the `CodeLanguage` enum
+            const language = Object
+              .values(CodeLanguage)
+              .find((value) => value === className?.replace('language-', ''));
+
+            return (
+              <CodeSnippet
+                language={language}
+                css={css`
+                  width: 100%;
+                `}
+              >
+                {`${children}`}
+              </CodeSnippet>
+            );
+          },
+          // Renders the children within a fragment in
+          // order to remove the `<pre>` tags
+          pre: ({ children }) => {
+            return (
+              <>
+                {children}
+              </>
             );
           },
         }}

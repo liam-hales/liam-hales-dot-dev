@@ -4,6 +4,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { css } from '@mui/material';
+import rehypeRaw from 'rehype-raw';
 import { BaseProps } from '../../types';
 import { BoxAlignment, CodeLanguage, ColourPalette } from '../../enums';
 import { Box, Text, CodeSnippet } from '.';
@@ -29,6 +30,7 @@ const Markdown: FunctionComponent<Props> = ({ className, children }): ReactEleme
       alignment={BoxAlignment.START}
     >
       <ReactMarkdown
+        rehypePlugins={[rehypeRaw]}
         components={{
           h1: ({ children }) => {
             return (

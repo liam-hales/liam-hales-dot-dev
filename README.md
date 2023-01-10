@@ -38,8 +38,6 @@ v8.19.1
 API_URL = 'https://${region}.graphcms.com/v2/${id}/master'
 ```
 
-3. Follow the steps in the [Building Public Assets](#building-public-assets) section
-
 <br/>
 
 # Building Public Assets
@@ -56,10 +54,12 @@ $ yarn build-images
 
 # Starting Local Server
 
+1. Follow the steps in the [First Steps](#first-steps) section
+2. Follow the steps in the [Building Public Assets](#building-public-assets) section (optional)
+
 ### Development
 
-1. Follow the steps in the [First Steps](#first-steps) section
-2. Run `yarn start:dev` to start the development server
+1. Run `yarn start:dev` to start the development server
 
 ```sh
 $ yarn start:dev
@@ -67,14 +67,31 @@ $ yarn start:dev
 
 ### Production
 
-1. Follow the steps in the [First Steps](#first-steps) section
-2. Run `yarn build` to build the app for production
-3. Run `yarn start:prod` to start the production server
+1. Run `yarn build` to build the app for production
+2. Run `yarn start:prod` to start the production server
 
 ```sh
 $ yarn build
 $ yarn start:prod
 ```
+
+<br/>
+
+# Deploying to Production
+
+The app is hosted on [Vercel] and is built and deployed using the [Vercel CLI].
+
+1. Follow the steps in the [First Steps](#first-steps) section
+2. Follow the steps in the [Building Public Assets](#building-public-assets) section (optional)
+3. Run `yarn vercel:build` to build the app for deployment
+4. Run `yarn vercel:deploy` to deploy the build to Vercel
+
+```sh
+$ yarn vercel:build
+$ yarn vercel:deploy
+```
+
+> _**NOTE:** `yarn vercel:build` uses `yarn build` under the hood to build the Next.js app_
 
 <br/>
 
@@ -94,3 +111,4 @@ $ yarn lint
 [Yarn]: https://yarnpkg.com
 [Corepack]: https://nodejs.org/api/corepack.html
 [Vercel]: https://vercel.com
+[Vercel CLI]: https://vercel.com/docs/cli

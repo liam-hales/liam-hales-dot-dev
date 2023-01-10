@@ -17,11 +17,14 @@
   "packageManager": "yarn@3.2.4",
   "scripts": {
     "start:dev": "next dev",
+    "start:prod": "next start",
     "build": "next build",
+    "vercel:build": "vercel build --prod --yes",
+    "vercel:deploy": "vercel deploy --prebuilt --prod --yes",
     "lint": "next lint",
     "deps": "ncu",
     "build-images": "ts-node ./scripts/buildImages.script.ts",
-    "cleanup": "rm -rf .next/"
+    "cleanup": "rm -rf .next/ && rm -rf .vercel/output/"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -67,7 +70,8 @@
     "sharp": "^0.31.0",
     "ts-node": "^10.8.2",
     "typescript": "^4.4.2",
-    "typescript-styled-plugin": "^0.18.2"
+    "typescript-styled-plugin": "^0.18.2",
+    "vercel": "^28.11.0"
   },
   "browserslist": {
     "production": [

@@ -11,7 +11,8 @@ node_modules/
 # Logs
 *.log*
 
-# Next.js
+# Vercel & Next.js
+.vercel/
 .next/
 
 # TypeScript
@@ -22,3 +23,4 @@ next-env.d.ts
 public/index.html
 public/*.ico
 public/icons/*
+.vercel

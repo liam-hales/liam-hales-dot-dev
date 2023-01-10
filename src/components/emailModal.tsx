@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@mui/material';
 import { BoxAlignment, BoxDirection, BoxJustify, ColourPalette, IconId } from '../enums';
-import { PageSlug } from '../graphql';
-import { usePageContent } from '../hooks';
 import { BaseProps } from '../types';
 import { Box, Modal, Button, Popover, Title, Text } from './common';
 
@@ -12,6 +12,8 @@ import { Box, Modal, Button, Popover, Title, Text } from './common';
  * The `EmailModal` component props
  */
 interface Props extends BaseProps {
+  readonly text: string;
+  readonly email: string;
   readonly isOpen: boolean;
   readonly onClose: () => void;
 }
@@ -23,14 +25,10 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `EmailModal` component
  */
-const EmailModal: FunctionComponent<Props> = ({ isOpen, onClose }): ReactElement<Props> => {
+const EmailModal: FunctionComponent<Props> = ({ text, email, isOpen, onClose }): ReactElement<Props> => {
 
   const [showEmail, setShowEmail] = useState<boolean>(false);
   const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
-
-  const { email, emailText } = usePageContent({
-    slug: PageSlug.GLOBAL,
-  });
 
   return (
     <Modal
@@ -49,7 +47,7 @@ const EmailModal: FunctionComponent<Props> = ({ isOpen, onClose }): ReactElement
           padding-bottom: 28px;
         `}
       >
-        {emailText}
+        {text}
       </Text>
       {
         (showEmail === true) && (

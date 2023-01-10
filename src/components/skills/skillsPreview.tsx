@@ -1,10 +1,13 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
+import Link from 'next/link';
 import { BoxAlignment, NavRoute, ColourPalette, IconId, ScreenSize } from '../../enums';
-import { PageSlug } from '../../graphql';
-import { usePageContent, useRouter, useScreen } from '../../hooks';
+import { Skill } from '../../graphql';
+import { useScreen } from '../../hooks';
 import { BaseProps } from '../../types';
 import { Box, Button, Text, Title } from '../common';
 import { Grid, SkillCard } from '..';
@@ -12,23 +15,21 @@ import { Grid, SkillCard } from '..';
 /**
  * The `SkillsPreview` component props
  */
-type Props = BaseProps<HTMLDivElement>;
+interface Props extends BaseProps<HTMLDivElement> {
+  readonly text: string;
+  readonly skills: Skill[];
+}
 
 /**
- * Renders the skills preview section for the curriculum vitae page
- * which is rendered within the `CurriculumVitaeRoute` component
+ * Renders the skills preview section for the CV page
+ * which is rendered within the `CVRoute` component
  *
  * @param props The component props
  * @returns The `SkillsPreview` component
  */
-const SkillsPreview: FunctionComponent<Props> = ({ reference, className }): ReactElement<Props> => {
+const SkillsPreview: FunctionComponent<Props> = ({ reference, className, text, skills }): ReactElement<Props> => {
 
-  const { goTo } = useRouter();
   const { screenSize } = useScreen();
-  const { skillsText, skills } = usePageContent({
-    slug: PageSlug.CV,
-  });
-
   return (
     <Box
       reference={reference}
@@ -44,7 +45,7 @@ const SkillsPreview: FunctionComponent<Props> = ({ reference, className }): Reac
           padding-top: 16px;
         `}
       >
-        {skillsText}
+        {text}
       </Text>
       <Grid css={css`
         width: 100%;
@@ -73,16 +74,19 @@ const SkillsPreview: FunctionComponent<Props> = ({ reference, className }): Reac
           })
         }
       </Grid>
-      <Button
-        iconId={IconId.ARROW_RIGHT}
-        onClick={() => goTo(NavRoute.SKILLS)}
+      <Link
+        href={NavRoute.SKILLS}
+        passHref={true}
         css={css`
           margin-top: ${(screenSize === ScreenSize.SMALL) ? -26 : 10}px;
           align-self: center;
+          text-decoration: none;
         `}
       >
-        See all skills
-      </Button>
+        <Button iconId={IconId.ARROW_RIGHT}>
+          See all skills
+        </Button>
+      </Link>
     </Box>
   );
 };

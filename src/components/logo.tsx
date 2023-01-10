@@ -1,5 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@mui/material';
 import { motion, Transition } from 'framer-motion';

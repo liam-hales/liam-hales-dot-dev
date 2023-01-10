@@ -1,5 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
 import { BoxDirection, ColourPalette } from '../enums';

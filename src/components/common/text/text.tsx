@@ -1,9 +1,12 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { Typography, css } from '@mui/material';
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { ColourPalette, TextElement } from '../../../enums';
 import { BaseProps } from '../../../types';
+import { firaCode } from '../../../fonts';
 
 /**
  * The `Text` component props
@@ -42,7 +45,7 @@ const Text: FunctionComponent<Props> = (props): ReactElement<Props> => {
   return (
     <Typography
       className={className}
-      variant={element}
+      component={element}
       onClick={onClick}
       css={css`
         display: inline;
@@ -55,7 +58,7 @@ const Text: FunctionComponent<Props> = (props): ReactElement<Props> => {
         cursor: ${(onClick != null) ? 'pointer' : 'unset'};
 
         ${(isMono === true) && css`
-          font-family: 'Fira Code', monospace;
+          font-family: ${firaCode.style.fontFamily};
         `}
         
         ${(hasHoverUnderline === true) && css`

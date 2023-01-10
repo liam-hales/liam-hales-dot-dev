@@ -1,5 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement } from 'react';
 import { css, keyframes } from '@mui/material';
 import TypewriterEffect, { TypewriterClass } from 'typewriter-effect';

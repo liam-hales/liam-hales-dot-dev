@@ -1,7 +1,10 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
+import Link from 'next/link';
 import { ColourPalette, IconId } from '../../enums';
 import { BaseProps } from '../../types';
 import { Button, Image, Modal, Text } from '../common';
@@ -67,12 +70,18 @@ const SkillModal: FunctionComponent<Props> = ({ isOpen, name, type, description,
       >
         {description}
       </Text>
-      <Button
-        iconId={IconId.ARROW_RIGHT_SQUARE}
-        onClick={() => window.open(url, '_blank')}
+      <Link
+        href={url}
+        target="_blank"
+        passHref={true}
+        css={css`
+          text-decoration: none;
+        `}
       >
-        Visit website
-      </Button>
+        <Button iconId={IconId.ARROW_RIGHT_SQUARE}>
+          Visit website
+        </Button>
+      </Link>
     </Modal>
   );
 };

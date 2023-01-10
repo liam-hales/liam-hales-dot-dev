@@ -1,17 +1,20 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
+import Link from 'next/link';
 import { NavRoute, ColourPalette, IconId } from '../enums';
-import { PageSlug } from '../graphql';
-import { usePageContent, useRouter } from '../hooks';
 import { BaseProps } from '../types';
 import { Box, Button, Text, Title } from './common';
 
 /**
  * The `StillInterested` component props
  */
-type Props = BaseProps;
+interface Props extends BaseProps {
+  readonly text: string;
+}
 
 /**
  * Renders the still interested section for the home page which
@@ -20,13 +23,7 @@ type Props = BaseProps;
  * @param props The component props
  * @returns The `StillInterested` component
  */
-const StillInterested: FunctionComponent<Props> = ({ className }): ReactElement<Props> => {
-
-  const { goTo } = useRouter();
-  const { stillInterestedText } = usePageContent({
-    slug: PageSlug.HOME,
-  });
-
+const StillInterested: FunctionComponent<Props> = ({ className, text }): ReactElement<Props> => {
   return (
     <Box className={className}>
       <Title>
@@ -41,14 +38,19 @@ const StillInterested: FunctionComponent<Props> = ({ className }): ReactElement<
           text-align: center;
         `}
       >
-        {stillInterestedText}
+        {text}
       </Text>
-      <Button
-        iconId={IconId.DOCUMENT}
-        onClick={() => goTo(NavRoute.CV)}
+      <Link
+        href={NavRoute.CV}
+        passHref={true}
+        css={css`
+          text-decoration: none;
+        `}
       >
-        Curriculum Vitae
-      </Button>
+        <Button iconId={IconId.DOCUMENT}>
+          Curriculum Vitae
+        </Button>
+      </Link>
     </Box>
   );
 };

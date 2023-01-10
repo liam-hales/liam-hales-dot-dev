@@ -1,5 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css } from '@mui/material';
 import { BaseProps } from '../types';

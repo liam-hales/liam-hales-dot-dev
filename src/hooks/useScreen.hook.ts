@@ -1,12 +1,14 @@
-import { useMediaQuery, useTheme } from '@mui/material';
+'use client';
+
 import { RefObject } from 'react';
+import { useMediaQuery, useTheme } from '@mui/material';
 import { ScreenSize } from '../enums';
 
 /**
  * The `useScreen` hook response
  */
 interface UseScreenResponse {
-  readonly screenSize: ScreenSize;
+  readonly screenSize?: ScreenSize;
 
   /**
    * Scrolls to a HTML element using
@@ -38,6 +40,7 @@ const useScreen = (): UseScreenResponse => {
 
   const small = useMediaQuery(breakpoints.only(ScreenSize.SMALL));
   const medium = useMediaQuery(breakpoints.only(ScreenSize.MEDIUM));
+  const large = useMediaQuery(breakpoints.only(ScreenSize.LARGE));
 
   /**
    * Scrolls to a HTML element using
@@ -73,28 +76,30 @@ const useScreen = (): UseScreenResponse => {
     });
   };
 
-  // Define the deafult response with
-  // the default screen size set to large
-  const defaultResponse: UseScreenResponse = {
-    screenSize: ScreenSize.LARGE,
-    scrollTo: scrollTo,
-  };
-
   if (small === true) {
     return {
-      ...defaultResponse,
+      scrollTo: scrollTo,
       screenSize: ScreenSize.SMALL,
     };
   }
 
   if (medium === true) {
     return {
-      ...defaultResponse,
+      scrollTo: scrollTo,
       screenSize: ScreenSize.MEDIUM,
     };
   }
 
-  return defaultResponse;
+  if (large === true) {
+    return {
+      scrollTo: scrollTo,
+      screenSize: ScreenSize.LARGE,
+    };
+  }
+
+  return {
+    scrollTo: scrollTo,
+  };
 };
 
 export default useScreen;

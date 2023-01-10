@@ -1,4 +1,4 @@
-import { ReactNode, RefObject } from 'react';
+import { ReactElement, RefObject } from 'react';
 import { ColourPalette, QueryStatus, ScreenSize } from './enums';
 
 /**
@@ -49,6 +49,14 @@ declare module '@mui/material' {
 }
 
 /**
+ * Like `FunctionComponent from `react` but for `async`
+ * server components with a `Promise` return typr
+ */
+export interface ServerComponent<P extends Partial<Record<keyof P, unknown>> = never> {
+  (props: P): Promise<ReactElement<P>> | Promise<ReactElement>;
+}
+
+/**
  * The props that all component
  * props should `extends`.
  *
@@ -57,6 +65,15 @@ declare module '@mui/material' {
 export interface BaseProps<T extends HTMLElement = HTMLElement> {
   readonly reference?: RefObject<T>;
   readonly className?: string;
+}
+
+/**
+ * Describes the props for a Next.js page
+ * component exported from a route `page.tsx`
+ */
+export interface PageProps extends BaseProps {
+  readonly params?: Partial<Record<string, string>>;
+  readonly searchParams?: Partial<Record<string, string>>;
 }
 
 /**

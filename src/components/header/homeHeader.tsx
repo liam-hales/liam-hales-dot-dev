@@ -1,10 +1,12 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
 import { useScroll, useTransform } from 'framer-motion';
-import { PageSlug } from '../../graphql';
-import { usePageContent } from '../../hooks';
+import Link from 'next/link';
+import { Asset } from '../../graphql';
 import { BaseProps } from '../../types';
 import { BoxAlignment, BoxJustify, TextElement } from '../../enums';
 import { Image, Typewriter, Text, Box } from '../common';
@@ -13,7 +15,11 @@ import { Content } from '..';
 /**
  * The `HomeHeader` component props
  */
-type Props = BaseProps;
+interface Props extends BaseProps {
+  readonly foregroundImage: Asset;
+  readonly backgroundImage: Asset;
+  readonly shayanRastegarUrl: string;
+}
 
 /**
  * Renders the header used for the home page which
@@ -22,16 +28,9 @@ type Props = BaseProps;
  * @param props The component props
  * @returns The `HomeHeader` component
  */
-const HomeHeader: FunctionComponent<Props> = ({ className }): ReactElement<Props> => {
+const HomeHeader: FunctionComponent<Props> = ({ className, foregroundImage, backgroundImage, shayanRastegarUrl }): ReactElement<Props> => {
 
   const { scrollYProgress } = useScroll();
-  const { headerForegroundImage, headerBackgroundImage } = usePageContent({
-    slug: PageSlug.HOME,
-  });
-
-  const { shayanRastegarUrl } = usePageContent({
-    slug: PageSlug.GLOBAL,
-  });
 
   const foregroundY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '46%']);
@@ -57,7 +56,7 @@ const HomeHeader: FunctionComponent<Props> = ({ className }): ReactElement<Props
         `}
       >
         <Image
-          path={headerBackgroundImage.url}
+          path={backgroundImage.url}
           alt="Liam Hales - Header"
           style={{
             y: backgroundY,
@@ -80,7 +79,7 @@ const HomeHeader: FunctionComponent<Props> = ({ className }): ReactElement<Props
         `}
       >
         <Image
-          path={headerForegroundImage.url}
+          path={foregroundImage.url}
           alt="Liam Hales - Header"
           style={{
             y: foregroundY,
@@ -120,7 +119,7 @@ const HomeHeader: FunctionComponent<Props> = ({ className }): ReactElement<Props
         >
           <Text
             isBold={true}
-            element={TextElement.H2}
+            element={TextElement.SPAN}
             css={css`
               height: 140px;
               font-size: clamp(28px, 7vw, 42px);
@@ -147,22 +146,33 @@ const HomeHeader: FunctionComponent<Props> = ({ className }): ReactElement<Props
             />
           </Text>
         </Box>
-        <Text css={css`
-          font-size: 11px;
-          align-self: flex-end;
-        `}
+        <Text
+          element={TextElement.SPAN}
+          css={css`
+            font-size: 11px;
+            align-self: flex-end;
+          `}
         >
           Captured by
           {' '}
-          <Text
-            isBold={true}
-            onClick={() => window.open(shayanRastegarUrl, '_blank')}
+          <Link
+            href={shayanRastegarUrl}
+            target="_blank"
+            passHref={true}
             css={css`
-              font-size: 11px;
+              text-decoration: none;
             `}
           >
-            Shayan Rastegar
-          </Text>
+            <Text
+              isBold={true}
+              element={TextElement.SPAN}
+              css={css`
+              font-size: 11px;
+            `}
+            >
+              Shayan Rastegar
+            </Text>
+          </Link>
         </Text>
       </Content>
     </Content>

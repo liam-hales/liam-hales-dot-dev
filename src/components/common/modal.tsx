@@ -1,10 +1,12 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css } from '@mui/material';
-import { useScreen } from '../../hooks';
+import { useRender, useScreen } from '../../hooks';
 import { BaseProps } from '../../types';
-import { BoxDirection, BoxAlignment, BoxJustify, IconId, ColourPalette, ScreenSize } from '../../enums';
+import { BoxDirection, BoxAlignment, BoxJustify, IconId, ColourPalette, ScreenSize, RenderType } from '../../enums';
 import { Box, Card, IconButton, Backdrop } from '.';
 
 /**
@@ -30,6 +32,12 @@ interface Props extends BaseProps {
 const Modal: FunctionComponent<Props> = ({ isOpen, direction, alignment, justify, onClose, onClosed, children }): ReactElement<Props> => {
 
   const { screenSize } = useScreen();
+  const { renderType } = useRender();
+
+  const windowWeight = (renderType === RenderType.CLIENT_SIDE)
+    ? window.innerHeight
+    : 0;
+
   return (
     <Backdrop isOpen={isOpen}>
       <Box
@@ -44,10 +52,10 @@ const Modal: FunctionComponent<Props> = ({ isOpen, direction, alignment, justify
           alignment={alignment}
           justify={justify}
           initial={{
-            y: window.innerHeight,
+            y: windowWeight,
           }}
           animate={{
-            y: (isOpen === true) ? 0 : window.innerHeight,
+            y: (isOpen === true) ? 0 : windowWeight,
           }}
           transition={{
             y: {

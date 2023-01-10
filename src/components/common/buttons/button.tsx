@@ -1,5 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement } from 'react';
 import { Button as MuiButton, css } from '@mui/material';
 import { BaseProps } from '../../../types';
@@ -12,7 +14,7 @@ import { Text, Icon } from '..';
 interface Props extends BaseProps {
   readonly colour?: ColourPalette;
   readonly iconId?: IconId;
-  readonly onClick: () => void;
+  readonly onClick?: () => void;
   readonly children: string;
 }
 

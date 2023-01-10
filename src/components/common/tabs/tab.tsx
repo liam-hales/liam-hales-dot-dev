@@ -1,7 +1,10 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement } from 'react';
 import { Tab as MuiTab, css } from '@mui/material';
+import Link from 'next/link';
 import { BaseProps } from '../../../types';
 import { ColourPalette } from '../../../enums';
 import { Text } from '..';
@@ -11,7 +14,8 @@ import { Text } from '..';
  */
 interface Props extends BaseProps {
   readonly value: string;
-  readonly onClick: () => void;
+  readonly href?: string;
+  readonly onClick?: () => void;
   readonly children: string;
 }
 
@@ -22,10 +26,12 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `Tab` component
  */
-const Tab: FunctionComponent<Props> = ({ value, onClick, children }): ReactElement<Props> => {
+const Tab: FunctionComponent<Props> = ({ value, href, onClick, children }): ReactElement<Props> => {
   return (
     <MuiTab
+      component={(href != null) ? Link : 'button'}
       value={value}
+      href={href}
       label={(
         <Text isBold={true}>
           {children}

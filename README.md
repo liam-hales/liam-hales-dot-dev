@@ -1,6 +1,6 @@
 # Liam Hales - Official Website
 
-Built in Manchester using [TypeScript], [React] and [Material UI]
+Built in Manchester using [TypeScript], [React], [Next.js] and [Material UI]. Hosted on [Vercel].
 https://liamhales.dev
 
 ---
@@ -23,8 +23,7 @@ $ npm --version
 v8.19.1
 ```
 
-3. Download and install [AWS CLI]
-4. Run `corepack enable` to enable [Corepack]
+3. Run `corepack enable` to enable [Corepack]
 
 > _**NOTE:** You must use the [Yarn] package manager_
 
@@ -36,7 +35,7 @@ v8.19.1
 2. Create a `.env` file in the project root
 
 ```sh
-REACT_APP_API_URL = 'https://${region}.graphcms.com/v2/${id}/master'
+API_URL = 'https://${region}.graphcms.com/v2/${id}/master'
 ```
 
 3. Follow the steps in the [Building Public Assets](#building-public-assets) section
@@ -45,46 +44,53 @@ REACT_APP_API_URL = 'https://${region}.graphcms.com/v2/${id}/master'
 
 # Building Public Assets
 
-1. Run `yarn build-index` to build the `index.html` file
-2. Run `yarn build-images` to build the images
+1. Run `yarn build-images` to build the images
 
 ```sh
-$ yarn build-index
 $ yarn build-images
 ```
 
-> _**NOTE:** These steps only need to be followed once. However if any of the logo `.svg` files change, run `yarn build-images` again_
+> _**NOTE:** If any of the logo `.svg` files change, run `yarn build-images` again_
 
 <br/>
 
-# Starting Locally (Development)
+# Starting Local Server
+
+### Development
 
 1. Follow the steps in the [First Steps](#first-steps) section
-2. Run `yarn start` to start the app locally
+2. Run `yarn start:dev` to start the development server
 
 ```sh
-$ yarn start
+$ yarn start:dev
 ```
 
-<br/>
-
-# Building & Deploying (Production)
+### Production
 
 1. Follow the steps in the [First Steps](#first-steps) section
 2. Run `yarn build` to build the app for production
-3. Run `yarn deploy-build` to deploy the build to AWS S3
-4. Run `yarn cleanup` to cleanup after the build (optional)
+3. Run `yarn start:prod` to start the production server
 
 ```sh
 $ yarn build
-$ yarn deploy-build
-$ yarn cleanup
+$ yarn start:prod
 ```
 
+<br/>
+
+# Linting
+
+1. Run `yarn lint` to lint the app files using the ESLint configuration
+
+```sh
+$ yarn lint
+```
+
+[TypeScript]: https://typescriptlang.org
 [React]: https://reactjs.org
+[Next.js]: https://nextjs.org
+[Material UI]: https://mui.com
 [Node Version Manager]: https://github.com/nvm-sh/nvm
 [Yarn]: https://yarnpkg.com
 [Corepack]: https://nodejs.org/api/corepack.html
-[TypeScript]: https://typescriptlang.org
-[Material UI]: https://mui.com
-[AWS CLI]: https://aws.amazon.com/cli
+[Vercel]: https://vercel.com

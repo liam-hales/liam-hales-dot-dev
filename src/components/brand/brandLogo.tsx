@@ -1,11 +1,12 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { ClickAwayListener, css } from '@mui/material';
 import { motion, Transition } from 'framer-motion';
 import { BoxAlignment, BoxJustify, ColourPalette, LogoSection, ScreenSize } from '../../enums';
-import { PageSlug } from '../../graphql';
-import { usePageContent, useScreen } from '../../hooks';
+import { useScreen } from '../../hooks';
 import { BaseProps } from '../../types';
 import { Box, Text, Title } from '../common';
 import { Logo } from '..';
@@ -13,7 +14,12 @@ import { Logo } from '..';
 /**
  * The `BrandLogo` component props
  */
-type Props = BaseProps<HTMLDivElement>;
+interface Props extends BaseProps<HTMLDivElement> {
+  readonly text: string;
+  readonly letterLText: string;
+  readonly reverseLetterLText: string;
+  readonly barText: string;
+}
 
 /**
  * Renders the brand logo section for the brand page which
@@ -22,14 +28,18 @@ type Props = BaseProps<HTMLDivElement>;
  * @param props The component props
  * @returns The `BrandLogo` component
  */
-const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactElement<Props> => {
-
-  const [activeLogoSection, setActiveLogoSection] = useState<LogoSection | undefined>();
+const BrandLogo: FunctionComponent<Props> = (props): ReactElement<Props> => {
+  const {
+    reference,
+    className,
+    text,
+    letterLText,
+    reverseLetterLText,
+    barText,
+  } = props;
 
   const { screenSize } = useScreen();
-  const { logoText, logoLetterLText, logoReverseLetterLText, logoBarText } = usePageContent({
-    slug: PageSlug.BRAND,
-  });
+  const [activeLogoSection, setActiveLogoSection] = useState<LogoSection | undefined>();
 
   /**
    * The animation transition options
@@ -59,7 +69,7 @@ const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactEle
           padding-bottom: 50px;
         `}
       >
-        {logoText}
+        {text}
       </Text>
       <Box css={css`
         width: 100%;
@@ -138,7 +148,7 @@ const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactEle
                 font-size: 16px;
               `}
             >
-              {logoLetterLText}
+              {letterLText}
             </Text>
           </motion.div>
           <motion.div
@@ -158,7 +168,7 @@ const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactEle
                 font-size: 16px;
               `}
             >
-              {logoReverseLetterLText}
+              {reverseLetterLText}
             </Text>
           </motion.div>
           <motion.div
@@ -178,7 +188,7 @@ const BrandLogo: FunctionComponent<Props> = ({ reference, className }): ReactEle
                 font-size: 16px;
               `}
             >
-              {logoBarText}
+              {barText}
             </Text>
           </motion.div>
         </Box>

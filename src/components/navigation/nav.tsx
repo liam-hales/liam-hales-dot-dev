@@ -1,10 +1,12 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css } from '@mui/material';
-import { BrowserRouter } from 'react-router-dom';
+import Link from 'next/link';
 import { BaseProps } from '../../types';
-import { BoxJustify, ScreenSize } from '../../enums';
+import { BoxJustify, NavRoute, ScreenSize } from '../../enums';
 import { TopNav, BottomNav, Logo } from '..';
 import { useScreen } from '../../hooks';
 import { Box } from '../common';
@@ -27,7 +29,7 @@ const Nav: FunctionComponent<Props> = ({ children }): ReactElement<Props> => {
 
   const { screenSize } = useScreen();
   return (
-    <BrowserRouter>
+    <>
       {
         (screenSize === ScreenSize.SMALL) && (
           <Box
@@ -37,10 +39,16 @@ const Nav: FunctionComponent<Props> = ({ children }): ReactElement<Props> => {
               height: 72px;
             `}
           >
-            <Logo css={css`
-              width: 24px;
-            `}
-            />
+            <Link
+              href={NavRoute.HOME}
+              passHref={true}
+              aria-label="Home"
+            >
+              <Logo css={css`
+                width: 24px;
+              `}
+              />
+            </Link>
           </Box>
         )
       }
@@ -61,7 +69,7 @@ const Nav: FunctionComponent<Props> = ({ children }): ReactElement<Props> => {
           </>
         )
       }
-    </BrowserRouter>
+    </>
   );
 };
 

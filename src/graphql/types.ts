@@ -1,31 +1,33 @@
-import { Dayjs } from 'dayjs';
-import { PageSlug } from './enums';
+import { PageSlug } from '.';
 
 /**
  * Describes the data for each page.
- * Generic type `T` for the page slug
+ * Generic type `S` for the page `slug`
  */
-export interface PageData<T extends PageSlug = never> {
+export interface Page<S extends PageSlug> {
   readonly id: string;
   readonly name: string;
-  readonly slug: PageSlug;
-  readonly content: PageContent<T>;
+  readonly slug: S;
+  readonly content: Extract<PageContent, BasePageContent<S>>;
+  readonly createdDate: string;
+  readonly updatedDate: string;
 }
 
 /**
- * Describes the base content for each page.
- * Each page content should `extends` this
+ * Describes the base content for each page which
+ * each page content should `extends`
+ *
+ * Generic type `T` for the page `slug`
  */
-export interface BasePageContent {
-  readonly slug: PageSlug;
+export interface BasePageContent<T extends PageSlug> {
+  readonly slug: T;
 }
 
 /**
  * Describes the global page content which
- * is used for each page within the app
+ * is specific to the global page only
  */
-export interface GlobalPageContent extends BasePageContent {
-  readonly slug: PageSlug.GLOBAL;
+export interface GlobalContent extends BasePageContent<PageSlug.GLOBAL> {
   readonly footerText: string;
   readonly builtUsingText: string;
   readonly email: string;
@@ -44,12 +46,11 @@ export interface GlobalPageContent extends BasePageContent {
  * Describes the home page content which
  * is specific to the home page only
  */
-export interface HomePageContent extends BasePageContent {
-  readonly slug: PageSlug.HOME;
+export interface HomeContent extends BasePageContent<PageSlug.HOME> {
   readonly headerForegroundImage: Asset;
   readonly headerBackgroundImage: Asset;
   readonly aboutMeText: string;
-  readonly careerStartDate: Dayjs;
+  readonly careerStartDate: string;
   readonly frontendText: string;
   readonly backendText: string;
   readonly designText: string;
@@ -58,66 +59,59 @@ export interface HomePageContent extends BasePageContent {
 }
 
 /**
- * Describes the curriculum vitae page content which
- * is specific to the curriculum vitae page only
+ * Describes the CV page content which
+ * is specific to the CV page only
  */
-export interface CurriculumVitaePageContent extends BasePageContent {
-  readonly slug: PageSlug.CV;
+export interface CVContent extends BasePageContent<PageSlug.CV> {
   readonly currentPositionText: string;
-  readonly careerStartDate: Dayjs;
-  readonly companyStartDate: Dayjs;
-  readonly lifeTimelineText: string;
-  readonly lifeTimelineEvents: TimelineEvent[];
+  readonly careerStartDate: string;
   readonly skillsText: string;
   readonly skills: Skill[];
+  readonly lifeTimelineText: string;
+  readonly lifeTimelineEvents: TimelineEvent[];
   readonly disclaimerText: string;
-}
-
-/**
- * Describes the life timeline page content which
- * is specific to the life timeline page only
- */
-export interface LifeTimelinePageContent extends BasePageContent {
-  readonly slug: PageSlug.LIFE_TIMELINE;
-  readonly timelineEvents: TimelineEvent[];
 }
 
 /**
  * Describes the skills page content which
  * is specific to the skills page only
  */
-export interface SkillsPageContent extends BasePageContent {
-  readonly slug: PageSlug.SKILLS;
+export interface SkillsContent extends BasePageContent<PageSlug.SKILLS> {
   readonly disclaimerText: string;
   readonly skills: Skill[];
+}
+
+/**
+ * Describes the life timeline page content which
+ * is specific to the life timeline page only
+ */
+export interface LifeTimelineContent extends BasePageContent<PageSlug.LIFE_TIMELINE> {
+  readonly timelineEvents: TimelineEvent[];
 }
 
 /**
  * Describes the brand page content which
  * is specific to the brand page only
  */
-export interface BrandPageContent extends BasePageContent {
-  readonly slug: PageSlug.BRAND;
+export interface BrandContent extends BasePageContent<PageSlug.BRAND> {
   readonly logoText: string;
   readonly logoLetterLText: string;
   readonly logoReverseLetterLText: string;
   readonly logoBarText: string;
-  readonly typographyText: string;
   readonly colourPaletteText: string;
+  readonly typographyText: string;
 }
 
 /**
- * The union type for all page content types.
- * Generic type `T` for the page slug
+ * The union type for all page content types
  */
-export type PageContent<T extends PageSlug> =
-  T extends PageSlug.GLOBAL ? GlobalPageContent :
-  T extends PageSlug.HOME ? HomePageContent :
-  T extends PageSlug.CV ? CurriculumVitaePageContent :
-  T extends PageSlug.LIFE_TIMELINE ? LifeTimelinePageContent :
-  T extends PageSlug.SKILLS ? SkillsPageContent :
-  T extends PageSlug.BRAND ? BrandPageContent :
-  never;
+export type PageContent =
+  | GlobalContent
+  | HomeContent
+  | CVContent
+  | LifeTimelineContent
+  | SkillsContent
+  | BrandContent;
 
 /**
  * Describes the asset which contains data
@@ -137,7 +131,7 @@ export interface TimelineEvent {
   readonly id: string;
   readonly title: string;
   readonly description: string;
-  readonly date: Dayjs;
+  readonly date: string;
 }
 
 /**
@@ -153,19 +147,9 @@ export interface Skill {
 }
 
 /**
- * Describes the page variables used
- * for fetching the page data.
- *
- * Generic type `T` for the page slug
+ * Describes the GraphQL search
+ * variables used for queries
  */
-export type PageVariables<T extends PageSlug> =
-  {
-    readonly slug: T;
-  }
-  & (
-    T extends PageSlug.BLOG
-      ? {
-          readonly blogPostSlug?: string;
-        }
-      : unknown
-  );
+export interface SearchVariables {
+  readonly search?: string;
+}

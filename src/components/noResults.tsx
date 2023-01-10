@@ -1,9 +1,11 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
 import { BaseProps } from '../types';
-import { ColourPalette } from '../enums';
+import { ColourPalette, TextElement } from '../enums';
 import { Title, Text, Box } from './common';
 
 /**
@@ -27,6 +29,7 @@ const NoResults: FunctionComponent<Props> = ({ className, searchText }): ReactEl
       </Title>
       <Text
         colour={ColourPalette.GREY_400}
+        element={TextElement.SPAN}
         css={css`
           max-width: 300px;
           padding-top: 16px;
@@ -35,7 +38,10 @@ const NoResults: FunctionComponent<Props> = ({ className, searchText }): ReactEl
       >
         No search results found for
         {' '}
-        <Text isBold={true}>
+        <Text
+          isBold={true}
+          element={TextElement.SPAN}
+        >
           {`"${searchText}"`}
         </Text>
         . Try searching for something else

@@ -1,8 +1,10 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { useRouter } from '../hooks';
+import Link from 'next/link';
 import { ColourPalette, IconId, NavRoute } from '../enums';
 import { Button, Title, Text } from './common';
 import { Content } from '.';
@@ -14,8 +16,6 @@ import { Content } from '.';
  * @returns The `ComingSoon` component
  */
 const ComingSoon: FunctionComponent = (): ReactElement => {
-
-  const { goTo } = useRouter();
   return (
     <Content css={css`
       padding-top: 100px;
@@ -35,21 +35,32 @@ const ComingSoon: FunctionComponent = (): ReactElement => {
       >
         This page is coming soon. For now you can visit my old website
         {' '}
-        <Text
-          isBold={true}
-          onClick={() => window.open('https://liamhales.io', '_blank')}
+        <Link
+          href="https://liamhales.io"
+          target="_blank"
+          passHref={true}
+          css={css`
+            text-decoration: none;
+          `}
         >
-          liamhales.io
-        </Text>
+          <Text isBold={true}>
+            liamhales.io
+          </Text>
+        </Link>
         {' '}
         for this infomation.
       </Text>
-      <Button
-        iconId={IconId.ARROW_LEFT}
-        onClick={() => goTo(NavRoute.HOME)}
+      <Link
+        href={NavRoute.HOME}
+        passHref={true}
+        css={css`
+          text-decoration: none;
+        `}
       >
-        Return home
-      </Button>
+        <Button iconId={IconId.ARROW_LEFT}>
+          Return home
+        </Button>
+      </Link>
     </Content>
   );
 };

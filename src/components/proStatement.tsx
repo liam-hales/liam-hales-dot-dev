@@ -1,17 +1,19 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
 import { BoxAlignment, ColourPalette } from '../enums';
-import { PageSlug } from '../graphql';
-import { usePageContent } from '../hooks';
 import { BaseProps } from '../types';
 import { Box, Text, Title } from './common';
 
 /**
  * The `ProStatement` component props
  */
-type Props = BaseProps;
+interface Props extends BaseProps {
+  readonly text: string;
+}
 
 /**
  * Renders the professional statement section for the home page
@@ -20,12 +22,7 @@ type Props = BaseProps;
  * @param props The component props
  * @returns The `ProStatement` component
  */
-const ProStatement: FunctionComponent<Props> = ({ className }): ReactElement<Props> => {
-
-  const { proStatementText } = usePageContent({
-    slug: PageSlug.HOME,
-  });
-
+const ProStatement: FunctionComponent<Props> = ({ className, text }): ReactElement<Props> => {
   return (
     <Box
       className={className}
@@ -41,7 +38,7 @@ const ProStatement: FunctionComponent<Props> = ({ className }): ReactElement<Pro
           padding-bottom: 16px;
         `}
       >
-        {proStatementText}
+        {text}
       </Text>
       <Text
         isBold={true}

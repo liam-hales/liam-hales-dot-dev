@@ -1,5 +1,8 @@
-import { createTheme, PaletteOptions, ThemeProvider as MuiThemeProvider } from '@mui/material';
+'use client';
+
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
+import { createTheme, CssBaseline, PaletteOptions, ThemeProvider as MuiThemeProvider } from '@mui/material';
+import { urbanist } from '../fonts';
 import { ColourPalette, ScreenSize } from '../enums';
 import { BaseProps } from '../types';
 
@@ -39,6 +42,7 @@ const ThemeProvider: FunctionComponent<Props> = ({ children }): ReactElement<Pro
       };
     }, {});
 
+  const { fontFamily } = urbanist.style;
   const theme = createTheme({
     palette: {
       ...palette,
@@ -60,15 +64,13 @@ const ThemeProvider: FunctionComponent<Props> = ({ children }): ReactElement<Pro
       },
     },
     typography: {
-      fontFamily: [
-        'Urbanist',
-        'sans-serif',
-      ].join(','),
+      fontFamily: fontFamily,
     },
   });
 
   return (
     <MuiThemeProvider theme={theme}>
+      <CssBaseline />
       {children}
     </MuiThemeProvider>
   );

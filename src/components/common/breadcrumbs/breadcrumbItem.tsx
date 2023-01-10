@@ -1,10 +1,12 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
+import Link from 'next/link';
 import { BaseProps } from '../../../types';
 import { ColourPalette, NavRoute } from '../../../enums';
-import { useRouter } from '../../../hooks';
 import { Text } from '..';
 
 /**
@@ -30,8 +32,7 @@ const BreadcrumbItem: FunctionComponent<Props> = (props): ReactElement<Props> =>
     children,
   } = props;
 
-  const { goTo } = useRouter();
-  return (
+  const textComponent = (
     <Text
       isBold={true}
       hasHoverUnderline={isActive !== true}
@@ -40,17 +41,32 @@ const BreadcrumbItem: FunctionComponent<Props> = (props): ReactElement<Props> =>
           ? ColourPalette.WHITE
           : ColourPalette.GREY_600
       }
-      onClick={
-        (isActive === false)
-          ? () => goTo(route)
-          : undefined
-      }
       css={css`
         font-size: 17px;
       `}
     >
       {children}
     </Text>
+  );
+
+  if (isActive === true) {
+    return (
+      <>
+        {textComponent}
+      </>
+    );
+  }
+
+  return (
+    <Link
+      href={route}
+      passHref={true}
+      css={css`
+        text-decoration: none;
+      `}
+    >
+      {textComponent}
+    </Link>
   );
 };
 

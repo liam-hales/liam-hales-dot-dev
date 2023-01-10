@@ -8,18 +8,21 @@
     ],
     "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
+    "noEmit": true,
+    "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
+    "incremental": true,
     "plugins": [
+      {
+        "name": "next"
+      },
       {
         "name": "typescript-styled-plugin",
         "lint": {
@@ -29,13 +32,17 @@
     ],
   },
   "include": [
-    "src",
-    "scripts",
-    "types",
-    "node_modules/react-scripts",
+    "next-env.d.ts",
+    "next.config.mjs",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "scripts"
+  ],
+  "exclude": [
+    "node_modules"
   ],
   "ts-node": {
-    "files": true,
     "compilerOptions": {
       "module": "commonjs"
     }

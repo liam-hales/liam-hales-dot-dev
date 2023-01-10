@@ -1,11 +1,13 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { Dayjs } from 'dayjs';
 import { BaseProps } from '../../../types';
 import { BoxAlignment, ColourPalette } from '../../../enums';
 import { Box, Text } from '..';
+import { useDate } from '../../../hooks';
 
 /**
  * The `TimelineEvent` component props
@@ -13,7 +15,7 @@ import { Box, Text } from '..';
 interface Props extends BaseProps {
   readonly title: string;
   readonly description: string;
-  readonly date: Dayjs;
+  readonly date: string;
   readonly isFirst?: boolean;
 }
 
@@ -32,10 +34,12 @@ const TimelineEvent: FunctionComponent<Props> = (props): ReactElement<Props> => 
     isFirst = false,
   } = props;
 
+  const { from } = useDate();
+
   // Format the date into a human readable timestamp
   // The year, month and how long ag the date was from the current date
-  const formattedDate = date.format('MMMM YYYY');
-  const timeAgo = date.fromNow();
+  const formattedDate = from(date).format('MMMM YYYY');
+  const timeAgo = from(date).fromNow();
   const timestamp = `${formattedDate} - ${timeAgo}`;
 
   return (

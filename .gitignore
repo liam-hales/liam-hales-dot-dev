@@ -1,22 +1,24 @@
 # Dependencies
 node_modules/
-
-# React
-build/
-
-# Public
-public/index.html
-public/*.ico
-public/icons/*
+.yarn/
 
 # Environment
 .env*
 
-# Operating System
+# Misc
 .DS_Store
 
 # Logs
 *.log*
 
-# Yarn
-.yarn/
+# Next.js
+.next/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Public
+public/index.html
+public/*.ico
+public/icons/*

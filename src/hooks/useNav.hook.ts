@@ -1,4 +1,4 @@
-import { matchPath, useLocation } from 'react-router-dom';
+import { usePathname } from 'next/navigation';
 import { NavKey, NavRoute } from '../enums';
 
 /**
@@ -19,7 +19,7 @@ interface UseNavResponse {
  * const { navKey, navRoute } = useNav();
  */
 const useNav = (): UseNavResponse => {
-  const { pathname } = useLocation();
+  const pathname = usePathname();
 
   // Attempt to match the path with one
   // of the nav key enum values
@@ -27,13 +27,13 @@ const useNav = (): UseNavResponse => {
     ? NavKey.HOME
     : Object
       .values(NavKey)
-      .find((value) => pathname.split('/')[1] === value);
+      .find((value) => pathname?.split('/')[1] === value);
 
   // Attempt to match the path with one
   // of the nav route enum values
   const navRoute = Object
     .values(NavRoute)
-    .find((value) => matchPath(value, pathname));
+    .find((value) => pathname === value);
 
   return {
     navKey: navKey,

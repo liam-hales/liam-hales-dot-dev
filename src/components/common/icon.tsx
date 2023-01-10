@@ -1,5 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement, SVGProps } from 'react';
 import { css } from '@mui/material';
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';

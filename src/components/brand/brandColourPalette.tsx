@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
 import { BoxAlignment, ColourPalette } from '../../enums';
-import { PageSlug } from '../../graphql';
-import { usePageContent } from '../../hooks';
 import { BaseProps } from '../../types';
 import { Box, Text, Title } from '../common';
 import { Grid, ColourCard } from '..';
@@ -12,7 +12,9 @@ import { Grid, ColourCard } from '..';
 /**
  * The `BrandColourPalette` component props
  */
-type Props = BaseProps<HTMLDivElement>;
+interface Props extends BaseProps<HTMLDivElement> {
+  readonly text: string;
+}
 
 /**
  * Renders the brand colour palette section for the brand page
@@ -21,12 +23,7 @@ type Props = BaseProps<HTMLDivElement>;
  * @param props The component props
  * @returns The `BrandColourPalette` component
  */
-const BrandColourPalette: FunctionComponent<Props> = ({ reference, className }): ReactElement<Props> => {
-
-  const { colourPaletteText } = usePageContent({
-    slug: PageSlug.BRAND,
-  });
-
+const BrandColourPalette: FunctionComponent<Props> = ({ reference, className, text }): ReactElement<Props> => {
   return (
     <Box
       reference={reference}
@@ -43,7 +40,7 @@ const BrandColourPalette: FunctionComponent<Props> = ({ reference, className }):
           padding-bottom: 36px;
         `}
       >
-        {colourPaletteText}
+        {text}
       </Text>
       <Grid css={css`
         width: 100%;

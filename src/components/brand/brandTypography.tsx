@@ -1,17 +1,19 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
 import { BoxAlignment, ColourPalette } from '../../enums';
-import { PageSlug } from '../../graphql';
-import { usePageContent } from '../../hooks';
 import { BaseProps } from '../../types';
 import { Box, Text, Title } from '../common';
 
 /**
  * The `BrandTypography` component props
  */
-type Props = BaseProps<HTMLDivElement>;
+interface Props extends BaseProps<HTMLDivElement> {
+  readonly text: string;
+}
 
 /**
  * Renders the brand logo section for the brand page which
@@ -20,12 +22,7 @@ type Props = BaseProps<HTMLDivElement>;
  * @param props The component props
  * @returns The `BrandTypography` component
  */
-const BrandTypography: FunctionComponent<Props> = ({ reference, className }): ReactElement<Props> => {
-
-  const { typographyText } = usePageContent({
-    slug: PageSlug.BRAND,
-  });
-
+const BrandTypography: FunctionComponent<Props> = ({ reference, className, text }): ReactElement<Props> => {
   return (
     <Box
       reference={reference}
@@ -42,7 +39,7 @@ const BrandTypography: FunctionComponent<Props> = ({ reference, className }): Re
           padding-bottom: 36px;
         `}
       >
-        {typographyText}
+        {text}
       </Text>
       <Text css={css`
         font-size: 28px;

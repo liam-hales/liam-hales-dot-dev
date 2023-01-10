@@ -1,7 +1,9 @@
 /** @jsxImportSource @emotion/react */
 
-import { ClickAwayListener, Tooltip, css } from '@mui/material';
+'use client';
+
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
+import { ClickAwayListener, Tooltip, css } from '@mui/material';
 import { BaseProps } from '../../types';
 import { ColourPalette } from '../../enums';
 import { Text } from '.';

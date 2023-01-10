@@ -1,19 +1,24 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import dayjs from 'dayjs';
 import { BoxAlignment, BoxDirection, ColourPalette, ScreenSize } from '../enums';
-import { PageSlug } from '../graphql';
-import { usePageContent, useScreen } from '../hooks';
+import { useDate, useScreen } from '../hooks';
 import { BaseProps } from '../types';
+import { Asset } from '../graphql';
 import { Box, Image, Text, Title } from './common';
 import { Stat } from '.';
 
 /**
  * The `AboutMe` component props
  */
-type Props = BaseProps;
+interface Props extends BaseProps {
+  readonly text: string;
+  readonly meImage: Asset;
+  readonly careerStartDate: string;
+}
 
 /**
  * Renders the about me section for the home page which
@@ -22,20 +27,14 @@ type Props = BaseProps;
  * @param props The component props
  * @returns The `AboutMe` component
  */
-const AboutMe: FunctionComponent<Props> = ({ className }): ReactElement<Props> => {
+const AboutMe: FunctionComponent<Props> = ({ className, text, meImage, careerStartDate }): ReactElement<Props> => {
 
   const { screenSize } = useScreen();
-  const { meImage } = usePageContent({
-    slug: PageSlug.GLOBAL,
-  });
-
-  const { aboutMeText, careerStartDate } = usePageContent({
-    slug: PageSlug.HOME,
-  });
+  const { utc } = useDate();
 
   // Calculate the years programming and
   // experience from the career start date
-  const yearsExperience = dayjs.utc().diff(careerStartDate, 'years');
+  const yearsExperience = utc().diff(careerStartDate, 'years');
   const yearsProgramming = yearsExperience + 2;
 
   return (
@@ -71,7 +70,7 @@ const AboutMe: FunctionComponent<Props> = ({ className }): ReactElement<Props> =
             padding-bottom: 10px;
           `}
         >
-          {aboutMeText.replace(/yearsProgramming/g, yearsProgramming.toString())}
+          {text.replace(/yearsProgramming/g, yearsProgramming.toString())}
         </Text>
         <Box direction={BoxDirection.ROW}>
           <Stat

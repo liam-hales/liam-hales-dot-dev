@@ -1,9 +1,12 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement } from 'react';
 import { BottomNavigation, BottomNavigationAction, css } from '@mui/material';
+import Link from 'next/link';
 import { ColourPalette, IconId, NavKey, NavRoute } from '../../enums';
-import { useNav, useRouter } from '../../hooks';
+import { useNav } from '../../hooks';
 import { Box, Text, Icon } from '../common';
 
 /**
@@ -35,9 +38,7 @@ const iconCss = css`
  */
 const BottomNav: FunctionComponent = (): ReactElement => {
 
-  const { goTo } = useRouter();
   const { navKey } = useNav();
-
   return (
     <Box css={css`
       position: fixed;
@@ -64,7 +65,8 @@ const BottomNav: FunctionComponent = (): ReactElement => {
       >
         <BottomNavigationAction
           value={NavKey.HOME}
-          onClick={() => goTo(NavRoute.HOME)}
+          href={NavRoute.HOME}
+          component={Link}
           label={(
             <Text isBold={true}>
               Home
@@ -85,7 +87,8 @@ const BottomNav: FunctionComponent = (): ReactElement => {
         />
         <BottomNavigationAction
           value={NavKey.CV}
-          onClick={() => goTo(NavRoute.CV)}
+          href={NavRoute.CV}
+          component={Link}
           label={(
             <Text isBold={true}>
               CV
@@ -106,7 +109,8 @@ const BottomNav: FunctionComponent = (): ReactElement => {
         />
         <BottomNavigationAction
           value={NavKey.BLOG}
-          onClick={() => goTo(NavRoute.BLOG)}
+          href={NavRoute.BLOG}
+          component={Link}
           label={(
             <Text isBold={true}>
               Blog
@@ -127,7 +131,8 @@ const BottomNav: FunctionComponent = (): ReactElement => {
         />
         <BottomNavigationAction
           value={NavKey.BRAND}
-          onClick={() => goTo(NavRoute.BRAND)}
+          href={NavRoute.BRAND}
+          component={Link}
           label={(
             <Text isBold={true}>
               Brand

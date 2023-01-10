@@ -1,14 +1,16 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { IconId } from '../../enums';
-import { PageSlug } from '../../graphql';
-import { usePageContent } from '../../hooks';
 import { BaseProps } from '../../types';
 import { Grid, SkillAreaCard } from '..';
 
 /**
  * The `SkillAreas` component props
  */
-type Props = BaseProps;
+interface Props extends BaseProps {
+  readonly frontendText: string;
+  readonly backendText: string;
+  readonly designText: string;
+}
 
 /**
  * Renders the skill areas section for the home page which
@@ -17,12 +19,7 @@ type Props = BaseProps;
  * @param props The component props
  * @returns The `SkillAreas` component
  */
-const SkillAreas: FunctionComponent<Props> = ({ className }): ReactElement<Props> => {
-
-  const { frontendText, backendText, designText } = usePageContent({
-    slug: PageSlug.HOME,
-  });
-
+const SkillAreas: FunctionComponent<Props> = ({ className, frontendText, backendText, designText }): ReactElement<Props> => {
   return (
     <Grid className={className}>
       <SkillAreaCard

@@ -1,9 +1,12 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
+import Link from 'next/link';
 import { BoxDirection, NavKey, NavRoute, BoxJustify, ColourPalette } from '../../enums';
-import { useNav, useRouter } from '../../hooks';
+import { useNav } from '../../hooks';
 import { Box, Tabs, Tab } from '../common';
 import { Logo } from '..';
 
@@ -16,8 +19,6 @@ import { Logo } from '..';
 const TopNav: FunctionComponent = (): ReactElement => {
 
   const { navKey } = useNav();
-  const { goTo } = useRouter();
-
   return (
     <Box css={css`
       position: sticky;
@@ -47,10 +48,16 @@ const TopNav: FunctionComponent = (): ReactElement => {
           background-color: ${ColourPalette.GREY_900};
         `}
       >
-        <Logo css={css`
-          width: 24px;
-        `}
-        />
+        <Link
+          href={NavRoute.HOME}
+          passHref={true}
+          aria-label="Home"
+        >
+          <Logo css={css`
+            width: 24px;
+          `}
+          />
+        </Link>
         <Tabs
           value={navKey}
           css={css`
@@ -59,25 +66,25 @@ const TopNav: FunctionComponent = (): ReactElement => {
         >
           <Tab
             value={NavKey.HOME}
-            onClick={() => goTo(NavRoute.HOME)}
+            href={NavRoute.HOME}
           >
             Home
           </Tab>
           <Tab
             value={NavKey.CV}
-            onClick={() => goTo(NavRoute.CV)}
+            href={NavRoute.CV}
           >
             CV
           </Tab>
           <Tab
             value={NavKey.BLOG}
-            onClick={() => goTo(NavRoute.BLOG)}
+            href={NavRoute.BLOG}
           >
             Blog
           </Tab>
           <Tab
             value={NavKey.BRAND}
-            onClick={() => goTo(NavRoute.BRAND)}
+            href={NavRoute.BRAND}
           >
             Brand
           </Tab>

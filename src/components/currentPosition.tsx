@@ -1,36 +1,37 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import dayjs from 'dayjs';
 import { BoxAlignment, BoxDirection, ColourPalette } from '../enums';
-import { PageSlug } from '../graphql';
-import { usePageContent } from '../hooks';
 import { BaseProps } from '../types';
+import { useDate } from '../hooks';
 import { Box, Text, Title } from './common';
 import { Stat } from '.';
 
 /**
  * The `CurrentPosition` component props
  */
-type Props = BaseProps<HTMLDivElement>;
+interface Props extends BaseProps<HTMLDivElement> {
+  readonly text: string;
+  readonly careerStartDate: string;
+}
 
 /**
- * Renders the current position section for the curriculum vitae
- * page which is rendered within the `CurriculumVitaeRoute` component
+ * Renders the current position section for the CV
+ * page which is rendered within the `CVRoute` component
  *
  * @param props The component props
  * @returns The `CurrentPosition` component
  */
-const CurrentPosition: FunctionComponent<Props> = ({ reference, className }): ReactElement<Props> => {
+const CurrentPosition: FunctionComponent<Props> = ({ reference, className, text, careerStartDate }): ReactElement<Props> => {
 
-  const { currentPositionText, careerStartDate } = usePageContent({
-    slug: PageSlug.CV,
-  });
+  const { utc } = useDate();
 
   // Calculate the years in the industry and the number of years
   // at the company I work for from the career start date
-  const yearsInIndustry = dayjs.utc().diff(careerStartDate, 'years');
+  const yearsInIndustry = utc().diff(careerStartDate, 'years');
   const yearsAtCompany = yearsInIndustry - 1;
 
   return (
@@ -49,7 +50,7 @@ const CurrentPosition: FunctionComponent<Props> = ({ reference, className }): Re
           padding-bottom: 10px;
         `}
       >
-        {currentPositionText}
+        {text}
       </Text>
       <Box direction={BoxDirection.ROW}>
         <Stat

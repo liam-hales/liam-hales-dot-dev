@@ -1,19 +1,23 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@mui/material';
-import dayjs from 'dayjs';
+import Link from 'next/link';
 import { BoxDirection, BoxAlignment, ColourPalette, BoxJustify, IconId, SVGIconId } from '../enums';
-import { PageSlug } from '../graphql';
-import { usePageContent } from '../hooks';
 import { BaseProps } from '../types';
+import { useDate } from '../hooks';
+import { GlobalContent } from '../graphql';
 import { Box, Divider, Icon, IconButton, Text } from './common';
 import { Content, Logo, EmailModal } from '.';
 
 /**
  * The `Footer` component props
  */
-type Props = BaseProps;
+interface Props extends BaseProps {
+  readonly globalContent: GlobalContent;
+}
 
 /**
  * Renders the app footer which is rendered within
@@ -22,28 +26,31 @@ type Props = BaseProps;
  * @param props The component props
  * @returns The `Footer` component
  */
-const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> => {
+const Footer: FunctionComponent<Props> = ({ globalContent }): ReactElement<Props> => {
 
   const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const { utc } = useDate();
+
+  const year = utc().format('YYYY');
+  const copyrightText = ` ${year} - Liam Hales`;
+
   const {
+    emailText,
+    email,
     footerText,
-    builtUsingText,
     stackOverflowUrl,
     linkedInUrl,
     buyMeCoffeeUrl,
     notionUrl,
-  } = usePageContent({
-    slug: PageSlug.GLOBAL,
-  });
-
-  const year = dayjs
-    .utc()
-    .format('YYYY');
+    builtUsingText,
+  } = globalContent;
 
   return (
-    <div className={className}>
+    <>
       <Divider />
       <EmailModal
+        text={emailText}
+        email={email}
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
       />
@@ -93,22 +100,38 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
             id={IconId.ENVELOPE}
             onClick={() => setModalOpen(true)}
           />
-          <IconButton
-            id={IconId.STACK_OVERFLOW}
-            onClick={() => window.open(stackOverflowUrl, '_blank')}
-          />
-          <IconButton
-            id={IconId.LINKED_IN}
-            onClick={() => window.open(linkedInUrl, '_blank')}
-          />
-          <IconButton
-            id={SVGIconId.BUY_ME_COFFEE}
-            onClick={() => window.open(buyMeCoffeeUrl, '_blank')}
-          />
-          <IconButton
-            id={SVGIconId.NOTION}
-            onClick={() => window.open(notionUrl, '_blank')}
-          />
+          <Link
+            href={stackOverflowUrl}
+            target="_blank"
+            passHref={true}
+            aria-label="Stack Overflow"
+          >
+            <IconButton id={IconId.STACK_OVERFLOW} />
+          </Link>
+          <Link
+            href={linkedInUrl}
+            target="_blank"
+            passHref={true}
+            aria-label="LinkedIn"
+          >
+            <IconButton id={IconId.LINKED_IN} />
+          </Link>
+          <Link
+            href={buyMeCoffeeUrl}
+            target="_blank"
+            passHref={true}
+            aria-label="Buy Me a Coffee"
+          >
+            <IconButton id={SVGIconId.BUY_ME_COFFEE} />
+          </Link>
+          <Link
+            href={notionUrl}
+            target="_blank"
+            passHref={true}
+            aria-label="Notion"
+          >
+            <IconButton id={SVGIconId.NOTION} />
+          </Link>
         </Box>
         <Box css={css`
           width: 100%;
@@ -124,20 +147,22 @@ const Footer: FunctionComponent<Props> = ({ className }): ReactElement<Props> =>
                 padding-right: 2px;
               `}
             />
-            {` ${year} - Liam Hales`}
+            {copyrightText}
           </Text>
           <Text
             colour={ColourPalette.GREY_600}
             css={css`
+              max-width: 260px;
               padding-top: 4px;
               font-size: 11px;
-          `}
+              text-align: center;
+            `}
           >
             {builtUsingText}
           </Text>
         </Box>
       </Content>
-    </div>
+    </>
   );
 };
 

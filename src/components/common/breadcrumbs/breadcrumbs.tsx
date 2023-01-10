@@ -1,5 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement } from 'react';
 import { Breadcrumbs as MuiBreadcrumbs, css } from '@mui/material';
 import { BaseProps } from '../../../types';

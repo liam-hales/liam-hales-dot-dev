@@ -10,12 +10,15 @@
   ],
   "extends": [
     "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended",
-    "react-app",
+    "plugin:jsx-a11y/recommended",
     "airbnb",
     "airbnb/hooks",
     "airbnb-typescript",
-    "plugin:react/jsx-runtime"
+    "next/core-web-vitals"
   ],
   "rules": {
     "max-len": "off",
@@ -28,7 +31,13 @@
     "import/no-cycle": "off",
     "react/require-default-props": "off",
     "react/no-array-index-key": "off",
-    
+
+    "no-console": [
+      "error",
+      {
+        "allow": ["error"]
+      }
+    ],
     "object-shorthand": ["error", "never"],
     "object-curly-newline": [
       "error",

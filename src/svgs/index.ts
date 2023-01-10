@@ -1,5 +1,5 @@
-import { ReactComponent as BuyMeCoffeeLogoSVG } from './buyMeCoffeeLogo.svg';
-import { ReactComponent as NotionLogoSVG } from './notionLogo.svg';
+import BuyMeCoffeeLogoSVG from './buyMeCoffeeLogo.svg';
+import NotionLogoSVG from './notionLogo.svg';
 
 export {
   BuyMeCoffeeLogoSVG,

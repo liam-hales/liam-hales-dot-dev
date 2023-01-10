@@ -1,4 +1,13 @@
 /**
+ * Describes the different types of
+ * rendering for the app
+ */
+export enum RenderType {
+  CLIENT_SIDE = 'CLIENT_SIDE',
+  SERVER_SIDE = 'SERVER_SIDE',
+}
+
+/**
  * The colour palette used to describe
  * the colours for the app
  */
@@ -128,7 +137,8 @@ export enum BoxJustify {
 export enum TextElement {
   H1 = 'h1',
   H2 = 'h2',
-  PARAGRAPH = 'body1',
+  PARAGRAPH = 'p',
+  SPAN = 'span',
 }
 
 /**

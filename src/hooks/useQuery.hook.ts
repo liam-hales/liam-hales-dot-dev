@@ -1,16 +1,14 @@
-import { useQuery as _useQuery } from '@tanstack/react-query';
-import { request } from 'graphql-request';
-import { dataTransformer, generateCacheKey } from '../helpers';
-import { QueryStatus } from '../enums';
-import { UseQueryResponse } from '../types';
+import { GraphQLClient } from 'graphql-request';
 import { useConfig } from '.';
 
 /**
- * Used to make a request to the GraphQL API using
- * `graphql-request` and `@tanstack/react-query` under the hood
+ * Used to make GraphQL API requests using
+ * `graphql-request` under the hood.
  *
- * Generic type `T` for the response data.
- * Generic Type `V` for the request variables.
+ * _**NOTE:** This hook can only be used server-side_
+ *
+ * - Generic type `T` for the response data
+ * - Generic Type `V` for the request variables
  *
  * @param document The GraphQL query document
  * @param variables The GraphQL query varibales
@@ -18,61 +16,28 @@ import { useConfig } from '.';
  * @returns The `useQuery` hook response
  * @example
  *
- * const { status, data } = useQuery<Data, Variables>(document, variables);
+ * const data = await useQuery<Data, Variables>(document, variables);
  */
-const useQuery = <
+const useQuery = async <
   T extends Partial<Record<keyof T, unknown>>,
-  V extends Partial<Record<keyof V, unknown>>,
+  V extends Partial<Record<keyof V, unknown>> = never,
 >(
   document: string,
-  variables: V,
-): UseQueryResponse<T> => {
-
-  // Generate a cache key from the query variables
-  // which will be used as the cache key for the query
-  const cacheKey = generateCacheKey(variables);
+  variables?: V,
+): Promise<T> => {
 
   const { apiUrl } = useConfig();
-  const { isLoading, isError, data } = _useQuery<T>({
-    queryKey: [cacheKey],
-    queryFn: async () => {
 
-      // Make the GraphQL request and get
-      // the first key from the response
-      const repsonse = await request<{ [key: string]: T }>(apiUrl, document, variables);
-      const [key] = Object.keys(repsonse);
+  // Initialise the GraphQL client with
+  // the API URL and the options
+  const client = new GraphQLClient(apiUrl);
 
-      // Stringify the respone and pasre it
-      // with the custom response formatter
-      const text = JSON.stringify(repsonse[key]);
-      const data = JSON.parse(text, dataTransformer);
+  // Make the GraphQL request and get
+  // the first key from the response
+  const repsonse = await client.request<{ readonly [key: string]: T }>(document, variables);
+  const [key] = Object.keys(repsonse);
 
-      return data;
-    },
-  });
-
-  // Check if the query is loading and
-  // if so return the loading status
-  if (isLoading === true) {
-    return {
-      status: QueryStatus.LOADING,
-    };
-  }
-
-  // Check if the query has errored and
-  // if so return the error status
-  if (isError === true) {
-    return {
-      status: QueryStatus.ERROR,
-    };
-  }
-
-  // Return the success status
-  // and the defined data
-  return {
-    status: QueryStatus.SUCCESS,
-    data: data,
-  };
+  return repsonse[key];
 };
 
 export default useQuery;

@@ -1,9 +1,10 @@
 /** @jsxImportSource @emotion/react */
 
-import { FunctionComponent, ReactElement, useState } from 'react';
+'use client';
+
+import { FunctionComponent, ReactElement } from 'react';
 import { InputBase, css } from '@mui/material';
 import { BoxDirection, ColourPalette, IconId } from '../../enums';
-import { useDebounce } from '../../hooks';
 import { BaseProps } from '../../types';
 import { Box, Icon, IconButton } from '.';
 
@@ -12,8 +13,7 @@ import { Box, Icon, IconButton } from '.';
  */
 interface Props extends BaseProps {
   readonly value: string;
-  readonly placeholder: string;
-  readonly delay: number;
+  readonly placeholder?: string;
   readonly iconId?: IconId;
   readonly onChange: (value: string) => void;
 }
@@ -25,20 +25,7 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `Input` component
  */
-const Input: FunctionComponent<Props> = ({ className, value, placeholder, iconId, delay, onChange }): ReactElement<Props> => {
-
-  const [_value, setValue] = useState<string>(value);
-
-  useDebounce(() => {
-
-    // Only call `onChange` if the value is different to the
-    // temp value so it's not called the first time the
-    // component renders as this causes a render loop
-    if (_value !== value) {
-      onChange(_value);
-    }
-  }, delay);
-
+const Input: FunctionComponent<Props> = ({ className, value, placeholder, iconId, onChange }): ReactElement<Props> => {
   return (
     <Box
       className={className}
@@ -65,16 +52,16 @@ const Input: FunctionComponent<Props> = ({ className, value, placeholder, iconId
       }
       <InputBase
         type="text"
-        value={_value}
+        value={value}
         placeholder={placeholder}
         onChange={(event) => {
 
           // Destructure the event and the event target
-          // and pass it's value to onChange
+          // and pass it's value to `onChange`
           const { target } = event;
           const { value } = target;
 
-          setValue(value);
+          onChange(value);
         }}
         css={css`
           width: 100%;
@@ -91,17 +78,11 @@ const Input: FunctionComponent<Props> = ({ className, value, placeholder, iconId
         `}
       />
       {
-        (_value !== '') && (
+        (value !== '') && (
           <IconButton
             id={IconId.CROSS}
             colour={ColourPalette.GREY_400}
-            onClick={() => {
-
-              // Reset the value state and call the on change
-              // function to clear the input instantly
-              setValue('');
-              onChange('');
-            }}
+            onClick={() => onChange('')}
             css={css`
               margin-left: 8px;
             `}

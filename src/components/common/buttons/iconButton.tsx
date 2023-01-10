@@ -1,5 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
 import { ColourPalette, IconId, SVGIconId } from '../../../enums';
@@ -12,7 +14,7 @@ import { Box, Icon } from '..';
 interface Props extends BaseProps {
   readonly id: IconId | SVGIconId;
   readonly colour?: ColourPalette;
-  readonly onClick: () => void;
+  readonly onClick?: () => void;
 }
 
 /**

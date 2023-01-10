@@ -1,29 +1,36 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { usePageContent, useRouter } from '../hooks';
+import Link from 'next/link';
 import { ColourPalette, IconId, NavRoute } from '../enums';
-import { PageSlug } from '../graphql';
+import { GlobalContent } from '../graphql';
+import { BaseProps } from '../types';
 import { Button, Image, Text, Title } from './common';
 import { Content } from '.';
 
 /**
- * Used to display a 404 Not Found message
- * to the user for any unknown routes
+ * The `NotFound` component props
+ */
+interface Props extends BaseProps {
+  readonly content: GlobalContent;
+}
+
+/**
+ * Used to display a **"404 Not Found"**
+ * message to the user
  *
  * @returns The `NotFound` component
  */
-const NotFound: FunctionComponent = (): ReactElement => {
+const NotFound: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
 
-  const { goTo } = useRouter();
-  const { notFoundImage, notFoundText } = usePageContent({
-    slug: PageSlug.GLOBAL,
-  });
-
+  const { notFoundText, notFoundImage } = content;
   return (
     <Content css={css`
       padding-top: 46px;
+      padding-bottom: 100px;
     `}
     >
       <Text
@@ -58,12 +65,17 @@ const NotFound: FunctionComponent = (): ReactElement => {
           margin-Bottom: 38px;
         `}
       />
-      <Button
-        iconId={IconId.ARROW_LEFT}
-        onClick={() => goTo(NavRoute.HOME)}
+      <Link
+        href={NavRoute.HOME}
+        passHref={true}
+        css={css`
+          text-decoration: none;
+        `}
       >
-        Return home
-      </Button>
+        <Button iconId={IconId.ARROW_LEFT}>
+          Return home
+        </Button>
+      </Link>
     </Content>
   );
 };

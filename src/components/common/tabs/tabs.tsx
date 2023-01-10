@@ -1,5 +1,7 @@
 /** @jsxImportSource @emotion/react */
 
+'use client';
+
 import { FunctionComponent, ReactElement } from 'react';
 import { Tabs as MuiTabs, css } from '@mui/material';
 import { ColourPalette } from '../../../enums';

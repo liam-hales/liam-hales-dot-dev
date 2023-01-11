@@ -10,11 +10,13 @@ import { BoxJustify, NavRoute, ScreenSize } from '../../enums';
 import { TopNav, BottomNav, Logo } from '..';
 import { useScreen } from '../../hooks';
 import { Box } from '../common';
+import { GlobalContent } from '../../graphql';
 
 /**
  * The `Nav` component props
  */
 interface Props extends BaseProps {
+  readonly content: GlobalContent;
   readonly children: ReactNode;
 }
 
@@ -25,9 +27,11 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `Nav` component
  */
-const Nav: FunctionComponent<Props> = ({ children }): ReactElement<Props> => {
+const Nav: FunctionComponent<Props> = ({ content, children }): ReactElement<Props> => {
 
   const { screenSize } = useScreen();
+  const { notionUrl } = content;
+
   return (
     <>
       {
@@ -54,7 +58,7 @@ const Nav: FunctionComponent<Props> = ({ children }): ReactElement<Props> => {
       }
       {
         (screenSize !== ScreenSize.SMALL) && (
-          <TopNav />
+          <TopNav notionUrl={notionUrl} />
         )
       }
       {children}

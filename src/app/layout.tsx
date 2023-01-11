@@ -44,9 +44,9 @@ const AppLayout: ServerComponent<Props> = async ({ children }): Promise<ReactEle
       <body>
         <ThemeProvider>
           <SafeArea>
-            <Nav>
+            <Nav content={content}>
               {children}
-              <Footer globalContent={content} />
+              <Footer content={content} />
             </Nav>
           </SafeArea>
         </ThemeProvider>

@@ -16,7 +16,7 @@ import { Content, Logo, EmailModal } from '.';
  * The `Footer` component props
  */
 interface Props extends BaseProps {
-  readonly globalContent: GlobalContent;
+  readonly content: GlobalContent;
 }
 
 /**
@@ -26,7 +26,7 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `Footer` component
  */
-const Footer: FunctionComponent<Props> = ({ globalContent }): ReactElement<Props> => {
+const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
 
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const { utc } = useDate();
@@ -43,7 +43,7 @@ const Footer: FunctionComponent<Props> = ({ globalContent }): ReactElement<Props
     buyMeCoffeeUrl,
     notionUrl,
     builtUsingText,
-  } = globalContent;
+  } = content;
 
   return (
     <>

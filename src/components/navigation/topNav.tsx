@@ -5,10 +5,18 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
 import Link from 'next/link';
-import { BoxDirection, NavKey, NavRoute, BoxJustify, ColourPalette } from '../../enums';
+import { BoxDirection, NavKey, NavRoute, BoxJustify, ColourPalette, SVGIconId } from '../../enums';
 import { useNav } from '../../hooks';
-import { Box, Tabs, Tab } from '../common';
+import { Box, Tabs, Tab, IconButton, Popover } from '../common';
 import { Logo } from '..';
+import { BaseProps } from '../../types';
+
+/**
+ * The `TopNav` component props
+ */
+interface Props extends BaseProps {
+  readonly notionUrl: string;
+}
 
 /**
  * Renders the top navigation bar used for navigating the
@@ -16,7 +24,7 @@ import { Logo } from '..';
  *
  * @returns The `TopNav` component
  */
-const TopNav: FunctionComponent = (): ReactElement => {
+const TopNav: FunctionComponent<Props> = ({ notionUrl }): ReactElement<Props> => {
 
   const { navKey } = useNav();
   return (
@@ -34,7 +42,7 @@ const TopNav: FunctionComponent = (): ReactElement => {
     >
       <Box
         direction={BoxDirection.ROW}
-        justify={BoxJustify.START}
+        justify={BoxJustify.SPACE_BETWEEN}
         css={css`
           width: 100%;
           height: 72px;
@@ -48,47 +56,68 @@ const TopNav: FunctionComponent = (): ReactElement => {
           background-color: ${ColourPalette.GREY_900};
         `}
       >
-        <Link
-          href={NavRoute.HOME}
-          passHref={true}
-          aria-label="Home"
-        >
-          <Logo css={css`
-            width: 24px;
-          `}
-          />
-        </Link>
-        <Tabs
-          value={navKey}
-          css={css`
-            padding-left: 28px;
-          `}
-        >
-          <Tab
-            value={NavKey.HOME}
+        <Box direction={BoxDirection.ROW}>
+          <Link
             href={NavRoute.HOME}
+            passHref={true}
+            aria-label="Home"
           >
-            Home
-          </Tab>
-          <Tab
-            value={NavKey.CV}
-            href={NavRoute.CV}
+            <Logo css={css`
+              width: 24px;
+            `}
+            />
+          </Link>
+          <Tabs
+            value={navKey}
+            css={css`
+              padding-left: 28px;
+            `}
           >
-            CV
-          </Tab>
-          <Tab
-            value={NavKey.BLOG}
-            href={NavRoute.BLOG}
+            <Tab
+              value={NavKey.HOME}
+              href={NavRoute.HOME}
+            >
+              Home
+            </Tab>
+            <Tab
+              value={NavKey.CV}
+              href={NavRoute.CV}
+            >
+              CV
+            </Tab>
+            <Tab
+              value={NavKey.BLOG}
+              href={NavRoute.BLOG}
+            >
+              Blog
+            </Tab>
+            <Tab
+              value={NavKey.BRAND}
+              href={NavRoute.BRAND}
+            >
+              Brand
+            </Tab>
+          </Tabs>
+        </Box>
+        <Popover text="Notion Board - Follow progress and track the current state of this website">
+          <Link
+            href={notionUrl}
+            target="_blank"
+            passHref={true}
+            aria-label="Notion"
           >
-            Blog
-          </Tab>
-          <Tab
-            value={NavKey.BRAND}
-            href={NavRoute.BRAND}
-          >
-            Brand
-          </Tab>
-        </Tabs>
+            <IconButton
+              id={SVGIconId.NOTION}
+              css={css`
+              svg {
+                width: 28px;
+                height: 28px;
+                font-size: 28px;
+              };
+            `}
+            />
+          </Link>
+        </Popover>
       </Box>
     </Box>
   );

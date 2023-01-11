@@ -20,7 +20,5 @@ node_modules/
 next-env.d.ts
 
 # Public
-public/index.html
-public/*.ico
-public/icons/*
-.vercel
+public/
+!public/cover.webp

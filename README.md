@@ -35,20 +35,27 @@ v8.19.1
 2. Create a `.env` file in the project root
 
 ```sh
+SITE_URL = 'https://liamhales.dev'
 API_URL = 'https://${region}.graphcms.com/v2/${id}/master'
 ```
 
 <br/>
 
-# Building Public Assets
+# Public Assets
+
+There are a few public assets that need to be built such as the `favicon.ico`, `sitemap.xml` and `robots.txt`.
 
 1. Run `yarn build-images` to build the images
+2. Run `yarn build-sitemap` to build the `sitemap.xml` and `robots.txt`
 
 ```sh
 $ yarn build-images
+$ yarn build-sitemap
 ```
 
-> _**NOTE:** If any of the logo `.svg` files change, run `yarn build-images` again_
+> _**NOTE:** If any of the logo `.svg` files change, you will need to run `yarn build-images` again_
+
+> _**NOTE:** If any of routes are created or modified, you will need to run `yarn build-sitemap` again_
 
 <br/>
 

@@ -24,6 +24,7 @@
     "lint": "next lint",
     "deps": "ncu",
     "build-images": "ts-node ./scripts/buildImages.script.ts",
+    "build-sitemap": "next-sitemap --config sitemap.config.mjs",
     "cleanup": "rm -rf .next/ && rm -rf .vercel/output/"
   },
   "dependencies": {
@@ -66,6 +67,7 @@
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "next-sitemap": "^3.1.45",
     "npm-check-updates": "^16.4.3",
     "sharp": "^0.31.0",
     "ts-node": "^10.8.2",

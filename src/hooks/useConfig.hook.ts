@@ -2,6 +2,7 @@
  * The `useConfig` hook response
  */
 interface UseConfigResponse {
+  readonly siteUrl: string;
   readonly apiUrl: string;
 }
 
@@ -18,6 +19,7 @@ interface UseConfigResponse {
  */
 const useConfig = (): UseConfigResponse => {
   return {
+    siteUrl: process.env.SITE_URL as string,
     apiUrl: process.env.API_URL as string,
   };
 };

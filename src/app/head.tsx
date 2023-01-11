@@ -1,5 +1,6 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { ColourPalette } from '../enums';
+import { useConfig } from '../hooks';
 
 /**
  * Used to configure the app `<head>` tag which contains
@@ -9,11 +10,12 @@ import { ColourPalette } from '../enums';
  */
 const AppHead: FunctionComponent = (): ReactElement => {
 
+  const { siteUrl } = useConfig();
+
   const name = 'Liam Hales';
   const title = `${name}, Software Engineer | Manchester`;
   const description = 'Software Engineer from Manchester. My job is to craft clean looking front end apps and build robust backend API\'s that scale and house the brains of an application.';
-  const url = 'https://liamhales.dev';
-  const coverUrl = `${url}/cover.webp`;
+  const coverUrl = `${siteUrl}/cover.webp`;
 
   return (
     <>
@@ -31,14 +33,14 @@ const AppHead: FunctionComponent = (): ReactElement => {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={coverUrl} />
-      <meta property="og:url" content={url} />
+      <meta property="og:url" content={siteUrl} />
       <meta property="og:site_name" content={name} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={coverUrl} />
-      <meta name="twitter:url" content={url} />
+      <meta name="twitter:url" content={siteUrl} />
 
       <link rel="icon" href="favicon.ico" />
       <link rel="apple-touch-icon" href="/icons/icon-180x180.webp" />

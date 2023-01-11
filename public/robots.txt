@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://liamhales.dev/sitemap.xml

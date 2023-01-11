@@ -13,9 +13,9 @@ import { Text } from '.';
  */
 interface Props extends BaseProps {
   readonly text: string;
-  readonly isOpen: boolean;
+  readonly isOpen?: boolean;
   readonly colour?: ColourPalette;
-  readonly onClose: () => void;
+  readonly onClose?: () => void;
   readonly children: ReactNode;
 }
 
@@ -36,9 +36,10 @@ const Popover: FunctionComponent<Props> = (props): ReactElement<Props> => {
   } = props;
 
   return (
-    <ClickAwayListener onClickAway={onClose}>
+    <ClickAwayListener onClickAway={() => onClose?.()}>
       <div css={css`
         .MuiTooltip-tooltip {
+          max-width: 200px;
           border-radius: 6px;
           background-color: ${colour};
         };
@@ -63,9 +64,9 @@ const Popover: FunctionComponent<Props> = (props): ReactElement<Props> => {
           open={isOpen}
           placement="top"
           arrow={true}
-          disableFocusListener={true}
-          disableHoverListener={true}
-          disableTouchListener={true}
+          disableFocusListener={(isOpen != null)}
+          disableHoverListener={(isOpen != null)}
+          disableTouchListener={(isOpen != null)}
           PopperProps={{
             disablePortal: true,
           }}

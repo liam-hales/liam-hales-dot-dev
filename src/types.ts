@@ -1,5 +1,5 @@
 import { ReactElement, RefObject } from 'react';
-import { ColourPalette, QueryStatus, ScreenSize } from './enums';
+import { ColourPalette, ScreenSize } from './enums';
 
 /**
  * Override types from `@mui/material`
@@ -74,39 +74,4 @@ export interface BaseProps<T extends HTMLElement = HTMLElement> {
 export interface PageProps extends BaseProps {
   readonly params?: Partial<Record<string, string>>;
   readonly searchParams?: Partial<Record<string, string>>;
-}
-
-/**
- * The union type for all `useQuery` hook responses.
- * This type can also used other query hooks.
- *
- * Generic type `T` for the `data`
- */
-export type UseQueryResponse<T extends Record<keyof T, unknown>> =
-  | LoadingUseQueryResponse
-  | SuccessUseQueryResponse<T>
-  | ErrorUseQueryResponse;
-
-/**
- * Describes the `useQuery` hook success response
- */
-interface SuccessUseQueryResponse<T extends Record<keyof T, unknown>> {
-  readonly status: QueryStatus.SUCCESS;
-  readonly data: T
-}
-
-/**
- * Describes the `useQuery` hook loading response
- */
-interface LoadingUseQueryResponse {
-  readonly status: QueryStatus.LOADING;
-  readonly data?: undefined;
-}
-
-/**
- * Describes the `useQuery` hook error response
- */
-interface ErrorUseQueryResponse {
-  readonly status: QueryStatus.ERROR;
-  readonly data?: undefined;
 }

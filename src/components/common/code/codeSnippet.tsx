@@ -4,9 +4,9 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { PrismLight } from 'react-syntax-highlighter';
-import { nord } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import ts from 'react-syntax-highlighter/dist/esm/languages/prism/typescript';
-import tsx from 'react-syntax-highlighter/dist/esm/languages/prism/tsx';
+import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import ts from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript';
+import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx';
 import { css } from '@mui/material';
 import { BaseProps } from '../../../types';
 import { CodeLanguage } from '../../../enums';

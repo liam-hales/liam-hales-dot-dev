@@ -9,7 +9,7 @@ import { BoxDirection, BoxAlignment, ColourPalette, BoxJustify, IconId, SVGIconI
 import { BaseProps } from '../types';
 import { useDate } from '../hooks';
 import { GlobalContent } from '../graphql';
-import { Box, Divider, Icon, IconButton, Text } from './common';
+import { Box, Divider, Icon, IconButton, Text, Popover } from './common';
 import { Content, Logo, EmailModal } from '.';
 
 /**
@@ -96,42 +96,52 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
             column-gap: 14px;
           `}
         >
-          <IconButton
-            id={IconId.ENVELOPE}
-            onClick={() => setModalOpen(true)}
-          />
-          <Link
-            href={stackOverflowUrl}
-            target="_blank"
-            passHref={true}
-            aria-label="Stack Overflow"
-          >
-            <IconButton id={IconId.STACK_OVERFLOW} />
-          </Link>
-          <Link
-            href={linkedInUrl}
-            target="_blank"
-            passHref={true}
-            aria-label="LinkedIn"
-          >
-            <IconButton id={IconId.LINKED_IN} />
-          </Link>
-          <Link
-            href={buyMeCoffeeUrl}
-            target="_blank"
-            passHref={true}
-            aria-label="Buy Me a Coffee"
-          >
-            <IconButton id={SVGIconId.BUY_ME_COFFEE} />
-          </Link>
-          <Link
-            href={notionUrl}
-            target="_blank"
-            passHref={true}
-            aria-label="Notion"
-          >
-            <IconButton id={SVGIconId.NOTION} />
-          </Link>
+          <Popover text="Email">
+            <IconButton
+              id={IconId.ENVELOPE}
+              onClick={() => setModalOpen(true)}
+            />
+          </Popover>
+          <Popover text="Stack Overflow">
+            <Link
+              href={stackOverflowUrl}
+              target="_blank"
+              passHref={true}
+              aria-label="Stack Overflow"
+            >
+              <IconButton id={IconId.STACK_OVERFLOW} />
+            </Link>
+          </Popover>
+          <Popover text="LinkedIn">
+            <Link
+              href={linkedInUrl}
+              target="_blank"
+              passHref={true}
+              aria-label="LinkedIn"
+            >
+              <IconButton id={IconId.LINKED_IN} />
+            </Link>
+          </Popover>
+          <Popover text="Buy Me a Coffee">
+            <Link
+              href={buyMeCoffeeUrl}
+              target="_blank"
+              passHref={true}
+              aria-label="Buy Me a Coffee"
+            >
+              <IconButton id={SVGIconId.BUY_ME_COFFEE} />
+            </Link>
+          </Popover>
+          <Popover text="Notion">
+            <Link
+              href={notionUrl}
+              target="_blank"
+              passHref={true}
+              aria-label="Notion"
+            >
+              <IconButton id={SVGIconId.NOTION} />
+            </Link>
+          </Popover>
         </Box>
         <Box css={css`
           width: 100%;

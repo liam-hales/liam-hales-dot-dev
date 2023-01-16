@@ -4,9 +4,10 @@
 
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@mui/material';
+import { useRouter } from 'next/navigation';
 import { Header, Content, NoResults } from '../../../components';
-import { Breadcrumbs, BreadcrumbItem, Input, Timeline, TimelineEvent } from '../../../components/common';
-import { BoxAlignment, IconId, NavRoute, ScreenSize } from '../../../enums';
+import { Breadcrumbs, BreadcrumbItem, SearchInput, Timeline, TimelineEvent } from '../../../components/common';
+import { BoxAlignment, NavRoute, ScreenSize } from '../../../enums';
 import { LifeTimelineContent } from '../../../graphql';
 import { BaseProps } from '../../../types';
 import { useScreen } from '../../../hooks';
@@ -28,6 +29,7 @@ interface Props extends BaseProps {
 const LifeTimeline: FunctionComponent<Props> = ({ content, search }): ReactElement<Props> => {
 
   const { screenSize } = useScreen();
+  const { push } = useRouter();
   const { timelineEvents } = content;
 
   const [searchText, setSearchText] = useState<string>(search ?? '');
@@ -55,19 +57,29 @@ const LifeTimeline: FunctionComponent<Props> = ({ content, search }): ReactEleme
           row-gap: 40px;
         `}
       >
-        <Input
+        <SearchInput
           value={searchText}
-          placeholder="Search"
-          iconId={IconId.MAGNIFYING_GLASS}
-          onChange={(value) => setSearchText(value.trim())}
+          onChange={(value) => setSearchText(value)}
+          onSearch={() => {
+
+            // Define the search query params
+            // based on the search text
+            const params = new URLSearchParams({
+              ...(searchText !== '') && {
+                search: searchText,
+              },
+            });
+
+            push(`${NavRoute.LIFE_TIMELINE}?${params.toString()}`);
+          }}
           css={css`
-            width: ${(screenSize === ScreenSize.SMALL) ? '100%' : '350px'};
+            width: ${(screenSize === ScreenSize.SMALL) ? '100%' : '400px'};
           `}
         />
         {
           (timelineEvents.length === 0) && (
             <NoResults
-              searchText={searchText}
+              searchText={search ?? ''}
               css={css`
                 padding-top: 26px;
                 align-self: center;

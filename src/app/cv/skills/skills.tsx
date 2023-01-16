@@ -4,9 +4,10 @@
 
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@mui/material';
+import { useRouter } from 'next/navigation';
 import { Header, Content, SkillModal, Grid, SkillCard, NoResults } from '../../../components';
-import { Breadcrumbs, BreadcrumbItem, Input, Text } from '../../../components/common';
-import { BoxAlignment, ColourPalette, IconId, NavRoute, ScreenSize } from '../../../enums';
+import { Breadcrumbs, BreadcrumbItem, Text, SearchInput } from '../../../components/common';
+import { BoxAlignment, ColourPalette, NavRoute, ScreenSize } from '../../../enums';
 import { Skill, SkillsContent } from '../../../graphql';
 import { BaseProps } from '../../../types';
 import { useScreen } from '../../../hooks';
@@ -28,6 +29,7 @@ interface Props extends BaseProps {
 const Skills: FunctionComponent<Props> = ({ content, search }): ReactElement<Props> => {
 
   const { screenSize } = useScreen();
+  const { push } = useRouter();
   const { disclaimerText, skills } = content;
 
   const [searchText, setSearchText] = useState<string>(search ?? '');
@@ -74,13 +76,23 @@ const Skills: FunctionComponent<Props> = ({ content, search }): ReactElement<Pro
           row-gap: 40px;
         `}
       >
-        <Input
+        <SearchInput
           value={searchText}
-          placeholder="Search"
-          iconId={IconId.MAGNIFYING_GLASS}
-          onChange={(value) => setSearchText(value.trim())}
+          onChange={(value) => setSearchText(value)}
+          onSearch={() => {
+
+            // Define the search query params
+            // based on the search text
+            const params = new URLSearchParams({
+              ...(searchText !== '') && {
+                search: searchText,
+              },
+            });
+
+            push(`${NavRoute.SKILLS}?${params.toString()}`);
+          }}
           css={css`
-            width: ${(screenSize === ScreenSize.SMALL) ? '100%' : '350px'};
+            width: ${(screenSize === ScreenSize.SMALL) ? '100%' : '400px'};
           `}
         />
         {

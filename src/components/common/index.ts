@@ -7,6 +7,7 @@ import IconButton from './buttons/iconButton';
 import Card from './card';
 import Image from './image';
 import Input from './input';
+import SearchInput from './inputs/searchInput';
 import Tabs from './tabs/tabs';
 import Tab from './tabs/tab';
 import Typewriter from './text/typewriter';
@@ -31,6 +32,7 @@ export {
   Card,
   Image,
   Input,
+  SearchInput,
   Tabs,
   Tab,
   Typewriter,

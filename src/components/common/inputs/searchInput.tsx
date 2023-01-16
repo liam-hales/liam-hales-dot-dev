@@ -1,0 +1,57 @@
+/** @jsxImportSource @emotion/react */
+
+'use client';
+
+import { FunctionComponent, ReactElement } from 'react';
+import { css } from '@mui/material';
+import { IconId, InputEnterKeyText } from '../../../enums';
+import { BaseProps } from '../../../types';
+import { Input, Button } from '..';
+
+/**
+ * The `SearchInput` component props
+ */
+interface Props extends BaseProps {
+  readonly value: string;
+  readonly onChange: (value: string) => void;
+  readonly onSearch: () => void;
+}
+
+/**
+ * The common `SearchInput` component used to render a
+ * text input styled to be specific to text search
+ *
+ * @param props The component props
+ * @returns The `SearchInput` component
+ */
+const SearchInput: FunctionComponent<Props> = ({ className, value, onChange, onSearch }): ReactElement<Props> => {
+  return (
+    <Input
+      className={className}
+      value={value}
+      placeholder="Search"
+      enterKeyText={InputEnterKeyText.SEARCH}
+      iconId={IconId.MAGNIFYING_GLASS}
+      onChange={onChange}
+      onKeyDown={(key) => {
+
+        // If the key pressed was the enter
+        // key then call `onSearch`
+        if (key === 'Enter') {
+          onSearch();
+        }
+      }}
+    >
+      <Button
+        onClick={onSearch}
+        css={css`
+          flex-shrink: 0;
+        `}
+      >
+        Search
+      </Button>
+    </Input>
+  );
+};
+
+export default SearchInput;

@@ -32,16 +32,6 @@ export enum ScreenSize {
 }
 
 /**
- * The query satus used for
- * the `useQuery` hook
- */
-export enum QueryStatus {
-  LOADING = 'LOADING',
-  SUCCESS = 'SUCCESS',
-  ERROR = 'ERROR',
-}
-
-/**
  * The navigation key used for the `TopNav`
  * and `BottomNav` components
  */
@@ -139,6 +129,20 @@ export enum TextElement {
   H2 = 'h2',
   PARAGRAPH = 'p',
   SPAN = 'span',
+}
+
+/**
+ * Describes the different keyboard enter key text
+ * that is supported by the `Input` component
+ */
+export enum InputEnterKeyText {
+  ENTER = 'enter',
+  DONE = 'done',
+  GO = 'go',
+  NEXT = 'next',
+  PREVIOUS = 'previous',
+  SEARCH = 'search',
+  SEND = 'send',
 }
 
 /**

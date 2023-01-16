@@ -4,9 +4,9 @@
 
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { InputBase, css } from '@mui/material';
-import { BoxDirection, ColourPalette, IconId, InputEnterKeyText } from '../../enums';
-import { BaseProps } from '../../types';
-import { Box, Icon, IconButton } from '.';
+import { BoxDirection, ColourPalette, IconId, InputEnterKeyText } from '../../../enums';
+import { BaseProps } from '../../../types';
+import { Box, Icon, IconButton } from '..';
 
 /**
  * The `Input` component props

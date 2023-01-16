@@ -6,7 +6,7 @@ import Button from './buttons/button';
 import IconButton from './buttons/iconButton';
 import Card from './card';
 import Image from './image';
-import Input from './input';
+import Input from './inputs/input';
 import SearchInput from './inputs/searchInput';
 import Tabs from './tabs/tabs';
 import Tab from './tabs/tab';

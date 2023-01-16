@@ -2,9 +2,9 @@
 
 'use client';
 
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { InputBase, css } from '@mui/material';
-import { BoxDirection, ColourPalette, IconId } from '../../enums';
+import { BoxDirection, ColourPalette, IconId, InputEnterKeyText } from '../../enums';
 import { BaseProps } from '../../types';
 import { Box, Icon, IconButton } from '.';
 
@@ -15,7 +15,10 @@ interface Props extends BaseProps {
   readonly value: string;
   readonly placeholder?: string;
   readonly iconId?: IconId;
+  readonly enterKeyText?: InputEnterKeyText;
   readonly onChange: (value: string) => void;
+  readonly onKeyDown?: (key: string) => void;
+  readonly children?: ReactNode;
 }
 
 /**
@@ -25,7 +28,7 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `Input` component
  */
-const Input: FunctionComponent<Props> = ({ className, value, placeholder, iconId, onChange }): ReactElement<Props> => {
+const Input: FunctionComponent<Props> = ({ className, value, placeholder, iconId, enterKeyText, onChange, onKeyDown, children }): ReactElement<Props> => {
   return (
     <Box
       className={className}
@@ -34,7 +37,7 @@ const Input: FunctionComponent<Props> = ({ className, value, placeholder, iconId
         padding-top: 8px;
         padding-bottom: 8px;
         padding-left: 21px;
-        padding-right: 21px;
+        padding-right: ${(children != null) ? 8 : 21}px;
         border-radius: 1000px;
         background-color: ${ColourPalette.GREY_800};
       `}
@@ -54,6 +57,12 @@ const Input: FunctionComponent<Props> = ({ className, value, placeholder, iconId
         type="text"
         value={value}
         placeholder={placeholder}
+        componentsProps={{
+          input: {
+            enterKeyHint: enterKeyText,
+          },
+        }}
+        onKeyDown={(event) => onKeyDown?.(event.key)}
         onChange={(event) => {
 
           // Destructure the event and the event target
@@ -85,10 +94,12 @@ const Input: FunctionComponent<Props> = ({ className, value, placeholder, iconId
             onClick={() => onChange('')}
             css={css`
               margin-left: 8px;
+              margin-right: ${(children != null) ? 8 : 0}px;
             `}
           />
         )
       }
+      {children}
     </Box>
   );
 };

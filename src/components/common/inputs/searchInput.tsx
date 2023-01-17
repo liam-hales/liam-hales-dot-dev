@@ -2,7 +2,7 @@
 
 'use client';
 
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, useRef } from 'react';
 import { css } from '@mui/material';
 import { IconId, InputEnterKeyText } from '../../../enums';
 import { BaseProps } from '../../../types';
@@ -25,8 +25,11 @@ interface Props extends BaseProps {
  * @returns The `SearchInput` component
  */
 const SearchInput: FunctionComponent<Props> = ({ className, value, onChange, onSearch }): ReactElement<Props> => {
+
+  const ref = useRef<HTMLInputElement>(null);
   return (
     <Input
+      reference={ref}
       className={className}
       value={value}
       placeholder="Search"
@@ -35,9 +38,10 @@ const SearchInput: FunctionComponent<Props> = ({ className, value, onChange, onS
       onChange={onChange}
       onKeyDown={(key) => {
 
-        // If the key pressed was the enter
-        // key then call `onSearch`
+        // If the key pressed was the enter key then dismiss
+        // the keyboard with `.blur()` and call `onSearch`
         if (key === 'Enter') {
+          ref.current?.blur();
           onSearch();
         }
       }}

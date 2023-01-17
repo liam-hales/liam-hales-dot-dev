@@ -11,7 +11,7 @@ import { Box, Icon, IconButton } from '..';
 /**
  * The `Input` component props
  */
-interface Props extends BaseProps {
+interface Props extends BaseProps<HTMLInputElement> {
   readonly value: string;
   readonly placeholder?: string;
   readonly iconId?: IconId;
@@ -28,7 +28,7 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `Input` component
  */
-const Input: FunctionComponent<Props> = ({ className, value, placeholder, iconId, enterKeyText, onChange, onKeyDown, children }): ReactElement<Props> => {
+const Input: FunctionComponent<Props> = ({ reference, className, value, placeholder, iconId, enterKeyText, onChange, onKeyDown, children }): ReactElement<Props> => {
   return (
     <Box
       className={className}
@@ -54,6 +54,7 @@ const Input: FunctionComponent<Props> = ({ className, value, placeholder, iconId
         )
       }
       <InputBase
+        inputRef={reference}
         type="text"
         value={value}
         placeholder={placeholder}

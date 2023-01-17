@@ -110,7 +110,7 @@ const Skills: FunctionComponent<Props> = ({ content, search }): ReactElement<Pro
         {
           (skills.length === 0) && (
             <NoResults
-              searchText={searchText}
+              searchText={search ?? ''}
               css={css`
                 padding-top: 26px;
                 align-self: center;

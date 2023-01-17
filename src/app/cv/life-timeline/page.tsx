@@ -5,6 +5,12 @@ import { PageProps, ServerComponent } from '../../../types';
 import LifeTimeline from './lifeTimeline';
 
 /**
+ * Set the Next.js revalidate to `0` which will stop caching
+ * for this page and force a server request for data every time
+ */
+export const revalidate = 0;
+
+/**
  * The entry point for the CV life timeline page route `/cv/life-timeline`, used to fetch the required
  * data and render the `LifeTimeline` component passing said data as props
  *
@@ -14,7 +20,10 @@ const LifeTimelinePage: ServerComponent<PageProps> = async ({ searchParams = {} 
 
   const { search = '' } = searchParams;
   const { content } = await useQuery<Page<PageSlug.LIFE_TIMELINE>, SearchVariables>(lifeTimelinePageQuery, {
-    search: search,
+    cache: 'no-store',
+    variables: {
+      search: search,
+    },
   });
 
   return (

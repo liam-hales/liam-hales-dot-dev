@@ -75,3 +75,11 @@ export interface PageProps extends BaseProps {
   readonly params?: Partial<Record<string, string>>;
   readonly searchParams?: Partial<Record<string, string>>;
 }
+
+/**
+ * Describes the `options` for the `useQuery` hook
+ */
+export interface UseQueryOptions<V extends Partial<Record<keyof V, unknown>> = never> {
+  readonly variables?: V;
+  readonly cache?: RequestCache;
+}

@@ -1,4 +1,5 @@
 import { GraphQLClient } from 'graphql-request';
+import { UseQueryOptions } from '../types';
 import { useConfig } from '.';
 
 /**
@@ -11,26 +12,33 @@ import { useConfig } from '.';
  * - Generic Type `V` for the request variables
  *
  * @param document The GraphQL query document
- * @param variables The GraphQL query varibales
+ * @param options The GraphQL query options
  *
  * @returns The `useQuery` hook response
  * @example
  *
- * const data = await useQuery<Data, Variables>(document, variables);
+ * const data = await useQuery<Data, Variables>(document, {
+ *   cache: 'no-cache',
+ *   variables: { ... },
+ * });
  */
 const useQuery = async <
   T extends Partial<Record<keyof T, unknown>>,
   V extends Partial<Record<keyof V, unknown>> = never,
 >(
   document: string,
-  variables?: V,
+  options: UseQueryOptions<V> = {},
 ): Promise<T> => {
 
   const { apiUrl } = useConfig();
+  const { variables, cache } = options;
 
   // Initialise the GraphQL client with
   // the API URL and the options
-  const client = new GraphQLClient(apiUrl);
+  const client = new GraphQLClient(apiUrl, {
+    cache: cache,
+    fetch: fetch,
+  });
 
   // Make the GraphQL request and get
   // the first key from the response

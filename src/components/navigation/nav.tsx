@@ -4,12 +4,11 @@
 
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css } from '@mui/material';
-import Link from 'next/link';
 import { BaseProps } from '../../types';
 import { BoxJustify, NavRoute, ScreenSize } from '../../enums';
 import { TopNav, BottomNav, Logo } from '..';
 import { useScreen } from '../../hooks';
-import { Box } from '../common';
+import { Box, Link } from '../common';
 import { GlobalContent } from '../../graphql';
 
 /**

@@ -4,11 +4,10 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import Link from 'next/link';
 import { BoxAlignment, NavRoute, ColourPalette, IconId } from '../../enums';
 import { TimelineEvent as Event } from '../../graphql';
 import { BaseProps } from '../../types';
-import { Box, Title, TimelineEvent, Text, Timeline, Button } from '../common';
+import { Box, Title, TimelineEvent, Text, Timeline, Button, Link } from '../common';
 
 /**
  * The `LifeTimelinePreview` component props
@@ -77,7 +76,6 @@ const LifeTimelinePreview: FunctionComponent<Props> = ({ reference, className, t
         css={css`
           margin-top: -12px;
           align-self: center;
-          text-decoration: none;
         `}
       >
         <Button iconId={IconId.ARROW_RIGHT}>

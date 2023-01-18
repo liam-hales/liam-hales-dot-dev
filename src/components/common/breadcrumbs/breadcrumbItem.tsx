@@ -4,10 +4,9 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import Link from 'next/link';
 import { BaseProps } from '../../../types';
 import { ColourPalette, NavRoute } from '../../../enums';
-import { Text } from '..';
+import { Link, Text } from '..';
 
 /**
  * The `BreadcrumbItem` component props
@@ -61,9 +60,6 @@ const BreadcrumbItem: FunctionComponent<Props> = (props): ReactElement<Props> =>
     <Link
       href={route}
       passHref={true}
-      css={css`
-        text-decoration: none;
-      `}
     >
       {textComponent}
     </Link>

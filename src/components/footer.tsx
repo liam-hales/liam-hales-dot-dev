@@ -4,12 +4,11 @@
 
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@mui/material';
-import Link from 'next/link';
 import { BoxDirection, BoxAlignment, ColourPalette, BoxJustify, IconId, SVGIconId } from '../enums';
 import { BaseProps } from '../types';
 import { useDate } from '../hooks';
 import { GlobalContent } from '../graphql';
-import { Box, Divider, Icon, IconButton, Text, Popover } from './common';
+import { Box, Divider, Icon, IconButton, Text, Popover, Link } from './common';
 import { Content, Logo, EmailModal } from '.';
 
 /**

@@ -5,9 +5,8 @@
 import { ReactElement, useEffect } from 'react';
 import { css } from '@mui/material';
 import { ErrorComponent } from 'next/dist/client/components/error-boundary';
-import Link from 'next/link';
 import { ColourPalette, IconId, NavRoute } from '../enums';
-import { Button, Title, Text } from '../components/common';
+import { Button, Title, Text, Link } from '../components/common';
 import { Content } from '../components';
 
 /**
@@ -47,9 +46,6 @@ const AppError: ErrorComponent = ({ error, reset }): ReactElement => {
       <Link
         href={NavRoute.HOME}
         passHref={true}
-        css={css`
-          text-decoration: none;
-        `}
       >
         <Button
           iconId={IconId.ARROW_LEFT}

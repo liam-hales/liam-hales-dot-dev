@@ -5,11 +5,10 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
 import { useScroll, useTransform } from 'framer-motion';
-import Link from 'next/link';
 import { Asset } from '../../graphql';
 import { BaseProps } from '../../types';
 import { BoxAlignment, BoxJustify, TextElement } from '../../enums';
-import { Image, Typewriter, Text, Box } from '../common';
+import { Image, Typewriter, Text, Box, Link } from '../common';
 import { Content } from '..';
 
 /**
@@ -159,9 +158,6 @@ const HomeHeader: FunctionComponent<Props> = ({ className, foregroundImage, back
             href={shayanRastegarUrl}
             target="_blank"
             passHref={true}
-            css={css`
-              text-decoration: none;
-            `}
           >
             <Text
               isBold={true}

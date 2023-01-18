@@ -4,10 +4,9 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import Link from 'next/link';
 import { ColourPalette, IconId } from '../../enums';
 import { BaseProps } from '../../types';
-import { Button, Image, Modal, Text } from '../common';
+import { Button, Image, Link, Modal, Text } from '../common';
 
 /**
  * The `SkillModal` component props
@@ -74,9 +73,6 @@ const SkillModal: FunctionComponent<Props> = ({ isOpen, name, type, description,
         href={url}
         target="_blank"
         passHref={true}
-        css={css`
-          text-decoration: none;
-        `}
       >
         <Button iconId={IconId.ARROW_RIGHT_SQUARE}>
           Visit website

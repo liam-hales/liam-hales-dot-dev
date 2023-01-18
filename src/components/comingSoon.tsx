@@ -4,9 +4,8 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import Link from 'next/link';
 import { ColourPalette, IconId, NavRoute } from '../enums';
-import { Button, Title, Text } from './common';
+import { Button, Title, Text, Link } from './common';
 import { Content } from '.';
 
 /**
@@ -39,9 +38,6 @@ const ComingSoon: FunctionComponent = (): ReactElement => {
           href="https://liamhales.io"
           target="_blank"
           passHref={true}
-          css={css`
-            text-decoration: none;
-          `}
         >
           <Text isBold={true}>
             liamhales.io
@@ -53,9 +49,6 @@ const ComingSoon: FunctionComponent = (): ReactElement => {
       <Link
         href={NavRoute.HOME}
         passHref={true}
-        css={css`
-          text-decoration: none;
-        `}
       >
         <Button iconId={IconId.ARROW_LEFT}>
           Return home

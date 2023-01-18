@@ -4,10 +4,9 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import Link from 'next/link';
 import { BoxDirection, NavKey, NavRoute, BoxJustify, ColourPalette, SVGIconId } from '../../enums';
 import { useNav } from '../../hooks';
-import { Box, Tabs, Tab, IconButton, Popover } from '../common';
+import { Box, Tabs, Tab, IconButton, Popover, Link } from '../common';
 import { Logo } from '..';
 import { BaseProps } from '../../types';
 

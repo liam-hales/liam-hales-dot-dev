@@ -4,10 +4,9 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import Link from 'next/link';
 import { NavRoute, ColourPalette, IconId } from '../enums';
 import { BaseProps } from '../types';
-import { Box, Button, Text, Title } from './common';
+import { Box, Button, Link, Text, Title } from './common';
 
 /**
  * The `StillInterested` component props
@@ -43,9 +42,6 @@ const StillInterested: FunctionComponent<Props> = ({ className, text }): ReactEl
       <Link
         href={NavRoute.CV}
         passHref={true}
-        css={css`
-          text-decoration: none;
-        `}
       >
         <Button iconId={IconId.DOCUMENT}>
           Curriculum Vitae

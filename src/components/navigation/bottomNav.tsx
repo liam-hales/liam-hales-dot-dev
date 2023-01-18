@@ -4,10 +4,9 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { BottomNavigation, BottomNavigationAction, css } from '@mui/material';
-import Link from 'next/link';
 import { ColourPalette, IconId, NavKey, NavRoute } from '../../enums';
 import { useNav } from '../../hooks';
-import { Box, Text, Icon } from '../common';
+import { Box, Text, Icon, Link } from '../common';
 
 /**
  * The CSS styles for the

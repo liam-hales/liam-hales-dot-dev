@@ -4,12 +4,11 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import Link from 'next/link';
 import { BoxAlignment, NavRoute, ColourPalette, IconId, ScreenSize } from '../../enums';
 import { Skill } from '../../graphql';
 import { useScreen } from '../../hooks';
 import { BaseProps } from '../../types';
-import { Box, Button, Text, Title } from '../common';
+import { Box, Button, Link, Text, Title } from '../common';
 import { Grid, SkillCard } from '..';
 
 /**
@@ -80,7 +79,6 @@ const SkillsPreview: FunctionComponent<Props> = ({ reference, className, text, s
         css={css`
           margin-top: ${(screenSize === ScreenSize.SMALL) ? -26 : 10}px;
           align-self: center;
-          text-decoration: none;
         `}
       >
         <Button iconId={IconId.ARROW_RIGHT}>

@@ -4,10 +4,9 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { Tab as MuiTab, css } from '@mui/material';
-import Link from 'next/link';
 import { BaseProps } from '../../../types';
 import { ColourPalette } from '../../../enums';
-import { Text } from '..';
+import { Link, Text } from '..';
 
 /**
  * The `Tab` component props

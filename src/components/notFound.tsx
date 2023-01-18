@@ -4,11 +4,10 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import Link from 'next/link';
 import { ColourPalette, IconId, NavRoute } from '../enums';
 import { GlobalContent } from '../graphql';
 import { BaseProps } from '../types';
-import { Button, Image, Text, Title } from './common';
+import { Button, Image, Link, Text, Title } from './common';
 import { Content } from '.';
 
 /**
@@ -68,9 +67,6 @@ const NotFound: FunctionComponent<Props> = ({ content }): ReactElement<Props> =>
       <Link
         href={NavRoute.HOME}
         passHref={true}
-        css={css`
-          text-decoration: none;
-        `}
       >
         <Button iconId={IconId.ARROW_LEFT}>
           Return home

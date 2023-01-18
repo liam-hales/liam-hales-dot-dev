@@ -142,7 +142,8 @@
         "exceptions": [
           "motion.div",
           "motion.img",
-          "Box"
+          "Box",
+          "NextLink"
         ]
       }
     ],

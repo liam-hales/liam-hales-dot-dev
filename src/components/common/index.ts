@@ -21,6 +21,7 @@ import Popover from './popover';
 import Backdrop from './backdrop';
 import Markdown from './markdown';
 import CodeSnippet from './code/codeSnippet';
+import Link from './link';
 
 export {
   Box,
@@ -46,4 +47,5 @@ export {
   Backdrop,
   Markdown,
   CodeSnippet,
+  Link,
 };

@@ -2712,7 +2712,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^18.0.0":
+"@types/react@npm:*":
   version: 18.0.26
   resolution: "@types/react@npm:18.0.26"
   dependencies:
@@ -2720,6 +2720,17 @@ __metadata:
     "@types/scheduler": "*"
     csstype: ^3.0.2
   checksum: b62f0ea3cdfa68e106391728325057ad36f1bde7ba2dfae029472c47e01e482bc77c6ba4f1dad59f3f04ee81cb597618ff7c30a33c157c0a20462b6dd6aa2d4d
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:^18.0.27":
+  version: 18.0.27
+  resolution: "@types/react@npm:18.0.27"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: 600fdbc39a92ea4a77047db3e12f05f67776a710f5918248c0189a59ac2a38900c9db5a5d2e433a16df528a3ecab1aa114b322cacea573bb1ca2fc0b094c52d1
   languageName: node
   linkType: hard
 
@@ -5298,9 +5309,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^8.2.4":
-  version: 8.2.4
-  resolution: "framer-motion@npm:8.2.4"
+"framer-motion@npm:^8.5.0":
+  version: 8.5.0
+  resolution: "framer-motion@npm:8.5.0"
   dependencies:
     "@emotion/is-prop-valid": ^0.8.2
     "@motionone/dom": ^10.15.3
@@ -5312,7 +5323,7 @@ __metadata:
   dependenciesMeta:
     "@emotion/is-prop-valid":
       optional: true
-  checksum: e5598a84a9f6446ba15b73b89513faf20fa680d1045588bb8708479245806d921d52f9ba494858ce862a9b791050ac23732f22d23a6e3c443516f77f21fc49a2
+  checksum: d35f109d87431731c3c3fecc132737c1442604f455b768b3352dfa887264439edbc620d41c68dc61ac044e483aa8e586b8dfd3bc323d4bcce83227548866e2e3
   languageName: node
   linkType: hard
 
@@ -6720,7 +6731,7 @@ __metadata:
     "@next/font": ^13.1.1
     "@svgr/webpack": ^6.5.1
     "@types/node": ^18.11.9
-    "@types/react": ^18.0.0
+    "@types/react": ^18.0.27
     "@types/react-dom": ^18.0.0
     "@types/react-syntax-highlighter": ^15.5.5
     "@types/sharp": ^0.31.0
@@ -6735,13 +6746,13 @@ __metadata:
     eslint-plugin-jsx-a11y: ^6.6.1
     eslint-plugin-react: ^7.31.11
     eslint-plugin-react-hooks: ^4.6.0
-    framer-motion: ^8.2.4
+    framer-motion: ^8.5.0
     graphql: ^16.5.0
     graphql-request: ^5.0.0
     next: ^13.1.1
     next-sitemap: ^3.1.45
     npm-check-updates: ^16.4.3
-    react: ^18.1.0
+    react: ^18.2.0
     react-dom: ^18.1.0
     react-markdown: ^8.0.4
     react-syntax-highlighter: ^15.5.0
@@ -8482,7 +8493,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@npm:^18.1.0":
+"react@npm:^18.2.0":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
   dependencies:

@@ -4,15 +4,18 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { motion, MotionProps } from 'framer-motion';
+import NextImage from 'next/image';
 import { BaseProps } from '../../types';
+import { withMotion } from '../../helpers';
 
 /**
  * The `Image` component props
  */
-interface Props extends MotionProps, BaseProps {
+interface Props extends BaseProps<HTMLImageElement> {
   readonly path: string;
   readonly alt: string;
+  readonly width?: number;
+  readonly height?: number;
 }
 
 /**
@@ -24,18 +27,24 @@ interface Props extends MotionProps, BaseProps {
  */
 const Image: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
+    reference,
     className,
     path,
     alt,
-    ...motionProps
+    width,
+    height,
   } = props;
 
   return (
-    <motion.img
-      {...motionProps}
+    <NextImage
+      ref={reference}
       className={className}
       src={path}
       alt={alt}
+      width={width}
+      height={height}
+      fill={(width == null && height == null)}
+      quality={100}
       css={css`
         object-fit: cover;
       `}

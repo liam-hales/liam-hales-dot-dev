@@ -58,9 +58,9 @@ const SkillCard: FunctionComponent<Props> = ({ className, name, type, imageUrl, 
           <Image
             path={imageUrl}
             alt={name}
+            width={46}
+            height={46}
             css={css`
-              width: 46px;
-              height: 46px;
               margin-left: 20px;
               flex-shrink: 0;
             `}

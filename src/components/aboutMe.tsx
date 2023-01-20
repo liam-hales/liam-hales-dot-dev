@@ -48,9 +48,9 @@ const AboutMe: FunctionComponent<Props> = ({ className, text, meImage, careerSta
           <Image
             path={meImage.url}
             alt="Liam Hales"
+            width={116}
+            height={116}
             css={css`
-              width: 116px;
-              height: 116px;
               border-radius: 50%;
               margin-top: 16px;
               margin-right: 40px;

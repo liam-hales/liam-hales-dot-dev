@@ -41,10 +41,8 @@ const SkillModal: FunctionComponent<Props> = ({ isOpen, name, type, description,
           <Image
             path={imageUrl}
             alt={name}
-            css={css`
-              width: 68px;
-              height: 68px;
-            `}
+            width={68}
+            height={68}
           />
         )
       }

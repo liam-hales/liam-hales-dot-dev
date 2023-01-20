@@ -61,8 +61,6 @@ const HomeHeader: FunctionComponent<Props> = ({ className, foregroundImage, back
             y: backgroundY,
           }}
           css={css`
-            width: 100%;
-            height: 100%;
             border-radius: 16px;
           `}
         />
@@ -83,10 +81,6 @@ const HomeHeader: FunctionComponent<Props> = ({ className, foregroundImage, back
           style={{
             y: foregroundY,
           }}
-          css={css`
-            width: 100%;
-            height: 100%;
-          `}
         />
       </div>
       <Content

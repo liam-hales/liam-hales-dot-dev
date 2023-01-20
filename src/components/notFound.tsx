@@ -58,8 +58,8 @@ const NotFound: FunctionComponent<Props> = ({ content }): ReactElement<Props> =>
       <Image
         path={notFoundImage.url}
         alt="Not found image"
+        width={320}
         css={css`
-          width: 320px;
           margin-top: 38px;
           margin-Bottom: 38px;
         `}

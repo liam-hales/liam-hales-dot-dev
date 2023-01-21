@@ -4,14 +4,13 @@
 
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css } from '@mui/material';
-import { motion, MotionProps } from 'framer-motion';
 import { BoxAlignment, BoxDirection, BoxJustify } from '../../enums';
 import { BaseProps } from '../../types';
 
 /**
  * The `Box` component props
  */
-interface Props extends MotionProps, BaseProps<HTMLDivElement> {
+interface Props extends BaseProps<HTMLDivElement> {
   readonly direction?: BoxDirection;
   readonly alignment?: BoxAlignment;
   readonly justify?: BoxJustify;
@@ -37,15 +36,22 @@ const Box: FunctionComponent<Props> = (props): ReactElement<Props> => {
     wrap = false,
     onClick,
     children,
-    ...motionProps
   } = props;
 
   return (
-    <motion.div
-      {...motionProps}
+    <div
       ref={reference}
       className={className}
+      role={(onClick != null) ? 'button' : undefined}
       onClick={onClick}
+      onKeyDown={(event) => {
+
+        // If the key pressed was the enter key then
+        // call `onClick` to simulate a click
+        if (event.key === 'Enter') {
+          onClick?.();
+        }
+      }}
       css={css`
         display: flex;
         flex-direction: ${direction};
@@ -56,7 +62,7 @@ const Box: FunctionComponent<Props> = (props): ReactElement<Props> => {
       `}
     >
       {children}
-    </motion.div>
+    </div>
   );
 };
 

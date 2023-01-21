@@ -1,4 +1,4 @@
-import { ReactElement, RefObject } from 'react';
+import { ReactElement, Ref } from 'react';
 import { ColourPalette, ScreenSize } from './enums';
 
 /**
@@ -61,9 +61,14 @@ export interface ServerComponent<P extends Partial<Record<keyof P, unknown>> = n
  * props should `extends`.
  *
  * Generic type `T` for the `reference`
+ *
+ * The `reference` prop cannot be called
+ * `ref` as this will not work
+ *
+ * @see https://reactjs.org/docs/forwarding-refs.html
  */
 export interface BaseProps<T extends HTMLElement = HTMLElement> {
-  readonly reference?: RefObject<T>;
+  readonly reference?: Ref<T>;
   readonly className?: string;
 }
 

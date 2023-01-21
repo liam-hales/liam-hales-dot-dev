@@ -63,7 +63,7 @@ const Brand: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
       </Header>
       <Content>
         <BrandLogo
-          reference={brandLogoRef}
+          ref={brandLogoRef}
           text={logoText}
           letterLText={logoLetterLText}
           reverseLetterLText={logoReverseLetterLText}
@@ -75,7 +75,7 @@ const Brand: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           `}
         />
         <BrandColourPalette
-          reference={brandColourPaletteRef}
+          ref={brandColourPaletteRef}
           text={colourPaletteText}
           css={css`
             // Margin is applied here and not padding so
@@ -84,7 +84,7 @@ const Brand: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           `}
         />
         <BrandTypography
-          reference={brandTypographyRef}
+          ref={brandTypographyRef}
           text={typographyText}
           css={css`
             // Margin is applied here and not padding so

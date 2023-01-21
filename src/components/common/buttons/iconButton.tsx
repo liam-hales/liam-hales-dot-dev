@@ -7,11 +7,12 @@ import { css } from '@mui/material';
 import { ColourPalette, IconId, SVGIconId } from '../../../enums';
 import { BaseProps } from '../../../types';
 import { Box, Icon } from '..';
+import { withMotion } from '../../../helpers';
 
 /**
  * The `IconButton` component props
  */
-interface Props extends BaseProps {
+interface Props extends BaseProps<HTMLDivElement> {
   readonly id: IconId | SVGIconId;
   readonly colour?: ColourPalette;
   readonly onClick?: () => void;
@@ -26,6 +27,7 @@ interface Props extends BaseProps {
  */
 const IconButton: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
+    internalRef,
     className,
     id,
     colour = ColourPalette.BLUE,
@@ -34,6 +36,7 @@ const IconButton: FunctionComponent<Props> = (props): ReactElement<Props> => {
 
   return (
     <Box
+      ref={internalRef}
       className={className}
       onClick={onClick}
     >
@@ -50,4 +53,4 @@ const IconButton: FunctionComponent<Props> = (props): ReactElement<Props> => {
   );
 };
 
-export default IconButton;
+export default withMotion(IconButton);

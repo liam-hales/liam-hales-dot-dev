@@ -6,6 +6,7 @@ import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css } from '@mui/material';
 import { BoxAlignment, BoxDirection, BoxJustify } from '../../enums';
 import { BaseProps } from '../../types';
+import { withMotion } from '../../helpers';
 
 /**
  * The `Box` component props
@@ -28,7 +29,7 @@ interface Props extends BaseProps<HTMLDivElement> {
  */
 const Box: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
-    reference,
+    internalRef,
     className,
     direction = BoxDirection.COLUMN,
     alignment = BoxAlignment.CENTER,
@@ -40,7 +41,7 @@ const Box: FunctionComponent<Props> = (props): ReactElement<Props> => {
 
   return (
     <div
-      ref={reference}
+      ref={internalRef}
       className={className}
       role={(onClick != null) ? 'button' : undefined}
       onClick={onClick}
@@ -66,4 +67,4 @@ const Box: FunctionComponent<Props> = (props): ReactElement<Props> => {
   );
 };
 
-export default Box;
+export default withMotion(Box);

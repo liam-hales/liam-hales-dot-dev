@@ -7,6 +7,7 @@ import { css } from '@mui/material';
 import { BoxAlignment, BoxDirection, ColourPalette } from '../enums';
 import { BaseProps } from '../types';
 import { useDate } from '../hooks';
+import { withRef } from '../helpers';
 import { Box, Text, Title } from './common';
 import { Stat } from '.';
 
@@ -25,7 +26,7 @@ interface Props extends BaseProps<HTMLDivElement> {
  * @param props The component props
  * @returns The `CurrentPosition` component
  */
-const CurrentPosition: FunctionComponent<Props> = ({ reference, className, text, careerStartDate }): ReactElement<Props> => {
+const CurrentPosition: FunctionComponent<Props> = ({ internalRef, className, text, careerStartDate }): ReactElement<Props> => {
 
   const { utc } = useDate();
 
@@ -36,7 +37,7 @@ const CurrentPosition: FunctionComponent<Props> = ({ reference, className, text,
 
   return (
     <Box
-      reference={reference}
+      ref={internalRef}
       className={className}
       alignment={BoxAlignment.START}
     >
@@ -72,4 +73,4 @@ const CurrentPosition: FunctionComponent<Props> = ({ reference, className, text,
   );
 };
 
-export default CurrentPosition;
+export default withRef(CurrentPosition);

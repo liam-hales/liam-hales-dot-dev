@@ -7,6 +7,7 @@ import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { ColourPalette, TextElement } from '../../../enums';
 import { BaseProps } from '../../../types';
 import { firaCode } from '../../../fonts';
+import { withMotion } from '../../../helpers';
 
 /**
  * The `Text` component props
@@ -31,6 +32,7 @@ interface Props extends BaseProps {
  */
 const Text: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
+    internalRef,
     className,
     colour = ColourPalette.WHITE,
     element = TextElement.PARAGRAPH,
@@ -44,6 +46,7 @@ const Text: FunctionComponent<Props> = (props): ReactElement<Props> => {
 
   return (
     <Typography
+      ref={internalRef}
       className={className}
       component={element}
       onClick={onClick}
@@ -75,4 +78,4 @@ const Text: FunctionComponent<Props> = (props): ReactElement<Props> => {
   );
 };
 
-export default Text;
+export default withMotion(Text);

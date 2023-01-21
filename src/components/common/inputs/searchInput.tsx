@@ -29,7 +29,7 @@ const SearchInput: FunctionComponent<Props> = ({ className, value, onChange, onS
   const ref = useRef<HTMLInputElement>(null);
   return (
     <Input
-      reference={ref}
+      ref={ref}
       className={className}
       value={value}
       placeholder="Search"

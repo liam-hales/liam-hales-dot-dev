@@ -4,15 +4,15 @@
 
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css } from '@mui/material';
-import { MotionProps } from 'framer-motion';
 import { BoxAlignment, BoxDirection, BoxJustify, ColourPalette } from '../../enums';
 import { BaseProps } from '../../types';
+import { withMotion } from '../../helpers';
 import { Box } from '.';
 
 /**
  * The `Card` component props
  */
-interface Props extends MotionProps, BaseProps<HTMLDivElement> {
+interface Props extends BaseProps<HTMLDivElement> {
   readonly direction?: BoxDirection;
   readonly alignment?: BoxAlignment;
   readonly justify?: BoxJustify;
@@ -29,20 +29,18 @@ interface Props extends MotionProps, BaseProps<HTMLDivElement> {
  */
 const Card: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
-    reference,
+    internalRef,
     className,
     direction,
     alignment,
     justify,
     onClick,
     children,
-    ...motionProps
   } = props;
 
   return (
     <Box
-      {...motionProps}
-      reference={reference}
+      ref={internalRef}
       className={className}
       direction={direction}
       alignment={alignment}
@@ -58,4 +56,4 @@ const Card: FunctionComponent<Props> = (props): ReactElement<Props> => {
   );
 };
 
-export default Card;
+export default withMotion(Card);

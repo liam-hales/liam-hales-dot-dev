@@ -7,6 +7,7 @@ import { InputBase, css } from '@mui/material';
 import { BoxDirection, ColourPalette, IconId, InputEnterKeyText } from '../../../enums';
 import { BaseProps } from '../../../types';
 import { Box, Icon, IconButton } from '..';
+import { withRef } from '../../../helpers';
 
 /**
  * The `Input` component props
@@ -28,7 +29,7 @@ interface Props extends BaseProps<HTMLInputElement> {
  * @param props The component props
  * @returns The `Input` component
  */
-const Input: FunctionComponent<Props> = ({ reference, className, value, placeholder, iconId, enterKeyText, onChange, onKeyDown, children }): ReactElement<Props> => {
+const Input: FunctionComponent<Props> = ({ internalRef, className, value, placeholder, iconId, enterKeyText, onChange, onKeyDown, children }): ReactElement<Props> => {
   return (
     <Box
       className={className}
@@ -54,7 +55,7 @@ const Input: FunctionComponent<Props> = ({ reference, className, value, placehol
         )
       }
       <InputBase
-        inputRef={reference}
+        inputRef={internalRef}
         type="text"
         value={value}
         placeholder={placeholder}
@@ -105,4 +106,4 @@ const Input: FunctionComponent<Props> = ({ reference, className, value, placehol
   );
 };
 
-export default Input;
+export default withRef(Input);

@@ -8,6 +8,7 @@ import { BoxAlignment, ColourPalette } from '../../enums';
 import { BaseProps } from '../../types';
 import { Box, Text, Title } from '../common';
 import { Grid, ColourCard } from '..';
+import { withRef } from '../../helpers';
 
 /**
  * The `BrandColourPalette` component props
@@ -23,10 +24,10 @@ interface Props extends BaseProps<HTMLDivElement> {
  * @param props The component props
  * @returns The `BrandColourPalette` component
  */
-const BrandColourPalette: FunctionComponent<Props> = ({ reference, className, text }): ReactElement<Props> => {
+const BrandColourPalette: FunctionComponent<Props> = ({ internalRef, className, text }): ReactElement<Props> => {
   return (
     <Box
-      reference={reference}
+      ref={internalRef}
       className={className}
       alignment={BoxAlignment.START}
     >
@@ -63,4 +64,4 @@ const BrandColourPalette: FunctionComponent<Props> = ({ reference, className, te
   );
 };
 
-export default BrandColourPalette;
+export default withRef(BrandColourPalette);

@@ -4,12 +4,13 @@
 
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { ClickAwayListener, css } from '@mui/material';
-import { motion, Transition } from 'framer-motion';
+import { Transition } from 'framer-motion';
 import { BoxAlignment, BoxJustify, ColourPalette, LogoSection, ScreenSize } from '../../enums';
 import { useScreen } from '../../hooks';
 import { BaseProps } from '../../types';
 import { Box, Text, Title } from '../common';
 import { Logo } from '..';
+import { withRef } from '../../helpers';
 
 /**
  * The `BrandLogo` component props
@@ -30,7 +31,7 @@ interface Props extends BaseProps<HTMLDivElement> {
  */
 const BrandLogo: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
-    reference,
+    internalRef,
     className,
     text,
     letterLText,
@@ -55,7 +56,7 @@ const BrandLogo: FunctionComponent<Props> = (props): ReactElement<Props> => {
 
   return (
     <Box
-      reference={reference}
+      ref={internalRef}
       className={className}
       alignment={BoxAlignment.START}
     >
@@ -82,23 +83,15 @@ const BrandLogo: FunctionComponent<Props> = (props): ReactElement<Props> => {
       `}
       >
         <ClickAwayListener onClickAway={() => setActiveLogoSection(undefined)}>
-          {
-            /**
-             * This `div` element is here in order for the
-             * `ClickAwayListener` to function correctly
-             */
-          }
-          <div>
-            <Logo
-              isInteractive={true}
-              activeSection={activeLogoSection}
-              onChange={(section) => setActiveLogoSection(section)}
-              css={css`
-                width: 170px;
-                align-self: center;
-              `}
-            />
-          </div>
+          <Logo
+            isInteractive={true}
+            activeSection={activeLogoSection}
+            onChange={(section) => setActiveLogoSection(section)}
+            css={css`
+              width: 170px;
+              align-self: center;
+            `}
+          />
         </ClickAwayListener>
         <Box
           justify={BoxJustify.CENTER}
@@ -111,90 +104,70 @@ const BrandLogo: FunctionComponent<Props> = (props): ReactElement<Props> => {
             text-align: center;
           `}
         >
-          <motion.div
+          <Text
+            colour={ColourPalette.GREY_400}
             animate={{
               y: (activeLogoSection == null) ? 0 : 50,
               opacity: (activeLogoSection == null) ? 1 : 0,
             }}
             transition={textTransition}
             css={css`
-              width: 100%;
               position: absolute;
+              width: 100%;
+              font-size: 16px;
             `}
           >
-            <Text
-              colour={ColourPalette.GREY_400}
-              css={css`
-                font-size: 16px;
-              `}
-            >
-              Select or hover over a section of the logo to inspect it&apos;s purpose.
-            </Text>
-          </motion.div>
-          <motion.div
+            Select or hover over a section of the logo to inspect it&apos;s purpose.
+          </Text>
+          <Text
+            isBold={true}
             animate={{
               y: (activeLogoSection === LogoSection.LETTER_L) ? 0 : 50,
               opacity: (activeLogoSection === LogoSection.LETTER_L) ? 1 : 0,
             }}
             transition={textTransition}
             css={css`
-              width: 100%;
               position: absolute;
+              width: 100%;
+              font-size: 16px;
             `}
           >
-            <Text
-              isBold={true}
-              css={css`
-                font-size: 16px;
-              `}
-            >
-              {letterLText}
-            </Text>
-          </motion.div>
-          <motion.div
+            {letterLText}
+          </Text>
+          <Text
+            isBold={true}
             animate={{
               y: (activeLogoSection === LogoSection.REVERSE_LETTER_L) ? 0 : 50,
               opacity: (activeLogoSection === LogoSection.REVERSE_LETTER_L) ? 1 : 0,
             }}
             transition={textTransition}
             css={css`
-              width: 100%;
               position: absolute;
+              width: 100%;
+              font-size: 16px;
             `}
           >
-            <Text
-              isBold={true}
-              css={css`
-                font-size: 16px;
-              `}
-            >
-              {reverseLetterLText}
-            </Text>
-          </motion.div>
-          <motion.div
+            {reverseLetterLText}
+          </Text>
+          <Text
+            isBold={true}
             animate={{
               y: (activeLogoSection === LogoSection.BAR) ? 0 : 50,
               opacity: (activeLogoSection === LogoSection.BAR) ? 1 : 0,
             }}
             transition={textTransition}
             css={css`
-              width: 100%;
               position: absolute;
+              width: 100%;
+              font-size: 16px;
             `}
           >
-            <Text
-              isBold={true}
-              css={css`
-                font-size: 16px;
-              `}
-            >
-              {barText}
-            </Text>
-          </motion.div>
+            {barText}
+          </Text>
         </Box>
       </Box>
     </Box>
   );
 };
 
-export default BrandLogo;
+export default withRef(BrandLogo);

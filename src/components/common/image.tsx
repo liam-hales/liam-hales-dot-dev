@@ -27,7 +27,7 @@ interface Props extends BaseProps<HTMLImageElement> {
  */
 const Image: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
-    reference,
+    internalRef,
     className,
     path,
     alt,
@@ -37,7 +37,7 @@ const Image: FunctionComponent<Props> = (props): ReactElement<Props> => {
 
   return (
     <NextImage
-      ref={reference}
+      ref={internalRef}
       className={className}
       src={path}
       alt={alt}
@@ -52,4 +52,4 @@ const Image: FunctionComponent<Props> = (props): ReactElement<Props> => {
   );
 };
 
-export default Image;
+export default withMotion(Image);

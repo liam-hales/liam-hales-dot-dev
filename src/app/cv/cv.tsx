@@ -70,7 +70,7 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
       </Header>
       <Content>
         <CurrentPosition
-          reference={currentPositionRef}
+          ref={currentPositionRef}
           text={currentPositionText}
           careerStartDate={careerStartDate}
           css={css`
@@ -80,7 +80,7 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           `}
         />
         <SkillsPreview
-          reference={skillsPreviewRef}
+          ref={skillsPreviewRef}
           text={skillsText}
           skills={skills}
           css={css`
@@ -90,7 +90,7 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           `}
         />
         <LifeTimelinePreview
-          reference={lifeTimelinePreviewRef}
+          ref={lifeTimelinePreviewRef}
           text={lifeTimelineText}
           events={lifeTimelineEvents}
           css={css`

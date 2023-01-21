@@ -7,11 +7,12 @@ import { Button as MuiButton, css } from '@mui/material';
 import { BaseProps } from '../../../types';
 import { ColourPalette, IconId } from '../../../enums';
 import { Text, Icon } from '..';
+import { withMotion } from '../../../helpers';
 
 /**
  * The `Button` component props
  */
-interface Props extends BaseProps {
+interface Props extends BaseProps<HTMLButtonElement> {
   readonly colour?: ColourPalette;
   readonly iconId?: IconId;
   readonly onClick?: () => void;
@@ -27,6 +28,7 @@ interface Props extends BaseProps {
  */
 const Button: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
+    internalRef,
     className,
     colour = ColourPalette.BLUE,
     iconId,
@@ -36,6 +38,7 @@ const Button: FunctionComponent<Props> = (props): ReactElement<Props> => {
 
   return (
     <MuiButton
+      ref={internalRef}
       className={className}
       variant="contained"
       color={colour}
@@ -64,4 +67,4 @@ const Button: FunctionComponent<Props> = (props): ReactElement<Props> => {
   );
 };
 
-export default Button;
+export default withMotion(Button);

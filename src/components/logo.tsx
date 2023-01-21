@@ -7,11 +7,12 @@ import { css } from '@mui/material';
 import { motion, Transition } from 'framer-motion';
 import { ColourPalette, LogoSection } from '../enums';
 import { BaseProps } from '../types';
+import { withRef } from '../helpers';
 
 /**
  * THe `Logo` component props
  */
-interface Props extends BaseProps {
+interface Props extends BaseProps<HTMLDivElement> {
   readonly isInteractive?: boolean;
   readonly activeSection?: LogoSection;
   readonly onChange?: (section?: LogoSection) => void;
@@ -26,6 +27,7 @@ interface Props extends BaseProps {
  */
 const Logo: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
+    internalRef,
     className,
     isInteractive = false,
     activeSection,
@@ -77,7 +79,7 @@ const Logo: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const pathCss = css`
     cursor: ${(isInteractive === true) ? 'pointer' : 'unset'};
     pointer-events: ${(isInteractive === false) ? 'none' : 'unset'};
-    fill: ${ColourPalette.WHITE}
+    fill: ${ColourPalette.WHITE};
   `;
 
   /**
@@ -89,60 +91,62 @@ const Logo: FunctionComponent<Props> = (props): ReactElement<Props> => {
   };
 
   return (
-    <svg
+    <div
+      ref={internalRef}
       className={className}
-      viewBox="0 0 891 1024"
     >
-      <motion.path
-        d={letterLPath}
-        onClick={() => onClick(LogoSection.LETTER_L)}
-        onMouseEnter={() => onEnter(LogoSection.LETTER_L)}
-        onMouseLeave={() => onExit()}
-        initial={{
-          opacity: 1,
-          scale: 1,
-        }}
-        animate={{
-          opacity: (activeSection === LogoSection.LETTER_L || activeSection == null) ? 1 : 0.1,
-          scale: (activeSection === LogoSection.LETTER_L || activeSection == null) ? 1 : 0.96,
-        }}
-        transition={pathTransition}
-        css={pathCss}
-      />
-      <motion.path
-        d={reverseLetterLPath}
-        onClick={() => onClick(LogoSection.REVERSE_LETTER_L)}
-        onMouseEnter={() => onEnter(LogoSection.REVERSE_LETTER_L)}
-        onMouseLeave={() => onExit()}
-        initial={{
-          opacity: 1,
-          scale: 1,
-        }}
-        animate={{
-          opacity: (activeSection === LogoSection.REVERSE_LETTER_L || activeSection == null) ? 1 : 0.1,
-          scale: (activeSection === LogoSection.REVERSE_LETTER_L || activeSection == null) ? 1 : 0.96,
-        }}
-        transition={pathTransition}
-        css={pathCss}
-      />
-      <motion.path
-        d={barPath}
-        onClick={() => onClick(LogoSection.BAR)}
-        onMouseEnter={() => onEnter(LogoSection.BAR)}
-        onMouseLeave={() => onExit()}
-        initial={{
-          opacity: 1,
-          scale: 1,
-        }}
-        animate={{
-          opacity: (activeSection === LogoSection.BAR || activeSection == null) ? 1 : 0.1,
-          scale: (activeSection === LogoSection.BAR || activeSection == null) ? 1 : 0.96,
-        }}
-        transition={pathTransition}
-        css={pathCss}
-      />
-    </svg>
+      <svg viewBox="0 0 891 1024">
+        <motion.path
+          d={letterLPath}
+          onClick={() => onClick(LogoSection.LETTER_L)}
+          onMouseEnter={() => onEnter(LogoSection.LETTER_L)}
+          onMouseLeave={() => onExit()}
+          initial={{
+            opacity: 1,
+            scale: 1,
+          }}
+          animate={{
+            opacity: (activeSection === LogoSection.LETTER_L || activeSection == null) ? 1 : 0.1,
+            scale: (activeSection === LogoSection.LETTER_L || activeSection == null) ? 1 : 0.96,
+          }}
+          transition={pathTransition}
+          css={pathCss}
+        />
+        <motion.path
+          d={reverseLetterLPath}
+          onClick={() => onClick(LogoSection.REVERSE_LETTER_L)}
+          onMouseEnter={() => onEnter(LogoSection.REVERSE_LETTER_L)}
+          onMouseLeave={() => onExit()}
+          initial={{
+            opacity: 1,
+            scale: 1,
+          }}
+          animate={{
+            opacity: (activeSection === LogoSection.REVERSE_LETTER_L || activeSection == null) ? 1 : 0.1,
+            scale: (activeSection === LogoSection.REVERSE_LETTER_L || activeSection == null) ? 1 : 0.96,
+          }}
+          transition={pathTransition}
+          css={pathCss}
+        />
+        <motion.path
+          d={barPath}
+          onClick={() => onClick(LogoSection.BAR)}
+          onMouseEnter={() => onEnter(LogoSection.BAR)}
+          onMouseLeave={() => onExit()}
+          initial={{
+            opacity: 1,
+            scale: 1,
+          }}
+          animate={{
+            opacity: (activeSection === LogoSection.BAR || activeSection == null) ? 1 : 0.1,
+            scale: (activeSection === LogoSection.BAR || activeSection == null) ? 1 : 0.96,
+          }}
+          transition={pathTransition}
+          css={pathCss}
+        />
+      </svg>
+    </div>
   );
 };
 
-export default Logo;
+export default withRef(Logo);

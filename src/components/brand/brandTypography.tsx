@@ -7,6 +7,7 @@ import { css } from '@mui/material';
 import { BoxAlignment, ColourPalette } from '../../enums';
 import { BaseProps } from '../../types';
 import { Box, Text, Title } from '../common';
+import { withRef } from '../../helpers';
 
 /**
  * The `BrandTypography` component props
@@ -22,10 +23,10 @@ interface Props extends BaseProps<HTMLDivElement> {
  * @param props The component props
  * @returns The `BrandTypography` component
  */
-const BrandTypography: FunctionComponent<Props> = ({ reference, className, text }): ReactElement<Props> => {
+const BrandTypography: FunctionComponent<Props> = ({ internalRef, className, text }): ReactElement<Props> => {
   return (
     <Box
-      reference={reference}
+      ref={internalRef}
       className={className}
       alignment={BoxAlignment.START}
     >
@@ -95,4 +96,4 @@ const BrandTypography: FunctionComponent<Props> = ({ reference, className, text 
   );
 };
 
-export default BrandTypography;
+export default withRef(BrandTypography);

@@ -3,7 +3,7 @@ import { BaseProps } from '../types';
 
 /**
  * Used to forward a components reference
- * to it's `reference` prop
+ * to it's `internalRef` prop
  *
  * - Generic type `T` for the HTML element
  * - Generic type `P` for the component props
@@ -20,12 +20,12 @@ const withRef = <
 ) => {
 
   // Foward the component reference
-  // to it's `reference` prop
+  // to it's `internalRef` prop
   return forwardRef<T, P>((props, ref) => {
     return (
       <Component
         {...props}
-        reference={ref}
+        internalRef={ref}
       />
     );
   });

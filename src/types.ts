@@ -58,17 +58,17 @@ export interface ServerComponent<P extends Partial<Record<keyof P, unknown>> = n
 
 /**
  * The props that all component
- * props should `extends`.
+ * props should `extends`
  *
- * Generic type `T` for the `reference`
+ * - Generic type `T` for the `internalRef`
  *
- * The `reference` prop cannot be called
- * `ref` as this will not work
+ * The `internalRef` prop is used with the `withRef`
+ * helper to forward component references
  *
  * @see https://reactjs.org/docs/forwarding-refs.html
  */
 export interface BaseProps<T extends HTMLElement = HTMLElement> {
-  readonly reference?: Ref<T>;
+  readonly internalRef?: Ref<T>;
   readonly className?: string;
 }
 

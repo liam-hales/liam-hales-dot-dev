@@ -1,9 +1,72 @@
-# Liam Hales - Official Website
+<div
+  id="container"
+  align="center"
+>
+  <img src="public/cover.webp"/>
+  <div>
+    <h1>
+      Liam Hales - Official Website
+    </h1>
+    <p>Built in Manchester using TypeScript, React, Next.js and Material UI. Hosted on Vercel.</p>
+  </div>
+  <a
+    href="https://typescriptlang.org"
+    target="_blank"
+    aria-label="TypeScript"
+  >
+    <img src="https://img.shields.io/badge/TypeScript-black?style=for-the-badge&logo=typescript&logoColor=white"/>
+  </a>
+  <a
+    href="https://reactjs.org"
+    target="_blank"
+    aria-label="React"
+  >
+    <img src="https://img.shields.io/badge/React-black?style=for-the-badge&logo=react&logoColor=white"/>
+  </a>
+  <a
+    href="https://nextjs.org"
+    target="_blank"
+    aria-label="Next.js"
+  >
+    <img src="https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white"/>
+  </a>
+  <a
+    href="https://mui.com"
+    target="_blank"
+    aria-label="Material UI"
+  >
+    <img src="https://img.shields.io/badge/Material%20UI-black?style=for-the-badge&logo=mui&logoColor=white"/>
+  </a>
+  <a
+    href="https://vercel.com"
+    target="_blank"
+    aria-label="Vercel"
+  >
+    <img src="https://img.shields.io/badge/Vercel-black?style=for-the-badge&logo=vercel&logoColor=white"/>
+  </a>
+  <a
+    href="https://liamhales.notion.site/f57eb6bc10a0479995a5fef735a7f462?v=d20135f678b1417981a258147c7933d2"
+    target="_blank"
+    aria-label="Notion Board"
+  >
+    <img src="https://img.shields.io/badge/Notion%20Board-black?style=for-the-badge&logo=notion&logoColor=white"/>
+  </a>
+</div>
 
-Built in Manchester using [TypeScript], [React], [Next.js] and [Material UI]. Hosted on [Vercel].
-https://liamhales.dev
+<br/>
 
 ---
+
+<br/>
+
+# Content Index
+
+- [Getting Started](#getting-started-prerequisites)
+- [First Steps](#first-steps)
+- [Public Assets](#public-assets)
+- [Starting Local Server](#starting-local-server)
+- [Deploying to Production](#deploying-to-production)
+- [Linting](#linting)
 
 <br/>
 
@@ -110,12 +173,33 @@ $ yarn vercel:deploy
 $ yarn lint
 ```
 
-[TypeScript]: https://typescriptlang.org
-[React]: https://reactjs.org
-[Next.js]: https://nextjs.org
-[Material UI]: https://mui.com
 [Node Version Manager]: https://github.com/nvm-sh/nvm
 [Yarn]: https://yarnpkg.com
 [Corepack]: https://nodejs.org/api/corepack.html
 [Vercel]: https://vercel.com
 [Vercel CLI]: https://vercel.com/docs/cli
+
+<style>
+  h1,h2 {
+    font-weight: bold;
+    border-bottom: 0;
+  }
+
+  #container > img {
+    border-radius: 12px;
+  }
+
+  #container > a > img {
+    border-radius: 4px;
+  }
+
+  #container > div {
+    padding-top: 28px;
+    padding-bottom: 16px;
+  }
+
+  #container > div > h1 {
+    font-size: 38px;
+    margin-bottom: 0px;
+  }
+</style>

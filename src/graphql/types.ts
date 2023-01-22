@@ -1,14 +1,15 @@
 import { PageSlug } from '.';
 
 /**
- * Describes the data for each page.
- * Generic type `S` for the page `slug`
+ * Describes the data for each page
+ *
+ * - Generic type `T` for the page `slug`
  */
-export interface Page<S extends PageSlug> {
+export interface Page<T extends PageSlug> {
   readonly id: string;
   readonly name: string;
-  readonly slug: S;
-  readonly content: Extract<PageContent, BasePageContent<S>>;
+  readonly slug: T;
+  readonly content: Extract<PageContent, BasePageContent<T>>;
   readonly createdDate: string;
   readonly updatedDate: string;
 }
@@ -17,7 +18,7 @@ export interface Page<S extends PageSlug> {
  * Describes the base content for each page which
  * each page content should `extends`
  *
- * Generic type `T` for the page `slug`
+ * - Generic type `T` for the page `slug`
  */
 export interface BasePageContent<T extends PageSlug> {
   readonly slug: T;

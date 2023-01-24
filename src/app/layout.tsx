@@ -1,23 +1,10 @@
 import { ReactElement, ReactNode } from 'react';
-import { config } from '@fortawesome/fontawesome-svg-core';
 import { Footer, Nav, SafeArea } from '../components';
 import { ThemeProvider } from '../providers';
 import { BaseProps, ServerComponent } from '../types';
 import { urbanist, firaCode } from '../fonts';
 import { Page, PageSlug, globalPageQuery } from '../graphql';
 import { useQuery } from '../hooks';
-
-/**
- * Import the Font Awesome styles to make the
- * icons work correctlt with Next.js
- *
- * @docs https://fontawesome.com/docs/web/use-with/react/use-with#next-js
- */
-import '@fortawesome/fontawesome-svg-core/styles.css';
-
-// Turn off auto applying Font Awesome CSS
-// Next.js doesnt allow this anyway
-config.autoAddCss = false;
 
 /**
  * The `AppLayout` component props

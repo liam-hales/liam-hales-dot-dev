@@ -51,7 +51,6 @@ const Text: FunctionComponent<Props> = (props): ReactElement<Props> => {
       component={element}
       onClick={onClick}
       css={css`
-        display: inline;
         text-transform: none;
         white-space: pre-line;
         color: ${colour};

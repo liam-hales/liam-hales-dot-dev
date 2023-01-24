@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { ColourPalette, IconId, SVGIconId } from '../../../enums';
+import { ColourPalette, IconId } from '../../../enums';
 import { BaseProps } from '../../../types';
 import { Box, Icon } from '..';
 import { withMotion } from '../../../helpers';
@@ -13,7 +13,7 @@ import { withMotion } from '../../../helpers';
  * The `IconButton` component props
  */
 interface Props extends BaseProps<HTMLDivElement> {
-  readonly id: IconId | SVGIconId;
+  readonly id: IconId;
   readonly colour?: ColourPalette;
   readonly onClick?: () => void;
 }
@@ -44,9 +44,7 @@ const IconButton: FunctionComponent<Props> = (props): ReactElement<Props> => {
         id={id}
         colour={colour}
         css={css`
-          width: 20px;
-          height: 20px;
-          font-size: 20px;
+          font-size: 24px;
         `}
       />
     </Box>

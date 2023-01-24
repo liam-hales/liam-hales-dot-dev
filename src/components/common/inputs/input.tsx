@@ -48,8 +48,8 @@ const Input: FunctionComponent<Props> = ({ internalRef, className, value, placeh
           <Icon
             id={iconId}
             css={css`
-              padding-right: 12px;
-              font-size: 18px;
+              margin-right: 10px;
+              font-size: 30px;
             `}
           />
         )

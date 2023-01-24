@@ -48,8 +48,8 @@ const SkillAreaCard: FunctionComponent<Props> = ({ className, title, description
       <Icon
         id={iconId}
         css={css`
-          padding-right: ${(screenSize === ScreenSize.SMALL) ? 24 : 0}px;
-          font-size: 42px;
+          margin-right: ${(screenSize === ScreenSize.SMALL) ? 24 : 0}px;
+          font-size: 48px;
         `}
       />
       <Box alignment={

@@ -72,7 +72,7 @@ const SkillModal: FunctionComponent<Props> = ({ isOpen, name, type, description,
         target="_blank"
         passHref={true}
       >
-        <Button iconId={IconId.ARROW_RIGHT_SQUARE}>
+        <Button iconId={IconId.EXTERNAL_LINK}>
           Visit website
         </Button>
       </Link>

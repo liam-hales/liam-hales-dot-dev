@@ -24,9 +24,7 @@ const bottomNavActionCss = css`
  * navigation action icon
  */
 const iconCss = css`
-  font-size: 20px;
-  padding-top: 3px;
-  padding-bottom: 6px;
+  font-size: 24px;
 `;
 
 /**
@@ -139,7 +137,7 @@ const BottomNav: FunctionComponent = (): ReactElement => {
           )}
           icon={(
             <Icon
-              id={IconId.PAINT_BRUSH}
+              id={IconId.COLOUR_SWATCH}
               colour={
                 (navKey === NavKey.BRAND)
                   ? ColourPalette.BLUE

@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@mui/material';
-import { BoxDirection, BoxAlignment, ColourPalette, BoxJustify, IconId, SVGIconId } from '../enums';
+import { BoxDirection, BoxAlignment, ColourPalette, BoxJustify, IconId } from '../enums';
 import { BaseProps } from '../types';
 import { useDate } from '../hooks';
 import { GlobalContent } from '../graphql';
@@ -92,7 +92,7 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
         <Box
           direction={BoxDirection.ROW}
           css={css`
-            column-gap: 14px;
+            column-gap: 16px;
           `}
         >
           <Popover text="Email">
@@ -108,7 +108,14 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
               passHref={true}
               aria-label="Stack Overflow"
             >
-              <IconButton id={IconId.STACK_OVERFLOW} />
+              <IconButton
+                id={IconId.STACK_OVERFLOW}
+                css={css`
+                  svg {
+                    font-size: 19px;
+                  };
+                `}
+              />
             </Link>
           </Popover>
           <Popover text="LinkedIn">
@@ -118,7 +125,14 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
               passHref={true}
               aria-label="LinkedIn"
             >
-              <IconButton id={IconId.LINKED_IN} />
+              <IconButton
+                id={IconId.LINKED_IN}
+                css={css`
+                  svg {
+                    font-size: 19px;
+                  };
+                `}
+              />
             </Link>
           </Popover>
           <Popover text="Buy Me a Coffee">
@@ -128,7 +142,14 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
               passHref={true}
               aria-label="Buy Me a Coffee"
             >
-              <IconButton id={SVGIconId.BUY_ME_COFFEE} />
+              <IconButton
+                id={IconId.BUY_ME_COFFEE}
+                css={css`
+                  svg {
+                    font-size: 20px;
+                  };
+                `}
+              />
             </Link>
           </Popover>
           <Popover text="Notion">
@@ -138,7 +159,14 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
               passHref={true}
               aria-label="Notion"
             >
-              <IconButton id={SVGIconId.NOTION} />
+              <IconButton
+                id={IconId.NOTION}
+                css={css`
+                  svg {
+                    font-size: 20px;
+                  };
+                `}
+              />
             </Link>
           </Popover>
         </Box>
@@ -148,16 +176,19 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           padding-bottom: 20px;
         `}
         >
-          <Text isBold={true}>
+          <Box direction={BoxDirection.ROW}>
             <Icon
               id={IconId.COPYRIGHT}
               colour={ColourPalette.WHITE}
               css={css`
-                padding-right: 2px;
+                margin-right: 6px;
+                font-size: 14px;
               `}
             />
-            {copyrightText}
-          </Text>
+            <Text isBold={true}>
+              {copyrightText}
+            </Text>
+          </Box>
           <Text
             colour={ColourPalette.GREY_600}
             css={css`

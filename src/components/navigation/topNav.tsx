@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { BoxDirection, NavKey, NavRoute, BoxJustify, ColourPalette, SVGIconId } from '../../enums';
+import { BoxDirection, NavKey, NavRoute, BoxJustify, ColourPalette, IconId } from '../../enums';
 import { useNav } from '../../hooks';
 import { Box, Tabs, Tab, IconButton, Popover, Link } from '../common';
 import { Logo } from '..';
@@ -106,14 +106,12 @@ const TopNav: FunctionComponent<Props> = ({ notionUrl }): ReactElement<Props> =>
             aria-label="Notion"
           >
             <IconButton
-              id={SVGIconId.NOTION}
+              id={IconId.NOTION}
               css={css`
-              svg {
-                width: 28px;
-                height: 28px;
-                font-size: 28px;
-              };
-            `}
+                svg {
+                  font-size: 28px;
+                };
+              `}
             />
           </Link>
         </Popover>

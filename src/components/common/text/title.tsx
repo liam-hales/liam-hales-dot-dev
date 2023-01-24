@@ -37,6 +37,7 @@ const Title: FunctionComponent<Props> = ({ className, children }): ReactElement<
       <Text
         colour={ColourPalette.BLUE}
         isBold={true}
+        element={TextElement.SPAN}
         css={css`
           font-size: 56px;
           line-height: 0px;

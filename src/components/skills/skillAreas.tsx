@@ -35,7 +35,7 @@ const SkillAreas: FunctionComponent<Props> = ({ className, frontendText, backend
       <SkillAreaCard
         title="Design"
         description={designText}
-        iconId={IconId.PAINT_FILL}
+        iconId={IconId.COLOUR_SWATCH}
       />
     </Grid>
   );

@@ -63,8 +63,7 @@ export enum IconId {
   HOME = 'HOME',
   DOCUMENT = 'DOCUMENT',
   MESSAGE = 'MESSAGE',
-  PAINT_BRUSH = 'PAINT_BRUSH',
-  PAINT_FILL = 'PAINT_FILL',
+  COLOUR_SWATCH = 'COLOUR_SWATCH',
   CODE = 'CODE',
   SERVER = 'SERVER',
   ENVELOPE = 'ENVELOPE',
@@ -75,17 +74,10 @@ export enum IconId {
   CROSS = 'CROSS',
   TICK = 'TICK',
   COPY = 'COPY',
-  ARROW_RIGHT_SQUARE = 'ARROW_RIGHT_SQUARE',
+  EXTERNAL_LINK = 'EXTERNAL_LINK',
   COPYRIGHT = 'COPYRIGHT',
   LINKED_IN = 'LINKED_IN',
   STACK_OVERFLOW = 'STACK_OVERFLOW',
-}
-
-/**
- * The SVG icon ID used for the `Icon` component
- * to determine which SVG icon is rendered
- */
-export enum SVGIconId {
   BUY_ME_COFFEE = 'BUY_ME_COFFEE',
   NOTION = 'NOTION',
 }

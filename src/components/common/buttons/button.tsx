@@ -54,7 +54,7 @@ const Button: FunctionComponent<Props> = (props): ReactElement<Props> => {
             id={iconId}
             colour={ColourPalette.WHITE}
             css={css`
-              padding-right: 8px;
+              margin-right: 6px;
               font-size: 16px;
             `}
           />

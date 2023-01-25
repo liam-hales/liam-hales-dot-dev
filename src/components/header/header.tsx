@@ -48,6 +48,7 @@ const Header: FunctionComponent<Props> = ({ className, title, children }): React
           <Text
             colour={ColourPalette.BLUE}
             isBold={true}
+            element={TextElement.SPAN}
             css={css`
               font-size: clamp(76px, 15vw, 96px);
               line-height: 0px;

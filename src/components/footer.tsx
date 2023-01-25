@@ -99,6 +99,11 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
             <IconButton
               id={IconId.ENVELOPE}
               onClick={() => setModalOpen(true)}
+              css={css`
+                svg {
+                  font-size: 25px;
+                };
+              `}
             />
           </Popover>
           <Popover text="Stack Overflow">
@@ -108,14 +113,7 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
               passHref={true}
               aria-label="Stack Overflow"
             >
-              <IconButton
-                id={IconId.STACK_OVERFLOW}
-                css={css`
-                  svg {
-                    font-size: 19px;
-                  };
-                `}
-              />
+              <IconButton id={IconId.STACK_OVERFLOW} />
             </Link>
           </Popover>
           <Popover text="LinkedIn">
@@ -125,14 +123,7 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
               passHref={true}
               aria-label="LinkedIn"
             >
-              <IconButton
-                id={IconId.LINKED_IN}
-                css={css`
-                  svg {
-                    font-size: 19px;
-                  };
-                `}
-              />
+              <IconButton id={IconId.LINKED_IN} />
             </Link>
           </Popover>
           <Popover text="Buy Me a Coffee">
@@ -142,14 +133,7 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
               passHref={true}
               aria-label="Buy Me a Coffee"
             >
-              <IconButton
-                id={IconId.BUY_ME_COFFEE}
-                css={css`
-                  svg {
-                    font-size: 20px;
-                  };
-                `}
-              />
+              <IconButton id={IconId.BUY_ME_COFFEE} />
             </Link>
           </Popover>
           <Popover text="Notion">
@@ -159,14 +143,7 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
               passHref={true}
               aria-label="Notion"
             >
-              <IconButton
-                id={IconId.NOTION}
-                css={css`
-                  svg {
-                    font-size: 20px;
-                  };
-                `}
-              />
+              <IconButton id={IconId.NOTION} />
             </Link>
           </Popover>
         </Box>
@@ -181,8 +158,9 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
               id={IconId.COPYRIGHT}
               colour={ColourPalette.WHITE}
               css={css`
-                margin-right: 6px;
-                font-size: 14px;
+                margin-right: 4px;
+                margin-bottom: 1px;
+                font-size: 18px;
               `}
             />
             <Text isBold={true}>

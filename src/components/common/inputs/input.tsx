@@ -49,7 +49,7 @@ const Input: FunctionComponent<Props> = ({ internalRef, className, value, placeh
             id={iconId}
             css={css`
               margin-right: 10px;
-              font-size: 30px;
+              font-size: 34px;
             `}
           />
         )

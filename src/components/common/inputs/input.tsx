@@ -4,8 +4,8 @@
 
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { InputBase, css } from '@mui/material';
-import { BoxDirection, ColourPalette, IconId, InputEnterKeyText } from '../../../enums';
-import { BaseProps } from '../../../types';
+import { ColourPalette } from '../../../enums';
+import { BaseProps, IconId } from '../../../types';
 import { Box, Icon, IconButton } from '..';
 import { withRef } from '../../../helpers';
 
@@ -16,7 +16,7 @@ interface Props extends BaseProps<HTMLInputElement> {
   readonly value: string;
   readonly placeholder?: string;
   readonly iconId?: IconId;
-  readonly enterKeyText?: InputEnterKeyText;
+  readonly enterKeyText?: 'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send';
   readonly onChange: (value: string) => void;
   readonly onKeyDown?: (key: string) => void;
   readonly children?: ReactNode;
@@ -33,7 +33,7 @@ const Input: FunctionComponent<Props> = ({ internalRef, className, value, placeh
   return (
     <Box
       className={className}
-      direction={BoxDirection.ROW}
+      direction="row"
       css={css`
         padding-top: 8px;
         padding-bottom: 8px;
@@ -91,7 +91,7 @@ const Input: FunctionComponent<Props> = ({ internalRef, className, value, placeh
       {
         (value !== '') && (
           <IconButton
-            id={IconId.CROSS}
+            id="cross"
             colour={ColourPalette.GREY_400}
             onClick={() => onChange('')}
             css={css`

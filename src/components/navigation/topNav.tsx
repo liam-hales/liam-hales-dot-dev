@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { BoxDirection, NavKey, NavRoute, BoxJustify, ColourPalette, IconId } from '../../enums';
+import { ColourPalette } from '../../enums';
 import { useNav } from '../../hooks';
 import { Box, Tabs, Tab, IconButton, Popover, Link } from '../common';
 import { Logo } from '..';
@@ -40,8 +40,8 @@ const TopNav: FunctionComponent<Props> = ({ notionUrl }): ReactElement<Props> =>
     `}
     >
       <Box
-        direction={BoxDirection.ROW}
-        justify={BoxJustify.SPACE_BETWEEN}
+        direction="row"
+        justify="space-between"
         css={css`
           width: 100%;
           height: 72px;
@@ -55,9 +55,9 @@ const TopNav: FunctionComponent<Props> = ({ notionUrl }): ReactElement<Props> =>
           background-color: ${ColourPalette.GREY_900};
         `}
       >
-        <Box direction={BoxDirection.ROW}>
+        <Box direction="row">
           <Link
-            href={NavRoute.HOME}
+            href="/"
             passHref={true}
             aria-label="Home"
           >
@@ -73,26 +73,26 @@ const TopNav: FunctionComponent<Props> = ({ notionUrl }): ReactElement<Props> =>
             `}
           >
             <Tab
-              value={NavKey.HOME}
-              href={NavRoute.HOME}
+              value="home"
+              href="/"
             >
               Home
             </Tab>
             <Tab
-              value={NavKey.CV}
-              href={NavRoute.CV}
+              value="cv"
+              href="/cv"
             >
               CV
             </Tab>
             <Tab
-              value={NavKey.BLOG}
-              href={NavRoute.BLOG}
+              value="blog"
+              href="/blog"
             >
               Blog
             </Tab>
             <Tab
-              value={NavKey.BRAND}
-              href={NavRoute.BRAND}
+              value="brand"
+              href="/brand"
             >
               Brand
             </Tab>
@@ -106,7 +106,7 @@ const TopNav: FunctionComponent<Props> = ({ notionUrl }): ReactElement<Props> =>
             aria-label="Notion"
           >
             <IconButton
-              id={IconId.NOTION}
+              id="notion"
               css={css`
                 svg {
                   font-size: 28px;

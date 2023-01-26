@@ -5,7 +5,7 @@
 import { ReactElement, useEffect } from 'react';
 import { css } from '@mui/material';
 import { ErrorComponent } from 'next/dist/client/components/error-boundary';
-import { ColourPalette, IconId, NavRoute } from '../enums';
+import { ColourPalette } from '../enums';
 import { Button, Title, Text, Link } from '../components/common';
 import { Content } from '../components';
 
@@ -44,11 +44,11 @@ const AppError: ErrorComponent = ({ error, reset }): ReactElement => {
         Oops, looks like something went wrong. Please try refreshing the page.
       </Text>
       <Link
-        href={NavRoute.HOME}
+        href="/"
         passHref={true}
       >
         <Button
-          iconId={IconId.ARROW_LEFT}
+          iconId="arrowleft"
           onClick={() => reset()}
         >
           Return home

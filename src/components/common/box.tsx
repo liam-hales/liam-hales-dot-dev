@@ -4,8 +4,7 @@
 
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css } from '@mui/material';
-import { BoxAlignment, BoxDirection, BoxJustify } from '../../enums';
-import { BaseProps } from '../../types';
+import { BaseProps, BoxAlignment, BoxDirection, BoxJustify } from '../../types';
 import { withMotion } from '../../helpers';
 
 /**
@@ -31,9 +30,9 @@ const Box: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
     internalRef,
     className,
-    direction = BoxDirection.COLUMN,
-    alignment = BoxAlignment.CENTER,
-    justify = BoxJustify.START,
+    direction = 'column',
+    alignment = 'center',
+    justify = 'flex-start',
     wrap = false,
     onClick,
     children,

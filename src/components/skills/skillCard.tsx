@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { BoxAlignment, BoxDirection, BoxJustify, ColourPalette } from '../../enums';
+import { ColourPalette } from '../../enums';
 import { BaseProps } from '../../types';
 import { Box, Card, Image, Text } from '../common';
 
@@ -29,8 +29,8 @@ const SkillCard: FunctionComponent<Props> = ({ className, name, type, imageUrl, 
   return (
     <Card
       className={className}
-      direction={BoxDirection.ROW}
-      justify={BoxJustify.SPACE_BETWEEN}
+      direction="row"
+      justify="space-between"
       onClick={onClick}
       css={css`
         width: 100%;
@@ -40,7 +40,7 @@ const SkillCard: FunctionComponent<Props> = ({ className, name, type, imageUrl, 
         padding-right: 20px;
       `}
     >
-      <Box alignment={BoxAlignment.START}>
+      <Box alignment="flex-start">
         <Text
           isBold={true}
           css={css`

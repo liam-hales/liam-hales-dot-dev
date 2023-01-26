@@ -4,7 +4,6 @@
 
 import { FunctionComponent, ReactElement, useRef } from 'react';
 import { css } from '@mui/material';
-import { IconId, InputEnterKeyText } from '../../../enums';
 import { BaseProps } from '../../../types';
 import { Input, Button } from '..';
 
@@ -33,8 +32,8 @@ const SearchInput: FunctionComponent<Props> = ({ className, value, onChange, onS
       className={className}
       value={value}
       placeholder="Search"
-      enterKeyText={InputEnterKeyText.SEARCH}
-      iconId={IconId.MAGNIFYING_GLASS}
+      enterKeyText="search"
+      iconId="magnifyingGlass"
       onChange={onChange}
       onKeyDown={(key) => {
 

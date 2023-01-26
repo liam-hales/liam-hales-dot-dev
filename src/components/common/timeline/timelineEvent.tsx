@@ -5,7 +5,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
 import { BaseProps } from '../../../types';
-import { BoxAlignment, ColourPalette } from '../../../enums';
+import { ColourPalette } from '../../../enums';
 import { Box, Text } from '..';
 import { useDate } from '../../../hooks';
 
@@ -43,7 +43,7 @@ const TimelineEvent: FunctionComponent<Props> = (props): ReactElement<Props> => 
   const timestamp = `${formattedDate} - ${timeAgo}`;
 
   return (
-    <Box alignment={BoxAlignment.START}>
+    <Box alignment="flex-start">
       <Text colour={ColourPalette.GREY_600}>
         {timestamp}
       </Text>

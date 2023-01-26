@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@mui/material';
-import { BoxAlignment, BoxJustify, ColourPalette } from '../enums';
+import { ColourPalette } from '../enums';
 import { BaseProps } from '../types';
 import { Box, Popover, Text } from './common';
 
@@ -28,8 +28,8 @@ const ColourCard: FunctionComponent<Props> = ({ colour }): ReactElement<Props> =
 
   return (
     <Box
-      alignment={BoxAlignment.END}
-      justify={BoxJustify.END}
+      alignment="flex-end"
+      justify="flex-end"
       css={css`
         height: 100px;
         padding-right: 16px;

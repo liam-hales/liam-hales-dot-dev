@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { ColourPalette, TextElement } from '../../../enums';
+import { ColourPalette } from '../../../enums';
 import { BaseProps } from '../../../types';
 import { Text } from '..';
 
@@ -27,7 +27,7 @@ const Title: FunctionComponent<Props> = ({ className, children }): ReactElement<
     <Text
       className={className}
       isBold={true}
-      element={TextElement.H2}
+      element="h2"
       css={css`
         font-size: 38px;
         line-height: 122%;
@@ -37,7 +37,7 @@ const Title: FunctionComponent<Props> = ({ className, children }): ReactElement<
       <Text
         colour={ColourPalette.BLUE}
         isBold={true}
-        element={TextElement.SPAN}
+        element="span"
         css={css`
           font-size: 56px;
           line-height: 0px;

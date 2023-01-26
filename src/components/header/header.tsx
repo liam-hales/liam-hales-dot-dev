@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css } from '@mui/material';
-import { BoxAlignment, ColourPalette, TextElement } from '../../enums';
+import { ColourPalette } from '../../enums';
 import { BaseProps } from '../../types';
 import { Divider, Text, Box } from '../common';
 import { Content } from '..';
@@ -29,7 +29,7 @@ const Header: FunctionComponent<Props> = ({ className, title, children }): React
     <>
       <Content
         className={className}
-        alignment={BoxAlignment.START}
+        alignment="flex-start"
         css={css`
           padding-top: 42px;
           padding-bottom: 50px;
@@ -37,7 +37,7 @@ const Header: FunctionComponent<Props> = ({ className, title, children }): React
       >
         <Text
           isBold={true}
-          element={TextElement.H1}
+          element="h1"
           css={css`
             max-width: 400px;
             font-size: clamp(58px, 15vw, 78px);
@@ -48,7 +48,7 @@ const Header: FunctionComponent<Props> = ({ className, title, children }): React
           <Text
             colour={ColourPalette.BLUE}
             isBold={true}
-            element={TextElement.SPAN}
+            element="span"
             css={css`
               font-size: clamp(76px, 15vw, 96px);
               line-height: 0px;
@@ -60,7 +60,7 @@ const Header: FunctionComponent<Props> = ({ className, title, children }): React
         {
           (children != null) && (
             <Box
-              alignment={BoxAlignment.START}
+              alignment="flex-start"
               css={css`
                 padding-top: 40px;
               `}

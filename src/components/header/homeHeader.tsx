@@ -7,7 +7,6 @@ import { css } from '@mui/material';
 import { useScroll, useTransform } from 'framer-motion';
 import { Asset } from '../../graphql';
 import { BaseProps } from '../../types';
-import { BoxAlignment, BoxJustify, TextElement } from '../../enums';
 import { Image, Typewriter, Text, Box, Link } from '../common';
 import { Content } from '..';
 
@@ -84,8 +83,8 @@ const HomeHeader: FunctionComponent<Props> = ({ className, foregroundImage, back
         />
       </div>
       <Content
-        alignment={BoxAlignment.START}
-        justify={BoxJustify.END}
+        alignment="flex-start"
+        justify="flex-end"
         css={css`
           height: 100%;
           padding-bottom: 20px;
@@ -93,7 +92,7 @@ const HomeHeader: FunctionComponent<Props> = ({ className, foregroundImage, back
       >
         <Text
           isBold={true}
-          element={TextElement.H1}
+          element="h1"
           css={css`
             font-size: clamp(70px, 17.4vw, 140px);
             line-height: 92%;
@@ -103,7 +102,7 @@ const HomeHeader: FunctionComponent<Props> = ({ className, foregroundImage, back
           Liam Hales.
         </Text>
         <Box
-          alignment={BoxAlignment.START}
+          alignment="flex-start"
           css={css`
             padding-top: 28px;
             padding-bottom: 68px;
@@ -112,7 +111,7 @@ const HomeHeader: FunctionComponent<Props> = ({ className, foregroundImage, back
         >
           <Text
             isBold={true}
-            element={TextElement.SPAN}
+            element="span"
             css={css`
               height: 140px;
               font-size: clamp(28px, 7vw, 42px);
@@ -140,7 +139,7 @@ const HomeHeader: FunctionComponent<Props> = ({ className, foregroundImage, back
           </Text>
         </Box>
         <Text
-          element={TextElement.SPAN}
+          element="span"
           css={css`
             font-size: 11px;
             align-self: flex-end;
@@ -155,7 +154,7 @@ const HomeHeader: FunctionComponent<Props> = ({ className, foregroundImage, back
           >
             <Text
               isBold={true}
-              element={TextElement.SPAN}
+              element="span"
               css={css`
               font-size: 11px;
             `}

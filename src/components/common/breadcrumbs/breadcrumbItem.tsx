@@ -4,8 +4,8 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { BaseProps } from '../../../types';
-import { ColourPalette, NavRoute } from '../../../enums';
+import { BaseProps, NavRoute } from '../../../types';
+import { ColourPalette } from '../../../enums';
 import { Link, Text } from '..';
 
 /**

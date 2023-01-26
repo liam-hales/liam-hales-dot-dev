@@ -5,7 +5,7 @@
 import { FunctionComponent, ReactElement, useRef } from 'react';
 import { css } from '@mui/material';
 import { BaseProps } from '../../types';
-import { BoxDirection, ColourPalette } from '../../enums';
+import { ColourPalette } from '../../enums';
 import { CVContent } from '../../graphql';
 import { Box, Button, Text } from '../../components/common';
 import {
@@ -52,7 +52,7 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
     <>
       <Header title="Curriculum Vitae">
         <Box
-          direction={BoxDirection.ROW}
+          direction="row"
           css={css`
             column-gap: 12px;
           `}

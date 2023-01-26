@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@mui/material';
-import { BoxAlignment, BoxDirection, BoxJustify, ColourPalette, IconId } from '../enums';
+import { ColourPalette } from '../enums';
 import { BaseProps } from '../types';
 import { Box, Modal, Button, Popover, Title, Text } from './common';
 
@@ -32,7 +32,7 @@ const EmailModal: FunctionComponent<Props> = ({ text, email, isOpen, onClose }):
 
   return (
     <Modal
-      alignment={BoxAlignment.START}
+      alignment="flex-start"
       isOpen={isOpen}
       onClose={onClose}
       onClosed={() => setShowEmail(false)}
@@ -61,7 +61,7 @@ const EmailModal: FunctionComponent<Props> = ({ text, email, isOpen, onClose }):
               onClose={() => setPopoverOpen(false)}
             >
               <Button
-                iconId={IconId.COPY}
+                iconId="copy"
                 onClick={() => {
                   setPopoverOpen(true);
                   navigator.clipboard.writeText(email);
@@ -85,8 +85,8 @@ const EmailModal: FunctionComponent<Props> = ({ text, email, isOpen, onClose }):
       {
         (showEmail === false) && (
           <Box
-            direction={BoxDirection.ROW}
-            justify={BoxJustify.END}
+            direction="row"
+            justify="flex-end"
             css={css`
               width: 100%;
               column-gap: 12px;
@@ -94,13 +94,13 @@ const EmailModal: FunctionComponent<Props> = ({ text, email, isOpen, onClose }):
           >
             <Button
               colour={ColourPalette.GREY_700}
-              iconId={IconId.ARROW_LEFT}
+              iconId="arrowleft"
               onClick={onClose}
             >
               I&apos;m a recruiter
             </Button>
             <Button
-              iconId={IconId.TICK}
+              iconId="tick"
               onClick={() => setShowEmail(true)}
             >
               OK, got it

@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { BoxAlignment, ColourPalette } from '../../enums';
+import { ColourPalette } from '../../enums';
 import { BaseProps } from '../../types';
 import { Box, Text, Title } from '../common';
 import { withRef } from '../../helpers';
@@ -28,7 +28,7 @@ const BrandTypography: FunctionComponent<Props> = ({ internalRef, className, tex
     <Box
       ref={internalRef}
       className={className}
-      alignment={BoxAlignment.START}
+      alignment="flex-start"
     >
       <Title>
         Typography

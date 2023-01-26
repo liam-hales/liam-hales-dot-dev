@@ -4,9 +4,9 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { BoxAlignment, BoxDirection, BoxJustify, IconId, ScreenSize, ColourPalette } from '../../enums';
+import { ColourPalette } from '../../enums';
 import { useScreen } from '../../hooks';
-import { BaseProps } from '../../types';
+import { BaseProps, IconId } from '../../types';
 import { Box, Card, Icon, Text } from '../common';
 
 /**
@@ -32,11 +32,11 @@ const SkillAreaCard: FunctionComponent<Props> = ({ className, title, description
     <Card
       className={className}
       direction={
-        (screenSize === ScreenSize.SMALL)
-          ? BoxDirection.ROW
-          : BoxDirection.COLUMN
+        (screenSize === 'small')
+          ? 'row'
+          : 'column'
       }
-      justify={BoxJustify.CENTER}
+      justify="center"
       css={css`
         width: 100%;
         padding-top: 24px;
@@ -48,21 +48,21 @@ const SkillAreaCard: FunctionComponent<Props> = ({ className, title, description
       <Icon
         id={iconId}
         css={css`
-          margin-right: ${(screenSize === ScreenSize.SMALL) ? 24 : 0}px;
+          margin-right: ${(screenSize === 'small') ? 24 : 0}px;
           font-size: 48px;
         `}
       />
       <Box alignment={
-        (screenSize === ScreenSize.SMALL)
-          ? BoxAlignment.START
-          : BoxAlignment.CENTER
+        (screenSize === 'small')
+          ? 'flex-start'
+          : 'center'
       }
       >
         <Text
           isBold={true}
           css={css`
-            padding-top: ${(screenSize === ScreenSize.SMALL) ? 0 : 16}px;
-            padding-bottom: ${(screenSize === ScreenSize.SMALL) ? 4 : 16}px;
+            padding-top: ${(screenSize === 'small') ? 0 : 16}px;
+            padding-bottom: ${(screenSize === 'small') ? 4 : 16}px;
             font-size: 18px;
           `}
         >
@@ -71,8 +71,8 @@ const SkillAreaCard: FunctionComponent<Props> = ({ className, title, description
         <Text
           colour={ColourPalette.GREY_400}
           css={css`
-            max-width: ${(screenSize === ScreenSize.SMALL) ? 210 : 180}px;
-            text-align: ${(screenSize === ScreenSize.SMALL) ? 'left' : 'center'};
+            max-width: ${(screenSize === 'small') ? 210 : 180}px;
+            text-align: ${(screenSize === 'small') ? 'left' : 'center'};
           `}
         >
           {description}

@@ -4,8 +4,8 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { Button as MuiButton, css } from '@mui/material';
-import { BaseProps } from '../../../types';
-import { ColourPalette, IconId } from '../../../enums';
+import { BaseProps, IconId } from '../../../types';
+import { ColourPalette } from '../../../enums';
 import { Text, Icon } from '..';
 import { withMotion } from '../../../helpers';
 

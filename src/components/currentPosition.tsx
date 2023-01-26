@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { BoxAlignment, BoxDirection, ColourPalette } from '../enums';
+import { ColourPalette } from '../enums';
 import { BaseProps } from '../types';
 import { useDate } from '../hooks';
 import { withRef } from '../helpers';
@@ -39,7 +39,7 @@ const CurrentPosition: FunctionComponent<Props> = ({ internalRef, className, tex
     <Box
       ref={internalRef}
       className={className}
-      alignment={BoxAlignment.START}
+      alignment="flex-start"
     >
       <Title>
         Current Position
@@ -53,7 +53,7 @@ const CurrentPosition: FunctionComponent<Props> = ({ internalRef, className, tex
       >
         {text}
       </Text>
-      <Box direction={BoxDirection.ROW}>
+      <Box direction="row">
         <Stat
           value={yearsInIndustry}
           text="Years in the Industry"

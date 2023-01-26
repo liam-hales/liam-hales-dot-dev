@@ -5,7 +5,6 @@
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css } from '@mui/material';
 import { BaseProps } from '../../types';
-import { BoxJustify, NavRoute, ScreenSize } from '../../enums';
 import { TopNav, BottomNav, Logo } from '..';
 import { useScreen } from '../../hooks';
 import { Box, Link } from '../common';
@@ -34,16 +33,16 @@ const Nav: FunctionComponent<Props> = ({ content, children }): ReactElement<Prop
   return (
     <>
       {
-        (screenSize === ScreenSize.SMALL) && (
+        (screenSize === 'small') && (
           <Box
-            justify={BoxJustify.CENTER}
+            justify="center"
             css={css`
               width: 100%;
               height: 72px;
             `}
           >
             <Link
-              href={NavRoute.HOME}
+              href="/"
               passHref={true}
               aria-label="Home"
             >
@@ -56,13 +55,13 @@ const Nav: FunctionComponent<Props> = ({ content, children }): ReactElement<Prop
         )
       }
       {
-        (screenSize !== ScreenSize.SMALL) && (
+        (screenSize !== 'small') && (
           <TopNav notionUrl={notionUrl} />
         )
       }
       {children}
       {
-        (screenSize === ScreenSize.SMALL) && (
+        (screenSize === 'small') && (
           <>
             <BottomNav />
             <div css={css`

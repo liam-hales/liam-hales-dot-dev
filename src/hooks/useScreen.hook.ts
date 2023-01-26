@@ -2,7 +2,7 @@
 
 import { RefObject } from 'react';
 import { useMediaQuery, useTheme } from '@mui/material';
-import { ScreenSize } from '../enums';
+import { ScreenSize } from '../types';
 
 /**
  * The `useScreen` hook response
@@ -38,9 +38,9 @@ const useScreen = (): UseScreenResponse => {
 
   const { breakpoints } = useTheme();
 
-  const small = useMediaQuery(breakpoints.only(ScreenSize.SMALL));
-  const medium = useMediaQuery(breakpoints.only(ScreenSize.MEDIUM));
-  const large = useMediaQuery(breakpoints.only(ScreenSize.LARGE));
+  const small = useMediaQuery(breakpoints.only('small'));
+  const medium = useMediaQuery(breakpoints.only('medium'));
+  const large = useMediaQuery(breakpoints.only('large'));
 
   /**
    * Scrolls to a HTML element using
@@ -79,21 +79,21 @@ const useScreen = (): UseScreenResponse => {
   if (small === true) {
     return {
       scrollTo: scrollTo,
-      screenSize: ScreenSize.SMALL,
+      screenSize: 'small',
     };
   }
 
   if (medium === true) {
     return {
       scrollTo: scrollTo,
-      screenSize: ScreenSize.MEDIUM,
+      screenSize: 'medium',
     };
   }
 
   if (large === true) {
     return {
       scrollTo: scrollTo,
-      screenSize: ScreenSize.LARGE,
+      screenSize: 'large',
     };
   }
 

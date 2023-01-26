@@ -6,7 +6,6 @@ import { FunctionComponent, ReactElement, useRef } from 'react';
 import { css } from '@mui/material';
 import { Content, Header, BrandLogo, BrandTypography, BrandColourPalette } from '../../components';
 import { Box, Button } from '../../components/common';
-import { BoxDirection } from '../../enums';
 import { useScreen } from '../../hooks';
 import { BaseProps } from '../../types';
 import { BrandContent } from '../../graphql';
@@ -45,7 +44,7 @@ const Brand: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
     <>
       <Header title="Personal Brand">
         <Box
-          direction={BoxDirection.ROW}
+          direction="row"
           css={css`
             column-gap: 12px;
           `}

@@ -4,8 +4,8 @@
 
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css } from '@mui/material';
-import { BoxAlignment, BoxDirection, BoxJustify, ColourPalette } from '../../enums';
-import { BaseProps } from '../../types';
+import { ColourPalette } from '../../enums';
+import { BaseProps, BoxAlignment, BoxDirection, BoxJustify } from '../../types';
 import { withMotion } from '../../helpers';
 import { Box } from '.';
 

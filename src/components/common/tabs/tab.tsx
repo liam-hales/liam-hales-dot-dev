@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { Tab as MuiTab, css } from '@mui/material';
-import { BaseProps } from '../../../types';
+import { BaseProps, NavRoute } from '../../../types';
 import { ColourPalette } from '../../../enums';
 import { Link, Text } from '..';
 
@@ -13,7 +13,7 @@ import { Link, Text } from '..';
  */
 interface Props extends BaseProps {
   readonly value: string;
-  readonly href?: string;
+  readonly href?: NavRoute;
   readonly onClick?: () => void;
   readonly children: string;
 }

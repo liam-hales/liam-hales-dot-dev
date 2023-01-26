@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { BoxAlignment, ColourPalette } from '../enums';
+import { ColourPalette } from '../enums';
 import { BaseProps } from '../types';
 import { Box, Text, Title } from './common';
 
@@ -26,7 +26,7 @@ const ProStatement: FunctionComponent<Props> = ({ className, text }): ReactEleme
   return (
     <Box
       className={className}
-      alignment={BoxAlignment.START}
+      alignment="flex-start"
     >
       <Title>
         Professional Statement

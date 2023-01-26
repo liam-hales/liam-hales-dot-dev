@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { BoxAlignment, ColourPalette } from '../../enums';
+import { ColourPalette } from '../../enums';
 import { BaseProps } from '../../types';
 import { Box, Text, Title } from '../common';
 import { Grid, ColourCard } from '..';
@@ -29,7 +29,7 @@ const BrandColourPalette: FunctionComponent<Props> = ({ internalRef, className, 
     <Box
       ref={internalRef}
       className={className}
-      alignment={BoxAlignment.START}
+      alignment="flex-start"
     >
       <Title>
         Colour Palette

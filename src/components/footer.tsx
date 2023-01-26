@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@mui/material';
-import { BoxDirection, BoxAlignment, ColourPalette, BoxJustify, IconId } from '../enums';
+import { ColourPalette } from '../enums';
 import { BaseProps } from '../types';
 import { useDate } from '../hooks';
 import { GlobalContent } from '../graphql';
@@ -53,10 +53,10 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
       />
-      <Content alignment={BoxAlignment.START}>
+      <Content alignment="flex-start">
         <Box
-          direction={BoxDirection.ROW}
-          justify={BoxJustify.SPACE_BETWEEN}
+          direction="row"
+          justify="space-between"
           css={css`
             width: 100%;
             padding-top: 50px;
@@ -64,7 +64,7 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           `}
         >
           <Box
-            alignment={BoxAlignment.START}
+            alignment="flex-start"
             css={css`
               max-width: 420px;
               margin-right: 70px;
@@ -90,14 +90,14 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           />
         </Box>
         <Box
-          direction={BoxDirection.ROW}
+          direction="row"
           css={css`
             column-gap: 16px;
           `}
         >
           <Popover text="Email">
             <IconButton
-              id={IconId.ENVELOPE}
+              id="envelope"
               onClick={() => setModalOpen(true)}
               css={css`
                 svg {
@@ -113,7 +113,7 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
               passHref={true}
               aria-label="Stack Overflow"
             >
-              <IconButton id={IconId.STACK_OVERFLOW} />
+              <IconButton id="stackOverflow" />
             </Link>
           </Popover>
           <Popover text="LinkedIn">
@@ -123,7 +123,7 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
               passHref={true}
               aria-label="LinkedIn"
             >
-              <IconButton id={IconId.LINKED_IN} />
+              <IconButton id="linkedIn" />
             </Link>
           </Popover>
           <Popover text="Buy Me a Coffee">
@@ -133,7 +133,7 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
               passHref={true}
               aria-label="Buy Me a Coffee"
             >
-              <IconButton id={IconId.BUY_ME_COFFEE} />
+              <IconButton id="buyMeCoffee" />
             </Link>
           </Popover>
           <Popover text="Notion">
@@ -143,7 +143,7 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
               passHref={true}
               aria-label="Notion"
             >
-              <IconButton id={IconId.NOTION} />
+              <IconButton id="notion" />
             </Link>
           </Popover>
         </Box>
@@ -153,9 +153,9 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           padding-bottom: 20px;
         `}
         >
-          <Box direction={BoxDirection.ROW}>
+          <Box direction="row">
             <Icon
-              id={IconId.COPYRIGHT}
+              id="copyright"
               colour={ColourPalette.WHITE}
               css={css`
                 margin-right: 4px;

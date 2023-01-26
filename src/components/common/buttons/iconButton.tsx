@@ -4,8 +4,8 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { ColourPalette, IconId } from '../../../enums';
-import { BaseProps } from '../../../types';
+import { ColourPalette } from '../../../enums';
+import { BaseProps, IconId } from '../../../types';
 import { Box, Icon } from '..';
 import { withMotion } from '../../../helpers';
 

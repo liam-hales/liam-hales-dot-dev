@@ -7,7 +7,7 @@ import { css } from '@mui/material';
 import { useRouter } from 'next/navigation';
 import { Header, Content, SkillModal, Grid, SkillCard, NoResults } from '../../../components';
 import { Breadcrumbs, BreadcrumbItem, Text, SearchInput } from '../../../components/common';
-import { BoxAlignment, ColourPalette, NavRoute, ScreenSize } from '../../../enums';
+import { ColourPalette } from '../../../enums';
 import { Skill, SkillsContent } from '../../../graphql';
 import { BaseProps } from '../../../types';
 import { useScreen } from '../../../hooks';
@@ -57,11 +57,11 @@ const Skills: FunctionComponent<Props> = ({ content, search }): ReactElement<Pro
       }
       <Header title="Skills">
         <Breadcrumbs>
-          <BreadcrumbItem route={NavRoute.CV}>
+          <BreadcrumbItem route="/cv">
             Curriculum Vitae
           </BreadcrumbItem>
           <BreadcrumbItem
-            route={NavRoute.SKILLS}
+            route="/cv/skills"
             isActive={true}
           >
             Skills
@@ -69,7 +69,7 @@ const Skills: FunctionComponent<Props> = ({ content, search }): ReactElement<Pro
         </Breadcrumbs>
       </Header>
       <Content
-        alignment={BoxAlignment.START}
+        alignment="flex-start"
         css={css`
           padding-top: 50px;
           padding-bottom: 100px;
@@ -89,10 +89,10 @@ const Skills: FunctionComponent<Props> = ({ content, search }): ReactElement<Pro
               },
             });
 
-            push(`${NavRoute.SKILLS}?${params.toString()}`);
+            push(`/cv/skills?${params.toString()}`);
           }}
           css={css`
-            width: ${(screenSize === ScreenSize.SMALL) ? '100%' : '400px'};
+            width: ${(screenSize === 'small') ? '100%' : '400px'};
           `}
         />
         {

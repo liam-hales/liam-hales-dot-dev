@@ -1,5 +1,6 @@
 import { usePathname } from 'next/navigation';
-import { NavKey, NavRoute } from '../enums';
+import { navKeys, navRoutes } from '../constants';
+import { NavKey, NavRoute } from '../types';
 
 /**
  * The `useNav` hook response
@@ -21,19 +22,12 @@ interface UseNavResponse {
 const useNav = (): UseNavResponse => {
   const pathname = usePathname();
 
-  // Attempt to match the path with one
-  // of the nav key enum values
-  const navKey = (pathname === '/')
-    ? NavKey.HOME
-    : Object
-      .values(NavKey)
-      .find((value) => pathname?.split('/')[1] === value);
-
-  // Attempt to match the path with one
-  // of the nav route enum values
-  const navRoute = Object
-    .values(NavRoute)
-    .find((value) => pathname === value);
+  // Attempt to match the path to one
+  // of the nav keys and nav routes
+  const navRoute = navRoutes.find((value) => pathname === value);
+  const navKey = (pathname !== '/')
+    ? navKeys.find((value) => pathname?.split('/')[1] === value)
+    : 'home';
 
   return {
     navKey: navKey,

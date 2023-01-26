@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { ColourPalette, IconId } from '../../enums';
+import { ColourPalette } from '../../enums';
 import { BaseProps } from '../../types';
 import { Button, Image, Link, Modal, Text } from '../common';
 
@@ -72,7 +72,7 @@ const SkillModal: FunctionComponent<Props> = ({ isOpen, name, type, description,
         target="_blank"
         passHref={true}
       >
-        <Button iconId={IconId.EXTERNAL_LINK}>
+        <Button iconId="externalLink">
           Visit website
         </Button>
       </Link>

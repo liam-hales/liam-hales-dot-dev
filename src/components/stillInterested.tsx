@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { NavRoute, ColourPalette, IconId } from '../enums';
+import { ColourPalette } from '../enums';
 import { BaseProps } from '../types';
 import { Box, Button, Link, Text, Title } from './common';
 
@@ -40,10 +40,10 @@ const StillInterested: FunctionComponent<Props> = ({ className, text }): ReactEl
         {text}
       </Text>
       <Link
-        href={NavRoute.CV}
+        href="/cv"
         passHref={true}
       >
-        <Button iconId={IconId.DOCUMENT}>
+        <Button iconId="document">
           Curriculum Vitae
         </Button>
       </Link>

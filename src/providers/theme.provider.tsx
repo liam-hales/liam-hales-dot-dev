@@ -3,7 +3,7 @@
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { createTheme, CssBaseline, PaletteOptions, ThemeProvider as MuiThemeProvider } from '@mui/material';
 import { urbanist } from '../fonts';
-import { ColourPalette, ScreenSize } from '../enums';
+import { ColourPalette } from '../enums';
 import { BaseProps } from '../types';
 
 /**
@@ -58,9 +58,9 @@ const ThemeProvider: FunctionComponent<Props> = ({ children }): ReactElement<Pro
     },
     breakpoints: {
       values: {
-        [ScreenSize.SMALL]: 0,
-        [ScreenSize.MEDIUM]: 500,
-        [ScreenSize.LARGE]: 1024,
+        small: 0,
+        medium: 500,
+        large: 1024,
       },
     },
     typography: {

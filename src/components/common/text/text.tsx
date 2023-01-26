@@ -4,7 +4,7 @@
 
 import { Typography, css } from '@mui/material';
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
-import { ColourPalette, TextElement } from '../../../enums';
+import { ColourPalette } from '../../../enums';
 import { BaseProps } from '../../../types';
 import { firaCode } from '../../../fonts';
 import { withMotion } from '../../../helpers';
@@ -14,7 +14,7 @@ import { withMotion } from '../../../helpers';
  */
 interface Props extends BaseProps {
   readonly colour?: ColourPalette;
-  readonly element?: TextElement;
+  readonly element?: 'h1' | 'h2' | 'p' | 'span';
   readonly isBold?: boolean;
   readonly isItalic?: boolean;
   readonly isMono?: boolean;
@@ -35,7 +35,7 @@ const Text: FunctionComponent<Props> = (props): ReactElement<Props> => {
     internalRef,
     className,
     colour = ColourPalette.WHITE,
-    element = TextElement.PARAGRAPH,
+    element = 'p',
     isBold = false,
     isItalic = false,
     isMono = false,

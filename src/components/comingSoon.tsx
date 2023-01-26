@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { ColourPalette, IconId, NavRoute } from '../enums';
+import { ColourPalette } from '../enums';
 import { Button, Title, Text, Link } from './common';
 import { Content } from '.';
 
@@ -47,10 +47,10 @@ const ComingSoon: FunctionComponent = (): ReactElement => {
         for this infomation.
       </Text>
       <Link
-        href={NavRoute.HOME}
+        href="/"
         passHref={true}
       >
-        <Button iconId={IconId.ARROW_LEFT}>
+        <Button iconId="arrowleft">
           Return home
         </Button>
       </Link>

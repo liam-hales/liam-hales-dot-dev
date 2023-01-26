@@ -5,8 +5,8 @@
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css } from '@mui/material';
 import { useRender, useScreen } from '../../hooks';
-import { BaseProps } from '../../types';
-import { BoxDirection, BoxAlignment, BoxJustify, IconId, ColourPalette, ScreenSize, RenderType } from '../../enums';
+import { BaseProps, BoxDirection, BoxAlignment, BoxJustify } from '../../types';
+import { ColourPalette } from '../../enums';
 import { Box, Card, IconButton, Backdrop } from '.';
 
 /**
@@ -34,17 +34,17 @@ const Modal: FunctionComponent<Props> = ({ isOpen, direction, alignment, justify
   const { screenSize } = useScreen();
   const { renderType } = useRender();
 
-  const windowWeight = (renderType === RenderType.CLIENT_SIDE)
+  const windowWeight = (renderType === 'client-side')
     ? window.innerHeight
     : 0;
 
   return (
     <Backdrop isOpen={isOpen}>
       <Box
-        justify={BoxJustify.CENTER}
+        justify="center"
         css={css`
           height: 100%;
-          padding-bottom: ${(screenSize === ScreenSize.SMALL) ? 128 : 0}px;
+          padding-bottom: ${(screenSize === 'small') ? 128 : 0}px;
         `}
       >
         <Card
@@ -81,7 +81,7 @@ const Modal: FunctionComponent<Props> = ({ isOpen, direction, alignment, justify
           `}
         >
           <IconButton
-            id={IconId.CROSS}
+            id="cross"
             colour={ColourPalette.GREY_400}
             onClick={onClose}
             css={css`

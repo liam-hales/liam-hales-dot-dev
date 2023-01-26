@@ -25,8 +25,8 @@ import {
 import { IoDocument, IoChatbox } from 'react-icons/io5';
 import { RiCopyrightLine } from 'react-icons/ri';
 import { SiStackoverflow, SiLinkedin, SiNotion, SiBuymeacoffee } from 'react-icons/si';
-import { BaseProps } from '../../types';
-import { ColourPalette, IconId } from '../../enums';
+import { BaseProps, IconId } from '../../types';
+import { ColourPalette } from '../../enums';
 
 /**
  * The `Icon` component props
@@ -51,26 +51,26 @@ const Icon: FunctionComponent<Props> = (props): ReactElement<Props> => {
   } = props;
 
   const iconMap: Record<IconId, IconType> = {
-    [IconId.HOME]: HiHome,
-    [IconId.DOCUMENT]: IoDocument,
-    [IconId.MESSAGE]: IoChatbox,
-    [IconId.COLOUR_SWATCH]: HiSwatch,
-    [IconId.CODE]: HiCode,
-    [IconId.SERVER]: HiServerStack,
-    [IconId.ENVELOPE]: HiEnvelope,
-    [IconId.CARET_RIGHT]: HiChevronRight,
-    [IconId.ARROW_LEFT]: HiArrowLeft,
-    [IconId.ARROW_RIGHT]: HiArrowRight,
-    [IconId.MAGNIFYING_GLASS]: HiSearch,
-    [IconId.CROSS]: HiX,
-    [IconId.TICK]: HiCheck,
-    [IconId.COPY]: HiDocumentDuplicate,
-    [IconId.EXTERNAL_LINK]: HiExternalLink,
-    [IconId.COPYRIGHT]: RiCopyrightLine,
-    [IconId.LINKED_IN]: SiLinkedin,
-    [IconId.STACK_OVERFLOW]: SiStackoverflow,
-    [IconId.BUY_ME_COFFEE]: SiBuymeacoffee,
-    [IconId.NOTION]: SiNotion,
+    home: HiHome,
+    document: IoDocument,
+    message: IoChatbox,
+    colourSwatch: HiSwatch,
+    code: HiCode,
+    server: HiServerStack,
+    envelope: HiEnvelope,
+    caretRight: HiChevronRight,
+    arrowleft: HiArrowLeft,
+    arrowRight: HiArrowRight,
+    magnifyingGlass: HiSearch,
+    cross: HiX,
+    tick: HiCheck,
+    copy: HiDocumentDuplicate,
+    externalLink: HiExternalLink,
+    copyright: RiCopyrightLine,
+    linkedIn: SiLinkedin,
+    stackOverflow: SiStackoverflow,
+    buyMeCoffee: SiBuymeacoffee,
+    notion: SiNotion,
   };
 
   const IconComponent = iconMap[id];

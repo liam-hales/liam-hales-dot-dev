@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { RenderType } from '../enums';
+import { RenderType } from '../types';
 
 /**
  * The `useRender` hook response
@@ -26,9 +26,13 @@ const useRender = (): UseRenderResponse => {
 
   // Check to see if `window` and the `document`
   // exists to determine the render type
-  const type = (typeof window !== 'undefined' && window.document != null)
-    ? RenderType.CLIENT_SIDE
-    : RenderType.SERVER_SIDE;
+  const type: RenderType =
+    (
+      typeof window !== 'undefined' &&
+      window.document != null
+    )
+      ? 'client-side'
+      : 'server-side';
 
   /**
    * Used to set the hydrated state to `true`

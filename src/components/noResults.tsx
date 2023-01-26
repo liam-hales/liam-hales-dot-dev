@@ -5,7 +5,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
 import { BaseProps } from '../types';
-import { ColourPalette, TextElement } from '../enums';
+import { ColourPalette } from '../enums';
 import { Title, Text, Box } from './common';
 
 /**
@@ -29,7 +29,7 @@ const NoResults: FunctionComponent<Props> = ({ className, searchText }): ReactEl
       </Title>
       <Text
         colour={ColourPalette.GREY_400}
-        element={TextElement.SPAN}
+        element="span"
         css={css`
           max-width: 300px;
           padding-top: 16px;
@@ -40,7 +40,7 @@ const NoResults: FunctionComponent<Props> = ({ className, searchText }): ReactEl
         {' '}
         <Text
           isBold={true}
-          element={TextElement.SPAN}
+          element="span"
         >
           {`"${searchText}"`}
         </Text>

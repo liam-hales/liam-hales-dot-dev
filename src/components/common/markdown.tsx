@@ -6,7 +6,8 @@ import ReactMarkdown from 'react-markdown';
 import { css } from '@mui/material';
 import rehypeRaw from 'rehype-raw';
 import { BaseProps } from '../../types';
-import { BoxAlignment, CodeLanguage, ColourPalette } from '../../enums';
+import { ColourPalette } from '../../enums';
+import { codeLanguages } from '../../constants';
 import { Box, Text, CodeSnippet } from '.';
 
 /**
@@ -27,7 +28,7 @@ const Markdown: FunctionComponent<Props> = ({ className, children }): ReactEleme
   return (
     <Box
       className={className}
-      alignment={BoxAlignment.START}
+      alignment="flex-start"
     >
       <ReactMarkdown
         rehypePlugins={[rehypeRaw]}
@@ -86,10 +87,9 @@ const Markdown: FunctionComponent<Props> = ({ className, children }): ReactEleme
             );
           },
           code: ({ className, children }) => {
-            // Get the code langauge from the class name and see if it matches
-            // one of the code langauges from the `CodeLanguage` enum
-            const language = Object
-              .values(CodeLanguage)
+            // Get the code langauge from the class name and
+            // check for a match in the code langauges array
+            const language = codeLanguages
               .find((value) => value === className?.replace('language-', ''));
 
             return (

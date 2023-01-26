@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { BoxDirection, ColourPalette } from '../enums';
+import { ColourPalette } from '../enums';
 import { BaseProps } from '../types';
 import { Box, Text } from './common';
 
@@ -27,7 +27,7 @@ const Stat: FunctionComponent<Props> = ({ className, value, text }): ReactElemen
   return (
     <Box
       className={className}
-      direction={BoxDirection.ROW}
+      direction="row"
     >
       <Text
         isBold={true}

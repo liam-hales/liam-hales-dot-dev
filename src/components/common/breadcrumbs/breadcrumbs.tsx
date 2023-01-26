@@ -5,7 +5,6 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { Breadcrumbs as MuiBreadcrumbs, css } from '@mui/material';
 import { BaseProps } from '../../../types';
-import { IconId } from '../../../enums';
 import { Icon } from '..';
 
 /**
@@ -27,7 +26,7 @@ const Breadcrumbs: FunctionComponent<Props> = ({ className, children }): ReactEl
     <MuiBreadcrumbs
       className={className}
       separator={(
-        <Icon id={IconId.CARET_RIGHT} />
+        <Icon id="caretRight" />
       )}
       css={css`
         .MuiBreadcrumbs-separator {

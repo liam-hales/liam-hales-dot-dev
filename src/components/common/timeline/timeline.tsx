@@ -5,7 +5,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
 import { BaseProps } from '../../../types';
-import { BoxAlignment, BoxDirection, ColourPalette } from '../../../enums';
+import { ColourPalette } from '../../../enums';
 import { Box } from '..';
 
 /**
@@ -33,7 +33,7 @@ const Timeline: FunctionComponent<Props> = (props): ReactElement<Props> => {
   return (
     <Box
       className={className}
-      alignment={BoxAlignment.START}
+      alignment="flex-start"
     >
       {
         children.map((child, index) => {
@@ -46,8 +46,8 @@ const Timeline: FunctionComponent<Props> = (props): ReactElement<Props> => {
           return (
             <Box
               key={`timeline-item-${index}`}
-              direction={BoxDirection.ROW}
-              alignment={BoxAlignment.START}
+              direction="row"
+              alignment="flex-start"
               css={css`
                 position: relative;
               `}

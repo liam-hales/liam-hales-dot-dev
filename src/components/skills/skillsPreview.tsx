@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { BoxAlignment, NavRoute, ColourPalette, IconId, ScreenSize } from '../../enums';
+import { ColourPalette } from '../../enums';
 import { Skill } from '../../graphql';
 import { useScreen } from '../../hooks';
 import { BaseProps } from '../../types';
@@ -34,7 +34,7 @@ const SkillsPreview: FunctionComponent<Props> = ({ internalRef, className, text,
     <Box
       ref={internalRef}
       className={className}
-      alignment={BoxAlignment.START}
+      alignment="flex-start"
     >
       <Title>
         Skills
@@ -75,14 +75,14 @@ const SkillsPreview: FunctionComponent<Props> = ({ internalRef, className, text,
         }
       </Grid>
       <Link
-        href={NavRoute.SKILLS}
+        href="/cv/skills"
         passHref={true}
         css={css`
-          margin-top: ${(screenSize === ScreenSize.SMALL) ? -26 : 10}px;
+          margin-top: ${(screenSize === 'small') ? -26 : 10}px;
           align-self: center;
         `}
       >
-        <Button iconId={IconId.ARROW_RIGHT}>
+        <Button iconId="arrowRight">
           See all skills
         </Button>
       </Link>

@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { BoxAlignment, BoxDirection, ColourPalette, ScreenSize } from '../enums';
+import { ColourPalette } from '../enums';
 import { useDate, useScreen } from '../hooks';
 import { BaseProps } from '../types';
 import { Asset } from '../graphql';
@@ -40,11 +40,11 @@ const AboutMe: FunctionComponent<Props> = ({ className, text, meImage, careerSta
   return (
     <Box
       className={className}
-      direction={BoxDirection.ROW}
-      alignment={BoxAlignment.START}
+      direction="row"
+      alignment="flex-start"
     >
       {
-        (screenSize !== ScreenSize.SMALL) && (
+        (screenSize !== 'small') && (
           <Image
             path={meImage.url}
             alt="Liam Hales"
@@ -59,7 +59,7 @@ const AboutMe: FunctionComponent<Props> = ({ className, text, meImage, careerSta
           />
         )
       }
-      <Box alignment={BoxAlignment.START}>
+      <Box alignment="flex-start">
         <Title>
           About me
         </Title>
@@ -72,7 +72,7 @@ const AboutMe: FunctionComponent<Props> = ({ className, text, meImage, careerSta
         >
           {text.replace(/yearsProgramming/g, yearsProgramming.toString())}
         </Text>
-        <Box direction={BoxDirection.ROW}>
+        <Box direction="row">
           <Stat
             value={yearsProgramming}
             text="Years Of Programming"

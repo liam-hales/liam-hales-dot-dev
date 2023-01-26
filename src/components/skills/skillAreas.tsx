@@ -1,5 +1,4 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { IconId } from '../../enums';
 import { BaseProps } from '../../types';
 import { Grid, SkillAreaCard } from '..';
 
@@ -25,17 +24,17 @@ const SkillAreas: FunctionComponent<Props> = ({ className, frontendText, backend
       <SkillAreaCard
         title="Frontend"
         description={frontendText}
-        iconId={IconId.CODE}
+        iconId="code"
       />
       <SkillAreaCard
         title="Backend"
         description={backendText}
-        iconId={IconId.SERVER}
+        iconId="server"
       />
       <SkillAreaCard
         title="Design"
         description={designText}
-        iconId={IconId.COLOUR_SWATCH}
+        iconId="colourSwatch"
       />
     </Grid>
   );

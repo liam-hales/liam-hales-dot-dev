@@ -7,7 +7,6 @@ import { css } from '@mui/material';
 import { useRouter } from 'next/navigation';
 import { Header, Content, NoResults } from '../../../components';
 import { Breadcrumbs, BreadcrumbItem, SearchInput, Timeline, TimelineEvent } from '../../../components/common';
-import { BoxAlignment, NavRoute, ScreenSize } from '../../../enums';
 import { LifeTimelineContent } from '../../../graphql';
 import { BaseProps } from '../../../types';
 import { useScreen } from '../../../hooks';
@@ -38,11 +37,11 @@ const LifeTimeline: FunctionComponent<Props> = ({ content, search }): ReactEleme
     <>
       <Header title="Life Timeline">
         <Breadcrumbs>
-          <BreadcrumbItem route={NavRoute.CV}>
+          <BreadcrumbItem route="/cv">
             Curriculum Vitae
           </BreadcrumbItem>
           <BreadcrumbItem
-            route={NavRoute.LIFE_TIMELINE}
+            route="/cv/life-timeline"
             isActive={true}
           >
             Life Timeline
@@ -50,7 +49,7 @@ const LifeTimeline: FunctionComponent<Props> = ({ content, search }): ReactEleme
         </Breadcrumbs>
       </Header>
       <Content
-        alignment={BoxAlignment.START}
+        alignment="flex-start"
         css={css`
           padding-top: 50px;
           padding-bottom: 100px;
@@ -70,10 +69,10 @@ const LifeTimeline: FunctionComponent<Props> = ({ content, search }): ReactEleme
               },
             });
 
-            push(`${NavRoute.LIFE_TIMELINE}?${params.toString()}`);
+            push(`/cv/life-timeline?${params.toString()}`);
           }}
           css={css`
-            width: ${(screenSize === ScreenSize.SMALL) ? '100%' : '400px'};
+            width: ${(screenSize === 'small') ? '100%' : '400px'};
           `}
         />
         {

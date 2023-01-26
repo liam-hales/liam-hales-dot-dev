@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
-import { BoxAlignment, NavRoute, ColourPalette, IconId } from '../../enums';
+import { ColourPalette } from '../../enums';
 import { TimelineEvent as Event } from '../../graphql';
 import { BaseProps } from '../../types';
 import { Box, Title, TimelineEvent, Text, Timeline, Button, Link } from '../common';
@@ -30,7 +30,7 @@ const LifeTimelinePreview: FunctionComponent<Props> = ({ internalRef, className,
     <Box
       ref={internalRef}
       className={className}
-      alignment={BoxAlignment.START}
+      alignment="flex-start"
     >
       <Title>
         Life Timeline
@@ -72,14 +72,14 @@ const LifeTimelinePreview: FunctionComponent<Props> = ({ internalRef, className,
         }
       </Timeline>
       <Link
-        href={NavRoute.LIFE_TIMELINE}
+        href="/cv/life-timeline"
         passHref={true}
         css={css`
           margin-top: -12px;
           align-self: center;
         `}
       >
-        <Button iconId={IconId.ARROW_RIGHT}>
+        <Button iconId="arrowRight">
           See full timeline
         </Button>
       </Link>

@@ -5,9 +5,9 @@
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { ClickAwayListener, css } from '@mui/material';
 import { Transition } from 'framer-motion';
-import { BoxAlignment, BoxJustify, ColourPalette, LogoSection, ScreenSize } from '../../enums';
+import { ColourPalette } from '../../enums';
 import { useScreen } from '../../hooks';
-import { BaseProps } from '../../types';
+import { BaseProps, LogoSection } from '../../types';
 import { Box, Text, Title } from '../common';
 import { Logo } from '..';
 import { withRef } from '../../helpers';
@@ -58,7 +58,7 @@ const BrandLogo: FunctionComponent<Props> = (props): ReactElement<Props> => {
     <Box
       ref={internalRef}
       className={className}
-      alignment={BoxAlignment.START}
+      alignment="flex-start"
     >
       <Title>
         The Logo
@@ -94,12 +94,12 @@ const BrandLogo: FunctionComponent<Props> = (props): ReactElement<Props> => {
           />
         </ClickAwayListener>
         <Box
-          justify={BoxJustify.CENTER}
+          justify="center"
           css={css`
             position: relative;
             width: 100%;
-            height: ${screenSize === ScreenSize.SMALL ? 110 : 88}px;
-            max-width: ${screenSize === ScreenSize.SMALL ? 260 : 300}px;
+            height: ${screenSize === 'small' ? 110 : 88}px;
+            max-width: ${screenSize === 'small' ? 260 : 300}px;
             padding-top: 40px;
             text-align: center;
           `}
@@ -122,8 +122,8 @@ const BrandLogo: FunctionComponent<Props> = (props): ReactElement<Props> => {
           <Text
             isBold={true}
             animate={{
-              y: (activeLogoSection === LogoSection.LETTER_L) ? 0 : 50,
-              opacity: (activeLogoSection === LogoSection.LETTER_L) ? 1 : 0,
+              y: (activeLogoSection === 'letterL') ? 0 : 50,
+              opacity: (activeLogoSection === 'letterL') ? 1 : 0,
             }}
             transition={textTransition}
             css={css`
@@ -137,8 +137,8 @@ const BrandLogo: FunctionComponent<Props> = (props): ReactElement<Props> => {
           <Text
             isBold={true}
             animate={{
-              y: (activeLogoSection === LogoSection.REVERSE_LETTER_L) ? 0 : 50,
-              opacity: (activeLogoSection === LogoSection.REVERSE_LETTER_L) ? 1 : 0,
+              y: (activeLogoSection === 'reverseLetterL') ? 0 : 50,
+              opacity: (activeLogoSection === 'reverseLetterL') ? 1 : 0,
             }}
             transition={textTransition}
             css={css`
@@ -152,8 +152,8 @@ const BrandLogo: FunctionComponent<Props> = (props): ReactElement<Props> => {
           <Text
             isBold={true}
             animate={{
-              y: (activeLogoSection === LogoSection.BAR) ? 0 : 50,
-              opacity: (activeLogoSection === LogoSection.BAR) ? 1 : 0,
+              y: (activeLogoSection === 'bar') ? 0 : 50,
+              opacity: (activeLogoSection === 'bar') ? 1 : 0,
             }}
             transition={textTransition}
             css={css`

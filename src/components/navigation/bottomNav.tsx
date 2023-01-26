@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { BottomNavigation, BottomNavigationAction, css } from '@mui/material';
-import { ColourPalette, IconId, NavKey, NavRoute } from '../../enums';
+import { ColourPalette } from '../../enums';
 import { useNav } from '../../hooks';
 import { Box, Text, Icon, Link } from '../common';
 
@@ -61,8 +61,8 @@ const BottomNav: FunctionComponent = (): ReactElement => {
         `}
       >
         <BottomNavigationAction
-          value={NavKey.HOME}
-          href={NavRoute.HOME}
+          value="home"
+          href="/"
           component={Link}
           label={(
             <Text isBold={true}>
@@ -71,9 +71,9 @@ const BottomNav: FunctionComponent = (): ReactElement => {
           )}
           icon={(
             <Icon
-              id={IconId.HOME}
+              id="home"
               colour={
-                (navKey === NavKey.HOME)
+                (navKey === 'home')
                   ? ColourPalette.BLUE
                   : ColourPalette.WHITE
               }
@@ -83,8 +83,8 @@ const BottomNav: FunctionComponent = (): ReactElement => {
           css={bottomNavActionCss}
         />
         <BottomNavigationAction
-          value={NavKey.CV}
-          href={NavRoute.CV}
+          value="cv"
+          href="/cv"
           component={Link}
           label={(
             <Text isBold={true}>
@@ -93,9 +93,9 @@ const BottomNav: FunctionComponent = (): ReactElement => {
           )}
           icon={(
             <Icon
-              id={IconId.DOCUMENT}
+              id="document"
               colour={
-                (navKey === NavKey.CV)
+                (navKey === 'cv')
                   ? ColourPalette.BLUE
                   : ColourPalette.WHITE
               }
@@ -105,8 +105,8 @@ const BottomNav: FunctionComponent = (): ReactElement => {
           css={bottomNavActionCss}
         />
         <BottomNavigationAction
-          value={NavKey.BLOG}
-          href={NavRoute.BLOG}
+          value="blog"
+          href="/blog"
           component={Link}
           label={(
             <Text isBold={true}>
@@ -115,9 +115,9 @@ const BottomNav: FunctionComponent = (): ReactElement => {
           )}
           icon={(
             <Icon
-              id={IconId.MESSAGE}
+              id="message"
               colour={
-                (navKey === NavKey.BLOG)
+                (navKey === 'blog')
                   ? ColourPalette.BLUE
                   : ColourPalette.WHITE
               }
@@ -127,8 +127,8 @@ const BottomNav: FunctionComponent = (): ReactElement => {
           css={bottomNavActionCss}
         />
         <BottomNavigationAction
-          value={NavKey.BRAND}
-          href={NavRoute.BRAND}
+          value="brand"
+          href="/brand"
           component={Link}
           label={(
             <Text isBold={true}>
@@ -137,9 +137,9 @@ const BottomNav: FunctionComponent = (): ReactElement => {
           )}
           icon={(
             <Icon
-              id={IconId.COLOUR_SWATCH}
+              id="colourSwatch"
               colour={
-                (navKey === NavKey.BRAND)
+                (navKey === 'brand')
                   ? ColourPalette.BLUE
                   : ColourPalette.WHITE
               }

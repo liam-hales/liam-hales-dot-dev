@@ -30,9 +30,6 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const { utc } = useDate();
 
-  const year = utc().format('YYYY');
-  const copyrightText = ` ${year} - Liam Hales`;
-
   const {
     emailText,
     email,
@@ -42,7 +39,12 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
     buyMeCoffeeUrl,
     notionUrl,
     builtUsingText,
+    me,
   } = content;
+  const { firstName, lastName } = me;
+
+  const year = utc().format('YYYY');
+  const copyrightText = ` ${year} - ${firstName} ${lastName}`;
 
   return (
     <>
@@ -77,7 +79,9 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
                 padding-bottom: 8px;
               `}
             >
-              Liam Hales
+              {firstName}
+              {' '}
+              {lastName}
             </Text>
             <Text colour={ColourPalette.GREY_400}>
               {footerText}

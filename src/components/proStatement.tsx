@@ -6,6 +6,7 @@ import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
 import { ColourPalette } from '../enums';
 import { BaseProps } from '../types';
+import { Person } from '../graphql';
 import { Box, Text, Title } from './common';
 
 /**
@@ -13,6 +14,7 @@ import { Box, Text, Title } from './common';
  */
 interface Props extends BaseProps {
   readonly text: string;
+  readonly me: Person;
 }
 
 /**
@@ -22,7 +24,9 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `ProStatement` component
  */
-const ProStatement: FunctionComponent<Props> = ({ className, text }): ReactElement<Props> => {
+const ProStatement: FunctionComponent<Props> = ({ className, text, me }): ReactElement<Props> => {
+  const { firstName, lastName } = me;
+
   return (
     <Box
       className={className}
@@ -47,7 +51,11 @@ const ProStatement: FunctionComponent<Props> = ({ className, text }): ReactEleme
           font-size: 18px;
         `}
       >
-        - Liam Hales
+        -
+        {' '}
+        {firstName}
+        {' '}
+        {lastName}
       </Text>
     </Box>
   );

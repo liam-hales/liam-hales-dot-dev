@@ -55,6 +55,7 @@ const Home: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
       }}
       >
         <HomeHeader
+          me={me}
           foregroundImage={headerForegroundImage}
           backgroundImage={headerBackgroundImage}
           shayanRastegarUrl={shayanRastegarUrl}
@@ -80,6 +81,7 @@ const Home: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
         />
         <ProStatement
           text={proStatementText}
+          me={me}
           css={css`
             padding-top: 60px;
           `}

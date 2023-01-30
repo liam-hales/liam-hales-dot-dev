@@ -5,7 +5,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
 import { useScroll, useTransform } from 'framer-motion';
-import { Asset } from '../../graphql';
+import { Asset, Person } from '../../graphql';
 import { BaseProps } from '../../types';
 import { Image, Typewriter, Text, Box, Link } from '../common';
 import { Content } from '..';
@@ -14,6 +14,7 @@ import { Content } from '..';
  * The `HomeHeader` component props
  */
 interface Props extends BaseProps {
+  readonly me: Person;
   readonly foregroundImage: Asset;
   readonly backgroundImage: Asset;
   readonly shayanRastegarUrl: string;
@@ -26,9 +27,10 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `HomeHeader` component
  */
-const HomeHeader: FunctionComponent<Props> = ({ className, foregroundImage, backgroundImage, shayanRastegarUrl }): ReactElement<Props> => {
+const HomeHeader: FunctionComponent<Props> = ({ className, me, foregroundImage, backgroundImage, shayanRastegarUrl }): ReactElement<Props> => {
 
   const { scrollYProgress } = useScroll();
+  const { firstName, lastName } = me;
 
   const foregroundY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '46%']);
@@ -55,7 +57,7 @@ const HomeHeader: FunctionComponent<Props> = ({ className, foregroundImage, back
       >
         <Image
           path={backgroundImage.url}
-          alt="Liam Hales - Header"
+          alt={`${firstName} ${lastName} - Header`}
           style={{
             y: backgroundY,
           }}
@@ -76,7 +78,7 @@ const HomeHeader: FunctionComponent<Props> = ({ className, foregroundImage, back
       >
         <Image
           path={foregroundImage.url}
-          alt="Liam Hales - Header"
+          alt={`${firstName} ${lastName} - Header`}
           style={{
             y: foregroundY,
           }}
@@ -99,7 +101,10 @@ const HomeHeader: FunctionComponent<Props> = ({ className, foregroundImage, back
             z-index: -2;
           `}
         >
-          Liam Hales.
+          {firstName}
+          {' '}
+          {lastName}
+          .
         </Text>
         <Box
           alignment="flex-start"

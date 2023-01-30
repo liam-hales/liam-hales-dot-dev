@@ -1,4 +1,4 @@
-import { PageSlug } from '.';
+import { PageSlug } from './enums';
 
 /**
  * Describes the data for each page
@@ -40,6 +40,7 @@ export interface GlobalContent extends BasePageContent<PageSlug.GLOBAL> {
   readonly notionText: string;
   readonly notFoundText: string;
   readonly notFoundImage: Asset;
+  readonly me: Person;
 }
 
 /**

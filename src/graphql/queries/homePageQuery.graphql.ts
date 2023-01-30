@@ -1,5 +1,5 @@
 import { gql } from 'graphql-request';
-import { pageFragment, personFragment, assetFragment } from '..';
+import { pageFragment, assetFragment, personFragment } from '..';
 
 /**
  * The GraphQL query used for fetching
@@ -37,8 +37,8 @@ const homePageQuery = gql`
     }
   }
   ${pageFragment}
-  ${personFragment}
   ${assetFragment}
+  ${personFragment}
 `;
 
 export default homePageQuery;

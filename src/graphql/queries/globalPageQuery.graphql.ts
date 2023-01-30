@@ -1,5 +1,5 @@
 import { gql } from 'graphql-request';
-import { pageFragment, assetFragment } from '..';
+import { pageFragment, assetFragment, personFragment } from '..';
 
 /**
  * The GraphQL query used for fetching
@@ -28,12 +28,16 @@ const globalPageQuery = gql`
           notFoundImage {
             ...AssetFields
           }
+          me {
+            ...PersonFields
+          }
         }
       }
     }
   }
   ${pageFragment}
   ${assetFragment}
+  ${personFragment}
 `;
 
 export default globalPageQuery;

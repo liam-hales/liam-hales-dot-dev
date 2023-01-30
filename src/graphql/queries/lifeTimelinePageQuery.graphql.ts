@@ -16,12 +16,12 @@ const lifeTimelinePageQuery = gql`
       content {
         ... on LifeTimelineContent {
           timelineEvents(
-          where: {
-            title_contains: $search
+            where: {
+              title_contains: $search
+            }
+          ) {
+            ...TimelineEventFields
           }
-        ) {
-          ...TimelineEventFields
-        }
         }
       }
     }

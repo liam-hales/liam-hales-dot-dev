@@ -30,9 +30,9 @@ const Breadcrumbs: FunctionComponent<Props> = ({ className, children }): ReactEl
       )}
       css={css`
         .MuiBreadcrumbs-separator {
-          margin-left: 10px;
-          margin-right: 12px;
-          font-size: 18px;
+          margin-left: 8px;
+          margin-right: 6px;
+          font-size: 24px;
         };
       `}
     >

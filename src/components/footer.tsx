@@ -110,16 +110,6 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
               `}
             />
           </Popover>
-          <Popover text="Stack Overflow">
-            <Link
-              href={stackOverflowUrl}
-              target="_blank"
-              passHref={true}
-              aria-label="Stack Overflow"
-            >
-              <IconButton id="stackOverflow" />
-            </Link>
-          </Popover>
           <Popover text="LinkedIn">
             <Link
               href={linkedInUrl}
@@ -130,14 +120,14 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
               <IconButton id="linkedIn" />
             </Link>
           </Popover>
-          <Popover text="Buy Me a Coffee">
+          <Popover text="Stack Overflow">
             <Link
-              href={buyMeCoffeeUrl}
+              href={stackOverflowUrl}
               target="_blank"
               passHref={true}
-              aria-label="Buy Me a Coffee"
+              aria-label="Stack Overflow"
             >
-              <IconButton id="buyMeCoffee" />
+              <IconButton id="stackOverflow" />
             </Link>
           </Popover>
           <Popover text="Notion">
@@ -148,6 +138,16 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
               aria-label="Notion"
             >
               <IconButton id="notion" />
+            </Link>
+          </Popover>
+          <Popover text="Buy Me a Coffee">
+            <Link
+              href={buyMeCoffeeUrl}
+              target="_blank"
+              passHref={true}
+              aria-label="Buy Me a Coffee"
+            >
+              <IconButton id="buyMeCoffee" />
             </Link>
           </Popover>
         </Box>

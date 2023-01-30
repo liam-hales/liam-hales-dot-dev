@@ -19,8 +19,8 @@ interface Props extends BaseProps {
 }
 
 /**
- * Used to render a skill and
- * display it's infomation
+ * Render a skill card used to
+ * display the skill infomation
  *
  * @param props The component props
  * @returns The `SkillCard` component

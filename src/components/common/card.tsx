@@ -16,7 +16,7 @@ interface Props extends BaseProps<HTMLDivElement> {
   readonly direction?: BoxDirection;
   readonly alignment?: BoxAlignment;
   readonly justify?: BoxJustify;
-  readonly onClick?: ()=> void;
+  readonly onClick?: () => void;
   readonly children: ReactNode;
 }
 

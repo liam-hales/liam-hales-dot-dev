@@ -1,35 +1,43 @@
 import { gql } from 'graphql-request';
-import { pageFragment, homeContentFragment, assetFragment } from '..';
+import { pageFragment, personFragment, assetFragment } from '..';
 
 /**
- * The GraphQL query for fetching
+ * The GraphQL query used for fetching
  * the home page data
- *
- * @example
- * import { request } from 'graphql-request';
- *
- * const url = 'https://example.com/graphql';
- *
- * const data = await request(url, homePageQuery);
- * const data = await useQuery(homePageQuery);
  */
 const homePageQuery = gql`
   query homePage {
     page(
       where: {
-        slug: HOME
+        slug: "home"
       }
     ) {
       ...PageFields,
       content {
         ... on HomeContent {
-          ...HomeContentFields
+          headerForegroundImage {
+            ...AssetFields
+          }
+          headerBackgroundImage {
+            ...AssetFields
+          }
+          shayanRastegarUrl
+          me {
+            ...PersonFields
+          }
+          aboutMeText
+          careerStartDate
+          frontendText
+          backendText
+          designText
+          proStatementText
+          stillInterestedText
         }
       }
     }
   }
   ${pageFragment}
-  ${homeContentFragment}
+  ${personFragment}
   ${assetFragment}
 `;
 

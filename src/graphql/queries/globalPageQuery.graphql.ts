@@ -1,35 +1,38 @@
 import { gql } from 'graphql-request';
-import { pageFragment, globalContentFragment, assetFragment } from '..';
+import { pageFragment, assetFragment } from '..';
 
 /**
- * The GraphQL query for fetching
+ * The GraphQL query used for fetching
  * the global page data
- *
- * @example
- * import { request } from 'graphql-request';
- *
- * const url = 'https://example.com/graphql';
- *
- * const data = await request(url, globalPageQuery);
- * const data = await useQuery(globalPageQuery);
  */
 const globalPageQuery = gql`
-  query homePage {
+  query globalPage {
     page(
       where: {
-        slug: GLOBAL
+        slug: "global"
       }
     ) {
       ...PageFields,
       content {
         ... on GlobalContent {
-          ...GlobalContentFields
+          footerText
+          builtUsingText
+          email
+          emailText
+          linkedInUrl
+          stackOverflowUrl
+          buyMeCoffeeUrl
+          notionUrl
+          notionText
+          notFoundText
+          notFoundImage {
+            ...AssetFields
+          }
         }
       }
     }
   }
   ${pageFragment}
-  ${globalContentFragment}
   ${assetFragment}
 `;
 

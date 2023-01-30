@@ -6,7 +6,7 @@ import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { BaseProps } from '../types';
-import { GlobalContent, HomeContent } from '../graphql';
+import { HomeContent } from '../graphql';
 import {
   Content,
   HomeHeader,
@@ -20,8 +20,7 @@ import {
  * The `Home` component props
  */
 interface Props extends BaseProps {
-  readonly homeContent: HomeContent;
-  readonly globalContent: GlobalContent;
+  readonly content: HomeContent;
 }
 
 /**
@@ -30,15 +29,16 @@ interface Props extends BaseProps {
  *
  * @returns The `Home` component
  */
-const Home: FunctionComponent<Props> = ({ homeContent, globalContent }): ReactElement<Props> => {
+const Home: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
 
   const { scrollYProgress } = useScroll();
   const headerY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
 
-  const { meImage, shayanRastegarUrl } = globalContent;
   const {
     headerForegroundImage,
     headerBackgroundImage,
+    shayanRastegarUrl,
+    me,
     aboutMeText,
     careerStartDate,
     frontendText,
@@ -46,7 +46,7 @@ const Home: FunctionComponent<Props> = ({ homeContent, globalContent }): ReactEl
     designText,
     proStatementText,
     stillInterestedText,
-  } = homeContent;
+  } = content;
 
   return (
     <>
@@ -63,7 +63,7 @@ const Home: FunctionComponent<Props> = ({ homeContent, globalContent }): ReactEl
       <Content>
         <AboutMe
           text={aboutMeText}
-          meImage={meImage}
+          me={me}
           careerStartDate={careerStartDate}
           css={css`
             padding-top: 60px;

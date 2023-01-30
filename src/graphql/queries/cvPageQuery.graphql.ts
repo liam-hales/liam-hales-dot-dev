@@ -1,35 +1,36 @@
 import { gql } from 'graphql-request';
-import { pageFragment, cvContentFragment, skillFragment, timelineEventFragment, assetFragment } from '..';
+import { pageFragment, skillFragment, timelineEventFragment, assetFragment } from '..';
 
 /**
- * The GraphQL query for fetching
- * the CV page data
- *
- * @example
- * import { request } from 'graphql-request';
- *
- * const url = 'https://example.com/graphql';
- *
- * const data = await request(url, cvPageQuery);
- * const data = await useQuery(cvPageQuery);
+ * The GraphQL query used for
+ * fetching the CV page data
  */
 const cvPageQuery = gql`
   query cvPage {
     page(
       where: {
-        slug: CV
+        slug: "cv"
       }
     ) {
       ...PageFields,
       content {
         ... on CVContent {
-          ...CVContentFields
+          currentPositionText
+          careerStartDate
+          skillsText
+          skills {
+            ...SkillFields
+          }
+          lifeTimelineText
+          lifeTimelineEvents {
+            ...TimelineEventFields
+          }
+          disclaimerText
         }
       }
     }
   }
   ${pageFragment}
-  ${cvContentFragment}
   ${skillFragment}
   ${timelineEventFragment}
   ${assetFragment}

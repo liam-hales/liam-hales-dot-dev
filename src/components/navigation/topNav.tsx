@@ -15,6 +15,7 @@ import { BaseProps } from '../../types';
  */
 interface Props extends BaseProps {
   readonly notionUrl: string;
+  readonly notionText: string;
 }
 
 /**
@@ -23,7 +24,7 @@ interface Props extends BaseProps {
  *
  * @returns The `TopNav` component
  */
-const TopNav: FunctionComponent<Props> = ({ notionUrl }): ReactElement<Props> => {
+const TopNav: FunctionComponent<Props> = ({ notionUrl, notionText }): ReactElement<Props> => {
 
   const { navKey } = useNav();
   return (
@@ -98,7 +99,7 @@ const TopNav: FunctionComponent<Props> = ({ notionUrl }): ReactElement<Props> =>
             </Tab>
           </Tabs>
         </Box>
-        <Popover text="Notion Board - Follow progress and track the current state of this website">
+        <Popover text={notionText}>
           <Link
             href={notionUrl}
             target="_blank"

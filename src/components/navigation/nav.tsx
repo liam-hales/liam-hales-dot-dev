@@ -28,7 +28,7 @@ interface Props extends BaseProps {
 const Nav: FunctionComponent<Props> = ({ content, children }): ReactElement<Props> => {
 
   const { screenSize } = useScreen();
-  const { notionUrl } = content;
+  const { notionUrl, notionText } = content;
 
   return (
     <>
@@ -56,7 +56,10 @@ const Nav: FunctionComponent<Props> = ({ content, children }): ReactElement<Prop
       }
       {
         (screenSize !== 'small') && (
-          <TopNav notionUrl={notionUrl} />
+          <TopNav
+            notionUrl={notionUrl}
+            notionText={notionText}
+          />
         )
       }
       {children}

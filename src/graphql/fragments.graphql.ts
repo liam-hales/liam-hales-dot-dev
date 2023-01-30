@@ -15,121 +15,6 @@ export const pageFragment = gql`
 `;
 
 /**
- * The GraphQL fragment for the `GlobalContent`
- * type used within the page query
- */
-export const globalContentFragment = gql`
-  fragment GlobalContentFields on GlobalContent {
-    footerText
-    builtUsingText
-    email
-    emailText
-    linkedInUrl
-    stackOverflowUrl
-    buyMeCoffeeUrl
-    notionUrl
-    shayanRastegarUrl
-    notFoundText
-    notFoundImage {
-      ...AssetFields
-    }
-    meImage {
-      ...AssetFields
-    }
-  }
-`;
-
-/**
- * The GraphQL fragment for the `HomeContent`
- * type used within the page query
- */
-export const homeContentFragment = gql`
-  fragment HomeContentFields on HomeContent {
-    headerForegroundImage {
-      ...AssetFields
-    }
-    headerBackgroundImage {
-      ...AssetFields
-    }
-    aboutMeText
-    careerStartDate
-    frontendText
-    backendText
-    designText
-    proStatementText
-    stillInterestedText
-  }
-`;
-
-/**
- * The GraphQL fragment for the `CVContent`
- * type used within the page query
- */
-export const cvContentFragment = gql`
-  fragment CVContentFields on CVContent {
-    currentPositionText
-    careerStartDate
-    skillsText
-    skills {
-      ...SkillFields
-    }
-    lifeTimelineText
-    lifeTimelineEvents {
-      ...TimelineEventFields
-    }
-    disclaimerText
-  }
-`;
-
-/**
- * The GraphQL fragment for the `SkillsContent`
- * type used within the page query
- */
-export const skillsContentFragment = gql`
-  fragment SkillsContentFields on SkillsContent {
-    disclaimerText
-    skills(
-      where: {
-        name_contains: $search
-      }
-    ) {
-      ...SkillFields
-    }
-  }
-`;
-
-/**
- * The GraphQL fragment for the `LifeTimelineContent`
- * type used within the page query
- */
-export const lifeTimelineContentFragment = gql`
-  fragment LifeTimelineContentFields on LifeTimelineContent {
-    timelineEvents(
-      where: {
-        title_contains: $search
-      }
-    ) {
-      ...TimelineEventFields
-    }
-  }
-`;
-
-/**
- * The GraphQL fragment for the `BrandContent`
- * type used within the page query
- */
-export const brandContentFragment = gql`
-  fragment BrandContentFields on BrandContent {
-    logoText
-    logoLetterLText
-    logoReverseLetterLText
-    logoBarText
-    colourPaletteText
-    typographyText
-  }
-`;
-
-/**
  * The GraphQL fragment for the `Asset` type used
  * within different queries and fragments
  */
@@ -138,6 +23,21 @@ export const assetFragment = gql`
     id
     fileName
     url
+  }
+`;
+
+/**
+ * The GraphQL fragment for the `Person` type used
+ * within different queries and fragments
+ */
+export const personFragment = gql`
+  fragment PersonFields on Person {
+    id
+    firstName
+    lastName
+    image {
+      ...AssetFields
+    }
   }
 `;
 

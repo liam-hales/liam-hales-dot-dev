@@ -1,35 +1,31 @@
 import { gql } from 'graphql-request';
-import { pageFragment, brandContentFragment, assetFragment } from '..';
+import { pageFragment, assetFragment } from '..';
 
 /**
- * The GraphQL query for fetching
+ * The GraphQL query used for fetching
  * the brand page data
- *
- * @example
- * import { request } from 'graphql-request';
- *
- * const url = 'https://example.com/graphql';
- *
- * const data = await request(url, brandPageQuery);
- * const data = await useQuery(brandPageQuery);
  */
 const brandPageQuery = gql`
   query brandPage {
     page(
       where: {
-        slug: BRAND
+        slug: "brand"
       }
     ) {
       ...PageFields,
       content {
         ... on BrandContent {
-          ...BrandContentFields
+          logoText
+          logoLetterLText
+          logoReverseLetterLText
+          logoBarText
+          colourPaletteText
+          typographyText
         }
       }
     }
   }
   ${pageFragment}
-  ${brandContentFragment}
   ${assetFragment}
 `;
 

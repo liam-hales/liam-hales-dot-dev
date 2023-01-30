@@ -1,35 +1,33 @@
 import { gql } from 'graphql-request';
-import { pageFragment, skillsContentFragment, skillFragment, assetFragment } from '..';
+import { pageFragment, skillFragment, assetFragment } from '..';
 
 /**
- * The GraphQL query for fetching
+ * The GraphQL query used for fetching
  * the CV skills page data
- *
- * @example
- * import { request } from 'graphql-request';
- *
- * const url = 'https://example.com/graphql';
- *
- * const data = await request(url, skillsPageQuery);
- * const data = await useQuery(skillsPageQuery);
  */
 const skillsPageQuery = gql`
   query skillsPage($search: String!) {
     page(
       where: {
-        slug: SKILLS
+        slug: "skills"
       }
     ) {
       ...PageFields,
       content {
         ... on SkillsContent {
-          ...SkillsContentFields
+          disclaimerText
+          skills(
+            where: {
+              name_contains: $search
+            }
+          ) {
+            ...SkillFields
+          }
         }
       }
     }
   }
   ${pageFragment}
-  ${skillsContentFragment}
   ${skillFragment}
   ${assetFragment}
 `;

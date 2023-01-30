@@ -36,16 +36,13 @@ const TimelineEvent: FunctionComponent<Props> = (props): ReactElement<Props> => 
 
   const { from } = useDate();
 
-  // Format the date into a human readable timestamp
-  // The year, month and how long ag the date was from the current date
   const formattedDate = from(date).format('MMMM YYYY');
   const timeAgo = from(date).fromNow();
-  const timestamp = `${formattedDate} - ${timeAgo}`;
 
   return (
     <Box alignment="flex-start">
       <Text colour={ColourPalette.GREY_600}>
-        {timestamp}
+        {`${formattedDate} - ${timeAgo}`}
       </Text>
       <Text
         isBold={true}

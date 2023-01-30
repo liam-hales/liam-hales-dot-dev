@@ -7,7 +7,7 @@ import { css } from '@mui/material';
 import { ColourPalette } from '../enums';
 import { useDate, useScreen } from '../hooks';
 import { BaseProps } from '../types';
-import { Asset } from '../graphql';
+import { Person } from '../graphql';
 import { Box, Image, Text, Title } from './common';
 import { Stat } from '.';
 
@@ -16,7 +16,7 @@ import { Stat } from '.';
  */
 interface Props extends BaseProps {
   readonly text: string;
-  readonly meImage: Asset;
+  readonly me: Person;
   readonly careerStartDate: string;
 }
 
@@ -27,10 +27,12 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `AboutMe` component
  */
-const AboutMe: FunctionComponent<Props> = ({ className, text, meImage, careerStartDate }): ReactElement<Props> => {
+const AboutMe: FunctionComponent<Props> = ({ className, text, me, careerStartDate }): ReactElement<Props> => {
 
   const { screenSize } = useScreen();
   const { utc } = useDate();
+
+  const { firstName, lastName, image } = me;
 
   // Calculate the years programming and
   // experience from the career start date
@@ -46,8 +48,8 @@ const AboutMe: FunctionComponent<Props> = ({ className, text, meImage, careerSta
       {
         (screenSize !== 'small') && (
           <Image
-            path={meImage.url}
-            alt="Liam Hales"
+            path={image.url}
+            alt={`${firstName} ${lastName}`}
             width={116}
             height={116}
             css={css`

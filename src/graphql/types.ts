@@ -37,10 +37,9 @@ export interface GlobalContent extends BasePageContent<PageSlug.GLOBAL> {
   readonly stackOverflowUrl: string;
   readonly buyMeCoffeeUrl: string;
   readonly notionUrl: string;
-  readonly shayanRastegarUrl: string;
+  readonly notionText: string;
   readonly notFoundText: string;
   readonly notFoundImage: Asset;
-  readonly meImage: Asset;
 }
 
 /**
@@ -50,6 +49,8 @@ export interface GlobalContent extends BasePageContent<PageSlug.GLOBAL> {
 export interface HomeContent extends BasePageContent<PageSlug.HOME> {
   readonly headerForegroundImage: Asset;
   readonly headerBackgroundImage: Asset;
+  readonly shayanRastegarUrl: string;
+  readonly me: Person;
   readonly aboutMeText: string;
   readonly careerStartDate: string;
   readonly frontendText: string;
@@ -125,6 +126,26 @@ export interface Asset {
 }
 
 /**
+ * Describes a person which contains data about
+ * a specific person such as their name and image
+ */
+export interface Person {
+  readonly id: string;
+  readonly firstName: string;
+  readonly lastName: string;
+  readonly image: Asset;
+}
+
+/**
+ * Describes the colour which contains the colour data
+ * in different formats such as it's HEX value
+ */
+export interface Colour {
+  readonly hex: string;
+  readonly css: string;
+}
+
+/**
  * Describes a specific event
  * in a timeline
  */
@@ -145,6 +166,26 @@ export interface Skill {
   readonly description: string;
   readonly url: string;
   readonly image?: Asset;
+}
+
+/**
+ * Describes a specific blog post
+ */
+export interface BlogPost {
+  readonly id: string;
+  readonly title: string;
+  readonly description: string;
+  readonly publishedDate: string;
+  readonly tags: Tag[];
+}
+
+/**
+ * Describes a specific tag
+ */
+export interface Tag {
+  readonly id: string;
+  readonly text: string;
+  readonly colour: Colour;
 }
 
 /**

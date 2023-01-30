@@ -10,6 +10,13 @@ import { BaseProps } from '../types';
  *
  * @param Component The component
  * @returns The component with a forwarded reference
+ * @example
+ *
+ * const Component = withRef((): ReactElement => {
+ *   return (
+ *     <div> ... </div>
+ *   );
+ * });
  */
 const withRef = <
   T extends HTMLElement,

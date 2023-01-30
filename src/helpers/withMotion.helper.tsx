@@ -14,6 +14,13 @@ import { withRef } from '.';
  *
  * @param Component The component
  * @returns The component with a forwarded reference
+ * @example
+ *
+ * const Component = withMotion((): ReactElement => {
+ *   return (
+ *     <div> ... </div>
+ *   );
+ * });
  */
 const withMotion = <
   T extends HTMLElement,

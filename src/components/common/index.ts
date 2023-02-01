@@ -22,6 +22,7 @@ import Backdrop from './backdrop';
 import Markdown from './markdown';
 import CodeSnippet from './code/codeSnippet';
 import Link from './link';
+import Tag from './tag';
 
 export {
   Box,
@@ -48,4 +49,5 @@ export {
   Markdown,
   CodeSnippet,
   Link,
+  Tag,
 };

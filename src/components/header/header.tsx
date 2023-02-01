@@ -14,7 +14,7 @@ import { Content } from '..';
  */
 interface Props extends BaseProps {
   readonly title: string;
-  readonly children: ReactNode;
+  readonly children?: ReactNode;
 }
 
 /**

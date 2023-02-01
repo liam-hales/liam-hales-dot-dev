@@ -16,6 +16,7 @@ import StillInterested from './stillInterested';
 import CurrentPosition from './currentPosition';
 import LifeTimelinePreview from './lifeTimeline/lifeTimelinePreview';
 import SkillsPreview from './skills/skillsPreview';
+import BlogPostCard from './blog/blogPostCard';
 import BrandLogo from './brand/brandLogo';
 import BrandTypography from './brand/brandTypography';
 import BrandColourPalette from './brand/brandColourPalette';
@@ -46,6 +47,7 @@ export {
   CurrentPosition,
   LifeTimelinePreview,
   SkillsPreview,
+  BlogPostCard,
   BrandLogo,
   BrandTypography,
   BrandColourPalette,

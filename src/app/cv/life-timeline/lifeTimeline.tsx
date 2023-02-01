@@ -25,13 +25,13 @@ interface Props extends BaseProps {
  *
  * @returns The `LifeTimeline` component
  */
-const LifeTimeline: FunctionComponent<Props> = ({ content, search }): ReactElement<Props> => {
+const LifeTimeline: FunctionComponent<Props> = ({ content, search = '' }): ReactElement<Props> => {
 
   const { screenSize } = useScreen();
   const { push } = useRouter();
   const { timelineEvents } = content;
 
-  const [searchText, setSearchText] = useState<string>(search ?? '');
+  const [searchText, setSearchText] = useState<string>(search);
 
   return (
     <>
@@ -78,7 +78,7 @@ const LifeTimeline: FunctionComponent<Props> = ({ content, search }): ReactEleme
         {
           (timelineEvents.length === 0) && (
             <NoResults
-              searchText={search ?? ''}
+              searchText={search}
               css={css`
                 padding-top: 26px;
                 align-self: center;

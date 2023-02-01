@@ -26,13 +26,13 @@ interface Props extends BaseProps {
  *
  * @returns The `Skills` component
  */
-const Skills: FunctionComponent<Props> = ({ content, search }): ReactElement<Props> => {
+const Skills: FunctionComponent<Props> = ({ content, search = '' }): ReactElement<Props> => {
 
   const { screenSize } = useScreen();
   const { push } = useRouter();
   const { disclaimerText, skills } = content;
 
-  const [searchText, setSearchText] = useState<string>(search ?? '');
+  const [searchText, setSearchText] = useState<string>(search);
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [selectedSkill, setSelectedSkill] = useState<Skill | undefined>();
 
@@ -110,7 +110,7 @@ const Skills: FunctionComponent<Props> = ({ content, search }): ReactElement<Pro
         {
           (skills.length === 0) && (
             <NoResults
-              searchText={search ?? ''}
+              searchText={search}
               css={css`
                 padding-top: 26px;
                 align-self: center;

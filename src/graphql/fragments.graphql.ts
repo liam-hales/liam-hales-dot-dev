@@ -35,6 +35,7 @@ export const personFragment = gql`
     id
     firstName
     lastName
+    professionalTitle
     image {
       ...AssetFields
     }

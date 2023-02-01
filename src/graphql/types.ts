@@ -134,6 +134,7 @@ export interface Person {
   readonly id: string;
   readonly firstName: string;
   readonly lastName: string;
+  readonly professionalTitle: string;
   readonly image: Asset;
 }
 
@@ -176,8 +177,9 @@ export interface BlogPost {
   readonly id: string;
   readonly title: string;
   readonly description: string;
-  readonly publishedDate: string;
   readonly tags: Tag[];
+  readonly author: Person;
+  readonly publishedDate: string;
 }
 
 /**

@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { Page, PageSlug, cvPageQuery } from '../../graphql';
 import { useQuery } from '../../hooks';
-import { PageProps, ServerComponent } from '../../types';
+import { ServerComponent } from '../../types';
 import CV from './cv';
 
 /**
@@ -10,7 +10,7 @@ import CV from './cv';
  *
  * @returns The `CVPage` component
  */
-const CVPage: ServerComponent<PageProps> = async (): Promise<ReactElement<PageProps>> => {
+const CVPage: ServerComponent = async (): Promise<ReactElement> => {
 
   const { content } = await useQuery<Page<PageSlug.CV>>(cvPageQuery);
   return (

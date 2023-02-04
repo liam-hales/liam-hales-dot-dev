@@ -20,7 +20,6 @@ const LifeTimelinePage: ServerComponent<PageProps> = async ({ searchParams = {} 
 
   const { search = '' } = searchParams;
   const { content } = await useQuery<Page<PageSlug.LIFE_TIMELINE>, SearchVariables>(lifeTimelinePageQuery, {
-    cache: 'no-store',
     variables: {
       search: search,
     },

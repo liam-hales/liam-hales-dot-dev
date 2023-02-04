@@ -20,7 +20,6 @@ const SkillsPage: ServerComponent<PageProps> = async ({ searchParams = {} }): Pr
 
   const { search = '' } = searchParams;
   const { content } = await useQuery<Page<PageSlug.SKILLS>, SearchVariables>(skillsPageQuery, {
-    cache: 'no-store',
     variables: {
       search: search,
     },

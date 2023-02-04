@@ -1,4 +1,8 @@
-import { PageSlug } from './enums';
+/**
+ * The page slug used for fetching page
+ * data from the GraphQL API
+ */
+export type PageSlug = 'global' | 'home' | 'cv' | 'skills' | 'life-timeline' | 'blog' | 'brand';
 
 /**
  * Describes the data for each page
@@ -28,7 +32,7 @@ export interface BasePageContent<T extends PageSlug> {
  * Describes the global page content which
  * is specific to the global page only
  */
-export interface GlobalContent extends BasePageContent<PageSlug.GLOBAL> {
+export interface GlobalContent extends BasePageContent<'global'> {
   readonly footerText: string;
   readonly builtUsingText: string;
   readonly email: string;
@@ -47,7 +51,7 @@ export interface GlobalContent extends BasePageContent<PageSlug.GLOBAL> {
  * Describes the home page content which
  * is specific to the home page only
  */
-export interface HomeContent extends BasePageContent<PageSlug.HOME> {
+export interface HomeContent extends BasePageContent<'home'> {
   readonly headerForegroundImage: Asset;
   readonly headerBackgroundImage: Asset;
   readonly shayanRastegarUrl: string;
@@ -65,7 +69,7 @@ export interface HomeContent extends BasePageContent<PageSlug.HOME> {
  * Describes the CV page content which
  * is specific to the CV page only
  */
-export interface CVContent extends BasePageContent<PageSlug.CV> {
+export interface CVContent extends BasePageContent<'cv'> {
   readonly currentPositionText: string;
   readonly careerStartDate: string;
   readonly skillsText: string;
@@ -79,7 +83,7 @@ export interface CVContent extends BasePageContent<PageSlug.CV> {
  * Describes the skills page content which
  * is specific to the skills page only
  */
-export interface SkillsContent extends BasePageContent<PageSlug.SKILLS> {
+export interface SkillsContent extends BasePageContent<'skills'> {
   readonly disclaimerText: string;
   readonly skills: Skill[];
 }
@@ -88,7 +92,7 @@ export interface SkillsContent extends BasePageContent<PageSlug.SKILLS> {
  * Describes the life timeline page content which
  * is specific to the life timeline page only
  */
-export interface LifeTimelineContent extends BasePageContent<PageSlug.LIFE_TIMELINE> {
+export interface LifeTimelineContent extends BasePageContent<'life-timeline'> {
   readonly timelineEvents: TimelineEvent[];
 }
 
@@ -96,7 +100,7 @@ export interface LifeTimelineContent extends BasePageContent<PageSlug.LIFE_TIMEL
  * Describes the brand page content which
  * is specific to the brand page only
  */
-export interface BrandContent extends BasePageContent<PageSlug.BRAND> {
+export interface BrandContent extends BasePageContent<'brand'> {
   readonly logoText: string;
   readonly logoLetterLText: string;
   readonly logoReverseLetterLText: string;
@@ -109,7 +113,7 @@ export interface BrandContent extends BasePageContent<PageSlug.BRAND> {
  * Describes the blog page content which
  * is specific to the blog page only
  */
-export interface BlogContent extends BasePageContent<PageSlug.BLOG> {
+export interface BlogContent extends BasePageContent<'blog'> {
   readonly posts: BlogPost[];
 }
 

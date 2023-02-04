@@ -3,7 +3,7 @@ import { Footer, Nav, SafeArea } from '../components';
 import { ThemeProvider } from '../providers';
 import { BaseProps, ServerComponent } from '../types';
 import { urbanist, firaCode } from '../fonts';
-import { Page, PageSlug, globalPageQuery } from '../graphql';
+import { Page, globalPageQuery } from '../graphql';
 import { useQuery } from '../hooks';
 
 /**
@@ -21,7 +21,7 @@ interface Props extends BaseProps {
  */
 const AppLayout: ServerComponent<Props> = async ({ children }): Promise<ReactElement<Props>> => {
 
-  const { content } = await useQuery<Page<PageSlug.GLOBAL>>(globalPageQuery);
+  const { content } = await useQuery<Page<'global'>>(globalPageQuery);
   return (
     <html
       lang="en"

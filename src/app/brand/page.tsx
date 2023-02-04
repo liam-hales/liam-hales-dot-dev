@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Page, PageSlug, brandPageQuery } from '../../graphql';
+import { Page, brandPageQuery } from '../../graphql';
 import { useQuery } from '../../hooks';
 import { ServerComponent } from '../../types';
 import Brand from './brand';
@@ -12,7 +12,7 @@ import Brand from './brand';
  */
 const BrandPage: ServerComponent = async (): Promise<ReactElement> => {
 
-  const { content } = await useQuery<Page<PageSlug.BRAND>>(brandPageQuery);
+  const { content } = await useQuery<Page<'brand'>>(brandPageQuery);
   return (
     <Brand content={content} />
   );

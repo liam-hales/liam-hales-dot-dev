@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Page, PageSlug, homePageQuery } from '../graphql';
+import { Page, homePageQuery } from '../graphql';
 import { useQuery } from '../hooks';
 import { ServerComponent } from '../types';
 import Home from './home';
@@ -12,7 +12,7 @@ import Home from './home';
  */
 const HomePage: ServerComponent = async (): Promise<ReactElement> => {
 
-  const { content } = await useQuery<Page<PageSlug.HOME>>(homePageQuery);
+  const { content } = await useQuery<Page<'home'>>(homePageQuery);
   return (
     <Home content={content} />
   );

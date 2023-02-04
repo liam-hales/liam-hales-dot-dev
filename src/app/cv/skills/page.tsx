@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Page, PageSlug, SearchVariables, skillsPageQuery } from '../../../graphql';
+import { Page, SearchVariables, skillsPageQuery } from '../../../graphql';
 import { useQuery } from '../../../hooks';
 import { PageProps, ServerComponent } from '../../../types';
 import Skills from './skills';
@@ -19,7 +19,7 @@ export const revalidate = 0;
 const SkillsPage: ServerComponent<PageProps> = async ({ searchParams = {} }): Promise<ReactElement<PageProps>> => {
 
   const { search = '' } = searchParams;
-  const { content } = await useQuery<Page<PageSlug.SKILLS>, SearchVariables>(skillsPageQuery, {
+  const { content } = await useQuery<Page<'skills'>, SearchVariables>(skillsPageQuery, {
     variables: {
       search: search,
     },

@@ -106,6 +106,14 @@ export interface BrandContent extends BasePageContent<PageSlug.BRAND> {
 }
 
 /**
+ * Describes the blog page content which
+ * is specific to the blog page only
+ */
+export interface BlogContent extends BasePageContent<PageSlug.BLOG> {
+  readonly posts: BlogPost[];
+}
+
+/**
  * The union type for all page content types
  */
 export type PageContent =
@@ -114,7 +122,8 @@ export type PageContent =
   | CVContent
   | LifeTimelineContent
   | SkillsContent
-  | BrandContent;
+  | BrandContent
+  | BlogContent;
 
 /**
  * Describes the asset which contains data
@@ -148,17 +157,6 @@ export interface Colour {
 }
 
 /**
- * Describes a specific event
- * in a timeline
- */
-export interface TimelineEvent {
-  readonly id: string;
-  readonly title: string;
-  readonly description: string;
-  readonly date: string;
-}
-
-/**
  * Describes a specific skill
  */
 export interface Skill {
@@ -168,6 +166,17 @@ export interface Skill {
   readonly description: string;
   readonly url: string;
   readonly image?: Asset;
+}
+
+/**
+ * Describes a specific event
+ * in a timeline
+ */
+export interface TimelineEvent {
+  readonly id: string;
+  readonly title: string;
+  readonly description: string;
+  readonly date: string;
 }
 
 /**

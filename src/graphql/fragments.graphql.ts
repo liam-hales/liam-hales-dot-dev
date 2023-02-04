@@ -71,3 +71,36 @@ export const timelineEventFragment = gql`
     date
   }
 `;
+
+/**
+ * The GraphQL fragment for the `BlogPost` type used
+ * within different queries and fragments
+ */
+export const blogPostFragment = gql`
+  fragment BlogPostFields on BlogPost {
+    id
+    title
+    description
+    tags {
+      ...TagFields
+    }
+    author {
+      ...PersonFields
+    }
+    publishedDate
+  }
+`;
+
+/**
+ * The GraphQL fragment for the `Tag` type used
+ * within different queries and fragments
+ */
+export const tagFragment = gql`
+  fragment TagFields on Tag {
+    text
+    colour {
+      hex
+      css
+    }
+  }
+`;

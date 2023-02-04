@@ -18,7 +18,6 @@ import { useConfig } from '.';
  * @example
  *
  * const data = await useQuery<Data, Variables>(document, {
- *   cache: 'no-cache',
  *   variables: { ... },
  * });
  */
@@ -31,12 +30,11 @@ const useQuery = async <
 ): Promise<T> => {
 
   const { apiUrl } = useConfig();
-  const { variables, cache } = options;
+  const { variables } = options;
 
   // Initialise the GraphQL client with
   // the API URL and the options
   const client = new GraphQLClient(apiUrl, {
-    cache: cache,
     fetch: fetch,
   });
 

@@ -148,9 +148,9 @@ export interface PageProps extends BaseProps {
 }
 
 /**
- * Describes the `options` for the `useQuery` hook
+ * Describes the `options` for
+ * the `useQuery` hook
  */
 export interface UseQueryOptions<V extends Partial<Record<keyof V, unknown>> = never> {
   readonly variables?: V;
-  readonly cache?: RequestCache;
 }

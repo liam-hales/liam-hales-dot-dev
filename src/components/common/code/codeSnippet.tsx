@@ -8,7 +8,7 @@ import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import ts from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript';
 import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx';
 import { css } from '@mui/material';
-import { BaseProps } from '../../../types';
+import { BaseProps, CodeLanguage } from '../../../types';
 
 // Register the supported languages
 // for `react-syntax-highlighter`
@@ -19,7 +19,7 @@ PrismLight.registerLanguage('tsx', tsx);
  * The `CodeSnippet` component props
  */
 interface Props extends BaseProps {
-  readonly language?: 'ts' | 'tsx';
+  readonly language?: CodeLanguage;
   readonly children: string;
 }
 

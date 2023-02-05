@@ -20,6 +20,7 @@ import Modal from './modal';
 import Popover from './popover';
 import Backdrop from './backdrop';
 import Markdown from './markdown';
+import CodeInline from './code/codeInline';
 import CodeSnippet from './code/codeSnippet';
 import Link from './link';
 import Tag from './tag';
@@ -47,6 +48,7 @@ export {
   Popover,
   Backdrop,
   Markdown,
+  CodeInline,
   CodeSnippet,
   Link,
   Tag,

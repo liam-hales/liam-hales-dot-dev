@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { Page, homePageQuery } from '../graphql';
 import { useQuery } from '../hooks';
-import { ServerComponent } from '../types';
+import { PageProps, ServerComponent } from '../types';
 import Home from './home';
 
 /**
@@ -10,7 +10,7 @@ import Home from './home';
  *
  * @returns The `HomePage` component
  */
-const HomePage: ServerComponent = async (): Promise<ReactElement> => {
+const HomePage: ServerComponent<PageProps> = async (): Promise<ReactElement<PageProps>> => {
 
   const { content } = await useQuery<Page<'home'>>(homePageQuery);
   return (

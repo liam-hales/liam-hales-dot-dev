@@ -8,7 +8,7 @@ import rehypeRaw from 'rehype-raw';
 import { BaseProps } from '../../types';
 import { ColourPalette } from '../../enums';
 import { codeLanguages } from '../../constants';
-import { Box, Text, CodeSnippet } from '.';
+import { Box, Text, CodeSnippet, CodeInline } from '.';
 
 /**
  * The `Markdown` component props
@@ -86,7 +86,18 @@ const Markdown: FunctionComponent<Props> = ({ className, children }): ReactEleme
               </Text>
             );
           },
-          code: ({ className, children }) => {
+          code: ({ className, inline, children }) => {
+
+            // Check if the code is inline and not a snippet,
+            // if so render the `CodeInline` component
+            if (inline === true) {
+              return (
+                <CodeInline>
+                  {`${children}`}
+                </CodeInline>
+              );
+            }
+
             // Get the code langauge from the class name and
             // check for a match in the code langauges array
             const language = codeLanguages

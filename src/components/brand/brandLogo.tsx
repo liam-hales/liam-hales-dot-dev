@@ -79,7 +79,7 @@ const BrandLogo: FunctionComponent<Props> = (props): ReactElement<Props> => {
         border-style: solid;
         border-width: 2px;
         border-radius: 18px;
-        border-color: ${ColourPalette.GREY_800};
+        border-color: ${ColourPalette.GREY_900};
       `}
       >
         <ClickAwayListener onClickAway={() => setActiveLogoSection(undefined)}>

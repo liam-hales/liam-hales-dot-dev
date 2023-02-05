@@ -37,10 +37,10 @@ const ColourCard: FunctionComponent<Props> = ({ colour }): ReactElement<Props> =
         border-radius: 12px;
         background-color: ${colour};
 
-        ${(colour === ColourPalette.GREY_900) && css`
+        ${(colour === ColourPalette.GREY_1000) && css`
           border-style: solid;
           border-width: 2px;
-          border-color: ${ColourPalette.GREY_800};
+          border-color: ${ColourPalette.GREY_900};
         `}
       `}
     >
@@ -59,7 +59,7 @@ const ColourCard: FunctionComponent<Props> = ({ colour }): ReactElement<Props> =
           isBold={true}
           colour={
             (colour === ColourPalette.WHITE)
-              ? ColourPalette.GREY_900
+              ? ColourPalette.GREY_1000
               : ColourPalette.WHITE
           }
           onClick={() => {

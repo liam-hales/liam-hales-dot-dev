@@ -47,7 +47,7 @@ const ThemeProvider: FunctionComponent<Props> = ({ children }): ReactElement<Pro
     palette: {
       ...palette,
       background: {
-        default: ColourPalette.GREY_900,
+        default: ColourPalette.GREY_1000,
       },
       primary: {
         main: ColourPalette.BLUE,

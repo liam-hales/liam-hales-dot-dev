@@ -56,8 +56,8 @@ const BottomNav: FunctionComponent = (): ReactElement => {
           border-style: solid;
           border-width: 1px;
           border-radius: 36px;
-          border-color: ${ColourPalette.GREY_800};
-          background-color: ${ColourPalette.GREY_900};
+          border-color: ${ColourPalette.GREY_900};
+          background-color: ${ColourPalette.GREY_1000};
         `}
       >
         <BottomNavigationAction

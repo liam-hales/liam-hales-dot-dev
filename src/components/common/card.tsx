@@ -48,7 +48,7 @@ const Card: FunctionComponent<Props> = (props): ReactElement<Props> => {
       onClick={onClick}
       css={css`
         border-radius: 10px;
-        background-color: ${ColourPalette.GREY_800};
+        background-color: ${ColourPalette.GREY_900};
       `}
     >
       {children}

@@ -40,7 +40,7 @@ const Input: FunctionComponent<Props> = ({ internalRef, className, value, placeh
         padding-left: 21px;
         padding-right: ${(children != null) ? 8 : 21}px;
         border-radius: 1000px;
-        background-color: ${ColourPalette.GREY_800};
+        background-color: ${ColourPalette.GREY_900};
       `}
     >
       {

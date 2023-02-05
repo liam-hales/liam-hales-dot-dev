@@ -27,11 +27,11 @@ const CodeInline: FunctionComponent<Props> = ({ className, children }): ReactEle
       className={className}
       css={css`
         display: inline;
-        padding-top: 2px;
-        padding-bottom: 2px;
+        padding-top: 1.2px;
+        padding-bottom: 1.2px;
         padding-left: 5px;
         padding-right: 5px;
-        border-radius: 2px;
+        border-radius: 4px;
         background-color: ${ColourPalette.GREY_800};
       `}
     >

@@ -14,6 +14,7 @@ import { Content } from '..';
  */
 interface Props extends BaseProps {
   readonly title: string;
+  readonly titleSize?: 'small' | 'large';
   readonly children?: ReactNode;
 }
 
@@ -24,7 +25,14 @@ interface Props extends BaseProps {
   * @param props The component props
   * @returns The `Header` component
   */
-const Header: FunctionComponent<Props> = ({ className, title, children }): ReactElement<Props> => {
+const Header: FunctionComponent<Props> = (props): ReactElement<Props> => {
+  const {
+    className,
+    title,
+    titleSize = 'large',
+    children,
+  } = props;
+
   return (
     <>
       <Content
@@ -39,8 +47,8 @@ const Header: FunctionComponent<Props> = ({ className, title, children }): React
           isBold={true}
           element="h1"
           css={css`
-            max-width: 400px;
-            font-size: clamp(58px, 15vw, 78px);
+            max-width: ${(titleSize === 'large') ? '400px' : 'unset'};
+            font-size: ${(titleSize === 'large') ? 'clamp(58px, 15vw, 78px)' : 'clamp(40px, 15vw, 60px)'};
             line-height: 100%;
           `}
         >
@@ -50,7 +58,7 @@ const Header: FunctionComponent<Props> = ({ className, title, children }): React
             isBold={true}
             element="span"
             css={css`
-              font-size: clamp(76px, 15vw, 96px);
+              font-size: ${(titleSize === 'large') ? 'clamp(76px, 15vw, 96px)' : 'clamp(58px, 15vw, 79px)'};
               line-height: 0px;
             `}
           >
@@ -62,6 +70,7 @@ const Header: FunctionComponent<Props> = ({ className, title, children }): React
             <Box
               alignment="flex-start"
               css={css`
+                width: 100%;
                 padding-top: 40px;
               `}
             >

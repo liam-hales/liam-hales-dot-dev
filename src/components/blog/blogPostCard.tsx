@@ -13,7 +13,7 @@ import { BlogPost } from '../../graphql';
 /**
  * The `BlogPostCard` component props
  */
-interface Props extends BaseProps, Omit<BlogPost, 'id'> {}
+interface Props extends BaseProps, Omit<BlogPost, 'id' | 'slug' | 'content'> {}
 
 /**
  * Renders a blog post card used to
@@ -25,7 +25,12 @@ interface Props extends BaseProps, Omit<BlogPost, 'id'> {}
 const BlogPostCard: FunctionComponent<Props> = ({ className, title, description, tags, author, publishedDate }): ReactElement<Props> => {
 
   const { from } = useDate();
-  const { firstName, lastName, professionalTitle, image } = author;
+  const {
+    firstName,
+    lastName,
+    professionalTitle,
+    image,
+  } = author;
 
   const formattedDate = from(publishedDate).format('MMMM YYYY');
   const timeAgo = from(publishedDate).fromNow();

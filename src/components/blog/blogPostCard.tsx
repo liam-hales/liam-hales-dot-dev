@@ -7,7 +7,7 @@ import { css } from '@mui/material';
 import { ColourPalette } from '../../enums';
 import { useDate } from '../../hooks';
 import { BaseProps } from '../../types';
-import { Card, Box, Tag, Text, Image } from '../common';
+import { Card, Box, Tag, Text, Image, Markdown } from '../common';
 import { BlogPost } from '../../graphql';
 
 /**
@@ -70,15 +70,13 @@ const BlogPostCard: FunctionComponent<Props> = ({ className, title, description,
           })
         }
       </Box>
-      <Text
-        colour={ColourPalette.GREY_400}
-        css={css`
-          padding-top: 20px;
-          padding-bottom: 20px;
-        `}
+      <Markdown css={css`
+        padding-top: 2px;
+        padding-bottom: 2px;
+      `}
       >
         {description}
-      </Text>
+      </Markdown>
       <Box direction="row">
         <Image
           path={image.url}

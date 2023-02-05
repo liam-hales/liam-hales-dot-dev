@@ -188,8 +188,10 @@ export interface TimelineEvent {
  */
 export interface BlogPost {
   readonly id: string;
+  readonly slug: string;
   readonly title: string;
   readonly description: string;
+  readonly content: string;
   readonly tags: Tag[];
   readonly author: Person;
   readonly publishedDate: string;
@@ -210,4 +212,12 @@ export interface Tag {
  */
 export interface SearchVariables {
   readonly search?: string;
+}
+
+/**
+ * Describes the GraphQL variables
+ * used for the blog post query
+ */
+export interface BlogPostVariables {
+  readonly slug: string;
 }

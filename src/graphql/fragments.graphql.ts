@@ -79,8 +79,10 @@ export const timelineEventFragment = gql`
 export const blogPostFragment = gql`
   fragment BlogPostFields on BlogPost {
     id
+    slug
     title
     description
+    content
     tags {
       ...TagFields
     }

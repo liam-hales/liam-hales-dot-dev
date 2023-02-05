@@ -9,7 +9,7 @@ import { BlogPostCard, Content, Header } from '../../components';
 import { BaseProps } from '../../types';
 import { BlogContent } from '../../graphql';
 import { useScreen } from '../../hooks';
-import { Box, SearchInput } from '../../components/common';
+import { Box, Link, SearchInput } from '../../components/common';
 
 /**
  * The `Blog` component props
@@ -72,19 +72,20 @@ const Blog: FunctionComponent<Props> = ({ content, search = '' }): ReactElement<
 
               // Destructure the blog post and return
               // the blog post card component
-              const { title, description, tags, author, publishedDate } = post;
+              const { slug, title, description, tags, author, publishedDate } = post;
               return (
-                <BlogPostCard
+                <Link
                   key={`blog-post-item-${index}`}
-                  title={title}
-                  description={description}
-                  tags={tags}
-                  author={author}
-                  publishedDate={publishedDate}
-                  css={css`
-                    height: fit-content;
-                  `}
-                />
+                  href={`/blog/${slug}`}
+                >
+                  <BlogPostCard
+                    title={title}
+                    description={description}
+                    tags={tags}
+                    author={author}
+                    publishedDate={publishedDate}
+                  />
+                </Link>
               );
             })
           }

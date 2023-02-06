@@ -19,7 +19,7 @@ interface Props extends BaseProps {
 
 /**
  * Used to render the app content center aligned
- * with padding and a max width constraint
+ * with `padding` and a `max-width` constraint
  *
  * @param props The component props
  * @returns The `Content` component

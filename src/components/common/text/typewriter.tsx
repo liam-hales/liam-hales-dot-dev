@@ -28,12 +28,12 @@ interface Props extends BaseProps {
 }
 
 /**
-  * The common `Typewriter` component used to
-  * render the typewriter text effect
-  *
-  * @param props The component props
-  * @returns The `Typewriter` component
-  */
+ * The common `Typewriter` component used to
+ * render the typewriter text effect
+ *
+ * @param props The component props
+ * @returns The `Typewriter` component
+ */
 const Typewriter: FunctionComponent<Props> = ({ onInit }): ReactElement<Props> => {
   return (
     <div css={css`

@@ -32,16 +32,16 @@ const Content: FunctionComponent<Props> = ({ className, direction, alignment, ju
     `}
     >
       <Box
-        css={css`
-        width: 100%;
-        max-width: 800px;
-        padding-left: 24px;
-        padding-right: 24px;
-      `}
         className={className}
         direction={direction}
         alignment={alignment}
         justify={justify}
+        css={css`
+          width: 100%;
+          max-width: 800px;
+          padding-left: 24px;
+          padding-right: 24px;
+        `}
       >
         {children}
       </Box>

@@ -19,12 +19,12 @@ interface Props extends BaseProps {
 }
 
 /**
-  * Renders the skill area card for
-  * the `SkillAreas` component
-  *
-  * @param props The component props
-  * @returns The `SkillAreaCard` component
-  */
+ * Renders the skill area card for
+ * the `SkillAreas` component
+ *
+ * @param props The component props
+ * @returns The `SkillAreaCard` component
+ */
 const SkillAreaCard: FunctionComponent<Props> = ({ className, title, description, iconId }): ReactElement<Props> => {
 
   const { screenSize } = useScreen();

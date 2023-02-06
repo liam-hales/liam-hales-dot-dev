@@ -41,8 +41,7 @@ declare module '@mui/material' {
 export type RenderType = 'client-side' | 'server-side';
 
 /**
- * The size used to describe the
- * different screen sizes
+ * Describes the different screen sizes
  */
 export type ScreenSize = 'small' | 'medium' | 'large';
 
@@ -63,6 +62,12 @@ export type BoxAlignment = 'flex-start' | 'center' | 'flex-end';
  * how the content is justified along the main axis
  */
 export type BoxJustify = 'flex-start' | 'flex-end' | 'center' | 'space-between';
+
+/**
+ * The `Text` component element used to determine what underlaying
+ * HTML element is used to render the text
+ */
+export type TextElement = 'h1' | 'h2' | 'p' | 'span';
 
 /**
  * Describes each individual section of the logo

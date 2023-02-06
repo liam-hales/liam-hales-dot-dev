@@ -6,7 +6,6 @@ import Stat from './stat';
 import Grid from './grid';
 import SkillCard from './skills/skillCard';
 import NoResults from './noResults';
-import Header from './header/header';
 import HomeHeader from './header/homeHeader';
 import AboutMe from './aboutMe';
 import SkillAreaCard from './skills/skillAreaCard';
@@ -36,7 +35,6 @@ export {
   Stat,
   Grid,
   SkillCard,
-  Header,
   NoResults,
   HomeHeader,
   AboutMe,

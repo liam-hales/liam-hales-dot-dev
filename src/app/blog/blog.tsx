@@ -5,11 +5,11 @@
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@mui/material';
 import { useRouter } from 'next/navigation';
-import { BlogPostCard, Content, Header } from '../../components';
+import { BlogPostCard, Content } from '../../components';
 import { BaseProps } from '../../types';
 import { BlogContent } from '../../graphql';
 import { useScreen } from '../../hooks';
-import { Box, Link, SearchInput } from '../../components/common';
+import { Box, Divider, Link, SearchInput, Title } from '../../components/common';
 
 /**
  * The `Blog` component props
@@ -34,64 +34,71 @@ const Blog: FunctionComponent<Props> = ({ content, search = '' }): ReactElement<
   const [searchText, setSearchText] = useState<string>(search);
 
   return (
-    <>
-      <Header title="Blog" />
-      <Content
-        alignment="flex-start"
+    <Content
+      alignment="flex-start"
+      css={css`
+        padding-top: 42px;
+        padding-bottom: 100px;
+      `}
+    >
+      <Title
+        size="large"
         css={css`
-          padding-top: 50px;
-          padding-bottom: 100px;
-          row-gap: 40px;
+          padding-bottom: 50px;
         `}
       >
-        <SearchInput
-          value={searchText}
-          onChange={(value) => setSearchText(value)}
-          onSearch={() => {
+        Blog
+      </Title>
+      <Divider />
+      <SearchInput
+        value={searchText}
+        onChange={(value) => setSearchText(value)}
+        onSearch={() => {
 
-            // Define the search query params
-            // based on the search text
-            const params = new URLSearchParams({
-              ...(searchText !== '') && {
-                search: searchText,
-              },
-            });
+          // Define the search query params
+          // based on the search text
+          const params = new URLSearchParams({
+            ...(searchText !== '') && {
+              search: searchText,
+            },
+          });
 
-            push(`/blog?${params.toString()}`);
-          }}
-          css={css`
-            width: ${(screenSize === 'small') ? '100%' : '400px'};
-          `}
-        />
-        <Box css={css`
-          row-gap: 22px;
+          push(`/blog?${params.toString()}`);
+        }}
+        css={css`
+          width: ${(screenSize === 'small') ? '100%' : '400px'};
+          margin-top: 50px;
+          margin-bottom: 40px;
         `}
-        >
-          {
-            posts.map((post, index) => {
+      />
+      <Box css={css`
+        row-gap: 22px;
+      `}
+      >
+        {
+          posts.map((post, index) => {
 
-              // Destructure the blog post and return
-              // the blog post card component
-              const { slug, title, description, tags, author, publishedDate } = post;
-              return (
-                <Link
-                  key={`blog-post-item-${index}`}
-                  href={`/blog/${slug}`}
-                >
-                  <BlogPostCard
-                    title={title}
-                    description={description}
-                    tags={tags}
-                    author={author}
-                    publishedDate={publishedDate}
-                  />
-                </Link>
-              );
-            })
-          }
-        </Box>
-      </Content>
-    </>
+            // Destructure the blog post and return
+            // the blog post card component
+            const { slug, title, description, tags, author, publishedDate } = post;
+            return (
+              <Link
+                key={`blog-post-item-${index}`}
+                href={`/blog/${slug}`}
+              >
+                <BlogPostCard
+                  title={title}
+                  description={description}
+                  tags={tags}
+                  author={author}
+                  publishedDate={publishedDate}
+                />
+              </Link>
+            );
+          })
+        }
+      </Box>
+    </Content>
   );
 };
 

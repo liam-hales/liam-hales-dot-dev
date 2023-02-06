@@ -7,11 +7,10 @@ import { css } from '@mui/material';
 import { BaseProps } from '../../types';
 import { ColourPalette } from '../../enums';
 import { CVContent } from '../../graphql';
-import { Box, Button, Text } from '../../components/common';
+import { Box, Button, Divider, Text, Title } from '../../components/common';
 import {
   Content,
   CurrentPosition,
-  Header,
   LifeTimelinePreview,
   SkillsPreview,
 } from '../../components';
@@ -49,70 +48,83 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
   } = content;
 
   return (
-    <>
-      <Header title="Curriculum Vitae">
-        <Box
-          direction="row"
-          css={css`
-            column-gap: 12px;
-          `}
-        >
-          <Button onClick={() => scrollTo(currentPositionRef)}>
-            Current Position
-          </Button>
-          <Button onClick={() => scrollTo(skillsPreviewRef)}>
-            Skills
-          </Button>
-          <Button onClick={() => scrollTo(lifeTimelinePreviewRef)}>
-            Life Timeline
-          </Button>
-        </Box>
-      </Header>
-      <Content>
-        <CurrentPosition
-          ref={currentPositionRef}
-          text={currentPositionText}
-          careerStartDate={careerStartDate}
-          css={css`
-            // Margin is applied here and not padding so
-            // the auto scroll works correctly
-            margin-top: 50px;
-          `}
-        />
-        <SkillsPreview
-          ref={skillsPreviewRef}
-          text={skillsText}
-          skills={skills}
-          css={css`
-            // Margin is applied here and not padding so
-            // the auto scroll works correctly
-            margin-top: 70px;
-          `}
-        />
-        <LifeTimelinePreview
-          ref={lifeTimelinePreviewRef}
-          text={lifeTimelineText}
-          events={lifeTimelineEvents}
-          css={css`
-            // Margin is applied here and not padding so
-            // the auto scroll works correctly
-            margin-top: 80px;
-          `}
-        />
-        <Text
-          colour={ColourPalette.GREY_600}
-          css={css`
-            max-width: 500px;
-            padding-top: 65px;
-            padding-bottom: 100px;
-            font-size: 12px;
-            text-align: center;
-          `}
-        >
-          {disclaimerText}
-        </Text>
-      </Content>
-    </>
+    <Content
+      alignment="flex-start"
+      css={css`
+        padding-top: 42px;
+        padding-bottom: 100px;
+      `}
+    >
+      <Title
+        size="large"
+        css={css`
+          max-width: 400px;
+        `}
+      >
+        Curriculum Vitae
+      </Title>
+      <Box
+        direction="row"
+        css={css`
+          padding-top: 40px;
+          padding-bottom: 50px;
+          column-gap: 12px;
+        `}
+      >
+        <Button onClick={() => scrollTo(currentPositionRef)}>
+          Current Position
+        </Button>
+        <Button onClick={() => scrollTo(skillsPreviewRef)}>
+          Skills
+        </Button>
+        <Button onClick={() => scrollTo(lifeTimelinePreviewRef)}>
+          Life Timeline
+        </Button>
+      </Box>
+      <Divider />
+      <CurrentPosition
+        ref={currentPositionRef}
+        text={currentPositionText}
+        careerStartDate={careerStartDate}
+        css={css`
+          // Margin is applied here and not padding so
+          // the auto scroll works correctly
+          margin-top: 50px;
+        `}
+      />
+      <SkillsPreview
+        ref={skillsPreviewRef}
+        text={skillsText}
+        skills={skills}
+        css={css`
+          // Margin is applied here and not padding so
+          // the auto scroll works correctly
+          margin-top: 70px;
+        `}
+      />
+      <LifeTimelinePreview
+        ref={lifeTimelinePreviewRef}
+        text={lifeTimelineText}
+        events={lifeTimelineEvents}
+        css={css`
+          // Margin is applied here and not padding so
+          // the auto scroll works correctly
+          margin-top: 80px;
+        `}
+      />
+      <Text
+        colour={ColourPalette.GREY_600}
+        css={css`
+          max-width: 500px;
+          padding-top: 65px;
+          padding-bottom: 100px;
+          font-size: 12px;
+          text-align: center;
+        `}
+      >
+        {disclaimerText}
+      </Text>
+    </Content>
   );
 };
 

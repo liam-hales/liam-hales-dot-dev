@@ -14,9 +14,15 @@ import { ColourPalette } from '../../enums';
  */
 const Divider: FunctionComponent = (): ReactElement => {
   return (
-    <MuiDivider css={css`
-      background-color: ${ColourPalette.GREY_900};
-    `}
+    <MuiDivider
+      flexItem={true}
+      css={css`
+        margin-left: -1000px;
+        margin-right: -1000px;
+        padding-left: 1000px;
+        padding-right: 1000px;
+        background-color: ${ColourPalette.GREY_900};
+      `}
     />
   );
 };

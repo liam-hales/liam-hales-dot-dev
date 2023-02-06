@@ -8,7 +8,7 @@ import rehypeRaw from 'rehype-raw';
 import { BaseProps } from '../../types';
 import { ColourPalette } from '../../enums';
 import { codeLanguages } from '../../constants';
-import { Box, Text, CodeSnippet, CodeInline } from '.';
+import { Box, Text, Title, CodeSnippet, CodeInline } from '.';
 
 /**
  * The `Markdown` component props
@@ -35,21 +35,16 @@ const Markdown: FunctionComponent<Props> = ({ className, children }): ReactEleme
         components={{
           h1: ({ children }) => {
             return (
-              <Text
-                isBold={true}
-                css={css`
-                  font-size: 38px;
-                  line-height: 122%;
-                `}
-              >
-                {children}
-              </Text>
+              <Title>
+                {`${children}`}
+              </Title>
             );
           },
           h2: ({ children }) => {
             return (
               <Text
                 isBold={true}
+                element="h2"
                 css={css`
                   font-size: 28px;
                   line-height: 122%;
@@ -63,6 +58,7 @@ const Markdown: FunctionComponent<Props> = ({ className, children }): ReactEleme
             return (
               <Text
                 colour={ColourPalette.GREY_400}
+                element="span"
                 css={css`
                   padding-top: 16px;
                   padding-bottom: 16px;

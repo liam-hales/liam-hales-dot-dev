@@ -35,8 +35,8 @@ const NotFound: FunctionComponent<Props> = ({ content }): ReactElement<Props> =>
       <Text
         isBold={true}
         css={css`
-          padding-right: 6px;
-          font-size: 110px;
+          padding-bottom: 30px;
+          font-size: 160px;
           line-height: 100%;
         `}
       >
@@ -48,7 +48,7 @@ const NotFound: FunctionComponent<Props> = ({ content }): ReactElement<Props> =>
       <Text
         colour={ColourPalette.GREY_400}
         css={css`
-          max-width: 320px;
+          max-width: 340px;
           padding-top: 16px;
           text-align: center;
         `}
@@ -58,10 +58,12 @@ const NotFound: FunctionComponent<Props> = ({ content }): ReactElement<Props> =>
       <Image
         path={notFoundImage.url}
         alt="Not found image"
-        width={320}
+        width={400}
+        height={200}
         css={css`
-          margin-top: 38px;
-          margin-Bottom: 38px;
+          margin-top: 42px;
+          margin-Bottom: 42px;
+          border-radius: 16px;
         `}
       />
       <Link

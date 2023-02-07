@@ -5,8 +5,10 @@ import { PageProps, ServerComponent } from '../../../types';
 import Skills from './skills';
 
 /**
- * Set the Next.js revalidate to `0` which will stop caching
- * for this page and force a server request for data every time
+ * Set the Next.js revalidate to `0` which will make sure this page is always dynamically
+ * rendered which is required because this page uses `searchParams`
+ *
+ * @see https://beta.nextjs.org/docs/api-reference/segment-config#revalidate
  */
 export const revalidate = 0;
 
@@ -18,10 +20,10 @@ export const revalidate = 0;
  */
 const SkillsPage: ServerComponent<PageProps> = async ({ searchParams = {} }): Promise<ReactElement<PageProps>> => {
 
-  const { search = '' } = searchParams;
+  const { search } = searchParams;
   const { content } = await useQuery<Page<'skills'>, SearchVariables>(skillsPageQuery, {
     variables: {
-      search: search,
+      search: search ?? '',
     },
   });
 

@@ -122,7 +122,10 @@ const BlogPost: FunctionComponent<Props> = ({ post }): ReactElement<Props> => {
       >
         {`${formattedDate} - ${timeAgo}`}
       </Text>
-      <Markdown>
+      <Markdown css={css`
+        width: 100%;
+      `}
+      >
         {content}
       </Markdown>
     </Content>

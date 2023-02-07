@@ -22,7 +22,7 @@ import { useConfig } from '.';
  * });
  */
 const useQuery = async <
-  T extends Partial<Record<keyof T, unknown>>,
+  T extends Partial<Record<keyof T, unknown>> | undefined,
   V extends Partial<Record<keyof V, unknown>> = never,
 >(
   document: string,
@@ -38,11 +38,14 @@ const useQuery = async <
     fetch: fetch,
   });
 
-  // Make the GraphQL request and get
-  // the first key from the response
-  const repsonse = await client.request<{ readonly [key: string]: T }>(document, variables);
-  const [key] = Object.keys(repsonse);
+  const repsonse = await client.request<{ readonly [key: string]: T }>({
+    document: document,
+    variables: variables,
+  });
 
+  // Extract and return the object from
+  // the first key in the response
+  const [key] = Object.keys(repsonse);
   return repsonse[key];
 };
 

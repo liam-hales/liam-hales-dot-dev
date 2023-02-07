@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import { ReactElement } from 'react';
 import { BlogPost as BlogPostData, blogPostQuery, BlogPostVariables } from '../../../graphql';
 import { useQuery } from '../../../hooks';
@@ -5,13 +6,7 @@ import { PageProps, ServerComponent } from '../../../types';
 import BlogPost from './blogPost';
 
 /**
- * Set the Next.js revalidate to `0` which will stop caching
- * for this page and force a server request for data every time
- */
-export const revalidate = 0;
-
-/**
- * The entry point for the blog page route `/blog/{slug}`, used to fetch the required
+ * The entry point for the blog post page route `/blog/{slug}`, used to fetch the required
  * data and render the `BlogPost` component passing said data as props
  *
  * @returns The `BlogPostPage` component
@@ -19,11 +14,17 @@ export const revalidate = 0;
 const BlogPostPage: ServerComponent<PageProps> = async ({ params = {} }): Promise<ReactElement<PageProps>> => {
 
   const { slug = '' } = params;
-  const post = await useQuery<BlogPostData, BlogPostVariables>(blogPostQuery, {
+  const post = await useQuery<BlogPostData | undefined, BlogPostVariables>(blogPostQuery, {
     variables: {
       slug: slug,
     },
   });
+
+  // If the post does not exist then call the Next.js `notFound`
+  // function to redirect the user to the not found page
+  if (post == null) {
+    notFound();
+  }
 
   return (
     <BlogPost post={post} />

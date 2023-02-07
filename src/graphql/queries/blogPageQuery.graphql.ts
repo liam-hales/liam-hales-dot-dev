@@ -18,7 +18,7 @@ const blogPageQuery = gql`
           posts(
             orderBy: publishedDate_DESC
             where: {
-              title_contains: $search
+              _search: $search
             }
           ) {
             ...BlogPostFields

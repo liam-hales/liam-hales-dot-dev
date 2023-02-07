@@ -18,7 +18,7 @@ const lifeTimelinePageQuery = gql`
           timelineEvents(
             orderBy: date_DESC
             where: {
-              title_contains: $search
+              _search: $search
             }
           ) {
             ...TimelineEventFields

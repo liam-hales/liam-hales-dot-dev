@@ -211,7 +211,11 @@ export interface Tag {
  * variables used for queries
  */
 export interface SearchVariables {
-  readonly search?: string;
+  /**
+   * Required due to how Hygraph handles searching within GraphQL.
+   * To query for all items, set as empty string
+   */
+  readonly search: string;
 }
 
 /**

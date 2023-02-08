@@ -120,6 +120,7 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           padding-bottom: 100px;
           font-size: 12px;
           text-align: center;
+          align-self: center;
         `}
       >
         {disclaimerText}

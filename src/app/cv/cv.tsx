@@ -13,6 +13,7 @@ import {
   CurrentPosition,
   LifeTimelinePreview,
   SkillsPreview,
+  Experience,
 } from '../../components';
 import { useScreen } from '../../hooks';
 
@@ -36,6 +37,7 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
   const currentPositionRef = useRef<HTMLDivElement>(null);
   const skillsPreviewRef = useRef<HTMLDivElement>(null);
   const lifeTimelinePreviewRef = useRef<HTMLDivElement>(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
 
   const {
     currentPositionText,
@@ -44,6 +46,7 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
     skills,
     lifeTimelineText,
     lifeTimelineEvents,
+    experienceText,
     disclaimerText,
   } = content;
 
@@ -80,6 +83,9 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
         <Button onClick={() => scrollTo(lifeTimelinePreviewRef)}>
           Life Timeline
         </Button>
+        <Button onClick={() => scrollTo(experienceRef)}>
+          Experience
+        </Button>
       </Box>
       <Divider />
       <CurrentPosition
@@ -112,12 +118,20 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           margin-top: 80px;
         `}
       />
+      <Experience
+        ref={experienceRef}
+        text={experienceText}
+        css={css`
+          // Margin is applied here and not padding so
+          // the auto scroll works correctly
+          margin-top: 80px;
+        `}
+      />
       <Text
         colour={ColourPalette.GREY_600}
         css={css`
           max-width: 500px;
-          padding-top: 65px;
-          padding-bottom: 100px;
+          padding-top: 80px;
           font-size: 12px;
           text-align: center;
           align-self: center;

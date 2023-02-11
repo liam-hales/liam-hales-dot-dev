@@ -25,6 +25,7 @@ const cvPageQuery = gql`
           lifeTimelineEvents {
             ...TimelineEventFields
           }
+          experienceText
           disclaimerText
         }
       }

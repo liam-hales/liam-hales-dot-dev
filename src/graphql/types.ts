@@ -76,6 +76,7 @@ export interface CVContent extends BasePageContent<'cv'> {
   readonly skills: Skill[];
   readonly lifeTimelineText: string;
   readonly lifeTimelineEvents: TimelineEvent[];
+  readonly experienceText: string;
   readonly disclaimerText: string;
 }
 

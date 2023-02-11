@@ -60,7 +60,6 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           direction="row"
           justify="space-between"
           css={css`
-            width: 100%;
             padding-top: 50px;
             padding-bottom: 20px;
           `}

@@ -25,6 +25,7 @@ const bottomNavActionCss = css`
  */
 const iconCss = css`
   font-size: 24px;
+  flex-shrink: 0;
 `;
 
 /**
@@ -41,11 +42,8 @@ const BottomNav: FunctionComponent = (): ReactElement => {
       position: fixed;
       width: 100%;
       bottom: 0px;
-      padding-top: 12px;
-      padding-bottom: calc(12px + env(safe-area-inset-bottom));
-      padding-left: 12px;
-      padding-right: 12px;
       z-index: 1;
+      background-color: ${ColourPalette.GREY_1000};
     `}
     >
       <BottomNavigation
@@ -53,11 +51,12 @@ const BottomNav: FunctionComponent = (): ReactElement => {
         css={css`
           width: 100%;
           height: 72px;
-          border-style: solid;
-          border-width: 1px;
-          border-radius: 36px;
-          border-color: ${ColourPalette.GREY_900};
-          background-color: ${ColourPalette.GREY_1000};
+          padding-top: 12px;
+          padding-bottom: 12px;
+          padding-left: 12px;
+          padding-right: 12px;
+          margin-bottom: env(safe-area-inset-bottom);
+          background-color: transparent;
         `}
       >
         <BottomNavigationAction

@@ -103,7 +103,6 @@ const Brand: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           // Margin is applied here and not padding so
           // the auto scroll works correctly
           margin-top: 100px;
-          padding-bottom: 100px;
         `}
       />
     </Content>

@@ -6,7 +6,7 @@ import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@mui/material';
 import { useRouter } from 'next/navigation';
 import { Content, SkillModal, Grid, SkillCard, NoResults } from '../../../components';
-import { Breadcrumbs, BreadcrumbItem, Text, SearchInput, Title } from '../../../components/common';
+import { Breadcrumbs, BreadcrumbItem, Text, SearchInput, Title, Divider } from '../../../components/common';
 import { ColourPalette } from '../../../enums';
 import { Skill, SkillsContent } from '../../../graphql';
 import { BaseProps } from '../../../types';
@@ -80,76 +80,78 @@ const Skills: FunctionComponent<Props> = ({ content, search = '' }): ReactElemen
             Skills
           </BreadcrumbItem>
         </Breadcrumbs>
-      </Content>
-      <SearchInput
-        value={searchText}
-        onChange={(value) => setSearchText(value)}
-        onSearch={() => {
+        <Divider />
+        <SearchInput
+          value={searchText}
+          onChange={(value) => setSearchText(value)}
+          onSearch={() => {
 
-          // Define the search query params
-          // based on the search text
-          const params = new URLSearchParams({
-            ...(searchText !== '') && {
-              search: searchText,
-            },
-          });
+            // Define the search query params
+            // based on the search text
+            const params = new URLSearchParams({
+              ...(searchText !== '') && {
+                search: searchText,
+              },
+            });
 
-          push(`/cv/skills?${params.toString()}`);
-        }}
-        css={css`
-          width: ${(screenSize === 'small') ? '100%' : '400px'};
-          margin-top: 50px;
-          margin-bottom: 40px;
-        `}
-      />
-      {
-        (skills.length > 0) && (
-          <Text
-            colour={ColourPalette.GREY_400}
-            css={css`
-              max-width: 460px;
-            `}
-          >
-            {disclaimerText}
-          </Text>
-        )
-      }
-      {
-        (skills.length === 0) && (
-          <NoResults
-            searchText={search}
-            css={css`
-              padding-top: 26px;
-              align-self: center;
-            `}
-          />
-        )
-      }
-      <Grid css={css`
-        width: 100%;
-      `}
-      >
+            push(`/cv/skills?${params.toString()}`);
+          }}
+          css={css`
+            width: ${(screenSize === 'small') ? '100%' : '400px'};
+            margin-top: 50px;
+            margin-bottom: 40px;
+          `}
+        />
         {
-          skills.map((skill, index) => {
-
-            // Destructure the skill and return
-            // the skill card component
-            const { name, type, image } = skill;
-            return (
-              <SkillCard
-                key={`skill-item-${index}`}
-                name={name}
-                type={type}
-                imageUrl={image?.url}
-                onClick={() => {
-                  setSelectedSkill(skill);
-                  setModalOpen(true);
-                }}
-              />
-            );
-          })
+          (skills.length > 0) && (
+            <Text
+              colour={ColourPalette.GREY_400}
+              css={css`
+                max-width: 460px;
+                padding-bottom: 40px;
+              `}
+            >
+              {disclaimerText}
+            </Text>
+          )
         }
-      </Grid>
+        {
+          (skills.length === 0) && (
+            <NoResults
+              searchText={search}
+              css={css`
+                padding-top: 26px;
+                align-self: center;
+              `}
+            />
+          )
+        }
+        <Grid css={css`
+          width: 100%;
+        `}
+        >
+          {
+            skills.map((skill, index) => {
+
+              // Destructure the skill and return
+              // the skill card component
+              const { name, type, image } = skill;
+              return (
+                <SkillCard
+                  key={`skill-item-${index}`}
+                  name={name}
+                  type={type}
+                  imageUrl={image?.url}
+                  onClick={() => {
+                    setSelectedSkill(skill);
+                    setModalOpen(true);
+                  }}
+                />
+              );
+            })
+          }
+        </Grid>
+      </Content>
     </>
   );
 };

@@ -48,13 +48,13 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
 
   return (
     <>
-      <Divider />
       <EmailModal
         text={emailText}
         email={email}
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
       />
+      <Divider />
       <Content alignment="flex-start">
         <Box
           direction="row"

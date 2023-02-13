@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { css } from '@mui/material';
-import { useRender, useScreen } from '../../hooks';
+import { useScreen } from '../../hooks';
 import { BaseProps, BoxDirection, BoxAlignment, BoxJustify } from '../../types';
 import { ColourPalette } from '../../enums';
 import { Box, Card, IconButton, Backdrop } from '.';
@@ -32,12 +32,6 @@ interface Props extends BaseProps {
 const Modal: FunctionComponent<Props> = ({ isOpen, direction, alignment, justify, onClose, onClosed, children }): ReactElement<Props> => {
 
   const { screenSize } = useScreen();
-  const { renderType } = useRender();
-
-  const windowWeight = (renderType === 'client-side')
-    ? window.innerHeight
-    : 0;
-
   return (
     <Backdrop isOpen={isOpen}>
       <Box
@@ -52,10 +46,10 @@ const Modal: FunctionComponent<Props> = ({ isOpen, direction, alignment, justify
           alignment={alignment}
           justify={justify}
           initial={{
-            y: windowWeight,
+            y: window.innerHeight,
           }}
           animate={{
-            y: (isOpen === true) ? 0 : windowWeight,
+            y: (isOpen === true) ? 0 : window.innerHeight,
           }}
           transition={{
             y: {

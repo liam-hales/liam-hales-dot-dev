@@ -16,7 +16,6 @@ import Timeline from './timeline/timeline';
 import TimelineEvent from './timeline/timelineEvent';
 import Breadcrumbs from './breadcrumbs/breadcrumbs';
 import BreadcrumbItem from './breadcrumbs/breadcrumbItem';
-import Modal from './modal';
 import Popover from './popover';
 import Backdrop from './backdrop';
 import Markdown from './markdown';
@@ -25,6 +24,7 @@ import CodeSnippet from './code/codeSnippet';
 import Link from './link';
 import Tag from './tag';
 
+export * from './dynamic';
 export {
   Box,
   Text,
@@ -44,7 +44,6 @@ export {
   TimelineEvent,
   Breadcrumbs,
   BreadcrumbItem,
-  Modal,
   Popover,
   Backdrop,
   Markdown,

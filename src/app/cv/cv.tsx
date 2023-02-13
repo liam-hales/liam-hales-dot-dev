@@ -68,10 +68,12 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
       </Title>
       <Box
         direction="row"
+        wrap={true}
         css={css`
           padding-top: 40px;
           padding-bottom: 50px;
-          column-gap: 12px;
+          column-gap: 10px;
+          row-gap: 10px;
         `}
       >
         <Button onClick={() => scrollTo(currentPositionRef)}>

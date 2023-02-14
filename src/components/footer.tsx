@@ -60,6 +60,7 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           direction="row"
           justify="space-between"
           css={css`
+            width: 100%;
             padding-top: 50px;
             padding-bottom: 20px;
           `}
@@ -87,7 +88,7 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
             </Text>
           </Box>
           <Logo css={css`
-            width: 46px;
+            width: 52px;
             flex-shrink: 0;
           `}
           />

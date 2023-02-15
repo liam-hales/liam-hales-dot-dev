@@ -157,20 +157,17 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           padding-bottom: 20px;
         `}
         >
-          <Box direction="row">
+          <Text isBold={true}>
             <Icon
               id="copyright"
               colour={ColourPalette.WHITE}
               css={css`
-                margin-right: 4px;
-                margin-bottom: 1px;
+                vertical-align: text-top;
                 font-size: 18px;
               `}
             />
-            <Text isBold={true}>
-              {copyrightText}
-            </Text>
-          </Box>
+            {copyrightText}
+          </Text>
           <Text
             colour={ColourPalette.GREY_600}
             css={css`

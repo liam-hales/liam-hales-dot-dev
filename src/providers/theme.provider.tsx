@@ -73,10 +73,10 @@ const ThemeProvider: FunctionComponent<Props> = ({ children }): ReactElement<Pro
       <CssBaseline />
       <GlobalStyles styles={{
         html: {
-          overflowX: 'hidden',
+          overflowX: 'clip',
         },
         body: {
-          overflowX: 'hidden',
+          overflowX: 'clip',
         },
       }}
       />

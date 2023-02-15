@@ -45,7 +45,7 @@ const Button: FunctionComponent<Props> = (props): ReactElement<Props> => {
       disableElevation={true}
       onClick={onClick}
       css={css`
-        border-radius: 16.5px;
+        border-radius: 6px;
       `}
     >
       {

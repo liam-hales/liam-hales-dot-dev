@@ -43,7 +43,7 @@ const Tab: FunctionComponent<Props> = ({ value, href, onClick, children }): Reac
 
         .MuiTouchRipple-root {
           color: ${ColourPalette.WHITE};
-          border-radius: 24px;
+          border-radius: 8px;
         };
       `}
     />

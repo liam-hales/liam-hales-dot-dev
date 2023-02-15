@@ -19,8 +19,8 @@ interface Props extends BaseProps {
 }
 
 /**
- * Renders the top navigation bar used for navigating the
- * app for any screen size apart from  extra small
+ * Renders the top navigation bar used for navigating
+ * the app for medium and large screen sizes
  *
  * @returns The `TopNav` component
  */
@@ -51,7 +51,7 @@ const TopNav: FunctionComponent<Props> = ({ notionUrl, notionText }): ReactEleme
           padding-right: 42px;
           border-style: solid;
           border-width: 1px;
-          border-radius: 36px;
+          border-radius: 8px;
           border-color: ${ColourPalette.GREY_900};
           background-color: ${ColourPalette.GREY_1000};
         `}

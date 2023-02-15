@@ -15,7 +15,7 @@ import { Box, Text, Icon, Link } from '../common';
 const bottomNavActionCss = css`
   .MuiTouchRipple-root {
     color: ${ColourPalette.WHITE};
-    border-radius: 36px;
+    border-radius: 8px;
   };
 `;
 
@@ -29,8 +29,8 @@ const iconCss = css`
 `;
 
 /**
- * Renders the bottom navigation bar used for navigating
- * the app for extra small screen sizes
+ * Renders the bottom navigation bar used for
+ * navigating the app for small screen sizes
  *
  * @returns The `BottomNav` component
  */

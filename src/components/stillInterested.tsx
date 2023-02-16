@@ -43,7 +43,10 @@ const StillInterested: FunctionComponent<Props> = ({ className, text }): ReactEl
         href="/cv"
         passHref={true}
       >
-        <Button iconId="document">
+        <Button
+          size="large"
+          iconId="document"
+        >
           Curriculum Vitae
         </Button>
       </Link>

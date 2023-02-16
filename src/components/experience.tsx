@@ -49,7 +49,10 @@ const Experience: FunctionComponent<Props> = ({ internalRef, className, text }):
           align-self: center;
         `}
       >
-        <Button iconId="message">
+        <Button
+          size="large"
+          iconId="message"
+        >
           Visit my Blog
         </Button>
       </Link>

@@ -82,7 +82,10 @@ const SkillsPreview: FunctionComponent<Props> = ({ internalRef, className, text,
           align-self: center;
         `}
       >
-        <Button iconId="arrowRight">
+        <Button
+          size="large"
+          iconId="arrowRight"
+        >
           See all skills
         </Button>
       </Link>

@@ -79,7 +79,10 @@ const LifeTimelinePreview: FunctionComponent<Props> = ({ internalRef, className,
           align-self: center;
         `}
       >
-        <Button iconId="arrowRight">
+        <Button
+          size="large"
+          iconId="arrowRight"
+        >
           See full timeline
         </Button>
       </Link>

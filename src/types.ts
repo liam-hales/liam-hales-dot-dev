@@ -64,6 +64,12 @@ export type BoxAlignment = 'flex-start' | 'center' | 'flex-end';
 export type BoxJustify = 'flex-start' | 'flex-end' | 'center' | 'space-between';
 
 /**
+ * The `Button` component size used to determine
+ * the size of the button
+ */
+export type ButtonSize = 'small' | 'medium' | 'large';
+
+/**
  * The `Text` component element used to determine what underlaying
  * HTML element is used to render the text
  */

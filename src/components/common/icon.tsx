@@ -37,6 +37,33 @@ interface Props extends BaseProps {
 }
 
 /**
+ * The map between the `IconId` and the
+ * icon component to render
+ */
+const iconMap: Record<IconId, IconType> = {
+  home: HiHome,
+  document: IoDocument,
+  message: IoChatbox,
+  colourSwatch: HiSwatch,
+  code: HiCode,
+  server: HiServerStack,
+  envelope: HiEnvelope,
+  caretRight: HiChevronRight,
+  arrowleft: HiArrowLeft,
+  arrowRight: HiArrowRight,
+  magnifyingGlass: HiSearch,
+  cross: HiX,
+  tick: HiCheck,
+  copy: HiDocumentDuplicate,
+  externalLink: HiExternalLink,
+  copyright: RiCopyrightLine,
+  linkedIn: SiLinkedin,
+  stackOverflow: SiStackoverflow,
+  buyMeCoffee: SiBuymeacoffee,
+  notion: SiNotion,
+};
+
+/**
  * The common `Icon` component used to
  * render icons within the app
  *
@@ -49,29 +76,6 @@ const Icon: FunctionComponent<Props> = (props): ReactElement<Props> => {
     id,
     colour = ColourPalette.BLUE,
   } = props;
-
-  const iconMap: Record<IconId, IconType> = {
-    home: HiHome,
-    document: IoDocument,
-    message: IoChatbox,
-    colourSwatch: HiSwatch,
-    code: HiCode,
-    server: HiServerStack,
-    envelope: HiEnvelope,
-    caretRight: HiChevronRight,
-    arrowleft: HiArrowLeft,
-    arrowRight: HiArrowRight,
-    magnifyingGlass: HiSearch,
-    cross: HiX,
-    tick: HiCheck,
-    copy: HiDocumentDuplicate,
-    externalLink: HiExternalLink,
-    copyright: RiCopyrightLine,
-    linkedIn: SiLinkedin,
-    stackOverflow: SiStackoverflow,
-    buyMeCoffee: SiBuymeacoffee,
-    notion: SiNotion,
-  };
 
   const IconComponent = iconMap[id];
   return (

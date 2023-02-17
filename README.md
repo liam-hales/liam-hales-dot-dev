@@ -127,7 +127,7 @@ $ yarn build-sitemap
 1. Follow the steps in the [First Steps](#first-steps) section
 2. Follow the steps in the [Building Public Assets](#building-public-assets) section (optional)
 
-### Development
+## Development
 
 1. Run `yarn start:dev` to start the development server
 
@@ -135,7 +135,7 @@ $ yarn build-sitemap
 $ yarn start:dev
 ```
 
-### Production
+## Production
 
 1. Run `yarn build` to build the app for production
 2. Run `yarn start:prod` to start the production server
@@ -165,19 +165,26 @@ $ yarn vercel:deploy
 
 <br/>
 
-# Linting
+# Dependency Management
 
-1. Run `yarn lint` to lint the app files using the ESLint configuration
+Managing dependencies is done using `npm-check-updates` under the hood which has the ability to check for new dependency versions and upgrade dependencies to a specified target version.
 
-```sh
-$ yarn lint
-```
+1. Run `yarn deps` to list upgradable dependencies
+
+## Options
+
+- `--target ${latest | minor | patch}` to scope dependencies to a specific target version
+- `--upgrade` to upgrade dependencies
+- `--interactive` to choose which dependencies to upgrade in interactive mode
+
+Check out the [npm-check-updates] docs or run `yarn ncu --help` for more info.
 
 [Node Version Manager]: https://github.com/nvm-sh/nvm
 [Yarn]: https://yarnpkg.com
 [Corepack]: https://nodejs.org/api/corepack.html
 [Vercel]: https://vercel.com
 [Vercel CLI]: https://vercel.com/docs/cli
+[npm-check-updates]: https://npmjs.com/package/npm-check-updates
 
 <style>
   h1,h2 {

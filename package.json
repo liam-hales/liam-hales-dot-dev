@@ -22,7 +22,7 @@
     "vercel:build": "vercel build --prod --yes",
     "vercel:deploy": "vercel deploy --prebuilt --prod --yes",
     "lint": "next lint",
-    "deps": "ncu",
+    "deps": "ncu --packageManager yarn",
     "build-images": "ts-node ./scripts/buildImages.script.ts",
     "build-sitemap": "next-sitemap --config sitemap.config.mjs",
     "cleanup": "rm -rf .next/ && rm -rf .vercel/output/"

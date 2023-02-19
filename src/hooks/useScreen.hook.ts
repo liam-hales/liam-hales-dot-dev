@@ -38,9 +38,9 @@ const useScreen = (): UseScreenResponse => {
 
   const { breakpoints } = useTheme();
 
-  const small = useMediaQuery(breakpoints.only('small'));
-  const medium = useMediaQuery(breakpoints.only('medium'));
-  const large = useMediaQuery(breakpoints.only('large'));
+  const isSmall = useMediaQuery(breakpoints.only('small'));
+  const isMedium = useMediaQuery(breakpoints.only('medium'));
+  const isLarge = useMediaQuery(breakpoints.only('large'));
 
   /**
    * Scrolls to a HTML element using
@@ -65,7 +65,7 @@ const useScreen = (): UseScreenResponse => {
 
     // Calculate the position to scroll to based on
     // the element position and the screen size
-    const offset = (small === true) ? 45 : 125;
+    const offset = (isSmall === true) ? 45 : 125;
     const position = current.offsetTop - offset;
 
     // Scroll to the element with
@@ -76,21 +76,21 @@ const useScreen = (): UseScreenResponse => {
     });
   };
 
-  if (small === true) {
+  if (isSmall === true) {
     return {
       scrollTo: scrollTo,
       screenSize: 'small',
     };
   }
 
-  if (medium === true) {
+  if (isMedium === true) {
     return {
       scrollTo: scrollTo,
       screenSize: 'medium',
     };
   }
 
-  if (large === true) {
+  if (isLarge === true) {
     return {
       scrollTo: scrollTo,
       screenSize: 'large',

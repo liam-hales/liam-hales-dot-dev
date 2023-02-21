@@ -1,6 +1,6 @@
 # Dependencies
-node_modules/
-.yarn/
+node_modules/*
+.yarn/*
 
 # Environment
 .env*
@@ -12,13 +12,14 @@ node_modules/
 *.log*
 
 # Vercel & Next.js
-.vercel/
-.next/
+.vercel/*
+.next/*
 
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
 
 # Public
-public/
+public/*
 !public/cover.webp
+!public/readme.webp

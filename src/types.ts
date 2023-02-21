@@ -46,6 +46,11 @@ export type RenderType = 'client-side' | 'server-side';
 export type ScreenSize = 'small' | 'medium' | 'large';
 
 /**
+ * Describes the different device types
+ */
+export type DeviceType = 'desktop' | 'mobile';
+
+/**
  * The `Box` component direction used to determine
  * how the content is displayed along the main axis
  */

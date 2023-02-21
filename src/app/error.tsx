@@ -29,7 +29,10 @@ const AppError: ErrorComponent = ({ error, reset }): ReactElement => {
       padding-bottom: 100px;
     `}
     >
-      <Title>
+      <Title css={css`
+        text-align: center;
+      `}
+      >
         Something went wrong
       </Title>
       <Text

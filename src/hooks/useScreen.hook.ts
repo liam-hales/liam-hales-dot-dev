@@ -2,7 +2,8 @@
 
 import { RefObject } from 'react';
 import { useMediaQuery, useTheme } from '@mui/material';
-import { ScreenSize } from '../types';
+import { DeviceType, ScreenSize } from '../types';
+import { useRender } from '.';
 
 /**
  * The `useScreen` hook response
@@ -29,14 +30,16 @@ interface UseScreenResponse {
  * Used to access infomatin about the screen such as it's
  * size and perform actins such as scroll
  *
+ * @param deviceType Used to drive the `screenSize`, is **ONLY** used during SSR
  * @returns The `useScreen` hook response
  * @example
  *
  * const { screenSize, scrollTo } = useScreen();
  */
-const useScreen = (): UseScreenResponse => {
+const useScreen = (deviceType?: DeviceType): UseScreenResponse => {
 
   const { breakpoints } = useTheme();
+  const { renderType } = useRender();
 
   const isSmall = useMediaQuery(breakpoints.only('small'));
   const isMedium = useMediaQuery(breakpoints.only('medium'));
@@ -75,6 +78,18 @@ const useScreen = (): UseScreenResponse => {
       behavior: 'smooth',
     });
   };
+
+  // If the render type is client side and the device type has been
+  // set then use the device type to determine the screen size
+  if (
+    renderType === 'server-side' &&
+    deviceType != null
+  ) {
+    return {
+      scrollTo: scrollTo,
+      screenSize: (deviceType === 'mobile') ? 'small' : 'large',
+    };
+  }
 
   if (isSmall === true) {
     return {

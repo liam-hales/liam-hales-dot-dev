@@ -1,11 +1,12 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { BaseProps } from '../../types';
+import { BaseProps, DeviceType } from '../../types';
 import { Grid, SkillAreaCard } from '..';
 
 /**
  * The `SkillAreas` component props
  */
 interface Props extends BaseProps {
+  readonly deviceType: DeviceType;
   readonly frontendText: string;
   readonly backendText: string;
   readonly designText: string;
@@ -18,20 +19,23 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `SkillAreas` component
  */
-const SkillAreas: FunctionComponent<Props> = ({ className, frontendText, backendText, designText }): ReactElement<Props> => {
+const SkillAreas: FunctionComponent<Props> = ({ className, deviceType, frontendText, backendText, designText }): ReactElement<Props> => {
   return (
     <Grid className={className}>
       <SkillAreaCard
+        deviceType={deviceType}
         title="Frontend"
         description={frontendText}
         iconId="code"
       />
       <SkillAreaCard
+        deviceType={deviceType}
         title="Backend"
         description={backendText}
         iconId="server"
       />
       <SkillAreaCard
+        deviceType={deviceType}
         title="Design"
         description={designText}
         iconId="colourSwatch"

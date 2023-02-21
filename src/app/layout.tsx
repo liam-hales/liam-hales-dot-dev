@@ -5,6 +5,7 @@ import { BaseProps, ServerComponent } from '../types';
 import { urbanist, firaCode } from '../fonts';
 import { Page, globalPageQuery } from '../graphql';
 import { useQuery } from '../hooks';
+import { useDevice } from '../hooks/server';
 
 /**
  * The `AppLayout` component props
@@ -21,7 +22,9 @@ interface Props extends BaseProps {
  */
 const AppLayout: ServerComponent<Props> = async ({ children }): Promise<ReactElement<Props>> => {
 
+  const { deviceType } = useDevice();
   const { content } = await useQuery<Page<'global'>>(globalPageQuery);
+
   return (
     <html
       lang="en"
@@ -31,7 +34,10 @@ const AppLayout: ServerComponent<Props> = async ({ children }): Promise<ReactEle
       <body>
         <ThemeProvider>
           <SafeArea>
-            <Nav content={content}>
+            <Nav
+              deviceType={deviceType}
+              content={content}
+            >
               {children}
               <Footer content={content} />
             </Nav>

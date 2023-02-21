@@ -6,13 +6,14 @@ import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
 import { ColourPalette } from '../../enums';
 import { useScreen } from '../../hooks';
-import { BaseProps, IconId } from '../../types';
+import { BaseProps, DeviceType, IconId } from '../../types';
 import { Box, Card, Icon, Text } from '../common';
 
 /**
  * The `SkillAreaCard` component props
  */
 interface Props extends BaseProps {
+  readonly deviceType: DeviceType;
   readonly title: string;
   readonly description: string;
   readonly iconId: IconId;
@@ -25,9 +26,9 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `SkillAreaCard` component
  */
-const SkillAreaCard: FunctionComponent<Props> = ({ className, title, description, iconId }): ReactElement<Props> => {
+const SkillAreaCard: FunctionComponent<Props> = ({ className, deviceType, title, description, iconId }): ReactElement<Props> => {
 
-  const { screenSize } = useScreen();
+  const { screenSize } = useScreen(deviceType);
   return (
     <Card
       className={className}

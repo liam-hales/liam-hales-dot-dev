@@ -5,7 +5,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { BaseProps } from '../types';
+import { BaseProps, DeviceType } from '../types';
 import { HomeContent } from '../graphql';
 import {
   Content,
@@ -20,6 +20,7 @@ import {
  * The `Home` component props
  */
 interface Props extends BaseProps {
+  readonly deviceType: DeviceType;
   readonly content: HomeContent;
 }
 
@@ -29,7 +30,7 @@ interface Props extends BaseProps {
  *
  * @returns The `Home` component
  */
-const Home: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
+const Home: FunctionComponent<Props> = ({ deviceType, content }): ReactElement<Props> => {
 
   const { scrollYProgress } = useScroll();
   const headerY = useTransform(scrollYProgress, [0, 1], ['0%', '20%']);
@@ -63,6 +64,7 @@ const Home: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
       </motion.div>
       <Content>
         <AboutMe
+          deviceType={deviceType}
           text={aboutMeText}
           me={me}
           careerStartDate={careerStartDate}
@@ -71,6 +73,7 @@ const Home: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           `}
         />
         <SkillAreas
+          deviceType={deviceType}
           frontendText={frontendText}
           backendText={backendText}
           designText={designText}

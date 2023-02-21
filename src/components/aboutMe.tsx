@@ -6,7 +6,7 @@ import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
 import { ColourPalette } from '../enums';
 import { useDate, useScreen } from '../hooks';
-import { BaseProps } from '../types';
+import { BaseProps, DeviceType } from '../types';
 import { Person } from '../graphql';
 import { Box, Image, Text, Title } from './common';
 import { Stat } from '.';
@@ -15,6 +15,7 @@ import { Stat } from '.';
  * The `AboutMe` component props
  */
 interface Props extends BaseProps {
+  readonly deviceType: DeviceType;
   readonly text: string;
   readonly me: Person;
   readonly careerStartDate: string;
@@ -27,9 +28,9 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `AboutMe` component
  */
-const AboutMe: FunctionComponent<Props> = ({ className, text, me, careerStartDate }): ReactElement<Props> => {
+const AboutMe: FunctionComponent<Props> = ({ className, deviceType, text, me, careerStartDate }): ReactElement<Props> => {
 
-  const { screenSize } = useScreen();
+  const { screenSize } = useScreen(deviceType);
   const { utc } = useDate();
 
   const { firstName, lastName, image } = me;

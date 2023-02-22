@@ -14,6 +14,7 @@ import { withMotion } from '../../helpers';
 interface Props extends BaseProps<HTMLImageElement> {
   readonly path: string;
   readonly alt: string;
+  readonly priority?: boolean;
   readonly width?: number;
   readonly height?: number;
 }
@@ -31,6 +32,7 @@ const Image: FunctionComponent<Props> = (props): ReactElement<Props> => {
     className,
     path,
     alt,
+    priority,
     width,
     height,
   } = props;
@@ -41,6 +43,7 @@ const Image: FunctionComponent<Props> = (props): ReactElement<Props> => {
       className={className}
       src={path}
       alt={alt}
+      priority={priority}
       width={width}
       height={height}
       fill={(width == null && height == null)}

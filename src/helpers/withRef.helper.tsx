@@ -26,7 +26,7 @@ const withRef = <
   Component: FunctionComponent<P>,
 ) => {
 
-  // Foward the component reference
+  // Forward the component reference
   // to it's `internalRef` prop
   return forwardRef<T, P>((props, ref) => {
     return (

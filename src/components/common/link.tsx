@@ -6,11 +6,12 @@ import { FunctionComponent, ReactElement, ReactNode, HTMLAttributeAnchorTarget }
 import { css } from '@mui/material';
 import NextLink, { LinkProps } from 'next/link';
 import { BaseProps } from '../../types';
+import { withRef } from '../../helpers';
 
 /**
  * The `Link` component props
  */
-interface Props extends LinkProps, BaseProps {
+interface Props extends LinkProps, BaseProps<HTMLAnchorElement> {
   readonly target?: HTMLAttributeAnchorTarget;
   readonly children: ReactNode;
 }
@@ -22,10 +23,11 @@ interface Props extends LinkProps, BaseProps {
  * @param props The component props
  * @returns The `Link` component
  */
-const Link: FunctionComponent<Props> = ({ className, target, children, ...linkProps }): ReactElement<Props> => {
+const Link: FunctionComponent<Props> = ({ internalRef, className, target, children, ...linkProps }): ReactElement<Props> => {
   return (
     <NextLink
       {...linkProps}
+      ref={internalRef}
       className={className}
       target={target}
       css={css`
@@ -38,4 +40,4 @@ const Link: FunctionComponent<Props> = ({ className, target, children, ...linkPr
   );
 };
 
-export default Link;
+export default withRef(Link);

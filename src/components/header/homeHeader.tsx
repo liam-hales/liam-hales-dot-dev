@@ -58,6 +58,7 @@ const HomeHeader: FunctionComponent<Props> = ({ className, me, foregroundImage, 
         <Image
           path={backgroundImage.url}
           alt={`${firstName} ${lastName} - Header`}
+          priority={true}
           style={{
             y: backgroundY,
           }}
@@ -79,6 +80,7 @@ const HomeHeader: FunctionComponent<Props> = ({ className, me, foregroundImage, 
         <Image
           path={foregroundImage.url}
           alt={`${firstName} ${lastName} - Header`}
+          priority={true}
           style={{
             y: foregroundY,
           }}

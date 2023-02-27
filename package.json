@@ -12,7 +12,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://git-codecommit.eu-west-1.amazonaws.com/v1/repos/liam-hales-dot-dev"
+    "url": "https://github.com/liam-hales/liam-hales-dot-dev.git"
   },
   "packageManager": "yarn@3.2.4",
   "scripts": {

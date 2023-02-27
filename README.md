@@ -1,66 +1,30 @@
-<div
-  id="container"
-  align="center"
->
+<div align="center">
   <img src="public/cover.webp"/>
-  <div>
-    <h1>
-      Liam Hales - Official Website
-    </h1>
-    <p>Built in Manchester using TypeScript, React, Next.js and Material UI. Hosted on Vercel.</p>
-  </div>
-  <a
-    href="https://typescriptlang.org"
-    target="_blank"
-    aria-label="TypeScript"
-  >
-    <img src="https://img.shields.io/badge/TypeScript-black?style=for-the-badge&logo=typescript&logoColor=white"/>
-  </a>
-  <a
-    href="https://reactjs.org"
-    target="_blank"
-    aria-label="React"
-  >
-    <img src="https://img.shields.io/badge/React-black?style=for-the-badge&logo=react&logoColor=white"/>
-  </a>
-  <a
-    href="https://nextjs.org"
-    target="_blank"
-    aria-label="Next.js"
-  >
-    <img src="https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white"/>
-  </a>
-  <a
-    href="https://mui.com"
-    target="_blank"
-    aria-label="Material UI"
-  >
-    <img src="https://img.shields.io/badge/Material%20UI-black?style=for-the-badge&logo=mui&logoColor=white"/>
-  </a>
-  <a
-    href="https://vercel.com"
-    target="_blank"
-    aria-label="Vercel"
-  >
-    <img src="https://img.shields.io/badge/Vercel-black?style=for-the-badge&logo=vercel&logoColor=white"/>
-  </a>
+  <br/>
+  <br/>
+  <h1>
+    Liam Hales - Official Website
+  </h1>
   <a
     href="https://liamhales.notion.site/f57eb6bc10a0479995a5fef735a7f462?v=d20135f678b1417981a258147c7933d2"
     target="_blank"
-    aria-label="Notion Board"
   >
-    <img src="https://img.shields.io/badge/Notion%20Board-black?style=for-the-badge&logo=notion&logoColor=white"/>
+    <img src="https://img.shields.io/badge/Notion%20Board-181c24?style=for-the-badge&logo=notion&logoColor=66a2c6"/>
+  </a>
+  <a
+    href="https://github.com/liam-hales/liam-hales-dot-dev"
+    target="_blank"
+  >
+    <img src="https://img.shields.io/badge/Maintained-2bad4e?style=for-the-badge&label=Repo&labelColor=181c24&logo=github&logoColor=66a2c6"/>
   </a>
 </div>
 
 <br/>
-
----
-
 <br/>
 
 # Content Index
 
+- [Built With](#built-with)
 - [Getting Started](#getting-started-prerequisites)
 - [First Steps](#first-steps)
 - [Public Assets](#public-assets)
@@ -68,6 +32,55 @@
 - [Deploying to Production](#deploying-to-production)
 - [Linting](#linting)
 
+<br/>
+<br/>
+
+# Built With
+
+This app was built and hosted with the below. For a full list of dependencies used to build the app see the [`package.json`](/package.json) file
+
+<br/>
+
+<div>
+  <a
+    href="https://typescriptlang.org"
+    target="_blank"
+  >
+    <img src="https://img.shields.io/badge/TypeScript-181c24?style=for-the-badge&logo=typescript&logoColor=66a2c6"/>
+  </a>
+  <a
+    href="https://reactjs.org"
+    target="_blank"
+  >
+    <img src="https://img.shields.io/badge/React-181c24?style=for-the-badge&logo=react&logoColor=66a2c6"/>
+  </a>
+  <a
+    href="https://nextjs.org"
+    target="_blank"
+  >
+    <img src="https://img.shields.io/badge/Next.js-181c24?style=for-the-badge&logo=next.js&logoColor=66a2c6"/>
+  </a>
+  <a
+    href="https://mui.com"
+    target="_blank"
+  >
+    <img src="https://img.shields.io/badge/Material%20UI-181c24?style=for-the-badge&logo=mui&logoColor=66a2c6"/>
+  </a>
+  <a
+    href="https://framer.com/motion/"
+    target="_blank"
+  >
+    <img src="https://img.shields.io/badge/Framer%20Motion-181c24?style=for-the-badge&logo=framer&logoColor=66a2c6"/>
+  </a>
+  <a
+    href="https://vercel.com"
+    target="_blank"
+  >
+    <img src="https://img.shields.io/badge/Vercel-181c24?style=for-the-badge&logo=vercel&logoColor=66a2c6"/>
+  </a>
+<div>
+
+<br/>
 <br/>
 
 # Getting Started (Prerequisites)
@@ -88,8 +101,9 @@ v8.19.1
 
 3. Run `corepack enable` to enable [Corepack]
 
-> _**NOTE:** You must use the [Yarn] package manager_
+> _**NOTE:** You must use the [`yarn`] package manager_
 
+<br/>
 <br/>
 
 # First Steps
@@ -102,6 +116,7 @@ SITE_URL = 'https://liamhales.dev'
 API_URL = 'https://${region}.graphcms.com/v2/${id}/master'
 ```
 
+<br/>
 <br/>
 
 # Public Assets
@@ -120,6 +135,7 @@ $ yarn build-sitemap
 
 > _**NOTE:** If any of routes are created or modified, you will need to run `yarn build-sitemap` again_
 
+<br/>
 <br/>
 
 # Starting Local Server
@@ -146,6 +162,7 @@ $ yarn start:prod
 ```
 
 <br/>
+<br/>
 
 # Deploying to Production
 
@@ -164,6 +181,7 @@ $ yarn vercel:deploy
 > _**NOTE:** `yarn vercel:build` uses `yarn build` under the hood to build the Next.js app_
 
 <br/>
+<br/>
 
 # Dependency Management
 
@@ -177,36 +195,11 @@ Managing dependencies is done using `npm-check-updates` under the hood which has
 - `--upgrade` to upgrade dependencies
 - `--interactive` to choose which dependencies to upgrade in interactive mode
 
-Check out the [npm-check-updates] docs or run `yarn ncu --help` for more info.
+Check out the [`npm-check-updates`] docs or run `yarn ncu --help` for more info.
 
 [Node Version Manager]: https://github.com/nvm-sh/nvm
-[Yarn]: https://yarnpkg.com
+[`yarn`]: https://yarnpkg.com
 [Corepack]: https://nodejs.org/api/corepack.html
 [Vercel]: https://vercel.com
 [Vercel CLI]: https://vercel.com/docs/cli
-[npm-check-updates]: https://npmjs.com/package/npm-check-updates
-
-<style>
-  h1,h2 {
-    font-weight: bold;
-    border-bottom: 0;
-  }
-
-  #container > img {
-    border-radius: 12px;
-  }
-
-  #container > a > img {
-    border-radius: 4px;
-  }
-
-  #container > div {
-    padding-top: 28px;
-    padding-bottom: 16px;
-  }
-
-  #container > div > h1 {
-    font-size: 38px;
-    margin-bottom: 0px;
-  }
-</style>
+[`npm-check-updates`]: https://npmjs.com/package/npm-check-updates

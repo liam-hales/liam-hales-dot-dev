@@ -158,7 +158,7 @@ export interface BaseProps<T extends HTMLElement = HTMLElement> {
  * Describes the props for a Next.js page
  * component exported from a route `page.tsx`
  */
-export interface PageProps extends BaseProps {
+export interface PageProps {
   readonly params?: Partial<Record<string, string>>;
   readonly searchParams?: Partial<Record<string, string>>;
 }

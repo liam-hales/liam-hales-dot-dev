@@ -34,7 +34,6 @@ export interface BasePageContent<T extends PageSlug> {
  */
 export interface GlobalContent extends BasePageContent<'global'> {
   readonly footerText: string;
-  readonly builtUsingText: string;
   readonly email: string;
   readonly emailText: string;
   readonly linkedInUrl: string;

@@ -16,7 +16,6 @@ const globalPageQuery = gql`
       content {
         ... on GlobalContent {
           footerText
-          builtUsingText
           email
           emailText
           linkedInUrl

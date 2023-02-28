@@ -34,11 +34,10 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
     emailText,
     email,
     footerText,
-    stackOverflowUrl,
     linkedInUrl,
+    stackOverflowUrl,
     buyMeCoffeeUrl,
     notionUrl,
-    builtUsingText,
     me,
   } = content;
   const { firstName, lastName } = me;
@@ -171,13 +170,16 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           <Text
             colour={ColourPalette.GREY_600}
             css={css`
-              max-width: 260px;
               padding-top: 4px;
               font-size: 11px;
               text-align: center;
             `}
           >
-            {builtUsingText}
+            Designed & Built by
+            {' '}
+            {firstName}
+            {' '}
+            {lastName}
           </Text>
         </Box>
       </Content>

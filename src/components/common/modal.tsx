@@ -68,7 +68,7 @@ const Modal: FunctionComponent<Props> = ({ isOpen, direction, alignment, justify
           }}
           css={css`
             position: relative;
-            max-width: 418px;
+            max-width: 480px;
             padding: 28px;
             margin-left: 20px;
             margin-right: 20px;

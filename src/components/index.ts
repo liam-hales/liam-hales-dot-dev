@@ -22,7 +22,7 @@ import BrandTypography from './brand/brandTypography';
 import BrandColourPalette from './brand/brandColourPalette';
 import ColourCard from './colourCard';
 import SkillModal from './skills/skillModal';
-import EmailModal from './emailModal';
+import ContactModal from './contactModal';
 import Nav from './navigation/nav';
 import TopNav from './navigation/topNav';
 import BottomNav from './navigation/bottomNav';
@@ -53,7 +53,7 @@ export {
   BrandColourPalette,
   ColourCard,
   SkillModal,
-  EmailModal,
+  ContactModal,
   Nav,
   TopNav,
   BottomNav,

@@ -9,7 +9,7 @@ import { BaseProps } from '../types';
 import { Box, Modal, Button, Popover, Title, Text } from './common';
 
 /**
- * The `EmailModal` component props
+ * The `ContactModal` component props
  */
 interface Props extends BaseProps {
   readonly text: string;
@@ -19,13 +19,13 @@ interface Props extends BaseProps {
 }
 
 /**
- * Used to render an email modal which displays a message
- * for recruiters before allowing a user to email
+ * Used to render the contact modal which displays a message about
+ * contacting before allowing a user to see the email
  *
  * @param props The component props
- * @returns The `EmailModal` component
+ * @returns The `ContactModal` component
  */
-const EmailModal: FunctionComponent<Props> = ({ text, email, isOpen, onClose }): ReactElement<Props> => {
+const ContactModal: FunctionComponent<Props> = ({ text, email, isOpen, onClose }): ReactElement<Props> => {
 
   const [showEmail, setShowEmail] = useState<boolean>(false);
   const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
@@ -38,7 +38,7 @@ const EmailModal: FunctionComponent<Props> = ({ text, email, isOpen, onClose }):
       onClosed={() => setShowEmail(false)}
     >
       <Title>
-        Before you email
+        Before you contact
       </Title>
       <Text
         colour={ColourPalette.GREY_400}
@@ -94,7 +94,7 @@ const EmailModal: FunctionComponent<Props> = ({ text, email, isOpen, onClose }):
           >
             <Button
               colour={ColourPalette.GREY_700}
-              iconId="arrowleft"
+              iconId="linkedIn"
               onClick={onClose}
             >
               I&apos;m a recruiter
@@ -112,4 +112,4 @@ const EmailModal: FunctionComponent<Props> = ({ text, email, isOpen, onClose }):
   );
 };
 
-export default EmailModal;
+export default ContactModal;

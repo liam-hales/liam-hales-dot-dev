@@ -9,7 +9,7 @@ import { BaseProps } from '../types';
 import { useDate } from '../hooks';
 import { GlobalContent } from '../graphql';
 import { Box, Divider, Icon, IconButton, Text, Popover, Link } from './common';
-import { Content, Logo, EmailModal } from '.';
+import { Content, Logo, ContactModal } from '.';
 
 /**
  * The `Footer` component props
@@ -47,7 +47,7 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
 
   return (
     <>
-      <EmailModal
+      <ContactModal
         text={emailText}
         email={email}
         isOpen={modalOpen}

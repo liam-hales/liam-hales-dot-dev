@@ -6,7 +6,7 @@ import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@mui/material';
 import { ColourPalette } from '../enums';
 import { BaseProps } from '../types';
-import { Box, Modal, Button, Popover, Title, Text } from './common';
+import { Box, Modal, Button, Popover, Title, Text, Link } from './common';
 
 /**
  * The `ContactModal` component props
@@ -14,6 +14,7 @@ import { Box, Modal, Button, Popover, Title, Text } from './common';
 interface Props extends BaseProps {
   readonly text: string;
   readonly email: string;
+  readonly linkedInUrl: string;
   readonly isOpen: boolean;
   readonly onClose: () => void;
 }
@@ -25,7 +26,7 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `ContactModal` component
  */
-const ContactModal: FunctionComponent<Props> = ({ text, email, isOpen, onClose }): ReactElement<Props> => {
+const ContactModal: FunctionComponent<Props> = ({ text, email, linkedInUrl, isOpen, onClose }): ReactElement<Props> => {
 
   const [showEmail, setShowEmail] = useState<boolean>(false);
   const [popoverOpen, setPopoverOpen] = useState<boolean>(false);
@@ -92,13 +93,19 @@ const ContactModal: FunctionComponent<Props> = ({ text, email, isOpen, onClose }
               column-gap: 12px;
             `}
           >
-            <Button
-              colour={ColourPalette.GREY_700}
-              iconId="linkedIn"
-              onClick={onClose}
+            <Link
+              href={linkedInUrl}
+              target="_blank"
+              passHref={true}
+              aria-label="LinkedIn"
             >
-              I&apos;m a recruiter
-            </Button>
+              <Button
+                colour={ColourPalette.GREY_700}
+                iconId="linkedIn"
+              >
+                I&apos;m a recruiter
+              </Button>
+            </Link>
             <Button
               iconId="tick"
               onClick={() => setShowEmail(true)}

@@ -50,6 +50,7 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
       <ContactModal
         text={contactText}
         email={email}
+        linkedInUrl={linkedInUrl}
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
       />

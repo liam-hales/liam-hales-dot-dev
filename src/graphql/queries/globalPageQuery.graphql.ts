@@ -20,7 +20,7 @@ const globalPageQuery = gql`
           emailText
           linkedInUrl
           stackOverflowUrl
-          buyMeCoffeeUrl
+          githubUrl
           notionUrl
           notionText
           notFoundText

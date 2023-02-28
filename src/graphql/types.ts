@@ -38,7 +38,7 @@ export interface GlobalContent extends BasePageContent<'global'> {
   readonly emailText: string;
   readonly linkedInUrl: string;
   readonly stackOverflowUrl: string;
-  readonly buyMeCoffeeUrl: string;
+  readonly githubUrl: string;
   readonly notionUrl: string;
   readonly notionText: string;
   readonly notFoundText: string;

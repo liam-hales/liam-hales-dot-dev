@@ -24,7 +24,7 @@ import {
 } from 'react-icons/hi';
 import { IoDocument, IoChatbox } from 'react-icons/io5';
 import { RiCopyrightLine } from 'react-icons/ri';
-import { SiStackoverflow, SiLinkedin, SiNotion, SiBuymeacoffee } from 'react-icons/si';
+import { SiStackoverflow, SiLinkedin, SiNotion, SiGithub } from 'react-icons/si';
 import { BaseProps, IconId } from '../../types';
 import { ColourPalette } from '../../enums';
 
@@ -59,7 +59,7 @@ const iconMap: Record<IconId, IconType> = {
   copyright: RiCopyrightLine,
   linkedIn: SiLinkedin,
   stackOverflow: SiStackoverflow,
-  buyMeCoffee: SiBuymeacoffee,
+  github: SiGithub,
   notion: SiNotion,
 };
 

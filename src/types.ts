@@ -109,7 +109,7 @@ export type IconId =
   | 'copyright'
   | 'linkedIn'
   | 'stackOverflow'
-  | 'buyMeCoffee'
+  | 'github'
   | 'notion';
 
 /**

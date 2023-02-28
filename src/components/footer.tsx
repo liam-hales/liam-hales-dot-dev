@@ -74,13 +74,11 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
             <Text
               isBold={true}
               css={css`
-                font-size: 24px;
+                font-size: 28px;
                 padding-bottom: 8px;
               `}
             >
-              {firstName}
-              {' '}
-              {lastName}
+              Get in touch
             </Text>
             <Text colour={ColourPalette.GREY_400}>
               {footerText}

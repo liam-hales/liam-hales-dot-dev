@@ -31,7 +31,7 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
   const { utc } = useDate();
 
   const {
-    emailText,
+    contactText,
     email,
     footerText,
     linkedInUrl,
@@ -48,7 +48,7 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
   return (
     <>
       <ContactModal
-        text={emailText}
+        text={contactText}
         email={email}
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}

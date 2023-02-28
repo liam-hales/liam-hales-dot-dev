@@ -17,7 +17,7 @@ const globalPageQuery = gql`
         ... on GlobalContent {
           footerText
           email
-          emailText
+          contactText
           linkedInUrl
           stackOverflowUrl
           githubUrl

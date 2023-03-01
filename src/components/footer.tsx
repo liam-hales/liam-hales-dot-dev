@@ -8,7 +8,7 @@ import { ColourPalette } from '../enums';
 import { BaseProps } from '../types';
 import { useDate } from '../hooks';
 import { GlobalContent } from '../graphql';
-import { Box, Divider, Icon, IconButton, Text, Popover, Link } from './common';
+import { Box, Divider, Icon, IconButton, Text, Button, Popover, Link } from './common';
 import { Content, Logo, ContactModal } from '.';
 
 /**
@@ -97,17 +97,13 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
             column-gap: 16px;
           `}
         >
-          <Popover text="Email">
-            <IconButton
-              id="envelope"
-              onClick={() => setModalOpen(true)}
-              css={css`
-                svg {
-                  font-size: 25px;
-                };
-              `}
-            />
-          </Popover>
+          <Button
+            size="small"
+            iconId="envelope"
+            onClick={() => setModalOpen(true)}
+          >
+            Contact
+          </Button>
           <Popover text="LinkedIn">
             <Link
               href={linkedInUrl}
@@ -128,16 +124,6 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
               <IconButton id="github" />
             </Link>
           </Popover>
-          <Popover text="Stack Overflow">
-            <Link
-              href={stackOverflowUrl}
-              target="_blank"
-              passHref={true}
-              aria-label="Stack Overflow"
-            >
-              <IconButton id="stackOverflow" />
-            </Link>
-          </Popover>
           <Popover text="Notion">
             <Link
               href={notionUrl}
@@ -146,6 +132,16 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
               aria-label="Notion"
             >
               <IconButton id="notion" />
+            </Link>
+          </Popover>
+          <Popover text="Stack Overflow">
+            <Link
+              href={stackOverflowUrl}
+              target="_blank"
+              passHref={true}
+              aria-label="Stack Overflow"
+            >
+              <IconButton id="stackOverflow" />
             </Link>
           </Popover>
         </Box>

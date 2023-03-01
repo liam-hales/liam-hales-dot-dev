@@ -166,19 +166,14 @@ $ yarn start:prod
 
 # Deploying to Production
 
-The app is hosted on [Vercel] and is built and deployed using the [Vercel CLI].
-
-1. Follow the steps in the [First Steps](#first-steps) section
-2. Follow the steps in the [Building Public Assets](#building-public-assets) section (optional)
-3. Run `yarn vercel:build` to build the app for deployment
-4. Run `yarn vercel:deploy` to deploy the build to Vercel
+The app is hosted on [Vercel] and is built and deployed using Vercel Git Deployments. When code is pushed to the repos `main` branch, a production build and deployment is triggered. No need to manually build or deploy.
 
 ```sh
-$ yarn vercel:build
-$ yarn vercel:deploy
+$ git checkout main
+$ git add --all
+$ git commit -m "Fixed bugs"
+$ git push
 ```
-
-> _**NOTE:** `yarn vercel:build` uses `yarn build` under the hood to build the Next.js app_
 
 <br/>
 <br/>

@@ -3,7 +3,7 @@
  */
 interface UseConfigResponse {
   readonly siteUrl: string;
-  readonly apiUrl: string;
+  readonly graphqlApiUrl: string;
 }
 
 /**
@@ -15,12 +15,12 @@ interface UseConfigResponse {
  * @returns The `useConfig` hook response
  * @example
  *
- * const { apiUrl } = useConfig();
+ * const { siteUrl, graphqlApiUrl } = useConfig();
  */
 const useConfig = (): UseConfigResponse => {
   return {
     siteUrl: process.env.SITE_URL as string,
-    apiUrl: process.env.API_URL as string,
+    graphqlApiUrl: process.env.GRAPHQL_API_URL as string,
   };
 };
 

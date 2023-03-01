@@ -113,7 +113,7 @@ v8.19.1
 
 ```sh
 SITE_URL = 'https://liamhales.dev'
-API_URL = 'https://${region}.graphcms.com/v2/${id}/master'
+GRAPHQL_API_URL = 'https://${region}.graphcms.com/v2/${id}/master'
 ```
 
 <br/>

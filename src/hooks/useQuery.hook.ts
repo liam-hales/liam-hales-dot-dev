@@ -29,12 +29,12 @@ const useQuery = async <
   options: UseQueryOptions<V> = {},
 ): Promise<T> => {
 
-  const { apiUrl } = useConfig();
+  const { graphqlApiUrl } = useConfig();
   const { variables } = options;
 
   // Initialise the GraphQL client with
   // the API URL and the options
-  const client = new GraphQLClient(apiUrl, {
+  const client = new GraphQLClient(graphqlApiUrl, {
     fetch: fetch,
   });
 

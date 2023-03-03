@@ -108,7 +108,7 @@ v8.19.1
 
 # First Steps
 
-1. Run `yarn` in the repo root directory
+1. Run `yarn` in the project root
 2. Create a `.env` file in the project root
 
 ```sh
@@ -131,9 +131,7 @@ $ yarn build-images
 $ yarn build-sitemap
 ```
 
-> _**NOTE:** If any of the logo `.svg` files change, you will need to run `yarn build-images` again_
-
-> _**NOTE:** If any of routes are created or modified, you will need to run `yarn build-sitemap` again_
+> _**NOTE:** Running `yarn build-sitemap` requires a build to exist, run `yarn build` to build the app first_
 
 <br/>
 <br/>

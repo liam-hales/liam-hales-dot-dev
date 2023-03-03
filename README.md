@@ -12,10 +12,10 @@
     <img src="https://img.shields.io/badge/Notion%20Board-181c24?style=for-the-badge&logo=notion&logoColor=66a2c6"/>
   </a>
   <a
-    href="https://github.com/liam-hales/liam-hales-dot-dev"
+    href="https://github.com/liam-hales/liam-hales-dot-dev/deployments?environment=Production"
     target="_blank"
   >
-    <img src="https://img.shields.io/badge/Maintained-2bad4e?style=for-the-badge&label=Repo&labelColor=181c24&logo=github&logoColor=66a2c6"/>
+    <img src="https://img.shields.io/github/deployments/liam-hales/liam-hales-dot-dev/production?style=for-the-badge&label=Build&labelColor=181c24&logo=github&logoColor=66a2c6"/>
   </a>
 </div>
 

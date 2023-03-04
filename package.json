@@ -29,7 +29,6 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mui/material": "^5.11.10",
-    "@next/font": "^13.2.1",
     "dayjs": "^1.11.7",
     "framer-motion": "^8.5.5",
     "graphql": "^16.6.0",

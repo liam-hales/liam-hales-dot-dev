@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { NotFound } from '../components';
 import { Page, globalPageQuery } from '../graphql';
-import { useQuery } from '../hooks';
+import { useQuery } from '../hooks/server';
 import { ServerComponent } from '../types';
 
 /**

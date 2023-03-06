@@ -1,7 +1,6 @@
 import { ReactElement } from 'react';
 import { Page, homePageQuery } from '../graphql';
-import { useQuery } from '../hooks';
-import { useDevice } from '../hooks/server';
+import { useDevice, useQuery } from '../hooks/server';
 import { PageProps, ServerComponent } from '../types';
 import Home from './home';
 

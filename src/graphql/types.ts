@@ -213,7 +213,7 @@ export interface Tag {
 export interface SearchVariables {
   /**
    * Required due to how Hygraph handles searching within GraphQL.
-   * To query for all items, set as empty string
+   * To query for all items, set to an empty string `""`
    */
   readonly search: string;
 }

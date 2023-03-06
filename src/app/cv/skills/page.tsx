@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 import { Page, SearchVariables, skillsPageQuery } from '../../../graphql';
-import { useQuery } from '../../../hooks';
+import { useQuery } from '../../../hooks/server';
 import { PageProps, ServerComponent } from '../../../types';
 import Skills from './skills';
 

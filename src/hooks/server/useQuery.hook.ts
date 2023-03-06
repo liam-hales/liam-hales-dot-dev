@@ -1,5 +1,5 @@
 import { GraphQLClient } from 'graphql-request';
-import { UseQueryOptions } from '../types';
+import { UseQueryOptions } from '../../types';
 import { useConfig } from '.';
 
 /**

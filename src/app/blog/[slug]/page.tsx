@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { ReactElement } from 'react';
 import { BlogPost as BlogPostData, blogPostQuery, BlogPostVariables } from '../../../graphql';
-import { useQuery } from '../../../hooks';
+import { useQuery } from '../../../hooks/server';
 import { PageProps, ServerComponent } from '../../../types';
 import BlogPost from './blogPost';
 

@@ -1,6 +1,6 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { ColourPalette } from '../enums';
-import { useConfig } from '../hooks';
+import { useConfig } from '../hooks/server';
 
 /**
  * Used to configure the app `<head>` tag which contains

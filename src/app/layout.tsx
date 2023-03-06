@@ -4,8 +4,7 @@ import { ThemeProvider } from '../providers';
 import { BaseProps, ServerComponent } from '../types';
 import { urbanist, firaCode } from '../fonts';
 import { Page, globalPageQuery } from '../graphql';
-import { useQuery } from '../hooks';
-import { useDevice } from '../hooks/server';
+import { useDevice, useQuery } from '../hooks/server';
 
 /**
  * The `AppLayout` component props

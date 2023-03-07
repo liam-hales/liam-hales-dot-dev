@@ -15,6 +15,11 @@ interface UseDeviceResponse {
  *
  * _**NOTE:** This hook can only be used server-side_
  *
+ * Using this hook will cause the route to be dynamic, the `headers` function used
+ * within this hook relies on information that can only be known at request time
+ *
+ * @see [Next.js - Using Dynamic Functions](https://beta.nextjs.org/docs/rendering/static-and-dynamic-rendering#using-dynamic-functions)
+ *
  * @returns The `useDevice` hook response
  * @example
  *

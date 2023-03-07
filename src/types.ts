@@ -147,7 +147,7 @@ export interface ServerComponent<P extends Partial<Record<keyof P, unknown>> = n
  * The `internalRef` prop is used with the `withRef`
  * helper to forward component references
  *
- * @see https://reactjs.org/docs/forwarding-refs.html
+ * @see [React - Forwarding Refs](https://reactjs.org/docs/forwarding-refs.html)
  */
 export interface BaseProps<T extends HTMLElement = HTMLElement> {
   readonly internalRef?: Ref<T>;

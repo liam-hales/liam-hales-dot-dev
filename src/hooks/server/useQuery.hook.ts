@@ -1,4 +1,5 @@
-import { GraphQLClient } from 'graphql-request';
+import { request } from 'graphql-request';
+import { cache } from 'react';
 import { UseQueryOptions } from '../../types';
 import { useConfig } from '.';
 
@@ -14,7 +15,7 @@ import { useConfig } from '.';
  * @param document The GraphQL query document
  * @param options The GraphQL query options
  *
- * @returns The `useQuery` hook response
+ * @returns The response data
  * @example
  *
  * const data = await useQuery<Data, Variables>(document, {
@@ -32,13 +33,8 @@ const useQuery = async <
   const { graphqlApiUrl } = useConfig();
   const { variables } = options;
 
-  // Initialise the GraphQL client with
-  // the API URL and the options
-  const client = new GraphQLClient(graphqlApiUrl, {
-    fetch: fetch,
-  });
-
-  const repsonse = await client.request<{ readonly [key: string]: T }>({
+  const repsonse = await request<{ readonly [key: string]: T }>({
+    url: graphqlApiUrl,
     document: document,
     variables: variables,
   });
@@ -49,4 +45,4 @@ const useQuery = async <
   return repsonse[key];
 };
 
-export default useQuery;
+export default cache(useQuery);

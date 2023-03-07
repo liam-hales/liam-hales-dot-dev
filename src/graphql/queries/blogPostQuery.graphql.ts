@@ -6,7 +6,7 @@ import { blogPostFragment, tagFragment, personFragment, assetFragment } from '..
  * the blog post data for a specific slug
  */
 const blogPostQuery = gql`
-  query blogPage($slug: String!) {
+  query blogPost($slug: String!) {
     blogPost(
       where: {
         slug: $slug

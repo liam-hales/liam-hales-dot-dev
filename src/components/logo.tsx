@@ -73,16 +73,6 @@ const Logo: FunctionComponent<Props> = (props): ReactElement<Props> => {
   };
 
   /**
-   * The path CSS styles for
-   * the SVG `path` elements
-   */
-  const pathCss = css`
-    cursor: ${(isInteractive === true) ? 'pointer' : 'unset'};
-    pointer-events: ${(isInteractive === false) ? 'none' : 'unset'};
-    fill: ${ColourPalette.WHITE};
-  `;
-
-  /**
    * The animation transition options
    * for the `path` elements
    */
@@ -95,7 +85,14 @@ const Logo: FunctionComponent<Props> = (props): ReactElement<Props> => {
       ref={internalRef}
       className={className}
     >
-      <svg viewBox="0 0 891 1024">
+      <svg
+        viewBox="0 0 891 1024"
+        css={css`
+          cursor: ${(isInteractive === true) ? 'pointer' : 'unset'};
+          pointer-events: ${(isInteractive === false) ? 'none' : 'unset'};
+          fill: ${ColourPalette.WHITE};
+        `}
+      >
         <motion.path
           d={letterLPath}
           onClick={() => onClick('letterL')}
@@ -110,7 +107,6 @@ const Logo: FunctionComponent<Props> = (props): ReactElement<Props> => {
             scale: (activeSection === 'letterL' || activeSection == null) ? 1 : 0.96,
           }}
           transition={pathTransition}
-          css={pathCss}
         />
         <motion.path
           d={reverseLetterLPath}
@@ -126,7 +122,6 @@ const Logo: FunctionComponent<Props> = (props): ReactElement<Props> => {
             scale: (activeSection === 'reverseLetterL' || activeSection == null) ? 1 : 0.96,
           }}
           transition={pathTransition}
-          css={pathCss}
         />
         <motion.path
           d={barPath}
@@ -142,7 +137,6 @@ const Logo: FunctionComponent<Props> = (props): ReactElement<Props> => {
             scale: (activeSection === 'bar' || activeSection == null) ? 1 : 0.96,
           }}
           transition={pathTransition}
-          css={pathCss}
         />
       </svg>
     </div>

@@ -6,7 +6,7 @@ import { FunctionComponent, ReactElement } from 'react';
 import { BottomNavigation, BottomNavigationAction, css } from '@mui/material';
 import { ColourPalette } from '../../enums';
 import { useNav } from '../../hooks';
-import { Box, Text, Icon, Link } from '../common';
+import { Box, Text, Icon, Link, Divider } from '../common';
 
 /**
  * The CSS styles for the
@@ -46,6 +46,7 @@ const BottomNav: FunctionComponent = (): ReactElement => {
       background-color: ${ColourPalette.GREY_1000};
     `}
     >
+      <Divider />
       <BottomNavigation
         value={navKey}
         css={css`

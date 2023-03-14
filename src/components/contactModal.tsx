@@ -36,7 +36,14 @@ const ContactModal: FunctionComponent<Props> = ({ text, email, linkedInUrl, isOp
       alignment="flex-start"
       isOpen={isOpen}
       onClose={onClose}
-      onClosed={() => setShowEmail(false)}
+      onStatusChange={(status) => {
+
+        // Only reset the show email state
+        // if the modal is closed
+        if (status === 'closed') {
+          setShowEmail(false);
+        }
+      }}
     >
       <Title>
         Before you contact

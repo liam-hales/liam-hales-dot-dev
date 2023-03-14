@@ -5,7 +5,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@mui/material';
 import { ColourPalette } from '../../enums';
-import { BaseProps } from '../../types';
+import { BaseProps, ModalStatus } from '../../types';
 import { Button, Image, Link, Modal, Text } from '../common';
 
 /**
@@ -19,7 +19,7 @@ interface Props extends BaseProps {
   readonly url: string;
   readonly imageUrl?: string;
   readonly onClose: () => void;
-  readonly onClosed: () => void;
+  readonly onStatusChange?: (status: ModalStatus) => void;
 }
 
 /**
@@ -29,12 +29,12 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `SkillModal` component
  */
-const SkillModal: FunctionComponent<Props> = ({ isOpen, name, type, description, url, imageUrl, onClose, onClosed }): ReactElement<Props> => {
+const SkillModal: FunctionComponent<Props> = ({ isOpen, name, type, description, url, imageUrl, onClose, onStatusChange }): ReactElement<Props> => {
   return (
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      onClosed={onClosed}
+      onStatusChange={onStatusChange}
     >
       {
         (imageUrl != null) && (

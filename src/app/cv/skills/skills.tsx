@@ -50,7 +50,14 @@ const Skills: FunctionComponent<Props> = ({ content, search = '' }): ReactElemen
               url={url}
               imageUrl={image?.url}
               onClose={() => setModalOpen(false)}
-              onClosed={() => setSelectedSkill(undefined)}
+              onStatusChange={(status) => {
+
+                // Only reset the selected skill state
+                // if the modal is closed
+                if (status === 'closed') {
+                  setSelectedSkill(undefined);
+                }
+              }}
             />
           );
         })()

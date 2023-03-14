@@ -54,8 +54,8 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
         isOpen={modalOpen}
         onClose={() => setModalOpen(false)}
       />
-      <Divider />
       <Content alignment="flex-start">
+        <Divider />
         <Box
           direction="row"
           justify="space-between"

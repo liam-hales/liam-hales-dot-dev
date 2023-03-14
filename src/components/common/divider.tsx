@@ -17,10 +17,10 @@ const Divider: FunctionComponent = (): ReactElement => {
     <MuiDivider
       flexItem={true}
       css={css`
-        margin-left: -1000px;
-        margin-right: -1000px;
-        padding-left: 1000px;
-        padding-right: 1000px;
+        margin-left: -2000px;
+        margin-right: -2000px;
+        padding-left: 2000px;
+        padding-right: 2000px;
         background-color: ${ColourPalette.GREY_900};
       `}
     />

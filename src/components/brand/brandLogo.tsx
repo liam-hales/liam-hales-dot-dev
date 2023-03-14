@@ -106,6 +106,10 @@ const BrandLogo: FunctionComponent<Props> = (props): ReactElement<Props> => {
         >
           <Text
             colour={ColourPalette.GREY_400}
+            initial={{
+              y: 0,
+              opacity: 1,
+            }}
             animate={{
               y: (activeLogoSection == null) ? 0 : 50,
               opacity: (activeLogoSection == null) ? 1 : 0,
@@ -121,6 +125,10 @@ const BrandLogo: FunctionComponent<Props> = (props): ReactElement<Props> => {
           </Text>
           <Text
             isBold={true}
+            initial={{
+              y: 50,
+              opacity: 0,
+            }}
             animate={{
               y: (activeLogoSection === 'letterL') ? 0 : 50,
               opacity: (activeLogoSection === 'letterL') ? 1 : 0,
@@ -136,6 +144,10 @@ const BrandLogo: FunctionComponent<Props> = (props): ReactElement<Props> => {
           </Text>
           <Text
             isBold={true}
+            initial={{
+              y: 50,
+              opacity: 0,
+            }}
             animate={{
               y: (activeLogoSection === 'reverseLetterL') ? 0 : 50,
               opacity: (activeLogoSection === 'reverseLetterL') ? 1 : 0,
@@ -151,6 +163,10 @@ const BrandLogo: FunctionComponent<Props> = (props): ReactElement<Props> => {
           </Text>
           <Text
             isBold={true}
+            initial={{
+              y: 50,
+              opacity: 0,
+            }}
             animate={{
               y: (activeLogoSection === 'bar') ? 0 : 50,
               opacity: (activeLogoSection === 'bar') ? 1 : 0,

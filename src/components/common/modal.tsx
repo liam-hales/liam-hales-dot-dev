@@ -32,13 +32,21 @@ interface Props extends BaseProps {
 const Modal: FunctionComponent<Props> = ({ isOpen, direction, alignment, justify, onClose, onStatusChange, children }): ReactElement<Props> => {
 
   const { screenSize } = useScreen();
-  const [status, setStatus] = useState<ModalStatus>('closed');
+  const [status, setStatus] = useState<ModalStatus | undefined>(undefined);
 
   /**
    * Used to call `onStatusChange` when the
    * modal status state changes
    */
-  useEffect(() => onStatusChange?.(status), [status, onStatusChange]);
+  useEffect(() => {
+
+    // Only call `onStatusChange` when the
+    // status state has been set
+    if (status != null) {
+      onStatusChange?.(status);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [status]);
 
   return (
     <Backdrop isOpen={isOpen}>

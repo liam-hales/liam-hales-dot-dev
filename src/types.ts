@@ -81,6 +81,12 @@ export type ButtonSize = 'small' | 'medium' | 'large';
 export type TextElement = 'h1' | 'h2' | 'p' | 'span';
 
 /**
+ * The `Modal` component status used to determine
+ * what status the modal is currently in
+ */
+export type ModalStatus = 'open' | 'closed' | 'opening' | 'closing';
+
+/**
  * Describes each individual section of the logo
  * used for the `Logo` component
  */

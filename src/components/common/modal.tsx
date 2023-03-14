@@ -2,10 +2,10 @@
 
 'use client';
 
-import { FunctionComponent, ReactElement, ReactNode } from 'react';
+import { FunctionComponent, ReactElement, ReactNode, useEffect, useState } from 'react';
 import { ClickAwayListener, css } from '@mui/material';
 import { useScreen } from '../../hooks';
-import { BaseProps, BoxDirection, BoxAlignment, BoxJustify } from '../../types';
+import { BaseProps, BoxDirection, BoxAlignment, BoxJustify, ModalStatus } from '../../types';
 import { ColourPalette } from '../../enums';
 import { Box, Card, IconButton, Backdrop } from '.';
 
@@ -18,7 +18,7 @@ interface Props extends BaseProps {
   readonly alignment?: BoxAlignment;
   readonly justify?: BoxJustify;
   readonly onClose: () => void;
-  readonly onClosed?: () => void;
+  readonly onStatusChange?: (status: ModalStatus) => void;
   readonly children: ReactNode;
 }
 
@@ -29,9 +29,17 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `Modal` component
  */
-const Modal: FunctionComponent<Props> = ({ isOpen, direction, alignment, justify, onClose, onClosed, children }): ReactElement<Props> => {
+const Modal: FunctionComponent<Props> = ({ isOpen, direction, alignment, justify, onClose, onStatusChange, children }): ReactElement<Props> => {
 
   const { screenSize } = useScreen();
+  const [status, setStatus] = useState<ModalStatus>('closed');
+
+  /**
+   * Used to call `onStatusChange` when the
+   * modal status state changes
+   */
+  useEffect(() => onStatusChange?.(status), [status, onStatusChange]);
+
   return (
     <Backdrop isOpen={isOpen}>
       <Box
@@ -42,7 +50,10 @@ const Modal: FunctionComponent<Props> = ({ isOpen, direction, alignment, justify
         `}
       >
         <ClickAwayListener onClickAway={() => {
-          if (isOpen === true) {
+
+          // Only close the modal if the sttaus is open
+          // to avoid it being closed when it is opening
+          if (status === 'open') {
             onClose();
           }
         }}
@@ -64,14 +75,8 @@ const Modal: FunctionComponent<Props> = ({ isOpen, direction, alignment, justify
                 damping: 22,
               },
             }}
-            onAnimationComplete={() => {
-
-              // Only call `onClosed` if the modal is closed to avoid it
-              // being called for the modal open animation
-              if (isOpen === false) {
-                onClosed?.();
-              }
-            }}
+            onAnimationStart={() => setStatus((isOpen === true) ? 'opening' : 'closing')}
+            onAnimationComplete={() => setStatus((isOpen === true) ? 'open' : 'closed')}
             css={css`
               position: relative;
               max-width: 480px;

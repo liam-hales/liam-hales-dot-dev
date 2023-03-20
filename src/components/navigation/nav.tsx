@@ -3,7 +3,7 @@
 'use client';
 
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
-import { css } from '@mui/material';
+import { css } from '@emotion/react';
 import { BaseProps, DeviceType } from '../../types';
 import { TopNav, BottomNav, Logo } from '..';
 import { useScreen } from '../../hooks';

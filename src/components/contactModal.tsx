@@ -3,7 +3,7 @@
 'use client';
 
 import { FunctionComponent, ReactElement, useState } from 'react';
-import { css } from '@mui/material';
+import { css } from '@emotion/react';
 import { ColourPalette } from '../enums';
 import { BaseProps } from '../types';
 import { Box, Modal, Button, Popover, Title, Text, Link } from './common';

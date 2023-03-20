@@ -3,7 +3,8 @@
 'use client';
 
 import { FunctionComponent, ReactElement } from 'react';
-import { Breadcrumbs as MuiBreadcrumbs, css } from '@mui/material';
+import { Breadcrumbs as MuiBreadcrumbs } from '@mui/material';
+import { css } from '@emotion/react';
 import { BaseProps } from '../../../types';
 import { Icon } from '..';
 

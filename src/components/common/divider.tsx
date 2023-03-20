@@ -3,7 +3,8 @@
 'use client';
 
 import { FunctionComponent, ReactElement } from 'react';
-import { Divider as MuiDivider, css } from '@mui/material';
+import { Divider as MuiDivider } from '@mui/material';
+import { css } from '@emotion/react';
 import { ColourPalette } from '../../enums';
 
 /**

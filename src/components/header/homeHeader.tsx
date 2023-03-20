@@ -3,7 +3,7 @@
 'use client';
 
 import { FunctionComponent, ReactElement } from 'react';
-import { css } from '@mui/material';
+import { css } from '@emotion/react';
 import { useScroll, useTransform } from 'framer-motion';
 import { Asset, Person } from '../../graphql';
 import { BaseProps } from '../../types';

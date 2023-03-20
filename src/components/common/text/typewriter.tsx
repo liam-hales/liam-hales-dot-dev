@@ -3,7 +3,7 @@
 'use client';
 
 import { FunctionComponent, ReactElement } from 'react';
-import { css, keyframes } from '@mui/material';
+import { css, keyframes } from '@emotion/react';
 import TypewriterEffect, { TypewriterClass } from 'typewriter-effect';
 import { BaseProps } from '../../../types';
 

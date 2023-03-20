@@ -3,7 +3,8 @@
 'use client';
 
 import { FunctionComponent, ReactElement, useState } from 'react';
-import { ClickAwayListener, css } from '@mui/material';
+import { ClickAwayListener } from '@mui/material';
+import { css } from '@emotion/react';
 import { Transition } from 'framer-motion';
 import { ColourPalette } from '../../enums';
 import { useScreen } from '../../hooks';

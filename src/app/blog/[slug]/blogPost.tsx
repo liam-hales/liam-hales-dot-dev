@@ -3,7 +3,7 @@
 'use client';
 
 import { FunctionComponent, ReactElement } from 'react';
-import { css } from '@mui/material';
+import { css } from '@emotion/react';
 import { Content } from '../../../components';
 import { BaseProps } from '../../../types';
 import { BlogPost as BlogPostData } from '../../../graphql';

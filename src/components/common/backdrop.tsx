@@ -3,7 +3,8 @@
 'use client';
 
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
-import { Backdrop as MuiBackdrop, css } from '@mui/material';
+import { Backdrop as MuiBackdrop } from '@mui/material';
+import { css } from '@emotion/react';
 import { BaseProps } from '../../types';
 
 /**

@@ -2,7 +2,8 @@
 
 'use client';
 
-import { Typography, css } from '@mui/material';
+import { Typography } from '@mui/material';
+import { css } from '@emotion/react';
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { ColourPalette } from '../../../enums';
 import { BaseProps, TextElement } from '../../../types';

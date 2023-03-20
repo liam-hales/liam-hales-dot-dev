@@ -3,11 +3,11 @@
 'use client';
 
 import { FunctionComponent, ReactElement } from 'react';
+import { css } from '@emotion/react';
 import { PrismLight } from 'react-syntax-highlighter';
 import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import ts from 'react-syntax-highlighter/dist/cjs/languages/prism/typescript';
 import tsx from 'react-syntax-highlighter/dist/cjs/languages/prism/tsx';
-import { css } from '@mui/material';
 import { BaseProps, CodeLanguage } from '../../../types';
 
 // Register the supported languages

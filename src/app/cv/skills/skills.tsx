@@ -3,7 +3,7 @@
 'use client';
 
 import { FunctionComponent, ReactElement, useState } from 'react';
-import { css } from '@mui/material';
+import { css } from '@emotion/react';
 import { useRouter } from 'next/navigation';
 import { Content, SkillModal, Grid, SkillCard, NoResults } from '../../../components';
 import { Breadcrumbs, BreadcrumbItem, Text, SearchInput, Title, Divider } from '../../../components/common';

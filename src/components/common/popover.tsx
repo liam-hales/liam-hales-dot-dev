@@ -3,7 +3,8 @@
 'use client';
 
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
-import { ClickAwayListener, Tooltip, css } from '@mui/material';
+import { ClickAwayListener, Tooltip } from '@mui/material';
+import { css } from '@emotion/react';
 import { BaseProps } from '../../types';
 import { ColourPalette } from '../../enums';
 import { Text } from '.';

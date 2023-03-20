@@ -3,7 +3,8 @@
 'use client';
 
 import { FunctionComponent, ReactElement } from 'react';
-import { Button as MuiButton, css } from '@mui/material';
+import { Button as MuiButton } from '@mui/material';
+import { css } from '@emotion/react';
 import { BaseProps, ButtonSize, IconId } from '../../../types';
 import { ColourPalette } from '../../../enums';
 import { Text, Icon } from '..';

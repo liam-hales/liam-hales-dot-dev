@@ -3,7 +3,8 @@
 'use client';
 
 import { FunctionComponent, ReactElement } from 'react';
-import { BottomNavigation, BottomNavigationAction, css } from '@mui/material';
+import { BottomNavigation, BottomNavigationAction } from '@mui/material';
+import { css } from '@emotion/react';
 import { ColourPalette } from '../../enums';
 import { useNav } from '../../hooks';
 import { Box, Text, Icon, Link, Divider } from '../common';

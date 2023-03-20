@@ -3,7 +3,7 @@
 'use client';
 
 import { FunctionComponent, ReactElement, useState } from 'react';
-import { css } from '@mui/material';
+import { css } from '@emotion/react';
 import { useRouter } from 'next/navigation';
 import { BlogPostCard, Content } from '../../components';
 import { BaseProps } from '../../types';

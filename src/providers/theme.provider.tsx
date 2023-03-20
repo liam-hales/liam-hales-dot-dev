@@ -1,7 +1,8 @@
 'use client';
 
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
-import { createTheme, CssBaseline, GlobalStyles, PaletteOptions, ThemeProvider as MuiThemeProvider } from '@mui/material';
+import { CssBaseline, GlobalStyles } from '@mui/material';
+import { createTheme, PaletteOptions, ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
 import { urbanist } from '../fonts';
 import { ColourPalette } from '../enums';
 import { BaseProps } from '../types';

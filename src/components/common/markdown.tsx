@@ -3,7 +3,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import ReactMarkdown from 'react-markdown';
-import { css } from '@mui/material';
+import { css } from '@emotion/react';
 import rehypeRaw from 'rehype-raw';
 import { BaseProps } from '../../types';
 import { ColourPalette } from '../../enums';

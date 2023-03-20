@@ -3,7 +3,7 @@
 'use client';
 
 import { ReactElement, useEffect } from 'react';
-import { css } from '@mui/material';
+import { css } from '@emotion/react';
 import { ErrorComponent } from 'next/dist/client/components/error-boundary';
 import { ColourPalette } from '../enums';
 import { Button, Title, Text, Link } from '../components/common';

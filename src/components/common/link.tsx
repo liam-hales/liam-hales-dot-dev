@@ -3,7 +3,7 @@
 'use client';
 
 import { FunctionComponent, ReactElement, ReactNode, HTMLAttributeAnchorTarget } from 'react';
-import { css } from '@mui/material';
+import { css } from '@emotion/react';
 import NextLink, { LinkProps } from 'next/link';
 import { BaseProps } from '../../types';
 import { withRef } from '../../helpers';

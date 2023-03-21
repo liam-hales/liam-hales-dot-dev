@@ -157,7 +157,6 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
               colour={ColourPalette.WHITE}
               css={css`
                 vertical-align: text-top;
-                font-size: 18px;
               `}
             />
             {copyrightText}

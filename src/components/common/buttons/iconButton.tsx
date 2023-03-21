@@ -44,7 +44,7 @@ const IconButton: FunctionComponent<Props> = (props): ReactElement<Props> => {
         id={id}
         colour={colour}
         css={css`
-          font-size: 20px;
+          font-size: 17px;
         `}
       />
     </Box>

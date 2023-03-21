@@ -50,7 +50,7 @@ const SkillAreaCard: FunctionComponent<Props> = ({ className, deviceType, title,
         id={iconId}
         css={css`
           margin-right: ${(screenSize === 'small') ? 24 : 0}px;
-          font-size: 48px;
+          font-size: 42px;
         `}
       />
       <Box alignment={

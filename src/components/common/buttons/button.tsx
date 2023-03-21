@@ -26,7 +26,7 @@ interface Props extends BaseProps<HTMLButtonElement> {
  * the text size number in `px`
  */
 const textSizeMap: Record<ButtonSize, number> = {
-  small: 11,
+  small: 12,
   medium: 14,
   large: 16,
 };
@@ -36,9 +36,9 @@ const textSizeMap: Record<ButtonSize, number> = {
  * the icon size number in `px`
  */
 const iconSizeMap: Record<ButtonSize, number> = {
-  small: 14,
-  medium: 16,
-  large: 20,
+  small: 13,
+  medium: 14,
+  large: 18,
 };
 
 /**
@@ -70,6 +70,7 @@ const Button: FunctionComponent<Props> = (props): ReactElement<Props> => {
       onClick={onClick}
       css={css`
         border-radius: 6px;
+        align-items: center;
       `}
     >
       {

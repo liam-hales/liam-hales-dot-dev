@@ -110,7 +110,7 @@ const TopNav: FunctionComponent<Props> = ({ notionUrl, notionText }): ReactEleme
               id="notion"
               css={css`
                 svg {
-                  font-size: 28px;
+                  font-size: 24px;
                 };
               `}
             />

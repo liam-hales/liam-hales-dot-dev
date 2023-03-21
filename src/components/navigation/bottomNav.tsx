@@ -25,7 +25,7 @@ const bottomNavActionCss = css`
  * navigation action icon
  */
 const iconCss = css`
-  font-size: 24px;
+  font-size: 20px;
   flex-shrink: 0;
 `;
 

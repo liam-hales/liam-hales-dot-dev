@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
+import unpluginIconsPlugin from 'unplugin-icons/webpack';
+
 /**
  * The Next.js config used for advanced
  * configuration within Next.js
@@ -37,6 +39,21 @@ const nextConfig = {
         hostname: 'media.graphassets.com',
       },
     ],
+  },
+  webpack: (config) => {
+    const { plugins } = config;
+    const iconPlugin = unpluginIconsPlugin({
+      compiler: 'jsx',
+      jsx: 'react',
+    });
+
+    return {
+      ...config,
+      plugins: [
+        ...plugins,
+        iconPlugin,
+      ],
+    };
   },
 };
 

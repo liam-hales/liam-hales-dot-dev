@@ -6,6 +6,9 @@
       "dom.iterable",
       "esnext"
     ],
+    "types": [
+      "unplugin-icons/types/react",
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,

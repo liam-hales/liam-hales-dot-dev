@@ -37,15 +37,21 @@
     "react": "^18.2.0",
     "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.8.0",
     "react-markdown": "^8.0.6",
     "react-syntax-highlighter": "^15.5.0",
     "rehype-raw": "^6.1.1",
-    "typewriter-effect": "^2.19.0"
+    "typewriter-effect": "^2.19.0",
+    "unplugin-icons": "^0.15.3"
   },
   "devDependencies": {
     "@emotion/eslint-plugin": "^11.10.0",
+    "@iconify-json/heroicons": "^1.1.10",
+    "@iconify-json/heroicons-solid": "^1.1.7",
+    "@iconify-json/ion": "^1.1.8",
+    "@iconify-json/ri": "^1.1.5",
+    "@iconify-json/simple-icons": "^1.1.47",
     "@next/env": "^13.2.4",
+    "@svgr/core": "^6.5.1",
     "@types/node": "^18.15.5",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",

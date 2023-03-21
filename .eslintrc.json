@@ -136,6 +136,7 @@
         "devDependencies": ["scripts/**/*.ts"]
       }
     ],
+    "import/extensions": ["error", "never"],
     "react/jsx-boolean-value": ["error", "always"],
     "react/jsx-props-no-spreading": [
       "error",

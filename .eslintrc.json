@@ -133,7 +133,10 @@
     "import/no-extraneous-dependencies": [
       "error",
       {
-        "devDependencies": ["scripts/**/*.ts"]
+        "devDependencies": [
+          "*.config.mjs",
+          "/**/*.script.ts"
+        ]
       }
     ],
     "import/extensions": ["error", "never"],

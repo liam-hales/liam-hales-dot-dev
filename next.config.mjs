@@ -1,6 +1,16 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
 import unpluginIconsPlugin from 'unplugin-icons/webpack';
+import bundleAnalyser from '@next/bundle-analyzer';
+
+/**
+ * The initialised bundle analyser
+ * from `@next/bundle-analyzer`
+ */
+const withAnalyser = bundleAnalyser({
+  enabled: process.env.ANALYSE_BUNDLE === 'true',
+  openAnalyzer: true,
+});
 
 /**
  * The Next.js config used for advanced
@@ -57,4 +67,4 @@ const nextConfig = {
   },
 };
 
-export default nextConfig;
+export default withAnalyser(nextConfig);

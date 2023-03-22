@@ -19,6 +19,7 @@
     "start:dev": "next dev",
     "start:prod": "next start",
     "build": "next build",
+    "build:analyse": "ANALYSE_BUNDLE=true next build",
     "lint": "next lint",
     "deps": "ncu --packageManager yarn",
     "build-images": "ts-node ./scripts/buildImages.script.ts",

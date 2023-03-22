@@ -28,9 +28,14 @@
 - [Getting Started](#getting-started-prerequisites)
 - [First Steps](#first-steps)
 - [Public Assets](#public-assets)
-- [Starting Local Server](#starting-local-server)
-- [Deploying to Production](#deploying-to-production)
-- [Linting](#linting)
+- [Local Development](#local-development)
+  - [Development Server](#development-server)
+  - [Production Server](#production-server)
+- [Production](#production)
+  - [Building](#building)
+  - [Deploying](#deploying)
+  - [Bundle Analysing](#bundle-analysing)
+- [Dependency Management](#dependency-management)
 
 <br/>
 <br/>
@@ -131,17 +136,24 @@ $ yarn build-images
 $ yarn build-sitemap
 ```
 
-> _**NOTE:** Running `yarn build-sitemap` requires a build to exist, run `yarn build` to build the app first_
+> _**NOTE:** Running `yarn build-sitemap` requires a build to exist, follow the steps in the [Production / Building](#building) section_
 
 <br/>
 <br/>
 
-# Starting Local Server
+# Local Development
+
+For local development there are two ways to build and start the app depending on your specific needs...
+
+**Development Server** - Used when developing the app  
+**Production Server** - Used to simulate how the app will run in production
+
+<br/>
 
 1. Follow the steps in the [First Steps](#first-steps) section
 2. Follow the steps in the [Building Public Assets](#building-public-assets) section (optional)
 
-## Development
+## Development Server
 
 1. Run `yarn start:dev` to start the development server
 
@@ -149,9 +161,9 @@ $ yarn build-sitemap
 $ yarn start:dev
 ```
 
-## Production
+## Production Server
 
-1. Run `yarn build` to build the app for production
+1. Follow the steps in the [Production / Building](#building) section
 2. Run `yarn start:prod` to start the production server
 
 ```sh
@@ -162,7 +174,19 @@ $ yarn start:prod
 <br/>
 <br/>
 
-# Deploying to Production
+# Production
+
+## Building
+
+1. Follow the steps in the [First Steps](#first-steps) section
+2. Follow the steps in the [Building Public Assets](#building-public-assets) section (optional)
+3. Run `yarn build` to build the app for production
+
+```sh
+$ yarn build
+```
+
+## Deploying 
 
 The app is hosted on [Vercel] and is built and deployed using Vercel Git Deployments. When code is pushed to the repos `main` branch, a production build and deployment is triggered. No need to manually build or deploy.
 
@@ -172,6 +196,19 @@ $ git add --all
 $ git commit -m "Fixed bugs"
 $ git push
 ```
+
+## Bundle Analysing
+
+Analysing a production bundle is done using `@next/bundle-analyzer` under the hood and is used to inspect the app and the size each page, component and dependency takes up within the bundle.
+
+1. Run `yarn build:analyse` to build and analyse the app for production
+2. Open the generated `.html` files located in `.next/analyze`
+
+```sh
+$ yarn build:analyse
+```
+
+> _**NOTE:** The bundle analyser will automatically open the generated `.html` files in your default browser_
 
 <br/>
 <br/>

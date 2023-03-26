@@ -1,6 +1,6 @@
 import { ReactElement, ReactNode } from 'react';
 import { Footer, Nav, SafeArea } from '../components';
-import { ThemeProvider } from '../providers';
+import { AnimationProvider, ThemeProvider } from '../providers';
 import { BaseProps, ServerComponent } from '../types';
 import { urbanist, firaCode } from '../fonts';
 import { Page, globalPageQuery } from '../graphql';
@@ -32,15 +32,17 @@ const AppLayout: ServerComponent<Props> = async ({ children }): Promise<ReactEle
       <head />
       <body>
         <ThemeProvider>
-          <SafeArea>
-            <Nav
-              deviceType={deviceType}
-              content={content}
-            >
-              {children}
-              <Footer content={content} />
-            </Nav>
-          </SafeArea>
+          <AnimationProvider>
+            <SafeArea>
+              <Nav
+                deviceType={deviceType}
+                content={content}
+              >
+                {children}
+                <Footer content={content} />
+              </Nav>
+            </SafeArea>
+          </AnimationProvider>
         </ThemeProvider>
       </body>
     </html>

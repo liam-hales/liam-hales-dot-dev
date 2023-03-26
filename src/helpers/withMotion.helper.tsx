@@ -1,10 +1,10 @@
-import { motion } from 'framer-motion';
+import { m as motion } from 'framer-motion';
 import { FunctionComponent } from 'react';
 import { BaseProps } from '../types';
 import { withRef } from '.';
 
 /**
- * Used to wrap a component in `motion` from `framer-motion` to
+ * Used to wrap a component in `m` from `framer-motion` to
  * apply the `MotionProps` and allow the component to be animated.
  *
  * _**NOTE:** This also uses `withRef` which is required for `framer-motion` custom components_

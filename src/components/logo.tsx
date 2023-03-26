@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@emotion/react';
-import { motion, Transition } from 'framer-motion';
+import { m as motion, Transition } from 'framer-motion';
 import { ColourPalette } from '../enums';
 import { BaseProps, LogoSection } from '../types';
 import { withRef } from '../helpers';

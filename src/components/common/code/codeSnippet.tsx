@@ -32,18 +32,19 @@ interface Props extends BaseProps {
  */
 const CodeSnippet: FunctionComponent<Props> = ({ className, language, children }): ReactElement<Props> => {
   return (
-    <PrismLight
-      className={className}
-      style={nord}
-      language={language}
-      css={css`
-        padding: 18px !important;
-        border-radius: 10px !important;
-        font-size: 14px;
-      `}
-    >
-      {children}
-    </PrismLight>
+    <div className={className}>
+      <PrismLight
+        style={nord}
+        language={language}
+        css={css`
+          padding: 18px !important;
+          border-radius: 10px !important;
+          font-size: 14px;
+        `}
+      >
+        {children}
+      </PrismLight>
+    </div>
   );
 };
 

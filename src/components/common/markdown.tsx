@@ -101,6 +101,8 @@ const Markdown: FunctionComponent<Props> = ({ className, children }): ReactEleme
               language={language}
               css={css`
                 width: 100%;
+                padding-top: 10px;
+                padding-bottom: 10px;
               `}
             >
               {`${children}`}

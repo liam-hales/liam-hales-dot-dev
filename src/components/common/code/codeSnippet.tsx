@@ -38,7 +38,7 @@ const CodeSnippet: FunctionComponent<Props> = ({ className, language, children }
         language={language}
         css={css`
           padding: 18px !important;
-          border-radius: 10px !important;
+          border-radius: 6px !important;
           font-size: 14px;
         `}
       >

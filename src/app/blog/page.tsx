@@ -12,15 +12,18 @@ import Blog from './blog';
  */
 const BlogPage: ServerComponent<PageProps> = async ({ searchParams = {} }): Promise<ReactElement<PageProps>> => {
 
-  const { search } = searchParams;
+  const { search = '' } = searchParams;
   const { content } = await useQuery<Page<'blog'>, SearchVariables>(blogPageQuery, {
     variables: {
-      search: search ?? '',
+      search: search,
     },
   });
 
   return (
-    <Blog content={content} />
+    <Blog
+      content={content}
+      search={search}
+    />
   );
 };
 

@@ -9,8 +9,22 @@ export const pageFragment = gql`
     id
     slug
     name
+    metadata {
+      ...PageMetadataFields
+    }
     createdDate: createdAt
     updatedDate: createdAt
+  }
+`;
+
+/**
+ * The GraphQL fragment for the `PageMetadata` type used
+ * within different queries and fragments
+ */
+export const pageMetadataFragment = gql`
+  fragment PageMetadataFields on PageMetadata {
+    title
+    description
   }
 `;
 

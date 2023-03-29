@@ -13,9 +13,19 @@ export interface Page<T extends PageSlug> {
   readonly id: string;
   readonly name: string;
   readonly slug: T;
+  readonly metadata?: PageMetadata;
   readonly content: Extract<PageContent, BasePageContent<T>>;
   readonly createdDate: string;
   readonly updatedDate: string;
+}
+
+/**
+ * Describes the metadata for
+ * a page used for SEO
+ */
+export interface PageMetadata {
+  readonly title: string;
+  readonly description: string;
 }
 
 /**

@@ -5,7 +5,7 @@
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@emotion/react';
 import { useRouter } from 'next/navigation';
-import { BlogPostCard, Content } from '../../components';
+import { BlogPostCard, Content, NoResults } from '../../components';
 import { BaseProps } from '../../types';
 import { BlogContent } from '../../graphql';
 import { useScreen } from '../../hooks';
@@ -71,6 +71,17 @@ const Blog: FunctionComponent<Props> = ({ content, search = '' }): ReactElement<
           margin-bottom: 40px;
         `}
       />
+      {
+        (posts.length === 0) && (
+          <NoResults
+            searchText={search}
+            css={css`
+              padding-top: 26px;
+              align-self: center;
+            `}
+          />
+        )
+      }
       <Box css={css`
         row-gap: 22px;
       `}

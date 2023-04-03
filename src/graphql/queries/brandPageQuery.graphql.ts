@@ -1,5 +1,5 @@
 import { gql } from 'graphql-request';
-import { pageFragment, assetFragment } from '..';
+import { pageFragment, pageMetadataFragment, assetFragment } from '..';
 
 /**
  * The GraphQL query used for fetching
@@ -26,6 +26,7 @@ const brandPageQuery = gql`
     }
   }
   ${pageFragment}
+  ${pageMetadataFragment}
   ${assetFragment}
 `;
 

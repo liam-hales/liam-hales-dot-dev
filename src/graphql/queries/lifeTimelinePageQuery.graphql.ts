@@ -1,5 +1,5 @@
 import { gql } from 'graphql-request';
-import { pageFragment, timelineEventFragment } from '..';
+import { pageFragment, pageMetadataFragment, timelineEventFragment } from '..';
 
 /**
  * The GraphQL query used for fetching
@@ -28,6 +28,7 @@ const lifeTimelinePageQuery = gql`
     }
   }
   ${pageFragment}
+  ${pageMetadataFragment}
   ${timelineEventFragment}
 `;
 

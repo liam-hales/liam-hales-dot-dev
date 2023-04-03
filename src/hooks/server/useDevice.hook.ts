@@ -11,7 +11,7 @@ interface UseDeviceResponse {
 
 /**
  * Used to extract the device infomation
- * from the `user-agent` header
+ * from the `user-agent` header.
  *
  * _**NOTE:** This hook can only be used server-side_
  *

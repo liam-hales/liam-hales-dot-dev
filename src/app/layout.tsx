@@ -5,6 +5,7 @@ import { BaseProps, ServerComponent } from '../types';
 import { urbanist, firaCode } from '../fonts';
 import { Page, globalPageQuery } from '../graphql';
 import { useDevice, useQuery } from '../hooks/server';
+import { generateMetadata } from './metadata';
 
 /**
  * The `AppLayout` component props
@@ -50,3 +51,6 @@ const AppLayout: ServerComponent<Props> = async ({ children }): Promise<ReactEle
 };
 
 export default AppLayout;
+export {
+  generateMetadata,
+};

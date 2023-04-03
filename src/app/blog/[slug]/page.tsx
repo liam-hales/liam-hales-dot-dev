@@ -3,6 +3,7 @@ import { ReactElement } from 'react';
 import { BlogPost as BlogPostData, blogPostQuery, BlogPostVariables } from '../../../graphql';
 import { useQuery } from '../../../hooks/server';
 import { PageProps, ServerComponent } from '../../../types';
+import { generateMetadata } from './metadata';
 import BlogPost from './blogPost';
 
 /**
@@ -32,3 +33,6 @@ const BlogPostPage: ServerComponent<PageProps> = async ({ params = {} }): Promis
 };
 
 export default BlogPostPage;
+export {
+  generateMetadata,
+};

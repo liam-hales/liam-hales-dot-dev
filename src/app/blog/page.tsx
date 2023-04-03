@@ -2,6 +2,7 @@ import { ReactElement } from 'react';
 import { Page, blogPageQuery, SearchVariables } from '../../graphql';
 import { useQuery } from '../../hooks/server';
 import { PageProps, ServerComponent } from '../../types';
+import { buildPageMetadata } from '../../helpers/server';
 import Blog from './blog';
 
 /**
@@ -28,3 +29,6 @@ const BlogPage: ServerComponent<PageProps> = async ({ searchParams = {} }): Prom
 };
 
 export default BlogPage;
+export const generateMetadata = buildPageMetadata(blogPageQuery, {
+  searchable: true,
+});

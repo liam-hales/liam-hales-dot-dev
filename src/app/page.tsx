@@ -2,6 +2,7 @@ import { ReactElement } from 'react';
 import { Page, homePageQuery } from '../graphql';
 import { useDevice, useQuery } from '../hooks/server';
 import { PageProps, ServerComponent } from '../types';
+import { buildPageMetadata } from '../helpers/server';
 import Home from './home';
 
 /**
@@ -24,3 +25,4 @@ const HomePage: ServerComponent<PageProps> = async (): Promise<ReactElement<Page
 };
 
 export default HomePage;
+export const generateMetadata = buildPageMetadata(homePageQuery);

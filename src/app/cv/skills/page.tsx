@@ -2,6 +2,7 @@ import { ReactElement } from 'react';
 import { Page, SearchVariables, skillsPageQuery } from '../../../graphql';
 import { useQuery } from '../../../hooks/server';
 import { PageProps, ServerComponent } from '../../../types';
+import { buildPageMetadata } from '../../../helpers/server';
 import Skills from './skills';
 
 /**
@@ -28,3 +29,6 @@ const SkillsPage: ServerComponent<PageProps> = async ({ searchParams = {} }): Pr
 };
 
 export default SkillsPage;
+export const generateMetadata = buildPageMetadata(skillsPageQuery, {
+  searchable: true,
+});

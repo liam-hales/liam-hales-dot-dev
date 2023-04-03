@@ -2,6 +2,7 @@ import { ReactElement } from 'react';
 import { Page, brandPageQuery } from '../../graphql';
 import { useQuery } from '../../hooks/server';
 import { PageProps, ServerComponent } from '../../types';
+import { buildPageMetadata } from '../../helpers/server';
 import Brand from './brand';
 
 /**
@@ -19,3 +20,4 @@ const BrandPage: ServerComponent<PageProps> = async (): Promise<ReactElement<Pag
 };
 
 export default BrandPage;
+export const generateMetadata = buildPageMetadata(brandPageQuery);

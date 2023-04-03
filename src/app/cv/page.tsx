@@ -2,6 +2,7 @@ import { ReactElement } from 'react';
 import { Page, cvPageQuery } from '../../graphql';
 import { useQuery } from '../../hooks/server';
 import { PageProps, ServerComponent } from '../../types';
+import { buildPageMetadata } from '../../helpers/server';
 import CV from './cv';
 
 /**
@@ -19,3 +20,4 @@ const CVPage: ServerComponent<PageProps> = async (): Promise<ReactElement<PagePr
 };
 
 export default CVPage;
+export const generateMetadata = buildPageMetadata(cvPageQuery);

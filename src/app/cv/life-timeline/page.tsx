@@ -2,6 +2,7 @@ import { ReactElement } from 'react';
 import { Page, SearchVariables, lifeTimelinePageQuery } from '../../../graphql';
 import { useQuery } from '../../../hooks/server';
 import { PageProps, ServerComponent } from '../../../types';
+import { buildPageMetadata } from '../../../helpers/server';
 import LifeTimeline from './lifeTimeline';
 
 /**
@@ -28,3 +29,6 @@ const LifeTimelinePage: ServerComponent<PageProps> = async ({ searchParams = {} 
 };
 
 export default LifeTimelinePage;
+export const generateMetadata = buildPageMetadata(lifeTimelinePageQuery, {
+  searchable: true,
+});

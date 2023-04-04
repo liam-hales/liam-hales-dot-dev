@@ -91,11 +91,11 @@ const Blog: FunctionComponent<Props> = ({ content, search = '' }): ReactElement<
 
             // Destructure the blog post and return
             // the blog post card component
-            const { slug, title, description, tags, author, publishedDate } = post;
+            const { id, title, description, tags, author, publishedDate } = post;
             return (
               <Link
                 key={`blog-post-item-${index}`}
-                href={`/blog/${slug}`}
+                href={`/blog/post?id=${id}`}
               >
                 <BlogPostCard
                   title={title}

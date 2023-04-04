@@ -3,13 +3,13 @@ import { blogPostFragment, tagFragment, personFragment, assetFragment } from '..
 
 /**
  * The GraphQL query used for fetching
- * the blog post data for a specific slug
+ * the blog post data for a specific `id`
  */
 const blogPostQuery = gql`
-  query blogPost($slug: String!) {
+  query blogPost($id: ID!) {
     blogPost(
       where: {
-        slug: $slug
+        id: $id
       }
     ) {
       ...BlogPostFields

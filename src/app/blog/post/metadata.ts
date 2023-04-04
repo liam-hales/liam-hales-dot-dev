@@ -12,12 +12,12 @@ import { PageProps } from '../../../types';
  *
  * @returns The metadata for the `BlogPostPage` page component
  */
-export const generateMetadata = async ({ params = {} }: PageProps): Promise<Metadata> => {
+export const generateMetadata = async ({ searchParams = {} }: PageProps): Promise<Metadata> => {
 
-  const { slug = '' } = params;
+  const { id = '' } = searchParams;
   const post = await useQuery<BlogPost | undefined, BlogPostVariables>(blogPostQuery, {
     variables: {
-      slug: slug,
+      id: id,
     },
   });
 

@@ -233,5 +233,5 @@ export interface SearchVariables {
  * used for the blog post query
  */
 export interface BlogPostVariables {
-  readonly slug: string;
+  readonly id: string;
 }

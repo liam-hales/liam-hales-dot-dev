@@ -3,10 +3,13 @@ import { pageFragment, pageMetadataFragment, blogPostFragment, tagFragment, pers
 
 /**
  * The GraphQL query used for fetching
- * the blog page data
+ * the blog page data.
+ *
+ * Default value required for `$search` variable due to
+ * how Hygraph handles searching within GraphQL.
  */
 const blogPageQuery = gql`
-  query blogPage($search: String!) {
+  query blogPage($search: String = "") {
     page(
       where: {
         slug: "blog"

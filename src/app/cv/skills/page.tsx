@@ -13,7 +13,7 @@ import Skills from './skills';
  */
 const SkillsPage: ServerComponent<PageProps> = async ({ searchParams = {} }): Promise<ReactElement<PageProps>> => {
 
-  const { search = '' } = searchParams;
+  const { search } = searchParams;
   const { content } = await useQuery<Page<'skills'>, SearchVariables>(skillsPageQuery, {
     variables: {
       search: search,

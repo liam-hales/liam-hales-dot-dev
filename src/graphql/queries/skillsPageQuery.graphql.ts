@@ -3,10 +3,13 @@ import { pageFragment, pageMetadataFragment, skillFragment, assetFragment } from
 
 /**
  * The GraphQL query used for fetching
- * the CV skills page data
+ * the CV skills page data.
+ *
+ * Default value required for `$search` variable due to
+ * how Hygraph handles searching within GraphQL.
  */
 const skillsPageQuery = gql`
-  query skillsPage($search: String!) {
+  query skillsPage($search: String = "") {
     page(
       where: {
         slug: "skills"

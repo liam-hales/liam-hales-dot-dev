@@ -13,7 +13,7 @@ import LifeTimeline from './lifeTimeline';
  */
 const LifeTimelinePage: ServerComponent<PageProps> = async ({ searchParams = {} }): Promise<ReactElement<PageProps>> => {
 
-  const { search = '' } = searchParams;
+  const { search } = searchParams;
   const { content } = await useQuery<Page<'life-timeline'>, SearchVariables>(lifeTimelinePageQuery, {
     variables: {
       search: search,

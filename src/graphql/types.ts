@@ -198,7 +198,6 @@ export interface TimelineEvent {
  */
 export interface BlogPost {
   readonly id: string;
-  readonly slug: string;
   readonly title: string;
   readonly description: string;
   readonly content: string;

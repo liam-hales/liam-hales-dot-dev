@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
-import { Page, PageSlug, SearchVariables } from '../../graphql';
+import { Page, PageSlug } from '../../graphql';
 import { useQuery } from '../../hooks/server';
-import { BuildPageMetadataOptions, PageProps } from '../../types';
 import { openGraphMetadata } from '.';
 
 /**
@@ -11,28 +10,14 @@ import { openGraphMetadata } from '.';
  * _**NOTE:** This function can only be used server-side_
  *
  * @param query The GraphQL page query
- * @param searchable To determine if the page query is searchable
- *
  * @returns The page metadata builder
  */
-const buildPageMetadata = <T extends PageSlug>(
-  query: string,
-  options: BuildPageMetadataOptions = {},
-) => {
-  return async ({ searchParams = {} }: PageProps): Promise<Metadata> => {
+const buildPageMetadata = <T extends PageSlug>(query: string) => {
+  return async (): Promise<Metadata> => {
 
-    const { search = '' } = searchParams;
-    const { searchable = false } = options;
-
-    const { metadata } = await useQuery<Page<T>, SearchVariables>(query, {
-      ...(searchable === true) && {
-        variables: {
-          search: search,
-        },
-      },
-    });
-
+    const { metadata } = await useQuery<Page<T>>(query);
     const openGraph = await openGraphMetadata();
+
     return {
       ...metadata,
       openGraph: {

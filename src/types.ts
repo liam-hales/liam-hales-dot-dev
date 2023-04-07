@@ -176,11 +176,3 @@ export interface PageProps {
 export interface UseQueryOptions<V extends Partial<Record<keyof V, unknown>> = never> {
   readonly variables?: V;
 }
-
-/**
- * Describes the `options` for
- * the `buildPageMetadata` helper
- */
-export interface BuildPageMetadataOptions {
-  readonly searchable?: boolean
-}

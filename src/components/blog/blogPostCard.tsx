@@ -13,7 +13,7 @@ import { BlogPost } from '../../graphql';
 /**
  * The `BlogPostCard` component props
  */
-interface Props extends BaseProps, Omit<BlogPost, 'id' | 'slug' | 'content'> {}
+interface Props extends BaseProps, Omit<BlogPost, 'id' | 'content'> {}
 
 /**
  * Renders a blog post card used to

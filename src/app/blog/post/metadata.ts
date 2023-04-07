@@ -22,11 +22,28 @@ export const generateMetadata = async ({ searchParams = {} }: PageProps): Promis
   });
 
   const openGraph = await openGraphMetadata();
+
+  // Check if the blog post exists, if not
+  // just return the Open Graph metadata
+  if (post == null) {
+    return {
+      openGraph: openGraph,
+    };
+  }
+
+  const { title: postTitle, description, author } = post;
+  const { firstName, lastName } = author;
+
+  // Build the title using the blog post title and author
+  // Return the page metadata
+  const title = `${postTitle} - ${firstName} ${lastName}`;
   return {
-    ...post,
+    title: title,
+    description: description,
     openGraph: {
-      ...post,
       ...openGraph,
+      title: title,
+      description: description,
     },
   };
 };

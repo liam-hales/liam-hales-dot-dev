@@ -29,6 +29,4 @@ const BlogPage: ServerComponent<PageProps> = async ({ searchParams = {} }): Prom
 };
 
 export default BlogPage;
-export const generateMetadata = buildPageMetadata(blogPageQuery, {
-  searchable: true,
-});
+export const generateMetadata = buildPageMetadata(blogPageQuery);

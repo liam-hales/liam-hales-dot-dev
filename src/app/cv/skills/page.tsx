@@ -29,6 +29,4 @@ const SkillsPage: ServerComponent<PageProps> = async ({ searchParams = {} }): Pr
 };
 
 export default SkillsPage;
-export const generateMetadata = buildPageMetadata(skillsPageQuery, {
-  searchable: true,
-});
+export const generateMetadata = buildPageMetadata(skillsPageQuery);

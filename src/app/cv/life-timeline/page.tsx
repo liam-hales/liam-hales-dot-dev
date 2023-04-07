@@ -29,6 +29,4 @@ const LifeTimelinePage: ServerComponent<PageProps> = async ({ searchParams = {} 
 };
 
 export default LifeTimelinePage;
-export const generateMetadata = buildPageMetadata(lifeTimelinePageQuery, {
-  searchable: true,
-});
+export const generateMetadata = buildPageMetadata(lifeTimelinePageQuery);

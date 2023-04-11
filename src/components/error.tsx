@@ -52,10 +52,10 @@ const Error: FunctionComponent<Props> = ({ reset }): ReactElement<Props> => {
         passHref={true}
       >
         <Button
-          iconId="arrowleft"
+          iconId="refresh"
           onClick={() => reset()}
         >
-          Return home
+          Try again
         </Button>
       </Link>
     </Content>

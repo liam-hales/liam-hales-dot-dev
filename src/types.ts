@@ -112,6 +112,7 @@ export type IconId =
   | 'tick'
   | 'copy'
   | 'externalLink'
+  | 'refresh'
   | 'copyright'
   | 'linkedIn'
   | 'stackOverflow'

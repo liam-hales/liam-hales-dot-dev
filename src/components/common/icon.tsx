@@ -19,6 +19,7 @@ import Search from '~icons/heroicons-solid/search';
 import X from '~icons/heroicons-solid/x';
 import Check from '~icons/heroicons-solid/check';
 import ExternalLink from '~icons/heroicons-solid/external-link';
+import Refresh from '~icons/heroicons/arrow-path-20-solid';
 import Chatbox from '~icons/ion/chatbox';
 import Document from '~icons/ion/document';
 import Copyright from '~icons/ri/copyright-line';
@@ -55,6 +56,7 @@ const iconMap: Record<IconId, FunctionComponent<SVGProps<SVGSVGElement>>> = {
   tick: Check,
   copy: DocumentDuplicate,
   externalLink: ExternalLink,
+  refresh: Refresh,
   copyright: Copyright,
   linkedIn: LinkedIn,
   stackOverflow: StackOverflow,

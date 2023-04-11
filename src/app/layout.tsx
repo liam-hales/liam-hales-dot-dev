@@ -31,7 +31,6 @@ const AppLayout: ServerComponent<Props> = async ({ children }): Promise<ReactEle
       lang="en"
       className={`${urbanist.className} ${firaCode.className}`}
     >
-      <head />
       <body>
         <ThemeProvider>
           <AnimationProvider>

@@ -27,6 +27,7 @@ import Nav from './navigation/nav';
 import TopNav from './navigation/topNav';
 import BottomNav from './navigation/bottomNav';
 import NotFound from './notFound';
+import Error from './error';
 
 export {
   Logo,
@@ -58,4 +59,5 @@ export {
   TopNav,
   BottomNav,
   NotFound,
+  Error,
 };

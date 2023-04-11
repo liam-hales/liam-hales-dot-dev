@@ -23,6 +23,7 @@ interface Props extends BaseProps {
  * Used as the entry point for the CV life timeline page. Renders the
  * CV life timeline page components using the given `content` prop
  *
+ * @param props The component props
  * @returns The `LifeTimeline` component
  */
 const LifeTimeline: FunctionComponent<Props> = ({ content, search = '' }): ReactElement<Props> => {

@@ -21,6 +21,7 @@ interface Props extends BaseProps {
  * Used to display a **"404 Not Found"**
  * message to the user
  *
+ * @param props The component props
  * @returns The `NotFound` component
  */
 const NotFound: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {

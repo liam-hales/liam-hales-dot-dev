@@ -28,6 +28,7 @@ interface Props extends BaseProps {
  * Used as the entry point for the CV page. Renders the
  * CV page components using the given `content` prop
  *
+ * @param props The component props
  * @returns The `CV` component
  */
 const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {

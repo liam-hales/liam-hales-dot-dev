@@ -28,6 +28,7 @@ interface Props extends BaseProps {
  * Used as the entry point for the home page. Renders the
  * home page components using the given content props
  *
+ * @param props The component props
  * @returns The `Home` component
  */
 const Home: FunctionComponent<Props> = ({ deviceType, content }): ReactElement<Props> => {

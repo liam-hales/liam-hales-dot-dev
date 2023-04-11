@@ -9,6 +9,7 @@ import Blog from './blog';
  * The entry point for the blog page route `/blog`, used to fetch the required
  * data and render the `Blog` component passing said data as props
  *
+ * @param props The component props
  * @returns The `BlogPage` component
  */
 const BlogPage: ServerComponent<PageProps> = async ({ searchParams = {} }): Promise<ReactElement<PageProps>> => {

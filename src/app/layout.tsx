@@ -18,6 +18,7 @@ interface Props extends BaseProps {
  * The root layout component used as the
  * entry point to render the app
  *
+ * @param props The component props
  * @returns The `AppLayout` component
  */
 const AppLayout: ServerComponent<Props> = async ({ children }): Promise<ReactElement<Props>> => {

@@ -22,6 +22,7 @@ interface Props extends BaseProps {
  * Used as the entry point for the blog post page. Renders the
  * blog post using the given `post` prop
  *
+ * @param props The component props
  * @returns The `BlogPost` component
  */
 const BlogPost: FunctionComponent<Props> = ({ post }): ReactElement<Props> => {

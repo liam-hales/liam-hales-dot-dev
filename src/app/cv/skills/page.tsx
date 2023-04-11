@@ -9,6 +9,7 @@ import Skills from './skills';
  * The entry point for the CV skills page route `/cv/skills`, used to fetch the required
  * data and render the `Skills` component passing said data as props
  *
+ * @param props The component props
  * @returns The `SkillsPage` component
  */
 const SkillsPage: ServerComponent<PageProps> = async ({ searchParams = {} }): Promise<ReactElement<PageProps>> => {

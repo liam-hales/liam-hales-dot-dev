@@ -23,6 +23,7 @@ interface Props extends BaseProps {
  * Used as the entry point for the blog page. Renders the
  * blog page components using the given `content` prop
  *
+ * @param props The component props
  * @returns The `Blog` component
  */
 const Blog: FunctionComponent<Props> = ({ content, search = '' }): ReactElement<Props> => {

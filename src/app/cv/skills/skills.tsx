@@ -24,6 +24,7 @@ interface Props extends BaseProps {
  * Used as the entry point for the CV skills page. Renders the
  * CV skills page components using the given `content` prop
  *
+ * @param props The component props
  * @returns The `Skills` component
  */
 const Skills: FunctionComponent<Props> = ({ content, search = '' }): ReactElement<Props> => {

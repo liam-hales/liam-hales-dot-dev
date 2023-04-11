@@ -22,6 +22,7 @@ interface Props extends BaseProps {
  * Renders the top navigation bar used for navigating
  * the app for medium and large screen sizes
  *
+ * @param props The component props
  * @returns The `TopNav` component
  */
 const TopNav: FunctionComponent<Props> = ({ notionUrl, notionText }): ReactElement<Props> => {

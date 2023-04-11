@@ -21,6 +21,7 @@ interface Props extends BaseProps {
  * Used as the entry point for the brand page. Renders the
  * brand page components using the given `content` prop
  *
+ * @param props The component props
  * @returns The `Brand` component
  */
 const Brand: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {

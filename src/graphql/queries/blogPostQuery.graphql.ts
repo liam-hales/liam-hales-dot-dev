@@ -1,5 +1,5 @@
 import { gql } from 'graphql-request';
-import { blogPostFragment, tagFragment, personFragment, assetFragment } from '..';
+import { blogPostFragment, tagFragment, colourFragment, personFragment, assetFragment } from '..';
 
 /**
  * The GraphQL query used for fetching
@@ -17,6 +17,7 @@ const blogPostQuery = gql`
   }
   ${blogPostFragment}
   ${tagFragment}
+  ${colourFragment}
   ${personFragment}
   ${assetFragment}
 `;

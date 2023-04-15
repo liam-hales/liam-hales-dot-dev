@@ -677,21 +677,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconify-json/ion@npm:^1.1.9":
-  version: 1.1.9
-  resolution: "@iconify-json/ion@npm:1.1.9"
+"@iconify-json/mingcute@npm:^1.1.5":
+  version: 1.1.5
+  resolution: "@iconify-json/mingcute@npm:1.1.5"
   dependencies:
     "@iconify/types": "*"
-  checksum: 1b8d292af1d99350465a8f994689c5da64305fb18618d7ccf0428a0a7af3c91fc6144f6a8351c16d613d4bc82a29734774f503e9de8b26dd03ae1246f4f7d12e
-  languageName: node
-  linkType: hard
-
-"@iconify-json/ri@npm:^1.1.7":
-  version: 1.1.7
-  resolution: "@iconify-json/ri@npm:1.1.7"
-  dependencies:
-    "@iconify/types": "*"
-  checksum: 0fa42652206af501c27be7509fa4f3673a8cdd08de167ee373da83c92bc5689c5b009578d9b73d8fb44ee6406e9c74ad5f249e0d4f42b3371c10637c78579842
+  checksum: 931fa2f6629728db0204c33318c2ce713fb917070e30ab491643cdcd07f68c38e882ad9ded48f9447be25dd39d55ffa2c3e9854edef3081585e6f8373c543ae6
   languageName: node
   linkType: hard
 
@@ -5003,8 +4994,7 @@ __metadata:
     "@emotion/styled": ^11.10.6
     "@iconify-json/heroicons": ^1.1.10
     "@iconify-json/heroicons-solid": ^1.1.7
-    "@iconify-json/ion": ^1.1.9
-    "@iconify-json/ri": ^1.1.7
+    "@iconify-json/mingcute": ^1.1.5
     "@iconify-json/simple-icons": ^1.1.49
     "@mui/material": ^5.11.16
     "@next/bundle-analyzer": ^13.3.0

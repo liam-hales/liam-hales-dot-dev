@@ -8,21 +8,21 @@ import { BaseProps, IconId } from '../../types';
 import { ColourPalette } from '../../enums';
 import Swatch from '~icons/heroicons/swatch-solid';
 import ServerStack from '~icons/heroicons/server-stack-solid';
-import Mail from '~icons/heroicons-solid/mail';
-import DocumentDuplicate from '~icons/heroicons/document-duplicate-20-solid';
 import Home from '~icons/heroicons/home-solid';
+import Refresh from '~icons/heroicons/arrow-path-20-solid';
+import Mail from '~icons/heroicons-solid/mail';
 import Code from '~icons/heroicons-solid/code';
 import ChevronRight from '~icons/heroicons-solid/chevron-right';
-import ArrowLeft from '~icons/heroicons-solid/arrow-left';
-import ArrowRight from '~icons/heroicons-solid/arrow-right';
-import Search from '~icons/heroicons-solid/search';
-import X from '~icons/heroicons-solid/x';
-import Check from '~icons/heroicons-solid/check';
 import ExternalLink from '~icons/heroicons-solid/external-link';
-import Refresh from '~icons/heroicons/arrow-path-20-solid';
-import Chatbox from '~icons/ion/chatbox';
-import Document from '~icons/ion/document';
-import Copyright from '~icons/ri/copyright-line';
+import Search from '~icons/mingcute/search-2-fill';
+import ArrowLeft from '~icons/mingcute/arrow-left-fill';
+import ArrowRight from '~icons/mingcute/arrow-right-fill';
+import Close from '~icons/mingcute/close-fill';
+import Check from '~icons/mingcute/check-fill';
+import Message from '~icons/mingcute/message-2-fill';
+import File from '~icons/mingcute/file-fill';
+import Copy from '~icons/mingcute/copy-fill';
+import Copyright from '~icons/mingcute/copyright-line';
 import StackOverflow from '~icons/simple-icons/stackoverflow';
 import LinkedIn from '~icons/simple-icons/linkedin';
 import Notion from '~icons/simple-icons/notion';
@@ -42,8 +42,8 @@ interface Props extends BaseProps {
  */
 const iconMap: Record<IconId, FunctionComponent<SVGProps<SVGSVGElement>>> = {
   home: Home,
-  document: Document,
-  message: Chatbox,
+  document: File,
+  message: Message,
   colourSwatch: Swatch,
   code: Code,
   server: ServerStack,
@@ -52,9 +52,9 @@ const iconMap: Record<IconId, FunctionComponent<SVGProps<SVGSVGElement>>> = {
   arrowleft: ArrowLeft,
   arrowRight: ArrowRight,
   magnifyingGlass: Search,
-  cross: X,
+  cross: Close,
   tick: Check,
-  copy: DocumentDuplicate,
+  copy: Copy,
   externalLink: ExternalLink,
   refresh: Refresh,
   copyright: Copyright,

@@ -24,6 +24,7 @@ export interface Page<T extends PageSlug> {
  * a page used for SEO
  */
 export interface PageMetadata {
+  readonly id: string;
   readonly title: string;
   readonly description: string;
 }

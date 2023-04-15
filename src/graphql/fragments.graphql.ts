@@ -23,6 +23,7 @@ export const pageFragment = gql`
  */
 export const pageMetadataFragment = gql`
   fragment PageMetadataFields on PageMetadata {
+    id
     title
     description
   }
@@ -123,6 +124,7 @@ export const blogPostFragment = gql`
  */
 export const tagFragment = gql`
   fragment TagFields on Tag {
+    id
     text
     colour {
       ...ColourFields

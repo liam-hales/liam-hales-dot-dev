@@ -5,8 +5,8 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';
 import { ColourPalette } from '../../enums';
-import { BaseProps } from '../../types';
-import { Box, Card, Image, Text } from '../common';
+import { BaseProps, LogoIconId } from '../../types';
+import { Box, Card, Text, LogoIcon } from '../common';
 
 /**
  * The `SkillCard` component props
@@ -14,7 +14,7 @@ import { Box, Card, Image, Text } from '../common';
 interface Props extends BaseProps {
   readonly name: string;
   readonly type: string;
-  readonly imageUrl?: string;
+  readonly iconId?: LogoIconId;
   readonly onClick?: () => void;
 }
 
@@ -25,7 +25,7 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `SkillCard` component
  */
-const SkillCard: FunctionComponent<Props> = ({ className, name, type, imageUrl, onClick }): ReactElement<Props> => {
+const SkillCard: FunctionComponent<Props> = ({ className, name, type, iconId, onClick }): ReactElement<Props> => {
   return (
     <Card
       className={className}
@@ -54,15 +54,12 @@ const SkillCard: FunctionComponent<Props> = ({ className, name, type, imageUrl, 
         </Text>
       </Box>
       {
-        (imageUrl != null) && (
-          <Image
-            path={imageUrl}
-            alt={name}
-            width={46}
-            height={46}
+        (iconId != null) && (
+          <LogoIcon
+            id={iconId}
             css={css`
+              font-size: 34px;
               margin-left: 20px;
-              flex-shrink: 0;
             `}
           />
         )

@@ -41,7 +41,7 @@ const Skills: FunctionComponent<Props> = ({ content, search = '' }): ReactElemen
     <>
       {
         (selectedSkill != null) && (() => {
-          const { name, type, description, url, image } = selectedSkill;
+          const { name, type, description, url, iconId } = selectedSkill;
           return (
             <SkillModal
               isOpen={modalOpen}
@@ -49,7 +49,7 @@ const Skills: FunctionComponent<Props> = ({ content, search = '' }): ReactElemen
               type={type}
               description={description}
               url={url}
-              imageUrl={image?.url}
+              iconId={iconId}
               onClose={() => setModalOpen(false)}
               onStatusChange={(status) => {
 
@@ -143,13 +143,13 @@ const Skills: FunctionComponent<Props> = ({ content, search = '' }): ReactElemen
 
               // Destructure the skill and return
               // the skill card component
-              const { id, name, type, image } = skill;
+              const { id, name, type, iconId } = skill;
               return (
                 <SkillCard
                   key={`skill-${id}`}
                   name={name}
                   type={type}
-                  imageUrl={image?.url}
+                  iconId={iconId}
                   onClick={() => {
                     setSelectedSkill(skill);
                     setModalOpen(true);

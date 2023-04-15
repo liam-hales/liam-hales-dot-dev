@@ -62,13 +62,13 @@ const SkillsPreview: FunctionComponent<Props> = ({ internalRef, className, text,
 
             // Destructure the skill and return
             // the skill card component
-            const { id, name, type, image } = skill;
+            const { id, name, type, iconId } = skill;
             return (
               <SkillCard
                 key={`skill-${id}`}
                 name={name}
                 type={type}
-                imageUrl={image?.url}
+                iconId={iconId}
               />
             );
           })

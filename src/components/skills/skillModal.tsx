@@ -5,8 +5,8 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';
 import { ColourPalette } from '../../enums';
-import { BaseProps, ModalStatus } from '../../types';
-import { Button, Image, Link, Modal, Text } from '../common';
+import { BaseProps, LogoIconId, ModalStatus } from '../../types';
+import { Button, Image, Link, LogoIcon, Modal, Text } from '../common';
 
 /**
  * The `SkillModal` component props
@@ -17,7 +17,7 @@ interface Props extends BaseProps {
   readonly type: string;
   readonly description: string;
   readonly url: string;
-  readonly imageUrl?: string;
+  readonly iconId?: LogoIconId;
   readonly onClose: () => void;
   readonly onStatusChange?: (status: ModalStatus) => void;
 }
@@ -29,7 +29,7 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `SkillModal` component
  */
-const SkillModal: FunctionComponent<Props> = ({ isOpen, name, type, description, url, imageUrl, onClose, onStatusChange }): ReactElement<Props> => {
+const SkillModal: FunctionComponent<Props> = ({ isOpen, name, type, description, url, iconId, onClose, onStatusChange }): ReactElement<Props> => {
   return (
     <Modal
       isOpen={isOpen}
@@ -37,12 +37,12 @@ const SkillModal: FunctionComponent<Props> = ({ isOpen, name, type, description,
       onStatusChange={onStatusChange}
     >
       {
-        (imageUrl != null) && (
-          <Image
-            path={imageUrl}
-            alt={name}
-            width={68}
-            height={68}
+        (iconId != null) && (
+          <LogoIcon
+            id={iconId}
+            css={css`
+              font-size: 62px;
+            `}
           />
         )
       }

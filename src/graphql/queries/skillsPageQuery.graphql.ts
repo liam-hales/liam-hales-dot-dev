@@ -1,5 +1,5 @@
 import { gql } from 'graphql-request';
-import { pageFragment, pageMetadataFragment, skillFragment, assetFragment } from '..';
+import { pageFragment, pageMetadataFragment, skillFragment } from '..';
 
 /**
  * The GraphQL query used for fetching
@@ -33,7 +33,6 @@ const skillsPageQuery = gql`
   ${pageFragment}
   ${pageMetadataFragment}
   ${skillFragment}
-  ${assetFragment}
 `;
 
 export default skillsPageQuery;

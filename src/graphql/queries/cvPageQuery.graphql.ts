@@ -1,5 +1,5 @@
 import { gql } from 'graphql-request';
-import { pageFragment, pageMetadataFragment, skillFragment, timelineEventFragment, assetFragment } from '..';
+import { pageFragment, pageMetadataFragment, skillFragment, timelineEventFragment } from '..';
 
 /**
  * The GraphQL query used for
@@ -35,7 +35,6 @@ const cvPageQuery = gql`
   ${pageMetadataFragment}
   ${skillFragment}
   ${timelineEventFragment}
-  ${assetFragment}
 `;
 
 export default cvPageQuery;

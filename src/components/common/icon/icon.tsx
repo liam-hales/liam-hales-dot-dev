@@ -4,8 +4,8 @@
 
 import { FunctionComponent, ReactElement, SVGProps } from 'react';
 import { css } from '@emotion/react';
-import { BaseProps, IconId } from '../../types';
-import { ColourPalette } from '../../enums';
+import { BaseProps, IconId } from '../../../types';
+import { ColourPalette } from '../../../enums';
 import Swatch from '~icons/heroicons/swatch-solid';
 import ServerStack from '~icons/heroicons/server-stack-solid';
 import Home from '~icons/heroicons/home-solid';

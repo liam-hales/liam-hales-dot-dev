@@ -30,7 +30,6 @@
     "import/prefer-default-export": "off",
     "import/no-cycle": "off",
     "react/require-default-props": "off",
-    "react/no-array-index-key": "off",
     "react/display-name": "off",
 
     "no-console": [

@@ -120,6 +120,19 @@ export type IconId =
   | 'notion';
 
 /**
+ * The logo icon ID used for the `LogoIcon` component
+ * to determine which logo icon is rendered
+ */
+export type LogoIconId =
+  | 'javascript'
+  | 'typescript'
+  | 'nodejs'
+  | 'nestjs'
+  | 'nextjs'
+  | 'html'
+  | 'react';
+
+/**
  * The navigation key used for the `TopNav`
  * and `BottomNav` components
  */

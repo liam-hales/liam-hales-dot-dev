@@ -2,6 +2,7 @@ import Box from './box';
 import Text from './text/text';
 import Title from './text/title';
 import Icon from './icon/icon';
+import LogoIcon from './icon/logoIcon';
 import Button from './buttons/button';
 import IconButton from './buttons/iconButton';
 import Card from './card';
@@ -30,6 +31,7 @@ export {
   Text,
   Title,
   Icon,
+  LogoIcon,
   Button,
   IconButton,
   Card,

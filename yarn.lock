@@ -677,6 +677,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@iconify-json/logos@npm:^1.1.24":
+  version: 1.1.24
+  resolution: "@iconify-json/logos@npm:1.1.24"
+  dependencies:
+    "@iconify/types": "*"
+  checksum: f3e9447dc32b023438ddf9e26f46b47c3a11e3cd069b53a50cd8d2927706caeeb29b70f7e3051d1e29f41d079ac3eaa690083047fad8c124c4b63ee337db4619
+  languageName: node
+  linkType: hard
+
 "@iconify-json/mingcute@npm:^1.1.5":
   version: 1.1.5
   resolution: "@iconify-json/mingcute@npm:1.1.5"
@@ -692,6 +701,15 @@ __metadata:
   dependencies:
     "@iconify/types": "*"
   checksum: 22b300c17ff8b4ff75e808aab04a75e97873cbc0389e5fcc58c6855e5fe3c0d04ecce57676298b507bbcad7c24fda59a32e3dfab3b8233fad80ad47b4328f53f
+  languageName: node
+  linkType: hard
+
+"@iconify-json/vscode-icons@npm:^1.1.23":
+  version: 1.1.23
+  resolution: "@iconify-json/vscode-icons@npm:1.1.23"
+  dependencies:
+    "@iconify/types": "*"
+  checksum: f5d2eb6686f4fca868bf11dd6d8784407aa559775031ae6eb402ff29cbd5d86df87216c0dd0147ab3f98780eebfc4cc1265f4c591b304a9d9633182122789b4f
   languageName: node
   linkType: hard
 
@@ -4994,8 +5012,10 @@ __metadata:
     "@emotion/styled": ^11.10.6
     "@iconify-json/heroicons": ^1.1.10
     "@iconify-json/heroicons-solid": ^1.1.7
+    "@iconify-json/logos": ^1.1.24
     "@iconify-json/mingcute": ^1.1.5
     "@iconify-json/simple-icons": ^1.1.49
+    "@iconify-json/vscode-icons": ^1.1.23
     "@mui/material": ^5.11.16
     "@next/bundle-analyzer": ^13.3.0
     "@next/env": ^13.3.0

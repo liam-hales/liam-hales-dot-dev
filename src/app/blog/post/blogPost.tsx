@@ -96,11 +96,11 @@ const BlogPost: FunctionComponent<Props> = ({ post }): ReactElement<Props> => {
         </Box>
         <Box direction="row">
           {
-            tags.map((tag, index) => {
-              const { text, colour } = tag;
+            tags.map((tag) => {
+              const { id, text, colour } = tag;
               return (
                 <Tag
-                  key={`tag-item-${index}`}
+                  key={`tag-${id}`}
                   colour={colour.hex}
                   css={css`
                     margin-right: 4px;

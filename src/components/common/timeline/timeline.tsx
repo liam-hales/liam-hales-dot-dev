@@ -37,6 +37,7 @@ const Timeline: FunctionComponent<Props> = (props): ReactElement<Props> => {
     >
       {
         children.map((child, index) => {
+          const { key } = child;
 
           const first = (index === 0);
           const last = (hasTrailingConnector === false)
@@ -45,7 +46,7 @@ const Timeline: FunctionComponent<Props> = (props): ReactElement<Props> => {
 
           return (
             <Box
-              key={`timeline-item-${index}`}
+              key={key}
               direction="row"
               alignment="flex-start"
               css={css`

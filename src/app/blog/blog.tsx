@@ -88,14 +88,14 @@ const Blog: FunctionComponent<Props> = ({ content, search = '' }): ReactElement<
       `}
       >
         {
-          posts.map((post, index) => {
+          posts.map((post) => {
 
             // Destructure the blog post and return
             // the blog post card component
             const { id, title, description, tags, author, publishedDate } = post;
             return (
               <Link
-                key={`blog-post-item-${index}`}
+                key={`blog-post-${id}`}
                 href={`/blog/post?id=${id}`}
               >
                 <BlogPostCard

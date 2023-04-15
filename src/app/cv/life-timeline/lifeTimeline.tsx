@@ -100,7 +100,7 @@ const LifeTimeline: FunctionComponent<Props> = ({ content, search = '' }): React
       }
       <Timeline>
         {
-          timelineEvents.map((event, index) => {
+          timelineEvents.map((event) => {
 
             // Destructure the timeline event and get the first
             // event from the original timeline events array
@@ -109,7 +109,7 @@ const LifeTimeline: FunctionComponent<Props> = ({ content, search = '' }): React
 
             return (
               <TimelineEvent
-                key={`life-timeline-item-${index}`}
+                key={`timeline-event-${id}`}
                 title={title}
                 description={description}
                 date={date}

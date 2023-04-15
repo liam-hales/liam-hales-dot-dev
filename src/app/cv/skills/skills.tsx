@@ -139,14 +139,14 @@ const Skills: FunctionComponent<Props> = ({ content, search = '' }): ReactElemen
         `}
         >
           {
-            skills.map((skill, index) => {
+            skills.map((skill) => {
 
               // Destructure the skill and return
               // the skill card component
-              const { name, type, image } = skill;
+              const { id, name, type, image } = skill;
               return (
                 <SkillCard
-                  key={`skill-item-${index}`}
+                  key={`skill-${id}`}
                   name={name}
                   type={type}
                   imageUrl={image?.url}

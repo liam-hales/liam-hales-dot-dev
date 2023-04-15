@@ -50,10 +50,10 @@ const BrandColourPalette: FunctionComponent<Props> = ({ internalRef, className, 
         {
           Object
             .values(ColourPalette)
-            .map((colour, index) => {
+            .map((colour) => {
               return (
                 <ColourCard
-                  key={`colour-palette-item-${index}`}
+                  key={`colour-${colour}`}
                   colour={colour}
                 />
               );

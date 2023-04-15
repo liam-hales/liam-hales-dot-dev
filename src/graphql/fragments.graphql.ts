@@ -78,10 +78,8 @@ export const skillFragment = gql`
     name
     type
     description
+    iconId
     url
-    image {
-      ...AssetFields
-    }
   }
 `;
 

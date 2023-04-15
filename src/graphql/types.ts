@@ -1,3 +1,5 @@
+import { LogoIconId } from '../types';
+
 /**
  * The page slug used for fetching page
  * data from the GraphQL API
@@ -180,8 +182,8 @@ export interface Skill {
   readonly name: string;
   readonly type: string;
   readonly description: string;
+  readonly iconId?: LogoIconId;
   readonly url: string;
-  readonly image?: Asset;
 }
 
 /**

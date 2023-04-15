@@ -6,7 +6,7 @@ import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';
 import { ColourPalette } from '../../enums';
 import { BaseProps, LogoIconId, ModalStatus } from '../../types';
-import { Button, Image, Link, LogoIcon, Modal, Text } from '../common';
+import { Button, Link, LogoIcon, Modal, Text } from '../common';
 
 /**
  * The `SkillModal` component props

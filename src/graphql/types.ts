@@ -5,7 +5,8 @@
 export type PageSlug = 'global' | 'home' | 'cv' | 'skills' | 'life-timeline' | 'blog' | 'brand';
 
 /**
- * Describes the data for each page
+ * Describes the GraphQL `Page` type which
+ * contains data for each page
  *
  * - Generic type `T` for the page `slug`
  */
@@ -20,8 +21,8 @@ export interface Page<T extends PageSlug> {
 }
 
 /**
- * Describes the metadata for
- * a page used for SEO
+ * Describes the GraphQL `PageMetadata` type which contains
+ * data for the page metadata used for SEO
  */
 export interface PageMetadata {
   readonly id: string;
@@ -40,8 +41,8 @@ export interface BasePageContent<T extends PageSlug> {
 }
 
 /**
- * Describes the global page content which
- * is specific to the global page only
+ * Describes the GraphQL `GlobalContent` type which
+ * contains data for the global page content
  */
 export interface GlobalContent extends BasePageContent<'global'> {
   readonly footerText: string;
@@ -58,8 +59,8 @@ export interface GlobalContent extends BasePageContent<'global'> {
 }
 
 /**
- * Describes the home page content which
- * is specific to the home page only
+ * Describes the GraphQL `HomeContent` type which
+ * contains data for the home page content
  */
 export interface HomeContent extends BasePageContent<'home'> {
   readonly headerForegroundImage: Asset;
@@ -76,8 +77,8 @@ export interface HomeContent extends BasePageContent<'home'> {
 }
 
 /**
- * Describes the CV page content which
- * is specific to the CV page only
+ * Describes the GraphQL `CVContent` type which
+ * contains data for the CV page content
  */
 export interface CVContent extends BasePageContent<'cv'> {
   readonly currentPositionText: string;
@@ -91,8 +92,8 @@ export interface CVContent extends BasePageContent<'cv'> {
 }
 
 /**
- * Describes the skills page content which
- * is specific to the skills page only
+ * Describes the GraphQL `SkillsContent` type which
+ * contains data for the skills page content
  */
 export interface SkillsContent extends BasePageContent<'skills'> {
   readonly disclaimerText: string;
@@ -100,16 +101,16 @@ export interface SkillsContent extends BasePageContent<'skills'> {
 }
 
 /**
- * Describes the life timeline page content which
- * is specific to the life timeline page only
+ * Describes the GraphQL `LifeTimelineContent` type which
+ * contains data for the life timeline page content
  */
 export interface LifeTimelineContent extends BasePageContent<'life-timeline'> {
   readonly timelineEvents: TimelineEvent[];
 }
 
 /**
- * Describes the brand page content which
- * is specific to the brand page only
+ * Describes the GraphQL `BrandContent` type which
+ * contains data for the brand page content
  */
 export interface BrandContent extends BasePageContent<'brand'> {
   readonly logoText: string;
@@ -121,8 +122,8 @@ export interface BrandContent extends BasePageContent<'brand'> {
 }
 
 /**
- * Describes the blog page content which
- * is specific to the blog page only
+ * Describes the GraphQL `BlogContent` type which
+ * contains data for the blog page content
  */
 export interface BlogContent extends BasePageContent<'blog'> {
   readonly posts: BlogPost[];
@@ -141,8 +142,8 @@ export type PageContent =
   | BlogContent;
 
 /**
- * Describes the asset which contains data
- * about the uploaded asset such as the URL
+ * Describes the GraphQL `Asset` type which contains data
+ * about the uploaded asset such as the file name and URL
  */
 export interface Asset {
   readonly id: string;
@@ -151,8 +152,8 @@ export interface Asset {
 }
 
 /**
- * Describes a person which contains data about
- * a specific person such as their name and image
+ * Describes the GraphQL `Person` type which contains data about
+ * a specific person such as their name, professional title and image
  */
 export interface Person {
   readonly id: string;
@@ -163,8 +164,8 @@ export interface Person {
 }
 
 /**
- * Describes the colour which contains the colour data
- * in different formats such as it's HEX value
+ * Describes the GraphQL `Color` type which contains the
+ * colour data in different formats such as HEX
  */
 export interface Colour {
   readonly hex: string;
@@ -172,7 +173,7 @@ export interface Colour {
 }
 
 /**
- * Describes a specific skill
+ * Describes the GraphQL `Skill` type
  */
 export interface Skill {
   readonly id: string;
@@ -184,8 +185,7 @@ export interface Skill {
 }
 
 /**
- * Describes a specific event
- * in a timeline
+ * Describes the GraphQL `TimelineEvent` type
  */
 export interface TimelineEvent {
   readonly id: string;
@@ -195,7 +195,7 @@ export interface TimelineEvent {
 }
 
 /**
- * Describes a specific blog post
+ * Describes the GraphQL `BlogPost` type
  */
 export interface BlogPost {
   readonly id: string;
@@ -208,7 +208,7 @@ export interface BlogPost {
 }
 
 /**
- * Describes a specific tag
+ * Describes the GraphQL `Tag` type
  */
 export interface Tag {
   readonly id: string;
@@ -217,8 +217,8 @@ export interface Tag {
 }
 
 /**
- * Describes the GraphQL search
- * variables used for queries
+ * Describes the GraphQL variables
+ * used for searchable queries
  */
 export interface SearchVariables {
   readonly search?: string;

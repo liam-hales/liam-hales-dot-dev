@@ -2,7 +2,7 @@ import { gql } from 'graphql-request';
 
 /**
  * The GraphQL fragment for the `Page` type used
- * within different page queries
+ * within the different GraphQL page queries
  */
 export const pageFragment = gql`
   fragment PageFields on Page {
@@ -18,8 +18,8 @@ export const pageFragment = gql`
 `;
 
 /**
- * The GraphQL fragment for the `PageMetadata` type used
- * within different queries and fragments
+ * The GraphQL fragment for the `PageMetadata` type which can be
+ * used within GraphQL documents and other fragments
  */
 export const pageMetadataFragment = gql`
   fragment PageMetadataFields on PageMetadata {
@@ -30,8 +30,8 @@ export const pageMetadataFragment = gql`
 `;
 
 /**
- * The GraphQL fragment for the `Asset` type used
- * within different queries and fragments
+ * The GraphQL fragment for the `Asset` type which can be
+ * used within GraphQL documents and other fragments
  */
 export const assetFragment = gql`
   fragment AssetFields on Asset {
@@ -42,8 +42,8 @@ export const assetFragment = gql`
 `;
 
 /**
- * The GraphQL fragment for the `Color` type used
- * within different queries and fragments
+ * The GraphQL fragment for the `Color` type which can be
+ * used within GraphQL documents and other fragments
  */
 export const colourFragment = gql`
   fragment ColourFields on Color {
@@ -53,8 +53,8 @@ export const colourFragment = gql`
 `;
 
 /**
- * The GraphQL fragment for the `Person` type used
- * within different queries and fragments
+ * The GraphQL fragment for the `Person` type which can be
+ * used within GraphQL documents and other fragments
  */
 export const personFragment = gql`
   fragment PersonFields on Person {
@@ -69,8 +69,8 @@ export const personFragment = gql`
 `;
 
 /**
- * The GraphQL fragment for the `Skill` type used
- * within different queries and fragments
+ * The GraphQL fragment for the `Skill` type which can be
+ * used within GraphQL documents and other fragments
  */
 export const skillFragment = gql`
   fragment SkillFields on Skill {
@@ -86,8 +86,8 @@ export const skillFragment = gql`
 `;
 
 /**
- * The GraphQL fragment for the `TimelineEvent` type used
- * within different queries and fragments
+ * The GraphQL fragment for the `TimelineEvent` type which can be
+ * used within GraphQL documents and other fragments
  */
 export const timelineEventFragment = gql`
   fragment TimelineEventFields on TimelineEvent {
@@ -99,8 +99,8 @@ export const timelineEventFragment = gql`
 `;
 
 /**
- * The GraphQL fragment for the `BlogPost` type used
- * within different queries and fragments
+ * The GraphQL fragment for the `BlogPost` type which can be
+ * used within GraphQL documents and other fragments
  */
 export const blogPostFragment = gql`
   fragment BlogPostFields on BlogPost {
@@ -119,8 +119,8 @@ export const blogPostFragment = gql`
 `;
 
 /**
- * The GraphQL fragment for the `Tag` type used
- * within different queries and fragments
+ * The GraphQL fragment for the `Tag` type which can be
+ * used within GraphQL documents and other fragments
  */
 export const tagFragment = gql`
   fragment TagFields on Tag {

@@ -41,6 +41,17 @@ export const assetFragment = gql`
 `;
 
 /**
+ * The GraphQL fragment for the `Color` type used
+ * within different queries and fragments
+ */
+export const colourFragment = gql`
+  fragment ColourFields on Color {
+    hex
+    css
+  }
+`;
+
+/**
  * The GraphQL fragment for the `Person` type used
  * within different queries and fragments
  */
@@ -114,8 +125,7 @@ export const tagFragment = gql`
   fragment TagFields on Tag {
     text
     colour {
-      hex
-      css
+      ...ColourFields
     }
   }
 `;

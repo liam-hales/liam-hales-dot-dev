@@ -116,11 +116,6 @@ const ContactModal: FunctionComponent<Props> = ({ text, email, linkedInUrl, isOp
             <Button
               iconId="tick"
               onClick={() => setShowEmail(true)}
-              css={css`
-                svg {
-                  font-size: 20px;
-                }
-              `}
             >
               OK, got it
             </Button>

@@ -27,7 +27,6 @@
 - [Built With](#built-with)
 - [Getting Started](#getting-started-prerequisites)
 - [First Steps](#first-steps)
-- [Public Assets](#public-assets)
 - [Local Development](#local-development)
   - [Development Server](#development-server)
   - [Production Server](#production-server)
@@ -35,7 +34,12 @@
   - [Building](#building)
   - [Deploying](#deploying)
   - [Bundle Analysing](#bundle-analysing)
+- [Public Assets](#public-assets)
 - [Dependency Management](#dependency-management)
+
+<br/>
+
+> ⚠️ _**WARNING** - Please make sure to read and follow the [Getting Started](#getting-started-prerequisites) and [First Steps](#first-steps) sections before continuing to the other sections to avoid running into any issues_
 
 <br/>
 <br/>
@@ -106,7 +110,7 @@ v8.19.1
 
 3. Run `corepack enable` to enable [Corepack]
 
-> _**NOTE:** You must use the [`yarn`] package manager_
+> ⚠️ _**WARNING** - You must use the [`yarn`] package manager_
 
 <br/>
 <br/>
@@ -124,34 +128,14 @@ GRAPHQL_API_URL = 'https://${region}.graphcms.com/v2/${id}/master'
 <br/>
 <br/>
 
-# Public Assets
-
-There are a few public assets that need to be built such as the `favicon.ico`, `sitemap.xml` and `robots.txt`.
-
-1. Run `yarn build-images` to build the images
-2. Run `yarn build-sitemap` to build the `sitemap.xml` and `robots.txt`
-
-```sh
-$ yarn build-images
-$ yarn build-sitemap
-```
-
-> _**NOTE:** Running `yarn build-sitemap` requires a build to exist, follow the steps in the [Production / Building](#building) section_
-
-<br/>
-<br/>
-
 # Local Development
 
 For local development there are two ways to build and start the app depending on your specific needs...
 
-**Development Server** - Used when developing the app  
-**Production Server** - Used to simulate how the app will run in production
+* [Development Server](#development-server) - Should be used when developing the app.  
+* [Production Server](#production-server) - Should be used to simulate how the app will run in production
 
 <br/>
-
-1. Follow the steps in the [First Steps](#first-steps) section
-2. Follow the steps in the [Building Public Assets](#building-public-assets) section (optional)
 
 ## Development Server
 
@@ -178,9 +162,7 @@ $ yarn start:prod
 
 ## Building
 
-1. Follow the steps in the [First Steps](#first-steps) section
-2. Follow the steps in the [Building Public Assets](#building-public-assets) section (optional)
-3. Run `yarn build` to build the app for production
+1. Run `yarn build` to build the app for production
 
 ```sh
 $ yarn build
@@ -208,7 +190,26 @@ Analysing a production bundle is done using `@next/bundle-analyzer` under the ho
 $ yarn build:analyse
 ```
 
-> _**NOTE:** The bundle analyser will automatically open the generated `.html` files in your default browser_
+> ⚠️ _**WARNING** - The bundle analyser will automatically open the generated `.html` files in your default browser_
+
+<br/>
+<br/>
+
+# Public Assets
+
+Some of the public assets such as icons and SEO files are dynamically built using build scripts.
+
+1. Run `yarn build-icons` to build the `favicon.ico` and `.webp` icons
+2. Run `yarn build-sitemap` to build the `sitemap.xml` and `robots.txt`
+
+```sh
+$ yarn build-icons
+$ yarn build-sitemap
+```
+
+> 📝 _**NOTE** - These public assets are not required for a functional build_  
+
+> ⚠️ _**WARNING** - Running `yarn build-sitemap` requires a build to exist, follow the steps in the [Production / Building](#building) section_
 
 <br/>
 <br/>

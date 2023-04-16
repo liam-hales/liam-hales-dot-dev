@@ -22,7 +22,7 @@
     "build:analyse": "ANALYSE_BUNDLE=true next build",
     "lint": "next lint",
     "deps": "ncu --packageManager yarn",
-    "build-images": "ts-node ./scripts/buildImages.script.ts",
+    "build-icons": "ts-node ./scripts/buildIcons.script.ts",
     "build-sitemap": "next-sitemap --config sitemap.config.mjs",
     "cleanup": "rm -rf .next/"
   },

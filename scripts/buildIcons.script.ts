@@ -4,7 +4,7 @@ import sharp from 'sharp';
 
 /**
  * Used to build the `favicon.ico` and `.webp`
- * images from the `.svg` files
+ * icons from the `.svg` files
  */
 (async () => {
   const logoIconPath = join(process.cwd(), '/src/svgs/logoIcon.svg');

@@ -1,5 +1,5 @@
 import { ReactElement, ReactNode } from 'react';
-import { Footer, Nav, SafeArea } from '../components';
+import { Footer, Nav, SafeArea, BackgroundParticles } from '../components';
 import { AnimationProvider, ThemeProvider } from '../providers';
 import { BaseProps, ServerComponent } from '../types';
 import { urbanist, firaCode } from '../fonts';
@@ -34,15 +34,17 @@ const AppLayout: ServerComponent<Props> = async ({ children }): Promise<ReactEle
       <body>
         <ThemeProvider>
           <AnimationProvider>
-            <SafeArea>
-              <Nav
-                deviceType={deviceType}
-                content={content}
-              >
-                {children}
-                <Footer content={content} />
-              </Nav>
-            </SafeArea>
+            <BackgroundParticles>
+              <SafeArea>
+                <Nav
+                  deviceType={deviceType}
+                  content={content}
+                >
+                  {children}
+                  <Footer content={content} />
+                </Nav>
+              </SafeArea>
+            </BackgroundParticles>
           </AnimationProvider>
         </ThemeProvider>
       </body>

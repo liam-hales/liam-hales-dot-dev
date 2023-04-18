@@ -28,6 +28,7 @@ import TopNav from './navigation/topNav';
 import BottomNav from './navigation/bottomNav';
 import NotFound from './notFound';
 import Error from './error';
+import BackgroundParticles from './backgroundParticles';
 
 export {
   Logo,
@@ -60,4 +61,5 @@ export {
   BottomNav,
   NotFound,
   Error,
+  BackgroundParticles,
 };

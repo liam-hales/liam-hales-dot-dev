@@ -8,7 +8,7 @@ import { ColourPalette } from '../enums';
 import { BaseProps } from '../types';
 import { useDate } from '../hooks';
 import { GlobalContent } from '../graphql';
-import { Box, Divider, Icon, IconButton, Text, Button, Popover, Link } from './common';
+import { Box, Icon, IconButton, Text, Button, Popover, Link } from './common';
 import { Content, Logo, ContactModal } from '.';
 
 /**
@@ -55,7 +55,6 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
         onClose={() => setModalOpen(false)}
       />
       <Content alignment="flex-start">
-        <Divider />
         <Box
           direction="row"
           justify="space-between"

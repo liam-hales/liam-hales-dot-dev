@@ -5,7 +5,7 @@
 import { FunctionComponent, ReactElement, useRef } from 'react';
 import { css } from '@emotion/react';
 import { Content, BrandLogo, BrandTypography, BrandColourPalette } from '../../components';
-import { Box, Button, Divider, Title } from '../../components/common';
+import { Box, Button, Title } from '../../components/common';
 import { useScreen } from '../../hooks';
 import { BaseProps } from '../../types';
 import { BrandContent } from '../../graphql';
@@ -77,7 +77,6 @@ const Brand: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           Typography
         </Button>
       </Box>
-      <Divider />
       <BrandLogo
         ref={brandLogoRef}
         text={logoText}

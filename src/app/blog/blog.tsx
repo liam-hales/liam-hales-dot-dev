@@ -9,7 +9,7 @@ import { BlogPostCard, Content, NoResults } from '../../components';
 import { BaseProps } from '../../types';
 import { BlogContent } from '../../graphql';
 import { useScreen } from '../../hooks';
-import { Box, Divider, Link, SearchInput, Title } from '../../components/common';
+import { Box, Link, SearchInput, Title } from '../../components/common';
 
 /**
  * The `Blog` component props
@@ -50,7 +50,6 @@ const Blog: FunctionComponent<Props> = ({ content, search = '' }): ReactElement<
       >
         Blog
       </Title>
-      <Divider />
       <SearchInput
         value={searchText}
         onChange={(value) => setSearchText(value)}

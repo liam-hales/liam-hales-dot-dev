@@ -7,7 +7,7 @@ import { css } from '@emotion/react';
 import { BaseProps } from '../../types';
 import { ColourPalette } from '../../enums';
 import { CVContent } from '../../graphql';
-import { Box, Button, Divider, Text, Title } from '../../components/common';
+import { Box, Button, Text, Title } from '../../components/common';
 import {
   Content,
   CurrentPosition,
@@ -90,7 +90,6 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           Experience
         </Button>
       </Box>
-      <Divider />
       <CurrentPosition
         ref={currentPositionRef}
         text={currentPositionText}

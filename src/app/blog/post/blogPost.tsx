@@ -7,7 +7,7 @@ import { css } from '@emotion/react';
 import { Content } from '../../../components';
 import { BaseProps } from '../../../types';
 import { BlogPost as BlogPostData } from '../../../graphql';
-import { Box, Image, Text, Tag, Markdown, Divider, Title } from '../../../components/common';
+import { Box, Image, Text, Tag, Markdown, Title } from '../../../components/common';
 import { ColourPalette } from '../../../enums';
 import { useDate } from '../../../hooks';
 
@@ -113,7 +113,6 @@ const BlogPost: FunctionComponent<Props> = ({ post }): ReactElement<Props> => {
           }
         </Box>
       </Box>
-      <Divider />
       <Text
         colour={ColourPalette.GREY_600}
         css={css`

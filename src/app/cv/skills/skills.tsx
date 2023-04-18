@@ -6,7 +6,7 @@ import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@emotion/react';
 import { useRouter } from 'next/navigation';
 import { Content, SkillModal, Grid, SkillCard, NoResults } from '../../../components';
-import { Breadcrumbs, BreadcrumbItem, Text, SearchInput, Title, Divider } from '../../../components/common';
+import { Breadcrumbs, BreadcrumbItem, Text, SearchInput, Title } from '../../../components/common';
 import { ColourPalette } from '../../../enums';
 import { Skill, SkillsContent } from '../../../graphql';
 import { BaseProps } from '../../../types';
@@ -88,7 +88,6 @@ const Skills: FunctionComponent<Props> = ({ content, search = '' }): ReactElemen
             Skills
           </BreadcrumbItem>
         </Breadcrumbs>
-        <Divider />
         <SearchInput
           value={searchText}
           onChange={(value) => setSearchText(value)}

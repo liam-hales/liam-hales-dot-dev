@@ -6,7 +6,7 @@ import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@emotion/react';
 import { useRouter } from 'next/navigation';
 import { Content, NoResults } from '../../../components';
-import { Breadcrumbs, BreadcrumbItem, SearchInput, Timeline, TimelineEvent, Title, Divider } from '../../../components/common';
+import { Breadcrumbs, BreadcrumbItem, SearchInput, Timeline, TimelineEvent, Title } from '../../../components/common';
 import { LifeTimelineContent } from '../../../graphql';
 import { BaseProps } from '../../../types';
 import { useScreen } from '../../../hooks';
@@ -65,7 +65,6 @@ const LifeTimeline: FunctionComponent<Props> = ({ content, search = '' }): React
           Life Timeline
         </BreadcrumbItem>
       </Breadcrumbs>
-      <Divider />
       <SearchInput
         value={searchText}
         onChange={(value) => setSearchText(value)}

@@ -1,5 +1,8 @@
-/** @jsxImportSource @emotion/react */
 /* eslint-disable react/no-unstable-nested-components */
+
+/** @jsxImportSource @emotion/react */
+
+'use client';
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';

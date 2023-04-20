@@ -5,6 +5,7 @@
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import type { ISourceOptions as ParticlesOptions } from 'tsparticles-engine';
 import { css } from '@emotion/react';
+import { m as motion, useScroll, useTransform } from 'framer-motion';
 import { BaseProps } from '../types';
 import { ColourPalette } from '../enums';
 import { Particles } from './common';
@@ -24,6 +25,9 @@ interface Props extends BaseProps {
  * @returns The `BackgroundParticles` component
  */
 const BackgroundParticles: FunctionComponent<Props> = ({ children }): ReactElement<Props> => {
+
+  const { scrollYProgress } = useScroll();
+  const headerY = useTransform(scrollYProgress, [0, 1], ['0%', '10%']);
 
   /**
    * The options for the background
@@ -90,16 +94,26 @@ const BackgroundParticles: FunctionComponent<Props> = ({ children }): ReactEleme
     <div
       css={css`
         position: relative;
+        overflow: hidden;
       `}
     >
-      <Particles
-        options={options}
+      <motion.div
+        style={{
+          y: headerY,
+        }}
         css={css`
           position: absolute;
           height: 100%;
           z-index: -1;
         `}
-      />
+      >
+        <Particles
+          options={options}
+          css={css`
+            height: 100%;
+          `}
+        />
+      </motion.div>
       {children}
     </div>
   );

@@ -11,8 +11,21 @@ export const generateMetadata = async (): Promise<Metadata> => {
   return {
     themeColor: ColourPalette.GREY_1000,
     icons: {
-      icon: 'favicon.ico',
-      apple: '/icons/icon-180x180.webp',
+      icon: [
+        {
+          rel: 'icon',
+          url: '/favicon.ico',
+        },
+        {
+          rel: 'icon',
+          url: '/icon.svg',
+          type: 'image/svg+xml',
+        },
+        {
+          rel: 'apple-touch-icon',
+          url: '/apple-touch-icon.webp',
+        },
+      ],
     },
   };
 };

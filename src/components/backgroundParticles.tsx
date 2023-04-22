@@ -94,7 +94,7 @@ const BackgroundParticles: FunctionComponent<Props> = ({ children }): ReactEleme
     <div
       css={css`
         position: relative;
-        overflow: hidden;
+        overflow: clip;
       `}
     >
       <motion.div

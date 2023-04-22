@@ -1,7 +1,7 @@
 'use client';
 
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
-import { CssBaseline, GlobalStyles } from '@mui/material';
+import { CssBaseline } from '@mui/material';
 import { createTheme, PaletteOptions, ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
 import { urbanist } from '../fonts';
 import { ColourPalette } from '../enums';
@@ -72,15 +72,6 @@ const ThemeProvider: FunctionComponent<Props> = ({ children }): ReactElement<Pro
   return (
     <MuiThemeProvider theme={theme}>
       <CssBaseline />
-      <GlobalStyles styles={{
-        html: {
-          overflowX: 'clip',
-        },
-        body: {
-          overflowX: 'clip',
-        },
-      }}
-      />
       {children}
     </MuiThemeProvider>
   );

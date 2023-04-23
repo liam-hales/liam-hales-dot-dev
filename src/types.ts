@@ -130,7 +130,12 @@ export type LogoIconId =
   | 'nestjs'
   | 'nextjs'
   | 'html'
-  | 'react';
+  | 'css'
+  | 'react'
+  | 'git'
+  | 'json'
+  | 'swift'
+  | 'graphql';
 
 /**
  * The navigation key used for the `TopNav`

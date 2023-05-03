@@ -46,7 +46,7 @@
 
 # Built With
 
-This app was built and hosted with the below. For a full list of dependencies used to build the app see the [`package.json`](/package.json) file
+This app was built and hosted with the below. For a full list of dependencies used to build the app see the [`package.json`](/package.json) file.
 
 <br/>
 
@@ -132,7 +132,7 @@ GRAPHQL_API_URL = 'https://${region}.graphcms.com/v2/${id}/master'
 
 For local development there are two ways to build and start the app depending on your specific needs...
 
-* [Development Server](#development-server) - Should be used when developing the app.
+* [Development Server](#development-server) - Should be used when developing the app
 * [Production Server](#production-server) - Should be used to simulate how the app will run in production
 
 <br/>

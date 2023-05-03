@@ -132,7 +132,7 @@ GRAPHQL_API_URL = 'https://${region}.graphcms.com/v2/${id}/master'
 
 For local development there are two ways to build and start the app depending on your specific needs...
 
-* [Development Server](#development-server) - Should be used when developing the app.  
+* [Development Server](#development-server) - Should be used when developing the app.
 * [Production Server](#production-server) - Should be used to simulate how the app will run in production
 
 <br/>
@@ -168,7 +168,7 @@ $ yarn start:prod
 $ yarn build
 ```
 
-## Deploying 
+## Deploying
 
 The app is hosted on [Vercel] and is built and deployed using Vercel Git Deployments. When code is pushed to the repos `main` branch, a production build and deployment is triggered. No need to manually build or deploy.
 
@@ -207,7 +207,7 @@ $ yarn build-icons
 $ yarn build-sitemap
 ```
 
-> 📝 _**NOTE** - These public assets are not required for a functional build_  
+> 📝 _**NOTE** - These public assets are not required for a functional build_
 
 > ⚠️ _**WARNING** - Running `yarn build-sitemap` requires a build to exist, follow the steps in the [Production / Building](#building) section_
 

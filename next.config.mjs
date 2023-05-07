@@ -21,9 +21,6 @@ const withAnalyser = bundleAnalyser({
 const nextConfig = {
   reactStrictMode: true,
   productionBrowserSourceMaps: true,
-  experimental: {
-    appDir: true,
-  },
   modularizeImports: {
     '@mui/material': {
       transform: '@mui/material/{{member}}',

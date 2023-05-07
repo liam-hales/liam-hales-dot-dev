@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 
 import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
-import { useConfig, useQuery } from '../../hooks/server';
+import { useQuery } from '../../hooks/server';
 import { Page, globalPageQuery } from '../../graphql';
 
 /**
@@ -14,7 +14,6 @@ import { Page, globalPageQuery } from '../../graphql';
  */
 const openGraphMetadata = async (): Promise<OpenGraph> => {
 
-  const { siteUrl } = useConfig();
   const { content } = await useQuery<Page<'global'>>(globalPageQuery);
   const { firstName, lastName } = content.me;
 
@@ -24,7 +23,7 @@ const openGraphMetadata = async (): Promise<OpenGraph> => {
     images: [
       {
         type: 'image/webp',
-        url: `${siteUrl}/cover.webp`,
+        url: '/cover.webp',
         alt: `${firstName} ${lastName} Cover`,
       },
     ],

@@ -1,4 +1,5 @@
 import { ReactElement, ReactNode } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { Footer, Nav, SafeArea, BackgroundParticles } from '../components';
 import { AnimationProvider, ThemeProvider } from '../providers';
 import { BaseProps, ServerComponent } from '../types';
@@ -32,6 +33,7 @@ const AppLayout: ServerComponent<Props> = async ({ children }): Promise<ReactEle
       className={`${urbanist.className} ${firaCode.className}`}
     >
       <body>
+        <Analytics />
         <ThemeProvider>
           <AnimationProvider>
             <BackgroundParticles>

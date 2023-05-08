@@ -275,13 +275,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@corex/deepmerge@npm:^4.0.37":
-  version: 4.0.43
-  resolution: "@corex/deepmerge@npm:4.0.43"
-  checksum: f0103bfcfb9938ba478868fad522b018b92615ba186b0322c92aa1f57e539b87d4379d88fee3a404264a83bd4b13c384cfb07834377997d6d71cd840a880b4c4
-  languageName: node
-  linkType: hard
-
 "@cspotcode/source-map-support@npm:^0.8.0":
   version: 0.8.1
   resolution: "@cspotcode/source-map-support@npm:0.8.1"
@@ -4927,7 +4920,6 @@ __metadata:
     graphql: ^16.6.0
     graphql-request: ^6.0.0
     next: ^13.4.1
-    next-sitemap: ^4.0.9
     npm-check-updates: ^16.10.10
     react: ^18.2.0
     react-device-detect: ^2.2.3
@@ -5468,7 +5460,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimist@npm:^1.2.0, minimist@npm:^1.2.3, minimist@npm:^1.2.6, minimist@npm:^1.2.8":
+"minimist@npm:^1.2.0, minimist@npm:^1.2.3, minimist@npm:^1.2.6":
   version: 1.2.8
   resolution: "minimist@npm:1.2.8"
   checksum: 75a6d645fb122dad29c06a7597bddea977258957ed88d7a6df59b5cd3fe4a527e253e9bbf2e783e4b73657f9098b96a5fe96ab8a113655d4109108577ecf85b0
@@ -5655,22 +5647,6 @@ __metadata:
   version: 0.6.3
   resolution: "negotiator@npm:0.6.3"
   checksum: b8ffeb1e262eff7968fc90a2b6767b04cfd9842582a9d0ece0af7049537266e7b2506dfb1d107a32f06dd849ab2aea834d5830f7f4d0e5cb7d36e1ae55d021d9
-  languageName: node
-  linkType: hard
-
-"next-sitemap@npm:^4.0.9":
-  version: 4.0.9
-  resolution: "next-sitemap@npm:4.0.9"
-  dependencies:
-    "@corex/deepmerge": ^4.0.37
-    minimist: ^1.2.8
-  peerDependencies:
-    "@next/env": "*"
-    next: "*"
-  bin:
-    next-sitemap: bin/next-sitemap.mjs
-    next-sitemap-cjs: bin/next-sitemap.cjs
-  checksum: 3c9fa402e24ab7399020ffaabc48d9d380b20891ca49affecc51a25876de2e57fb9799e3a5122218967e7bd9b165a02d5e1ab9a689aaf9cb15417fc33c4cae95
   languageName: node
   linkType: hard
 

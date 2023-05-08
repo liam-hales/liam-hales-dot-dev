@@ -29,6 +29,7 @@
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.12.3",
+    "@vercel/analytics": "^1.0.1",
     "dayjs": "^1.11.7",
     "framer-motion": "^10.12.8",
     "graphql": "^16.6.0",

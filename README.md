@@ -197,19 +197,17 @@ $ yarn build:analyse
 
 # Public Assets
 
-Some of the public assets such as icons and SEO files are dynamically built using build scripts.
+Most public assets already exist in the `/public` directory, however some assets such as some of the icons are dynamically built using build scripts.
 
 1. Run `yarn build-icons` to build the `favicon.ico` and `.webp` icons
-2. Run `yarn build-sitemap` to build the `sitemap.xml` and `robots.txt`
 
 ```sh
 $ yarn build-icons
-$ yarn build-sitemap
 ```
 
 > 📝 _**NOTE** - These public assets are not required for a functional build_
 
-> ⚠️ _**WARNING** - Running `yarn build-sitemap` requires a build to exist, follow the steps in the [Production / Building](#building) section_
+> 📝 _**NOTE** - Public assets such as the `sitemap.xml` and `robots.txt` files exists on dynamic routes_
 
 <br/>
 <br/>

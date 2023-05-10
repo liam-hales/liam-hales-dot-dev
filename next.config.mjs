@@ -56,6 +56,9 @@ const nextConfig = {
 
     return {
       ...config,
+      infrastructureLogging: {
+        level: 'error',
+      },
       plugins: [
         ...plugins,
         iconPlugin,

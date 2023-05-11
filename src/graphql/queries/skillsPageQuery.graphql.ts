@@ -21,7 +21,7 @@ const skillsPageQuery = gql`
           disclaimerText
           skills(
             where: {
-              _search: $search
+              name_contains: $search
             }
           ) {
             ...SkillFields

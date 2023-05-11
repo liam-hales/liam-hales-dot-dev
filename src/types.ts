@@ -135,7 +135,14 @@ export type LogoIconId =
   | 'git'
   | 'json'
   | 'swift'
-  | 'graphql';
+  | 'graphql'
+  | 'mui'
+  | 'vercel'
+  | 'aws'
+  | 'azure'
+  | 'sketch'
+  | 'photoshop'
+  | 'illustrator';
 
 /**
  * The navigation key used for the `TopNav`

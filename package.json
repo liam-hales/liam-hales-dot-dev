@@ -1,5 +1,6 @@
 {
   "name": "liam-hales-dot-dev",
+  "description": "My official website project",
   "version": "1.0.0",
   "private": true,
   "engines": {

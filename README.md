@@ -230,5 +230,4 @@ Check out the [`npm-check-updates`] docs or run `yarn ncu --help` for more info.
 [`yarn`]: https://yarnpkg.com
 [Corepack]: https://nodejs.org/api/corepack.html
 [Vercel]: https://vercel.com
-[Vercel CLI]: https://vercel.com/docs/cli
 [`npm-check-updates`]: https://npmjs.com/package/npm-check-updates

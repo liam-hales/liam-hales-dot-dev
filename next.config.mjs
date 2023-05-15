@@ -13,8 +13,8 @@ const withAnalyser = bundleAnalyser({
 });
 
 /**
- * The Next.js config used for advanced
- * configuration within Next.js
+ * The Next.js config used to configure
+ * the Next.js framework for the app
  *
  * @type {import('next').NextConfig}
  */

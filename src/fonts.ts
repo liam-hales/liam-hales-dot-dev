@@ -13,7 +13,7 @@ export const urbanist = Urbanist({
 });
 
 /**
- * The Urbanist font from Google Fonts
+ * The Fira Code font from Google Fonts
  * self hosted by `next/font`
  *
  * @url https://fonts.google.com/specimen/Fira+Code

@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import { ReactElement } from 'react';
 import { BlogPost as BlogPostData, blogPostQuery, BlogPostVariables } from '../../../graphql';
 import { useQuery } from '../../../hooks/server';
-import { PageProps, ServerComponent } from '../../../types';
+import { PageProps, AsyncComponent } from '../../../types';
 import { generateMetadata } from './metadata';
 import BlogPost from './blogPost';
 
@@ -13,7 +13,7 @@ import BlogPost from './blogPost';
  * @param props The component props
  * @returns The `BlogPostPage` component
  */
-const BlogPostPage: ServerComponent<PageProps> = async ({ searchParams = {} }): Promise<ReactElement<PageProps>> => {
+const BlogPostPage: AsyncComponent<PageProps> = async ({ searchParams = {} }): Promise<ReactElement<PageProps>> => {
   const { id } = searchParams;
 
   // If the `id` query param has not been set then call the Next.js

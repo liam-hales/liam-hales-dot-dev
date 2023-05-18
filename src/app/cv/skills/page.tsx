@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { Page, SearchVariables, skillsPageQuery } from '../../../graphql';
 import { useQuery } from '../../../hooks/server';
-import { PageProps, ServerComponent } from '../../../types';
+import { PageProps, AsyncComponent } from '../../../types';
 import { buildPageMetadata } from '../../../helpers/server';
 import Skills from './skills';
 
@@ -12,7 +12,7 @@ import Skills from './skills';
  * @param props The component props
  * @returns The `SkillsPage` component
  */
-const SkillsPage: ServerComponent<PageProps> = async ({ searchParams = {} }): Promise<ReactElement<PageProps>> => {
+const SkillsPage: AsyncComponent<PageProps> = async ({ searchParams = {} }): Promise<ReactElement<PageProps>> => {
 
   const { search } = searchParams;
   const { content } = await useQuery<Page<'skills'>, SearchVariables>(skillsPageQuery, {

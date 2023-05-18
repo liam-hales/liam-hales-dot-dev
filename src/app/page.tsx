@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { Page, homePageQuery } from '../graphql';
 import { useDevice, useQuery } from '../hooks/server';
-import { PageProps, ServerComponent } from '../types';
+import { PageProps, AsyncComponent } from '../types';
 import { buildPageMetadata } from '../helpers/server';
 import Home from './home';
 
@@ -11,7 +11,7 @@ import Home from './home';
  *
  * @returns The `HomePage` component
  */
-const HomePage: ServerComponent<PageProps> = async (): Promise<ReactElement<PageProps>> => {
+const HomePage: AsyncComponent<PageProps> = async (): Promise<ReactElement<PageProps>> => {
 
   const { deviceType } = useDevice();
   const { content } = await useQuery<Page<'home'>>(homePageQuery);

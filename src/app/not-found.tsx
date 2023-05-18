@@ -2,7 +2,7 @@ import { ReactElement } from 'react';
 import { NotFound } from '../components';
 import { Page, globalPageQuery } from '../graphql';
 import { useQuery } from '../hooks/server';
-import { ServerComponent } from '../types';
+import { AsyncComponent } from '../types';
 
 /**
  * The app level not found boundry used to render the `NotFound`
@@ -10,7 +10,7 @@ import { ServerComponent } from '../types';
  *
  * @returns The `AppNotFound` component
  */
-const AppNotFound: ServerComponent = async (): Promise<ReactElement> => {
+const AppNotFound: AsyncComponent = async (): Promise<ReactElement> => {
 
   const { content } = await useQuery<Page<'global'>>(globalPageQuery);
   return (

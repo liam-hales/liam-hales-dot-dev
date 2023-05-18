@@ -166,7 +166,7 @@ export type CodeLanguage = typeof codeLanguages[number];
  * Like `FunctionComponent from `react` but for `async`
  * server components with a `Promise` return type
  */
-export interface ServerComponent<P extends Partial<Record<keyof P, unknown>> = never> {
+export interface AsyncComponent<P extends Partial<Record<keyof P, unknown>> = never> {
   (props: P): Promise<ReactElement<P>> | Promise<ReactElement>;
 }
 

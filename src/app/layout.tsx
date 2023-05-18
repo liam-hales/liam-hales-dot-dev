@@ -2,7 +2,7 @@ import { ReactElement, ReactNode } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import { Footer, Nav, SafeArea, BackgroundParticles } from '../components';
 import { AnimationProvider, ThemeProvider } from '../providers';
-import { BaseProps, ServerComponent } from '../types';
+import { BaseProps, AsyncComponent } from '../types';
 import { urbanist, firaCode } from '../fonts';
 import { Page, globalPageQuery } from '../graphql';
 import { useDevice, useQuery } from '../hooks/server';
@@ -22,7 +22,7 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `AppLayout` component
  */
-const AppLayout: ServerComponent<Props> = async ({ children }): Promise<ReactElement<Props>> => {
+const AppLayout: AsyncComponent<Props> = async ({ children }): Promise<ReactElement<Props>> => {
 
   const { deviceType } = useDevice();
   const { content } = await useQuery<Page<'global'>>(globalPageQuery);

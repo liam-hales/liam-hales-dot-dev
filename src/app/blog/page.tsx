@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { Page, blogPageQuery, SearchVariables } from '../../graphql';
 import { useQuery } from '../../hooks/server';
-import { PageProps, ServerComponent } from '../../types';
+import { PageProps, AsyncComponent } from '../../types';
 import { buildPageMetadata } from '../../helpers/server';
 import Blog from './blog';
 
@@ -12,7 +12,7 @@ import Blog from './blog';
  * @param props The component props
  * @returns The `BlogPage` component
  */
-const BlogPage: ServerComponent<PageProps> = async ({ searchParams = {} }): Promise<ReactElement<PageProps>> => {
+const BlogPage: AsyncComponent<PageProps> = async ({ searchParams = {} }): Promise<ReactElement<PageProps>> => {
 
   const { search } = searchParams;
   const { content } = await useQuery<Page<'blog'>, SearchVariables>(blogPageQuery, {

@@ -7,7 +7,7 @@ import { useConfig } from '.';
  * Used to make GraphQL API requests using
  * `graphql-request` under the hood.
  *
- * _**NOTE:** This hook can only be used server-side_
+ * _**WARNING:** This hook can only be used server-side_
  *
  * - Generic type `T` for the response data
  * - Generic Type `V` for the request variables

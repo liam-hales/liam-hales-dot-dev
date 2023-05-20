@@ -7,7 +7,7 @@ import { openGraphMetadata } from '.';
  * Used to build the function that generates the page metadata
  * which is rendered within the page `<head/>` element.
  *
- * _**NOTE:** This function can only be used server-side_
+ * _**WARNING:** This function can only be used server-side_
  *
  * @param query The GraphQL page query
  * @returns The page metadata builder

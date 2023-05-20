@@ -8,7 +8,7 @@ import { Page, globalPageQuery } from '../../graphql';
  * Used to generate the base Open Graph metadata
  * which can be combined with the page metadata.
  *
- * _**NOTE:** This function can only be used server-side_
+ * _**WARNING:** This function can only be used server-side_
  *
  * @returns The Open Graph metadata
  */

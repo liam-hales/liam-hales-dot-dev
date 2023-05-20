@@ -13,7 +13,7 @@ interface UseDeviceResponse {
  * Used to extract the device infomation
  * from the `user-agent` header.
  *
- * _**NOTE:** This hook can only be used server-side_
+ * _**WARNING:** This hook can only be used server-side_
  *
  * Using this hook will cause the route to be dynamic, the `headers` function used
  * within this hook relies on information that can only be known at request time

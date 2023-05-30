@@ -21,7 +21,6 @@ import BrandLogo from './brand/brandLogo';
 import BrandTypography from './brand/brandTypography';
 import BrandColourPalette from './brand/brandColourPalette';
 import ColourCard from './colourCard';
-import SkillModal from './skills/skillModal';
 import ContactModal from './contactModal';
 import Nav from './navigation/nav';
 import TopNav from './navigation/topNav';
@@ -54,7 +53,6 @@ export {
   BrandTypography,
   BrandColourPalette,
   ColourCard,
-  SkillModal,
   ContactModal,
   Nav,
   TopNav,

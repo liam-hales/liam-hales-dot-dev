@@ -77,7 +77,6 @@ export const skillFragment = gql`
     id
     name
     type
-    description
     iconId
     url
   }

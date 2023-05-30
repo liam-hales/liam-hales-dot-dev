@@ -132,7 +132,8 @@ export interface BlogContent extends BasePageContent<'blog'> {
 }
 
 /**
- * The union type for all page content types
+ * The union type for all
+ * page content types
  */
 export type PageContent =
   | GlobalContent
@@ -181,7 +182,6 @@ export interface Skill {
   readonly id: string;
   readonly name: string;
   readonly type: string;
-  readonly description: string;
   readonly iconId?: LogoIconId;
   readonly url: string;
 }

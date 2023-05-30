@@ -5,10 +5,10 @@
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@emotion/react';
 import { useRouter } from 'next/navigation';
-import { Content, SkillModal, Grid, SkillCard, NoResults } from '../../../components';
-import { Breadcrumbs, BreadcrumbItem, Text, SearchInput, Title } from '../../../components/common';
+import { Content, Grid, SkillCard, NoResults } from '../../../components';
+import { Breadcrumbs, BreadcrumbItem, Text, SearchInput, Title, Link } from '../../../components/common';
 import { ColourPalette } from '../../../enums';
-import { Skill, SkillsContent } from '../../../graphql';
+import { SkillsContent } from '../../../graphql';
 import { BaseProps } from '../../../types';
 import { useScreen } from '../../../hooks';
 
@@ -34,132 +34,107 @@ const Skills: FunctionComponent<Props> = ({ content, search = '' }): ReactElemen
   const { disclaimerText, skills } = content;
 
   const [searchText, setSearchText] = useState<string>(search);
-  const [modalOpen, setModalOpen] = useState<boolean>(false);
-  const [selectedSkill, setSelectedSkill] = useState<Skill | undefined>();
 
   return (
-    <>
-      {
-        (selectedSkill != null) && (() => {
-          const { name, type, description, url, iconId } = selectedSkill;
-          return (
-            <SkillModal
-              isOpen={modalOpen}
-              name={name}
-              type={type}
-              description={description}
-              url={url}
-              iconId={iconId}
-              onClose={() => setModalOpen(false)}
-              onStatusChange={(status) => {
-
-                // Only reset the selected skill state
-                // if the modal is closed
-                if (status === 'closed') {
-                  setSelectedSkill(undefined);
-                }
-              }}
-            />
-          );
-        })()
-      }
-      <Content
-        alignment="flex-start"
-        css={css`
-          padding-top: 42px;
-          padding-bottom: 100px;
-        `}
+    <Content
+      alignment="flex-start"
+      css={css`
+        padding-top: 42px;
+        padding-bottom: 100px;
+      `}
+    >
+      <Title size="large">
+        Skills
+      </Title>
+      <Breadcrumbs css={css`
+        padding-top: 40px;
+        padding-bottom: 50px;
+      `}
       >
-        <Title size="large">
+        <BreadcrumbItem route="/cv">
+          Curriculum Vitae
+        </BreadcrumbItem>
+        <BreadcrumbItem
+          route="/cv/skills"
+          isActive={true}
+        >
           Skills
-        </Title>
-        <Breadcrumbs css={css`
-          padding-top: 40px;
-          padding-bottom: 50px;
+        </BreadcrumbItem>
+      </Breadcrumbs>
+      <SearchInput
+        value={searchText}
+        onChange={(value) => setSearchText(value)}
+        onSearch={() => {
+
+          // Define the search query params
+          // based on the search text
+          const params = new URLSearchParams({
+            ...(searchText !== '') && {
+              search: searchText,
+            },
+          });
+
+          push(`/cv/skills?${params.toString()}`);
+        }}
+        css={css`
+          width: ${(screenSize === 'small') ? '100%' : '400px'};
+          margin-top: 50px;
+          margin-bottom: 40px;
         `}
-        >
-          <BreadcrumbItem route="/cv">
-            Curriculum Vitae
-          </BreadcrumbItem>
-          <BreadcrumbItem
-            route="/cv/skills"
-            isActive={true}
+      />
+      {
+        (skills.length > 0) && (
+          <Text
+            colour={ColourPalette.GREY_400}
+            css={css`
+              max-width: 460px;
+              padding-bottom: 40px;
+            `}
           >
-            Skills
-          </BreadcrumbItem>
-        </Breadcrumbs>
-        <SearchInput
-          value={searchText}
-          onChange={(value) => setSearchText(value)}
-          onSearch={() => {
-
-            // Define the search query params
-            // based on the search text
-            const params = new URLSearchParams({
-              ...(searchText !== '') && {
-                search: searchText,
-              },
-            });
-
-            push(`/cv/skills?${params.toString()}`);
-          }}
-          css={css`
-            width: ${(screenSize === 'small') ? '100%' : '400px'};
-            margin-top: 50px;
-            margin-bottom: 40px;
-          `}
-        />
+            {disclaimerText}
+          </Text>
+        )
+      }
+      {
+        (skills.length === 0) && (
+          <NoResults
+            searchText={search}
+            css={css`
+              padding-top: 26px;
+              align-self: center;
+            `}
+          />
+        )
+      }
+      <Grid css={css`
+        width: 100%;
+      `}
+      >
         {
-          (skills.length > 0) && (
-            <Text
-              colour={ColourPalette.GREY_400}
-              css={css`
-                max-width: 460px;
-                padding-bottom: 40px;
-              `}
-            >
-              {disclaimerText}
-            </Text>
-          )
-        }
-        {
-          (skills.length === 0) && (
-            <NoResults
-              searchText={search}
-              css={css`
-                padding-top: 26px;
-                align-self: center;
-              `}
-            />
-          )
-        }
-        <Grid css={css`
-          width: 100%;
-        `}
-        >
-          {
-            skills.map((skill) => {
+          skills.map((skill) => {
 
-              // Destructure the skill and return
-              // the skill card component
-              const { id, name, type, iconId } = skill;
-              return (
+            // Destructure the skill and return the skill
+            // card component wrapped in a `Link` component
+            const { id, name, type, iconId, url } = skill;
+            return (
+              <Link
+                key={`skill-${id}`}
+                href={url}
+                target="_blank"
+                passHref={true}
+                aria-label={name}
+              >
                 <SkillCard
-                  key={`skill-${id}`}
                   name={name}
                   type={type}
                   iconId={iconId}
-                  onClick={() => {
-                    setSelectedSkill(skill);
-                    setModalOpen(true);
-                  }}
                 />
-              );
-            })
-          }
-        </Grid>
-      </Content>
-    </>
+              </Link>
+            );
+          })
+        }
+      </Grid>
+    </Content>
   );
 };
 

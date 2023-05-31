@@ -56,16 +56,10 @@ const LifeTimelinePreview: FunctionComponent<Props> = ({ internalRef, className,
       >
         {
           events.map((event) => {
-
-            // Destructure the timeline event and
-            // return the timeline event component
-            const { id, title, description, date } = event;
             return (
               <TimelineEvent
-                key={`timeline-event-${id}`}
-                title={title}
-                description={description}
-                date={date}
+                key={`timeline-event-${event.id}`}
+                event={event}
               />
             );
           })

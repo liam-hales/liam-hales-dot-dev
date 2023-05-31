@@ -101,18 +101,16 @@ const LifeTimeline: FunctionComponent<Props> = ({ content, search = '' }): React
         {
           timelineEvents.map((event) => {
 
-            // Destructure the timeline event and get the first
-            // event from the original timeline events array
-            const { id, title, description, date } = event;
+            // Get the first event from the original timeline events array
+            // which will be used to see if the event is the first event
+            const { id } = event;
             const [firstEvent] = timelineEvents;
 
             return (
               <TimelineEvent
                 key={`timeline-event-${id}`}
-                title={title}
-                description={description}
-                date={date}
-                isFirst={id === firstEvent.id}
+                event={event}
+                isFirst={(id === firstEvent.id)}
               />
             );
           })

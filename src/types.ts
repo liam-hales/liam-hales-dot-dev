@@ -168,7 +168,7 @@ export type CodeLanguage = typeof codeLanguages[number];
  *
  * - Generic type `T` for the props
  */
-export interface AsyncComponent<T extends Partial<Record<keyof T, unknown>> = never> {
+export interface AsyncComponent<T extends object = never> {
   (props: T): Promise<ReactElement<T>> | Promise<ReactElement>;
 }
 
@@ -201,6 +201,6 @@ export interface PageProps {
  * Describes the `options` for
  * the `useQuery` hook
  */
-export interface UseQueryOptions<V extends Partial<Record<keyof V, unknown>> = never> {
+export interface UseQueryOptions<V extends object = never> {
   readonly variables?: V;
 }

@@ -23,8 +23,8 @@ import { useConfig } from '.';
  * });
  */
 const useQuery = async <
-  T extends Partial<Record<keyof T, unknown>> | undefined,
-  V extends Partial<Record<keyof V, unknown>> = never,
+  T extends object | undefined,
+  V extends object = never,
 >(
   document: string,
   options: UseQueryOptions<V> = {},
@@ -36,7 +36,8 @@ const useQuery = async <
   const repsonse = await request<{ readonly [key: string]: T }>({
     url: graphqlApiUrl,
     document: document,
-    variables: variables,
+    // Use `as` to fix generic type error
+    variables: variables as Record<string, unknown>,
   });
 
   // Extract and return the object from

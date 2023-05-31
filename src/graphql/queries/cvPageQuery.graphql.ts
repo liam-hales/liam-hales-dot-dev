@@ -1,5 +1,11 @@
 import { gql } from 'graphql-request';
-import { pageFragment, pageMetadataFragment, skillFragment, timelineEventFragment } from '..';
+import {
+  pageFragment,
+  pageMetadataFragment,
+  skillFragment,
+  pointTimelineEventFragment,
+  periodTimelineEventFragment,
+} from '..';
 
 /**
  * The GraphQL query used for
@@ -23,7 +29,12 @@ const cvPageQuery = gql`
           }
           lifeTimelineText
           lifeTimelineEvents {
-            ...TimelineEventFields
+            ... on PointTimelineEvent {
+              ...PointTimelineEventFields
+            }
+            ... on PeriodTimelineEvent {
+              ...PeriodTimelineEventFields
+            }
           }
           experienceText
           disclaimerText
@@ -34,7 +45,8 @@ const cvPageQuery = gql`
   ${pageFragment}
   ${pageMetadataFragment}
   ${skillFragment}
-  ${timelineEventFragment}
+  ${pointTimelineEventFragment}
+  ${periodTimelineEventFragment}
 `;
 
 export default cvPageQuery;

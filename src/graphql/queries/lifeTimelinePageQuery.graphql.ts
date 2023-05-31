@@ -1,5 +1,10 @@
 import { gql } from 'graphql-request';
-import { pageFragment, pageMetadataFragment, timelineEventFragment } from '..';
+import {
+  pageFragment,
+  pageMetadataFragment,
+  pointTimelineEventFragment,
+  periodTimelineEventFragment,
+} from '..';
 
 /**
  * The GraphQL query used for fetching
@@ -24,7 +29,12 @@ const lifeTimelinePageQuery = gql`
               _search: $search
             }
           ) {
-            ...TimelineEventFields
+            ... on PointTimelineEvent {
+              ...PointTimelineEventFields
+            }
+            ... on PeriodTimelineEvent {
+              ...PeriodTimelineEventFields
+            }
           }
         }
       }
@@ -32,7 +42,8 @@ const lifeTimelinePageQuery = gql`
   }
   ${pageFragment}
   ${pageMetadataFragment}
-  ${timelineEventFragment}
+  ${pointTimelineEventFragment}
+  ${periodTimelineEventFragment}
 `;
 
 export default lifeTimelinePageQuery;

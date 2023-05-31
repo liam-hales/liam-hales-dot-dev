@@ -5,16 +5,14 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';
 import { ColourPalette } from '../../enums';
-import { BaseProps, LogoIconId } from '../../types';
+import { BaseProps } from '../../types';
 import { Box, Card, Text, LogoIcon } from '../common';
+import { Skill } from '../../graphql';
 
 /**
  * The `SkillCard` component props
  */
-interface Props extends BaseProps {
-  readonly name: string;
-  readonly type: string;
-  readonly iconId?: LogoIconId;
+interface Props extends Omit<Skill, 'id' | 'url'>, BaseProps {
   readonly onClick?: () => void;
 }
 

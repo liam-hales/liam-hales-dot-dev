@@ -14,7 +14,7 @@ import {
  * how Hygraph handles searching within GraphQL.
  */
 const lifeTimelinePageQuery = gql`
-  query lifeTimelinePage($search: String = "") {
+  query lifeTimelinePage {
     page(
       where: {
         slug: "life-timeline"
@@ -23,12 +23,7 @@ const lifeTimelinePageQuery = gql`
       ...PageFields,
       content {
         ... on LifeTimelineContent {
-          timelineEvents(
-            orderBy: date_DESC
-            where: {
-              _search: $search
-            }
-          ) {
+          timelineEvents {
             ... on PointTimelineEvent {
               ...PointTimelineEventFields
             }

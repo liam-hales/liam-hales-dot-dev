@@ -85,9 +85,9 @@
         "trailingUnderscore": "forbid"
       },
       {
-        "selector": "parameter",
+        "selector": "typeProperty",
         "format": ["camelCase"],
-        "leadingUnderscore": "forbid",
+        "leadingUnderscore": "allowDouble",
         "trailingUnderscore": "forbid"
       },
       {

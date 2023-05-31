@@ -2,21 +2,18 @@
 
 'use client';
 
-import { FunctionComponent, ReactElement, useState } from 'react';
+import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';
-import { useRouter } from 'next/navigation';
-import { Content, NoResults } from '../../../components';
-import { Breadcrumbs, BreadcrumbItem, SearchInput, Timeline, TimelineEvent, Title } from '../../../components/common';
+import { Content } from '../../../components';
+import { Breadcrumbs, BreadcrumbItem, Timeline, TimelineEvent, Title } from '../../../components/common';
 import { LifeTimelineContent } from '../../../graphql';
 import { BaseProps } from '../../../types';
-import { useScreen } from '../../../hooks';
 
 /**
  * The `LifeTimeline` component props
  */
 interface Props extends BaseProps {
   readonly content: LifeTimelineContent;
-  readonly search?: string;
 }
 
 /**
@@ -26,14 +23,9 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `LifeTimeline` component
  */
-const LifeTimeline: FunctionComponent<Props> = ({ content, search = '' }): ReactElement<Props> => {
+const LifeTimeline: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
 
-  const { screenSize } = useScreen();
-  const { push } = useRouter();
   const { timelineEvents } = content;
-
-  const [searchText, setSearchText] = useState<string>(search);
-
   return (
     <Content
       alignment="flex-start"
@@ -52,7 +44,7 @@ const LifeTimeline: FunctionComponent<Props> = ({ content, search = '' }): React
       </Title>
       <Breadcrumbs css={css`
         padding-top: 40px;
-        padding-bottom: 50px;
+        padding-bottom: 80px;
       `}
       >
         <BreadcrumbItem route="/cv">
@@ -65,38 +57,6 @@ const LifeTimeline: FunctionComponent<Props> = ({ content, search = '' }): React
           Life Timeline
         </BreadcrumbItem>
       </Breadcrumbs>
-      <SearchInput
-        value={searchText}
-        onChange={(value) => setSearchText(value)}
-        onSearch={() => {
-
-          // Define the search query params
-          // based on the search text
-          const params = new URLSearchParams({
-            ...(searchText !== '') && {
-              search: searchText,
-            },
-          });
-
-          push(`/cv/life-timeline?${params.toString()}`);
-        }}
-        css={css`
-          width: ${(screenSize === 'small') ? '100%' : '400px'};
-          margin-top: 50px;
-          margin-bottom: 40px;
-        `}
-      />
-      {
-        (timelineEvents.length === 0) && (
-          <NoResults
-            searchText={search}
-            css={css`
-              padding-top: 26px;
-              align-self: center;
-            `}
-          />
-        )
-      }
       <Timeline>
         {
           timelineEvents.map((event) => {

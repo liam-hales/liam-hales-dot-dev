@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Page, SearchVariables, lifeTimelinePageQuery } from '../../../graphql';
+import { Page, lifeTimelinePageQuery } from '../../../graphql';
 import { useQuery } from '../../../hooks/server';
 import { PageProps, AsyncComponent } from '../../../types';
 import { buildPageMetadata } from '../../../helpers/server';
@@ -12,20 +12,11 @@ import LifeTimeline from './lifeTimeline';
  * @param props The component props
  * @returns The `LifeTimelinePage` component
  */
-const LifeTimelinePage: AsyncComponent<PageProps> = async ({ searchParams = {} }): Promise<ReactElement<PageProps>> => {
+const LifeTimelinePage: AsyncComponent<PageProps> = async (): Promise<ReactElement<PageProps>> => {
 
-  const { search } = searchParams;
-  const { content } = await useQuery<Page<'life-timeline'>, SearchVariables>(lifeTimelinePageQuery, {
-    variables: {
-      search: search,
-    },
-  });
-
+  const { content } = await useQuery<Page<'life-timeline'>>(lifeTimelinePageQuery);
   return (
-    <LifeTimeline
-      content={content}
-      search={search}
-    />
+    <LifeTimeline content={content} />
   );
 };
 

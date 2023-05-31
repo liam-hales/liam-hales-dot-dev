@@ -83,15 +83,31 @@ export const skillFragment = gql`
 `;
 
 /**
- * The GraphQL fragment for the `TimelineEvent` type which can be
+ * The GraphQL fragment for the `PointTimelineEvent` type which can be
  * used within GraphQL documents and other fragments
  */
-export const timelineEventFragment = gql`
-  fragment TimelineEventFields on TimelineEvent {
+export const pointTimelineEventFragment = gql`
+  fragment PointTimelineEventFields on PointTimelineEvent {
+    __typename
     id
     title
     description
     date
+  }
+`;
+
+/**
+ * The GraphQL fragment for the `PeriodTimelineEvent` type which can be
+ * used within GraphQL documents and other fragments
+ */
+export const periodTimelineEventFragment = gql`
+  fragment PeriodTimelineEventFields on PeriodTimelineEvent {
+    __typename
+    id
+    title
+    description
+    startDate
+    endDate
   }
 `;
 

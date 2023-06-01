@@ -3,8 +3,8 @@ import {
   pageFragment,
   pageMetadataFragment,
   skillFragment,
-  pointTimelineEventFragment,
-  periodTimelineEventFragment,
+  timelinePointEventFragment,
+  timelinePeriodEventFragment,
 } from '..';
 
 /**
@@ -29,11 +29,11 @@ const cvPageQuery = gql`
           }
           lifeTimelineText
           lifeTimelineEvents {
-            ... on PointTimelineEvent {
-              ...PointTimelineEventFields
+            ... on TimelinePointEvent {
+              ...TimelinePointEventFields
             }
-            ... on PeriodTimelineEvent {
-              ...PeriodTimelineEventFields
+            ... on TimelinePeriodEvent {
+              ...TimelinePeriodEventFields
             }
           }
           experienceText
@@ -45,8 +45,8 @@ const cvPageQuery = gql`
   ${pageFragment}
   ${pageMetadataFragment}
   ${skillFragment}
-  ${pointTimelineEventFragment}
-  ${periodTimelineEventFragment}
+  ${timelinePointEventFragment}
+  ${timelinePeriodEventFragment}
 `;
 
 export default cvPageQuery;

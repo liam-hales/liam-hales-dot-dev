@@ -187,10 +187,10 @@ export interface Skill {
 }
 
 /**
- * Describes the GraphQL `PointTimelineEvent` type
+ * Describes the GraphQL `TimelinePointEvent` type
  */
-export interface PointTimelineEvent {
-  readonly __typename: 'PointTimelineEvent';
+export interface TimelinePointEvent {
+  readonly __typename: 'TimelinePointEvent';
   readonly id: string;
   readonly title: string;
   readonly description: string;
@@ -198,10 +198,10 @@ export interface PointTimelineEvent {
 }
 
 /**
- * Describes the GraphQL `PeriodTimelineEvent` type
+ * Describes the GraphQL `TimelinePeriodEvent` type
  */
-export interface PeriodTimelineEvent {
-  readonly __typename: 'PeriodTimelineEvent';
+export interface TimelinePeriodEvent {
+  readonly __typename: 'TimelinePeriodEvent';
   readonly id: string;
   readonly title: string;
   readonly description: string;
@@ -213,7 +213,7 @@ export interface PeriodTimelineEvent {
  * The union type for all
  * timeline event types
  */
-export type TimelineEvent = PointTimelineEvent | PeriodTimelineEvent;
+export type TimelineEvent = TimelinePointEvent | TimelinePeriodEvent;
 
 /**
  * Describes the GraphQL `BlogPost` type

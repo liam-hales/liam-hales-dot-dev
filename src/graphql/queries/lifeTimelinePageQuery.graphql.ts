@@ -2,8 +2,8 @@ import { gql } from 'graphql-request';
 import {
   pageFragment,
   pageMetadataFragment,
-  pointTimelineEventFragment,
-  periodTimelineEventFragment,
+  timelinePointEventFragment,
+  timelinePeriodEventFragment,
 } from '..';
 
 /**
@@ -24,11 +24,11 @@ const lifeTimelinePageQuery = gql`
       content {
         ... on LifeTimelineContent {
           timelineEvents {
-            ... on PointTimelineEvent {
-              ...PointTimelineEventFields
+            ... on TimelinePointEvent {
+              ...TimelinePointEventFields
             }
-            ... on PeriodTimelineEvent {
-              ...PeriodTimelineEventFields
+            ... on TimelinePeriodEvent {
+              ...TimelinePeriodEventFields
             }
           }
         }
@@ -37,8 +37,8 @@ const lifeTimelinePageQuery = gql`
   }
   ${pageFragment}
   ${pageMetadataFragment}
-  ${pointTimelineEventFragment}
-  ${periodTimelineEventFragment}
+  ${timelinePointEventFragment}
+  ${timelinePeriodEventFragment}
 `;
 
 export default lifeTimelinePageQuery;

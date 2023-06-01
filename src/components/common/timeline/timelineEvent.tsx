@@ -34,7 +34,7 @@ const TimelineEvent: FunctionComponent<Props> = ({ event, isFirst = false }): Re
   return (
     <Box alignment="flex-start">
       {
-        (type === 'PointTimelineEvent') && (() => {
+        (type === 'TimelinePointEvent') && (() => {
           const { date } = rest;
 
           const dateText = from(date).format('MMM YYYY');
@@ -48,7 +48,7 @@ const TimelineEvent: FunctionComponent<Props> = ({ event, isFirst = false }): Re
         })()
       }
       {
-        (type === 'PeriodTimelineEvent') && (() => {
+        (type === 'TimelinePeriodEvent') && (() => {
           const { startDate, endDate } = rest;
 
           const start = from(startDate);

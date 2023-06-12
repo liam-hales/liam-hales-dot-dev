@@ -6,7 +6,7 @@ import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';
 import { BaseProps } from '../../types';
 import { ColourPalette } from '../../enums';
-import { Card, Text } from '.';
+import { Box, Text } from '.';
 
 /**
  * The `Tag` component props
@@ -31,9 +31,14 @@ const Tag: FunctionComponent<Props> = (props): ReactElement<Props> => {
   } = props;
 
   return (
-    <Card
+    <Box
       className={className}
       css={css`
+        padding-top: 2.4px;
+        padding-bottom: 2.4px;
+        padding-left: 11px;
+        padding-right: 11px;
+        border-radius: 4px;
         background-color: ${colour}33;
       `}
     >
@@ -42,15 +47,11 @@ const Tag: FunctionComponent<Props> = (props): ReactElement<Props> => {
         css={css`
           font-size: 12px;
           color: ${colour};
-          padding-top: 2.4px;
-          padding-bottom: 2.4px;
-          padding-left: 11px;
-          padding-right: 11px;
         `}
       >
         {children}
       </Text>
-    </Card>
+    </Box>
   );
 };
 

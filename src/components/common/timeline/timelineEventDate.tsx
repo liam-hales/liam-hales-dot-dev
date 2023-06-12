@@ -91,6 +91,10 @@ const TimelineEventDate: FunctionComponent<Props> = (props): ReactElement<Props>
       `}
     >
       <Box css={css`
+        padding-top: 2.4px;
+        padding-bottom: 2.4px;
+        padding-left: 9px;
+        padding-right: 9px;
         border-radius: 4px;
         background-color: ${ColourPalette.BLUE};
       `}
@@ -99,10 +103,6 @@ const TimelineEventDate: FunctionComponent<Props> = (props): ReactElement<Props>
           isBold={true}
           css={css`
             font-size: 11px;
-            padding-top: 2.4px;
-            padding-bottom: 2.4px;
-            padding-left: 9px;
-            padding-right: 9px;
           `}
         >
           {primaryText}

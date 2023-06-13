@@ -563,15 +563,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconify-json/heroicons-solid@npm:^1.1.7":
-  version: 1.1.7
-  resolution: "@iconify-json/heroicons-solid@npm:1.1.7"
-  dependencies:
-    "@iconify/types": "*"
-  checksum: e584603e465a90a6df6408835ab936e726630b9ae37c6bac9d05d23a97758d5250328bc4f4f1ab4c0a9b66e364b4ef0c74c4dd182a7553af1598d286108cf4cd
-  languageName: node
-  linkType: hard
-
 "@iconify-json/heroicons@npm:^1.1.10":
   version: 1.1.10
   resolution: "@iconify-json/heroicons@npm:1.1.10"
@@ -4909,7 +4900,6 @@ __metadata:
     "@emotion/react": ^11.11.0
     "@emotion/styled": ^11.11.0
     "@iconify-json/heroicons": ^1.1.10
-    "@iconify-json/heroicons-solid": ^1.1.7
     "@iconify-json/logos": ^1.1.31
     "@iconify-json/mingcute": ^1.1.6
     "@iconify-json/simple-icons": ^1.1.55

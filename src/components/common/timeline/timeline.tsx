@@ -66,7 +66,7 @@ const Timeline: FunctionComponent<Props> = (props): ReactElement<Props> => {
               <div css={css`
                 width: 20px;
                 height: 20px;
-                margin-top: ${(first === true) ? 36 : 32}px;
+                margin-top: ${(first === true) ? 42 : 36}px;
                 flex-shrink: 0;
                 border-style: solid;
                 border-color: ${ColourPalette.GREY_1000};

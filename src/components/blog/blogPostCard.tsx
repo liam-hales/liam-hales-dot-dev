@@ -57,7 +57,12 @@ const BlogPostCard: FunctionComponent<Props> = ({ className, title, description,
       >
         {title}
       </Text>
-      <Box direction="row">
+      <Box
+        direction="row"
+        css={css`
+          padding-bottom: 10px;
+        `}
+      >
         {
           tags.map((tag) => {
             const { id, text, colour } = tag;
@@ -75,14 +80,15 @@ const BlogPostCard: FunctionComponent<Props> = ({ className, title, description,
           })
         }
       </Box>
-      <Markdown css={css`
-        padding-top: 2px;
-        padding-bottom: 2px;
-      `}
-      >
+      <Markdown>
         {description}
       </Markdown>
-      <Box direction="row">
+      <Box
+        direction="row"
+        css={css`
+          padding-top: 8px;
+        `}
+      >
         <Image
           path={image.url}
           alt={`${firstName} ${lastName}`}

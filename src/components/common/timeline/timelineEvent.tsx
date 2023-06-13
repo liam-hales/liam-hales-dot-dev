@@ -52,7 +52,7 @@ const TimelineEvent: FunctionComponent<Props> = ({ event, isFirst = false }): Re
         isBold={true}
         css={css`
           max-width: ${(isFirst === true) ? '580px' : 'unset'};
-          padding-top: 6px;
+          padding-top: 10px;
           padding-bottom: 8px;
           font-size: ${(isFirst === true) ? 34 : 24}px;
           line-height: 122%;

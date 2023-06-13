@@ -87,7 +87,7 @@ const TimelineEventDate: FunctionComponent<Props> = (props): ReactElement<Props>
     <Box
       direction="row"
       css={css`
-        column-gap: 8px;
+        column-gap: 10px;
       `}
     >
       <Box css={css`

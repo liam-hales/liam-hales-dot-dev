@@ -105,8 +105,7 @@ const BrandLogo: FunctionComponent<Props> = (props): ReactElement<Props> => {
             text-align: center;
           `}
         >
-          <Text
-            colour={ColourPalette.GREY_400}
+          <Box
             initial={{
               y: 0,
               opacity: 1,
@@ -118,12 +117,18 @@ const BrandLogo: FunctionComponent<Props> = (props): ReactElement<Props> => {
             transition={textTransition}
             css={css`
               position: absolute;
-              width: 100%;
-              font-size: 16px;
+              padding-top: 2.8px;
+              padding-bottom: 2.8px;
+              padding-left: 14px;
+              padding-right: 14px;
+              border-radius: 6px;
+              background-color: ${ColourPalette.BLUE};
             `}
           >
-            Select or hover over a section of the logo to inspect it&apos;s purpose.
-          </Text>
+            <Text isBold={true}>
+              Select or hover to inspect
+            </Text>
+          </Box>
           <Text
             isBold={true}
             initial={{

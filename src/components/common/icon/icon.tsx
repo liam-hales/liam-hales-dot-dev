@@ -12,8 +12,6 @@ import Home from '~icons/heroicons/home-solid';
 import Refresh from '~icons/heroicons/arrow-path-20-solid';
 import Mail from '~icons/heroicons-solid/mail';
 import Code from '~icons/heroicons-solid/code';
-import ChevronRight from '~icons/heroicons-solid/chevron-right';
-import ExternalLink from '~icons/heroicons-solid/external-link';
 import Search from '~icons/mingcute/search-2-fill';
 import ArrowLeft from '~icons/mingcute/arrow-left-fill';
 import ArrowRight from '~icons/mingcute/arrow-right-fill';
@@ -48,14 +46,12 @@ const iconMap: Record<IconId, FunctionComponent<SVGProps<SVGSVGElement>>> = {
   code: Code,
   server: ServerStack,
   envelope: Mail,
-  caretRight: ChevronRight,
   arrowleft: ArrowLeft,
   arrowRight: ArrowRight,
   magnifyingGlass: Search,
   cross: Close,
   tick: Check,
   copy: Copy,
-  externalLink: ExternalLink,
   refresh: Refresh,
   copyright: Copyright,
   linkedIn: LinkedIn,

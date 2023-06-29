@@ -8,7 +8,6 @@ import { ColourPalette } from '../../enums';
 import { TimelineEvent as Event } from '../../graphql';
 import { BaseProps } from '../../types';
 import { Box, Title, TimelineEvent, Text, Timeline, Button, Link } from '../common';
-import { withRef } from '../../helpers';
 
 /**
  * The `LifeTimelinePreview` component props
@@ -25,10 +24,9 @@ interface Props extends BaseProps<HTMLDivElement> {
  * @param props The component props
  * @returns The `LifeTimelinePreview` component
  */
-const LifeTimelinePreview: FunctionComponent<Props> = ({ internalRef, className, text, events }): ReactElement<Props> => {
+const LifeTimelinePreview: FunctionComponent<Props> = ({ className, text, events }): ReactElement<Props> => {
   return (
     <Box
-      ref={internalRef}
       className={className}
       alignment="flex-start"
     >
@@ -84,4 +82,4 @@ const LifeTimelinePreview: FunctionComponent<Props> = ({ internalRef, className,
   );
 };
 
-export default withRef(LifeTimelinePreview);
+export default LifeTimelinePreview;

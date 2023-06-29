@@ -10,7 +10,6 @@ import { useScreen } from '../../hooks';
 import { BaseProps } from '../../types';
 import { Box, Button, Link, Text, Title } from '../common';
 import { Grid, SkillCard } from '..';
-import { withRef } from '../../helpers';
 
 /**
  * The `SkillsPreview` component props
@@ -27,12 +26,11 @@ interface Props extends BaseProps<HTMLDivElement> {
  * @param props The component props
  * @returns The `SkillsPreview` component
  */
-const SkillsPreview: FunctionComponent<Props> = ({ internalRef, className, text, skills }): ReactElement<Props> => {
+const SkillsPreview: FunctionComponent<Props> = ({ className, text, skills }): ReactElement<Props> => {
 
   const { screenSize } = useScreen();
   return (
     <Box
-      ref={internalRef}
       className={className}
       alignment="flex-start"
     >
@@ -93,4 +91,4 @@ const SkillsPreview: FunctionComponent<Props> = ({ internalRef, className, text,
   );
 };
 
-export default withRef(SkillsPreview);
+export default SkillsPreview;

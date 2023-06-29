@@ -6,7 +6,6 @@ import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';
 import { ColourPalette } from '../enums';
 import { BaseProps } from '../types';
-import { withRef } from '../helpers';
 import { Employment } from '../graphql';
 import { Box, Text, Title, Button, Link } from './common';
 import { Employments } from '.';
@@ -26,10 +25,9 @@ interface Props extends BaseProps<HTMLDivElement> {
  * @param props The component props
  * @returns The `ExperiencePreview` component
  */
-const ExperiencePreview: FunctionComponent<Props> = ({ internalRef, className, text, employments }): ReactElement<Props> => {
+const ExperiencePreview: FunctionComponent<Props> = ({ className, text, employments }): ReactElement<Props> => {
   return (
     <Box
-      ref={internalRef}
       className={className}
       alignment="flex-start"
     >
@@ -75,4 +73,4 @@ const ExperiencePreview: FunctionComponent<Props> = ({ internalRef, className, t
   );
 };
 
-export default withRef(ExperiencePreview);
+export default ExperiencePreview;

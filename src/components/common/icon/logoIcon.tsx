@@ -8,6 +8,7 @@ import Nodejs from '~icons/logos/nodejs-icon';
 import NestJS from '~icons/logos/nestjs';
 import Nextjs from '~icons/logos/nextjs-icon';
 import React from '~icons/logos/react';
+import TailwindCSS from '~icons/logos/tailwindcss-icon';
 import JSON from '~icons/logos/json';
 import Swift from '~icons/logos/swift';
 import GraphQL from '~icons/logos/graphql';
@@ -21,6 +22,7 @@ import Illustrator from '~icons/logos/adobe-illustrator';
 import HTML from '~icons/vscode-icons/file-type-html';
 import CSS from '~icons/vscode-icons/file-type-css';
 import Git from '~icons/vscode-icons/file-type-git';
+import Jest from '~icons/vscode-icons/file-type-jest';
 
 /**
  * The `LogoIcon` component props
@@ -42,6 +44,8 @@ const iconMap: Record<LogoIconId, FunctionComponent<SVGProps<SVGSVGElement>>> = 
   html: HTML,
   css: CSS,
   react: React,
+  tailwindcss: TailwindCSS,
+  jest: Jest,
   git: Git,
   json: JSON,
   swift: Swift,

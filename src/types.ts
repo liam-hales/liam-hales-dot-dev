@@ -130,6 +130,8 @@ export type LogoIconId =
   | 'html'
   | 'css'
   | 'react'
+  | 'tailwindcss'
+  | 'jest'
   | 'git'
   | 'json'
   | 'swift'

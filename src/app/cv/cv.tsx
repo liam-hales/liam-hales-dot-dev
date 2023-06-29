@@ -13,7 +13,7 @@ import {
   CurrentPosition,
   LifeTimelinePreview,
   SkillsPreview,
-  Experience,
+  ExperiencePreview,
 } from '../../components';
 import { useScreen } from '../../hooks';
 
@@ -48,6 +48,7 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
     lifeTimelineText,
     lifeTimelineEvents,
     experienceText,
+    employments,
     disclaimerText,
   } = content;
 
@@ -120,9 +121,10 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           margin-top: 80px;
         `}
       />
-      <Experience
+      <ExperiencePreview
         ref={experienceRef}
         text={experienceText}
+        employments={employments}
         css={css`
           // Margin is applied here and not padding so
           // the auto scroll works correctly

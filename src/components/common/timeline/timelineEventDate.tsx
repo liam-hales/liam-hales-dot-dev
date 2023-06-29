@@ -69,7 +69,7 @@ const TimelineEventDate: FunctionComponent<Props> = (props): ReactElement<Props>
     // number of years and months based on the difference
     const diff = end.diff(start, 'months');
     const years = Math.floor(diff / 12);
-    const months = (diff % 12) + 1;
+    const months = diff % 12;
 
     const startText = start.format('MMM YYYY');
     const endText = (endDate != null) ? end.format('MMM YYYY') : 'Now';

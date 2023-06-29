@@ -4,6 +4,7 @@ import cvPageQuery from './cvPageQuery.graphql';
 import brandPageQuery from './brandPageQuery.graphql';
 import skillsPageQuery from './skillsPageQuery.graphql';
 import lifeTimelinePageQuery from './lifeTimelinePageQuery.graphql';
+import experiencePageQuery from './experiencePageQuery.graphql';
 import blogPageQuery from './blogPageQuery.graphql';
 import blogPostQuery from './blogPostQuery.graphql';
 
@@ -13,6 +14,7 @@ export {
   cvPageQuery,
   skillsPageQuery,
   lifeTimelinePageQuery,
+  experiencePageQuery,
   brandPageQuery,
   blogPageQuery,
   blogPostQuery,

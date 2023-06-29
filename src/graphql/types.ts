@@ -112,6 +112,14 @@ export interface LifeTimelineContent extends BasePageContent<'life-timeline'> {
 }
 
 /**
+ * Describes the GraphQL `ExperienceContent` type which
+ * contains data for the experience page content
+ */
+export interface ExperienceContent extends BasePageContent<'experience'> {
+  readonly employments: Employment[];
+}
+
+/**
  * Describes the GraphQL `BrandContent` type which
  * contains data for the brand page content
  */
@@ -142,6 +150,7 @@ export type PageContent =
   | CVContent
   | LifeTimelineContent
   | SkillsContent
+  | ExperienceContent
   | BrandContent
   | BlogContent;
 

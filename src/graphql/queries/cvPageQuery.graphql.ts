@@ -22,8 +22,6 @@ const cvPageQuery = gql`
       ...PageFields,
       content {
         ... on CVContent {
-          currentPositionText
-          careerStartDate
           skillsText
           skills {
             ...SkillFields

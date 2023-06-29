@@ -18,7 +18,7 @@ interface Props extends BaseProps<HTMLDivElement> {
 
 /**
  * Renders the employment data which is used within the
- * `ProExperience` and `ProExperiencePreview` components
+ * `Experience` and `ExperiencePreview` components
  *
  * @param props The component props
  * @returns The `Employments` component

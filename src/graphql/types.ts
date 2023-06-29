@@ -4,7 +4,7 @@ import { LogoIconId } from '../types';
  * The page slug used for fetching page
  * data from the GraphQL API
  */
-export type PageSlug = 'global' | 'home' | 'cv' | 'skills' | 'life-timeline' | 'blog' | 'brand';
+export type PageSlug = 'global' | 'home' | 'cv' | 'skills' | 'life-timeline' | 'experience' | 'blog' | 'brand';
 
 /**
  * Describes the GraphQL `Page` type which

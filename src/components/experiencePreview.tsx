@@ -8,7 +8,7 @@ import { ColourPalette } from '../enums';
 import { BaseProps } from '../types';
 import { withRef } from '../helpers';
 import { Employment } from '../graphql';
-import { Box, Text, Title } from './common';
+import { Box, Text, Title, Button, Link } from './common';
 import { Employments } from '.';
 
 /**
@@ -55,6 +55,22 @@ const ExperiencePreview: FunctionComponent<Props> = ({ internalRef, className, t
           );
         `}
       />
+
+      <Link
+        href="/cv/experience"
+        passHref={true}
+        css={css`
+          margin-top: -12px;
+          align-self: center;
+        `}
+      >
+        <Button
+          size="large"
+          iconId="arrowRight"
+        >
+          See all experience
+        </Button>
+      </Link>
     </Box>
   );
 };

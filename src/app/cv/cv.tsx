@@ -10,7 +10,6 @@ import { CVContent } from '../../graphql';
 import { Box, Button, Text, Title } from '../../components/common';
 import {
   Content,
-  CurrentPosition,
   LifeTimelinePreview,
   SkillsPreview,
   ExperiencePreview,
@@ -35,14 +34,11 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
 
   const { scrollTo } = useScreen();
 
-  const currentPositionRef = useRef<HTMLDivElement>(null);
   const skillsPreviewRef = useRef<HTMLDivElement>(null);
   const lifeTimelinePreviewRef = useRef<HTMLDivElement>(null);
   const experienceRef = useRef<HTMLDivElement>(null);
 
   const {
-    currentPositionText,
-    careerStartDate,
     skillsText,
     skills,
     lifeTimelineText,
@@ -78,9 +74,6 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           row-gap: 10px;
         `}
       >
-        <Button onClick={() => scrollTo(currentPositionRef)}>
-          Current Position
-        </Button>
         <Button onClick={() => scrollTo(skillsPreviewRef)}>
           Skills
         </Button>
@@ -91,16 +84,6 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           Experience
         </Button>
       </Box>
-      <CurrentPosition
-        ref={currentPositionRef}
-        text={currentPositionText}
-        careerStartDate={careerStartDate}
-        css={css`
-          // Margin is applied here and not padding so
-          // the auto scroll works correctly
-          margin-top: 50px;
-        `}
-      />
       <SkillsPreview
         ref={skillsPreviewRef}
         text={skillsText}

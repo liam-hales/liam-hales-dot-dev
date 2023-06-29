@@ -17,8 +17,8 @@ interface Props extends BaseProps {
 }
 
 /**
- * Used as the entry point for the CV professional experience page. Renders the
- * CV professional experience page components using the given `content` prop
+ * Used as the entry point for the CV experience page. Renders the
+ * CV experience page components using the given `content` prop
  *
  * @param props The component props
  * @returns The `Experience` component

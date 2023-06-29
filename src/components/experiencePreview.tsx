@@ -20,8 +20,8 @@ interface Props extends BaseProps<HTMLDivElement> {
 }
 
 /**
- * Renders the professional experience preview section for the
- * CV page which is rendered within the `CVRoute` component
+ * Renders the experience preview section for the CV page
+ * which is rendered within the `CVRoute` component
  *
  * @param props The component props
  * @returns The `ExperiencePreview` component

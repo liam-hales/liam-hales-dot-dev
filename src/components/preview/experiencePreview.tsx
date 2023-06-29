@@ -4,11 +4,11 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';
-import { ColourPalette } from '../enums';
-import { BaseProps } from '../types';
-import { Employment } from '../graphql';
-import { Box, Text, Title, Button, Link } from './common';
-import { Employments } from '.';
+import { ColourPalette } from '../../enums';
+import { BaseProps } from '../../types';
+import { Employment } from '../../graphql';
+import { Box, Text, Title, Button, Link } from '../common';
+import { Employments } from '..';
 
 /**
  * The `ExperiencePreview` component props

@@ -216,6 +216,19 @@ export interface TimelinePeriodEvent {
 export type TimelineEvent = TimelinePointEvent | TimelinePeriodEvent;
 
 /**
+ * Describes the GraphQL `Employment` type
+ */
+export interface Employment {
+  readonly id: string;
+  readonly title: string;
+  readonly description: string;
+  readonly company: string;
+  readonly startDate: string;
+  readonly endDate?: string;
+  readonly skills: Skill[];
+}
+
+/**
  * Describes the GraphQL `BlogPost` type
  */
 export interface BlogPost {

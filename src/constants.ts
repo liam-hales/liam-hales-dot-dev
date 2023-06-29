@@ -18,6 +18,7 @@ export const navRoutes = [
   '/cv',
   '/cv/life-timeline',
   '/cv/skills',
+  '/cv/experience',
   '/blog',
   '/brand',
 ] as const;

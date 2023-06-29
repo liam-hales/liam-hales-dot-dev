@@ -12,7 +12,6 @@ import SkillAreaCard from './skills/skillAreaCard';
 import SkillAreas from './skills/skillAreas';
 import ProStatement from './proStatement';
 import StillInterested from './stillInterested';
-import CurrentPosition from './currentPosition';
 import LifeTimelinePreview from './lifeTimeline/lifeTimelinePreview';
 import SkillsPreview from './skills/skillsPreview';
 import ExperiencePreview from './experiencePreview';
@@ -45,7 +44,6 @@ export {
   SkillAreas,
   ProStatement,
   StillInterested,
-  CurrentPosition,
   LifeTimelinePreview,
   SkillsPreview,
   ExperiencePreview,

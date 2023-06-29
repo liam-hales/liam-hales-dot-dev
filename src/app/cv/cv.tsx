@@ -2,19 +2,18 @@
 
 'use client';
 
-import { FunctionComponent, ReactElement, useRef } from 'react';
+import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';
 import { BaseProps } from '../../types';
 import { ColourPalette } from '../../enums';
 import { CVContent } from '../../graphql';
-import { Box, Button, Text, Title } from '../../components/common';
+import { Box, Button, Text, Title, Link } from '../../components/common';
 import {
   Content,
   LifeTimelinePreview,
   SkillsPreview,
   ExperiencePreview,
 } from '../../components';
-import { useScreen } from '../../hooks';
 
 /**
  * The `CV` component props
@@ -31,13 +30,6 @@ interface Props extends BaseProps {
  * @returns The `CV` component
  */
 const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
-
-  const { scrollTo } = useScreen();
-
-  const skillsPreviewRef = useRef<HTMLDivElement>(null);
-  const lifeTimelinePreviewRef = useRef<HTMLDivElement>(null);
-  const experienceRef = useRef<HTMLDivElement>(null);
-
   const {
     skillsText,
     skills,
@@ -69,51 +61,53 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
         wrap={true}
         css={css`
           padding-top: 40px;
-          padding-bottom: 50px;
+          padding-bottom: 80px;
           column-gap: 10px;
           row-gap: 10px;
         `}
       >
-        <Button onClick={() => scrollTo(skillsPreviewRef)}>
-          Skills
-        </Button>
-        <Button onClick={() => scrollTo(lifeTimelinePreviewRef)}>
-          Life Timeline
-        </Button>
-        <Button onClick={() => scrollTo(experienceRef)}>
-          Experience
-        </Button>
+        <Link
+          href="/cv/skills"
+          passHref={true}
+        >
+          <Button>
+            Skills
+          </Button>
+        </Link>
+        <Link
+          href="/cv/life-timeline"
+          passHref={true}
+        >
+          <Button>
+            Life Timeline
+          </Button>
+        </Link>
+        <Link
+          href="/cv/experience"
+          passHref={true}
+        >
+          <Button>
+            Experience
+          </Button>
+        </Link>
       </Box>
-      <SkillsPreview
-        ref={skillsPreviewRef}
-        text={skillsText}
-        skills={skills}
-        css={css`
-          // Margin is applied here and not padding so
-          // the auto scroll works correctly
-          margin-top: 70px;
-        `}
-      />
-      <LifeTimelinePreview
-        ref={lifeTimelinePreviewRef}
-        text={lifeTimelineText}
-        events={lifeTimelineEvents}
-        css={css`
-          // Margin is applied here and not padding so
-          // the auto scroll works correctly
-          margin-top: 80px;
-        `}
-      />
-      <ExperiencePreview
-        ref={experienceRef}
-        text={experienceText}
-        employments={employments}
-        css={css`
-          // Margin is applied here and not padding so
-          // the auto scroll works correctly
-          margin-top: 80px;
-        `}
-      />
+      <Box css={css`
+        row-gap: 100px;
+      `}
+      >
+        <SkillsPreview
+          text={skillsText}
+          skills={skills}
+        />
+        <LifeTimelinePreview
+          text={lifeTimelineText}
+          events={lifeTimelineEvents}
+        />
+        <ExperiencePreview
+          text={experienceText}
+          employments={employments}
+        />
+      </Box>
       <Text
         colour={ColourPalette.GREY_600}
         css={css`

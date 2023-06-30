@@ -51,17 +51,13 @@ const SkillCard: FunctionComponent<Props> = ({ className, name, type, iconId, on
           {type}
         </Text>
       </Box>
-      {
-        (iconId != null) && (
-          <LogoIcon
-            id={iconId}
-            css={css`
-              font-size: 34px;
-              margin-left: 20px;
-            `}
-          />
-        )
-      }
+      <LogoIcon
+        id={iconId}
+        css={css`
+          font-size: 34px;
+          margin-left: 20px;
+        `}
+      />
     </Card>
   );
 };

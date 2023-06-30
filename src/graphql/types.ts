@@ -190,7 +190,7 @@ export interface Skill {
   readonly id: string;
   readonly name: string;
   readonly type: string;
-  readonly iconId?: LogoIconId;
+  readonly iconId: LogoIconId;
   readonly url: string;
 }
 

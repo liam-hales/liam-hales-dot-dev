@@ -61,7 +61,7 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
         wrap={true}
         css={css`
           padding-top: 40px;
-          padding-bottom: 80px;
+          padding-bottom: 100px;
           column-gap: 10px;
           row-gap: 10px;
         `}

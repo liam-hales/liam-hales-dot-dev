@@ -48,7 +48,7 @@ const ExperiencePreview: FunctionComponent<Props> = ({ className, text, employme
           padding-top: 46px;
           mask-image: linear-gradient(
             to bottom,
-            black 30%,
+            black 40%,
             transparent 98%
           );
         `}

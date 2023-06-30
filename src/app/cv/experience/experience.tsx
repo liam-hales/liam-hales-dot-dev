@@ -54,7 +54,7 @@ const Experience: FunctionComponent<Props> = ({ content }): ReactElement<Props> 
           route="/cv/experience"
           isActive={true}
         >
-          Professional Experience
+          Experience
         </BreadcrumbItem>
       </Breadcrumbs>
       <Employments data={employments} />

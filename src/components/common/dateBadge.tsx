@@ -4,13 +4,13 @@
 
 import { FunctionComponent, ReactElement, useMemo } from 'react';
 import { css } from '@emotion/react';
-import { BaseProps } from '../../../types';
-import { Box, Text } from '..';
-import { ColourPalette } from '../../../enums';
-import { useDate } from '../../../hooks';
+import { BaseProps } from '../../types';
+import { ColourPalette } from '../../enums';
+import { useDate } from '../../hooks';
+import { Box, Text } from '.';
 
 /**
- * The `TimelineEventDate` component props
+ * The `DateBadge` component props
  * for the `point` type
  */
 interface PointProps extends BaseProps {
@@ -19,7 +19,7 @@ interface PointProps extends BaseProps {
 }
 
 /**
- * The `TimelineEventDate` component props
+ * The `DateBadge` component props
  * for the `period` type
  */
 interface PeriodProps extends BaseProps {
@@ -29,18 +29,18 @@ interface PeriodProps extends BaseProps {
 }
 
 /**
- * The `TimelineEventDate` component props
+ * The `DateBadge` component props
  */
 type Props = PointProps | PeriodProps;
 
 /**
- * Renders the timeline event date(s) in
- * a human readable format
+ * Renders either a single date or a date
+ * period in a human readable format
  *
  * @param props The component props
- * @returns The `TimelineEventDate` component
+ * @returns The `DateBadge` component
  */
-const TimelineEventDate: FunctionComponent<Props> = (props): ReactElement<Props> => {
+const DateBadge: FunctionComponent<Props> = (props): ReactElement<Props> => {
 
   const { utc, from } = useDate();
   const { type } = props;
@@ -115,4 +115,4 @@ const TimelineEventDate: FunctionComponent<Props> = (props): ReactElement<Props>
   );
 };
 
-export default TimelineEventDate;
+export default DateBadge;

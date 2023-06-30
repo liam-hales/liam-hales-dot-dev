@@ -7,7 +7,7 @@ import { css } from '@emotion/react';
 import { ColourPalette } from '../enums';
 import { BaseProps } from '../types';
 import { Employment } from '../graphql';
-import { Box, Text, TimelineEventDate, Title } from './common';
+import { Box, Text, DateBadge, Title } from './common';
 
 /**
  * The `Employments` component props
@@ -68,7 +68,7 @@ const Employments: FunctionComponent<Props> = ({ className, data }): ReactElemen
 
                       return (
                         <div key={`employment-${id}`}>
-                          <TimelineEventDate
+                          <DateBadge
                             type="period"
                             startDate={startDate}
                             endDate={endDate}

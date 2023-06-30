@@ -15,7 +15,7 @@ import Typewriter from './text/typewriter';
 import Divider from './divider';
 import Timeline from './timeline/timeline';
 import TimelineEvent from './timeline/timelineEvent';
-import TimelineEventDate from './timeline/timelineEventDate';
+import DateBadge from './dateBadge';
 import Breadcrumbs from './breadcrumbs/breadcrumbs';
 import BreadcrumbItem from './breadcrumbs/breadcrumbItem';
 import Popover from './popover';
@@ -46,7 +46,7 @@ export {
   Divider,
   Timeline,
   TimelineEvent,
-  TimelineEventDate,
+  DateBadge,
   Breadcrumbs,
   BreadcrumbItem,
   Popover,

@@ -6,7 +6,7 @@ import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';
 import { BaseProps } from '../../../types';
 import { ColourPalette } from '../../../enums';
-import { Box, Text, TimelineEventDate } from '..';
+import { Box, Text, DateBadge } from '..';
 import { TimelineEvent as TEvent } from '../../../graphql';
 
 /**
@@ -33,7 +33,7 @@ const TimelineEvent: FunctionComponent<Props> = ({ event, isFirst = false }): Re
     <Box alignment="flex-start">
       {
         (type === 'TimelinePointEvent') && (
-          <TimelineEventDate
+          <DateBadge
             type="point"
             date={rest.date}
           />
@@ -41,7 +41,7 @@ const TimelineEvent: FunctionComponent<Props> = ({ event, isFirst = false }): Re
       }
       {
         (type === 'TimelinePeriodEvent') && (
-          <TimelineEventDate
+          <DateBadge
             type="period"
             startDate={rest.startDate}
             endDate={rest.endDate}

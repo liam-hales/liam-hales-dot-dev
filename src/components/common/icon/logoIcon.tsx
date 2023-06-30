@@ -16,6 +16,8 @@ import MaterialUI from '~icons/logos/material-ui';
 import Vercel from '~icons/logos/vercel-icon';
 import AWS from '~icons/logos/aws';
 import Azure from '~icons/logos/microsoft-azure';
+import Microsoft from '~icons/logos/microsoft-icon';
+import Jira from '~icons/logos/jira';
 import Sketch from '~icons/logos/sketch';
 import Photoshop from '~icons/logos/adobe-photoshop';
 import Illustrator from '~icons/logos/adobe-illustrator';
@@ -23,6 +25,7 @@ import HTML from '~icons/vscode-icons/file-type-html';
 import CSS from '~icons/vscode-icons/file-type-css';
 import Git from '~icons/vscode-icons/file-type-git';
 import Jest from '~icons/vscode-icons/file-type-jest';
+import MongoDB from '~icons/vscode-icons/file-type-mongo';
 
 /**
  * The `LogoIcon` component props
@@ -51,9 +54,12 @@ const iconMap: Record<LogoIconId, FunctionComponent<SVGProps<SVGSVGElement>>> = 
   swift: Swift,
   graphql: GraphQL,
   mui: MaterialUI,
+  mongodb: MongoDB,
   vercel: Vercel,
   aws: AWS,
   azure: Azure,
+  microsoft: Microsoft,
+  jira: Jira,
   sketch: Sketch,
   photoshop: Photoshop,
   illustrator: Illustrator,

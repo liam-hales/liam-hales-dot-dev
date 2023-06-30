@@ -137,9 +137,12 @@ export type LogoIconId =
   | 'swift'
   | 'graphql'
   | 'mui'
+  | 'mongodb'
   | 'vercel'
   | 'aws'
   | 'azure'
+  | 'microsoft'
+  | 'jira'
   | 'sketch'
   | 'photoshop'
   | 'illustrator';

@@ -84,10 +84,12 @@ const Employments: FunctionComponent<Props> = ({ className, data }): ReactElemen
                           </Text>
                           <Box
                             direction="row"
+                            wrap={true}
                             css={css`
                               padding-top: 16px;
                               padding-bottom: 16px;
                               column-gap: 20px;
+                              row-gap: 10px;
                             `}
                           >
                             {

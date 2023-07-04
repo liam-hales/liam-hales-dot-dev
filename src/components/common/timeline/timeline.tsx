@@ -12,6 +12,7 @@ import { Box } from '..';
  * The `Timeline` component props
  */
 interface Props extends BaseProps {
+  readonly hasLeadingConnector?: boolean;
   readonly hasTrailingConnector?: boolean;
   readonly children: ReactElement[];
 }
@@ -26,6 +27,7 @@ interface Props extends BaseProps {
 const Timeline: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
     className,
+    hasLeadingConnector = false,
     hasTrailingConnector = false,
     children,
   } = props;
@@ -39,7 +41,10 @@ const Timeline: FunctionComponent<Props> = (props): ReactElement<Props> => {
         children.map((child, index) => {
           const { key } = child;
 
-          const first = (index === 0);
+          const first = (hasLeadingConnector === false)
+            ? index === 0
+            : false;
+
           const last = (hasTrailingConnector === false)
             ? index === (children.length - 1)
             : false;

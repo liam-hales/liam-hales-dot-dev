@@ -4,12 +4,12 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';
-import { BaseProps } from '../../../types';
-import { ColourPalette } from '../../../enums';
-import { Box } from '..';
+import { BaseProps } from '../../types';
+import { ColourPalette } from '../../enums';
+import { Box } from '.';
 
 /**
- * The `Timeline` component props
+ * The `VerticalTimeline` component props
  */
 interface Props extends BaseProps {
   readonly hasLeadingConnector?: boolean;
@@ -18,13 +18,13 @@ interface Props extends BaseProps {
 }
 
 /**
- * Renders a timeline with each child
+ * Renders a vertical timeline with each child
  * component being a timeline item
  *
  * @param props The component props
- * @returns The `Timeline` component
+ * @returns The `VerticalTimeline` component
  */
-const Timeline: FunctionComponent<Props> = (props): ReactElement<Props> => {
+const VerticalTimeline: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
     className,
     hasLeadingConnector = false,
@@ -95,4 +95,4 @@ const Timeline: FunctionComponent<Props> = (props): ReactElement<Props> => {
   );
 };
 
-export default Timeline;
+export default VerticalTimeline;

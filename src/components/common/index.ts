@@ -13,7 +13,7 @@ import Tabs from './tabs/tabs';
 import Tab from './tabs/tab';
 import Typewriter from './text/typewriter';
 import Divider from './divider';
-import Timeline from './timeline/timeline';
+import VerticalTimeline from './verticalTimeline';
 import TimelineEvent from './timeline/timelineEvent';
 import DateBadge from './dateBadge';
 import Breadcrumbs from './breadcrumbs/breadcrumbs';
@@ -44,7 +44,7 @@ export {
   Tab,
   Typewriter,
   Divider,
-  Timeline,
+  VerticalTimeline,
   TimelineEvent,
   DateBadge,
   Breadcrumbs,

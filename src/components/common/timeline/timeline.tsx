@@ -41,11 +41,11 @@ const Timeline: FunctionComponent<Props> = (props): ReactElement<Props> => {
         children.map((child, index) => {
           const { key } = child;
 
-          const first = (hasLeadingConnector === false)
+          const isFirst = (hasLeadingConnector === false)
             ? index === 0
             : false;
 
-          const last = (hasTrailingConnector === false)
+          const isLast = (hasTrailingConnector === false)
             ? index === (children.length - 1)
             : false;
 
@@ -61,8 +61,8 @@ const Timeline: FunctionComponent<Props> = (props): ReactElement<Props> => {
               <div css={css`
                 position: absolute;
                 width: 2px;
-                top: ${(first === true) ? 38 : 0}px;
-                bottom: ${(last === true) ? 'calc(100% - 38px)' : '0px'};
+                top: ${(isFirst === true) ? 38 : 0}px;
+                bottom: ${(isLast === true) ? 'calc(100% - 38px)' : '0px'};
                 left: 9px;
                 background-color: ${ColourPalette.GREY_900};
                 z-index: -1;
@@ -71,7 +71,7 @@ const Timeline: FunctionComponent<Props> = (props): ReactElement<Props> => {
               <div css={css`
                 width: 20px;
                 height: 20px;
-                margin-top: ${(first === true) ? 42 : 36}px;
+                margin-top: ${(isFirst === true) ? 42 : 36}px;
                 flex-shrink: 0;
                 border-style: solid;
                 border-color: ${ColourPalette.GREY_1000};

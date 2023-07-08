@@ -9,7 +9,7 @@ import { TimelineEvent as Event } from '../../graphql';
 import { BaseProps } from '../../types';
 import { Box, Title, Text, VerticalTimeline, Button, Link } from '../common';
 import { TimelineEvent } from '..';
-import { useTimeline } from '../../hooks';
+import { useScreen, useTimeline } from '../../hooks';
 
 /**
  * The `TimelinePreview` component props
@@ -28,7 +28,9 @@ interface Props extends BaseProps<HTMLDivElement> {
  */
 const TimelinePreview: FunctionComponent<Props> = ({ className, text, events }): ReactElement<Props> => {
 
+  const { screenSize } = useScreen();
   const { groupedEvents } = useTimeline(events);
+
   return (
     <Box
       className={className}
@@ -52,8 +54,8 @@ const TimelinePreview: FunctionComponent<Props> = ({ className, text, events }):
           row-gap: 20px;
           mask-image: linear-gradient(
             to bottom,
-            black 40%,
-            transparent 98%
+            black 32%,
+            transparent 88%
           );
         `}
       >
@@ -100,7 +102,7 @@ const TimelinePreview: FunctionComponent<Props> = ({ className, text, events }):
         href="/cv/timeline"
         passHref={true}
         css={css`
-          margin-top: -28px;
+          margin-top: ${(screenSize === 'small') ? -140 : -100}px;
           align-self: center;
         `}
       >

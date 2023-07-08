@@ -7,7 +7,9 @@ import { css } from '@emotion/react';
 import { ColourPalette } from '../../enums';
 import { TimelineEvent as Event } from '../../graphql';
 import { BaseProps } from '../../types';
-import { Box, Title, TimelineEvent, Text, Timeline, Button, Link } from '../common';
+import { Box, Title, Text, VerticalTimeline, Button, Link } from '../common';
+import { TimelineEvent } from '..';
+import { useTimeline } from '../../hooks';
 
 /**
  * The `LifeTimelinePreview` component props
@@ -25,6 +27,8 @@ interface Props extends BaseProps<HTMLDivElement> {
  * @returns The `LifeTimelinePreview` component
  */
 const LifeTimelinePreview: FunctionComponent<Props> = ({ className, text, events }): ReactElement<Props> => {
+
+  const { groupedEvents } = useTimeline(events);
   return (
     <Box
       className={className}
@@ -41,33 +45,62 @@ const LifeTimelinePreview: FunctionComponent<Props> = ({ className, text, events
       >
         {text}
       </Text>
-      <Timeline
-        hasTrailingConnector={true}
+      <Box
+        alignment="flex-start"
         css={css`
           padding-top: 46px;
+          row-gap: 20px;
           mask-image: linear-gradient(
             to bottom,
-            black 50%,
-            transparent 88%
+            black 40%,
+            transparent 98%
           );
         `}
       >
         {
-          events.map((event) => {
-            return (
-              <TimelineEvent
-                key={`timeline-event-${event.id}`}
-                event={event}
-              />
-            );
-          })
+          Object
+            .keys(groupedEvents)
+            .reverse()
+            .map((key, groupIndex) => {
+              return (
+                <div key={`timeline-event-group-${key}`}>
+                  {
+                    (groupIndex > 0) && (
+                      <Title>
+                        {key}
+                      </Title>
+                    )
+                  }
+                  <VerticalTimeline
+                    hasLeadingConnector={groupIndex > 0}
+                    hasTrailingConnector={true}
+                    css={css`
+                      padding-top: 20px;
+                    `}
+                  >
+                    {
+                      groupedEvents[key].map((event) => {
+
+                        const { id } = event;
+                        return (
+                          <TimelineEvent
+                            key={`timeline-event-${id}`}
+                            event={event}
+                          />
+                        );
+                      })
+                    }
+                  </VerticalTimeline>
+                </div>
+              );
+            })
         }
-      </Timeline>
+      </Box>
       <Link
         href="/cv/life-timeline"
         passHref={true}
         css={css`
-          margin-top: -12px;
+          margin-top: -28px;
           align-self: center;
         `}
       >

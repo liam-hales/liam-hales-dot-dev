@@ -115,24 +115,6 @@ export const timelinePeriodEventFragment = gql`
 `;
 
 /**
- * The GraphQL fragment for the `Employment` type which can be
- * used within GraphQL documents and other fragments
- */
-export const employmentFragment = gql`
-  fragment EmploymentFields on Employment {
-    id
-    title
-    description
-    company
-    startDate
-    endDate
-    skills {
-      ...SkillFields
-    }
-  }
-`;
-
-/**
  * The GraphQL fragment for the `BlogPost` type which can be
  * used within GraphQL documents and other fragments
  */

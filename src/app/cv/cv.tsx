@@ -8,12 +8,7 @@ import { BaseProps } from '../../types';
 import { ColourPalette } from '../../enums';
 import { CVContent } from '../../graphql';
 import { Box, Button, Text, Title, Link } from '../../components/common';
-import {
-  Content,
-  LifeTimelinePreview,
-  SkillsPreview,
-  ExperiencePreview,
-} from '../../components';
+import { Content, LifeTimelinePreview, SkillsPreview } from '../../components';
 
 /**
  * The `CV` component props
@@ -35,8 +30,6 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
     skills,
     lifeTimelineText,
     lifeTimelineEvents,
-    experienceText,
-    employments,
     disclaimerText,
   } = content;
 
@@ -82,14 +75,6 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
             Life Timeline
           </Button>
         </Link>
-        <Link
-          href="/cv/experience"
-          passHref={true}
-        >
-          <Button>
-            Experience
-          </Button>
-        </Link>
       </Box>
       <Box css={css`
         row-gap: 100px;
@@ -102,10 +87,6 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
         <LifeTimelinePreview
           text={lifeTimelineText}
           events={lifeTimelineEvents}
-        />
-        <ExperiencePreview
-          text={experienceText}
-          employments={employments}
         />
       </Box>
       <Text

@@ -5,7 +5,6 @@ import {
   skillFragment,
   timelinePointEventFragment,
   timelinePeriodEventFragment,
-  employmentFragment,
 } from '..';
 
 /**
@@ -35,10 +34,6 @@ const cvPageQuery = gql`
               ...TimelinePeriodEventFields
             }
           }
-          experienceText
-          employments {
-            ...EmploymentFields
-          }
           disclaimerText
         }
       }
@@ -49,7 +44,6 @@ const cvPageQuery = gql`
   ${skillFragment}
   ${timelinePointEventFragment}
   ${timelinePeriodEventFragment}
-  ${employmentFragment}
 `;
 
 export default cvPageQuery;

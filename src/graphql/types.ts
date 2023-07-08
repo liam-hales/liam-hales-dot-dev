@@ -4,7 +4,7 @@ import { LogoIconId } from '../types';
  * The page slug used for fetching page
  * data from the GraphQL API
  */
-export type PageSlug = 'global' | 'home' | 'cv' | 'skills' | 'life-timeline' | 'experience' | 'blog' | 'brand';
+export type PageSlug = 'global' | 'home' | 'cv' | 'skills' | 'life-timeline' | 'blog' | 'brand';
 
 /**
  * Describes the GraphQL `Page` type which
@@ -87,8 +87,6 @@ export interface CVContent extends BasePageContent<'cv'> {
   readonly skills: Skill[];
   readonly lifeTimelineText: string;
   readonly lifeTimelineEvents: TimelineEvent[];
-  readonly experienceText: string;
-  readonly employments: Employment[];
   readonly disclaimerText: string;
 }
 
@@ -107,14 +105,6 @@ export interface SkillsContent extends BasePageContent<'skills'> {
  */
 export interface LifeTimelineContent extends BasePageContent<'life-timeline'> {
   readonly timelineEvents: TimelineEvent[];
-}
-
-/**
- * Describes the GraphQL `ExperienceContent` type which
- * contains data for the experience page content
- */
-export interface ExperienceContent extends BasePageContent<'experience'> {
-  readonly employments: Employment[];
 }
 
 /**
@@ -223,19 +213,6 @@ export interface TimelinePeriodEvent {
  * timeline event types
  */
 export type TimelineEvent = TimelinePointEvent | TimelinePeriodEvent;
-
-/**
- * Describes the GraphQL `Employment` type
- */
-export interface Employment {
-  readonly id: string;
-  readonly title: string;
-  readonly description: string;
-  readonly company: string;
-  readonly startDate: string;
-  readonly endDate?: string;
-  readonly skills: Skill[];
-}
 
 /**
  * Describes the GraphQL `BlogPost` type

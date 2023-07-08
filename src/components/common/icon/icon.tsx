@@ -20,6 +20,10 @@ import Check from '~icons/mingcute/check-fill';
 import Message from '~icons/mingcute/message-2-fill';
 import File from '~icons/mingcute/file-fill';
 import Copy from '~icons/mingcute/copy-fill';
+import List from '~icons/mingcute/align-left-2-fill';
+import Tool from '~icons/mingcute/tool-fill';
+import Pencil from '~icons/mingcute/pencil-fill';
+import TextBox from '~icons/mingcute/textbox-fill';
 import Copyright from '~icons/mingcute/copyright-line';
 import StackOverflow from '~icons/simple-icons/stackoverflow';
 import LinkedIn from '~icons/simple-icons/linkedin';
@@ -52,6 +56,10 @@ const iconMap: Record<IconId, FunctionComponent<SVGProps<SVGSVGElement>>> = {
   cross: Close,
   tick: Check,
   copy: Copy,
+  list: List,
+  tool: Tool,
+  pencil: Pencil,
+  textBox: TextBox,
   refresh: Refresh,
   copyright: Copyright,
   linkedIn: LinkedIn,

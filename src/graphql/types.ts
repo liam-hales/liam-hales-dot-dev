@@ -138,7 +138,6 @@ export type PageContent =
   | CVContent
   | TimelineContent
   | SkillsContent
-  | ExperienceContent
   | BrandContent
   | BlogContent;
 

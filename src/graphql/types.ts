@@ -104,7 +104,7 @@ export interface SkillsContent extends BasePageContent<'skills'> {
  * contains data for the timeline page content
  */
 export interface TimelineContent extends BasePageContent<'timeline'> {
-  readonly timelineEvents: TimelineEvent[];
+  readonly events: TimelineEvent[];
 }
 
 /**

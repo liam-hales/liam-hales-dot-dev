@@ -26,8 +26,8 @@ interface Props extends BaseProps {
  */
 const Timeline: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
 
-  const { timelineEvents } = content;
-  const { groupedEvents } = useTimeline(timelineEvents);
+  const { events } = content;
+  const { groupedEvents } = useTimeline(events);
 
   return (
     <Content

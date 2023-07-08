@@ -4,10 +4,11 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';
-import { Content } from '../../../components';
-import { Breadcrumbs, BreadcrumbItem, Timeline, TimelineEvent, Title } from '../../../components/common';
+import { Content, TimelineEvent } from '../../../components';
+import { Breadcrumbs, BreadcrumbItem, Title, Box, VerticalTimeline } from '../../../components/common';
 import { LifeTimelineContent } from '../../../graphql';
 import { BaseProps } from '../../../types';
+import { useTimeline } from '../../../hooks';
 
 /**
  * The `LifeTimeline` component props
@@ -26,6 +27,8 @@ interface Props extends BaseProps {
 const LifeTimeline: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
 
   const { timelineEvents } = content;
+  const { groupedEvents } = useTimeline(timelineEvents);
+
   return (
     <Content
       alignment="flex-start"
@@ -57,25 +60,52 @@ const LifeTimeline: FunctionComponent<Props> = ({ content }): ReactElement<Props
           Life Timeline
         </BreadcrumbItem>
       </Breadcrumbs>
-      <Timeline>
+      <Box
+        alignment="flex-start"
+        css={css`
+          row-gap: 20px;
+        `}
+      >
         {
-          timelineEvents.map((event) => {
+          Object
+            .keys(groupedEvents)
+            .reverse()
+            .map((key, groupIndex, keys) => {
+              return (
+                <div key={`timeline-event-group-${key}`}>
+                  {
+                    (groupIndex > 0) && (
+                      <Title>
+                        {key}
+                      </Title>
+                    )
+                  }
+                  <VerticalTimeline
+                    hasLeadingConnector={groupIndex > 0}
+                    hasTrailingConnector={groupIndex < (keys.length - 1)}
+                    css={css`
+                      padding-top: 20px;
+                    `}
+                  >
+                    {
+                      groupedEvents[key].map((event, eventIndex) => {
 
-            // Get the first event from the original timeline events array
-            // which will be used to see if the event is the first event
-            const { id } = event;
-            const [firstEvent] = timelineEvents;
-
-            return (
-              <TimelineEvent
-                key={`timeline-event-${id}`}
-                event={event}
-                isFirst={(id === firstEvent.id)}
-              />
-            );
-          })
+                        const { id } = event;
+                        return (
+                          <TimelineEvent
+                            key={`timeline-event-${id}`}
+                            event={event}
+                            isFirst={groupIndex === 0 && eventIndex === 0}
+                          />
+                        );
+                      })
+                    }
+                  </VerticalTimeline>
+                </div>
+              );
+            })
         }
-      </Timeline>
+      </Box>
     </Content>
   );
 };

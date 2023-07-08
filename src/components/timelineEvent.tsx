@@ -60,6 +60,49 @@ const TimelineEvent: FunctionComponent<Props> = ({ event, isFirst = false }): Re
       >
         {title}
       </Text>
+      {
+        (
+          type === 'TimelinePeriodEvent' &&
+          rest.skills.length > 0
+        ) && (
+          <Box
+            direction="row"
+            wrap={true}
+            css={css`
+              padding-top: 8px;
+              padding-bottom: 16px;
+              column-gap: 20px;
+              row-gap: 10px;
+            `}
+          >
+            {
+              rest.skills.map((skill) => {
+                const { id, name, iconId, url } = skill;
+                return (
+                  <Popover
+                    key={`skill-${id}`}
+                    text={name}
+                  >
+                    <Link
+                      href={url}
+                      target="_blank"
+                      passHref={true}
+                      aria-label={name}
+                    >
+                      <LogoIcon
+                        id={iconId}
+                        css={css`
+                          font-size: 20px;
+                        `}
+                      />
+                    </Link>
+                  </Popover>
+                );
+              })
+            }
+          </Box>
+        )
+      }
       <Text colour={ColourPalette.GREY_400}>
         {description}
       </Text>

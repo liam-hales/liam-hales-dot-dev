@@ -63,7 +63,7 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           href="/cv/skills"
           passHref={true}
         >
-          <Button>
+          <Button iconId="tool">
             Skills
           </Button>
         </Link>
@@ -71,7 +71,7 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           href="/cv/timeline"
           passHref={true}
         >
-          <Button>
+          <Button iconId="list">
             Timeline
           </Button>
         </Link>

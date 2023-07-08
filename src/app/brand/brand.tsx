@@ -67,13 +67,22 @@ const Brand: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           row-gap: 10px;
         `}
       >
-        <Button onClick={() => scrollTo(brandLogoRef)}>
+        <Button
+          iconId="pencil"
+          onClick={() => scrollTo(brandLogoRef)}
+        >
           The Logo
         </Button>
-        <Button onClick={() => scrollTo(brandColourPaletteRef)}>
+        <Button
+          iconId="colourSwatch"
+          onClick={() => scrollTo(brandColourPaletteRef)}
+        >
           Colour Palette
         </Button>
-        <Button onClick={() => scrollTo(brandTypographyRef)}>
+        <Button
+          iconId="textBox"
+          onClick={() => scrollTo(brandTypographyRef)}
+        >
           Typography
         </Button>
       </Box>

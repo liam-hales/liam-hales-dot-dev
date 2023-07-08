@@ -16,7 +16,7 @@ interface UseTimelineResponse {
  * @returns The `useTimeline` hook response
  * @example
  *
- * const { groupedEvents } = useTimeline();
+ * const { groupedEvents } = useTimeline([ ... ]);
  */
 const useTimeline = (events: TimelineEvent[]): UseTimelineResponse => {
 

@@ -4,6 +4,7 @@ import {
   pageMetadataFragment,
   timelinePointEventFragment,
   timelinePeriodEventFragment,
+  skillFragment,
 } from '..';
 
 /**
@@ -36,6 +37,7 @@ const lifeTimelinePageQuery = gql`
   ${pageMetadataFragment}
   ${timelinePointEventFragment}
   ${timelinePeriodEventFragment}
+  ${skillFragment}
 `;
 
 export default lifeTimelinePageQuery;

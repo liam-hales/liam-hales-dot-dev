@@ -12,6 +12,7 @@ import SkillAreaCard from './skills/skillAreaCard';
 import SkillAreas from './skills/skillAreas';
 import ProStatement from './proStatement';
 import StillInterested from './stillInterested';
+import TimelineEvent from './timelineEvent';
 import LifeTimelinePreview from './preview/lifeTimelinePreview';
 import SkillsPreview from './preview/skillsPreview';
 import ExperiencePreview from './preview/experiencePreview';
@@ -44,6 +45,7 @@ export {
   SkillAreas,
   ProStatement,
   StillInterested,
+  TimelineEvent,
   LifeTimelinePreview,
   SkillsPreview,
   ExperiencePreview,

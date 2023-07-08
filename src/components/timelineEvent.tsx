@@ -4,10 +4,10 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';
-import { BaseProps } from '../../../types';
-import { ColourPalette } from '../../../enums';
-import { Box, Text, DateBadge } from '..';
-import { TimelineEvent as TEvent } from '../../../graphql';
+import { BaseProps } from '../types';
+import { ColourPalette } from '../enums';
+import { TimelineEvent as TEvent } from '../graphql';
+import { Box, Text, DateBadge, Popover, Link, LogoIcon } from './common';
 
 /**
  * The `TimelineEvent` component props

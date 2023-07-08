@@ -108,6 +108,9 @@ export const timelinePeriodEventFragment = gql`
     description
     startDate
     endDate
+    skills {
+      ...SkillFields
+    }
   }
 `;
 

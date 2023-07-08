@@ -215,6 +215,7 @@ export interface TimelinePeriodEvent {
   readonly description: string;
   readonly startDate: string;
   readonly endDate?: string;
+  readonly skills: Skill[];
 }
 
 /**

@@ -4,7 +4,7 @@ import { LogoIconId } from '../types';
  * The page slug used for fetching page
  * data from the GraphQL API
  */
-export type PageSlug = 'global' | 'home' | 'cv' | 'skills' | 'life-timeline' | 'blog' | 'brand';
+export type PageSlug = 'global' | 'home' | 'cv' | 'skills' | 'timeline' | 'blog' | 'brand';
 
 /**
  * Describes the GraphQL `Page` type which
@@ -85,8 +85,8 @@ export interface HomeContent extends BasePageContent<'home'> {
 export interface CVContent extends BasePageContent<'cv'> {
   readonly skillsText: string;
   readonly skills: Skill[];
-  readonly lifeTimelineText: string;
-  readonly lifeTimelineEvents: TimelineEvent[];
+  readonly timelineText: string;
+  readonly timelineEvents: TimelineEvent[];
   readonly disclaimerText: string;
 }
 
@@ -100,10 +100,10 @@ export interface SkillsContent extends BasePageContent<'skills'> {
 }
 
 /**
- * Describes the GraphQL `LifeTimelineContent` type which
- * contains data for the life timeline page content
+ * Describes the GraphQL `TimelineContent` type which
+ * contains data for the timeline page content
  */
-export interface LifeTimelineContent extends BasePageContent<'life-timeline'> {
+export interface TimelineContent extends BasePageContent<'timeline'> {
   readonly timelineEvents: TimelineEvent[];
 }
 
@@ -136,7 +136,7 @@ export type PageContent =
   | GlobalContent
   | HomeContent
   | CVContent
-  | LifeTimelineContent
+  | TimelineContent
   | SkillsContent
   | ExperienceContent
   | BrandContent

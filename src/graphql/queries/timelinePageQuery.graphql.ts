@@ -9,19 +9,19 @@ import {
 
 /**
  * The GraphQL query used for fetching
- * the CV life timeline page data
+ * the CV timeline page data
  */
-const lifeTimelinePageQuery = gql`
-  query lifeTimelinePage {
+const timelinePageQuery = gql`
+  query timelinePage {
     page(
       where: {
-        slug: "life-timeline"
+        slug: "timeline"
       }
     ) {
       ...PageFields,
       content {
-        ... on LifeTimelineContent {
-          timelineEvents {
+        ... on TimelineContent {
+          events {
             ... on TimelinePointEvent {
               ...TimelinePointEventFields
             }
@@ -40,4 +40,4 @@ const lifeTimelinePageQuery = gql`
   ${skillFragment}
 `;
 
-export default lifeTimelinePageQuery;
+export default timelinePageQuery;

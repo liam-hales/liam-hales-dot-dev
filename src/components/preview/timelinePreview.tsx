@@ -12,7 +12,7 @@ import { TimelineEvent } from '..';
 import { useTimeline } from '../../hooks';
 
 /**
- * The `LifeTimelinePreview` component props
+ * The `TimelinePreview` component props
  */
 interface Props extends BaseProps<HTMLDivElement> {
   readonly text: string;
@@ -20,13 +20,13 @@ interface Props extends BaseProps<HTMLDivElement> {
 }
 
 /**
- * Renders the life timeline preview section for the CV
+ * Renders the timeline preview section for the CV
  * page which is rendered within the `CVRoute` component
  *
  * @param props The component props
- * @returns The `LifeTimelinePreview` component
+ * @returns The `TimelinePreview` component
  */
-const LifeTimelinePreview: FunctionComponent<Props> = ({ className, text, events }): ReactElement<Props> => {
+const TimelinePreview: FunctionComponent<Props> = ({ className, text, events }): ReactElement<Props> => {
 
   const { groupedEvents } = useTimeline(events);
   return (
@@ -35,7 +35,7 @@ const LifeTimelinePreview: FunctionComponent<Props> = ({ className, text, events
       alignment="flex-start"
     >
       <Title>
-        Life Timeline
+        Timeline
       </Title>
       <Text
         colour={ColourPalette.GREY_400}
@@ -97,7 +97,7 @@ const LifeTimelinePreview: FunctionComponent<Props> = ({ className, text, events
         }
       </Box>
       <Link
-        href="/cv/life-timeline"
+        href="/cv/timeline"
         passHref={true}
         css={css`
           margin-top: -28px;
@@ -115,4 +115,4 @@ const LifeTimelinePreview: FunctionComponent<Props> = ({ className, text, events
   );
 };
 
-export default LifeTimelinePreview;
+export default TimelinePreview;

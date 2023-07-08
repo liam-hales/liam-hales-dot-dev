@@ -16,7 +16,7 @@ export const navKeys = [
 export const navRoutes = [
   '/',
   '/cv',
-  '/cv/life-timeline',
+  '/cv/timeline',
   '/cv/skills',
   '/blog',
   '/brand',

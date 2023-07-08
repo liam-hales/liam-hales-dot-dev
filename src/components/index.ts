@@ -13,7 +13,7 @@ import SkillAreas from './skills/skillAreas';
 import ProStatement from './proStatement';
 import StillInterested from './stillInterested';
 import TimelineEvent from './timelineEvent';
-import LifeTimelinePreview from './preview/lifeTimelinePreview';
+import TimelinePreview from './preview/timelinePreview';
 import SkillsPreview from './preview/skillsPreview';
 import BlogPostCard from './blog/blogPostCard';
 import BrandLogo from './brand/brandLogo';
@@ -44,7 +44,7 @@ export {
   ProStatement,
   StillInterested,
   TimelineEvent,
-  LifeTimelinePreview,
+  TimelinePreview,
   SkillsPreview,
   BlogPostCard,
   BrandLogo,

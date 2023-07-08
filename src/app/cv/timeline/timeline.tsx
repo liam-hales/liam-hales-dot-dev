@@ -6,25 +6,25 @@ import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';
 import { Content, TimelineEvent } from '../../../components';
 import { Breadcrumbs, BreadcrumbItem, Title, Box, VerticalTimeline } from '../../../components/common';
-import { LifeTimelineContent } from '../../../graphql';
+import { TimelineContent } from '../../../graphql';
 import { BaseProps } from '../../../types';
 import { useTimeline } from '../../../hooks';
 
 /**
- * The `LifeTimeline` component props
+ * The `Timeline` component props
  */
 interface Props extends BaseProps {
-  readonly content: LifeTimelineContent;
+  readonly content: TimelineContent;
 }
 
 /**
- * Used as the entry point for the CV life timeline page. Renders the
- * CV life timeline page components using the given `content` prop
+ * Used as the entry point for the CV timeline page. Renders the
+ * CV timeline page components using the given `content` prop
  *
  * @param props The component props
- * @returns The `LifeTimeline` component
+ * @returns The `Timeline` component
  */
-const LifeTimeline: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
+const Timeline: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
 
   const { timelineEvents } = content;
   const { groupedEvents } = useTimeline(timelineEvents);
@@ -43,7 +43,7 @@ const LifeTimeline: FunctionComponent<Props> = ({ content }): ReactElement<Props
           max-width: 400px;
         `}
       >
-        Life Timeline
+        Timeline
       </Title>
       <Breadcrumbs css={css`
         padding-top: 40px;
@@ -54,10 +54,10 @@ const LifeTimeline: FunctionComponent<Props> = ({ content }): ReactElement<Props
           Curriculum Vitae
         </BreadcrumbItem>
         <BreadcrumbItem
-          route="/cv/life-timeline"
+          route="/cv/timeline"
           isActive={true}
         >
-          Life Timeline
+          Timeline
         </BreadcrumbItem>
       </Breadcrumbs>
       <Box
@@ -110,4 +110,4 @@ const LifeTimeline: FunctionComponent<Props> = ({ content }): ReactElement<Props
   );
 };
 
-export default LifeTimeline;
+export default Timeline;

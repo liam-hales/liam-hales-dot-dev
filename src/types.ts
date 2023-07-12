@@ -116,6 +116,7 @@ export type IconId =
   | 'textBox'
   | 'refresh'
   | 'copyright'
+  | 'info'
   | 'linkedIn'
   | 'stackOverflow'
   | 'github'

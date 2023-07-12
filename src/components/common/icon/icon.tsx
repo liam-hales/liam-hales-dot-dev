@@ -25,6 +25,7 @@ import Tool from '~icons/mingcute/tool-fill';
 import Pencil from '~icons/mingcute/pencil-fill';
 import TextBox from '~icons/mingcute/textbox-fill';
 import Copyright from '~icons/mingcute/copyright-line';
+import Info from '~icons/mingcute/information-fill';
 import StackOverflow from '~icons/simple-icons/stackoverflow';
 import LinkedIn from '~icons/simple-icons/linkedin';
 import Notion from '~icons/simple-icons/notion';
@@ -62,6 +63,7 @@ const iconMap: Record<IconId, FunctionComponent<SVGProps<SVGSVGElement>>> = {
   textBox: TextBox,
   refresh: Refresh,
   copyright: Copyright,
+  info: Info,
   linkedIn: LinkedIn,
   stackOverflow: StackOverflow,
   github: GitHub,

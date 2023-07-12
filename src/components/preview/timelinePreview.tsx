@@ -54,8 +54,8 @@ const TimelinePreview: FunctionComponent<Props> = ({ className, text, events }):
           row-gap: 20px;
           mask-image: linear-gradient(
             to bottom,
-            black 32%,
-            transparent 88%
+            black 46%,
+            transparent 85%
           );
         `}
       >
@@ -102,7 +102,7 @@ const TimelinePreview: FunctionComponent<Props> = ({ className, text, events }):
         href="/cv/timeline"
         passHref={true}
         css={css`
-          margin-top: ${(screenSize === 'small') ? -140 : -100}px;
+          margin-top: ${(screenSize === 'small') ? -165 : -112}px;
           align-self: center;
         `}
       >

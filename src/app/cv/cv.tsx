@@ -7,8 +7,9 @@ import { css } from '@emotion/react';
 import { BaseProps } from '../../types';
 import { ColourPalette } from '../../enums';
 import { CVContent } from '../../graphql';
-import { Box, Button, Text, Title, Link } from '../../components/common';
+import { Box, Text, Title, Icon } from '../../components/common';
 import { Content, TimelinePreview, SkillsPreview } from '../../components';
+import Card from '../../components/common/card';
 
 /**
  * The `CV` component props
@@ -49,34 +50,35 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
       >
         Curriculum Vitae
       </Title>
-      <Box
+      <Card
         direction="row"
-        wrap={true}
         css={css`
-          padding-top: 40px;
-          padding-bottom: 100px;
-          column-gap: 10px;
-          row-gap: 10px;
+          padding-top: 14px;
+          padding-bottom: 14px;
+          padding-left: 22px;
+          padding-right: 22px;
+          margin-top: 40px;
         `}
       >
-        <Link
-          href="/cv/skills"
-          passHref={true}
+        <Icon
+          id="info"
+          css={css`
+            margin-right: 16px;
+            font-size: 30px;
+            flex-shrink: 0;
+          `}
+        />
+        <Text
+          colour={ColourPalette.GREY_400}
+          css={css`
+            font-size: 12px;
+          `}
         >
-          <Button iconId="tool">
-            Skills
-          </Button>
-        </Link>
-        <Link
-          href="/cv/timeline"
-          passHref={true}
-        >
-          <Button iconId="list">
-            Timeline
-          </Button>
-        </Link>
-      </Box>
+          {disclaimerText}
+        </Text>
+      </Card>
       <Box css={css`
+        padding-top: 100px;
         row-gap: 100px;
       `}
       >
@@ -89,18 +91,6 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           events={timelineEvents}
         />
       </Box>
-      <Text
-        colour={ColourPalette.GREY_600}
-        css={css`
-          max-width: 500px;
-          padding-top: 80px;
-          font-size: 12px;
-          text-align: center;
-          align-self: center;
-        `}
-      >
-        {disclaimerText}
-      </Text>
     </Content>
   );
 };

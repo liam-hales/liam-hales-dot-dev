@@ -168,6 +168,12 @@
         "ignore": ["css"]
       }
     ],
+    "react/jsx-curly-brace-presence": [
+      "error",
+      {
+        "children": "ignore"
+      }
+    ],
     "jsx-a11y/no-static-element-interactions": [
       "error",
       {

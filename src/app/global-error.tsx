@@ -24,7 +24,7 @@ const GlobalError: ErrorComponent = ({ error, reset }): ReactElement => {
   return (
     <html
       lang="en"
-      className={`${urbanist.className}`}
+      className={urbanist.className}
     >
       <body>
         <ThemeProvider>

@@ -593,6 +593,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@iconify-json/devicon@npm:^1.1.15":
+  version: 1.1.15
+  resolution: "@iconify-json/devicon@npm:1.1.15"
+  dependencies:
+    "@iconify/types": "*"
+  checksum: bb93937678d1098755a3160408213962b41d8fa987fb1bdbfba4e49e3b384fd089e2b49ea6ec783cdcb9b026b26c2119e6de469fc8d0c6bf88badab8e907e9cf
+  languageName: node
+  linkType: hard
+
 "@iconify-json/heroicons@npm:^1.1.11":
   version: 1.1.11
   resolution: "@iconify-json/heroicons@npm:1.1.11"
@@ -5059,6 +5068,7 @@ __metadata:
     "@emotion/eslint-plugin": ^11.11.0
     "@emotion/react": ^11.11.1
     "@emotion/styled": ^11.11.0
+    "@iconify-json/devicon": ^1.1.15
     "@iconify-json/heroicons": ^1.1.11
     "@iconify-json/logos": ^1.1.33
     "@iconify-json/mingcute": ^1.1.7

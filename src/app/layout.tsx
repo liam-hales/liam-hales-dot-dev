@@ -9,6 +9,12 @@ import { useDevice, useQuery } from '../hooks/server';
 import { generateMetadata } from './metadata';
 
 /**
+ * Forces the layout to be dynamic which is required when using `headers`
+ * from `next/headers` to avoid a `DYNAMIC_SERVER_USAGE` error
+ */
+export const dynamic = 'force-dynamic';
+
+/**
  * The `AppLayout` component props
  */
 interface Props extends BaseProps {

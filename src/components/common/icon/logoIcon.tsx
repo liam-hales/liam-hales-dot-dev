@@ -9,6 +9,7 @@ import NestJS from '~icons/logos/nestjs';
 import Nextjs from '~icons/logos/nextjs-icon';
 import React from '~icons/logos/react';
 import TailwindCSS from '~icons/logos/tailwindcss-icon';
+import Jest from '~icons/logos/jest';
 import JSON from '~icons/logos/json';
 import Swift from '~icons/logos/swift';
 import Python from '~icons/logos/python';
@@ -23,12 +24,11 @@ import RaspberryPi from '~icons/logos/raspberry-pi';
 import Sketch from '~icons/logos/sketch';
 import Photoshop from '~icons/logos/adobe-photoshop';
 import Illustrator from '~icons/logos/adobe-illustrator';
-import HTML from '~icons/vscode-icons/file-type-html';
-import CSS from '~icons/vscode-icons/file-type-css';
-import Git from '~icons/vscode-icons/file-type-git';
-import Jest from '~icons/vscode-icons/file-type-jest';
-import MongoDB from '~icons/vscode-icons/file-type-mongo';
-import VSCode from '~icons/vscode-icons/file-type-vscode';
+import HTML from '~icons/devicon/html5';
+import CSS from '~icons/devicon/css3';
+import Git from '~icons/devicon/git';
+import MongoDB from '~icons/devicon/mongodb';
+import VSCode from '~icons/devicon/vscode';
 import Keras from '~icons/devicon/keras';
 
 /**

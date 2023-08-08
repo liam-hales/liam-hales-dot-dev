@@ -638,15 +638,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@iconify-json/vscode-icons@npm:^1.1.25":
-  version: 1.1.25
-  resolution: "@iconify-json/vscode-icons@npm:1.1.25"
-  dependencies:
-    "@iconify/types": "*"
-  checksum: c66247bc6c359b79923608989fe5ca982f7f9ea06dbd28dbc0fd3356b11a3fc3fb9678a99c228679bec269fdeb00dadc916427736025f1170ef943e2e10d0fa2
-  languageName: node
-  linkType: hard
-
 "@iconify/types@npm:*, @iconify/types@npm:^2.0.0":
   version: 2.0.0
   resolution: "@iconify/types@npm:2.0.0"
@@ -5073,7 +5064,6 @@ __metadata:
     "@iconify-json/logos": ^1.1.33
     "@iconify-json/mingcute": ^1.1.7
     "@iconify-json/simple-icons": ^1.1.61
-    "@iconify-json/vscode-icons": ^1.1.25
     "@mui/material": ^5.14.1
     "@next/bundle-analyzer": ^13.4.12
     "@next/env": ^13.4.12

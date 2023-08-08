@@ -11,6 +11,7 @@ import React from '~icons/logos/react';
 import TailwindCSS from '~icons/logos/tailwindcss-icon';
 import JSON from '~icons/logos/json';
 import Swift from '~icons/logos/swift';
+import Python from '~icons/logos/python';
 import GraphQL from '~icons/logos/graphql';
 import MaterialUI from '~icons/logos/material-ui';
 import Vercel from '~icons/logos/vercel-icon';
@@ -18,6 +19,7 @@ import AWS from '~icons/logos/aws';
 import Azure from '~icons/logos/microsoft-azure';
 import Microsoft from '~icons/logos/microsoft-icon';
 import Jira from '~icons/logos/jira';
+import RaspberryPi from '~icons/logos/raspberry-pi';
 import Sketch from '~icons/logos/sketch';
 import Photoshop from '~icons/logos/adobe-photoshop';
 import Illustrator from '~icons/logos/adobe-illustrator';
@@ -26,6 +28,8 @@ import CSS from '~icons/vscode-icons/file-type-css';
 import Git from '~icons/vscode-icons/file-type-git';
 import Jest from '~icons/vscode-icons/file-type-jest';
 import MongoDB from '~icons/vscode-icons/file-type-mongo';
+import VSCode from '~icons/vscode-icons/file-type-vscode';
+import Keras from '~icons/devicon/keras';
 
 /**
  * The `LogoIcon` component props
@@ -52,14 +56,18 @@ const iconMap: Record<LogoIconId, FunctionComponent<SVGProps<SVGSVGElement>>> = 
   git: Git,
   json: JSON,
   swift: Swift,
+  python: Python,
   graphql: GraphQL,
   mui: MaterialUI,
   mongodb: MongoDB,
+  keras: Keras,
   vercel: Vercel,
   aws: AWS,
   azure: Azure,
   microsoft: Microsoft,
+  vscode: VSCode,
   jira: Jira,
+  raspberryPi: RaspberryPi,
   sketch: Sketch,
   photoshop: Photoshop,
   illustrator: Illustrator,

@@ -109,6 +109,12 @@ v10.2.3
 ```
 
 3. Run `corepack enable` to enable [Corepack]
+4. You should now be able to use the [`yarn`] package manager
+
+```sh
+$ yarn --version
+v4.0.2
+```
 
 > ⚠️ _**WARNING** - You must use the [`yarn`] package manager_
 

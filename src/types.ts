@@ -78,7 +78,7 @@ export type ButtonSize = 'small' | 'medium' | 'large';
  * The `Text` component element used to determine what underlaying
  * HTML element is used to render the text
  */
-export type TextElement = 'h1' | 'h2' | 'p' | 'span';
+export type TextElement = 'h1' | 'h2' | 'p' | 'span' | 'code';
 
 /**
  * The `Modal` component status used to determine

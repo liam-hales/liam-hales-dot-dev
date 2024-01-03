@@ -82,22 +82,22 @@ const Markdown: FunctionComponent<Props> = ({ className, children }): ReactEleme
             </Text>
           );
         },
-        code: ({ className, inline, children }) => {
+        code: ({ className, children }) => {
 
-          // Check if the code is inline and not a snippet,
-          // if so render the `CodeInline` component
-          if (inline === true) {
+          // Get the code langauge from the class name and
+          // check for a match in the code langauges array
+          const language = codeLanguages
+            .find((value) => value === className?.replace('language-', ''));
+
+          // If there is no language then assume the code is inline
+          // and not a snippet, render the `CodeInline` component
+          if (language == null) {
             return (
               <CodeInline>
                 {`${children}`}
               </CodeInline>
             );
           }
-
-          // Get the code langauge from the class name and
-          // check for a match in the code langauges array
-          const language = codeLanguages
-            .find((value) => value === className?.replace('language-', ''));
 
           return (
             <CodeSnippet

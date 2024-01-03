@@ -38,6 +38,7 @@ const CodeInline: FunctionComponent<Props> = ({ className, children }): ReactEle
       <Text
         isBold={true}
         isMono={true}
+        element="code"
         css={css`
           display: inline;
           font-size: 12px;

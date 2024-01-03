@@ -6,7 +6,7 @@ import { BaseProps, AsyncComponent } from '../types';
 import { urbanist, firaCode } from '../fonts';
 import { Page, globalPageQuery } from '../graphql';
 import { useDevice, useQuery } from '../hooks/server';
-import { generateMetadata } from './metadata';
+import { viewport, generateMetadata } from './metadata';
 
 /**
  * Forces the layout to be dynamic which is required when using `headers`
@@ -62,5 +62,6 @@ const AppLayout: AsyncComponent<Props> = async ({ children }): Promise<ReactElem
 
 export default AppLayout;
 export {
+  viewport,
   generateMetadata,
 };

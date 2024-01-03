@@ -1,8 +1,18 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 
-import { Metadata } from 'next';
+import { Metadata, Viewport } from 'next';
 import { ColourPalette } from '../enums';
 import { useConfig } from '../hooks/server';
+
+/**
+ * Describes the viewport options for the `AppLayout` layout component viewport
+ * specific metadata that is rendered within the page `<head/>` element
+ */
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: ColourPalette.GREY_1000,
+};
 
 /**
  * Used to generate the `AppLayout` layout component metadata
@@ -14,7 +24,6 @@ export const generateMetadata = async (): Promise<Metadata> => {
 
   const { siteUrl } = useConfig();
   return {
-    themeColor: ColourPalette.GREY_1000,
     metadataBase: new URL(siteUrl),
     icons: {
       icon: [

@@ -29,6 +29,7 @@
     "import/no-cycle": "off",
     "react/require-default-props": "off",
     "react/display-name": "off",
+    "react-hooks/rules-of-hooks": "off",
 
     "no-console": [
       "error",
@@ -73,6 +74,12 @@
       {
         "selector": "default",
         "format": ["camelCase"],
+        "leadingUnderscore": "forbid",
+        "trailingUnderscore": "forbid"
+      },
+      {
+        "selector": "import",
+        "format": ["camelCase", "PascalCase"],
         "leadingUnderscore": "forbid",
         "trailingUnderscore": "forbid"
       },

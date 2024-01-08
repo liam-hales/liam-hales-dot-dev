@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-
 import { OpenGraph } from 'next/dist/lib/metadata/types/opengraph-types';
 import { useQuery } from '../../hooks/server';
 import { Page, globalPageQuery } from '../../graphql';

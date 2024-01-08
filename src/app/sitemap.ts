@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-
 import { MetadataRoute } from 'next';
 import { useConfig } from '../hooks/server';
 import { useDate } from '../hooks';

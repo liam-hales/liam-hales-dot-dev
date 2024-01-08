@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-
 import { Metadata } from 'next';
 import { openGraphMetadata } from '../../../helpers/server';
 import { BlogPostVariables, BlogPost, blogPostQuery } from '../../../graphql';

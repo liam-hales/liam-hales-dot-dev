@@ -1,5 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-
 import { Metadata, Viewport } from 'next';
 import { ColourPalette } from '../enums';
 import { useConfig } from '../hooks/server';

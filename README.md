@@ -109,14 +109,17 @@ v10.2.3
 ```
 
 3. Run `corepack enable` to enable [Corepack]
-4. You should now be able to use the [`yarn`] package manager
+4. You should now be able to use the [`yarn`] package manager which you **MUST** use for this project
 
 ```sh
 $ yarn --version
 v4.0.2
 ```
 
-> ⚠️ _**WARNING** - You must use the [`yarn`] package manager_
+> 📝 _**NOTE** - Yarn comes bundled with [Corepack] and is the preferred way to install/manage Yarn. Check out the [Yarn Installation Guide] for more info_
+
+> 📝 _**NOTE** - The current version of Yarn should match the `packageManager` version in the [`package.json`](/package.json)_
+
 
 <br/>
 <br/>
@@ -234,6 +237,7 @@ Check out the [`npm-check-updates`] docs or run `yarn ncu --help` for more info.
 
 [Node Version Manager]: https://github.com/nvm-sh/nvm
 [`yarn`]: https://yarnpkg.com
+[Yarn Installation Guide]: https://yarnpkg.com/getting-started/install
 [Corepack]: https://nodejs.org/api/corepack.html
 [Vercel]: https://vercel.com
 [`npm-check-updates`]: https://npmjs.com/package/npm-check-updates

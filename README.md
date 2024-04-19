@@ -113,7 +113,7 @@ v10.2.3
 
 ```sh
 $ yarn --version
-v4.0.2
+v4.1.1
 ```
 
 > 📝 _**NOTE** - Yarn comes bundled with [Corepack] and is the preferred way to install/manage Yarn. Check out the [Yarn Installation Guide] for more info_

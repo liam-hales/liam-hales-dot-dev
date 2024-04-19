@@ -15,7 +15,7 @@
     "type": "git",
     "url": "https://github.com/liam-hales/liam-hales-dot-dev.git"
   },
-  "packageManager": "yarn@4.0.2",
+  "packageManager": "yarn@4.1.1",
   "scripts": {
     "start:dev": "next dev",
     "start:prod": "next start",

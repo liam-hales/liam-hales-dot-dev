@@ -36,6 +36,7 @@
   - [Bundle Analysing](#bundle-analysing)
 - [Public Assets](#public-assets)
 - [Dependency Management](#dependency-management)
+  - [Options](#options)
 
 <br/>
 
@@ -119,7 +120,6 @@ v4.1.1
 > 📝 _**NOTE** - Yarn comes bundled with [Corepack] and is the preferred way to install/manage Yarn. Check out the [Yarn Installation Guide] for more info_
 
 > 📝 _**NOTE** - The current version of Yarn should match the `packageManager` version in the [`package.json`](/package.json)_
-
 
 <br/>
 <br/>

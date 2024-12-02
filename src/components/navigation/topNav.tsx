@@ -6,17 +6,8 @@ import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';
 import { ColourPalette } from '../../enums';
 import { useNav } from '../../hooks';
-import { Box, Tabs, Tab, IconButton, Popover, Link } from '../common';
+import { Box, Tabs, Tab, Link } from '../common';
 import { Logo } from '..';
-import { BaseProps } from '../../types';
-
-/**
- * The `TopNav` component props
- */
-interface Props extends BaseProps {
-  readonly notionUrl: string;
-  readonly notionText: string;
-}
 
 /**
  * Renders the top navigation bar used for navigating
@@ -25,7 +16,7 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `TopNav` component
  */
-const TopNav: FunctionComponent<Props> = ({ notionUrl, notionText }): ReactElement<Props> => {
+const TopNav: FunctionComponent = (): ReactElement => {
 
   const { navKey } = useNav();
   return (
@@ -100,23 +91,6 @@ const TopNav: FunctionComponent<Props> = ({ notionUrl, notionText }): ReactEleme
             </Tab>
           </Tabs>
         </Box>
-        <Popover text={notionText}>
-          <Link
-            href={notionUrl}
-            target="_blank"
-            passHref={true}
-            aria-label="Notion"
-          >
-            <IconButton
-              id="notion"
-              css={css`
-                svg {
-                  font-size: 24px;
-                };
-              `}
-            />
-          </Link>
-        </Popover>
       </Box>
     </Box>
   );

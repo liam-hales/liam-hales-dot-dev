@@ -8,14 +8,12 @@ import { BaseProps, DeviceType } from '../../types';
 import { TopNav, BottomNav, Logo } from '..';
 import { useScreen } from '../../hooks';
 import { Box, Link } from '../common';
-import { GlobalContent } from '../../graphql';
 
 /**
  * The `Nav` component props
  */
 interface Props extends BaseProps {
   readonly deviceType: DeviceType;
-  readonly content: GlobalContent;
   readonly children: ReactNode;
 }
 
@@ -26,11 +24,9 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `Nav` component
  */
-const Nav: FunctionComponent<Props> = ({ deviceType, content, children }): ReactElement<Props> => {
+const Nav: FunctionComponent<Props> = ({ deviceType, children }): ReactElement<Props> => {
 
   const { screenSize } = useScreen(deviceType);
-  const { notionUrl, notionText } = content;
-
   return (
     <>
       {
@@ -57,10 +53,7 @@ const Nav: FunctionComponent<Props> = ({ deviceType, content, children }): React
       }
       {
         (screenSize !== 'small') && (
-          <TopNav
-            notionUrl={notionUrl}
-            notionText={notionText}
-          />
+          <TopNav />
         )
       }
       {children}

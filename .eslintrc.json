@@ -27,6 +27,8 @@
     "@typescript-eslint/no-unnecessary-boolean-literal-compare": "off",
     "@typescript-eslint/require-await": "off",
     "@typescript-eslint/prefer-reduce-type-parameter": "off",
+    "@typescript-eslint/await-thenable": "off",
+    "@typescript-eslint/unbound-method": "off",
     "import/named": "off",
     "react/display-name": "off",
     "react-hooks/rules-of-hooks": "off",

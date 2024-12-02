@@ -59,7 +59,7 @@ const CoreSkills: FunctionComponent<Props> = ({ className, skills }): ReactEleme
         margin-bottom: 20px;
       `}
       >
-        These are my core skills I currently use on a day-to-day basis. View all my skills below.
+        These are my core skills I use on a day-to-day basis. You can see all my skills below.
       </Info>
       <Link
         href="/cv/skills"
@@ -72,7 +72,7 @@ const CoreSkills: FunctionComponent<Props> = ({ className, skills }): ReactEleme
           size="medium"
           iconId="arrowRight"
         >
-          See all skill
+          See all skills
         </Button>
       </Link>
     </Box>

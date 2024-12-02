@@ -26,6 +26,8 @@ import RaspberryPi from '~icons/logos/raspberry-pi';
 import Sketch from '~icons/logos/sketch';
 import Photoshop from '~icons/logos/adobe-photoshop';
 import Illustrator from '~icons/logos/adobe-illustrator';
+import MySQL from '~icons/logos/mysql';
+import PostgreSQL from '~icons/logos/postgresql';
 import HTML from '~icons/devicon/html5';
 import CSS from '~icons/devicon/css3';
 import Git from '~icons/devicon/git';
@@ -61,6 +63,8 @@ const iconMap: Record<LogoIconId, FunctionComponent<SVGProps<SVGSVGElement>>> = 
   python: Python,
   graphql: GraphQL,
   mui: MaterialUI,
+  mysql: MySQL,
+  postgresql: PostgreSQL,
   mongodb: MongoDB,
   keras: Keras,
   vercel: Vercel,

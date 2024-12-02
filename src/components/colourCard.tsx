@@ -62,9 +62,9 @@ const ColourCard: FunctionComponent<Props> = ({ colour }): ReactElement<Props> =
               ? ColourPalette.GREY_1000
               : ColourPalette.WHITE
           }
-          onClick={() => {
+          onClick={async () => {
             setPopoverOpen(true);
-            navigator.clipboard.writeText(colour);
+            await navigator.clipboard.writeText(colour);
           }}
           css={css`
             font-size: 16px;

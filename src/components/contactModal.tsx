@@ -70,9 +70,9 @@ const ContactModal: FunctionComponent<Props> = ({ text, email, linkedInUrl, isOp
             >
               <Button
                 iconId="copy"
-                onClick={() => {
+                onClick={async () => {
                   setPopoverOpen(true);
-                  navigator.clipboard.writeText(email);
+                  await navigator.clipboard.writeText(email);
                 }}
               >
                 {email}

@@ -19,6 +19,7 @@ const GlobalError: ErrorComponent = ({ error, reset }): ReactElement => {
    * Logs out the error to the `console`
    * for extra visibility
    */
+  // eslint-disable-next-line no-console
   useEffect(() => console.error(error), [error]);
 
   return (

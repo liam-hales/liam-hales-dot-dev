@@ -1,3 +1,5 @@
+/* eslint-disable import/no-unresolved */
+
 /** @jsxImportSource @emotion/react */
 
 'use client';

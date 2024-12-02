@@ -12,10 +12,10 @@ import { openGraphMetadata } from '.';
  * @param query The GraphQL page query
  * @returns The page metadata builder
  */
-const buildPageMetadata = <T extends PageSlug>(query: string) => {
+const buildPageMetadata = (query: string) => {
   return async (): Promise<Metadata> => {
 
-    const { metadata } = await useQuery<Page<T>>(query);
+    const { metadata } = await useQuery<Page<PageSlug>>(query);
     const openGraph = await openGraphMetadata();
 
     return {

@@ -33,7 +33,7 @@ const useQuery = async <
   const { graphqlApiUrl } = useConfig();
   const { variables } = options;
 
-  const repsonse = await request<{ readonly [key: string]: T }>({
+  const repsonse = await request<{ readonly [key: string]: T; }>({
     url: graphqlApiUrl,
     document: document,
     // Use `as` to fix generic type error

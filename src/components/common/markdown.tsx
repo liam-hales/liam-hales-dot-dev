@@ -1,5 +1,3 @@
-/* eslint-disable react/no-unstable-nested-components */
-
 /** @jsxImportSource @emotion/react */
 
 'use client';
@@ -34,9 +32,16 @@ const Markdown: FunctionComponent<Props> = ({ className, children }): ReactEleme
     >
       <ReactMarkdown components={{
         h1: ({ children }) => {
+
+          // Make sure the children is of type string
+          // for the component being rendered
+          if (typeof children !== 'string') {
+            throw Error('Unsupported children type');
+          }
+
           return (
             <Title>
-              {`${children}`}
+              {children}
             </Title>
           );
         },
@@ -84,6 +89,12 @@ const Markdown: FunctionComponent<Props> = ({ className, children }): ReactEleme
         },
         code: ({ className, children }) => {
 
+          // Make sure the children is of type string
+          // for the component being rendered
+          if (typeof children !== 'string') {
+            throw Error('Unsupported children type');
+          }
+
           // Get the code langauge from the class name and
           // check for a match in the code langauges array
           const language = codeLanguages
@@ -94,7 +105,7 @@ const Markdown: FunctionComponent<Props> = ({ className, children }): ReactEleme
           if (language == null) {
             return (
               <CodeInline>
-                {`${children}`}
+                {children}
               </CodeInline>
             );
           }
@@ -108,7 +119,7 @@ const Markdown: FunctionComponent<Props> = ({ className, children }): ReactEleme
                 padding-bottom: 10px;
               `}
             >
-              {`${children}`}
+              {children}
             </CodeSnippet>
           );
         },

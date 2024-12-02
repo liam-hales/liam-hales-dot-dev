@@ -26,7 +26,7 @@ const useNav = (): UseNavResponse => {
   // of the nav keys and nav routes
   const navRoute = navRoutes.find((value) => pathname === value);
   const navKey = (pathname !== '/')
-    ? navKeys.find((value) => pathname?.split('/')[1] === value)
+    ? navKeys.find((value) => pathname.split('/')[1] === value)
     : 'home';
 
   return {

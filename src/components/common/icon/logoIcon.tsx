@@ -1,3 +1,5 @@
+/* eslint-disable import/no-unresolved */
+
 'use client';
 
 import { FunctionComponent, ReactElement, SVGProps } from 'react';

@@ -74,8 +74,8 @@ const DateBadge: FunctionComponent<Props> = (props): ReactElement<Props> => {
     const startText = start.format('MMM YYYY');
     const endText = (endDate != null) ? end.format('MMM YYYY') : 'Now';
 
-    const yearsText = `${(years > 0) ? `${years} yr${years > 1 ? 's' : ''}` : ''}`;
-    const monthsText = `${(months > 0) ? `${months} mo${months > 1 ? 's' : ''}` : ''}`;
+    const yearsText = (years > 0) ? `${years} yr${years > 1 ? 's' : ''}` : '';
+    const monthsText = (months > 0) ? `${months} mo${months > 1 ? 's' : ''}` : '';
 
     const periodText = `${startText} - ${endText}`;
     const durationText = `${yearsText}${(years > 0 && months > 0) ? ', ' : ''}${monthsText}`;

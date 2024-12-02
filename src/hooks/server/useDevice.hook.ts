@@ -18,18 +18,19 @@ interface UseDeviceResponse {
  * Using this hook will cause the route to be dynamic, the `headers` function used
  * within this hook relies on information that can only be known at request time
  *
- * @see [Next.js - Using Dynamic Functions](https://beta.nextjs.org/docs/rendering/static-and-dynamic-rendering#using-dynamic-functions)
+ * @see [Next.js - Using Dynamic Functions](https://nextjs.org/docs/rendering/static-and-dynamic-rendering#using-dynamic-functions)
  *
  * @returns The `useDevice` hook response
  * @example
  *
- * const { deviceType } = useDevice();
+ * const { deviceType } = await useDevice();
  */
-const useDevice = (): UseDeviceResponse => {
+const useDevice = async (): Promise<UseDeviceResponse> => {
+  const headersList = await headers();
 
   // Get the `user-agent` header from the server headers
   // Extract it's infomation using `react-device-detect`
-  const userAgent = headers().get('user-agent') ?? '';
+  const userAgent = headersList.get('user-agent') ?? '';
   const { isMobile } = getSelectorsByUserAgent(userAgent);
 
   return {

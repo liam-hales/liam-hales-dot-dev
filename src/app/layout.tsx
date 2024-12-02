@@ -30,7 +30,7 @@ interface Props extends BaseProps {
  */
 const AppLayout: AsyncComponent<Props> = async ({ children }): Promise<ReactElement<Props>> => {
 
-  const { deviceType } = useDevice();
+  const { deviceType } = await useDevice();
   const { content } = await useQuery<Page<'global'>>(globalPageQuery);
 
   return (

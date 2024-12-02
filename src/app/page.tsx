@@ -13,7 +13,7 @@ import Home from './home';
  */
 const HomePage: AsyncComponent<PageProps> = async (): Promise<ReactElement<PageProps>> => {
 
-  const { deviceType } = useDevice();
+  const { deviceType } = await useDevice();
   const { content } = await useQuery<Page<'home'>>(homePageQuery);
 
   return (

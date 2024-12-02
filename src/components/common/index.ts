@@ -25,6 +25,7 @@ import CodeSnippet from './code/codeSnippet';
 import Link from './link';
 import Tag from './tag';
 import Particles from './particles';
+import Info from './info';
 
 export * from './dynamic';
 export {
@@ -55,4 +56,5 @@ export {
   Link,
   Tag,
   Particles,
+  Info,
 };

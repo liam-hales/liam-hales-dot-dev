@@ -24,28 +24,23 @@
 
 # Content Index
 
-- [Built With](#built-with)
-- [Getting Started](#getting-started-prerequisites)
-- [First Steps](#first-steps)
-- [Local Development](#local-development)
+- [Built With](#built-with-🛠️)
+- [Getting Started](#getting-started-🚀)
+- [Local Development](#local-development-👨🏻‍💻)
   - [Development Server](#development-server)
   - [Production Server](#production-server)
-- [Production](#production)
+- [Production](#production-🌍)
   - [Building](#building)
   - [Deploying](#deploying)
   - [Bundle Analysing](#bundle-analysing)
-- [Public Assets](#public-assets)
-- [Dependency Management](#dependency-management)
+- [Public Assets](#public-assets-🌆)
+- [Dependency Management](#dependency-management-📦)
   - [Options](#options)
 
 <br/>
-
-> ⚠️ _**WARNING** - Please make sure to read and follow the [Getting Started](#getting-started-prerequisites) and [First Steps](#first-steps) sections before continuing to the other sections to avoid running into any issues_
-
-<br/>
 <br/>
 
-# Built With
+# Built With 🛠️
 
 This app was built and hosted with the below. For a full list of dependencies used to build the app see the [`package.json`](/package.json) file.
 
@@ -93,7 +88,11 @@ This app was built and hosted with the below. For a full list of dependencies us
 <br/>
 <br/>
 
-# Getting Started (Prerequisites)
+> ⚠️ _**WARNING** - Please make sure to read and follow the [Getting Started](#getting-started) section before continuing to the below sections to avoid running into any issues_
+
+<br/>
+
+# Getting Started 🚀
 
 1. Download and install [Node Version Manager]
 2. Install and use a version of Node.js `>= v20.10`
@@ -112,22 +111,17 @@ v10.2.3
 3. Run `corepack enable` to enable [Corepack]
 4. You should now be able to use the [`yarn`] package manager which you **MUST** use for this project
 
+> 📝 _**NOTE** - Yarn comes bundled with [Corepack] and is the preferred way to install/manage Yarn. Check out the [Yarn Installation Guide] for more info_
+
 ```sh
 $ yarn --version
 v4.1.1
 ```
 
-> 📝 _**NOTE** - Yarn comes bundled with [Corepack] and is the preferred way to install/manage Yarn. Check out the [Yarn Installation Guide] for more info_
-
 > 📝 _**NOTE** - The current version of Yarn should match the `packageManager` version in the [`package.json`](/package.json)_
 
-<br/>
-<br/>
-
-# First Steps
-
-1. Run `yarn` in the project root
-2. Create a `.env` file in the project root
+5. Run `yarn` in the project root
+6. Create a `.env` file in the project root
 
 ```sh
 SITE_URL = 'https://liamhales.dev'
@@ -137,7 +131,7 @@ GRAPHQL_API_URL = 'https://${region}.graphcms.com/v2/${id}/master'
 <br/>
 <br/>
 
-# Local Development
+# Local Development 👨🏻‍💻
 
 For local development there are two ways to build and start the app depending on your specific needs...
 
@@ -167,7 +161,7 @@ $ yarn start:prod
 <br/>
 <br/>
 
-# Production
+# Production 🌍
 
 ## Building
 
@@ -204,7 +198,7 @@ $ yarn build:analyse
 <br/>
 <br/>
 
-# Public Assets
+# Public Assets 🌆
 
 Most public assets already exist in the `/public` directory, however some assets such as some of the icons are dynamically built using build scripts.
 
@@ -221,7 +215,7 @@ $ yarn build-icons
 <br/>
 <br/>
 
-# Dependency Management
+# Dependency Management 📦
 
 Managing dependencies is done using `npm-check-updates` under the hood which has the ability to check for new dependency versions and upgrade dependencies to a specified target version.
 

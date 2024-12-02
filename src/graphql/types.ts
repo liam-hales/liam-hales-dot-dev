@@ -54,7 +54,6 @@ export interface GlobalContent extends BasePageContent<'global'> {
   readonly stackOverflowUrl: string;
   readonly githubUrl: string;
   readonly notionUrl: string;
-  readonly notionText: string;
   readonly notFoundText: string;
   readonly notFoundImage: Asset;
   readonly me: Person;
@@ -98,14 +97,6 @@ export interface SkillsContent extends BasePageContent<'skills'> {
 }
 
 /**
- * Describes the GraphQL `TimelineContent` type which
- * contains data for the timeline page content
- */
-export interface TimelineContent extends BasePageContent<'timeline'> {
-  readonly events: TimelineEvent[];
-}
-
-/**
  * Describes the GraphQL `BrandContent` type which
  * contains data for the brand page content
  */
@@ -134,7 +125,6 @@ export type PageContent =
   | GlobalContent
   | HomeContent
   | CVContent
-  | TimelineContent
   | SkillsContent
   | BrandContent
   | BlogContent;

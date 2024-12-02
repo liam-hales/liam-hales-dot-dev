@@ -1,5 +1,5 @@
 import { ReactElement } from 'react';
-import { Page, cvPageQuery } from '../../graphql';
+import { Page, cvPageQuery, globalPageQuery } from '../../graphql';
 import { useQuery } from '../../hooks/server';
 import { PageProps, AsyncComponent } from '../../types';
 import { buildPageMetadata } from '../../helpers/server';
@@ -14,8 +14,13 @@ import CV from './cv';
 const CVPage: AsyncComponent<PageProps> = async (): Promise<ReactElement<PageProps>> => {
 
   const { content } = await useQuery<Page<'cv'>>(cvPageQuery);
+  const { content: globalContent } = await useQuery<Page<'global'>>(globalPageQuery);
+
   return (
-    <CV content={content} />
+    <CV
+      content={content}
+      globalContent={globalContent}
+    />
   );
 };
 

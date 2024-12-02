@@ -5,16 +5,16 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';
 import { BaseProps } from '../../types';
+import { CVContent, GlobalContent } from '../../graphql';
+import { Box, Title, Info, Button, Link } from '../../components/common';
+import { Content, Experience, CoreSkills } from '../../components';
 import { ColourPalette } from '../../enums';
-import { CVContent } from '../../graphql';
-import { Box, Text, Title, Icon } from '../../components/common';
-import { Content, TimelinePreview, SkillsPreview } from '../../components';
-import Card from '../../components/common/card';
 
 /**
  * The `CV` component props
  */
 interface Props extends BaseProps {
+  readonly globalContent: GlobalContent;
   readonly content: CVContent;
 }
 
@@ -25,11 +25,10 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `CV` component
  */
-const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
+const CV: FunctionComponent<Props> = ({ globalContent, content }): ReactElement<Props> => {
+  const { githubUrl } = globalContent;
   const {
-    skillsText,
     skills,
-    timelineText,
     timelineEvents,
     disclaimerText,
   } = content;
@@ -38,6 +37,7 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
     <Content
       alignment="flex-start"
       css={css`
+        max-width: 1100px;
         padding-top: 42px;
         padding-bottom: 100px;
       `}
@@ -50,45 +50,50 @@ const CV: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
       >
         Curriculum Vitae
       </Title>
-      <Card
-        direction="row"
+      <Info css={css`
+        width: 640px;
+        margin-top: 40px;
+      `}
+      >
+        {disclaimerText}
+      </Info>
+      <Link
+        href={githubUrl}
+        target="_blank"
+        passHref={true}
+        aria-label="GitHub"
         css={css`
-          padding-top: 14px;
-          padding-bottom: 14px;
-          padding-left: 22px;
-          padding-right: 22px;
           margin-top: 40px;
         `}
       >
-        <Icon
-          id="info"
+        <Button
+          size="large"
+          iconId="github"
           css={css`
-            margin-right: 16px;
-            font-size: 30px;
-            flex-shrink: 0;
-          `}
-        />
-        <Text
-          colour={ColourPalette.GREY_400}
-          css={css`
-            font-size: 12px;
+            background-color: ${ColourPalette.GREY_900};
+            outline: solid;
+            outline-width: 0.6px;
+            outline-color: ${ColourPalette.GREY_600};
           `}
         >
-          {disclaimerText}
-        </Text>
-      </Card>
-      <Box css={css`
-        padding-top: 100px;
-        row-gap: 100px;
-      `}
+          View my code on GitHub
+        </Button>
+      </Link>
+      <Box
+        direction="row"
+        alignment="flex-start"
+        css={css`
+          column-gap: 120px;
+          padding-top: 80px;
+        `}
       >
-        <SkillsPreview
-          text={skillsText}
+        <Experience events={timelineEvents} />
+        <CoreSkills
           skills={skills}
-        />
-        <TimelinePreview
-          text={timelineText}
-          events={timelineEvents}
+          css={css`
+            width: 260px;
+            flex-shrink: 0;
+          `}
         />
       </Box>
     </Content>

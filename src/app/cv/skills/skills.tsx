@@ -6,8 +6,7 @@ import { FunctionComponent, ReactElement, useState } from 'react';
 import { css } from '@emotion/react';
 import { useRouter } from 'next/navigation';
 import { Content, Grid, SkillCard, NoResults } from '../../../components';
-import { Breadcrumbs, BreadcrumbItem, Text, SearchInput, Title, Link } from '../../../components/common';
-import { ColourPalette } from '../../../enums';
+import { Breadcrumbs, BreadcrumbItem, SearchInput, Title, Link, Info } from '../../../components/common';
 import { SkillsContent } from '../../../graphql';
 import { BaseProps } from '../../../types';
 import { useScreen } from '../../../hooks';
@@ -48,7 +47,7 @@ const Skills: FunctionComponent<Props> = ({ content, search = '' }): ReactElemen
       </Title>
       <Breadcrumbs css={css`
         padding-top: 40px;
-        padding-bottom: 50px;
+        padding-bottom: 68px;
       `}
       >
         <BreadcrumbItem route="/cv">
@@ -78,23 +77,15 @@ const Skills: FunctionComponent<Props> = ({ content, search = '' }): ReactElemen
         }}
         css={css`
           width: ${(screenSize === 'small') ? '100%' : '400px'};
-          margin-top: 50px;
-          margin-bottom: 40px;
         `}
       />
-      {
-        (skills.length > 0) && (
-          <Text
-            colour={ColourPalette.GREY_400}
-            css={css`
-              max-width: 460px;
-              padding-bottom: 40px;
-            `}
-          >
-            {disclaimerText}
-          </Text>
-        )
-      }
+      <Info css={css`
+        margin-top: 40px;
+        margin-bottom: 40px;
+      `}
+      >
+        {disclaimerText}
+      </Info>
       {
         (skills.length === 0) && (
           <NoResults

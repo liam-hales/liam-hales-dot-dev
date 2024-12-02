@@ -38,7 +38,7 @@ const Info: FunctionComponent<Props> = ({ className, children }): ReactElement<P
         id="info"
         css={css`
           margin-right: 16px;
-          font-size: 30px;
+          font-size: 24px;
           flex-shrink: 0;
         `}
       />

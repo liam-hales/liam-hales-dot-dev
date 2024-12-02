@@ -4,55 +4,37 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';
-import { ColourPalette } from '../../enums';
 import { Skill } from '../../graphql';
-import { useScreen } from '../../hooks';
 import { BaseProps } from '../../types';
-import { Box, Button, Link, Text, Title } from '../common';
+import { Box, Button, Info, Link, Title } from '../common';
 import { Grid, SkillCard } from '..';
 
 /**
- * The `SkillsPreview` component props
+ * The `CoreSkills` component props
  */
 interface Props extends BaseProps<HTMLDivElement> {
-  readonly text: string;
   readonly skills: Skill[];
 }
 
 /**
- * Renders the skills preview section for the CV page
+ * Renders the core skills section for the CV page
  * which is rendered within the `CVRoute` component
  *
  * @param props The component props
- * @returns The `SkillsPreview` component
+ * @returns The `CoreSkills` component
  */
-const SkillsPreview: FunctionComponent<Props> = ({ className, text, skills }): ReactElement<Props> => {
-
-  const { screenSize } = useScreen();
+const CoreSkills: FunctionComponent<Props> = ({ className, skills }): ReactElement<Props> => {
   return (
     <Box
       className={className}
       alignment="flex-start"
     >
       <Title>
-        Skills
+        Core Skills
       </Title>
-      <Text
-        colour={ColourPalette.GREY_400}
-        css={css`
-          padding-top: 16px;
-        `}
-      >
-        {text}
-      </Text>
       <Grid css={css`
         width: 100%;
-        padding-top: 46px;
-        mask-image: linear-gradient(
-          to bottom,
-          black 46%,
-          transparent 100%
-        );
+        padding-top: 20px;
       `}
       >
         {
@@ -72,23 +54,29 @@ const SkillsPreview: FunctionComponent<Props> = ({ className, text, skills }): R
           })
         }
       </Grid>
+      <Info css={css`
+        margin-top: 26px;
+        margin-bottom: 20px;
+      `}
+      >
+        These are my core skills I currently use on a day-to-day basis. View all my skills below.
+      </Info>
       <Link
         href="/cv/skills"
         passHref={true}
         css={css`
-          margin-top: ${(screenSize === 'small') ? -26 : 10}px;
           align-self: center;
         `}
       >
         <Button
-          size="large"
+          size="medium"
           iconId="arrowRight"
         >
-          See all skills
+          See all skill
         </Button>
       </Link>
     </Box>
   );
 };
 
-export default SkillsPreview;
+export default CoreSkills;

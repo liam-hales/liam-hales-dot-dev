@@ -4,66 +4,50 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';
-import { ColourPalette } from '../../enums';
-import { TimelineEvent as Event } from '../../graphql';
-import { BaseProps } from '../../types';
-import { Box, Title, Text, VerticalTimeline, Button, Link } from '../common';
-import { TimelineEvent } from '..';
-import { useScreen, useTimeline } from '../../hooks';
+import { TimelineEvent as Event } from '../graphql';
+import { BaseProps } from '../types';
+import { Box, Title, VerticalTimeline } from './common';
+import { TimelineEvent } from '.';
+import { useTimeline } from '../hooks';
 
 /**
- * The `TimelinePreview` component props
+ * The `Experience` component props
  */
 interface Props extends BaseProps<HTMLDivElement> {
-  readonly text: string;
   readonly events: Event[];
 }
 
 /**
- * Renders the timeline preview section for the CV
- * page which is rendered within the `CVRoute` component
+ * Renders the experience section for the CV page
+ * which is rendered within the `CVRoute` component
  *
  * @param props The component props
- * @returns The `TimelinePreview` component
+ * @returns The `Experience` component
  */
-const TimelinePreview: FunctionComponent<Props> = ({ className, text, events }): ReactElement<Props> => {
+const Experience: FunctionComponent<Props> = ({ className, events }): ReactElement<Props> => {
 
-  const { screenSize } = useScreen();
   const { groupedEvents } = useTimeline(events);
-
   return (
     <Box
       className={className}
       alignment="flex-start"
     >
       <Title>
-        Timeline
+        Experience
       </Title>
-      <Text
-        colour={ColourPalette.GREY_400}
-        css={css`
-          padding-top: 16px;
-        `}
-      >
-        {text}
-      </Text>
       <Box
         alignment="flex-start"
         css={css`
-          padding-top: 46px;
+          padding-top: 16px;
+          padding-bottom: 46px;
           row-gap: 20px;
-          mask-image: linear-gradient(
-            to bottom,
-            black 46%,
-            transparent 85%
-          );
         `}
       >
         {
           Object
             .keys(groupedEvents)
             .reverse()
-            .map((key, groupIndex) => {
+            .map((key, groupIndex, keys) => {
               return (
                 <div key={`timeline-event-group-${key}`}>
                   {
@@ -75,7 +59,7 @@ const TimelinePreview: FunctionComponent<Props> = ({ className, text, events }):
                   }
                   <VerticalTimeline
                     hasLeadingConnector={groupIndex > 0}
-                    hasTrailingConnector={true}
+                    hasTrailingConnector={groupIndex < (keys.length - 1)}
                     css={css`
                       padding-top: 20px;
                     `}
@@ -98,23 +82,8 @@ const TimelinePreview: FunctionComponent<Props> = ({ className, text, events }):
             })
         }
       </Box>
-      <Link
-        href="/cv/timeline"
-        passHref={true}
-        css={css`
-          margin-top: ${(screenSize === 'small') ? -165 : -112}px;
-          align-self: center;
-        `}
-      >
-        <Button
-          size="large"
-          iconId="arrowRight"
-        >
-          See full timeline
-        </Button>
-      </Link>
     </Box>
   );
 };
 
-export default TimelinePreview;
+export default Experience;

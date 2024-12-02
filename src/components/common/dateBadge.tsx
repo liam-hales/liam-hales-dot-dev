@@ -102,7 +102,7 @@ const DateBadge: FunctionComponent<Props> = (props): ReactElement<Props> => {
         <Text
           isBold={true}
           css={css`
-            font-size: 11px;
+            font-size: 14px;
           `}
         >
           {primaryText}

@@ -13,8 +13,8 @@ import SkillAreas from './skills/skillAreas';
 import ProStatement from './proStatement';
 import StillInterested from './stillInterested';
 import TimelineEvent from './timelineEvent';
-import TimelinePreview from './preview/timelinePreview';
-import SkillsPreview from './preview/skillsPreview';
+import Experience from './experience';
+import CoreSkills from './skills/coreSkills';
 import BlogPostCard from './blog/blogPostCard';
 import BrandLogo from './brand/brandLogo';
 import BrandTypography from './brand/brandTypography';
@@ -44,8 +44,8 @@ export {
   ProStatement,
   StillInterested,
   TimelineEvent,
-  TimelinePreview,
-  SkillsPreview,
+  Experience,
+  CoreSkills,
   BlogPostCard,
   BrandLogo,
   BrandTypography,

@@ -54,7 +54,8 @@ const SkillCard: FunctionComponent<Props> = ({ className, name, type, iconId, on
       <LogoIcon
         id={iconId}
         css={css`
-          font-size: 34px;
+          width: 40px;
+          height: 40px;
           margin-left: 20px;
         `}
       />

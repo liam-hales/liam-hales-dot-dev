@@ -21,11 +21,9 @@ const cvPageQuery = gql`
       ...PageFields,
       content {
         ... on CVContent {
-          skillsText
           skills {
             ...SkillFields
           }
-          timelineText
           timelineEvents {
             ... on TimelinePointEvent {
               ...TimelinePointEventFields

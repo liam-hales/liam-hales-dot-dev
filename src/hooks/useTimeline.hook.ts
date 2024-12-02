@@ -40,6 +40,7 @@ const useTimeline = (events: TimelineEvent[]): UseTimelineResponse => {
     const forYear = map[year];
     return {
       ...map,
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       [year]: (forYear != null)
         ? [
             ...forYear,

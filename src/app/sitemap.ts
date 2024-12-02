@@ -24,10 +24,6 @@ const buildSitemap = (): MetadataRoute.Sitemap => {
       lastModified: lastModified,
     },
     {
-      url: `${siteUrl}/cv/timeline`,
-      lastModified: lastModified,
-    },
-    {
       url: `${siteUrl}/cv/skills`,
       lastModified: lastModified,
     },

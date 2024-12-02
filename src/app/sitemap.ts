@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 import { useConfig } from '../hooks/server';
-import { useDate } from '../hooks';
+import useDate from '../hooks/useDate.hook';
 
 /**
  * Used to build the `sitemap.xml` file to help search

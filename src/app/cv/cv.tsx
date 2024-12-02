@@ -26,7 +26,7 @@ interface Props extends BaseProps {
  * @returns The `CV` component
  */
 const CV: FunctionComponent<Props> = ({ globalContent, content }): ReactElement<Props> => {
-  const { githubUrl } = globalContent;
+  const { githubUrl, terminalAppUrl } = globalContent;
   const {
     skills,
     timelineEvents,
@@ -51,40 +51,69 @@ const CV: FunctionComponent<Props> = ({ globalContent, content }): ReactElement<
         Curriculum Vitae
       </Title>
       <Info css={css`
-        width: 640px;
+        width: 600px;
         margin-top: 40px;
       `}
       >
         {disclaimerText}
       </Info>
-      <Link
-        href={githubUrl}
-        target="_blank"
-        passHref={true}
-        aria-label="GitHub"
+      <Box
+        direction="row"
         css={css`
-          margin-top: 40px;
+          column-gap: 24px;
         `}
       >
-        <Button
-          size="large"
-          iconId="github"
+        <Link
+          href={githubUrl}
+          target="_blank"
+          passHref={true}
+          aria-label="GitHub"
           css={css`
-            background-color: ${ColourPalette.GREY_900};
-            outline: solid;
-            outline-width: 0.6px;
-            outline-color: ${ColourPalette.GREY_600};
+            margin-top: 40px;
           `}
         >
-          View my code on GitHub
-        </Button>
-      </Link>
+          <Button
+            size="large"
+            iconId="github"
+            css={css`
+              background-color: ${ColourPalette.GREY_900};
+              outline: solid;
+              outline-width: 0.6px;
+              outline-color: ${ColourPalette.GREY_600};
+            `}
+          >
+            View my code on GitHub
+          </Button>
+        </Link>
+        <Link
+          href={terminalAppUrl}
+          target="_blank"
+          passHref={true}
+          aria-label="Terminal"
+          css={css`
+            margin-top: 40px;
+          `}
+        >
+          <Button
+            size="large"
+            iconId="terminal"
+            css={css`
+              background-color: ${ColourPalette.GREY_900};
+              outline: solid;
+              outline-width: 0.6px;
+              outline-color: ${ColourPalette.GREY_600};
+            `}
+          >
+            View my Terminal app
+          </Button>
+        </Link>
+      </Box>
       <Box
         direction="row"
         alignment="flex-start"
         css={css`
           column-gap: 120px;
-          padding-top: 80px;
+          padding-top: 100px;
         `}
       >
         <Experience events={timelineEvents} />

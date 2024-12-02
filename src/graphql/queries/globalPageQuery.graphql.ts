@@ -22,6 +22,7 @@ const globalPageQuery = gql`
           stackOverflowUrl
           githubUrl
           notionUrl
+          terminalAppUrl
           notFoundText
           notFoundImage {
             ...AssetFields

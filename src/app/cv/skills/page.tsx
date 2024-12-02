@@ -12,9 +12,9 @@ import Skills from './skills';
  * @param props The component props
  * @returns The `SkillsPage` component
  */
-const SkillsPage: AsyncComponent<PageProps> = async ({ searchParams = {} }): Promise<ReactElement<PageProps>> => {
+const SkillsPage: AsyncComponent<PageProps> = async ({ searchParams }): Promise<ReactElement<PageProps>> => {
 
-  const { search } = searchParams;
+  const { search } = await searchParams ?? {};
   const { content } = await useQuery<Page<'skills'>, SearchVariables>(skillsPageQuery, {
     variables: {
       search: search,

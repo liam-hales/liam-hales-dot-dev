@@ -205,8 +205,8 @@ export interface BaseProps<T extends HTMLElement = HTMLElement> {
  * component exported from a route `page.tsx`
  */
 export interface PageProps {
-  readonly params?: Partial<Record<string, string>>;
-  readonly searchParams?: Partial<Record<string, string>>;
+  readonly params?: Promise<Partial<Record<string, string>>>;
+  readonly searchParams?: Promise<Partial<Record<string, string>>>;
 }
 
 /**

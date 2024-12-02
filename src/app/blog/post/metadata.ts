@@ -10,9 +10,9 @@ import { PageProps } from '../../../types';
  *
  * @returns The metadata for the `BlogPostPage` page component
  */
-export const generateMetadata = async ({ searchParams = {} }: PageProps): Promise<Metadata> => {
+export const generateMetadata = async ({ searchParams }: PageProps): Promise<Metadata> => {
 
-  const { id = '' } = searchParams;
+  const { id = '' } = await searchParams ?? {};
   const post = await useQuery<BlogPost | undefined, BlogPostVariables>(blogPostQuery, {
     variables: {
       id: id,

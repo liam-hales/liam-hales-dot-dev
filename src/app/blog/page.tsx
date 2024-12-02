@@ -12,9 +12,9 @@ import Blog from './blog';
  * @param props The component props
  * @returns The `BlogPage` component
  */
-const BlogPage: AsyncComponent<PageProps> = async ({ searchParams = {} }): Promise<ReactElement<PageProps>> => {
+const BlogPage: AsyncComponent<PageProps> = async ({ searchParams }): Promise<ReactElement<PageProps>> => {
 
-  const { search } = searchParams;
+  const { search } = await searchParams ?? {};
   const { content } = await useQuery<Page<'blog'>, SearchVariables>(blogPageQuery, {
     variables: {
       search: search,

@@ -13,8 +13,8 @@ import BlogPost from './blogPost';
  * @param props The component props
  * @returns The `BlogPostPage` component
  */
-const BlogPostPage: AsyncComponent<PageProps> = async ({ searchParams = {} }): Promise<ReactElement<PageProps>> => {
-  const { id } = searchParams;
+const BlogPostPage: AsyncComponent<PageProps> = async ({ searchParams }): Promise<ReactElement<PageProps>> => {
+  const { id } = await searchParams ?? {};
 
   // If the `id` query param has not been set then call the Next.js
   // `notFound` function to redirect the user to the not found page

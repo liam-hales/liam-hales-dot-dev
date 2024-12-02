@@ -40,16 +40,23 @@ const CoreSkills: FunctionComponent<Props> = ({ className, skills }): ReactEleme
         {
           skills.map((skill) => {
 
-            // Destructure the skill and return
-            // the skill card component
-            const { id, name, type, iconId } = skill;
+            // Destructure the skill and return the skill
+            // card component wrapped in a `Link` component
+            const { id, name, type, iconId, url } = skill;
             return (
-              <SkillCard
+              <Link
                 key={`skill-${id}`}
-                name={name}
-                type={type}
-                iconId={iconId}
-              />
+                href={url}
+                target="_blank"
+                passHref={true}
+                aria-label={name}
+              >
+                <SkillCard
+                  name={name}
+                  type={type}
+                  iconId={iconId}
+                />
+              </Link>
             );
           })
         }

@@ -39,7 +39,6 @@ const Experience: FunctionComponent<Props> = ({ className, events }): ReactEleme
         alignment="flex-start"
         css={css`
           padding-top: 16px;
-          padding-bottom: 46px;
           row-gap: 20px;
         `}
       >

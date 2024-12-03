@@ -9,6 +9,7 @@ import { CVContent, GlobalContent } from '../../graphql';
 import { Box, Title, Info, Button, Link } from '../../components/common';
 import { Content, Experience, CoreSkills } from '../../components';
 import { ColourPalette } from '../../enums';
+import { useScreen } from '../../hooks';
 
 /**
  * The `CV` component props
@@ -26,6 +27,8 @@ interface Props extends BaseProps {
  * @returns The `CV` component
  */
 const CV: FunctionComponent<Props> = ({ globalContent, content }): ReactElement<Props> => {
+
+  const { screenSize } = useScreen();
   const { githubUrl, terminalAppUrl } = globalContent;
   const {
     coreSkills,
@@ -51,16 +54,19 @@ const CV: FunctionComponent<Props> = ({ globalContent, content }): ReactElement<
         Curriculum Vitae
       </Title>
       <Info css={css`
-        width: 600px;
+        max-width: 600px;
         margin-top: 40px;
       `}
       >
         {disclaimerText}
       </Info>
       <Box
-        direction="row"
+        direction={(screenSize === 'small') ? 'column' : 'row'}
+        alignment="flex-start"
         css={css`
-          column-gap: 24px;
+          margin-top: 40px;
+          column-gap: 18px;
+          row-gap: 18px;
         `}
       >
         <Link
@@ -68,9 +74,6 @@ const CV: FunctionComponent<Props> = ({ globalContent, content }): ReactElement<
           target="_blank"
           passHref={true}
           aria-label="GitHub"
-          css={css`
-            margin-top: 40px;
-          `}
         >
           <Button
             size="large"
@@ -90,9 +93,6 @@ const CV: FunctionComponent<Props> = ({ globalContent, content }): ReactElement<
           target="_blank"
           passHref={true}
           aria-label="Terminal"
-          css={css`
-            margin-top: 40px;
-          `}
         >
           <Button
             size="large"
@@ -104,23 +104,25 @@ const CV: FunctionComponent<Props> = ({ globalContent, content }): ReactElement<
               outline-color: ${ColourPalette.GREY_600};
             `}
           >
-            View my Terminal app
+            Terminal App
           </Button>
         </Link>
       </Box>
       <Box
-        direction="row"
+        direction={(screenSize === 'small') ? 'column' : 'row'}
         alignment="flex-start"
         css={css`
-          column-gap: 120px;
+          column-gap: 100px;
+          row-gap: 100px;
           padding-top: 100px;
+          flex-direction: ${(screenSize === 'small') ? 'column-reverse' : 'unset'};
         `}
       >
         <Experience events={experienceEvents} />
         <CoreSkills
           skills={coreSkills}
           css={css`
-            width: 260px;
+            width: ${(screenSize === 'small') ? '100%' : '260px'};
             flex-shrink: 0;
           `}
         />

@@ -190,7 +190,7 @@ export interface TimelinePeriodEvent {
   readonly __typename: 'TimelinePeriodEvent';
   readonly id: string;
   readonly title: string;
-  readonly description: string;
+  readonly content: string;
   readonly startDate: string;
   readonly endDate?: string;
   readonly skills: Skill[];

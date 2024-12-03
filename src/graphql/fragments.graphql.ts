@@ -105,7 +105,7 @@ export const timelinePeriodEventFragment = gql`
     __typename
     id
     title
-    description
+    content
     startDate
     endDate
     skills {

@@ -7,7 +7,7 @@ import { css } from '@emotion/react';
 import { BaseProps } from '../types';
 import { ColourPalette } from '../enums';
 import { TimelineEvent as TEvent } from '../graphql';
-import { Box, Text, DateBadge } from './common';
+import { Box, Text, DateBadge, LogoIcon, Popover, Link, Markdown, Card } from './common';
 
 /**
  * The `TimelineEvent` component props
@@ -25,7 +25,7 @@ interface Props extends BaseProps {
  */
 const TimelineEvent: FunctionComponent<Props> = ({ event }): ReactElement<Props> => {
 
-  const { title, description, ...rest } = event;
+  const { title, ...rest } = event;
   const { __typename: type } = rest;
 
   return (
@@ -50,18 +50,90 @@ const TimelineEvent: FunctionComponent<Props> = ({ event }): ReactElement<Props>
       <Text
         isBold={true}
         css={css`
-          max-width: 400px;
           padding-top: 10px;
-          padding-bottom: 12px;
           font-size: 24px;
           line-height: 122%;
         `}
       >
-        {title}
+        {title.replace(' at ', '\nat ')}
       </Text>
-      <Text colour={ColourPalette.GREY_400}>
-        {description}
-      </Text>
+      {
+        (type === 'TimelinePointEvent') && (
+          <Text
+            colour={ColourPalette.GREY_400}
+            css={css`
+              padding-top: 16px;
+            `}
+          >
+            {rest.description}
+          </Text>
+        )
+      }
+      {
+        (type === 'TimelinePeriodEvent') && (
+          <>
+            <Markdown>
+              {rest.content}
+            </Markdown>
+            {
+              (rest.skills.length > 0) && (
+                <>
+                  <Text
+                    colour={ColourPalette.WHITE}
+                    isBold={true}
+                    css={css`
+                      padding-top: 20px;
+                      padding-bottom: 12px;
+                      font-size: 20px;
+                    `}
+                  >
+                    Skills used
+                  </Text>
+                  <Box
+                    direction="row"
+                    wrap={true}
+                    css={css`
+                      column-gap: 6px;
+                      row-gap: 6px;
+                    `}
+                  >
+                    {
+                      rest.skills.map((skill) => {
+                        const { id, name, iconId, url } = skill;
+                        return (
+                          <Popover
+                            key={`skill-${id}`}
+                            text={name}
+                          >
+                            <Link
+                              href={url}
+                              target="_blank"
+                              passHref={true}
+                              aria-label={name}
+                            >
+                              <Card css={css`
+                                padding: 12px;
+                              `}
+                              >
+                                <LogoIcon
+                                  id={iconId}
+                                  css={css`
+                                  font-size: 20px;
+                                `}
+                                />
+                              </Card>
+                            </Link>
+                          </Popover>
+                        );
+                      })
+                    }
+                  </Box>
+                </>
+              )
+            }
+          </>
+        )
+      }
     </Box>
   );
 };

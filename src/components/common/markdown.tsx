@@ -8,7 +8,7 @@ import ReactMarkdown from 'react-markdown';
 import { BaseProps } from '../../types';
 import { ColourPalette } from '../../enums';
 import { codeLanguages } from '../../constants';
-import { Box, Text, Title, CodeSnippet, CodeInline } from '.';
+import { Box, Text, Title, CodeSnippet, CodeInline, Icon } from '.';
 
 /**
  * The `Markdown` component props
@@ -85,6 +85,41 @@ const Markdown: FunctionComponent<Props> = ({ className, children }): ReactEleme
             <Text isItalic={true}>
               {children}
             </Text>
+          );
+        },
+        ul: ({ children }) => {
+          return (
+            <Box
+              alignment="flex-start"
+              css={css`
+                padding-left: 16px;
+                row-gap: 6px;
+              `}
+            >
+              {children}
+            </Box>
+          );
+        },
+        li: ({ children }) => {
+          return (
+            <Box
+              direction="row"
+              alignment="flex-start"
+              css={css`
+                column-gap: 12px;
+              `}
+            >
+              <Icon
+                id="arrowRight"
+                css={css`
+                  padding-top: 2px;
+                  flex-shrink: 0;
+                `}
+              />
+              <Text colour={ColourPalette.GREY_400}>
+                {children}
+              </Text>
+            </Box>
           );
         },
         code: ({ className, children }) => {

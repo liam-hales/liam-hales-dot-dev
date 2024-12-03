@@ -83,8 +83,8 @@ export interface HomeContent extends BasePageContent<'home'> {
  * contains data for the CV page content
  */
 export interface CVContent extends BasePageContent<'cv'> {
-  readonly skills: Skill[];
-  readonly timelineEvents: TimelineEvent[];
+  readonly coreSkills: Skill[];
+  readonly experienceEvents: TimelineEvent[];
   readonly disclaimerText: string;
 }
 

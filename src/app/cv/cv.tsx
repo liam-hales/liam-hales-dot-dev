@@ -28,8 +28,8 @@ interface Props extends BaseProps {
 const CV: FunctionComponent<Props> = ({ globalContent, content }): ReactElement<Props> => {
   const { githubUrl, terminalAppUrl } = globalContent;
   const {
-    skills,
-    timelineEvents,
+    coreSkills,
+    experienceEvents,
     disclaimerText,
   } = content;
 
@@ -116,9 +116,9 @@ const CV: FunctionComponent<Props> = ({ globalContent, content }): ReactElement<
           padding-top: 100px;
         `}
       >
-        <Experience events={timelineEvents} />
+        <Experience events={experienceEvents} />
         <CoreSkills
-          skills={skills}
+          skills={coreSkills}
           css={css`
             width: 260px;
             flex-shrink: 0;

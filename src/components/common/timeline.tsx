@@ -9,7 +9,7 @@ import { ColourPalette } from '../../enums';
 import { Box } from '.';
 
 /**
- * The `VerticalTimeline` component props
+ * The `Timeline` component props
  */
 interface Props extends BaseProps {
   readonly hasLeadingConnector?: boolean;
@@ -18,13 +18,13 @@ interface Props extends BaseProps {
 }
 
 /**
- * Renders a vertical timeline with each child
- * component being a timeline item
+ * Renders a timeline with each child
+ * component being a timeline event
  *
  * @param props The component props
- * @returns The `VerticalTimeline` component
+ * @returns The `Timeline` component
  */
-const VerticalTimeline: FunctionComponent<Props> = (props): ReactElement<Props> => {
+const Timeline: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
     className,
     hasLeadingConnector = false,
@@ -95,4 +95,4 @@ const VerticalTimeline: FunctionComponent<Props> = (props): ReactElement<Props> 
   );
 };
 
-export default VerticalTimeline;
+export default Timeline;

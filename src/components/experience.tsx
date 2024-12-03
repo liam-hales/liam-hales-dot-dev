@@ -6,7 +6,7 @@ import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';
 import { TimelineEvent as Event } from '../graphql';
 import { BaseProps } from '../types';
-import { Box, Title, VerticalTimeline } from './common';
+import { Box, Title, Timeline } from './common';
 import { TimelineEvent } from '.';
 import { useTimeline } from '../hooks';
 
@@ -57,7 +57,7 @@ const Experience: FunctionComponent<Props> = ({ className, events }): ReactEleme
                       </Title>
                     )
                   }
-                  <VerticalTimeline
+                  <Timeline
                     hasLeadingConnector={groupIndex > 0}
                     hasTrailingConnector={groupIndex < (keys.length - 1)}
                     css={css`
@@ -76,7 +76,7 @@ const Experience: FunctionComponent<Props> = ({ className, events }): ReactEleme
                         );
                       })
                     }
-                  </VerticalTimeline>
+                  </Timeline>
                 </div>
               );
             })

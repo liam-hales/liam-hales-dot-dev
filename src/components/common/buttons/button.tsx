@@ -79,7 +79,7 @@ const Button: FunctionComponent<Props> = (props): ReactElement<Props> => {
             id={iconId}
             colour={ColourPalette.WHITE}
             css={css`
-              margin-right: 12px;
+              margin-right: 10px;
               font-size: ${iconSizeMap[size]}px;
             `}
           />

@@ -29,7 +29,7 @@ interface Props extends BaseProps {
 const CV: FunctionComponent<Props> = ({ globalContent, content }): ReactElement<Props> => {
 
   const { screenSize } = useScreen();
-  const { githubUrl, terminalAppUrl } = globalContent;
+  const { linkedInUrl, githubUrl, terminalAppUrl } = globalContent;
   const {
     coreSkills,
     experienceEvents,
@@ -61,8 +61,9 @@ const CV: FunctionComponent<Props> = ({ globalContent, content }): ReactElement<
         {disclaimerText}
       </Info>
       <Box
-        direction={(screenSize === 'small') ? 'column' : 'row'}
+        direction="row"
         alignment="flex-start"
+        wrap={true}
         css={css`
           margin-top: 40px;
           column-gap: 18px;
@@ -86,6 +87,25 @@ const CV: FunctionComponent<Props> = ({ globalContent, content }): ReactElement<
             `}
           >
             View my code on GitHub
+          </Button>
+        </Link>
+        <Link
+          href={linkedInUrl}
+          target="_blank"
+          passHref={true}
+          aria-label="LinkedIn"
+        >
+          <Button
+            size="large"
+            iconId="linkedIn"
+            css={css`
+              background-color: ${ColourPalette.GREY_900};
+              outline: solid;
+              outline-width: 1px;
+              outline-color: ${ColourPalette.GREY_700};
+            `}
+          >
+            View my profile on LinkedIn
           </Button>
         </Link>
         <Link

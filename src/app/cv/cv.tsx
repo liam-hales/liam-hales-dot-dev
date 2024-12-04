@@ -81,8 +81,8 @@ const CV: FunctionComponent<Props> = ({ globalContent, content }): ReactElement<
             css={css`
               background-color: ${ColourPalette.GREY_900};
               outline: solid;
-              outline-width: 0.6px;
-              outline-color: ${ColourPalette.GREY_600};
+              outline-width: 1px;
+              outline-color: ${ColourPalette.GREY_700};
             `}
           >
             View my code on GitHub
@@ -100,8 +100,8 @@ const CV: FunctionComponent<Props> = ({ globalContent, content }): ReactElement<
             css={css`
               background-color: ${ColourPalette.GREY_900};
               outline: solid;
-              outline-width: 0.6px;
-              outline-color: ${ColourPalette.GREY_600};
+              outline-width: 1px;
+              outline-color: ${ColourPalette.GREY_700};
             `}
           >
             Terminal App

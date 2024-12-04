@@ -62,7 +62,7 @@ const TimelineEvent: FunctionComponent<Props> = ({ event }): ReactElement<Props>
           <Text
             colour={ColourPalette.GREY_400}
             css={css`
-              padding-top: 16px;
+              padding-top: 20px;
             `}
           >
             {rest.description}
@@ -72,7 +72,11 @@ const TimelineEvent: FunctionComponent<Props> = ({ event }): ReactElement<Props>
       {
         (type === 'TimelinePeriodEvent') && (
           <>
-            <Markdown>
+            <Markdown css={css`
+              padding-top: 4px;
+              padding-bottom: 16px;
+            `}
+            >
               {rest.content}
             </Markdown>
             {
@@ -82,7 +86,6 @@ const TimelineEvent: FunctionComponent<Props> = ({ event }): ReactElement<Props>
                     colour={ColourPalette.WHITE}
                     isBold={true}
                     css={css`
-                      padding-top: 20px;
                       padding-bottom: 12px;
                       font-size: 20px;
                     `}
@@ -118,8 +121,8 @@ const TimelineEvent: FunctionComponent<Props> = ({ event }): ReactElement<Props>
                                 <LogoIcon
                                   id={iconId}
                                   css={css`
-                                  font-size: 20px;
-                                `}
+                                    font-size: 20px;
+                                  `}
                                 />
                               </Card>
                             </Link>

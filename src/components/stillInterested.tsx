@@ -31,7 +31,7 @@ const StillInterested: FunctionComponent<Props> = ({ className, text }): ReactEl
       <Text
         colour={ColourPalette.GREY_400}
         css={css`
-          max-width: 340px;
+          max-width: 360px;
           padding-top: 16px;
           padding-bottom: 32px;
           text-align: center;

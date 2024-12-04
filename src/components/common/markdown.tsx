@@ -92,6 +92,8 @@ const Markdown: FunctionComponent<Props> = ({ className, children }): ReactEleme
             <Box
               alignment="flex-start"
               css={css`
+                padding-top: 10px;
+                padding-bottom: 10px;
                 padding-left: 16px;
                 row-gap: 6px;
               `}

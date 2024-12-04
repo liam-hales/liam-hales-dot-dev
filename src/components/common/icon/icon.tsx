@@ -10,7 +10,6 @@ import { BaseProps, IconId } from '../../../types';
 import { ColourPalette } from '../../../enums';
 import Swatch from '~icons/heroicons/swatch-solid';
 import ServerStack from '~icons/heroicons/server-stack-solid';
-import Home from '~icons/heroicons/home-solid';
 import Refresh from '~icons/mingcute/refresh-3-fill';
 import Mail from '~icons/mingcute/mail-send-fill';
 import Code from '~icons/mingcute/code-fill';
@@ -19,11 +18,8 @@ import ArrowLeft from '~icons/mingcute/arrow-left-fill';
 import ArrowRight from '~icons/mingcute/arrow-right-fill';
 import Close from '~icons/mingcute/close-fill';
 import Check from '~icons/mingcute/check-fill';
-import Message from '~icons/mingcute/message-2-fill';
-import File from '~icons/mingcute/file-fill';
+import File from '~icons/mingcute/document-3-fill';
 import Copy from '~icons/mingcute/copy-fill';
-import List from '~icons/mingcute/align-left-2-fill';
-import Tool from '~icons/mingcute/tool-fill';
 import Pencil from '~icons/mingcute/pencil-fill';
 import TextBox from '~icons/mingcute/textbox-fill';
 import Copyright from '~icons/mingcute/copyright-line';
@@ -47,9 +43,7 @@ interface Props extends BaseProps {
  * icon component to render
  */
 const iconMap: Record<IconId, FunctionComponent<SVGProps<SVGSVGElement>>> = {
-  home: Home,
   document: File,
-  message: Message,
   colourSwatch: Swatch,
   code: Code,
   server: ServerStack,
@@ -60,8 +54,6 @@ const iconMap: Record<IconId, FunctionComponent<SVGProps<SVGSVGElement>>> = {
   cross: Close,
   tick: Check,
   copy: Copy,
-  list: List,
-  tool: Tool,
   pencil: Pencil,
   textBox: TextBox,
   refresh: Refresh,

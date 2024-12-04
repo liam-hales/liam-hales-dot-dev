@@ -97,9 +97,7 @@ export type LogoSection = 'letterL' | 'reverseLetterL' | 'bar';
  * to determine which icon is rendered
  */
 export type IconId =
-  | 'home'
   | 'document'
-  | 'message'
   | 'colourSwatch'
   | 'code'
   | 'server'
@@ -110,8 +108,6 @@ export type IconId =
   | 'cross'
   | 'tick'
   | 'copy'
-  | 'list'
-  | 'tool'
   | 'pencil'
   | 'textBox'
   | 'refresh'

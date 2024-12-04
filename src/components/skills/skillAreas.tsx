@@ -1,15 +1,24 @@
 import { FunctionComponent, ReactElement } from 'react';
-import { BaseProps, DeviceType } from '../../types';
+import { BaseProps } from '../../types';
 import { Grid, SkillAreaCard } from '..';
+import { Skill } from '../../graphql';
 
 /**
  * The `SkillAreas` component props
  */
 interface Props extends BaseProps {
-  readonly deviceType: DeviceType;
-  readonly frontendText: string;
-  readonly backendText: string;
-  readonly designText: string;
+  readonly frontend: {
+    readonly text: string;
+    readonly skills: Skill[];
+  };
+  readonly backend: {
+    readonly text: string;
+    readonly skills: Skill[];
+  };
+  readonly design: {
+    readonly text: string;
+    readonly skills: Skill[];
+  };
 }
 
 /**
@@ -19,26 +28,23 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `SkillAreas` component
  */
-const SkillAreas: FunctionComponent<Props> = ({ className, deviceType, frontendText, backendText, designText }): ReactElement<Props> => {
+const SkillAreas: FunctionComponent<Props> = ({ className, frontend, backend, design }): ReactElement<Props> => {
   return (
     <Grid className={className}>
       <SkillAreaCard
-        deviceType={deviceType}
         title="Frontend"
-        description={frontendText}
-        iconId="code"
+        description={frontend.text}
+        skills={frontend.skills}
       />
       <SkillAreaCard
-        deviceType={deviceType}
         title="Backend"
-        description={backendText}
-        iconId="server"
+        description={backend.text}
+        skills={backend.skills}
       />
       <SkillAreaCard
-        deviceType={deviceType}
         title="Design"
-        description={designText}
-        iconId="colourSwatch"
+        description={design.text}
+        skills={design.skills}
       />
     </Grid>
   );

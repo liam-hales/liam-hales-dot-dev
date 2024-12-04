@@ -44,8 +44,11 @@ const Home: FunctionComponent<Props> = ({ deviceType, content }): ReactElement<P
     aboutMeText,
     careerStartDate,
     frontendText,
+    frontendSkills,
     backendText,
+    backendSkills,
     designText,
+    designSkills,
     proStatementText,
     stillInterestedText,
   } = content;
@@ -74,10 +77,18 @@ const Home: FunctionComponent<Props> = ({ deviceType, content }): ReactElement<P
           `}
         />
         <SkillAreas
-          deviceType={deviceType}
-          frontendText={frontendText}
-          backendText={backendText}
-          designText={designText}
+          frontend={{
+            text: frontendText,
+            skills: frontendSkills,
+          }}
+          backend={{
+            text: backendText,
+            skills: backendSkills,
+          }}
+          design={{
+            text: designText,
+            skills: designSkills,
+          }}
           css={css`
             width: 100%;
             padding-top: 48px;

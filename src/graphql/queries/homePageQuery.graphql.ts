@@ -1,5 +1,5 @@
 import { gql } from 'graphql-request';
-import { pageFragment, pageMetadataFragment, assetFragment, personFragment } from '..';
+import { pageFragment, pageMetadataFragment, assetFragment, personFragment, skillFragment } from '..';
 
 /**
  * The GraphQL query used for fetching
@@ -28,8 +28,17 @@ const homePageQuery = gql`
           aboutMeText
           careerStartDate
           frontendText
+          frontendSkills {
+            ...SkillFields
+          }
           backendText
+          backendSkills {
+            ...SkillFields
+          }
           designText
+          designSkills {
+            ...SkillFields
+          }
           proStatementText
           stillInterestedText
         }
@@ -40,6 +49,7 @@ const homePageQuery = gql`
   ${pageMetadataFragment}
   ${assetFragment}
   ${personFragment}
+  ${skillFragment}
 `;
 
 export default homePageQuery;

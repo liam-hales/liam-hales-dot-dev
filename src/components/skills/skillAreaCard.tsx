@@ -5,18 +5,17 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';
 import { ColourPalette } from '../../enums';
-import { useScreen } from '../../hooks';
-import { BaseProps, DeviceType, IconId } from '../../types';
-import { Box, Card, Icon, Text } from '../common';
+import { BaseProps } from '../../types';
+import { Box, Card, LogoIcon, Popover, Text, Link } from '../common';
+import { Skill } from '../../graphql';
 
 /**
  * The `SkillAreaCard` component props
  */
 interface Props extends BaseProps {
-  readonly deviceType: DeviceType;
   readonly title: string;
   readonly description: string;
-  readonly iconId: IconId;
+  readonly skills: Skill[];
 }
 
 /**
@@ -26,58 +25,69 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `SkillAreaCard` component
  */
-const SkillAreaCard: FunctionComponent<Props> = ({ className, deviceType, title, description, iconId }): ReactElement<Props> => {
-
-  const { screenSize } = useScreen(deviceType);
+const SkillAreaCard: FunctionComponent<Props> = ({ className, title, description, skills }): ReactElement<Props> => {
   return (
     <Card
       className={className}
-      direction={
-        (screenSize === 'small')
-          ? 'row'
-          : 'column'
-      }
-      justify="center"
       css={css`
         width: 100%;
-        padding-top: 24px;
-        padding-bottom: 24px;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-top: 22px;
+        padding-bottom: 22px;
+        padding-left: 26px;
+        padding-right: 26px;
       `}
     >
-      <Icon
-        id={iconId}
+      <Text
+        isBold={true}
         css={css`
-          margin-right: ${(screenSize === 'small') ? 24 : 0}px;
-          font-size: 42px;
+          padding-bottom: 10px;
+          font-size: 20px;
         `}
-      />
-      <Box alignment={
-        (screenSize === 'small')
-          ? 'flex-start'
-          : 'center'
-      }
       >
-        <Text
-          isBold={true}
-          css={css`
-            padding-top: ${(screenSize === 'small') ? 0 : 16}px;
-            padding-bottom: ${(screenSize === 'small') ? 4 : 16}px;
-            font-size: 18px;
-          `}
-        >
-          {title}
-        </Text>
-        <Text
-          colour={ColourPalette.GREY_400}
-          css={css`
-            max-width: ${(screenSize === 'small') ? 210 : 180}px;
-            text-align: ${(screenSize === 'small') ? 'left' : 'center'};
-          `}
-        >
-          {description}
-        </Text>
+        {title}
+      </Text>
+      <Text
+        colour={ColourPalette.GREY_400}
+        css={css`
+          max-width: 220px;
+          text-align: center;
+        `}
+      >
+        {description}
+      </Text>
+      <Box
+        direction="row"
+        css={css`
+          padding-top: 20px;
+          column-gap: 24px;
+        `}
+      >
+        {
+          skills.map((skill) => {
+            const { id, name, iconId, url } = skill;
+            return (
+              <Popover
+                key={`skill-${id}`}
+                text={name}
+              >
+                <Link
+                  href={url}
+                  target="_blank"
+                  passHref={true}
+                  aria-label={name}
+                >
+                  <LogoIcon
+                    id={iconId}
+                    css={css`
+                      width: 32px;
+                      height: 32px;
+                    `}
+                  />
+                </Link>
+              </Popover>
+            );
+          })
+        }
       </Box>
     </Card>
   );

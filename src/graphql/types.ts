@@ -72,8 +72,11 @@ export interface HomeContent extends BasePageContent<'home'> {
   readonly aboutMeText: string;
   readonly careerStartDate: string;
   readonly frontendText: string;
+  readonly frontendSkills: Skill[];
   readonly backendText: string;
+  readonly backendSkills: Skill[];
   readonly designText: string;
+  readonly designSkills: Skill[];
   readonly proStatementText: string;
   readonly stillInterestedText: string;
 }

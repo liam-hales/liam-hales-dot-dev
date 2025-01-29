@@ -44,7 +44,10 @@ const AppLayout: AsyncComponent<Props> = async ({ children }): Promise<ReactElem
           <AnimationProvider>
             <BackgroundParticles>
               <SafeArea>
-                <Nav deviceType={deviceType}>
+                <Nav
+                  deviceType={deviceType}
+                  content={content}
+                >
                   {children}
                   <Footer content={content} />
                 </Nav>

@@ -6,8 +6,16 @@ import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';
 import { ColourPalette } from '../../enums';
 import { useNav } from '../../hooks';
-import { Box, Tabs, Tab, Link } from '../common';
+import { Box, Tabs, Tab, IconButton, Popover, Link } from '../common';
 import { Logo } from '..';
+import { BaseProps } from '../../types';
+
+/**
+ * The `TopNav` component props
+ */
+interface Props extends BaseProps {
+  readonly terminalAppUrl: string;
+}
 
 /**
  * Renders the top navigation bar used for navigating
@@ -16,7 +24,7 @@ import { Logo } from '..';
  * @param props The component props
  * @returns The `TopNav` component
  */
-const TopNav: FunctionComponent = (): ReactElement => {
+const TopNav: FunctionComponent<Props> = ({ terminalAppUrl }): ReactElement<Props> => {
 
   const { navKey } = useNav();
   return (
@@ -91,6 +99,24 @@ const TopNav: FunctionComponent = (): ReactElement => {
             </Tab>
           </Tabs>
         </Box>
+        <Popover text="Terminal App">
+          <Link
+            href={terminalAppUrl}
+            target="_blank"
+            passHref={true}
+            aria-label="Terminal App"
+          >
+            <IconButton
+              id="terminal"
+              colour={ColourPalette.WHITE}
+              css={css`
+                svg {
+                  font-size: 24px;
+                };
+              `}
+            />
+          </Link>
+        </Popover>
       </Box>
     </Box>
   );

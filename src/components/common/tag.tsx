@@ -18,7 +18,7 @@ interface Props extends BaseProps {
 
 /**
  * Renders a pill shaped tag used
- * to display infomation
+ * to display information
  *
  * @param props The component props
  * @returns The `Tag` component

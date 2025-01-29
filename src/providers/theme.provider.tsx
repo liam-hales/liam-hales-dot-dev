@@ -30,7 +30,7 @@ interface Props extends BaseProps {
  */
 const ThemeProvider: FunctionComponent<Props> = ({ children }): ReactElement<Props> => {
 
-  // Recuce the values from the `ColourPalette` enum
+  // Reduce the values from the `ColourPalette` enum
   // into a palette options object for the theme
   const palette = Object
     .values(ColourPalette)

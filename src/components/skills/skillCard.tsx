@@ -18,7 +18,7 @@ interface Props extends Omit<Skill, 'id' | 'url'>, BaseProps {
 
 /**
  * Render a skill card used to
- * display the skill infomation
+ * display the skill information
  *
  * @param props The component props
  * @returns The `SkillCard` component

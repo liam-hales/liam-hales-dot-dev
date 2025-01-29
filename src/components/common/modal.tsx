@@ -25,7 +25,7 @@ interface Props extends BaseProps {
 
 /**
  * The common `Modal` component used to render a modal to
- * display infomation and for the user to interact with
+ * display information and for the user to interact with
  *
  * @param props The component props
  * @returns The `Modal` component
@@ -60,7 +60,7 @@ const Modal: FunctionComponent<Props> = ({ isOpen, direction, alignment, justify
       >
         <ClickAwayListener onClickAway={() => {
 
-          // Only close the modal if the sttaus is open
+          // Only close the modal if the status is open
           // to avoid it being closed when it is opening
           if (status === 'open') {
             onClose();

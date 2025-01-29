@@ -8,7 +8,7 @@ import { css } from '@emotion/react';
 import { ColourPalette } from '../../enums';
 
 /**
- * Renders the divider used to split up compoonents
+ * Renders the divider used to split up components
  * and separate content into groups
  *
  * @returns The `Divider` component

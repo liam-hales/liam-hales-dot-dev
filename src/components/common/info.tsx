@@ -16,7 +16,7 @@ interface Props extends BaseProps {
 }
 
 /**
- * Used to display an infomation alert to draw the
+ * Used to display an information alert to draw the
  * users attention to a specific piece of text
  *
  * @param props The component props

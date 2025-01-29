@@ -75,7 +75,7 @@ export type BoxJustify = 'flex-start' | 'flex-end' | 'center' | 'space-between';
 export type ButtonSize = 'small' | 'medium' | 'large';
 
 /**
- * The `Text` component element used to determine what underlaying
+ * The `Text` component element used to determine what underlying
  * HTML element is used to render the text
  */
 export type TextElement = 'h1' | 'h2' | 'p' | 'span' | 'code';

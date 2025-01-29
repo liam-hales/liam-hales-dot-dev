@@ -10,7 +10,7 @@ interface UseDeviceResponse {
 }
 
 /**
- * Used to extract the device infomation
+ * Used to extract the device information
  * from the `user-agent` header.
  *
  * _**WARNING:** This hook can only be used server-side_
@@ -29,7 +29,7 @@ const useDevice = async (): Promise<UseDeviceResponse> => {
   const headersList = await headers();
 
   // Get the `user-agent` header from the server headers
-  // Extract it's infomation using `react-device-detect`
+  // Extract it's information using `react-device-detect`
   const userAgent = headersList.get('user-agent') ?? '';
   const { isMobile } = getSelectorsByUserAgent(userAgent);
 

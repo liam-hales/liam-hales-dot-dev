@@ -70,7 +70,7 @@ const Input: FunctionComponent<Props> = ({ internalRef, className, value, placeh
         onChange={(event) => {
 
           // Destructure the event and the event target
-          // and pass it's value to `onChange`
+          // and pass its value to `onChange`
           const { target } = event;
           const { value } = target;
 

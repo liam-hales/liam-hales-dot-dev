@@ -1,5 +1,5 @@
 /**
- * Describes all poissble navigation keys
+ * Describes all possible navigation keys
  * used to build the `NavKey` type
  */
 export const navKeys = [
@@ -10,7 +10,7 @@ export const navKeys = [
 ] as const;
 
 /**
- * Describes all poissble navigation routes
+ * Describes all possible navigation routes
  * used to build the `NavRoute` type
  */
 export const navRoutes = [

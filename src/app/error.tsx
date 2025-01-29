@@ -5,7 +5,7 @@ import { ErrorComponent } from 'next/dist/client/components/error-boundary';
 import { Error } from '../components';
 
 /**
- * The app error boundry used to render the `Error` component for
+ * The app error boundary used to render the `Error` component for
  * any uncaught errors that occur in the app level segment and below
  *
  * @param props The component props

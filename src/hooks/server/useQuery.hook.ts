@@ -33,7 +33,7 @@ const useQuery = async <
   const { graphqlApiUrl } = useConfig();
   const { variables } = options;
 
-  const repsonse = await request<{ readonly [key: string]: T; }>({
+  const response = await request<{ readonly [key: string]: T; }>({
     url: graphqlApiUrl,
     document: document,
     // Use `as` to fix generic type error
@@ -42,8 +42,8 @@ const useQuery = async <
 
   // Extract and return the object from
   // the first key in the response
-  const [key] = Object.keys(repsonse);
-  return repsonse[key];
+  const [key] = Object.keys(response);
+  return response[key];
 };
 
 export default cache(useQuery);

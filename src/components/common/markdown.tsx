@@ -132,8 +132,8 @@ const Markdown: FunctionComponent<Props> = ({ className, children }): ReactEleme
             throw Error('Unsupported children type');
           }
 
-          // Get the code langauge from the class name and
-          // check for a match in the code langauges array
+          // Get the code language from the class name and
+          // check for a match in the code languages array
           const language = codeLanguages
             .find((value) => value === className?.replace('language-', ''));
 

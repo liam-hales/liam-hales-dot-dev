@@ -14,7 +14,7 @@ interface Props extends BaseProps {
 }
 
 /**
- * Ussed to render particle animations using
+ * Used to render particle animations using
  * `tsparticles` under the hood
  *
  * @param props The component props

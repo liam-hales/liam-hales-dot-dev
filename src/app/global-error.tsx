@@ -7,7 +7,7 @@ import { ThemeProvider } from '../providers';
 import { urbanist } from '../fonts';
 
 /**
- * The global error boundry used to render the `Error` component for
+ * The global error boundary used to render the `Error` component for
  * any uncaught errors that occur in the `AppLayout` component
  *
  * @param props The component props

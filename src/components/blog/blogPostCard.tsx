@@ -17,7 +17,7 @@ interface Props extends BaseProps, Omit<BlogPost, 'id' | 'content'> {}
 
 /**
  * Renders a blog post card used to
- * display the blog post infomation
+ * display the blog post information
  *
  * @param props The component props
  * @returns The `BlogPostCard` component

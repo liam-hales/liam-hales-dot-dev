@@ -13,7 +13,7 @@ interface UseScreenResponse {
   readonly screenSize?: ScreenSize;
 
   /**
-   * Scrolls to a HTML element using
+   * Scrolls to an HTML element using
    * a `ref` to said element
    *
    * @param ref The HTML element reference
@@ -28,7 +28,7 @@ interface UseScreenResponse {
 }
 
 /**
- * Used to access infomatin about the screen such as it's
+ * Used to access information about the screen such as its
  * size and perform actins such as scroll
  *
  * @param deviceType Used to drive the `screenSize`, is **ONLY** used during SSR
@@ -47,7 +47,7 @@ const useScreen = (deviceType?: DeviceType): UseScreenResponse => {
   const isLarge = useMediaQuery(breakpoints.only('large'));
 
   /**
-   * Scrolls to a HTML element using
+   * Scrolls to an HTML element using
    * a `ref` to said element
    *
    * @param ref The HTML element reference

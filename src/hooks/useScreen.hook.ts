@@ -24,7 +24,7 @@ interface UseScreenResponse {
    *
    * scrollTo(ref);
    */
-  readonly scrollTo: <T extends HTMLElement>(ref: RefObject<T>) => void;
+  readonly scrollTo: <T extends HTMLElement | null>(ref: RefObject<T>) => void;
 }
 
 /**
@@ -58,7 +58,7 @@ const useScreen = (deviceType?: DeviceType): UseScreenResponse => {
    *
    * scrollTo(ref);
    */
-  const scrollTo = <T extends HTMLElement>(ref: RefObject<T>): void => {
+  const scrollTo = <T extends HTMLElement | null>(ref: RefObject<T>): void => {
     const { current } = ref;
 
     // Check if the current element on

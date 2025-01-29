@@ -68,8 +68,10 @@ const Popover: FunctionComponent<Props> = (props): ReactElement<Props> => {
           disableFocusListener={(isOpen != null)}
           disableHoverListener={(isOpen != null)}
           disableTouchListener={(isOpen != null)}
-          PopperProps={{
-            disablePortal: true,
+          slotProps={{
+            popper: {
+              disablePortal: true,
+            },
           }}
         >
           {

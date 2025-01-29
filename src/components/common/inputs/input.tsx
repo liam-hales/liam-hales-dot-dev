@@ -61,7 +61,7 @@ const Input: FunctionComponent<Props> = ({ internalRef, className, value, placeh
         type="text"
         value={value}
         placeholder={placeholder}
-        componentsProps={{
+        slotProps={{
           input: {
             enterKeyHint: enterKeyText,
           },

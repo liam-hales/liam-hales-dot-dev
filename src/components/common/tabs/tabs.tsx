@@ -29,8 +29,8 @@ const Tabs: FunctionComponent<Props> = ({ className, value, children }): ReactEl
     <MuiTabs
       className={className}
       value={value}
-      TabIndicatorProps={
-        {
+      slotProps={{
+        indicator: {
           children: (
             <Box css={css`
               height: 100%;
@@ -45,8 +45,8 @@ const Tabs: FunctionComponent<Props> = ({ className, value, children }): ReactEl
               />
             </Box>
           ),
-        }
-      }
+        },
+      }}
       css={css`
         .MuiTabs-indicator {
           height: 4px;

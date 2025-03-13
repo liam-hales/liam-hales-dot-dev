@@ -32,7 +32,7 @@ const withMotion = <
 
   // Forward the component reference and turn it into a
   // `framer-motion` component to allow it to be animated
-  return motion(withRef(Component));
+  return motion.create(withRef(Component));
 };
 
 export default withMotion;

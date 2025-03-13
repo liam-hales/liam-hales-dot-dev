@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/package",
   "name": "liam-hales-dot-dev",
   "description": "My official website project",
   "version": "1.0.0",

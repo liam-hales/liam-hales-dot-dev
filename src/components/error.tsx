@@ -13,7 +13,7 @@ import { Content } from '.';
  * The `Error` component props
  */
 interface Props extends BaseProps {
-  readonly reset: () => void;
+  readonly reset: (() => void) | undefined;
 }
 
 /**
@@ -47,17 +47,21 @@ const Error: FunctionComponent<Props> = ({ reset }): ReactElement<Props> => {
       >
         Oops, looks like something went wrong. Please try refreshing the page.
       </Text>
-      <Link
-        href="/"
-        passHref={true}
-      >
-        <Button
-          iconId="refresh"
-          onClick={() => reset()}
-        >
-          Try again
-        </Button>
-      </Link>
+      {
+        (reset != null) && (
+          <Link
+            href="/"
+            passHref={true}
+          >
+            <Button
+              iconId="refresh"
+              onClick={() => reset()}
+            >
+              Try again
+            </Button>
+          </Link>
+        )
+      }
     </Content>
   );
 };

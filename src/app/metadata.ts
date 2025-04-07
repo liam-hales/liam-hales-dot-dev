@@ -28,6 +28,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
         {
           rel: 'icon',
           url: '/favicon.ico',
+          type: 'image/x-icon',
         },
         {
           rel: 'icon',
@@ -37,6 +38,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
         {
           rel: 'apple-touch-icon',
           url: '/apple-touch-icon.webp',
+          type: 'image/webp',
         },
       ],
     },

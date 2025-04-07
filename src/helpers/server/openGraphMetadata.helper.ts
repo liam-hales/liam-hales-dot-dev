@@ -20,8 +20,8 @@ const openGraphMetadata = async (): Promise<OpenGraph> => {
     siteName: `${firstName} ${lastName}`,
     images: [
       {
-        type: 'image/webp',
         url: '/cover.webp',
+        type: 'image/webp',
         alt: `${firstName} ${lastName} Cover`,
       },
     ],

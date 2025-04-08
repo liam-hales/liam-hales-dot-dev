@@ -202,10 +202,10 @@ $ yarn build:analyse
 
 Most public assets already exist in the `/public` directory, however some assets such as some of the icons are dynamically built using build scripts.
 
-1. Run `yarn build-icons` to build the `favicon.ico` and `.webp` icons
+1. Run `yarn build:icons` to build the `favicon.ico` and `.webp` icons
 
 ```sh
-$ yarn build-icons
+$ yarn build:icons
 ```
 
 > 📝 _**NOTE** - These public assets are not required for a functional build_

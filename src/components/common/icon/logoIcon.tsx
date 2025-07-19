@@ -1,8 +1,11 @@
 /* eslint-disable import/no-unresolved */
 
+/** @jsxImportSource @emotion/react */
+
 'use client';
 
 import { FunctionComponent, ReactElement, SVGProps } from 'react';
+import { css } from '@emotion/react';
 import { BaseProps, LogoIconId } from '../../../types';
 import JavaScript from '~icons/logos/javascript';
 import TypeScript from '~icons/logos/typescript-icon';
@@ -34,6 +37,8 @@ import Git from '~icons/devicon/git';
 import MongoDB from '~icons/devicon/mongodb';
 import VSCode from '~icons/devicon/vscode';
 import Keras from '~icons/devicon/keras';
+import OpenAI from '~icons/simple-icons/openai';
+import { ColourPalette } from '../../../enums';
 
 /**
  * The `LogoIcon` component props
@@ -67,6 +72,7 @@ const iconMap: Record<LogoIconId, FunctionComponent<SVGProps<SVGSVGElement>>> = 
   postgresql: PostgreSQL,
   mongodb: MongoDB,
   keras: Keras,
+  openai: OpenAI,
   vercel: Vercel,
   aws: AWS,
   azure: Azure,
@@ -90,7 +96,12 @@ const LogoIcon: FunctionComponent<Props> = ({ className, id }): ReactElement<Pro
 
   const IconComponent = iconMap[id];
   return (
-    <IconComponent className={className} />
+    <IconComponent
+      className={className}
+      css={css`
+        color: ${ColourPalette.WHITE};
+      `}
+    />
   );
 };
 

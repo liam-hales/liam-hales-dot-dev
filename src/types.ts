@@ -144,6 +144,7 @@ export type LogoIconId =
   | 'postgresql'
   | 'mongodb'
   | 'keras'
+  | 'openai'
   | 'vercel'
   | 'aws'
   | 'azure'

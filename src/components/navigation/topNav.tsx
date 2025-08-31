@@ -6,7 +6,7 @@ import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';
 import { ColourPalette } from '../../enums';
 import { useNav } from '../../hooks';
-import { Box, Tabs, Tab, IconButton, Popover, Link } from '../common';
+import { Box, Tabs, Tab, Link } from '../common';
 import { Logo } from '..';
 
 /**
@@ -77,10 +77,10 @@ const TopNav: FunctionComponent = (): ReactElement => {
               CV
             </Tab>
             <Tab
-              value="blog"
-              href="/blog"
+              value="Projects"
+              href="/projects"
             >
-              Blog
+              Projects
             </Tab>
             <Tab
               value="brand"

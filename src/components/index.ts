@@ -15,7 +15,6 @@ import StillInterested from './stillInterested';
 import TimelineEvent from './timelineEvent';
 import Experience from './experience';
 import CoreSkills from './skills/coreSkills';
-import BlogPostCard from './blog/blogPostCard';
 import BrandLogo from './brand/brandLogo';
 import BrandTypography from './brand/brandTypography';
 import BrandColourPalette from './brand/brandColourPalette';
@@ -46,7 +45,6 @@ export {
   TimelineEvent,
   Experience,
   CoreSkills,
-  BlogPostCard,
   BrandLogo,
   BrandTypography,
   BrandColourPalette,

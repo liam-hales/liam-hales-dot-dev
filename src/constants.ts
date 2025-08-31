@@ -5,7 +5,7 @@
 export const navKeys = [
   'home',
   'cv',
-  'blog',
+  'projects',
   'brand',
 ] as const;
 
@@ -17,7 +17,7 @@ export const navRoutes = [
   '/',
   '/cv',
   '/cv/skills',
-  '/blog',
+  '/projects',
   '/brand',
 ] as const;
 

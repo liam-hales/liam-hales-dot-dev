@@ -4,7 +4,7 @@ import { LogoIconId } from '../types';
  * The page slug used for fetching page
  * data from the GraphQL API
  */
-export type PageSlug = 'global' | 'home' | 'cv' | 'skills' | 'timeline' | 'blog' | 'brand';
+export type PageSlug = 'global' | 'home' | 'cv' | 'skills' | 'timeline' | 'brand';
 
 /**
  * Describes the GraphQL `Page` type which
@@ -113,14 +113,6 @@ export interface BrandContent extends BasePageContent<'brand'> {
 }
 
 /**
- * Describes the GraphQL `BlogContent` type which
- * contains data for the blog page content
- */
-export interface BlogContent extends BasePageContent<'blog'> {
-  readonly posts: BlogPost[];
-}
-
-/**
  * The union type for all
  * page content types
  */
@@ -129,8 +121,7 @@ export type PageContent =
   | HomeContent
   | CVContent
   | SkillsContent
-  | BrandContent
-  | BlogContent;
+  | BrandContent;
 
 /**
  * Describes the GraphQL `Asset` type which contains data
@@ -205,19 +196,6 @@ export interface TimelinePeriodEvent {
 export type TimelineEvent = TimelinePointEvent | TimelinePeriodEvent;
 
 /**
- * Describes the GraphQL `BlogPost` type
- */
-export interface BlogPost {
-  readonly id: string;
-  readonly title: string;
-  readonly description: string;
-  readonly content: string;
-  readonly tags: Tag[];
-  readonly author: Person;
-  readonly publishedDate: string;
-}
-
-/**
  * Describes the GraphQL `Tag` type
  */
 export interface Tag {
@@ -232,12 +210,4 @@ export interface Tag {
  */
 export interface SearchVariables {
   readonly search?: string;
-}
-
-/**
- * Describes the GraphQL variables
- * used for the blog post query
- */
-export interface BlogPostVariables {
-  readonly id: string;
 }

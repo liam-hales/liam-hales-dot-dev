@@ -28,7 +28,7 @@ const buildSitemap = (): MetadataRoute.Sitemap => {
       lastModified: lastModified,
     },
     {
-      url: `${siteUrl}/blog`,
+      url: `${siteUrl}/projects`,
       lastModified: lastModified,
     },
     {

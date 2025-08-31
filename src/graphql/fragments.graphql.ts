@@ -115,26 +115,6 @@ export const timelinePeriodEventFragment = gql`
 `;
 
 /**
- * The GraphQL fragment for the `BlogPost` type which can be
- * used within GraphQL documents and other fragments
- */
-export const blogPostFragment = gql`
-  fragment BlogPostFields on BlogPost {
-    id
-    title
-    description
-    content
-    tags {
-      ...TagFields
-    }
-    author {
-      ...PersonFields
-    }
-    publishedDate
-  }
-`;
-
-/**
  * The GraphQL fragment for the `Tag` type which can be
  * used within GraphQL documents and other fragments
  */

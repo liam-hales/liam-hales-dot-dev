@@ -86,7 +86,7 @@ const CV: FunctionComponent<Props> = ({ globalContent, content }): ReactElement<
               outline-color: ${ColourPalette.GREY_700};
             `}
           >
-            View my code on GitHub
+            GitHub
           </Button>
         </Link>
         <Link
@@ -105,7 +105,7 @@ const CV: FunctionComponent<Props> = ({ globalContent, content }): ReactElement<
               outline-color: ${ColourPalette.GREY_700};
             `}
           >
-            View my profile on LinkedIn
+            LinkedIn
           </Button>
         </Link>
       </Box>

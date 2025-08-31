@@ -90,7 +90,7 @@ const TimelineEvent: FunctionComponent<Props> = ({ event }): ReactElement<Props>
                       font-size: 20px;
                     `}
                   >
-                    Skills used
+                    Skills Applied
                   </Text>
                   <Box
                     direction="row"

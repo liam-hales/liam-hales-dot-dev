@@ -5,7 +5,7 @@
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import type { ISourceOptions as ParticlesOptions } from 'tsparticles-engine';
 import { css } from '@emotion/react';
-import { m as motion, useScroll, useTransform } from 'framer-motion';
+import { m as motion, useScroll, useTransform } from 'motion/react';
 import { BaseProps } from '../types';
 import { ColourPalette } from '../enums';
 import { Particles } from './common';

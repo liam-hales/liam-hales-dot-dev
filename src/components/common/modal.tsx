@@ -79,7 +79,9 @@ const Modal: FunctionComponent<Props> = ({ isOpen, direction, alignment, justify
             }}
             transition={{
               y: {
-                type: (isOpen === true) ? 'spring' : 'just',
+                ...(isOpen === true) && {
+                  type: 'spring',
+                },
                 stiffness: 182,
                 damping: 22,
               },

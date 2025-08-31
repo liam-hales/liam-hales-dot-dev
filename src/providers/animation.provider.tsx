@@ -1,7 +1,7 @@
 'use client';
 
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
-import { LazyMotion, domAnimation } from 'framer-motion';
+import { LazyMotion, domAnimation } from 'motion/react';
 import { BaseProps } from '../types';
 
 /**
@@ -13,7 +13,7 @@ interface Props extends BaseProps {
 
 /**
  * Used to setup animations and wrap the `children`
- * in the `LazyMotion` from `framer-motion`
+ * in the `LazyMotion` from `motion/react`
  *
  * @param props The component props
  * @returns The `AnimationProvider` component

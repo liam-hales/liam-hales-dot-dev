@@ -5,7 +5,7 @@
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { ClickAwayListener } from '@mui/material';
 import { css } from '@emotion/react';
-import { Transition } from 'framer-motion';
+import { Transition } from 'motion/react';
 import { ColourPalette } from '../../enums';
 import { useScreen } from '../../hooks';
 import { BaseProps, LogoSection } from '../../types';

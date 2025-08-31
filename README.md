@@ -72,10 +72,10 @@ This app was built and hosted with the below. For a full list of dependencies us
     <img src="https://img.shields.io/badge/Material%20UI-181c24?style=for-the-badge&logo=mui&logoColor=66a2c6"/>
   </a>
   <a
-    href="https://framer.com/motion/"
+    href="https://motion.dev"
     target="_blank"
   >
-    <img src="https://img.shields.io/badge/Framer%20Motion-181c24?style=for-the-badge&logo=framer&logoColor=66a2c6"/>
+    <img src="https://img.shields.io/badge/Motion-181c24?style=for-the-badge&logo=framer&logoColor=66a2c6"/>
   </a>
   <a
     href="https://vercel.com"

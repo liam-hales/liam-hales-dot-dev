@@ -1,13 +1,13 @@
-import { m as motion } from 'framer-motion';
+import { m as motion } from 'motion/react';
 import { FunctionComponent } from 'react';
 import { BaseProps } from '../types';
 import { withRef } from '.';
 
 /**
- * Used to wrap a component in `m` from `framer-motion` to
+ * Used to wrap a component in `m` from `motion/react` to
  * apply the `MotionProps` and allow the component to be animated.
  *
- * _**NOTE:** This also uses `withRef` which is required for `framer-motion` custom components_
+ * _**NOTE:** This also uses `withRef` which is required for `motion/react` custom components_
  *
  * - Generic type `T` for the HTML element
  * - Generic type `P` for the component props
@@ -31,7 +31,7 @@ const withMotion = <
 ) => {
 
   // Forward the component reference and turn it into a
-  // `framer-motion` component to allow it to be animated
+  // `motion/react` component to allow it to be animated
   return motion.create(withRef(Component));
 };
 

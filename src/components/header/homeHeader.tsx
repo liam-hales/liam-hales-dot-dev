@@ -4,7 +4,7 @@
 
 import { FunctionComponent, ReactElement } from 'react';
 import { css } from '@emotion/react';
-import { useScroll, useTransform } from 'framer-motion';
+import { useScroll, useTransform } from 'motion/react';
 import { Asset, Person } from '../../graphql';
 import { BaseProps } from '../../types';
 import { Image, Typewriter, Text, Box, Link } from '../common';

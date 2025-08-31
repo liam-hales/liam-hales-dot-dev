@@ -50,7 +50,7 @@ const BottomNav: FunctionComponent = (): ReactElement => {
             CV
           </Tab>
           <Tab
-            value="Projects"
+            value="projects"
             href="/projects"
           >
             Projects

@@ -29,7 +29,7 @@ interface Props extends BaseProps {
 const CV: FunctionComponent<Props> = ({ globalContent, content }): ReactElement<Props> => {
 
   const { screenSize } = useScreen();
-  const { linkedInUrl, githubUrl, terminalAppUrl } = globalContent;
+  const { linkedInUrl, githubUrl } = globalContent;
   const {
     coreSkills,
     experienceEvents,
@@ -106,25 +106,6 @@ const CV: FunctionComponent<Props> = ({ globalContent, content }): ReactElement<
             `}
           >
             View my profile on LinkedIn
-          </Button>
-        </Link>
-        <Link
-          href={terminalAppUrl}
-          target="_blank"
-          passHref={true}
-          aria-label="Terminal"
-        >
-          <Button
-            size="large"
-            iconId="terminal"
-            css={css`
-              background-color: ${ColourPalette.GREY_900};
-              outline: solid;
-              outline-width: 1px;
-              outline-color: ${ColourPalette.GREY_700};
-            `}
-          >
-            Terminal App
           </Button>
         </Link>
       </Box>

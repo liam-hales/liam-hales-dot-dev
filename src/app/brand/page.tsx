@@ -9,8 +9,7 @@ import Brand from './brand';
  * The entry point for the brand page route `/brand`, used to fetch the required
  * data and render the `Brand` component passing said data as props
  *
- * @param props The component props
- * @returns The `BlogPage` component
+ * @returns The `BrandPage` component
  */
 const BrandPage: AsyncComponent<PageProps> = async (): Promise<ReactElement<PageProps>> => {
 

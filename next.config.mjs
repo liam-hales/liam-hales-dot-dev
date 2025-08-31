@@ -22,14 +22,6 @@ const nextConfig = {
   reactStrictMode: true,
   productionBrowserSourceMaps: true,
   modularizeImports: {
-    '@mui/material': {
-      transform: '@mui/material/{{member}}',
-      preventFullImport: true,
-    },
-    '@mui/material/styles': {
-      transform: '@mui/material/styles/{{member}}',
-      preventFullImport: true,
-    },
     'react-syntax-highlighter': {
       transform: 'react-syntax-highlighter/dist/cjs/{{ kebabCase member }}',
       preventFullImport: true,
@@ -54,6 +46,7 @@ const nextConfig = {
       jsx: 'react',
     });
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return {
       ...config,
       infrastructureLogging: {

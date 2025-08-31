@@ -71,7 +71,7 @@ const NotFound: FunctionComponent<Props> = ({ content }): ReactElement<Props> =>
         href="/"
         passHref={true}
       >
-        <Button iconId="arrowleft">
+        <Button iconId="arrowLeft">
           Return home
         </Button>
       </Link>

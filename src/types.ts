@@ -102,7 +102,7 @@ export type IconId =
   | 'code'
   | 'server'
   | 'envelope'
-  | 'arrowleft'
+  | 'arrowLeft'
   | 'arrowRight'
   | 'magnifyingGlass'
   | 'cross'

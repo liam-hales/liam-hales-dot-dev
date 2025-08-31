@@ -47,7 +47,7 @@ const iconMap: Record<IconId, FunctionComponent<SVGProps<SVGSVGElement>>> = {
   code: Code,
   server: ServerStack,
   envelope: Mail,
-  arrowleft: ArrowLeft,
+  arrowLeft: ArrowLeft,
   arrowRight: ArrowRight,
   magnifyingGlass: Search,
   cross: Close,

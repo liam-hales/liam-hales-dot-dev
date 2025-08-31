@@ -113,7 +113,6 @@ export type IconId =
   | 'refresh'
   | 'copyright'
   | 'info'
-  | 'terminal'
   | 'linkedIn'
   | 'stackOverflow'
   | 'github'

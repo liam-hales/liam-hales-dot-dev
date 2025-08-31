@@ -52,7 +52,23 @@ const Markdown: FunctionComponent<Props> = ({ className, children }): ReactEleme
               element="h2"
               css={css`
                 font-size: 28px;
-                line-height: 122%;
+                padding-top: 6px;
+                padding-bottom: 6px;
+              `}
+            >
+              {children}
+            </Text>
+          );
+        },
+        h3: ({ children }) => {
+          return (
+            <Text
+              isBold={true}
+              element="h3"
+              css={css`
+                font-size: 20px;
+                padding-top: 6px;
+                padding-bottom: 6px;
               `}
             >
               {children}

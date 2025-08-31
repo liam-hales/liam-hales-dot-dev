@@ -8,23 +8,14 @@ import { ColourPalette } from '../../enums';
 import { useNav } from '../../hooks';
 import { Box, Tabs, Tab, IconButton, Popover, Link } from '../common';
 import { Logo } from '..';
-import { BaseProps } from '../../types';
-
-/**
- * The `TopNav` component props
- */
-interface Props extends BaseProps {
-  readonly terminalAppUrl: string;
-}
 
 /**
  * Renders the top navigation bar used for navigating
  * the app for medium and large screen sizes
  *
- * @param props The component props
  * @returns The `TopNav` component
  */
-const TopNav: FunctionComponent<Props> = ({ terminalAppUrl }): ReactElement<Props> => {
+const TopNav: FunctionComponent = (): ReactElement => {
 
   const { navKey } = useNav();
   return (
@@ -99,24 +90,6 @@ const TopNav: FunctionComponent<Props> = ({ terminalAppUrl }): ReactElement<Prop
             </Tab>
           </Tabs>
         </Box>
-        <Popover text="Terminal App">
-          <Link
-            href={terminalAppUrl}
-            target="_blank"
-            passHref={true}
-            aria-label="Terminal App"
-          >
-            <IconButton
-              id="terminal"
-              colour={ColourPalette.WHITE}
-              css={css`
-                svg {
-                  font-size: 24px;
-                };
-              `}
-            />
-          </Link>
-        </Popover>
       </Box>
     </Box>
   );

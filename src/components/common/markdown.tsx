@@ -2,7 +2,7 @@
 
 'use client';
 
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, Fragment } from 'react';
 import { css } from '@emotion/react';
 import ReactMarkdown from 'react-markdown';
 import { BaseProps } from '../../types';
@@ -180,9 +180,9 @@ const Markdown: FunctionComponent<Props> = ({ className, children }): ReactEleme
         // order to remove the `<pre>` tags
         pre: ({ children }) => {
           return (
-            <>
+            <Fragment>
               {children}
-            </>
+            </Fragment>
           );
         },
       }}

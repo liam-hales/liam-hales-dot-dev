@@ -2,7 +2,7 @@
 
 'use client';
 
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, Fragment } from 'react';
 import { css } from '@emotion/react';
 import { BaseProps } from '../types';
 import { ColourPalette } from '../enums';
@@ -71,7 +71,7 @@ const TimelineEvent: FunctionComponent<Props> = ({ event }): ReactElement<Props>
       }
       {
         (type === 'TimelinePeriodEvent') && (
-          <>
+          <Fragment>
             <Markdown css={css`
               padding-top: 4px;
               padding-bottom: 16px;
@@ -81,7 +81,7 @@ const TimelineEvent: FunctionComponent<Props> = ({ event }): ReactElement<Props>
             </Markdown>
             {
               (rest.skills.length > 0) && (
-                <>
+                <Fragment>
                   <Text
                     colour={ColourPalette.WHITE}
                     isBold={true}
@@ -131,10 +131,10 @@ const TimelineEvent: FunctionComponent<Props> = ({ event }): ReactElement<Props>
                       })
                     }
                   </Box>
-                </>
+                </Fragment>
               )
             }
-          </>
+          </Fragment>
         )
       }
     </Box>

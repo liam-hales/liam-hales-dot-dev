@@ -2,7 +2,7 @@
 
 'use client';
 
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, Fragment } from 'react';
 import { css } from '@emotion/react';
 import { m as motion, useScroll, useTransform } from 'framer-motion';
 import { BaseProps, DeviceType } from '../types';
@@ -54,7 +54,7 @@ const Home: FunctionComponent<Props> = ({ deviceType, content }): ReactElement<P
   } = content;
 
   return (
-    <>
+    <Fragment>
       <motion.div style={{
         y: headerY,
       }}
@@ -109,7 +109,7 @@ const Home: FunctionComponent<Props> = ({ deviceType, content }): ReactElement<P
           `}
         />
       </Content>
-    </>
+    </Fragment>
   );
 };
 

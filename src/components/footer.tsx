@@ -2,7 +2,7 @@
 
 'use client';
 
-import { FunctionComponent, ReactElement, useState } from 'react';
+import { FunctionComponent, ReactElement, useState, Fragment } from 'react';
 import { css } from '@emotion/react';
 import { ColourPalette } from '../enums';
 import { BaseProps } from '../types';
@@ -46,7 +46,7 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
   const copyrightText = ` ${year} - ${firstName} ${lastName}`;
 
   return (
-    <>
+    <Fragment>
       <ContactModal
         text={contactText}
         email={email}
@@ -176,7 +176,7 @@ const Footer: FunctionComponent<Props> = ({ content }): ReactElement<Props> => {
           </Text>
         </Box>
       </Content>
-    </>
+    </Fragment>
   );
 };
 

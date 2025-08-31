@@ -2,7 +2,7 @@
 
 'use client';
 
-import { FunctionComponent, ReactElement, ReactNode } from 'react';
+import { FunctionComponent, ReactElement, ReactNode, Fragment } from 'react';
 import { css } from '@emotion/react';
 import { BaseProps, DeviceType } from '../../types';
 import { TopNav, BottomNav, Logo } from '..';
@@ -29,7 +29,7 @@ const Nav: FunctionComponent<Props> = ({ deviceType, children }): ReactElement<P
   const { screenSize } = useScreen(deviceType);
 
   return (
-    <>
+    <Fragment>
       {
         (screenSize === 'small') && (
           <Box
@@ -60,16 +60,16 @@ const Nav: FunctionComponent<Props> = ({ deviceType, children }): ReactElement<P
       {children}
       {
         (screenSize === 'small') && (
-          <>
+          <Fragment>
             <BottomNav />
             <div css={css`
               height: 84px;
             `}
             />
-          </>
+          </Fragment>
         )
       }
-    </>
+    </Fragment>
   );
 };
 

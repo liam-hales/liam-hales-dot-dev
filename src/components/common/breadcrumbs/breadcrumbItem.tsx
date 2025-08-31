@@ -2,7 +2,7 @@
 
 'use client';
 
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, Fragment } from 'react';
 import { css } from '@emotion/react';
 import { BaseProps, NavRoute } from '../../../types';
 import { ColourPalette } from '../../../enums';
@@ -50,9 +50,9 @@ const BreadcrumbItem: FunctionComponent<Props> = (props): ReactElement<Props> =>
 
   if (isActive === true) {
     return (
-      <>
+      <Fragment>
         {textComponent}
-      </>
+      </Fragment>
     );
   }
 

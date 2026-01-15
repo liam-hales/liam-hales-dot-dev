@@ -1,28 +1,40 @@
-<div align="center">
-  <img src="public/cover.webp"/>
-  <br/>
-  <br/>
+<div>
+  <img src="public/readme-cover.webp"/>
   <h1>
-    Liam Hales - Official Website
+    liamhales.dev
   </h1>
+  <p>
+    The official website for Liam Hales. A place to demonstrate skills, experience and projects.
+  </p>
   <a
-    href="https://liamhales.notion.site/f57eb6bc10a0479995a5fef735a7f462?v=d20135f678b1417981a258147c7933d2"
+    href="https://chat.liamhales.dev"
     target="_blank"
   >
-    <img src="https://img.shields.io/badge/Notion%20Board-181c24?style=for-the-badge&logo=notion&logoColor=66a2c6"/>
+    https://liamhales.dev
   </a>
+  <br/>
+  <br/>
+  <br/>
   <a
     href="https://github.com/liam-hales/liam-hales-dot-dev/deployments?environment=Production"
     target="_blank"
   >
     <img src="https://img.shields.io/github/deployments/liam-hales/liam-hales-dot-dev/production?style=for-the-badge&label=Build&labelColor=181c24&logo=github&logoColor=66a2c6"/>
   </a>
+  <a
+    href="https://liamhales.notion.site/f57eb6bc10a0479995a5fef735a7f462?v=d20135f678b1417981a258147c7933d2"
+    target="_blank"
+  >
+    <img src="https://img.shields.io/badge/Notion%20Board-181c24?style=for-the-badge&logo=notion&logoColor=66a2c6"/>
+  </a>
 </div>
 
 <br/>
 <br/>
 
-# Content Index
+# Docs 📑
+
+> ⚠️ _**WARNING** - Please make sure to follow the [Getting Started](#getting-started) section first to avoid running into any issues._
 
 - [Built With 🛠](#built-with-)
 - [Getting Started 🚀](#getting-started-)
@@ -42,7 +54,7 @@
 
 # Built With 🛠️
 
-This app was built and hosted with the below. For a full list of dependencies used to build the app see the [`package.json`](/package.json) file.
+This app was built and hosted with the following technologies. For a full list of dependencies used, see the [`package.json`](/package.json) file.
 
 <br/>
 
@@ -86,10 +98,6 @@ This app was built and hosted with the below. For a full list of dependencies us
 <div>
 
 <br/>
-<br/>
-
-> ⚠️ _**WARNING** - Please make sure to read and follow the [Getting Started](#getting-started) section before continuing to the below sections to avoid running into any issues_
-
 <br/>
 
 # Getting Started 🚀
@@ -150,7 +158,7 @@ $ yarn start:dev
 
 ## Production Server
 
-1. Follow the steps in the [Production / Building](#building) section
+1. Run `yarn build` to build the app for production
 2. Run `yarn start:prod` to start the production server
 
 ```sh

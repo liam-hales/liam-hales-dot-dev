@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "liam-hales-dot-dev",
+  "description": "The official website for Liam Hales.",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=24.13",
+    "npm": ">=11.6"
+  },
+  "os": [
+    "darwin",
+    "linux"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liam-hales/liam-hales-dot-dev.git"
+  },
+  "packageManager": "yarn@4.12.0",
+  "scripts": {
+    "start:dev": "next dev",
+    "start:prod": "next start",
+    "build": "next build",
+    "lint": "eslint",
+    "deps": "ncu --packageManager yarn",
+    "cleanup": "rm -rf .next/"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.3.0",
+    "next": "^16.2.6",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "tailwindcss": "^4.3.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@next/eslint-plugin-next": "^16.2.6",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "@types/node": "^24.12.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^10.4.0",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import-x": "^4.16.2",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "npm-check-updates": "^22.2.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.59.4"
+  }
+}

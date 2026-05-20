@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { AppActions, AppState } from './types.js';
+import { AppActions, AppState } from './types';
 
 /**
  * Used to represent the app context which can be provided with a

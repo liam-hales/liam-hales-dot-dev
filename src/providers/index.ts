@@ -1,4 +1,4 @@
-import AppProvider from './app.provider.js';
+import AppProvider from './app.provider';
 
 export {
   AppProvider,

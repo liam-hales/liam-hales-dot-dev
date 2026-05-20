@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { AppContext } from '../context/index.js';
-import { AppState, AppActions } from '../context/types.js';
+import { AppContext } from '../context/index';
+import { AppState, AppActions } from '../context/types';
 
 /**
  * Used to access the `AppContext` value

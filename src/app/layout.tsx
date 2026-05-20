@@ -1,7 +1,7 @@
 import './globals.css';
 
 import { FunctionComponent, ReactElement } from 'react';
-import { AppProvider } from '../providers';
+import { AppProvider, ThemeProvider } from '../providers';
 import { App } from '../components';
 import { newsreader, jetbrainsMono } from '../fonts';
 
@@ -15,11 +15,14 @@ const AppLayout: FunctionComponent = (): ReactElement => {
   return (
     <html
       lang="en"
+      suppressHydrationWarning={true}
       className={`h-full ${newsreader.variable} ${jetbrainsMono.variable} overscroll-none`}
     >
       <body className="h-full touch-none">
         <AppProvider>
-          <App />
+          <ThemeProvider>
+            <App />
+          </ThemeProvider>
         </AppProvider>
       </body>
     </html>

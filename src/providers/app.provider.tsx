@@ -1,3 +1,5 @@
+'use client';
+
 import { FunctionComponent, ReactElement, ReactNode, useState } from 'react';
 import { AppContext } from '../context';
 import { generateId, UIMessage } from 'ai';

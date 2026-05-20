@@ -1,0 +1,29 @@
+import './globals.css';
+
+import { FunctionComponent, ReactElement } from 'react';
+import { AppProvider } from '../providers';
+import { App } from '../components';
+import { newsreader, jetbrainsMono } from '../fonts';
+
+/**
+ * The top level component for the app, used to define the HTML document
+ * structure, initialise React context providers and render the `App` component
+ *
+ * @returns The `AppLayout` component
+ */
+const AppLayout: FunctionComponent = (): ReactElement => {
+  return (
+    <html
+      lang="en"
+      className={`h-full ${newsreader.variable} ${jetbrainsMono.variable} overscroll-none`}
+    >
+      <body className="h-full touch-none">
+        <AppProvider>
+          <App />
+        </AppProvider>
+      </body>
+    </html>
+  );
+};
+
+export default AppLayout;

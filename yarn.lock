@@ -2866,11 +2866,13 @@ __metadata:
     eslint-plugin-import-x: "npm:^4.16.2"
     eslint-plugin-react: "npm:^7.37.5"
     eslint-plugin-react-hooks: "npm:^7.1.1"
+    lucide-react: "npm:^1.16.0"
     next: "npm:^16.2.6"
     next-themes: "npm:^0.4.6"
     npm-check-updates: "npm:^22.2.0"
     react: "npm:^19.2.6"
     react-dom: "npm:^19.2.6"
+    react-icons: "npm:^5.6.0"
     tailwindcss: "npm:^4.3.0"
     typescript: "npm:^6.0.3"
     typescript-eslint: "npm:^8.59.4"
@@ -3023,6 +3025,15 @@ __metadata:
   dependencies:
     yallist: "npm:^3.0.2"
   checksum: 10/951d2673dcc64a7fb888bf3d13bc2fdf923faca97d89cdb405ba3dfff77e2b26e5798d405e78fcd7094c9e7b8b4dab2ddc5a4f8a11928af24a207b7c738ca3f8
+  languageName: node
+  linkType: hard
+
+"lucide-react@npm:^1.16.0":
+  version: 1.16.0
+  resolution: "lucide-react@npm:1.16.0"
+  peerDependencies:
+    react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: 10/47ae26547289f3c4317463c5363c35c4ceaadaa34b776d20f133a3eb89f74209f2d8b19297a3e383a6c4e84444ac04b18d30a3c3dae3cf6067882c9a948607bc
   languageName: node
   linkType: hard
 
@@ -3433,6 +3444,15 @@ __metadata:
   peerDependencies:
     react: ^19.2.6
   checksum: 10/695122e37dec3460311231ff1f9a96368d74457d4ccf60010eaebc08c3e1c47b054c9267b40d98c689ae99d0c29a340acacfd405016a954a4f11613146191e68
+  languageName: node
+  linkType: hard
+
+"react-icons@npm:^5.6.0":
+  version: 5.6.0
+  resolution: "react-icons@npm:5.6.0"
+  peerDependencies:
+    react: "*"
+  checksum: 10/571ac91977003695934c7e02bcfebec692f3f97191f7a9e77004bf4d44b859dc4265fed0200ddb45365c00e4c7b414d69eccb5707508b9beb5ef2df2093318eb
   languageName: node
   linkType: hard
 

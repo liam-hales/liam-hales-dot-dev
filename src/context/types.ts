@@ -5,6 +5,7 @@ import { UIMessage } from 'ai';
  * for the `AppContext`
  */
 export interface AppState {
+  readonly environment: 'client' | 'server';
   readonly inputValue: string;
   readonly messages: UIMessage[];
 }

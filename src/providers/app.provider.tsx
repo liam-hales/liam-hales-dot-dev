@@ -1,6 +1,6 @@
 'use client';
 
-import { FunctionComponent, ReactElement, ReactNode, useState } from 'react';
+import { FunctionComponent, ReactElement, ReactNode, useEffect, useState } from 'react';
 import { AppContext } from '../context';
 import { generateId, UIMessage } from 'ai';
 
@@ -26,8 +26,15 @@ interface Props {
  * );
  */
 const AppProvider: FunctionComponent<Props> = ({ children }): ReactElement<Props> => {
+  const [environment, setEnvironment] = useState<'client' | 'server'>('server');
   const [inputValue, setInputValue] = useState<string>('');
   const [messages, setMessages] = useState<UIMessage[]>([]);
+
+  /**
+   * Used to set the environment state to
+   * `client` when the component mounts
+   */
+  useEffect(() => setEnvironment('client'), []);
 
   /**
    * Used to send a message
@@ -57,6 +64,7 @@ const AppProvider: FunctionComponent<Props> = ({ children }): ReactElement<Props
   return (
     <AppContext.Provider value={
       {
+        environment: environment,
         inputValue: inputValue,
         messages: messages,
         setInputValue: setInputValue,

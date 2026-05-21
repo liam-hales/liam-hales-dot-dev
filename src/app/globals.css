@@ -3,4 +3,18 @@
 @theme {
   --font-sans: var(--sans-font);
   --font-mono: var(--mono-font);
+
+  --color-primary: #cc785c;
+  --color-ink: #141413;
+  --color-elevated: #efe9de;
+  --color-outline: #e6dfd8;
+  --color-surface: #faf9f5;
+}
+
+.dark {
+  --color-primary: #cc785c;
+  --color-ink: #faf9f5;
+  --color-elevated: #252320;
+  --color-outline: #252320;
+  --color-surface: #181715;
 }

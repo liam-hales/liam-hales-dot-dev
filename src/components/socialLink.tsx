@@ -49,7 +49,9 @@ const SocialLink: FunctionComponent<Props> = ({ className, platform }): ReactEle
       passHref={true}
     >
       <Icon size={16} />
-      {textMap[platform]}
+      <span className="pt-1">
+        {textMap[platform]}
+      </span>
     </Link>
   );
 };

@@ -16,19 +16,28 @@ const ThemeToggle: FunctionComponent = (): ReactElement => {
   return (
     <div className="flex flex-row items-center gap-x-1 bg-elevated p-1 rounded-full">
       <button
-        className={`${(theme === 'system') ? 'bg-surface shadow-sm' : 'bg-transparent'} rounded-full cursor-pointer p-1.5`}
+        className={`
+          ${(theme === 'system') ? 'bg-canvas shadow-sm text-ink' : 'bg-transparent text-muted'}
+          rounded-full cursor-pointer p-1.5
+        `}
         onClick={() => setTheme('system')}
       >
         <Monitor size={16} />
       </button>
       <button
-        className={`${(theme === 'light') ? 'bg-surface shadow-sm' : 'bg-transparent'} rounded-full cursor-pointer p-1.5`}
+        className={`
+          ${(theme === 'light') ? 'bg-canvas shadow-sm text-ink' : 'bg-transparent text-muted'}
+          rounded-full cursor-pointer p-1.5
+        `}
         onClick={() => setTheme('light')}
       >
         <Sun size={16} />
       </button>
       <button
-        className={`${(theme === 'dark') ? 'bg-surface shadow-sm' : 'bg-transparent'} rounded-full cursor-pointer p-1.5`}
+        className={`
+          ${(theme === 'dark') ? 'bg-canvas shadow-sm text-ink' : 'bg-transparent text-muted'}
+          rounded-full cursor-pointer p-1.5
+        `}
         onClick={() => setTheme('dark')}
       >
         <Moon size={16} />

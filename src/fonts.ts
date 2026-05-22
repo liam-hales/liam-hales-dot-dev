@@ -1,4 +1,4 @@
-import { Crimson_Text, Fira_Code } from 'next/font/google';
+import { Newsreader, JetBrains_Mono } from 'next/font/google';
 
 /**
  * The Newsreader font from Google Fonts
@@ -6,7 +6,7 @@ import { Crimson_Text, Fira_Code } from 'next/font/google';
  *
  * @url https://fonts.google.com/specimen/Newsreader
  */
-export const newsreader = Crimson_Text({
+export const newsreader = Newsreader({
   variable: '--sans-font',
   subsets: ['latin'],
   style: ['normal', 'italic'],
@@ -19,7 +19,7 @@ export const newsreader = Crimson_Text({
  *
  * @url https://fonts.google.com/specimen/JetBrains+Mono
  */
-export const jetbrainsMono = Fira_Code({
+export const jetbrainsMono = JetBrains_Mono({
   variable: '--mono-font',
   subsets: ['latin'],
   style: ['normal'],

@@ -14,10 +14,10 @@ const ThemeToggle: FunctionComponent = (): ReactElement => {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="flex flex-row items-center gap-x-1 bg-elevated p-1 rounded-full">
+    <div className="flex flex-row items-center gap-x-1 bg-surface-low p-1 rounded-full">
       <button
         className={`
-          ${(theme === 'system') ? 'bg-canvas shadow-sm text-ink' : 'bg-transparent text-muted'}
+          ${(theme === 'system') ? 'bg-base shadow-sm text-content-primary' : 'bg-transparent text-content-secondary'}
           rounded-full cursor-pointer p-1.5
         `}
         onClick={() => setTheme('system')}
@@ -26,7 +26,7 @@ const ThemeToggle: FunctionComponent = (): ReactElement => {
       </button>
       <button
         className={`
-          ${(theme === 'light') ? 'bg-canvas shadow-sm text-ink' : 'bg-transparent text-muted'}
+          ${(theme === 'light') ? 'bg-base shadow-sm text-content-primary' : 'bg-transparent text-content-secondary'}
           rounded-full cursor-pointer p-1.5
         `}
         onClick={() => setTheme('light')}
@@ -35,7 +35,7 @@ const ThemeToggle: FunctionComponent = (): ReactElement => {
       </button>
       <button
         className={`
-          ${(theme === 'dark') ? 'bg-canvas shadow-sm text-ink' : 'bg-transparent text-muted'}
+          ${(theme === 'dark') ? 'bg-base shadow-sm text-content-primary' : 'bg-transparent text-content-secondary'}
           rounded-full cursor-pointer p-1.5
         `}
         onClick={() => setTheme('dark')}

@@ -3,6 +3,7 @@ import Header from './header';
 import Logo from './logo';
 import SocialLink from './socialLink';
 import ThemeToggle from './themeToggle';
+import Input from './input';
 
 export {
   App,
@@ -10,4 +11,5 @@ export {
   Logo,
   SocialLink,
   ThemeToggle,
+  Input,
 };

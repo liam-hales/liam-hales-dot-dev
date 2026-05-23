@@ -6,6 +6,7 @@ import ThemeToggle from './themeToggle';
 import Welcome from './welcome';
 import Input from './input';
 import Toggle from './common/toggle';
+import Option from './option';
 
 export {
   App,
@@ -16,4 +17,5 @@ export {
   Welcome,
   Input,
   Toggle,
+  Option,
 };

@@ -56,7 +56,7 @@ const Input: FunctionComponent<Props> = (props): ReactElement<Props> => {
   return (
     <div className={`${className ?? ''} flex flex-row items-end gap-x-4 bg-surface-high border border-solid border-outline rounded-xl p-2`}>
       <TextArea
-        className="w-full max-h-40 text-content-primary placeholder-content-secondary outline-none caret-white resize-none px-2 py-1.5"
+        className="w-full max-h-40 text-content-primary placeholder-content-secondary outline-none caret-content-primary resize-none px-2 py-1.5"
         placeholder="Ask me anything..."
         value={value}
         disabled={isDisabled}

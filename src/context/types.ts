@@ -7,6 +7,7 @@ import { UIMessage } from 'ai';
 export interface AppState {
   readonly environment: 'client' | 'server';
   readonly inputValue: string;
+  readonly mancMode: boolean;
   readonly messages: UIMessage[];
 }
 
@@ -22,6 +23,14 @@ export interface AppActions {
    * @param value The new input value
    */
   readonly setInputValue: (value: string) => void;
+
+  /**
+   * Used to toggle the
+   * "Manc mode" option
+   *
+   * @param value The new mode value
+   */
+  readonly setMancMode: (value: boolean) => void;
 
   /**
    * Used to send a message

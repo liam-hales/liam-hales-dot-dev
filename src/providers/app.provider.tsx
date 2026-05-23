@@ -28,6 +28,7 @@ interface Props {
 const AppProvider: FunctionComponent<Props> = ({ children }): ReactElement<Props> => {
   const [environment, setEnvironment] = useState<'client' | 'server'>('server');
   const [inputValue, setInputValue] = useState<string>('');
+  const [mancMode, setMancMode] = useState<boolean>(true);
   const [messages, setMessages] = useState<UIMessage[]>([]);
 
   /**
@@ -66,8 +67,10 @@ const AppProvider: FunctionComponent<Props> = ({ children }): ReactElement<Props
       {
         environment: environment,
         inputValue: inputValue,
+        mancMode: mancMode,
         messages: messages,
         setInputValue: setInputValue,
+        setMancMode: setMancMode,
         sendMessage: sendMessage,
       }
     }

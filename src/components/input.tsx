@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, KeyboardEvent } from 'react';
 import { BaseProps } from '../types';
 import { ArrowUp } from 'lucide-react';
 import TextArea from 'react-textarea-autosize';
@@ -31,6 +31,28 @@ const Input: FunctionComponent<Props> = (props): ReactElement<Props> => {
     onSend,
   } = props;
 
+  /**
+   * Used to handle key press events
+   * for the text area input
+   *
+   * @param event The keyboard event
+   */
+  const _onKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>): void => {
+    const { key, shiftKey } = event;
+
+    // If the user has pressed the enter key,
+    // check if they were also holding shift
+    if (key === 'Enter' && shiftKey === false) {
+      event.preventDefault();
+
+      // Make sure the value is valid
+      // before calling `onSend`
+      if (value.trim() !== '') {
+        onSend();
+      }
+    }
+  };
+
   return (
     <div className={`${className ?? ''} flex flex-row items-end gap-x-4 bg-surface-high border border-solid border-outline rounded-xl p-2`}>
       <TextArea
@@ -38,6 +60,7 @@ const Input: FunctionComponent<Props> = (props): ReactElement<Props> => {
         placeholder="Ask me anything..."
         value={value}
         disabled={isDisabled}
+        onKeyDown={_onKeyDown}
         onChange={({ target }) => onChange(target.value)}
       />
       {
@@ -51,7 +74,7 @@ const Input: FunctionComponent<Props> = (props): ReactElement<Props> => {
               disabled:bg-disabled
             `}
             onClick={onSend}
-            disabled={value === ''}
+            disabled={value.trim() === ''}
           >
             <ArrowUp size={20} />
           </button>

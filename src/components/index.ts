@@ -5,6 +5,7 @@ import SocialLink from './socialLink';
 import ThemeToggle from './themeToggle';
 import Welcome from './welcome';
 import Input from './input';
+import Toggle from './common/toggle';
 
 export {
   App,
@@ -14,4 +15,5 @@ export {
   ThemeToggle,
   Welcome,
   Input,
+  Toggle,
 };

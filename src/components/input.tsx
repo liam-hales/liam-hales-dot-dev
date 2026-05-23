@@ -44,11 +44,11 @@ const Input: FunctionComponent<Props> = (props): ReactElement<Props> => {
         (status === 'idle') && (
           <button
             className={`
-              text-white cursor-pointer bg-accent rounded-lg p-2
+              text-white cursor-pointer bg-accent hover:bg-accent-hover rounded-lg p-2
 
               disabled:cursor-not-allowed
               disabled:text-content-secondary
-              disabled:bg-surface-low
+              disabled:bg-disabled
             `}
             onClick={onSend}
             disabled={value === ''}

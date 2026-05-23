@@ -5,10 +5,13 @@
   --font-mono: var(--mono-font);
 
   --color-accent: #cc785c;
+  --color-accent-hover: #a9583e;
   --color-content-primary: #141413;
   --color-content-secondary: #8e8b82;
   --color-outline: #e6dfd8;
   --color-divider: #e6dfd8;
+  --color-hover: #efe9de;
+  --color-disabled: #e6dfd8;
   --color-surface-high: #ffffff;
   --color-surface-mid: #f5f0e8;
   --color-surface-low: #efe9de;
@@ -17,10 +20,13 @@
 
 .dark {
   --color-accent: #cc785c;
+  --color-accent-hover: #a9583e;
   --color-content-primary: #faf9f5;
   --color-content-secondary: #a09d96;
   --color-outline: #2a2825;
   --color-divider: #1f1e1b;
+  --color-hover: #33302c;
+  --color-disabled: #33302c;
   --color-surface-high: #1f1e1b;
   --color-surface-mid: #1f1e1b;
   --color-surface-low: #252320;

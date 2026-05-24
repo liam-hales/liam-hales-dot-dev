@@ -7,6 +7,8 @@ import Welcome from './welcome';
 import Input from './input';
 import Toggle from './common/toggle';
 import Option from './option';
+import UserMessage from './message/userMessage';
+import AssistantMessage from './message/assistantMessage';
 
 export {
   App,
@@ -18,4 +20,6 @@ export {
   Input,
   Toggle,
   Option,
+  UserMessage,
+  AssistantMessage,
 };

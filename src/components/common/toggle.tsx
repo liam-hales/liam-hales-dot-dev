@@ -22,20 +22,11 @@ const Toggle: FunctionComponent<Props> = ({ className, isOn, onChange }): ReactE
     <Switch
       checked={isOn}
       onChange={onChange}
-      className={`
-        ${className ?? ''} w-8 h-4.5 relative inline-flex items-center rounded-full
-
-        ui-checked:bg-accent
-        ui-not-checked:bg-disabled
-      `}
+      className={`${className ?? ''} w-8 h-4.5 group inline-flex items-center rounded-full cursor-pointer bg-disabled data-checked:bg-accent`}
     >
       <span
-        className={`
-          w-3 h-3 inline-block transform rounded-full bg-white transition
-
-          ui-checked:translate-x-4
-          ui-not-checked:translate-x-1
-        `}
+        className="size-3 rounded-full bg-white shadow-sm transition translate-x-1 group-data-checked:translate-x-4"
+        aria-hidden={true}
       />
     </Switch>
   );

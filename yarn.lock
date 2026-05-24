@@ -401,15 +401,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@headlessui/tailwindcss@npm:^0.2.2":
-  version: 0.2.2
-  resolution: "@headlessui/tailwindcss@npm:0.2.2"
-  peerDependencies:
-    tailwindcss: ^3.0 || ^4.0
-  checksum: 10/c8132e901c7dd7fa8b14cef70acb72a7b3b3f33f3c3be4436461ace194e883f3dedb9c5d0e263b79c4e6b7f2be75007c37214de767bb2bcc655feab8de436d0b
-  languageName: node
-  linkType: hard
-
 "@humanfs/core@npm:^0.19.2":
   version: 0.19.2
   resolution: "@humanfs/core@npm:0.19.2"
@@ -3045,7 +3036,6 @@ __metadata:
   dependencies:
     "@eslint/js": "npm:^10.0.1"
     "@headlessui/react": "npm:^2.2.10"
-    "@headlessui/tailwindcss": "npm:^0.2.2"
     "@next/eslint-plugin-next": "npm:^16.2.6"
     "@openrouter/ai-sdk-provider": "npm:^2.9.0"
     "@stylistic/eslint-plugin": "npm:^5.10.0"

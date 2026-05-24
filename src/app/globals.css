@@ -1,7 +1,5 @@
 @import 'tailwindcss';
 
-@plugin '@headlessui/tailwindcss';
-
 @theme {
   --font-sans: var(--sans-font);
   --font-mono: var(--mono-font);

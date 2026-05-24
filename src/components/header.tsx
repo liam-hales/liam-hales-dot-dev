@@ -14,7 +14,7 @@ const Header: FunctionComponent = (): ReactElement => {
   const { environment, messages } = useApp();
 
   return (
-    <div className="w-full h-20 flex flex-row items-center justify-between border-b border-solid border-divider px-6">
+    <div className="w-full h-20 flex flex-row items-center shrink-0 justify-between border-b border-solid border-divider px-6">
       <div className="flex flex-row items-center gap-x-8">
         {
           (messages.length > 0) && (

@@ -20,8 +20,8 @@ interface Props extends BaseProps {
  */
 const Welcome: FunctionComponent<Props> = ({ onSuggestion }): ReactElement<Props> => {
   return (
-    <div className="flex flex-col items-center gap-y-10">
-      <Logo className="w-12 fill-accent" />
+    <div className="h-full flex flex-col items-center sm:justify-center gap-y-10">
+      <Logo className="w-12 fill-accent shrink-0" />
       <div className="flex flex-col items-center gap-y-2">
         <p className="text-content-primary text-[40px] text-center leading-10">
           Have a chat with Liam.

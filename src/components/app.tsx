@@ -21,14 +21,18 @@ const App: FunctionComponent = (): ReactElement => {
   } = useApp();
 
   return (
-    <div className="h-full flex flex-col items-center justify-between bg-base">
+    <div className="h-full flex flex-col items-center bg-base">
       <Header />
-      <div className="flex flex-col no-scrollbar overflow-y-auto overflow-x-hidden px-3 py-6">
-        <Welcome onSuggestion={setInputValue} />
+      <div className="w-full h-full max-w-175 flex flex-col items-center no-scrollbar overflow-y-auto overflow-x-hidden px-3 pt-10 pb-6">
+        {
+          (messages.length === 0) && (
+            <Welcome onSuggestion={setInputValue} />
+          )
+        }
       </div>
       <div className={`
         w-full flex flex-col items-center px-3 pt-3 pb-10
-        ${(messages.length > 0) ? 'border-t border-solid border-outline' : 'border-none'}
+        ${(messages.length > 0) ? 'border-t border-solid border-divider' : 'border-none'}
       `}
       >
         <div className="w-full max-w-175 flex flex-col items-end gap-y-3">

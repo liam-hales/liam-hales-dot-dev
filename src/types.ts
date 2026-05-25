@@ -1,6 +1,25 @@
 import { Ref } from 'react';
 
 /**
+ * Describes the different
+ * app states
+ */
+export type AppState =
+  {
+    readonly id: 'idle' | 'loading' | 'streaming';
+  }
+  | AppErrorState;
+
+/**
+ * Describes the app
+ * error state
+ */
+export interface AppErrorState {
+  readonly id: 'error';
+  readonly error: Error;
+}
+
+/**
  * The props that all component
  * props should `extends`
  *

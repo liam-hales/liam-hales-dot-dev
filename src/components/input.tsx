@@ -1,6 +1,6 @@
 import { FunctionComponent, ReactElement, KeyboardEvent } from 'react';
 import { BaseProps } from '../types';
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, Square } from 'lucide-react';
 import TextArea from 'react-textarea-autosize';
 
 /**
@@ -11,6 +11,7 @@ interface Props extends BaseProps {
   readonly status: 'send' | 'abort';
   readonly onChange: (value: string) => void;
   readonly onSend: () => void;
+  readonly onAbort: () => void;
 }
 
 /**
@@ -27,6 +28,7 @@ const Input: FunctionComponent<Props> = (props): ReactElement<Props> => {
     status,
     onChange,
     onSend,
+    onAbort,
   } = props;
 
   /**
@@ -64,7 +66,7 @@ const Input: FunctionComponent<Props> = (props): ReactElement<Props> => {
         (status === 'send') && (
           <button
             className={`
-              text-white cursor-pointer bg-accent hover:bg-accent-hover rounded-lg p-2
+              size-9 flex flex-col items-center justify-center shrink-0 text-white cursor-pointer bg-accent hover:bg-accent-hover rounded-lg p-2
 
               disabled:cursor-not-allowed
               disabled:text-content-secondary
@@ -74,6 +76,19 @@ const Input: FunctionComponent<Props> = (props): ReactElement<Props> => {
             disabled={value.trim() === ''}
           >
             <ArrowUp size={20} />
+          </button>
+        )
+      }
+      {
+        (status === 'abort') && (
+          <button
+            className="size-9 flex flex-col items-center justify-center shrink-0 text-content-secondary cursor-pointer bg-disabled border border-solid border-outline hover:bg-hover rounded-lg p-2"
+            onClick={onAbort}
+          >
+            <Square
+              className="fill-content-secondary"
+              size={16}
+            />
           </button>
         )
       }

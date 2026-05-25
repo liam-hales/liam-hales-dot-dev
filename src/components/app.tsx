@@ -12,12 +12,14 @@ import { useApp } from '../hooks';
  */
 const App: FunctionComponent = (): ReactElement => {
   const {
+    status,
     inputValue,
     mancMode,
     messages,
     setInputValue,
     setMancMode,
     sendMessage,
+    abortRequest,
   } = useApp();
 
   return (
@@ -44,9 +46,10 @@ const App: FunctionComponent = (): ReactElement => {
           <Input
             className="w-full"
             value={inputValue}
-            status="send"
+            status={(status.id === 'idle') ? 'send' : 'abort'}
             onChange={setInputValue}
             onSend={sendMessage}
+            onAbort={abortRequest}
           />
         </div>
       </div>

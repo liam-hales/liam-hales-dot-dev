@@ -8,8 +8,7 @@ import TextArea from 'react-textarea-autosize';
  */
 interface Props extends BaseProps {
   readonly value: string;
-  readonly status: 'idle' | 'streaming';
-  readonly isDisabled?: boolean;
+  readonly status: 'send' | 'abort';
   readonly onChange: (value: string) => void;
   readonly onSend: () => void;
 }
@@ -26,7 +25,6 @@ const Input: FunctionComponent<Props> = (props): ReactElement<Props> => {
     className,
     value,
     status,
-    isDisabled,
     onChange,
     onSend,
   } = props;
@@ -59,12 +57,11 @@ const Input: FunctionComponent<Props> = (props): ReactElement<Props> => {
         className="w-full max-h-40 text-content-primary placeholder-content-secondary outline-none caret-content-primary resize-none px-2 py-1.5"
         placeholder="Ask me anything..."
         value={value}
-        disabled={isDisabled}
         onKeyDown={_onKeyDown}
         onChange={({ target }) => onChange(target.value)}
       />
       {
-        (status === 'idle') && (
+        (status === 'send') && (
           <button
             className={`
               text-white cursor-pointer bg-accent hover:bg-accent-hover rounded-lg p-2

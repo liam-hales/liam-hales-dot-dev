@@ -44,7 +44,7 @@ const App: FunctionComponent = (): ReactElement => {
           <Input
             className="w-full"
             value={inputValue}
-            status="idle"
+            status="send"
             onChange={setInputValue}
             onSend={sendMessage}
           />

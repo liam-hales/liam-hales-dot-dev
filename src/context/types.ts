@@ -1,4 +1,5 @@
 import { UIMessage } from 'ai';
+import { Status } from '../types';
 
 /**
  * Describes the app state
@@ -6,6 +7,7 @@ import { UIMessage } from 'ai';
  */
 export interface AppState {
   readonly environment: 'client' | 'server';
+  readonly status: Status;
   readonly inputValue: string;
   readonly mancMode: boolean;
   readonly messages: UIMessage[];
@@ -36,5 +38,5 @@ export interface AppActions {
    * Used to send a message
    * to the AI model
    */
-  readonly sendMessage: () => void;
+  readonly sendMessage: () => Promise<void>;
 }

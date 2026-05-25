@@ -2,19 +2,19 @@ import { Ref } from 'react';
 
 /**
  * Describes the different
- * app states
+ * app statuses
  */
-export type AppState =
+export type Status =
   {
     readonly id: 'idle' | 'loading' | 'streaming';
   }
-  | AppErrorState;
+  | ErrorStatus;
 
 /**
  * Describes the app
- * error state
+ * error status
  */
-export interface AppErrorState {
+export interface ErrorStatus {
   readonly id: 'error';
   readonly error: Error;
 }

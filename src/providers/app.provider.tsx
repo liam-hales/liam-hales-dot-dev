@@ -153,6 +153,27 @@ const AppProvider: FunctionComponent<Props> = ({ children }): ReactElement<Props
     }
   };
 
+  /**
+   * Used to abort/cancel the
+   * current request to the LLM
+   *
+   * @param reason The reason for aborting
+   */
+  const abortRequest = (reason?: string): void => {
+    const error = new Error(reason);
+    error.name = 'AbortError';
+
+    // Abort the chat request using the abort
+    // controller with a given reason
+    abortController?.abort(error);
+
+    // Reset the status
+    // back to `idle`
+    setStatus({
+      id: 'idle',
+    });
+  };
+
   return (
     <AppContext.Provider value={
       {
@@ -164,6 +185,7 @@ const AppProvider: FunctionComponent<Props> = ({ children }): ReactElement<Props
         setInputValue: setInputValue,
         setMancMode: setMancMode,
         sendMessage: sendMessage,
+        abortRequest: abortRequest,
       }
     }
     >

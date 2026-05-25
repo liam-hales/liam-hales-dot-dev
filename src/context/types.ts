@@ -39,4 +39,12 @@ export interface AppActions {
    * to the AI model
    */
   readonly sendMessage: () => Promise<void>;
+
+  /**
+   * Used to abort/cancel the
+   * current request to the LLM
+   *
+   * @param reason The reason for aborting
+   */
+  readonly abortRequest: (reason?: string) => void;
 }

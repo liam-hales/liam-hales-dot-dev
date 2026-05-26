@@ -1,5 +1,5 @@
 import { Ref } from 'react';
-import { InferUIMessageChunk, InferUITools, UIDataTypes, UIMessage } from 'ai';
+import { InferUIMessageChunk, InferUITools, TextUIPart, ToolUIPart, UIDataTypes, UIMessage } from 'ai';
 import { tools } from './tools';
 
 /**
@@ -15,10 +15,18 @@ export type Tools = InferUITools<typeof tools>;
 export type MessageChunk = InferUIMessageChunk<Message>;
 
 /**
+ * Describes the message part
+ * that lives with the message
+ */
+export type MessagePart = TextUIPart | ToolUIPart<Tools>;
+
+/**
  * Describes the message used to communicate
  * between the user and LLM
  */
-export type Message = UIMessage<unknown, UIDataTypes, Tools>;
+export type Message = Omit<UIMessage<unknown, UIDataTypes, Tools>, 'parts'> & {
+  readonly parts: MessagePart[];
+};
 
 /**
  * Describes the different

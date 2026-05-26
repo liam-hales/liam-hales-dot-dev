@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { AppContext } from '../context/index';
+import { AppContext } from '../context';
 import { AppState, AppActions } from '../context/types';
 
 /**

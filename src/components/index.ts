@@ -5,6 +5,7 @@ import SocialLink from './socialLink';
 import ThemeToggle from './themeToggle';
 import Welcome from './welcome';
 import Input from './input';
+import Loader from './common/loader';
 import Toggle from './common/toggle';
 import Option from './option';
 import UserMessage from './message/userMessage';
@@ -18,6 +19,7 @@ export {
   ThemeToggle,
   Welcome,
   Input,
+  Loader,
   Toggle,
   Option,
   UserMessage,

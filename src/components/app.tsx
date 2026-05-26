@@ -1,7 +1,7 @@
 'use client';
 
 import { FunctionComponent, ReactElement } from 'react';
-import { Header, Welcome, Input, Option } from './';
+import { Header, Welcome, Input, Option, UserMessage, AssistantMessage } from './';
 import { useApp } from '../hooks';
 
 /**
@@ -25,11 +25,43 @@ const App: FunctionComponent = (): ReactElement => {
   return (
     <div className="h-full flex flex-col items-center bg-base">
       <Header />
-      <div className="w-full h-full max-w-175 flex flex-col items-center no-scrollbar overflow-y-auto overflow-x-hidden px-3 pt-10 pb-6">
+      <div className="w-full h-full max-w-175 flex flex-col items-center gap-y-6 no-scrollbar overflow-y-auto overflow-x-hidden px-3 pt-10 pb-6">
         {
           (messages.length === 0) && (
             <Welcome onSuggestion={setInputValue} />
           )
+        }
+        {
+          messages.map((message) => {
+            const { id, role, parts } = message;
+
+            // If the message role is `user` then
+            // render the `UserMessage` component
+            if (role === 'user') {
+              // The user message should only contain
+              // text parts, filter out any others
+              const textParts = parts.filter((part) => part.type === 'text');
+              return (
+                <UserMessage
+                  className="self-end"
+                  key={`user-message-${id}`}
+                  parts={textParts}
+                />
+              );
+            }
+
+            // If the message role is `assistant` then
+            // render the `AssistantMessage` component
+            if (role === 'assistant') {
+              return (
+                <AssistantMessage
+                  className="self-start"
+                  key={`assistant-message-${id}`}
+                  parts={parts}
+                />
+              );
+            }
+          })
         }
       </div>
       <div className={`

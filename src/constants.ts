@@ -15,7 +15,7 @@ export const suggestions = [
  * Defines the OpenRouter
  * LLM to use
  */
-export const modelId = 'openai/gpt-5.4-mini';
+export const modelId = 'anthropic/claude-haiku-4.5';
 
 /**
  * Defines the system instructions for the LLM

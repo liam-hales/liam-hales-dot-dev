@@ -106,16 +106,20 @@ const AppProvider: FunctionComponent<Props> = ({ children }): ReactElement<Props
 
       abortController.signal.throwIfAborted();
 
-      // Set the app status to `streaming` once
-      // the client has the message stream
-      setStatus({
-        id: 'streaming',
-      });
-
       // process the client stream value
       // and process each message
       for await (const message of messageStream) {
         abortController.signal.throwIfAborted();
+
+        // If the message has no parts then
+        // continue and wait until it does
+        if (message.parts.length === 0) {
+          continue;
+        }
+
+        setStatus({
+          id: 'streaming',
+        });
 
         setMessages((previous) => {
           const { role } = previous[previous.length - 1];

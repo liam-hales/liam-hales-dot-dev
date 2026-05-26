@@ -1,4 +1,24 @@
 import { Ref } from 'react';
+import { InferUIMessageChunk, InferUITools, UIDataTypes, UIMessage } from 'ai';
+import { tools } from './tools';
+
+/**
+ * Describes all tools that
+ * can be used by the LLM
+ */
+export type Tools = InferUITools<typeof tools>;
+
+/**
+ * Describes the message chunk
+ * used for the LLM streams
+ */
+export type MessageChunk = InferUIMessageChunk<Message>;
+
+/**
+ * Describes the message used to communicate
+ * between the user and LLM
+ */
+export type Message = UIMessage<unknown, UIDataTypes, Tools>;
 
 /**
  * Describes the different

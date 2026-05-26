@@ -1,8 +1,9 @@
 'use server';
 
 import { createOpenRouter } from '@openrouter/ai-sdk-provider';
-import { AsyncIterableStream, ModelMessage, UIMessageChunk, generateId, streamText } from 'ai';
+import { AsyncIterableStream, ModelMessage, generateId, streamText } from 'ai';
 import { modelId, modelInstructions } from '../constants';
+import { MessageChunk } from '../types';
 
 /**
  * Used to stream the LLM message in chunks to the client using
@@ -10,7 +11,7 @@ import { modelId, modelInstructions } from '../constants';
  *
  * @param messages The messages to send
  */
-const streamMessage = async (messages: ModelMessage[]): Promise<AsyncIterableStream<UIMessageChunk>> => {
+const streamMessage = async (messages: ModelMessage[]): Promise<AsyncIterableStream<MessageChunk>> => {
   const openRouterApiKey = process.env.OPEN_ROUTER_API_KEY;
 
   // Make sure the `OPEN_ROUTER_API_KEY`

@@ -2,9 +2,9 @@
 
 import { FunctionComponent, ReactElement, ReactNode, useEffect, useState } from 'react';
 import { AppContext } from '../context';
-import { convertToModelMessages, generateId, readUIMessageStream, UIMessage } from 'ai';
+import { convertToModelMessages, generateId, readUIMessageStream } from 'ai';
 import { streamMessage } from '../helpers';
-import { Status } from '../types';
+import { Status, Message } from '../types';
 
 /**
  * The `AppProvider` component props
@@ -37,7 +37,7 @@ const AppProvider: FunctionComponent<Props> = ({ children }): ReactElement<Props
   const [mancMode, setMancMode] = useState<boolean>(true);
 
   const [abortController, setAbortController] = useState<AbortController | undefined>();
-  const [messages, setMessages] = useState<UIMessage[]>([]);
+  const [messages, setMessages] = useState<Message[]>([]);
 
   /**
    * Used to set the environment state to
@@ -55,7 +55,7 @@ const AppProvider: FunctionComponent<Props> = ({ children }): ReactElement<Props
     const trimmedValue = inputValue.trim();
     const abortController = new AbortController();
 
-    const userMessage: UIMessage = {
+    const userMessage: Message = {
       id: generateId(),
       role: 'user',
       parts: [
@@ -100,7 +100,7 @@ const AppProvider: FunctionComponent<Props> = ({ children }): ReactElement<Props
 
       // Read the stream and convert the
       // message chunks into full messages
-      const messageStream = readUIMessageStream({
+      const messageStream = readUIMessageStream<Message>({
         stream: stream,
       });
 

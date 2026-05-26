@@ -1,5 +1,4 @@
-import { UIMessage } from 'ai';
-import { Status } from '../types';
+import { Status, Message } from '../types';
 
 /**
  * Describes the app state
@@ -10,7 +9,7 @@ export interface AppState {
   readonly status: Status;
   readonly inputValue: string;
   readonly mancMode: boolean;
-  readonly messages: UIMessage[];
+  readonly messages: Message[];
 }
 
 /**

@@ -1,8 +1,9 @@
 'use server';
 
 import { createOpenRouter } from '@openrouter/ai-sdk-provider';
-import { AsyncIterableStream, ModelMessage, generateId, streamText } from 'ai';
+import { AsyncIterableStream, ModelMessage, generateId, streamText, stepCountIs } from 'ai';
 import { modelId, modelInstructions } from '../constants';
+import { tools } from '../tools';
 import { MessageChunk } from '../types';
 
 /**
@@ -30,7 +31,9 @@ const streamMessage = async (messages: ModelMessage[]): Promise<AsyncIterableStr
   const result = streamText({
     model: provider.chat(modelId),
     system: modelInstructions,
+    tools: tools,
     messages: messages,
+    stopWhen: stepCountIs(5),
     providerOptions: {
       openrouter: {
         reasoning: {

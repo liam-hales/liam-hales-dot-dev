@@ -13,6 +13,8 @@
   --font-sans: var(--sans-font);
   --font-mono: var(--mono-font);
 
+  --animate-spin: spin 400ms linear infinite;
+
   --color-accent: #cc785c;
   --color-accent-hover: #a9583e;
   --color-content-primary: #141413;

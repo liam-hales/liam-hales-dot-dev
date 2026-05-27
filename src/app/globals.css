@@ -30,8 +30,6 @@
 }
 
 .dark {
-  --color-accent: #cc785c;
-  --color-accent-hover: #a9583e;
   --color-content-primary: #faf9f5;
   --color-content-secondary: #a09d96;
   --color-outline: #2a2825;

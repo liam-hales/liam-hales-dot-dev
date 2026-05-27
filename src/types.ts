@@ -1,5 +1,5 @@
 import { Ref } from 'react';
-import { InferUIMessageChunk, InferUITools, TextUIPart, ToolUIPart, UIDataTypes, UIMessage } from 'ai';
+import { InferUIMessageChunk, InferUITools, TextUIPart, ReasoningUIPart, ToolUIPart, UIDataTypes, UIMessage } from 'ai';
 import { tools } from './tools';
 
 /**
@@ -18,7 +18,7 @@ export type MessageChunk = InferUIMessageChunk<Message>;
  * Describes the message part
  * that lives with the message
  */
-export type MessagePart = TextUIPart | ToolUIPart<Tools>;
+export type MessagePart = TextUIPart | ReasoningUIPart | ToolUIPart<Tools>;
 
 /**
  * Describes the message used to communicate

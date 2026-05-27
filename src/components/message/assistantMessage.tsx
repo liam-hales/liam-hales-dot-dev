@@ -41,6 +41,36 @@ const AssistantMessage: FunctionComponent<Props> = ({ className, parts }): React
             );
           }
 
+          // If the part is of type `reasoning` then render the
+          // reasoning text streaming in from the right
+          if (type === 'reasoning') {
+            const { state } = part;
+            return (
+              <div
+                className="max-w-115 flex flex-row items-center gap-x-3"
+                key={`assistant-message-reasoning-part-${index}`}
+              >
+                <Loader status={
+                  (state === 'streaming')
+                    ? 'loading'
+                    : 'success'
+                }
+                >
+                  Reasoning
+                </Loader>
+                {
+                  (state === 'streaming') && (
+                    <div className="flex flex-col items-end overflow-x-hidden">
+                      <p className="font-mono text-content-secondary text-[11px] whitespace-nowrap">
+                        {part.text}
+                      </p>
+                    </div>
+                  )
+                }
+              </div>
+            );
+          }
+
           // Any remaining parts are tool parts,
           // use the tool name for the loader text
           const { title, state } = part;

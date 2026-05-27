@@ -25,7 +25,7 @@ const App: FunctionComponent = (): ReactElement => {
   return (
     <div className="h-full flex flex-col items-center bg-base">
       <Header />
-      <div className="w-full h-full max-w-175 flex flex-col items-center gap-y-8 no-scrollbar overflow-y-auto overflow-x-hidden px-3 pt-10 pb-6">
+      <div className="w-full h-full max-w-175 flex flex-col items-center gap-y-8 no-scrollbar overflow-y-auto overflow-x-hidden px-3 py-10">
         {
           (messages.length === 0) && (
             <Welcome onSuggestion={setInputValue} />

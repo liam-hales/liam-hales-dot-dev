@@ -45,9 +45,9 @@ const Input: FunctionComponent<Props> = (props): ReactElement<Props> => {
     if (key === 'Enter' && shiftKey === false) {
       event.preventDefault();
 
-      // Make sure the value is valid
-      // before calling `onSend`
-      if (value.trim() !== '') {
+      // Make sure the value is valid and the
+      // status is `send` before calling `onSend`
+      if (status === 'send' && value.trim() !== '') {
         onSend();
       }
     }

@@ -7,6 +7,8 @@ import Welcome from './welcome';
 import Input from './input';
 import Loader from './common/loader';
 import Toggle from './common/toggle';
+import MarkdownBlock from './common/markdownBlock';
+import Markdown from './common/markdown';
 import Option from './option';
 import UserMessage from './message/userMessage';
 import AssistantMessage from './message/assistantMessage';
@@ -21,6 +23,8 @@ export {
   Input,
   Loader,
   Toggle,
+  MarkdownBlock,
+  Markdown,
   Option,
   UserMessage,
   AssistantMessage,

@@ -3,7 +3,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { BaseProps, MessagePart } from '../../types';
 import { getStaticToolName } from 'ai';
-import { Loader } from '../index';
+import { Loader, Markdown } from '../';
 import { LoaderStatus } from '../types';
 
 /**
@@ -32,12 +32,12 @@ const AssistantMessage: FunctionComponent<Props> = ({ className, parts }): React
           if (type === 'text') {
             const { text } = part;
             return (
-              <p
+              <Markdown
                 className="text-content-primary whitespace-pre-wrap py-3"
                 key={`assistant-message-text-part-${index}`}
               >
                 {text}
-              </p>
+              </Markdown>
             );
           }
 

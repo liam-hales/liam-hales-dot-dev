@@ -1,5 +1,6 @@
 import { personaTool } from './persona';
 import { contactTool } from './contact';
+import { skillsTool } from './skills';
 
 /**
  * Describes all tools that
@@ -8,4 +9,5 @@ import { contactTool } from './contact';
 export const tools = {
   persona: personaTool,
   contact: contactTool,
+  skills: skillsTool,
 };

@@ -33,7 +33,7 @@ const AssistantMessage: FunctionComponent<Props> = ({ className, parts }): React
             const { text } = part;
             return (
               <Markdown
-                className="text-content-primary whitespace-pre-wrap py-3"
+                className="text-content-primary py-3"
                 key={`assistant-message-text-part-${index}`}
               >
                 {text}

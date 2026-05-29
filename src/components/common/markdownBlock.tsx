@@ -59,14 +59,14 @@ const MarkdownBlock: FunctionComponent<Props> = ({ children }): ReactElement<Pro
       },
       strong: ({ children }) => {
         return (
-          <strong className="font-bold text-content-primary">
+          <strong className="font-bold">
             {children}
           </strong>
         );
       },
       em: ({ children }) => {
         return (
-          <em className="italic text-content-primary">
+          <em className="italic">
             {children}
           </em>
         );
@@ -74,7 +74,7 @@ const MarkdownBlock: FunctionComponent<Props> = ({ children }): ReactElement<Pro
       ol: ({ children }) => {
         return (
           <div className="w-full">
-            <ol className="list-decimal flex flex-col gap-y-2 pl-6">
+            <ol className="list-decimal flex flex-col pl-6">
               {children}
             </ol>
           </div>
@@ -83,7 +83,7 @@ const MarkdownBlock: FunctionComponent<Props> = ({ children }): ReactElement<Pro
       ul: ({ children }) => {
         return (
           <div className="w-full">
-            <ul className="list-disc flex flex-col gap-y-2 pl-6">
+            <ul className="list-disc flex flex-col pl-6">
               {children}
             </ul>
           </div>

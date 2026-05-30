@@ -24,30 +24,16 @@ const MarkdownBlock: FunctionComponent<Props> = ({ children }): ReactElement<Pro
     <ReactMarkdown components={{
       h1: ({ children }) => {
         return (
-          <h1 className="font-bold text-content-primary text-3xl">
+          <h1 className="font-bold text-content-primary text-2xl">
             {children}
           </h1>
         );
       },
       h2: ({ children }) => {
         return (
-          <h2 className="font-bold text-content-primary text-2xl">
+          <h2 className="font-bold text-content-primary text-xl">
             {children}
           </h2>
-        );
-      },
-      h3: ({ children }) => {
-        return (
-          <h3 className="font-bold text-content-primary text-xl">
-            {children}
-          </h3>
-        );
-      },
-      h4: ({ children }) => {
-        return (
-          <h4 className="font-bold text-content-primary text-lg">
-            {children}
-          </h4>
         );
       },
       p: ({ children }) => {

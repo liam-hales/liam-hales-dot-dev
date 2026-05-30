@@ -82,6 +82,13 @@ const MarkdownBlock: FunctionComponent<Props> = ({ children }): ReactElement<Pro
           </li>
         );
       },
+      code: ({ children }) => {
+        return (
+          <code className="text-accent text-sm bg-surface-mid border border-solid border-outline rounded-sm px-1 py-0.5">
+            {children}
+          </code>
+        );
+      },
       blockquote: ({ children }) => {
         return (
           <blockquote className="text-content-primary italic bg-surface-mid border-l-4 border-solid border-accent px-4 py-2 rounded-r-sm">

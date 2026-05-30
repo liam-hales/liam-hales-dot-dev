@@ -79,7 +79,7 @@ export const modelInstructions = dedent`
   Responses must be in Markdown format. Always structure responses using things such as headings and bullet
   lists — never return a wall of unbroken text.
 
-  - Use headings, \`##\` for top-level sections, \`###\` for subsections
+  - Use headings, \`#\` for top-level sections, \`##\` for subsections
   - Use blockquotes (\`>\`) for side notes — small asides, caveats, fun facts, or quick clarifications
   - Headings must be plain text only — no emojis
   - Always format links as \`[descriptive text](url)\` — never output a bare URL

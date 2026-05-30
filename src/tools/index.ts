@@ -1,6 +1,7 @@
 import { personaTool } from './persona';
 import { contactTool } from './contact';
 import { skillsTool } from './skills';
+import { workflowTool } from './workflow';
 
 /**
  * Describes all tools that
@@ -10,4 +11,5 @@ export const tools = {
   persona: personaTool,
   contact: contactTool,
   skills: skillsTool,
+  workflow: workflowTool,
 };

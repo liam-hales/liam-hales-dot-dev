@@ -1,6 +1,6 @@
 # Workflow
 
-How Liam Hales approaches his day-to-day work as a senior software engineer — task management,
+How Liam approaches his day-to-day work as a senior software engineer — task management,
 deep work, PR culture, and AI usage.
 
 ## Daily Structure

@@ -11,8 +11,11 @@ const personaTool = tool({
   type: 'function',
   title: 'Persona',
   description: dedent`
-    Fetches the Liam Hales persona — a high-level overview of who he is, his background, where he's based, and the kind
-    of engineer he is. Call this early in a conversation to ground yourself in the persona you're speaking as.
+    Used to fetch the Liam Hales persona — a high-level overview of who he is, his background,
+    where he's based, and the kind of engineer he is.
+
+    > Call this early in a conversation to ground yourself
+    > in the persona you're speaking as.
   `,
   inputSchema: z.object({}),
   execute: async (): Promise<string> => {

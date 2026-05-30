@@ -1,6 +1,6 @@
 # Skills
 
-Liam Hales' technical skills — the languages, frameworks, tools and
+Liam's technical skills — the languages, frameworks, tools and
 technologies he works with.
 
 ## Core skills

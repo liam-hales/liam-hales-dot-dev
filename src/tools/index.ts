@@ -3,6 +3,7 @@ import { contactTool } from './contact';
 import { skillsTool } from './skills';
 import { workflowTool } from './workflow';
 import { opportunitiesTool } from './opportunities';
+import { experienceTool } from './experience';
 
 /**
  * Describes all tools that
@@ -14,4 +15,5 @@ export const tools = {
   skills: skillsTool,
   workflow: workflowTool,
   opportunities: opportunitiesTool,
+  experience: experienceTool,
 };

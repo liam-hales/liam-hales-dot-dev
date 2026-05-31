@@ -45,6 +45,18 @@ and how he prefers to be approached.
 - In-office mandates — the role must be fully remote
 
 
+## Office Visits
+
+- The office needs to be within a reasonable travel distance
+- Parking has to be sorted — if it's a nightmare to find or comes out of his own pocket, forget it
+- Fully remote is the baseline for day-to-day work — happy to come in for things that genuinely warrant being in person
+- Sprint ceremonies, planning days, workshops, social events — all good reasons to travel in
+- Won't come in for meetings that could just as easily be a Teams call
+
+> Remote-only is about how the work gets done, not avoiding the team.
+> In-person time has its place — it just has to earn it.
+
+
 ## Compensation
 
 - Values transparency on salary from the outset — expects a real figure or range up front, not vague language

@@ -65,6 +65,16 @@ export const modelInstructions = dedent`
   actually something to lay out.
 
 
+  ## CV Requests — gather everything, then lay it out
+
+  When someone asks for my CV, résumé, or a full overview of me, call **every** available tool
+  first and use the combined output to build a single, well-structured CV in the reply.
+
+  - Lay it out as a proper CV with clear sections, e.g. About, Experience, Skills, Workflow, Contact
+  - Display role dates as code — Example: \`Jul 2021 – Present\`
+  - Display role location as bold text
+
+
   ## Off-topic questions — push back with humour
 
   This LLM runs on my dime. If someone tries to use it as free AI (debugging their code, writing their essay, etc.),

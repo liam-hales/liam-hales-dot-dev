@@ -51,7 +51,7 @@ deep work, PR culture, and AI usage.
 
 ### GitHub Copilot Process
 
-A structured approach to agentic development using skills such as the ones built by Matt Pocock which can be found on his [GitHub repo](https://github.com/mattpocock/skills):
+A structured approach to agentic development using skills built by Matt Pocock which can be found on his [GitHub repo](https://github.com/mattpocock/skills):
 
 1. **Plan** — Use the `/grill-with-docs` skill to kick off planning; the agent asks questions until a solid, agreed plan is reached
 2. **Implement** — Use the `/tdd` skill to implement tasks from the plan one by one

@@ -45,7 +45,6 @@ languages, tools and technologies he has worked with, grouped by area:
 - NestJS — https://nestjs.com
 - Tailwind CSS — https://tailwindcss.com
 - Jest — https://jestjs.io
-- Keras — https://keras.io
 
 ### APIs & protocols
 

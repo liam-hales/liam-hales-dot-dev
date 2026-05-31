@@ -5,7 +5,7 @@ import dedent from 'dedent';
 
 /**
  * The workflow tool used to fetch how Liam approaches his day-to-day work as a
- * senior software engineer — task management, deep work, PR culture, and AI usage.
+ * senior software engineer — task management, deep work, PR culture, and AI usage
  */
 const workflowTool = tool({
   type: 'function',

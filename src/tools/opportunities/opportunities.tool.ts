@@ -5,7 +5,7 @@ import dedent from 'dedent';
 
 /**
  * The opportunities tool used to fetch Liam's stance on new roles — what he values,
- * what would tempt him to move, and how he prefers to be approached.
+ * what would tempt him to move, and how he prefers to be approached
  */
 const opportunitiesTool = tool({
   type: 'function',

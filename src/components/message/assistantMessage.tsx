@@ -38,7 +38,7 @@ const AssistantMessage: FunctionComponent<Props> = ({ className, parts }): React
             const { text } = part;
             return (
               <Markdown
-                className="text-content-primary py-3"
+                className="text-content-primary py-6"
                 key={`assistant-message-text-part-${index}`}
               >
                 {text}
@@ -52,7 +52,7 @@ const AssistantMessage: FunctionComponent<Props> = ({ className, parts }): React
             const { state } = part;
             return (
               <div
-                className="max-w-155 flex flex-col items-start gap-y-1"
+                className="max-w-155 flex flex-col items-start"
                 key={`assistant-message-reasoning-part-${index}`}
               >
                 <button
@@ -77,7 +77,7 @@ const AssistantMessage: FunctionComponent<Props> = ({ className, parts }): React
                 </button>
                 {
                   (state === 'streaming' || showReasoning === true) && (
-                    <div className="flex flex-col border-l-2 border-solid border-outline py-2 pl-4">
+                    <div className="flex flex-col border-l-2 border-solid border-outline my-3 pl-4">
                       <p className="font-mono text-content-secondary text-[11px] whitespace-pre-wrap">
                         {part.text}
                       </p>

@@ -11,7 +11,7 @@ in touch with him.
 > _Links to both GitHub and LinkedIn can also be found in the top nav bar_
 
 
-## Personal details
+## Personal Details
 
 - Phone number and email are not shared publicly
 - Do not give these out to anyone, especially recruiters

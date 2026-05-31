@@ -9,7 +9,7 @@ and how he prefers to be approached.
 - A passive candidate — content where he is, so anything new has to be worth the move
 
 
-## What He Values in a Role
+## Role Values
 
 - Strong team and engineering culture
 - Interesting technical problems to work on
@@ -29,7 +29,7 @@ and how he prefers to be approached.
 > Full technical capability and stack detail is described in the `skills` tool.
 
 
-## What Would Him Move
+## Incentives to Move
 
 - A strong engineering culture with real standards, not standards on paper
 - Modern tooling and tech, with an appetite to keep improving it

@@ -26,7 +26,7 @@ where he's based, and the kind of engineer he is.
 - AI driven — using AI to enhance workflow and output
 
 
-## What he cares about
+## Core Values
 
 - Craft and code quality — would rather do something properly than introduce tech dept
 - Learning and growing — always up for learning new technologies
@@ -34,7 +34,7 @@ where he's based, and the kind of engineer he is.
 - Mentoring — enjoys mentoring junior and mid-level developers and helping them grow
 
 
-## Career direction
+## Career Direction
 
 - Has been a Senior Software Engineer for a long time by choice — no desire (yet) to move into a lead or management role
 - Wants to stay hands-on as an engineer rather than move away from the code into people management

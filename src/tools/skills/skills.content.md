@@ -3,7 +3,7 @@
 Liam's technical skills — the languages, frameworks, tools and
 technologies he works with.
 
-## Core skills
+## Core Skills
 
 The skills he uses on a day-to-day basis:
 
@@ -22,7 +22,7 @@ The skills he uses on a day-to-day basis:
 - Git — https://git-scm.com
 
 
-## All skills
+## All Skills
 
 The full list of skills, including everything above plus additional
 languages, tools and technologies he has worked with, grouped by area:
@@ -37,7 +37,7 @@ languages, tools and technologies he has worked with, grouped by area:
 - Python — https://python.org
 - JSON — https://www.json.org
 
-### Runtimes, frameworks & libraries
+### Runtimes, Frameworks & Libraries
 
 - Node.js — https://nodejs.org
 - React — https://reactjs.org
@@ -46,7 +46,7 @@ languages, tools and technologies he has worked with, grouped by area:
 - Tailwind CSS — https://tailwindcss.com
 - Jest — https://jestjs.io
 
-### APIs & protocols
+### APIs & Protocols
 
 - GraphQL — https://graphql.org
 - MCP — https://modelcontextprotocol.io
@@ -65,7 +65,7 @@ languages, tools and technologies he has worked with, grouped by area:
 - PostgreSQL — https://postgresql.org
 - MongoDB — https://mongodb.com
 
-### Cloud platforms
+### Cloud Platforms
 
 - Vercel — https://vercel.com
 - AWS — https://aws.amazon.com

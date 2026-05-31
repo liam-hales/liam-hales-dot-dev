@@ -36,6 +36,13 @@ const MarkdownBlock: FunctionComponent<Props> = ({ children }): ReactElement<Pro
           </h2>
         );
       },
+      h3: ({ children }) => {
+        return (
+          <h3 className="font-bold text-content-primary text-lg">
+            {children}
+          </h3>
+        );
+      },
       p: ({ children }) => {
         return (
           <p className="text-content-primary">

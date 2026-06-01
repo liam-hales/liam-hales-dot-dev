@@ -96,7 +96,10 @@ const AppProvider: FunctionComponent<Props> = ({ children }): ReactElement<Props
       // Convert the message state into messages
       // in the correct format ready for the LLM
       const modelMessages = await convertToModelMessages(allMessages);
-      const stream = await streamMessage(modelMessages);
+      const stream = await streamMessage({
+        messages: modelMessages,
+        mancMode: mancMode,
+      });
 
       // Read the stream and convert the
       // message chunks into full messages

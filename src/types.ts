@@ -1,5 +1,5 @@
 import { Ref } from 'react';
-import { InferUIMessageChunk, InferUITools, TextUIPart, ReasoningUIPart, ToolUIPart, UIDataTypes, UIMessage } from 'ai';
+import { InferUIMessageChunk, InferUITools, TextUIPart, ReasoningUIPart, ToolUIPart, UIDataTypes, UIMessage, ModelMessage } from 'ai';
 import { tools } from './tools';
 
 /**
@@ -61,4 +61,13 @@ export interface ErrorStatus {
 export interface BaseProps<T extends HTMLElement = HTMLElement> {
   readonly internalRef?: Ref<T>;
   readonly className?: string;
+}
+
+/**
+ * Describes the options which are passed
+ * to the `streamMessage` helper
+ */
+export interface StreamMessageOptions {
+  readonly messages: ModelMessage[];
+  readonly mancMode?: boolean;
 }

@@ -3,6 +3,7 @@
 import { FunctionComponent, ReactElement } from 'react';
 import { Header, Welcome, Input, Option, UserMessage, AssistantMessage, Loader } from './';
 import { useApp } from '../hooks';
+import { modelId } from '../constants';
 
 /**
  * The component responsible for rendering the main application,
@@ -22,6 +23,7 @@ const App: FunctionComponent = (): ReactElement => {
     abortRequest,
   } = useApp();
 
+  const [, modelName] = modelId.split('/');
   return (
     <div className="h-full flex flex-col items-center bg-base px-3 pt-3 pb-6">
       <Header />
@@ -80,7 +82,17 @@ const App: FunctionComponent = (): ReactElement => {
           ${(messages.length === 0) ? 'mb-10' : 'm-0'}
         `}
         >
-          <div className="w-full flex flex-col items-end gap-y-3">
+          <div className="w-full flex flex-col items-center gap-y-3">
+            {
+              (messages.length === 0) && (
+                <Option
+                  className="self-end"
+                  text="Manc mode"
+                  isOn={mancMode}
+                  onChange={setMancMode}
+                />
+              )
+            }
             <Input
               className="w-full"
               value={inputValue}
@@ -89,11 +101,13 @@ const App: FunctionComponent = (): ReactElement => {
               onSend={sendMessage}
               onAbort={abortRequest}
             />
-            <Option
-              text="Manc mode"
-              isOn={mancMode}
-              onChange={setMancMode}
-            />
+            <p className="text-content-secondary text-xs">
+              {'This chat is powered by AI and uses '}
+              <code className="text-accent text-[10px] bg-surface-mid border border-solid border-outline rounded-sm px-1 py-0.5">
+                {modelName}
+              </code>
+              {' to portray Liam Hales — answers may not be 100% accurate.'}
+            </p>
           </div>
         </div>
       </div>

@@ -21,6 +21,7 @@ const App: FunctionComponent = (): ReactElement => {
     setMancMode,
     sendMessage,
     abortRequest,
+    clearMessages,
   } = useApp();
 
   const [, modelName] = modelId.split('/');
@@ -98,6 +99,7 @@ const App: FunctionComponent = (): ReactElement => {
               value={inputValue}
               status={(status.id === 'idle') ? 'send' : 'abort'}
               onChange={setInputValue}
+              onClear={clearMessages}
               onSend={sendMessage}
               onAbort={abortRequest}
             />

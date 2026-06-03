@@ -21,6 +21,7 @@
     "start:dev": "next dev",
     "start:prod": "next start",
     "build": "next build",
+    "build:icons": "tsx scripts/buildIcons.script.ts",
     "lint": "eslint",
     "cleanup": "rm -rf .next/"
   },

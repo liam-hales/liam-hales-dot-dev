@@ -53,10 +53,10 @@ deep work, PR culture, and AI usage.
 
 A structured approach to agentic development using skills built by Matt Pocock which can be found on his [GitHub repo](https://github.com/mattpocock/skills):
 
-1. **Plan** — Use the `/grill-with-docs` skill to kick off planning; the agent asks questions until a solid, agreed plan is reached
-2. **Implement** — Use the `/tdd` skill to implement tasks from the plan one by one
+1. **Plan** — Use the `/grill-with-docs` skill with a more capable model (such as Claude Opus) to kick off planning; the agent asks questions until a solid, agreed plan is reached
+2. **Implement** — Use the `/tdd` skill with a cheaper model to save on costs (such as Claude Sonnet) to implement tasks from the plan one by one
 3. **Steer** — Actively guides the agent during implementation, adjusting direction as needed
-4. **Capture** — Whenever steering is required, updates `AGENTS.md` to encode that decision
+4. **Capture** — Whenever steering is required, prompts agent to update its own `AGENTS.md` to encode that decision — then manually validate updates
 
 > The goal is a tightening loop: every intervention becomes a rule, and every rule means less intervention.
 

@@ -3302,7 +3302,6 @@ __metadata:
     marked: "npm:^18.0.4"
     next: "npm:^16.2.6"
     next-themes: "npm:^0.4.6"
-    npm-check-updates: "npm:^22.2.0"
     react: "npm:^19.2.6"
     react-dom: "npm:^19.2.6"
     react-icons: "npm:^5.6.0"
@@ -4015,16 +4014,6 @@ __metadata:
   version: 2.0.44
   resolution: "node-releases@npm:2.0.44"
   checksum: 10/c6bc49ac7f0855820e3649e7a31386929f3a3b364e40ad9e9933a9ef0858f4e129a10316037482215dbfd2b1756b6e6759403687ad3d244cb14b442e34d3afb2
-  languageName: node
-  linkType: hard
-
-"npm-check-updates@npm:^22.2.0":
-  version: 22.2.0
-  resolution: "npm-check-updates@npm:22.2.0"
-  bin:
-    ncu: build/cli.js
-    npm-check-updates: build/cli.js
-  checksum: 10/ac4a8c07af8cbce03ec5c76c1b17edcbb4dc4c699d723eeac896b0079489ad79685776a893b40a71c82995440a53bd3e10111b8f04f12a937408f3a448662cd9
   languageName: node
   linkType: hard
 

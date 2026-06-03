@@ -98,6 +98,7 @@ const App: FunctionComponent = (): ReactElement => {
               className="w-full"
               value={inputValue}
               status={(status.id === 'idle') ? 'send' : 'abort'}
+              showActions={messages.length > 0}
               onChange={setInputValue}
               onClear={clearMessages}
               onSend={sendMessage}

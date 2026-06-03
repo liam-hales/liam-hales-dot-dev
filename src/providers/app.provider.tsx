@@ -125,10 +125,19 @@ const AppProvider: FunctionComponent<Props> = ({ children }): ReactElement<Props
         });
 
         setMessages((previous) => {
-          const { role } = previous[previous.length - 1];
+          // If the messages length is 0 then the messages state has been
+          // reset, most likely due to the user clearing the chat
+          if (previous.length === 0) {
+            setStatus({
+              id: 'idle',
+            });
+
+            return [];
+          }
 
           // If the last message is a user message then we can just append the new message,
           // however if it's an assistant message then we need to replace the entire message
+          const { role } = previous[previous.length - 1];
           return [
             ...(role === 'user') ? previous : previous.slice(0, -1),
             message,
@@ -193,6 +202,7 @@ const AppProvider: FunctionComponent<Props> = ({ children }): ReactElement<Props
         setMancMode: setMancMode,
         sendMessage: sendMessage,
         abortRequest: abortRequest,
+        clearMessages: () => setMessages([]),
       }
     }
     >

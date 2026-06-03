@@ -46,4 +46,10 @@ export interface AppActions {
    * @param reason The reason for aborting
    */
   readonly abortRequest: (reason?: string) => void;
+
+  /**
+   * Used to clear all messages
+   * and reset the chat
+   */
+  readonly clearMessages: () => void;
 }

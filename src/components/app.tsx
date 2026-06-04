@@ -109,7 +109,7 @@ const App: FunctionComponent = (): ReactElement => {
           onSend={sendMessage}
           onAbort={abortRequest}
         />
-        <p className="text-content-secondary text-xs">
+        <p className="text-content-secondary text-xs text-center leading-5 px-3">
           {'This chat is powered by AI and uses '}
           <code className="text-accent text-[10px] bg-surface-mid border border-solid border-outline rounded-sm px-1 py-0.5">
             {modelName}

@@ -1,10 +1,10 @@
 import { FunctionComponent, ReactElement, KeyboardEvent } from 'react';
-import { BaseProps } from '../types';
+import { BaseProps } from '../../types';
 import { ArrowUp, CircleX, Square } from 'lucide-react';
 import TextArea from 'react-textarea-autosize';
 
 /**
- * The `Input` component props
+ * The `ChatInput` component props
  */
 interface Props extends BaseProps {
   readonly value: string;
@@ -17,13 +17,13 @@ interface Props extends BaseProps {
 }
 
 /**
- * Used to render the user input which allows
+ * Used to render the chat input which allows
  * the user to enter text to send to the LLM
  *
  * @param props The component props
- * @returns The `Input` component
+ * @returns The `ChatInput` component
  */
-const Input: FunctionComponent<Props> = (props): ReactElement<Props> => {
+const ChatInput: FunctionComponent<Props> = (props): ReactElement<Props> => {
   const {
     className,
     value,
@@ -120,4 +120,4 @@ const Input: FunctionComponent<Props> = (props): ReactElement<Props> => {
   );
 };
 
-export default Input;
+export default ChatInput;

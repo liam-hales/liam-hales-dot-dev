@@ -4,12 +4,12 @@ import Logo from './logo';
 import SocialLink from './socialLink';
 import ThemeToggle from './themeToggle';
 import Welcome from './welcome';
-import Input from './input';
 import Loader from './common/loader';
 import Toggle from './common/toggle';
 import MarkdownBlock from './common/markdownBlock';
 import Markdown from './common/markdown';
-import Option from './option';
+import ChatInput from './chat/chatInput';
+import ChatOption from './chat/chatOption';
 import UserMessage from './message/userMessage';
 import AssistantMessage from './message/assistantMessage';
 
@@ -20,12 +20,12 @@ export {
   SocialLink,
   ThemeToggle,
   Welcome,
-  Input,
   Loader,
   Toggle,
   MarkdownBlock,
   Markdown,
-  Option,
+  ChatInput,
+  ChatOption,
   UserMessage,
   AssistantMessage,
 };

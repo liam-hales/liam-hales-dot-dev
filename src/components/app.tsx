@@ -1,7 +1,7 @@
 'use client';
 
 import { FunctionComponent, ReactElement } from 'react';
-import { Header, Welcome, Input, Option, UserMessage, AssistantMessage, Loader } from './';
+import { Header, Welcome, ChatInput, ChatOption, UserMessage, AssistantMessage, Loader } from './';
 import { useApp } from '../hooks';
 import { modelId } from '../constants';
 
@@ -86,7 +86,7 @@ const App: FunctionComponent = (): ReactElement => {
           <div className="w-full flex flex-col items-center gap-y-3">
             {
               (messages.length === 0) && (
-                <Option
+                <ChatOption
                   className="self-end"
                   text="Manc mode"
                   isOn={mancMode}
@@ -94,7 +94,7 @@ const App: FunctionComponent = (): ReactElement => {
                 />
               )
             }
-            <Input
+            <ChatInput
               className="w-full"
               value={inputValue}
               status={(status.id === 'idle') ? 'send' : 'abort'}

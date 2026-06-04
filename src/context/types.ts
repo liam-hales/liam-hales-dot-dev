@@ -48,8 +48,8 @@ export interface AppActions {
   readonly abortRequest: (reason?: string) => void;
 
   /**
-   * Used to clear all messages
-   * and reset the chat
+   * Used to clear the chat and reset state
+   * back to their default values
    */
-  readonly clearMessages: () => void;
+  readonly clearChat: () => void;
 }

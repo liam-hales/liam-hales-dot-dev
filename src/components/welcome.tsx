@@ -18,9 +18,9 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `Welcome` component
  */
-const Welcome: FunctionComponent<Props> = ({ onSuggestion }): ReactElement<Props> => {
+const Welcome: FunctionComponent<Props> = ({ className, onSuggestion }): ReactElement<Props> => {
   return (
-    <div className="h-full flex flex-col items-center sm:justify-center gap-y-10">
+    <div className={`${className ?? ''} flex flex-col items-center sm:justify-center gap-y-10`}>
       <Logo className="w-12 fill-accent shrink-0" />
       <div className="flex flex-col items-center gap-y-2">
         <p className="text-content-primary text-[40px] text-center leading-10">

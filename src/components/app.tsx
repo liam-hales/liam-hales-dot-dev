@@ -26,15 +26,20 @@ const App: FunctionComponent = (): ReactElement => {
 
   const [, modelName] = modelId.split('/');
   return (
-    <div className="h-full flex flex-col items-center bg-base px-3 pt-3 pb-6">
-      <Header />
-      <div className="w-full flex-1 min-h-0 max-w-185 flex flex-col items-center">
-        <div className="w-full h-full flex flex-col items-center gap-y-8 no-scrollbar overflow-y-auto overflow-x-hidden px-3 pt-6 pb-10">
-          {
-            (messages.length === 0) && (
-              <Welcome onSuggestion={setInputValue} />
-            )
-          }
+    <div className="h-full flex flex-col items-center bg-base pt-3 pb-6">
+      <div className="w-full flex-col items-center px-3">
+        <Header />
+      </div>
+      <div className="w-full h-full max-w-185 flex flex-col items-center no-scrollbar overflow-y-auto overflow-x-hidden px-3 pt-6 pb-10">
+        {
+          (messages.length === 0) && (
+            <Welcome
+              className="sm:h-full"
+              onSuggestion={setInputValue}
+            />
+          )
+        }
+        <div className="w-full flex flex-col items-center gap-y-8 px-3">
           {
             messages.map((message) => {
               const { id, role, parts } = message;
@@ -42,8 +47,8 @@ const App: FunctionComponent = (): ReactElement => {
               // If the message role is `user` then
               // render the `UserMessage` component
               if (role === 'user') {
-              // The user message should only contain
-              // text parts, filter out any others
+                // The user message should only contain
+                // text parts, filter out any others
                 const textParts = parts.filter((part) => part.type === 'text');
                 return (
                   <UserMessage
@@ -78,41 +83,39 @@ const App: FunctionComponent = (): ReactElement => {
             )
           }
         </div>
-        <div className={`
-          w-full flex flex-col items-center
-          ${(messages.length === 0) ? 'mb-10' : 'm-0'}
-        `}
-        >
-          <div className="w-full flex flex-col items-center gap-y-3">
-            {
-              (messages.length === 0) && (
-                <ChatOption
-                  className="self-end"
-                  text="Manc mode"
-                  isOn={mancMode}
-                  onChange={setMancMode}
-                />
-              )
-            }
-            <ChatInput
-              className="w-full"
-              value={inputValue}
-              status={(status.id === 'idle') ? 'send' : 'abort'}
-              showActions={messages.length > 0}
-              onChange={setInputValue}
-              onClear={clearMessages}
-              onSend={sendMessage}
-              onAbort={abortRequest}
+      </div>
+      <div className={`
+        w-full max-w-185 flex flex-col items-center gap-y-3 px-3
+        ${(messages.length === 0) ? 'sm:border-none border-t border-solid border-divider pt-3 sm:pb-10' : 'py-0 border-none'}
+      `}
+      >
+        {
+          (messages.length === 0) && (
+            <ChatOption
+              className="self-end"
+              text="Manc mode"
+              isOn={mancMode}
+              onChange={setMancMode}
             />
-            <p className="text-content-secondary text-xs">
-              {'This chat is powered by AI and uses '}
-              <code className="text-accent text-[10px] bg-surface-mid border border-solid border-outline rounded-sm px-1 py-0.5">
-                {modelName}
-              </code>
-              {' to portray Liam Hales — answers may not be 100% accurate.'}
-            </p>
-          </div>
-        </div>
+          )
+        }
+        <ChatInput
+          className="w-full"
+          value={inputValue}
+          status={(status.id === 'idle') ? 'send' : 'abort'}
+          showActions={messages.length > 0}
+          onChange={setInputValue}
+          onClear={clearMessages}
+          onSend={sendMessage}
+          onAbort={abortRequest}
+        />
+        <p className="text-content-secondary text-xs">
+          {'This chat is powered by AI and uses '}
+          <code className="text-accent text-[10px] bg-surface-mid border border-solid border-outline rounded-sm px-1 py-0.5">
+            {modelName}
+          </code>
+          {' to portray Liam Hales — answers may not be 100% accurate.'}
+        </p>
       </div>
     </div>
   );

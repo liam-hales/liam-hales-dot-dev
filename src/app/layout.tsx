@@ -1,17 +1,25 @@
 import './globals.css';
 
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { AppProvider, ThemeProvider } from '../providers';
-import { App } from '../components';
 import { newsreader, jetbrainsMono } from '../fonts';
+import { BaseProps } from '../types';
+
+/**
+ * The `AppLayout` component props
+ */
+interface Props extends BaseProps {
+  children: ReactNode;
+}
 
 /**
  * The top level component for the app, used to define the HTML document
- * structure, initialise React context providers and render the `App` component
+ * structure, initialise React context providers and render the page content
  *
+ * @param props The component props
  * @returns The `AppLayout` component
  */
-const AppLayout: FunctionComponent = (): ReactElement => {
+const AppLayout: FunctionComponent<Props> = ({ children }): ReactElement<Props> => {
   return (
     <html
       lang="en"
@@ -21,7 +29,7 @@ const AppLayout: FunctionComponent = (): ReactElement => {
       <body className="h-full touch-none">
         <AppProvider>
           <ThemeProvider>
-            <App />
+            {children}
           </ThemeProvider>
         </AppProvider>
       </body>

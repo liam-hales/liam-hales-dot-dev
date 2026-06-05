@@ -1,7 +1,7 @@
 import { FunctionComponent, ReactElement, KeyboardEvent } from 'react';
 import { BaseProps } from '../../types';
 import { ChatAction } from '../';
-import { ArrowUp, Square } from 'lucide-react';
+import { ArrowUp, LoaderCircle, Square } from 'lucide-react';
 import TextArea from 'react-textarea-autosize';
 
 /**
@@ -9,7 +9,7 @@ import TextArea from 'react-textarea-autosize';
  */
 interface Props extends BaseProps {
   readonly value: string;
-  readonly status: 'send' | 'abort';
+  readonly status: 'idle' | 'loading' | 'streaming';
   readonly showActions?: boolean;
   readonly onChange: (value: string) => void;
   readonly onClear: () => void;
@@ -51,8 +51,8 @@ const ChatInput: FunctionComponent<Props> = (props): ReactElement<Props> => {
       event.preventDefault();
 
       // Make sure the value is valid and the
-      // status is `send` before calling `onSend`
-      if (status === 'send' && value.trim() !== '') {
+      // status is `idle` before calling `onSend`
+      if (status === 'idle' && value.trim() !== '') {
         onSend();
       }
     }
@@ -80,10 +80,10 @@ const ChatInput: FunctionComponent<Props> = (props): ReactElement<Props> => {
           onChange={({ target }) => onChange(target.value)}
         />
         {
-          (status === 'send') && (
+          (status === 'idle') && (
             <button
               className={`
-                size-9 flex flex-col items-center justify-center shrink-0 text-white cursor-pointer bg-accent hover:bg-accent-hover rounded-lg p-2
+                size-9 flex flex-col items-center justify-center text-white cursor-pointer bg-accent hover:bg-accent-hover rounded-lg p-2
 
                 disabled:cursor-not-allowed
                 disabled:text-content-secondary
@@ -97,13 +97,23 @@ const ChatInput: FunctionComponent<Props> = (props): ReactElement<Props> => {
           )
         }
         {
-          (status === 'abort') && (
+          (status === 'loading') && (
+            <div className="size-9 flex flex-col items-center justify-center bg-disabled rounded-lg p-2">
+              <LoaderCircle
+                className="text-content-secondary animate-spin"
+                size={20}
+              />
+            </div>
+          )
+        }
+        {
+          (status === 'streaming') && (
             <button
-              className="size-9 flex flex-col items-center justify-center shrink-0 text-content-secondary cursor-pointer bg-disabled border border-solid border-outline hover:bg-hover rounded-lg p-2"
+              className="size-9 flex flex-col items-center justify-center cursor-pointer bg-disabled hover:bg-hover rounded-lg p-2"
               onClick={onAbort}
             >
               <Square
-                className="fill-content-secondary"
+                className="text-content-secondary fill-content-secondary"
                 size={16}
               />
             </button>

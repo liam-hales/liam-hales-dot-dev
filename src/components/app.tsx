@@ -102,7 +102,7 @@ const App: FunctionComponent = (): ReactElement => {
         <ChatInput
           className="w-full"
           value={inputValue}
-          status={(status.id === 'idle') ? 'send' : 'abort'}
+          status={(status.id === 'error') ? 'idle' : status.id}
           showActions={messages.length > 0}
           onChange={setInputValue}
           onClear={clearChat}

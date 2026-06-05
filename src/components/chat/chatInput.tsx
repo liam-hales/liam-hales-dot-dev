@@ -65,7 +65,7 @@ const ChatInput: FunctionComponent<Props> = (props): ReactElement<Props> => {
           <div className="flex flex-row items-center gap-x-2 p-1">
             <ChatAction
               text="Clear chat"
-              icon="circle-x"
+              icon="x"
               onClick={onClear}
             />
             <SuggestionsMenu

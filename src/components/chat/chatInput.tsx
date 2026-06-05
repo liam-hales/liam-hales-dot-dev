@@ -1,6 +1,7 @@
 import { FunctionComponent, ReactElement, KeyboardEvent } from 'react';
 import { BaseProps } from '../../types';
-import { ArrowUp, CircleX, Square } from 'lucide-react';
+import { ChatAction } from '../';
+import { ArrowUp, Square } from 'lucide-react';
 import TextArea from 'react-textarea-autosize';
 
 /**
@@ -62,18 +63,11 @@ const ChatInput: FunctionComponent<Props> = (props): ReactElement<Props> => {
       {
         (showActions === true) && (
           <div className="flex flex-row items-center gap-x-2 p-1">
-            <button
-              className="flex flex-row items-center gap-x-1.5 bg-surface-mid border border-solid border-outline hover:bg-hover rounded-full cursor-pointer px-3"
+            <ChatAction
+              text="Clear chat"
+              icon="circle-x"
               onClick={onClear}
-            >
-              <CircleX
-                className="pb-px"
-                size={10}
-              />
-              <p className="text-[11px] text-content-primary pt-0.75">
-                Clear chat
-              </p>
-            </button>
+            />
           </div>
         )
       }

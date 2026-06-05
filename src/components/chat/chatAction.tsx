@@ -21,15 +21,14 @@ interface Props extends BaseProps {
 const ChatAction: FunctionComponent<Props> = ({ className, text, icon, onClick }): ReactElement<Props> => {
   return (
     <button
-      className={`${className ?? ''} flex flex-row items-center gap-x-1.5 bg-surface-mid border border-solid border-outline hover:bg-hover rounded-full cursor-pointer px-3`}
+      className={`${className ?? ''} flex flex-row items-center gap-x-1.5 bg-surface-mid border border-solid border-outline hover:bg-hover rounded-full cursor-pointer px-3 py-0.75`}
       onClick={onClick}
     >
       <DynamicIcon
-        className="pb-px"
         name={icon}
-        size={10}
+        size={12}
       />
-      <p className="text-[11px] text-content-primary pt-0.75">
+      <p className="text-xs text-content-primary pt-px">
         {text}
       </p>
     </button>

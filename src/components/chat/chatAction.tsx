@@ -5,10 +5,10 @@ import { BaseProps } from '../../types';
 /**
  * The `ChatAction` component props
  */
-interface Props extends BaseProps {
+interface Props extends BaseProps<HTMLButtonElement> {
   readonly text: string;
   readonly icon: IconName;
-  readonly onClick: () => void;
+  readonly onClick?: () => void;
 }
 
 /**
@@ -18,9 +18,10 @@ interface Props extends BaseProps {
  * @param props The component props
  * @returns The `ChatAction` component
  */
-const ChatAction: FunctionComponent<Props> = ({ className, text, icon, onClick }): ReactElement<Props> => {
+const ChatAction: FunctionComponent<Props> = ({ ref, className, text, icon, onClick }): ReactElement<Props> => {
   return (
     <button
+      ref={ref}
       className={`${className ?? ''} flex flex-row items-center gap-x-1.5 bg-surface-mid border border-solid border-outline hover:bg-hover rounded-full cursor-pointer px-3 py-0.75`}
       onClick={onClick}
     >

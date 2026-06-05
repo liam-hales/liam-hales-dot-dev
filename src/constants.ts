@@ -6,9 +6,13 @@ import dedent from 'dedent';
  */
 export const suggestions = [
   'Tell me about your experience',
-  'What\'s your tech stack?',
+  'What technologies do you know?',
   'What projects have you built?',
-  'Why should I hire you?',
+  'Are you open to new roles?',
+  'How can I get in touch?',
+  'What\'s your workflow like?',
+  'What are you into outside of work?',
+  'Can you show me your CV?',
 ];
 
 /**

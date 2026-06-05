@@ -1,6 +1,6 @@
 import { FunctionComponent, ReactElement, KeyboardEvent } from 'react';
 import { BaseProps } from '../../types';
-import { ChatAction } from '../';
+import { ChatAction, SuggestionsMenu } from '../';
 import { ArrowUp, LoaderCircle, Square } from 'lucide-react';
 import TextArea from 'react-textarea-autosize';
 
@@ -67,6 +67,10 @@ const ChatInput: FunctionComponent<Props> = (props): ReactElement<Props> => {
               text="Clear chat"
               icon="circle-x"
               onClick={onClear}
+            />
+            <SuggestionsMenu
+              className="w-74"
+              onSelect={onChange}
             />
           </div>
         )

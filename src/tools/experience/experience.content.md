@@ -13,7 +13,7 @@ in late 2015.
 ## Current Role
 
 ### Senior Software Engineer — ANS Group
-*Jul 2021 – Present · Manchester, UK*
+*Jul 2021 – Present – Manchester, UK*
 
 - Head-hunted back to ANS Group to build and maintain the entire backend for Glass, their real-time service management portal
 - Glass is the front door to the business, giving customers a transparent, single view of all service transactions
@@ -33,7 +33,7 @@ in late 2015.
 ## Previous Roles
 
 ### Senior Full Stack Software Engineer — Mercarto
-*Sep 2020 – Jul 2021*
+*Sep 2020 – Jul 2021 – Manchester, UK*
 
 - Worked across the whole platform, both front end and backend, in a fast-paced start-up environment
 - Built backend API features and the customer-facing storefront UI
@@ -42,7 +42,7 @@ in late 2015.
 - Picked up and fixed half-finished contractor work, often under tight deadlines
 
 ### Senior Backend Software Engineer — ANS Group
-*Jul 2019 – Sep 2020*
+*Jul 2019 – Sep 2020 – Manchester, UK*
 
 - Owned the backend stack for multiple bespoke client projects in the "App Dev" team
 - Designed and built backend APIs integrating various data sources and systems
@@ -50,7 +50,7 @@ in late 2015.
 - Ran PR code reviews to keep merged code up to standard
 
 ### Mid-Level Backend Software Engineer — ANS Group
-*Feb 2019 – Jul 2019*
+*Feb 2019 – Jul 2019 – Manchester, UK*
 
 - First role in a properly structured dev team, working in "App Dev"
 - Built backend APIs to serve data to the front end
@@ -58,7 +58,7 @@ in late 2015.
 - Worked efficiently and autonomously, showing senior-level skills early
 
 ### Junior Software Engineer — ANS Group
-*Dec 2016 – Feb 2019*
+*Dec 2016 – Feb 2019 – Manchester, UK*
 
 - Promoted from Apprentice to Junior after completing his diploma
 - Worked on proof-of-concept projects that could later become production products
@@ -70,19 +70,19 @@ in late 2015.
 ## Early Career
 
 ### Apprentice Software Engineer — ANS Group
-*Jun 2016 – Dec 2016*
+*Jun 2016 – Dec 2016 – Manchester, UK*
 
 - Landed a full-time apprentice role after standing out in the apprenticeship scheme
 - Worked closely with the chief engineer writing code to configure servers
 
 ### Apprenticeship Scheme — ANS Group
-*Mar 2016 – Jun 2016*
+*Mar 2016 – Jun 2016 – Manchester, UK*
 
 - Scheme set up by ANS Group for apprentices affected by Bright Future situation
 - Continued my apprenticeship and completed my diploma
 
 ### Apprentice Software Engineer — Bright Future
-*Nov 2015 – Feb 2016*
+*Nov 2015 – Feb 2016 – Manchester, UK*
 
 - First software apprenticeship, based in Media City, Manchester
 - The company went into liquidation shortly after he started

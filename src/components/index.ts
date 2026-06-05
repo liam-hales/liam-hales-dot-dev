@@ -9,6 +9,7 @@ import Toggle from './common/toggle';
 import MarkdownBlock from './common/markdownBlock';
 import Markdown from './common/markdown';
 import Menu from './common/menu';
+import SuggestionsMenu from './suggestionsMenu';
 import ChatInput from './chat/chatInput';
 import ChatOption from './chat/chatOption';
 import ChatAction from './chat/chatAction';
@@ -27,6 +28,7 @@ export {
   MarkdownBlock,
   Markdown,
   Menu,
+  SuggestionsMenu,
   ChatInput,
   ChatOption,
   ChatAction,

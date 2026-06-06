@@ -4,7 +4,7 @@ import { readContent } from '../../helpers';
 import dedent from 'dedent';
 
 /**
- * The persona tool used to fetch the Liam Hales persona, a high-level
+ * The persona tool used to fetch the Liam Hales persona — a high-level
  * overview of who he is and his background etc
  */
 const personaTool = tool({

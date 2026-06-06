@@ -75,8 +75,7 @@ export const modelInstructions = dedent`
   first and use the combined output to build a single, well-structured CV in the reply.
 
   - Lay it out as a proper CV with clear sections, e.g. About, Experience, Skills, Workflow, Contact
-  - Display role dates as code — Example: \`Jul 2021 – Present\`
-  - Display role location as bold text
+  - Display role dates as code and role locations in bold — Example: \`Jan 2026 – Present\` — **Manchester, UK**
 
 
   ## Off-topic questions — push back with humour

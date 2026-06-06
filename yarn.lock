@@ -3797,6 +3797,7 @@ __metadata:
     tsx: "npm:^4.22.4"
     typescript: "npm:^6.0.3"
     typescript-eslint: "npm:^8.59.4"
+    usehooks-ts: "npm:^3.1.1"
     zod: "npm:^4.4.3"
   languageName: unknown
   linkType: soft
@@ -3927,6 +3928,13 @@ __metadata:
   dependencies:
     p-locate: "npm:^5.0.0"
   checksum: 10/72eb661788a0368c099a184c59d2fee760b3831c9c1c33955e8a19ae4a21b4116e53fa736dc086cdeb9fce9f7cc508f2f92d2d3aae516f133e16a2bb59a39f5a
+  languageName: node
+  linkType: hard
+
+"lodash.debounce@npm:^4.0.8":
+  version: 4.0.8
+  resolution: "lodash.debounce@npm:4.0.8"
+  checksum: 10/cd0b2819786e6e80cb9f5cda26b1a8fc073daaf04e48d4cb462fa4663ec9adb3a5387aa22d7129e48eed1afa05b482e2a6b79bfc99b86886364449500cbb00fd
   languageName: node
   linkType: hard
 
@@ -5898,6 +5906,17 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
   checksum: 10/b40ad2847ba220695bff2d4ba4f4d60391c0fb4fb012faa7a4c18eb38b69181936f5edc55a522c4d20a788d1a879b73c3810952c9d0fd128d01cb3f22042c09e
+  languageName: node
+  linkType: hard
+
+"usehooks-ts@npm:^3.1.1":
+  version: 3.1.1
+  resolution: "usehooks-ts@npm:3.1.1"
+  dependencies:
+    lodash.debounce: "npm:^4.0.8"
+  peerDependencies:
+    react: ^16.8.0  || ^17 || ^18 || ^19 || ^19.0.0-rc
+  checksum: 10/4f5d6beab003d76f90c6a9b8b0cd5b61f24528fa3dbbf1a6d9c0a509cb80914074af911a92dab0bc07873f14f714771306f5271e1e8f09b94add1722da37debb
   languageName: node
   linkType: hard
 

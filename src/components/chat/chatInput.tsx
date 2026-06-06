@@ -87,7 +87,7 @@ const ChatInput: FunctionComponent<Props> = (props): ReactElement<Props> => {
           (status === 'idle') && (
             <button
               className={`
-                size-9 flex flex-col items-center justify-center text-white cursor-pointer bg-accent hover:bg-accent-hover rounded-lg p-2
+                size-9 flex flex-col items-center justify-center shrink-0 text-white cursor-pointer bg-accent hover:bg-accent-hover rounded-lg p-2
 
                 disabled:cursor-not-allowed
                 disabled:text-content-secondary
@@ -102,10 +102,10 @@ const ChatInput: FunctionComponent<Props> = (props): ReactElement<Props> => {
         }
         {
           (status === 'loading') && (
-            <div className="size-9 flex flex-col items-center justify-center bg-disabled rounded-lg p-2">
+            <div className="size-9 flex flex-col items-center justify-center shrink-0 bg-disabled rounded-lg p-2">
               <LoaderCircle
                 className="text-content-secondary animate-spin"
-                size={20}
+                size={18}
               />
             </div>
           )
@@ -113,7 +113,7 @@ const ChatInput: FunctionComponent<Props> = (props): ReactElement<Props> => {
         {
           (status === 'streaming') && (
             <button
-              className="size-9 flex flex-col items-center justify-center cursor-pointer bg-disabled hover:bg-hover rounded-lg p-2"
+              className="size-9 flex flex-col items-center justify-center shrink-0 cursor-pointer bg-disabled hover:bg-hover rounded-lg p-2"
               onClick={onAbort}
             >
               <Square

@@ -61,7 +61,13 @@ const eslintConfig = defineConfig(
         'import-x/no-named-as-default-member': 'off',
 
         // General rules
-        'no-console': ['error'],
+        'no-console': [
+          'error', {
+            allow: [
+              'error',
+            ],
+          },
+        ],
         'object-shorthand': ['error', 'never'],
         'eqeqeq': [
           'error',

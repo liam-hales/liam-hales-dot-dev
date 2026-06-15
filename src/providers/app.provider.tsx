@@ -143,6 +143,8 @@ const AppProvider: FunctionComponent<Props> = ({ children }): ReactElement<Props
       });
     }
     catch (error) {
+      console.error('sendMessage() -> ', error);
+
       if (error instanceof Error) {
         // If the error is an abort error
         // then handle it accordingly

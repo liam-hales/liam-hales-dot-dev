@@ -99,6 +99,8 @@ const streamMessage = async ({ messages, mancMode = false }: StreamMessageOption
         controller.close();
       }
       catch (error) {
+        console.error('streamMessage() -> ', error);
+
         // Catch any errors and
         // update the streamable
         controller.error(error);

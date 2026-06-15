@@ -10,7 +10,7 @@ export const newsreader = Newsreader({
   variable: '--sans-font',
   subsets: ['latin'],
   style: ['normal', 'italic'],
-  weight: ['400', '600'],
+  weight: ['300', '400', '600'],
 });
 
 /**

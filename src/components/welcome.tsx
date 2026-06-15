@@ -53,11 +53,15 @@ const Welcome: FunctionComponent<Props> = ({ className, onSuggestion }): ReactEl
       <Logo className="w-12 fill-accent shrink-0" />
       <div className="flex flex-col items-center gap-y-2">
         <p className="text-content-primary text-[40px] text-center leading-10">
-          Have a chat with Liam.
+          <span className="font-light">Alright,</span>
+          {` I'm Liam `}
+          <span className="italic">
+            {`— let's chat.`}
+          </span>
         </p>
         <div className="flex flex-col items-center">
           <p className="text-content-secondary text-center">
-            Senior Software Engineer from Manchester.
+            {`I'm a Senior Software Engineer from Manchester.`}
           </p>
           <p className="text-content-secondary text-center">
             Ask me anything or use one of the suggestions below.

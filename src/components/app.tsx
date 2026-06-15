@@ -1,6 +1,6 @@
 'use client';
 
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, useEffect, useRef } from 'react';
 import { Header, Welcome, ChatInput, ChatOption, UserMessage, AssistantMessage, Loader } from './';
 import { useApp } from '../hooks';
 import { modelId } from '../constants';
@@ -24,13 +24,56 @@ const App: FunctionComponent = (): ReactElement => {
     clearChat,
   } = useApp();
 
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const userMessageRef = useRef<HTMLDivElement>(null);
+
+  /**
+   * Used to update the scroll container to reserve space
+   * for a new message when one is added to state
+   */
+  useEffect(() => {
+    const scroll = scrollRef.current;
+    const userMessage = userMessageRef.current;
+
+    if (scroll == null || userMessage == null) {
+      return;
+    }
+
+    /**
+     * Calculates the space reserved below the last message
+     * so it can be pinned to the top of the scroll container
+     */
+    const updateReserve = (): void => {
+      const reserve = Math.max((scroll.clientHeight - userMessage.offsetHeight - 160), 0);
+      scroll.style.setProperty('--chat-reserve', `${reserve}px`);
+    };
+
+    updateReserve();
+    userMessage.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+
+    // Keep the reserved space in sync when the container resizes
+    // due to a screen resize or device orientation change
+    const observer = new ResizeObserver(() => updateReserve());
+    observer.observe(scroll);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [messages.length]);
+
   const [, modelName] = modelId.split('/');
   return (
     <div className="h-full flex flex-col items-center bg-base pt-3 pb-6">
       <div className="w-full flex-col items-center px-3">
         <Header />
       </div>
-      <div className="w-full h-full max-w-185 flex flex-col items-center no-scrollbar overflow-y-auto overflow-x-hidden px-3 pt-6 pb-10">
+      <div
+        ref={scrollRef}
+        className="w-full h-full max-w-185 flex flex-col items-center no-scrollbar overflow-y-auto overflow-x-hidden px-3 pt-8 pb-8"
+      >
         {
           (messages.length === 0) && (
             <Welcome
@@ -39,7 +82,7 @@ const App: FunctionComponent = (): ReactElement => {
             />
           )
         }
-        <div className="w-full flex flex-col items-center gap-y-8 px-3">
+        <div className="w-full flex flex-col items-center gap-y-6 px-3">
           {
             messages.map((message) => {
               const { id, role, parts } = message;
@@ -52,6 +95,7 @@ const App: FunctionComponent = (): ReactElement => {
                 const textParts = parts.filter((part) => part.type === 'text');
                 return (
                   <UserMessage
+                    ref={userMessageRef}
                     className="self-end"
                     key={`user-message-${id}`}
                     parts={textParts}
@@ -62,9 +106,10 @@ const App: FunctionComponent = (): ReactElement => {
               // If the message role is `assistant` then
               // render the `AssistantMessage` component
               if (role === 'assistant') {
+                const lastMessage = messages.at(-1);
                 return (
                   <AssistantMessage
-                    className="self-start"
+                    className={`self-start ${(id === lastMessage?.id) ? 'min-h-(--chat-reserve,0px)' : ''}`}
                     key={`assistant-message-${id}`}
                     parts={parts}
                   />
@@ -74,12 +119,11 @@ const App: FunctionComponent = (): ReactElement => {
           }
           {
             (status.id === 'loading') && (
-              <Loader
-                className="self-start"
-                status="loading"
-              >
-                Thinking
-              </Loader>
+              <div className="w-full flex flex-col items-start min-h-(--chat-reserve,0px)">
+                <Loader status="loading">
+                  Thinking
+                </Loader>
+              </div>
             )
           }
         </div>

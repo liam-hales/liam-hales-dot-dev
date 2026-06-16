@@ -87,6 +87,10 @@ const streamMessage = async ({ messages, mancMode = false }: StreamMessageOption
         for await (const chunk of stream) {
           const { type } = chunk;
 
+          if (type === 'error') {
+            throw new Error(chunk.errorText);
+          }
+
           // Only update the stream
           // with allowed message chunks
           if (allowedChunkTypes.includes(type) === true) {

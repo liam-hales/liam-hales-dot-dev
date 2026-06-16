@@ -105,6 +105,7 @@ const AppProvider: FunctionComponent<Props> = ({ children }): ReactElement<Props
       // message chunks into full messages
       const messageStream = readUIMessageStream<Message>({
         stream: stream,
+        terminateOnError: true,
       });
 
       abortController.signal.throwIfAborted();
@@ -156,6 +157,8 @@ const AppProvider: FunctionComponent<Props> = ({ children }): ReactElement<Props
           id: 'error',
           error: error,
         });
+
+        return;
       }
 
       throw error;

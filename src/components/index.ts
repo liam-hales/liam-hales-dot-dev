@@ -13,6 +13,7 @@ import SuggestionsMenu from './suggestionsMenu';
 import ChatInput from './chat/chatInput';
 import ChatOption from './chat/chatOption';
 import ChatAction from './chat/chatAction';
+import ChatError from './chat/chatError';
 import UserMessage from './message/userMessage';
 import AssistantMessage from './message/assistantMessage';
 
@@ -32,6 +33,7 @@ export {
   ChatInput,
   ChatOption,
   ChatAction,
+  ChatError,
   UserMessage,
   AssistantMessage,
 };

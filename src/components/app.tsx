@@ -1,7 +1,7 @@
 'use client';
 
 import { FunctionComponent, ReactElement, useEffect, useRef } from 'react';
-import { Header, Welcome, ChatInput, ChatOption, UserMessage, AssistantMessage, Loader } from './';
+import { Header, Welcome, ChatInput, ChatOption, ChatError, UserMessage, AssistantMessage, Loader } from './';
 import { useApp } from '../hooks';
 import { modelId } from '../constants';
 
@@ -123,6 +123,15 @@ const App: FunctionComponent = (): ReactElement => {
                 <Loader status="loading">
                   Thinking
                 </Loader>
+              </div>
+            )
+          }
+          {
+            (status.id === 'error') && (
+              <div className="w-full flex flex-col items-start min-h-(--chat-reserve,0px)">
+                <ChatError>
+                  {status.error.message}
+                </ChatError>
               </div>
             )
           }

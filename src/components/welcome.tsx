@@ -54,7 +54,12 @@ const Welcome: FunctionComponent<Props> = ({ className, onSuggestion }): ReactEl
       <div className="flex flex-col items-center gap-y-2">
         <p className="text-content-primary text-[40px] text-center leading-10">
           <span className="font-light">Alright,</span>
-          {` I'm Liam `}
+          <span>{` I'm Liam`}</span>
+          {
+            (isLargeScreen === true)
+              ? ' '
+              : <br />
+          }
           <span className="italic">
             {`— let's chat.`}
           </span>

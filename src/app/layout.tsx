@@ -4,6 +4,7 @@ import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { AppProvider, ThemeProvider } from '../providers';
 import { newsreader, jetbrainsMono } from '../fonts';
 import { BaseProps } from '../types';
+import { viewport, generateMetadata } from './metadata';
 
 /**
  * The `AppLayout` component props
@@ -38,3 +39,7 @@ const AppLayout: FunctionComponent<Props> = ({ children }): ReactElement<Props> 
 };
 
 export default AppLayout;
+export {
+  viewport,
+  generateMetadata,
+};

@@ -71,7 +71,7 @@ const App: FunctionComponent = (): ReactElement => {
       </div>
       <div
         ref={scrollRef}
-        className="w-full h-full max-w-185 flex flex-col items-center no-scrollbar overflow-y-auto overflow-x-hidden px-3 pt-8 pb-8"
+        className="w-full h-full max-w-185 flex flex-col items-center no-scrollbar overflow-y-auto overflow-x-hidden touch-pan-y px-3 pt-8 pb-8"
       >
         {
           (messages.length === 0) && (

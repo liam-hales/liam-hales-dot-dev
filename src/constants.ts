@@ -16,10 +16,16 @@ export const suggestions = [
 ];
 
 /**
- * Defines the OpenRouter
- * LLM to use
+ * Defines the Amazon Bedrock LLM to use — the EU
+ * cross-region inference profile for Claude Haiku 4.5
  */
-export const modelId = 'anthropic/claude-haiku-4.5';
+export const modelId = 'eu.anthropic.claude-haiku-4-5-20251001-v1:0';
+
+/**
+ * The human-readable model name
+ * for Claude Haiku 4.5
+ */
+export const modelName = 'Claude Haiku 4.5';
 
 /**
  * Defines the system instructions for the LLM

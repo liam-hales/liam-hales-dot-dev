@@ -1,6 +1,7 @@
 'use server';
 
-import { createOpenRouter } from '@openrouter/ai-sdk-provider';
+import { createAmazonBedrock } from '@ai-sdk/amazon-bedrock';
+import { fromNodeProviderChain } from '@aws-sdk/credential-providers';
 import { generateId, streamText, stepCountIs } from 'ai';
 import { modelId, modelInstructions, mancModeInstructions } from '../constants';
 import { tools } from '../tools';
@@ -8,23 +9,16 @@ import { StreamMessageOptions, MessageChunk } from '../types';
 
 /**
  * Used to stream the LLM message in chunks to the client using
- * the OpenRouter API and `ai` package under the hood
+ * Amazon Bedrock and the `ai` package under the hood
  *
  * @param options The stream message options
  * @returns The message chunk readable stream
  */
 const streamMessage = async ({ messages, mancMode = false }: StreamMessageOptions): Promise<ReadableStream<MessageChunk>> => {
-  const openRouterApiKey = process.env.OPEN_ROUTER_API_KEY;
-
-  // Make sure the `OPEN_ROUTER_API_KEY`
-  // environment variable has been set
-  if (openRouterApiKey == null) {
-    throw new Error('The "OPEN_ROUTER_API_KEY" environment variable is required');
-  }
-
-  const provider = createOpenRouter({
-    apiKey: openRouterApiKey,
-    compatibility: 'strict',
+  // Resolve AWS credentials via the standard provider chain, which will obtain credentials
+  // from environment variables, the `~/.aws` directory or an IAM role when deployed
+  const provider = createAmazonBedrock({
+    credentialProvider: fromNodeProviderChain(),
   });
 
   // Generate the full system prompt using
@@ -39,16 +33,16 @@ const streamMessage = async ({ messages, mancMode = false }: StreamMessageOption
   // Pass the model, instructions, tools and message
   // history to the LLM and stream its response
   const result = streamText({
-    model: provider.chat(modelId),
+    model: provider(modelId),
     system: systemPrompt,
     tools: tools,
     messages: messages,
     stopWhen: stepCountIs(5),
     providerOptions: {
-      openrouter: {
-        reasoning: {
-          enabled: true,
-          exclude: false,
+      bedrock: {
+        reasoningConfig: {
+          type: 'enabled',
+          budgetTokens: 2048,
         },
       },
     },
@@ -67,6 +61,8 @@ const streamMessage = async ({ messages, mancMode = false }: StreamMessageOption
     'finish',
     'abort',
     'error',
+    'start-step',
+    'finish-step',
     'text-start',
     'text-delta',
     'text-end',

@@ -3,7 +3,7 @@
 import { FunctionComponent, ReactElement, useEffect, useRef } from 'react';
 import { Header, Welcome, ChatInput, ChatOption, ChatError, UserMessage, AssistantMessage, Loader } from './';
 import { useApp } from '../hooks';
-import { modelId } from '../constants';
+import { modelName } from '../constants';
 
 /**
  * The component responsible for rendering the main application,
@@ -64,7 +64,6 @@ const App: FunctionComponent = (): ReactElement => {
     };
   }, [messages.length]);
 
-  const [, modelName] = modelId.split('/');
   return (
     <div className="h-full flex flex-col items-center bg-base pt-3 pb-6">
       <div className="w-full flex-col items-center px-3">
@@ -107,11 +106,13 @@ const App: FunctionComponent = (): ReactElement => {
               // render the `AssistantMessage` component
               if (role === 'assistant') {
                 const lastMessage = messages.at(-1);
+                const messageParts = parts.filter((part) => part.type.includes('step') === false);
+
                 return (
                   <AssistantMessage
                     className={`self-start ${(id === lastMessage?.id) ? 'min-h-(--chat-reserve,0px)' : ''}`}
                     key={`assistant-message-${id}`}
-                    parts={parts}
+                    parts={messageParts}
                   />
                 );
               }

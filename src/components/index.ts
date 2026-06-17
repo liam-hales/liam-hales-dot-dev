@@ -3,6 +3,7 @@ import Header from './header';
 import Logo from './logo';
 import SocialLink from './socialLink';
 import ThemeToggle from './themeToggle';
+import ThemeSync from './themeSync';
 import Welcome from './welcome';
 import Loader from './common/loader';
 import Toggle from './common/toggle';
@@ -23,6 +24,7 @@ export {
   Logo,
   SocialLink,
   ThemeToggle,
+  ThemeSync,
   Welcome,
   Loader,
   Toggle,

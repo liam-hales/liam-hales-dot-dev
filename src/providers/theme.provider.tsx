@@ -2,6 +2,7 @@
 
 import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { ThemeProvider as NextThemeProvider } from 'next-themes';
+import { ThemeSync } from '../components';
 import { BaseProps } from '../types';
 
 /**
@@ -39,6 +40,7 @@ const ThemeProvider: FunctionComponent<Props> = ({ children }): ReactElement<Pro
       defaultTheme="system"
       enableSystem={true}
     >
+      <ThemeSync />
       {children}
     </NextThemeProvider>
   );

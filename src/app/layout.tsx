@@ -27,7 +27,7 @@ const AppLayout: FunctionComponent<Props> = ({ children }): ReactElement<Props> 
       suppressHydrationWarning={true}
       className={`h-full ${newsreader.variable} ${jetbrainsMono.variable} overscroll-none`}
     >
-      <body className="h-full touch-none">
+      <body className="h-full bg-base touch-none">
         <AppProvider>
           <ThemeProvider>
             <div className="h-full pt-safe pl-safe pr-safe">

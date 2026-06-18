@@ -10,6 +10,14 @@
   }
 }
 
+@custom-variant ios-pwa {
+  @supports (-webkit-touch-callout: none) {
+    @media (display-mode: standalone) {
+      @slot;
+    }
+  }
+}
+
 @theme {
   --font-sans: var(--sans-font);
   --font-mono: var(--mono-font);

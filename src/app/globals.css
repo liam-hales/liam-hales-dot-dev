@@ -10,11 +10,15 @@
   }
 }
 
-@custom-variant ios-pwa {
+@custom-variant ios {
   @supports (-webkit-touch-callout: none) {
-    @media (display-mode: standalone) {
-      @slot;
-    }
+    @slot;
+  }
+}
+
+@custom-variant pwa {
+  @media (display-mode: standalone) {
+    @slot;
   }
 }
 

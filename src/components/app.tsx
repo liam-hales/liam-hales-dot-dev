@@ -65,7 +65,7 @@ const App: FunctionComponent = (): ReactElement => {
   }, [messages.length]);
 
   return (
-    <div className="h-full flex flex-col items-center pt-3 pb-6 ios-pwa:pb-0">
+    <div className="h-full flex flex-col items-center pt-3 pb-6 ios:pb-0">
       <div className="w-full flex-col items-center px-3">
         <Header />
       </div>

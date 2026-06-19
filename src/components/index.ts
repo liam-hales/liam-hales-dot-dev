@@ -9,6 +9,7 @@ import Loader from './common/loader';
 import Toggle from './common/toggle';
 import MarkdownBlock from './common/markdownBlock';
 import Markdown from './common/markdown';
+import Project from './common/project';
 import Menu from './common/menu';
 import SuggestionsMenu from './suggestionsMenu';
 import ChatInput from './chat/chatInput';
@@ -30,6 +31,7 @@ export {
   Toggle,
   MarkdownBlock,
   Markdown,
+  Project,
   Menu,
   SuggestionsMenu,
   ChatInput,

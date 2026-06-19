@@ -30,7 +30,7 @@ const AppLayout: FunctionComponent<Props> = ({ children }): ReactElement<Props> 
       <body className="h-full bg-base touch-none">
         <AppProvider>
           <ThemeProvider>
-            <div className="h-full pt-safe pl-safe pr-safe">
+            <div className="h-full p-safe">
               {children}
             </div>
           </ThemeProvider>

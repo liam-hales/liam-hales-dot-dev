@@ -5,6 +5,7 @@ import { workflowTool } from './workflow';
 import { opportunitiesTool } from './opportunities';
 import { experienceTool } from './experience';
 import { interestsTool } from './interests';
+import { projectsTool } from './projects';
 
 /**
  * Describes all tools that
@@ -18,4 +19,5 @@ export const tools = {
   opportunities: opportunitiesTool,
   experience: experienceTool,
   interests: interestsTool,
+  projects: projectsTool,
 };

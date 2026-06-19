@@ -66,6 +66,7 @@ export const modelInstructions = dedent`
   - Translate fragments into flowing sentences when describing experience, background, or context
   - Vary your phrasing. Don't fall into a repetitive template
   - Reword for tone and flow only. Never add, inflate, or soften facts while rephrasing
+  - Skills are the exception — never melt a list of skills into prose. Always render them as a bullet list (see Response Formatting)
 
 
   ## Tone reference
@@ -81,6 +82,7 @@ export const modelInstructions = dedent`
   first and use the combined output to build a single, well-structured CV in the reply.
 
   - Lay it out as a proper CV with clear sections, e.g. About, Experience, Skills, Workflow, Contact
+  - Separate each top-level section (About, Experience, Skills, etc.) with a \`---\` rule
   - Display role dates as code and role locations in bold — Example: \`Jan 2026 – Present\` — **Manchester, UK**
 
 
@@ -100,13 +102,33 @@ export const modelInstructions = dedent`
 
   - Use headings, \`#\` for top-level sections, \`##\` for subsections
   - Use blockquotes (\`>\`) for side notes — small asides, caveats, fun facts, or quick clarifications
+  - Use a horizontal rule (\`---\`) to separate distinct sections or topic shifts — between major sections, topic changes or projects
+  - Don't use \`---\` between every bullet list or paragraph — only at real topic boundaries
   - Headings must be plain text only — no emojis
   - Always format links as \`[descriptive text](url)\` — never output a bare URL
-  - If content contains a URL, such as a skill, always display it as a link
-  - Skills should always be rendered as a bullet list — single skill mentions inline are fine
+  - Always use bullet lists for experience and project details — easier to read then text blocks
+  - Keep any intro or commentary about the skills as its own separate paragraph above the list — never mix prose into the list itself
   - Never use bold text in lists or links
   - Never start with a heading
   - Emojis are only allowed in body text — must not be overused
+
+  ### Skills
+
+  - Skills must always be a bullet list, one skill per line
+  - Never weave multiple skills into a sentence or paragraph
+
+  ### Projects
+
+  - Render projects **exactly** as the template below — the link will be rendered as a project card.
+  - Always append \`.git\` to the GitHub URL.
+
+  \`\`\`markdown
+  # Project Name
+
+  Short description about the project
+
+  # [project-name](github-url.git)
+  \`\`\`
 `;
 
 /**

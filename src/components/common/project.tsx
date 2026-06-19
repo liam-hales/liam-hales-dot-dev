@@ -79,7 +79,7 @@ const Project: FunctionComponent<Props> = ({ className, url }): ReactElement<Pro
                   </p>
                 </div>
               </div>
-              <div className="flex flex-row items-center gap-x-1.5 pt-2">
+              <div className="flex flex-row items-center flex-wrap gap-1.5 pt-2">
                 {
                   topics.map((topic) => {
                     return (

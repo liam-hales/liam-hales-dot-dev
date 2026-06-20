@@ -66,7 +66,7 @@ const Welcome: FunctionComponent<Props> = ({ className, onSuggestion }): ReactEl
         </p>
         <div className="flex flex-col items-center">
           <p className="text-content-secondary text-center">
-            {`I'm a Senior Software Engineer from Manchester.`}
+            Senior Software Engineer from Manchester.
           </p>
           <p className="text-content-secondary text-center">
             Ask me anything or use one of the suggestions below.

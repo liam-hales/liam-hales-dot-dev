@@ -68,6 +68,15 @@ export const generateMetadata = (): Metadata => {
       description: description,
       type: 'website',
       siteName: title,
+      images: [
+        {
+          url: '/cover.webp',
+          type: 'image/webp',
+          alt: 'Liam Hales Cover',
+          width: 1200,
+          height: 630,
+        },
+      ],
     },
   };
 };

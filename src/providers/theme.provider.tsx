@@ -4,6 +4,7 @@ import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { ThemeProvider as NextThemeProvider } from 'next-themes';
 import { ThemeSync } from '../components';
 import { BaseProps } from '../types';
+import { themes } from '../constants';
 
 /**
  * The `ThemeProvider` component props
@@ -29,13 +30,7 @@ interface Props extends BaseProps {
 const ThemeProvider: FunctionComponent<Props> = ({ children }): ReactElement<Props> => {
   return (
     <NextThemeProvider
-      themes={
-        [
-          'system',
-          'light',
-          'dark',
-        ]
-      }
+      themes={[...themes]}
       attribute="class"
       defaultTheme="system"
       enableSystem={true}

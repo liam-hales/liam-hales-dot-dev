@@ -1,8 +1,12 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
+
 'use client';
 
 import { FunctionComponent, ReactElement } from 'react';
-import { Monitor, Sun, Moon } from 'lucide-react';
+import { Monitor, Sun, Moon, LucideComponent } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import { themes } from '../constants';
+import { Theme } from './types';
 
 /**
  * Used to render the theme toggle which allows the user
@@ -13,35 +17,50 @@ import { useTheme } from 'next-themes';
 const ThemeToggle: FunctionComponent = (): ReactElement => {
   const { theme, setTheme } = useTheme();
 
+  /**
+   * Defines the map between the
+   * theme and the toggle icon
+   */
+  const iconMap: Record<Theme, typeof LucideComponent> = {
+    system: Monitor,
+    light: Sun,
+    dark: Moon,
+  };
+
+  /**
+   * Defines the map between the
+   * theme and the offset class
+   */
+  const offsetMap: Record<Theme, string> = {
+    system: 'translate-x-0',
+    light: 'translate-x-8',
+    dark: 'translate-x-16',
+  };
+
   return (
-    <div className="flex flex-row items-center gap-x-1 bg-surface-low p-1 rounded-full">
-      <button
-        className={`
-          ${(theme === 'system') ? 'bg-base shadow-sm text-content-primary' : 'bg-transparent text-content-secondary'}
-          rounded-full cursor-pointer p-1.5
-        `}
-        onClick={() => setTheme('system')}
-      >
-        <Monitor size={16} />
-      </button>
-      <button
-        className={`
-          ${(theme === 'light') ? 'bg-base shadow-sm text-content-primary' : 'bg-transparent text-content-secondary'}
-          rounded-full cursor-pointer p-1.5
-        `}
-        onClick={() => setTheme('light')}
-      >
-        <Sun size={16} />
-      </button>
-      <button
-        className={`
-          ${(theme === 'dark') ? 'bg-base shadow-sm text-content-primary' : 'bg-transparent text-content-secondary'}
-          rounded-full cursor-pointer p-1.5
-        `}
-        onClick={() => setTheme('dark')}
-      >
-        <Moon size={16} />
-      </button>
+    <div className="relative flex flex-row items-center gap-x-1 bg-surface-low p-1 rounded-full">
+      <span className={`
+        absolute size-7 rounded-full bg-base shadow-sm transition-transform duration-200 ease-out
+        ${(theme != null) ? offsetMap[theme as Theme] : ''}
+      `}
+      />
+      {
+        themes.map((name) => {
+          const Icon = iconMap[name];
+          return (
+            <button
+              key={name}
+              className={`
+                relative z-10 cursor-pointer p-1.5
+                ${(theme === name) ? 'text-content-primary' : 'text-content-secondary'}
+              `}
+              onClick={() => setTheme(name)}
+            >
+              <Icon size={16} />
+            </button>
+          );
+        })
+      }
     </div>
   );
 };

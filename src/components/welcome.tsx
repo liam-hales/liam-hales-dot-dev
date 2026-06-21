@@ -50,9 +50,9 @@ const Welcome: FunctionComponent<Props> = ({ className, onSuggestion }): ReactEl
 
   return (
     <div className={`${className ?? ''} flex flex-col items-center sm:justify-center gap-y-10`}>
-      <Logo className="w-12 fill-accent shrink-0" />
+      <Logo className="w-12 fill-accent shrink-0 enter-up delay-200" />
       <div className="flex flex-col items-center gap-y-2">
-        <p className="text-content-primary text-[40px] text-center leading-10">
+        <p className="text-content-primary text-[40px] text-center leading-10 enter-up delay-400">
           <span className="font-light">Alright,</span>
           <span>{` I'm Liam`}</span>
           {
@@ -65,15 +65,15 @@ const Welcome: FunctionComponent<Props> = ({ className, onSuggestion }): ReactEl
           </span>
         </p>
         <div className="flex flex-col items-center">
-          <p className="text-content-secondary text-center">
+          <p className="text-content-secondary text-center enter-up delay-600">
             Senior Software Engineer from Manchester.
           </p>
-          <p className="text-content-secondary text-center">
+          <p className="text-content-secondary text-center enter-up delay-700">
             Ask me anything or use one of the suggestions below.
           </p>
         </div>
       </div>
-      <div className="w-full flex flex-row items-center gap-x-3">
+      <div className="w-full flex flex-row items-center gap-x-3 enter-up delay-2400 sm:delay-1600">
         {
           (isLargeScreen === true) && (
             <button
@@ -93,7 +93,7 @@ const Welcome: FunctionComponent<Props> = ({ className, onSuggestion }): ReactEl
             pageItems.map((item, index) => {
               return (
                 <button
-                  className="flex flex-row items-center gap-x-2 border border-solid border-outline bg-surface-mid rounded-xl cursor-pointer px-4 py-3 hover:bg-hover"
+                  className="flex flex-row items-center gap-x-2 border border-solid border-outline bg-surface-mid rounded-xl cursor-pointer px-4 py-3 hover-lift"
                   key={`suggestion-${(page * pageSize) + index}`}
                   onClick={() => onSuggestion(item)}
                 >

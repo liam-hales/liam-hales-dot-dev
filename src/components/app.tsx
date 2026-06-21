@@ -67,7 +67,7 @@ const App: FunctionComponent = (): ReactElement => {
   return (
     <div className="h-full flex flex-col items-center pt-3 pb-6 ios:pb-0">
       <div className="w-full flex-col items-center px-3">
-        <Header />
+        <Header className="enter-down delay-1400" />
       </div>
       <div
         ref={scrollRef}
@@ -139,14 +139,14 @@ const App: FunctionComponent = (): ReactElement => {
         </div>
       </div>
       <div className={`
-        w-full max-w-185 flex flex-col items-center gap-y-3 px-3
+        w-full max-w-185 flex flex-col items-center gap-y-3 px-3 enter-up delay-1800
         ${(messages.length === 0) ? 'sm:border-none border-t border-solid border-divider pt-3 sm:pb-10' : 'py-0 border-none'}
       `}
       >
         {
           (messages.length === 0) && (
             <ChatOption
-              className="self-end"
+              className="self-end enter-up delay-2200"
               text="Manc mode"
               isOn={mancMode}
               onChange={setMancMode}
@@ -163,7 +163,7 @@ const App: FunctionComponent = (): ReactElement => {
           onSend={sendMessage}
           onAbort={abortRequest}
         />
-        <p className="text-content-secondary text-xs text-center leading-5 px-3">
+        <p className="text-content-secondary text-xs text-center leading-5 px-3 enter-up delay-1900">
           {'This chat is powered by AI and uses '}
           <code className="text-accent text-[10px] bg-surface-mid border border-solid border-outline rounded-sm px-1 py-0.5">
             {modelName}

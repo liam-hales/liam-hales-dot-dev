@@ -43,7 +43,7 @@ const SocialLink: FunctionComponent<Props> = ({ className, platform }): ReactEle
   const Icon = iconMap[platform];
   return (
     <Link
-      className={`${className ?? ''} flex flex-row items-center cursor-pointer gap-x-2 rounded-lg px-3 py-1 hover:bg-hover`}
+      className={`${className ?? ''} flex flex-row items-center cursor-pointer gap-x-2 rounded-lg px-3 py-1 hover-lift hover:bg-hover`}
       href={urlMap[platform]}
       target="_blank"
       passHref={true}

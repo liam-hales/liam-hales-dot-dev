@@ -1,6 +1,16 @@
 import dedent from 'dedent';
 
 /**
+ * Defines the different
+ * app themes
+ */
+export const themes = [
+  'system',
+  'light',
+  'dark',
+] as const;
+
+/**
  * Defines message suggestions for the user to
  * use if they are not sure what to type
  */
@@ -126,7 +136,8 @@ export const modelInstructions = dedent`
 
   ### Skills
 
-  - Skills must always be a bullet list, one skill per line
+  - Skills must always be shown as a bullet list, one skill per line
+  - Skills must always be shown as links
   - Never weave multiple skills into a sentence or paragraph
 
   ### Projects

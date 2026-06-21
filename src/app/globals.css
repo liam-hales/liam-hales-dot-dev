@@ -10,6 +10,38 @@
   }
 }
 
+@utility enter-up {
+  @apply
+    transition-[opacity,transform]
+    duration-800
+    ease-out;
+
+  @starting-style {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+}
+
+@utility enter-down {
+  @apply
+    transition-[opacity,transform]
+    duration-800
+    ease-out;
+
+  @starting-style {
+    opacity: 0;
+    transform: translateY(-28px);
+  }
+}
+
+@utility hover-lift {
+  @apply
+    transition-transform
+    duration-200
+    ease-out
+    hover:-translate-y-1;
+}
+
 @custom-variant ios {
   @supports (-webkit-touch-callout: none) {
     @slot;

@@ -28,7 +28,7 @@ const Project: FunctionComponent<Props> = ({ className, url }): ReactElement<Pro
 
   return (
     <Link
-      className={`${className ?? ''} flex flex-col items-start gap-y-2 border border-solid border-outline hover:bg-hover shadow-sm cursor-pointer rounded-xl px-6 py-4`}
+      className={`${className ?? ''} flex flex-col items-start gap-y-2 border border-solid border-outline shadow-sm cursor-pointer rounded-xl px-6 py-4`}
       href={url}
       target="_blank"
       passHref={true}

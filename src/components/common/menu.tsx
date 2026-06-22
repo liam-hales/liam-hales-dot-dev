@@ -28,7 +28,7 @@ const Menu = <P extends object>({ className, button, buttonProps, children }: Pr
         {...buttonProps}
       />
       <MenuItems
-        className={`${className ?? ''} flex flex-col items-start gap-y-3 border border-solid border-outline bg-base rounded-xl [--anchor-gap:6px] p-2 no-scrollbar shadow-sm`}
+        className={`${className ?? ''} flex flex-col items-start gap-y-3 border border-solid border-outline bg-base rounded-xl [--anchor-gap:8px] p-2 no-scrollbar shadow-sm transition ease-out duration-100 data-closed:translate-y-2 data-closed:opacity-0`}
         transition={true}
         anchor="top start"
       >

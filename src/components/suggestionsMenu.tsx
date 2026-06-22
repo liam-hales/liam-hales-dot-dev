@@ -38,7 +38,7 @@ const SuggestionsMenu: FunctionComponent<Props> = ({ onSelect }): ReactElement<P
             return (
               <MenuItem key={`suggestion-menu-item-${index}`}>
                 <button
-                  className="w-full flex flex-col items-start px-3 py-2 text-content-primary hover:bg-hover rounded-lg cursor-pointer"
+                  className="w-full flex flex-col items-start px-3 py-2 text-content-primary hover:bg-hover rounded-lg cursor-pointer hover-lift"
                   onClick={() => onSelect(suggestion)}
                 >
                   {suggestion}

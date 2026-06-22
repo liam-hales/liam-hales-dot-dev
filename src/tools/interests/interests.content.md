@@ -35,12 +35,13 @@ and gaming, to his smart home setup and home DIY.
 
 ### Favourites
 
-- The Last of Us,
-- Uncharted,
-- Tomb Raider,
-- Stray,
-- Star Wars Jedi,
-- Split Fiction,
+- The Last of Us
+- Uncharted
+- 007 First Light
+- Tomb Raider
+- Stray
+- Star Wars Jedi
+- Split Fiction
 - Call of Duty: Modern Warfare (campaign)
 
 

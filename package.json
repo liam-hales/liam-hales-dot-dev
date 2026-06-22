@@ -26,15 +26,15 @@
     "cleanup": "rm -rf .next/"
   },
   "dependencies": {
-    "@ai-sdk/amazon-bedrock": "^4.0.117",
-    "@aws-sdk/credential-providers": "^3.1070.0",
+    "@ai-sdk/amazon-bedrock": "^4.0.120",
+    "@aws-sdk/credential-providers": "^3.1073.0",
     "@headlessui/react": "^2.2.10",
     "@octokit/rest": "^22.0.1",
     "@tailwindcss/postcss": "^4.3.1",
-    "ai": "^6.0.205",
+    "ai": "^6.0.208",
     "camelcase-keys": "^10.0.2",
     "dedent": "^1.7.2",
-    "lucide-react": "^1.18.0",
+    "lucide-react": "^1.21.0",
     "marked": "^18.0.5",
     "next": "^16.2.9",
     "next-themes": "^0.4.6",
@@ -58,12 +58,12 @@
     "cheerio": "^1.2.0",
     "eslint": "^10.5.0",
     "eslint-import-resolver-typescript": "^4.4.5",
-    "eslint-plugin-import-x": "^4.16.2",
+    "eslint-plugin-import-x": "^4.17.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
-    "sharp": "^0.35.1",
+    "sharp": "^0.35.2",
     "tsx": "^4.22.4",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.61.0"
+    "typescript-eslint": "^8.61.1"
   }
 }

@@ -50,7 +50,10 @@ const Welcome: FunctionComponent<Props> = ({ className, onSuggestion }): ReactEl
 
   return (
     <div className={`${className ?? ''} flex flex-col items-center sm:justify-center gap-y-10`}>
-      <Logo className="w-12 fill-accent shrink-0 enter-up delay-200" />
+      <Logo
+        className="w-14 shrink-0"
+        pathClassName="fill-accent stroke-accent [fill-opacity:0] stroke-[16] [stroke-linejoin:round] [stroke-linecap:round] [stroke-dasharray:1_1] [stroke-dashoffset:1] animate-draw-and-fill [animation-delay:200ms]"
+      />
       <div className="flex flex-col items-center gap-y-2">
         <p className="text-content-primary text-[40px] text-center leading-10 enter-up delay-400">
           <span className="font-light">Alright,</span>

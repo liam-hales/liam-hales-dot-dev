@@ -5,8 +5,8 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": ">=24.13",
-    "npm": ">=11.6"
+    "node": ">=24.18",
+    "npm": ">=11.16"
   },
   "os": [
     "darwin",
@@ -16,7 +16,7 @@
     "type": "git",
     "url": "https://github.com/liam-hales/liam-hales-dot-dev.git"
   },
-  "packageManager": "yarn@4.12.0",
+  "packageManager": "yarn@4.17.0",
   "scripts": {
     "start:dev": "next dev",
     "start:prod": "next start",

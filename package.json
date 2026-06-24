@@ -26,12 +26,12 @@
     "cleanup": "rm -rf .next/"
   },
   "dependencies": {
-    "@ai-sdk/amazon-bedrock": "^4.0.120",
-    "@aws-sdk/credential-providers": "^3.1073.0",
+    "@ai-sdk/amazon-bedrock": "^4.0.121",
+    "@aws-sdk/credential-providers": "^3.1075.0",
     "@headlessui/react": "^2.2.10",
     "@octokit/rest": "^22.0.1",
     "@tailwindcss/postcss": "^4.3.1",
-    "ai": "^6.0.208",
+    "ai": "^6.0.209",
     "camelcase-keys": "^10.0.2",
     "dedent": "^1.7.2",
     "lucide-react": "^1.21.0",
@@ -64,6 +64,6 @@
     "sharp": "^0.35.2",
     "tsx": "^4.22.4",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.61.1"
+    "typescript-eslint": "^8.62.0"
   }
 }

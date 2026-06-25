@@ -2,7 +2,7 @@
 
 # Liam Hales — Official Website
 
-The official website for Liam Hales. A place to demonstrate skills, experience and projects through an AI chat interface.
+The official website for Liam Hales — a portfolio used to demonstrate skills, experience and projects through a simple AI chat interface.
 
 https://liamhales.dev
 

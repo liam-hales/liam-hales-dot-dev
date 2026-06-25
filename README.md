@@ -117,9 +117,6 @@ $ yarn build:icons
 
 > 📝 _**NOTE** — Public assets such as the `sitemap.xml` and `robots.txt` files exists on dynamic routes_
 
-<br/>
-<br/>
-
 [`nvm`]: https://github.com/nvm-sh/nvm
 [`yarn`]: https://yarnpkg.com
 [Corepack]: https://nodejs.org/api/corepack.html

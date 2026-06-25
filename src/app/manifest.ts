@@ -10,7 +10,7 @@ import { MetadataRoute } from 'next';
  */
 const buildManifest = (): MetadataRoute.Manifest => {
   const name = 'Liam Hales';
-  const description = 'The official website for Liam Hales — a Senior Software Engineer from Manchester UK.';
+  const description = 'The official website for Liam Hales — a Senior Software Engineer from Manchester, UK.';
 
   return {
     name: name,

@@ -37,8 +37,8 @@ export const generateMetadata = (): Metadata => {
     throw new Error('The "SITE_URL" environment variable is required');
   }
 
-  const title = 'Liam Hales';
-  const description = 'The official website for Liam Hales — a Senior Software Engineer from Manchester UK.';
+  const title = 'Liam Hales — Software Engineer (Manchester, UK)';
+  const description = 'The official website for Liam Hales — a Senior Software Engineer from Manchester, UK.';
 
   return {
     metadataBase: new URL(siteUrl),

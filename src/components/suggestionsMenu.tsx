@@ -21,6 +21,7 @@ interface Props extends BaseProps {
 const SuggestionsMenu: FunctionComponent<Props> = ({ onSelect }): ReactElement<Props> => {
   return (
     <Menu
+      className="outline-none"
       button={ChatAction}
       buttonProps={{
         text: 'Suggestions',

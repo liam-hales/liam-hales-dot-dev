@@ -57,7 +57,7 @@ v4.17.0
 
 ## Setup Environment
 
-Create a `.env` file in the project root
+1. Create a `.env` file in the project root
 
 ```sh
 SITE_URL = 'https://liamhales.dev'
@@ -78,7 +78,7 @@ For local development there are two ways to build and start the app depending on
 
 ### Development Build
 
-- Run `yarn start:dev` to start the development server
+1. Run `yarn start:dev` to start the development server
 
 ```sh
 $ yarn start:dev
@@ -107,7 +107,7 @@ Check out the [`yarn up`] and [`yarn upgrade-interactive`] docs or use the `--he
 
 Most public assets already exist in the `/public` directory, however some assets such as some of the icons are dynamically built using build scripts.
 
-- Run `yarn build:icons` to build the `favicon.ico`, `.webp` and `.png` icons
+1. Run `yarn build:icons` to build the `favicon.ico`, `.webp` and `.png` icons
 
 ```sh
 $ yarn build:icons

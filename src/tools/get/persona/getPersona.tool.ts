@@ -1,13 +1,13 @@
 import { tool } from 'ai';
 import { z } from 'zod';
-import { readContent } from '../../helpers';
+import { readContent } from '../../../helpers';
 import dedent from 'dedent';
 
 /**
- * The persona tool used to fetch the Liam Hales persona — a high-level
+ * The `getPersona` tool used to fetch the Liam Hales persona — a high-level
  * overview of who he is and his background etc
  */
-const personaTool = tool({
+const getPersonaTool = tool({
   type: 'function',
   title: 'Persona',
   description: dedent`
@@ -22,9 +22,9 @@ const personaTool = tool({
     'use server';
 
     // Read amd return the content
-    // for the `persona` tool
-    return await readContent('persona');
+    // for the `getPersona` tool
+    return await readContent('getPersona');
   },
 });
 
-export default personaTool;
+export default getPersonaTool;

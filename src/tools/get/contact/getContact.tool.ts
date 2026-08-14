@@ -1,13 +1,13 @@
 import { tool } from 'ai';
 import { z } from 'zod';
-import { readContent } from '../../helpers';
+import { readContent } from '../../../helpers';
 import dedent from 'dedent';
 
 /**
- * The contact tool used to fetch Liam's contact info — his GitHub,
+ * The `getContact` tool used to fetch Liam's contact info — his GitHub,
  * LinkedIn and how to get in touch with him
  */
-const contactTool = tool({
+const getContactTool = tool({
   type: 'function',
   title: 'Contact',
   description: dedent`
@@ -22,9 +22,9 @@ const contactTool = tool({
     'use server';
 
     // Read amd return the content
-    // for the `contact` tool
-    return await readContent('contact');
+    // for the `getContact` tool
+    return await readContent('getContact');
   },
 });
 
-export default contactTool;
+export default getContactTool;

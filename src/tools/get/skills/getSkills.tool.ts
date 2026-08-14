@@ -1,13 +1,13 @@
 import { tool } from 'ai';
 import { z } from 'zod';
-import { readContent } from '../../helpers';
+import { readContent } from '../../../helpers';
 import dedent from 'dedent';
 
 /**
- * The skills tool used to fetch Liam's technical skills — the languages,
+ * The `getSkills` tool used to fetch Liam's technical skills — the languages,
  * frameworks, tools and technologies he works with
  */
-const skillsTool = tool({
+const getSkillsTool = tool({
   type: 'function',
   title: 'Skills',
   description: dedent`
@@ -22,9 +22,9 @@ const skillsTool = tool({
     'use server';
 
     // Read amd return the content
-    // for the `skills` tool
-    return await readContent('skills');
+    // for the `getSkills` tool
+    return await readContent('getSkills');
   },
 });
 
-export default skillsTool;
+export default getSkillsTool;

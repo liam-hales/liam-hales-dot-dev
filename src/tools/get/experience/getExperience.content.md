@@ -26,7 +26,7 @@ in late 2015.
 - Collaborated closely with the UX and data teams on new features
 - Mentored junior and mid-level engineers to help them grow
 
-> Note: The `workflow` tool goes into detail about Liam's current
+> Note: The `getWorkflow` tool goes into detail about Liam's current
 > day-to-day workflow at work.
 
 

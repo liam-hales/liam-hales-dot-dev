@@ -26,7 +26,7 @@ and how he prefers to be approached.
 - Open across frontend, backend, and full-stack work
 - Keen to keep working within his core ecosystem
 
-> Full technical capability and stack detail is described in the `skills` tool.
+> Full technical capability and stack detail is described in the `getSkills` tool.
 
 
 ## Incentives to Move

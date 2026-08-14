@@ -1,13 +1,13 @@
 import { tool } from 'ai';
 import { z } from 'zod';
-import { readContent } from '../../helpers';
+import { readContent } from '../../../helpers';
 import dedent from 'dedent';
 
 /**
- * The projects tool used to fetch the projects Liam has built — each with a name,
+ * The `getProjects` tool used to fetch the projects Liam has built — each with a name,
  * description, GitHub link and a list of details about said project
  */
-const projectsTool = tool({
+const getProjectsTool = tool({
   type: 'function',
   title: 'Projects',
   description: dedent`
@@ -22,9 +22,9 @@ const projectsTool = tool({
     'use server';
 
     // Read and return the content
-    // for the `projects` tool
-    return await readContent('projects');
+    // for the `getProjects` tool
+    return await readContent('getProjects');
   },
 });
 
-export default projectsTool;
+export default getProjectsTool;

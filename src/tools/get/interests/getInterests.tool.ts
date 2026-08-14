@@ -1,13 +1,13 @@
 import { tool } from 'ai';
 import { z } from 'zod';
-import { readContent } from '../../helpers';
+import { readContent } from '../../../helpers';
 import dedent from 'dedent';
 
 /**
- * The interests tool used to fetch Liam's interests and hobbies — what he gets up to
+ * The `getInterests` tool used to fetch Liam's interests and hobbies — what he gets up to
  * outside of work, from side projects and gaming, to his smart home setup and home DIY.
  */
-const interestsTool = tool({
+const getInterestsTool = tool({
   type: 'function',
   title: 'Interests',
   description: dedent`
@@ -22,9 +22,9 @@ const interestsTool = tool({
     'use server';
 
     // Read amd return the content
-    // for the `interests` tool
-    return await readContent('interests');
+    // for the `getInterests` tool
+    return await readContent('getInterests');
   },
 });
 
-export default interestsTool;
+export default getInterestsTool;

@@ -1,13 +1,13 @@
 import { tool } from 'ai';
 import { z } from 'zod';
-import { readContent } from '../../helpers';
+import { readContent } from '../../../helpers';
 import dedent from 'dedent';
 
 /**
- * The workflow tool used to fetch how Liam approaches his day-to-day work as a
+ * The `getWorkflow` tool used to fetch how Liam approaches his day-to-day work as a
  * senior software engineer — task management, deep work, PR culture, and AI usage
  */
-const workflowTool = tool({
+const getWorkflowTool = tool({
   type: 'function',
   title: 'Workflow',
   description: dedent`
@@ -22,9 +22,9 @@ const workflowTool = tool({
     'use server';
 
     // Read amd return the content
-    // for the `workflow` tool
-    return await readContent('workflow');
+    // for the `getWorkflow` tool
+    return await readContent('getWorkflow');
   },
 });
 
-export default workflowTool;
+export default getWorkflowTool;

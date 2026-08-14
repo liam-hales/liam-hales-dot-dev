@@ -1,13 +1,13 @@
 import { tool } from 'ai';
 import { z } from 'zod';
-import { readContent } from '../../helpers';
+import { readContent } from '../../../helpers';
 import dedent from 'dedent';
 
 /**
- * The experience tool used to fetch Liam's experience — a breakdown of his professional career,
+ * The `getExperience` tool used to fetch Liam's experience — a breakdown of his professional career,
  * the roles he's worked in, what he worked on, and the certifications he's earned along the way
  */
-const experienceTool = tool({
+const getExperienceTool = tool({
   type: 'function',
   title: 'Experience',
   description: dedent`
@@ -22,9 +22,9 @@ const experienceTool = tool({
     'use server';
 
     // Read amd return the content
-    // for the `experience` tool
-    return await readContent('experience');
+    // for the `getExperience` tool
+    return await readContent('getExperience');
   },
 });
 
-export default experienceTool;
+export default getExperienceTool;

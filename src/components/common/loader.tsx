@@ -1,4 +1,4 @@
-import { FunctionComponent, ReactElement } from 'react';
+import { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { BaseProps } from '../../types';
 import { Check, LoaderCircle, X } from 'lucide-react';
 import { LoaderStatus } from '../types';
@@ -8,7 +8,7 @@ import { LoaderStatus } from '../types';
  */
 interface Props extends BaseProps {
   readonly status: LoaderStatus;
-  readonly children: string;
+  readonly children: ReactNode;
 }
 
 /**
@@ -45,9 +45,15 @@ const Loader: FunctionComponent<Props> = ({ className, status, children }): Reac
           />
         )
       }
-      <p className="text-content-secondary text-sm pt-0.5">
-        {children}
-      </p>
+      {
+        (typeof children === 'string')
+          ? (
+              <p className="text-content-secondary text-sm pt-0.5">
+                {children}
+              </p>
+            )
+          : children
+      }
     </div>
   );
 };

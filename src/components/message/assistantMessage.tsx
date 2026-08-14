@@ -88,15 +88,13 @@ const AssistantMessage: FunctionComponent<Props> = ({ className, parts }): React
             );
           }
 
-          // Any remaining parts are tool parts,
-          // use the tool name for the loader text
-          const { title, state } = part;
+          // Any remaining parts must
+          // be tool parts
+          const { state } = part;
 
-          const name = title ?? getStaticToolName(part);
-          const text = `Calling tool — ${name}`;
-
-          // The map between the tool part
-          // state and the loader status
+          // Get the tool name and define the map between
+          // the tool part state and the loader status
+          const toolName = getStaticToolName(part);
           const statusMap: Partial<Record<typeof state, LoaderStatus>> = {
             'output-available': 'success',
             'output-error': 'error',
@@ -108,7 +106,12 @@ const AssistantMessage: FunctionComponent<Props> = ({ className, parts }): React
               key={`assistant-message-tool-part-${index}`}
             >
               <Loader status={statusMap[state] ?? 'loading'}>
-                {text}
+                <p className="text-content-secondary text-sm pt-0.5">
+                  {`Calling tool — `}
+                  <code className="text-accent text-[11px] bg-surface-mid border border-solid border-outline rounded-sm px-1 py-0.5">
+                    {toolName}
+                  </code>
+                </p>
               </Loader>
             </div>
           );

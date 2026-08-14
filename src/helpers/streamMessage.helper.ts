@@ -2,7 +2,7 @@
 
 import { createAmazonBedrock } from '@ai-sdk/amazon-bedrock';
 import { fromNodeProviderChain } from '@aws-sdk/credential-providers';
-import { generateId, streamText, stepCountIs } from 'ai';
+import { generateId, streamText, stepCountIs, toUIMessageStream } from 'ai';
 import { modelId, modelInstructions, mancModeInstructions } from '../constants';
 import { tools } from '../tools';
 import { StreamMessageOptions, MessageChunk } from '../types';
@@ -50,7 +50,8 @@ const streamMessage = async ({ messages, mancMode = false }: StreamMessageOption
 
   // Convert the result into a UI message stream
   // ready for the client to handle
-  const stream = result.toUIMessageStream({
+  const stream = toUIMessageStream({
+    stream: result.stream,
     generateMessageId: generateId,
   });
 

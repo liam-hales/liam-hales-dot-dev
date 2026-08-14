@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
-
 'use client';
 
 import { FunctionComponent, ReactElement } from 'react';

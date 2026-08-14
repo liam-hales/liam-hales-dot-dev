@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-/* eslint-disable import-x/no-named-as-default */
 
 import { defineConfig, globalIgnores } from 'eslint/config';
 import eslint from '@eslint/js';
@@ -58,6 +57,7 @@ const eslintConfig = defineConfig(
         'react/display-name': 'off',
         'react-hooks/exhaustive-deps': 'off',
         'react-hooks/set-state-in-effect': 'off',
+        'import-x/no-named-as-default': 'off',
         'import-x/no-named-as-default-member': 'off',
 
         // General rules

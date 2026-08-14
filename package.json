@@ -16,7 +16,7 @@
     "type": "git",
     "url": "https://github.com/liam-hales/liam-hales-dot-dev.git"
   },
-  "packageManager": "yarn@4.17.0",
+  "packageManager": "yarn@4.18.0",
   "scripts": {
     "start:dev": "next dev",
     "start:prod": "next start",
@@ -63,7 +63,7 @@
     "eslint-plugin-react-hooks": "^7.1.1",
     "sharp": "^0.35.3",
     "tsx": "^4.23.12",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "typescript-eslint": "^8.67.0"
   }
 }

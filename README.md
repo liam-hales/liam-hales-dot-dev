@@ -48,7 +48,7 @@ Check out their official [installation guide](https://nodejs.org/en/download) fo
 
 ```sh
 $ yarn --version
-v4.17.0
+v4.18.0
 ```
 
 > 📝 _**NOTE** — The current version of Yarn should match the `packageManager` version in the [`package.json`](/package.json)_

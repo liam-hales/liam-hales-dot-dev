@@ -1,4 +1,4 @@
-<img src="public/cover.webp"/>
+![Cover](/public/cover.webp)
 
 # Liam Hales — Official Website
 

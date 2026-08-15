@@ -37,7 +37,7 @@ const streamMessage = async ({ messages, mancMode = false }: StreamMessageOption
     system: systemPrompt,
     tools: tools,
     messages: messages,
-    stopWhen: stepCountIs(5),
+    stopWhen: stepCountIs(10),
     providerOptions: {
       bedrock: {
         reasoningConfig: {

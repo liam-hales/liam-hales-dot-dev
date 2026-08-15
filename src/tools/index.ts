@@ -1,4 +1,5 @@
 import { getTools } from './get';
+import { showTools } from './show';
 
 /**
  * Describes all tools that
@@ -6,4 +7,5 @@ import { getTools } from './get';
  */
 export const tools = {
   ...getTools,
+  ...showTools,
 };

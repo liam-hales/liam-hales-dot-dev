@@ -18,6 +18,8 @@ import ChatAction from './chat/chatAction';
 import ChatError from './chat/chatError';
 import UserMessage from './message/userMessage';
 import AssistantMessage from './message/assistantMessage';
+import Experience from './experience/experience';
+import ExperienceRole from './experience/experienceRole';
 
 export {
   App,
@@ -40,4 +42,6 @@ export {
   ChatError,
   UserMessage,
   AssistantMessage,
+  Experience,
+  ExperienceRole,
 };

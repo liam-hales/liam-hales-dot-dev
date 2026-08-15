@@ -23,5 +23,5 @@ export const jetbrainsMono = JetBrains_Mono({
   variable: '--mono-font',
   subsets: ['latin'],
   style: ['normal'],
-  weight: ['400', '700'],
+  weight: ['300', '400', '700'],
 });

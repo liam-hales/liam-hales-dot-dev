@@ -11,6 +11,8 @@ const experienceSchema = z.object({
     .describe('The current role being worked in'),
   previousRoles: z
     .array(experienceRoleSchema)
+    .min(1)
+    .max(16)
     .optional()
     .describe('The roles previously worked in, ordered from most to least recent'),
 });

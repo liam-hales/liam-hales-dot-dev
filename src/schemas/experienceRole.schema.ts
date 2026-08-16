@@ -46,7 +46,7 @@ const experienceRoleSchema = z.object({
         .max(256),
     )
     .min(2)
-    .max(8)
+    .max(16)
     .describe('The role bullet points'),
 });
 

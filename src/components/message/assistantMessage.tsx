@@ -5,7 +5,7 @@
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { BaseProps, MessagePart } from '../../types';
 import { getStaticToolName } from 'ai';
-import { Loader, Markdown } from '../';
+import { Loader, Markdown, Experience } from '../';
 import { LoaderStatus } from '../types';
 import { ChevronRight, ChevronDown } from 'lucide-react';
 
@@ -91,6 +91,21 @@ const AssistantMessage: FunctionComponent<Props> = ({ className, parts }): React
           // Any remaining parts must
           // be tool parts
           const { state } = part;
+
+          // If the part is the `showExperience` tool part then render the
+          // `Experience` component but only once the output is available
+          if (
+            type === 'tool-showExperience' &&
+            state === 'output-available'
+          ) {
+            return (
+              <Experience
+                className="w-full"
+                key={`assistant-message-tool-part-${index}`}
+                {...part.input}
+              />
+            );
+          }
 
           // Get the tool name and define the map between
           // the tool part state and the loader status

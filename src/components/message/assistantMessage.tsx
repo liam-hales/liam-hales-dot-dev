@@ -5,7 +5,7 @@
 import { FunctionComponent, ReactElement, useState } from 'react';
 import { BaseProps, MessagePart } from '../../types';
 import { getStaticToolName } from 'ai';
-import { Loader, Markdown, Experience } from '../';
+import { Loader, Markdown, Experience, Projects } from '../';
 import { LoaderStatus } from '../types';
 import { ChevronRight, ChevronDown } from 'lucide-react';
 
@@ -100,6 +100,21 @@ const AssistantMessage: FunctionComponent<Props> = ({ className, parts }): React
           ) {
             return (
               <Experience
+                className="w-full"
+                key={`assistant-message-tool-part-${index}`}
+                {...part.input}
+              />
+            );
+          }
+
+          // If the part is the `showProjects` tool part then render the
+          // `Projects` component but only once the output is available
+          if (
+            type === 'tool-showProjects' &&
+            state === 'output-available'
+          ) {
+            return (
+              <Projects
                 className="w-full"
                 key={`assistant-message-tool-part-${index}`}
                 {...part.input}

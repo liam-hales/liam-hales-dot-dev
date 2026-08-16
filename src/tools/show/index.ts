@@ -1,4 +1,5 @@
 import { showExperienceTool } from './experience';
+import { showProjectsTool } from './projects';
 
 /**
  * Describes all the `show` tools that can be used by
@@ -6,4 +7,5 @@ import { showExperienceTool } from './experience';
  */
 export const showTools = {
   showExperience: showExperienceTool,
+  showProjects: showProjectsTool,
 };

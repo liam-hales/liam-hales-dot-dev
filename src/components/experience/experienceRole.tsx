@@ -23,7 +23,7 @@ const ExperienceRole: FunctionComponent<Props> = (props): ReactElement<Props> =>
     <div className="w-full flex flex-row items-start gap-x-4">
       <div className="h-full flex flex-col items-center gap-y-2 pt-2.5">
         <div className="shrink-0 size-2.5 bg-accent rounded-full" />
-        <div className="w-0.75 h-full bg-outline rounded-full" />
+        <div className="w-0.5 h-full bg-outline rounded-full" />
       </div>
       <div className="flex flex-col items-start gap-y-4">
         <div className="flex flex-col items-start">
@@ -41,10 +41,10 @@ const ExperienceRole: FunctionComponent<Props> = (props): ReactElement<Props> =>
           <p className="font-mono font-light text-white text-[11px] bg-accent rounded-md px-2 py-1">
             {`${startDate} — ${endDate}`}
           </p>
-          <div className="flex flex-row items-center gap-x-1 border border-solid border-outline bg-surface-mid rounded-md px-2 py-1">
+          <div className="flex flex-row items-center gap-x-2 border border-solid border-outline bg-surface-mid rounded-md px-2 py-1">
             <MapPin
               className="text-content-secondary"
-              size={11}
+              size={12}
             />
             <p className="font-mono font-light text-content-secondary text-[11px]">
               {location}

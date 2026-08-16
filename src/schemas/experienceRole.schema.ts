@@ -14,7 +14,7 @@ const experienceRoleSchema = z.object({
     .string()
     .min(1)
     .max(32)
-    .describe('The type of role, for example "Full-time — Remote"'),
+    .describe('The role type, for example "Full-time — Remote"'),
   companyName: z
     .string()
     .min(1)

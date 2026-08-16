@@ -10,8 +10,8 @@ import { ExperienceRole } from '../';
 type Props = z.infer<typeof experienceSchema> & BaseProps;
 
 /**
- * Used to render an experience timeline consisting
- * of a current role and/or previous roles
+ * Used to render an experience timeline consisting of a current role
+ * and/or previous roles built using the `ExperienceRole` component
  *
  * @param props The component props
  * @returns The `Experience` component

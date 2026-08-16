@@ -26,16 +26,16 @@ export const suggestions = [
 ];
 
 /**
- * Defines the Amazon Bedrock LLM to use — the EU
- * cross-region inference profile for Claude Haiku 4.5
+ * Defines the Amazon Bedrock LLM to use — the global
+ * cross-region inference profile for Claude Sonnet 4.6
  */
-export const modelId = 'eu.anthropic.claude-haiku-4-5-20251001-v1:0';
+export const modelId = 'global.anthropic.claude-sonnet-4-6';
 
 /**
  * The human-readable model name
- * for Claude Haiku 4.5
+ * for Claude Sonnet 4.6
  */
-export const modelName = 'Claude Haiku 4.5';
+export const modelName = 'Claude Sonnet 4.6';
 
 /**
  * Defines the system instructions for the LLM

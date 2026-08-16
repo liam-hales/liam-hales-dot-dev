@@ -16,7 +16,7 @@ grounded entirely in data returned from tools.
 ### Details
 
 - Built with TypeScript, Next.js, React and Tailwind CSS
-- Uses the AI SDK with Amazon Bedrock running Claude Haiku 4.5
+- Uses the AI SDK with Amazon Bedrock running Claude Sonnet 4.6
 - Tool and input schema validation powered by Zod
 - Hosted on Vercel, with the model served through AWS Bedrock
 - Tool-based architecture — each capability (skills, experience, contact and more) is a separate LLM tool

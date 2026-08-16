@@ -10,7 +10,7 @@ import { Star } from 'lucide-react';
 import Link from 'next/link';
 
 /**
- * The `Project` component props
+ * The `ProjectCard` component props
  */
 interface Props extends BaseProps {
   readonly url: string;
@@ -21,9 +21,9 @@ interface Props extends BaseProps {
  * details as a project card
  *
  * @param props The component props
- * @returns The `Project` component
+ * @returns The `ProjectCard` component
  */
-const Project: FunctionComponent<Props> = ({ className, url }): ReactElement<Props> => {
+const ProjectCard: FunctionComponent<Props> = ({ className, url }): ReactElement<Props> => {
   const { isLoading, data } = useQuery(() => fetchRepo(url));
 
   return (
@@ -65,7 +65,7 @@ const Project: FunctionComponent<Props> = ({ className, url }): ReactElement<Pro
               <div className="flex flex-row items-center gap-x-4">
                 <div className="flex flex-row items-center gap-x-2 ">
                   <div className="size-2 bg-typescript rounded-full" />
-                  <p className="text-content-secondary text-xs pt-0.5">
+                  <p className="font-mono text-content-secondary text-[11px]">
                     {language}
                   </p>
                 </div>
@@ -74,7 +74,7 @@ const Project: FunctionComponent<Props> = ({ className, url }): ReactElement<Pro
                     className="text-content-secondary"
                     size={12}
                   />
-                  <p className="text-content-secondary text-xs pt-0.5">
+                  <p className="font-mono text-content-secondary text-[11px]">
                     {stargazersCount}
                   </p>
                 </div>
@@ -101,4 +101,4 @@ const Project: FunctionComponent<Props> = ({ className, url }): ReactElement<Pro
   );
 };
 
-export default Project;
+export default ProjectCard;

@@ -19,6 +19,8 @@ import UserMessage from './message/userMessage';
 import AssistantMessage from './message/assistantMessage';
 import Experience from './experience/experience';
 import ExperienceRole from './experience/experienceRole';
+import Projects from './project/projects';
+import Project from './project/project';
 import ProjectCard from './project/projectCard';
 
 export {
@@ -43,5 +45,7 @@ export {
   AssistantMessage,
   Experience,
   ExperienceRole,
+  Projects,
+  Project,
   ProjectCard,
 };

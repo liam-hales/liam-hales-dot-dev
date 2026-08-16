@@ -13,7 +13,7 @@ in late 2015.
 ## Current Role
 
 ### Senior Software Engineer — ANS Group
-*Jul 2021 — Present*
+_Jul 2021 — Present_
 
 **Type —** Full-time — Remote\
 **Location —** Manchester, UK
@@ -36,7 +36,7 @@ in late 2015.
 ## Previous Roles
 
 ### Senior Full Stack Software Engineer — Mercarto
-*Sep 2020 — Jul 2021*
+_Sep 2020 — Jul 2021_
 
 **Type —** Full-time — In office\
 **Location —** Manchester, UK
@@ -48,7 +48,7 @@ in late 2015.
 - Picked up and fixed half-finished contractor work, often under tight deadlines
 
 ### Senior Backend Software Engineer — ANS Group
-*Jul 2019 — Sep 2020*
+_Jul 2019 — Sep 2020_
 
 **Type —** Full-time — Hybrid\
 **Location —** Manchester, UK
@@ -59,7 +59,7 @@ in late 2015.
 - Ran PR code reviews to keep merged code up to standard
 
 ### Mid-Level Backend Software Engineer — ANS Group
-*Feb 2019 — Jul 2019*
+_Feb 2019 — Jul 2019_
 
 **Type —** Full-time — Hybrid\
 **Location —** Manchester, UK
@@ -70,7 +70,7 @@ in late 2015.
 - Worked efficiently and autonomously, showing senior-level skills early
 
 ### Junior Software Engineer — ANS Group
-*Dec 2016 — Feb 2019*
+_Dec 2016 — Feb 2019_
 
 **Type —** Full-time — Hybrid\
 **Location —** Manchester, UK
@@ -85,7 +85,7 @@ in late 2015.
 ## Early Career
 
 ### Apprentice Software Engineer — ANS Group
-*Jun 2016 — Dec 2016*
+_Jun 2016 — Dec 2016_
 
 **Type —** Full-time — In office\
 **Location —** Manchester, UK
@@ -94,7 +94,7 @@ in late 2015.
 - Worked closely with the chief engineer writing code to configure servers
 
 ### Apprenticeship Scheme — ANS Group
-*Mar 2016 — Jun 2016*
+_Mar 2016 — Jun 2016_
 
 **Type —** Full-time — In office\
 **Location —** Manchester, UK
@@ -103,7 +103,7 @@ in late 2015.
 - Continued his apprenticeship and completed his diploma
 
 ### Apprentice Software Engineer — Bright Future
-*Nov 2015 — Feb 2016*
+_Nov 2015 — Feb 2016_
 
 **Type —** Full-time — In office\
 **Location —** Manchester, UK
@@ -117,5 +117,5 @@ in late 2015.
 > Note: Both certifications have since expired, but they're still worth mentioning as he did earn them.
 > Both were achieved while at ANS Group to support the company becoming an AWS partner.
 
-- AWS DevOps Engineer — Professional *(Apr 2018)*
-- AWS Developer — Associate *(Oct 2017)*
+- AWS DevOps Engineer — Professional _(Apr 2018)_
+- AWS Developer — Associate _(Oct 2017)_

@@ -51,7 +51,7 @@ const ExperienceRole: FunctionComponent<Props> = (props): ReactElement<Props> =>
             </p>
           </div>
         </div>
-        <ul className="list-disc pl-4 marker:text-content-secondary marker:text-xl">
+        <ul className="list-disc pl-4 marker:text-content-secondary">
           {
             bullets.map((bullet, index) => {
               return (

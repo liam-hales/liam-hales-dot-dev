@@ -13,10 +13,13 @@ in late 2015.
 ## Current Role
 
 ### Senior Software Engineer — ANS Group
+
 _Jul 2021 — Present_
 
-**Type —** Full-time — Remote\
-**Location —** Manchester, UK
+- **Type —** Full-time — Remote
+- **Location —** Manchester, UK
+
+#### Details
 
 - Head-hunted back to ANS Group to build and maintain the entire backend for Glass, their real-time service management portal
 - Glass is the front door to the business, giving customers a transparent, single view of all service transactions
@@ -36,10 +39,13 @@ _Jul 2021 — Present_
 ## Previous Roles
 
 ### Senior Full Stack Software Engineer — Mercarto
+
 _Sep 2020 — Jul 2021_
 
-**Type —** Full-time — In office\
-**Location —** Manchester, UK
+- **Type —** Full-time — In office
+- **Location —** Manchester, UK
+
+#### Details
 
 - Worked across the whole platform, both front end and backend, in a fast-paced start-up environment
 - Built backend API features and the customer-facing storefront UI
@@ -48,10 +54,13 @@ _Sep 2020 — Jul 2021_
 - Picked up and fixed half-finished contractor work, often under tight deadlines
 
 ### Senior Backend Software Engineer — ANS Group
+
 _Jul 2019 — Sep 2020_
 
-**Type —** Full-time — Hybrid\
-**Location —** Manchester, UK
+- **Type —** Full-time — Hybrid
+- **Location —** Manchester, UK
+
+#### Details
 
 - Owned the backend stack for multiple bespoke client projects in the "App Dev" team
 - Designed and built backend APIs integrating various data sources and systems
@@ -59,10 +68,13 @@ _Jul 2019 — Sep 2020_
 - Ran PR code reviews to keep merged code up to standard
 
 ### Mid-Level Backend Software Engineer — ANS Group
+
 _Feb 2019 — Jul 2019_
 
-**Type —** Full-time — Hybrid\
-**Location —** Manchester, UK
+- **Type —** Full-time — Hybrid
+- **Location —** Manchester, UK
+
+#### Details
 
 - First role in a properly structured dev team, working in "App Dev"
 - Built backend APIs to serve data to the front end
@@ -70,10 +82,13 @@ _Feb 2019 — Jul 2019_
 - Worked efficiently and autonomously, showing senior-level skills early
 
 ### Junior Software Engineer — ANS Group
+
 _Dec 2016 — Feb 2019_
 
-**Type —** Full-time — Hybrid\
-**Location —** Manchester, UK
+- **Type —** Full-time — Hybrid
+- **Location —** Manchester, UK
+
+#### Details
 
 - Promoted from Apprentice to Junior after completing his diploma
 - Worked on proof-of-concept projects that could later become production products
@@ -85,28 +100,37 @@ _Dec 2016 — Feb 2019_
 ## Early Career
 
 ### Apprentice Software Engineer — ANS Group
+
 _Jun 2016 — Dec 2016_
 
-**Type —** Full-time — In office\
-**Location —** Manchester, UK
+- **Type —** Full-time — In office
+- **Location —** Manchester, UK
+
+#### Details
 
 - Landed a full-time apprentice role after standing out in the apprenticeship scheme
 - Worked closely with the chief engineer writing code to configure servers
 
 ### Apprenticeship Scheme — ANS Group
+
 _Mar 2016 — Jun 2016_
 
-**Type —** Full-time — In office\
-**Location —** Manchester, UK
+- **Type —** Full-time — In office
+- **Location —** Manchester, UK
+
+#### Details
 
 - Scheme set up by ANS Group for apprentices affected by Bright Future situation
 - Continued his apprenticeship and completed his diploma
 
 ### Apprentice Software Engineer — Bright Future
+
 _Nov 2015 — Feb 2016_
 
-**Type —** Full-time — In office\
-**Location —** Manchester, UK
+- **Type —** Full-time — In office
+- **Location —** Manchester, UK
+
+#### Details
 
 - First software apprenticeship, based in Media City, Manchester
 - The company went into liquidation shortly after he started

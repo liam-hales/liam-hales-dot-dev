@@ -1,8 +1,8 @@
 # Projects
 
-A selection of projects Liam has built. Each project has a name, a short description, its GitHub
-repository link, an optional live link, and a list of details about it such as the tech stack
-and notable features.
+A selection of projects Liam has built. Each project has a name, a short description, its status,
+its type, the dates it was worked on, its GitHub repository link, an optional live link, and a list
+of details about it such as the tech stack and notable features.
 
 ## My Website
 
@@ -10,8 +10,12 @@ This very website — Liam's personal site, built as an AI chat that responds as
 first person. Rather than static pages, visitors chat with an LLM that  answers questions about Liam,
 grounded entirely in data returned from tools.
 
-- GitHub: https://github.com/liam-hales/liam-hales-dot-dev.git
-- Live: https://liamhales.dev
+_May 2026 — Present_
+
+- **Status —** Active — Maintained
+- **Type —** Web app
+- **GitHub —** https://github.com/liam-hales/liam-hales-dot-dev.git
+- **Live —** https://liamhales.dev
 
 ### Details
 
@@ -29,8 +33,12 @@ grounded entirely in data returned from tools.
 A collection of web-based developer tools wrapped in a dev-friendly, terminal-style
 interface — the kind of quick utilities a developer reaches for, all in one place.
 
-- GitHub: https://github.com/liam-hales/terminal.git
-- Live: https://t.liamhales.dev
+_May 2023 — Present_
+
+- **Status —** Active — Maintained
+- **Type —** Web app
+- **GitHub —** https://github.com/liam-hales/terminal.git
+- **Live —** https://t.liamhales.dev
 
 ### Details
 
@@ -45,7 +53,11 @@ interface — the kind of quick utilities a developer reaches for, all in one pl
 An interactive command-line tool for configuring and managing Homebridge straight from the
 terminal, using the same API that powers the official Homebridge UI.
 
-- GitHub: https://github.com/liam-hales/homebridge-cli.git
+_Apr 2026 — Present_
+
+- **Status —** Active — Maintained
+- **Type —** Command-line interface
+- **GitHub —** https://github.com/liam-hales/homebridge-cli.git
 
 ### Details
 

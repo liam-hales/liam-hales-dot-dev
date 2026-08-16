@@ -116,19 +116,25 @@ const AssistantMessage: FunctionComponent<Props> = ({ className, parts }): React
           };
 
           return (
-            <div
-              className="flex flex-row items-center gap-x-2"
+            <Loader
               key={`assistant-message-tool-part-${index}`}
+              status={statusMap[state] ?? 'loading'}
             >
-              <Loader status={statusMap[state] ?? 'loading'}>
-                <p className="text-content-secondary text-sm pt-0.5">
-                  {`Calling tool — `}
-                  <code className="text-accent text-[11px] bg-surface-mid border border-solid border-outline rounded-sm px-1 py-0.5">
-                    {toolName}
-                  </code>
-                </p>
-              </Loader>
-            </div>
+              {
+                // Show different `Loader` component
+                // text depending on the tool type
+                (type.includes('tool-show') === true)
+                  ? 'Rendering'
+                  : (
+                      <p className="text-content-secondary text-sm pt-0.5">
+                        {`Calling tool — `}
+                        <code className="text-accent text-[11px] bg-surface-mid border border-solid border-outline rounded-sm px-1 py-0.5">
+                          {toolName}
+                        </code>
+                      </p>
+                    )
+              }
+            </Loader>
           );
         })
       }

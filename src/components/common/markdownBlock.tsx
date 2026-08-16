@@ -1,6 +1,5 @@
 import { FunctionComponent, ReactElement, memo } from 'react';
 import { BaseProps } from '../../types';
-import { Project } from '../';
 import ReactMarkdown from 'react-markdown';
 
 /**
@@ -105,17 +104,6 @@ const MarkdownBlock: FunctionComponent<Props> = ({ children }): ReactElement<Pro
         );
       },
       a: ({ href, children }) => {
-        const isRepo = href?.endsWith('.git');
-
-        if (isRepo === true && href != null) {
-          return (
-            <Project
-              className="font-normal text-base"
-              url={href}
-            />
-          );
-        }
-
         return (
           <a
             className="font-bold text-accent underline underline-offset-2"

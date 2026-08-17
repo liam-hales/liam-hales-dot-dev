@@ -66,3 +66,52 @@ _Apr 2026 — Present_
 - Interactive, terminal-based configuration interface
 - Installed via a curl install script
 - An unofficial, community-built tool
+
+
+## Network Monitor
+
+A self-hosted web app with server-side monitoring tools designed to monitor
+your network and help you better understand it.
+
+_Nov 2025 — Dec 2025_
+
+- **Status —** Archived — Shift in focus
+- **Type —** Web app
+- **GitHub —** https://github.com/liam-hales/network-monitor.git
+
+### Details
+
+- Has been deprioritized due to a shift in focus on other projects
+- Built with TypeScript, Next.js, React and Tailwind CSS
+- Self-hosted, so all the network data stays on your own machine
+- Runs scheduled speed test and ping cron jobs server-side, started automatically on boot
+- Tracks throughput, latency and jitter using Cloudflare's speed test package
+- Monitors uptime by pinging Cloudflare and Google DNS
+- Stores every reading in an embedded LokiJS database
+- Charts each metric with Recharts, with a dedicated panel per metric
+- Info page showing host device and public network details, with the connection plotted on a map
+
+
+## Chat
+
+A web app created to converse with a range of different AI models,
+all in one convenient unified place.
+
+_Aug 2025 — Jan 2026_
+
+- **Status —** Archived — Shift in focus
+- **Type —** Web app
+- **GitHub —** https://github.com/liam-hales/chat.git
+
+### Details
+
+- Has been deprioritized due to a shift in focus on other projects
+- Built with TypeScript, Next.js, React and Tailwind CSS, hosted on Vercel
+- Chat with 14 models from one interface — OpenAI, Anthropic, Google, xAI, DeepSeek, MiniMax and Qwen
+- Every model reached through a single OpenRouter integration using the AI SDK
+- Responses streamed from a server action to the client using the AI SDK's RSC streamable values
+- Web search toggle backed by OpenRouter's Exa plugin, with the sources returned alongside the answer
+- "Deep think" toggle that raises the model's reasoning effort, showing the reasoning and how long it took
+- Custom system prompt per chat, wrapped in guardrails so a user prompt can't override the app's own rules
+- Per-model message and chat length limits to keep API costs in check
+- Markdown responses with GFM support and syntax-highlighted code blocks

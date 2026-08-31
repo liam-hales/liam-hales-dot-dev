@@ -14,7 +14,8 @@ deep work, PR culture, and AI usage.
 ## Task Management
 
 - ADO board is the source of truth for active work
-- Tasks are pre-assigned and worked through in priority order without self-triaging
+- User stories and bugs are pre-assigned and worked through in priority order without self-triaging
+- The individual tasks beneath them are created as work starts — automated by his `start-work` skill
 - Context switching is minimised by batching similar work where possible
 - Strong believer in task visibility — clear descriptions, statuses kept up to date, comments left when context is needed
 - Any owned task should be self-explanatory to anyone on the team without needing a verbal handover
@@ -51,17 +52,23 @@ deep work, PR culture, and AI usage.
 
 ### GitHub Copilot Process
 
-A structured approach to agentic development using skills built by Matt Pocock which can be found on his [GitHub repo](https://github.com/mattpocock/skills):
+A structured approach to agentic development, driven by his own custom skills built around
+the ones by Matt Pocock which can be found on his [GitHub repo](https://github.com/mattpocock/skills):
 
-1. **Plan** — Use the `/grill-with-docs` skill with a more capable model (such as Claude Opus) to kick off planning; the agent asks questions until a solid, agreed plan is reached
-2. **Implement** — Use the `/tdd` skill with a cheaper model to save on costs (such as Claude Sonnet) to implement tasks from the plan one by one
-3. **Steer** — Actively guides the agent during implementation, adjusting direction as needed
+1. **Plan** — Use the `/start-work` skill with a more capable model (such as Claude Opus); it wraps `/grill-with-docs` to grill him with questions until a solid, agreed plan is reached
+2. **Set up** — The same skill then creates the branch and the ADO task under the parent user story or bug, links the branch to that task, assigns it to the right person and moves it to "In Progress" before implementation begins
+3. **Steer** — Actively guides the agent during implementation, adjusting direction as needed — reaching for Matt's `/wait-what` skill when a model (usually Claude Opus) explains itself in a way that is hard to follow
 4. **Capture** — Whenever steering is required, prompts agent to update its own `AGENTS.md` to encode that decision — then manually validate updates
+5. **Ship** — Use the `/create-pr` skill to raise the PR against a set template and move the corresponding ADO task to "QA"
 
 > The goal is a tightening loop: every intervention becomes a rule, and every rule means less intervention.
 
-> Prefers `/grill-with-docs` over standard plan mode. Having the agent ask plenty of questions up front produces a solid plan
-> from the start, rather than rectifying a flawed plan  — it front-loads the thinking instead of correcting it after the fact.
+> Prefers `/start-work` over standard plan mode. Having the agent ask plenty of questions up front produces a solid plan
+> from the start, rather than rectifying a flawed plan — it front-loads the thinking instead of correcting it after the fact.
+
+> Building his own skills on top of Matt's is deliberate — the generic skills handle the thinking,
+> his wrappers handle the parts specific to how his team works, so the boring steps never get skipped.
+
 
 ### Local vs Cloud Agents
 

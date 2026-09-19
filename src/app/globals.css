@@ -55,8 +55,9 @@
 }
 
 @theme {
-  --font-sans: var(--sans-font);
+  --font-serif: var(--serif-font);
   --font-mono: var(--mono-font);
+  --default-font-family: var(--font-serif);
 
   --animate-spin: spin 400ms linear infinite;
   --animate-draw-and-fill: draw-and-fill 2800ms ease-in-out forwards;

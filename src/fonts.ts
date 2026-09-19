@@ -7,7 +7,7 @@ import { Newsreader, JetBrains_Mono } from 'next/font/google';
  * @url https://fonts.google.com/specimen/Newsreader
  */
 export const newsreader = Newsreader({
-  variable: '--sans-font',
+  variable: '--serif-font',
   subsets: ['latin'],
   style: ['normal', 'italic'],
   weight: ['300', '400', '600'],

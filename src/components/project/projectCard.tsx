@@ -92,20 +92,24 @@ const ProjectCard: FunctionComponent<Props> = ({ className, url }): ReactElement
                   </p>
                 </div>
               </div>
-              <div className="flex flex-row items-center flex-wrap gap-1.5 pt-2">
-                {
-                  topics.map((topic) => {
-                    return (
-                      <code
-                        className="text-accent text-[11px] bg-surface-mid border border-solid border-outline rounded-sm px-1 py-0.5"
-                        key={`topic-${topic}`}
-                      >
-                        {topic}
-                      </code>
-                    );
-                  })
-                }
-              </div>
+              {
+                (topics.length > 0) && (
+                  <div className="flex flex-row items-center flex-wrap gap-1.5 pt-2">
+                    {
+                      topics.map((topic) => {
+                        return (
+                          <code
+                            className="text-accent text-[11px] bg-surface-mid border border-solid border-outline rounded-sm px-1 py-0.5"
+                            key={`topic-${topic}`}
+                          >
+                            {topic}
+                          </code>
+                        );
+                      })
+                    }
+                  </div>
+                )
+              }
             </>
           );
         })()

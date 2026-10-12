@@ -26,6 +26,15 @@ interface Props extends BaseProps {
 const ProjectCard: FunctionComponent<Props> = ({ className, url }): ReactElement<Props> => {
   const { isLoading, data } = useQuery(() => fetchRepo(url));
 
+  /**
+   * The map between the project
+   * language and the colour
+   */
+  const languageColourMap: Record<string, string> = {
+    TypeScript: 'bg-typescript',
+    Swift: 'bg-swift',
+  };
+
   return (
     <Link
       className={`${className ?? ''} flex flex-col items-start gap-y-2 border border-solid border-outline shadow-sm cursor-pointer rounded-xl px-6 py-4`}
@@ -63,12 +72,16 @@ const ProjectCard: FunctionComponent<Props> = ({ className, url }): ReactElement
                 {description}
               </p>
               <div className="flex flex-row items-center gap-x-4">
-                <div className="flex flex-row items-center gap-x-2 ">
-                  <div className="size-2 bg-typescript rounded-full" />
-                  <p className="font-mono text-content-secondary text-[11px]">
-                    {language}
-                  </p>
-                </div>
+                {
+                  (language != null) && (
+                    <div className="flex flex-row items-center gap-x-2 ">
+                      <div className={`size-2 ${languageColourMap[language]} rounded-full`} />
+                      <p className="font-mono text-content-secondary text-[11px]">
+                        {language}
+                      </p>
+                    </div>
+                  )
+                }
                 <div className="flex flex-row items-center gap-x-1.5 ">
                   <Star
                     className="text-content-secondary"

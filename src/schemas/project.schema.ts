@@ -23,6 +23,7 @@ const projectSchema = z.object({
   type: z
     .enum([
       'web-app',
+      'ios-app',
       'cli',
     ])
     .describe('The project type'),

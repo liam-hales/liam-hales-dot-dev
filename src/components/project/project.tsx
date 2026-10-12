@@ -28,6 +28,7 @@ const Project: FunctionComponent<Props> = (props): ReactElement<Props> => {
    */
   const typeIconMap: Record<Props['type'], IconName> = {
     'web-app': 'mouse-pointer-2',
+    'ios-app': 'tablet-smartphone',
     'cli': 'square-terminal',
   };
 
@@ -37,6 +38,7 @@ const Project: FunctionComponent<Props> = (props): ReactElement<Props> => {
    */
   const typeTextMap: Record<Props['type'], string> = {
     'web-app': 'Web app',
+    'ios-app': 'iPhone & iPad app',
     'cli': 'Command-line interface',
   };
 

@@ -20,7 +20,7 @@ const ChatError: FunctionComponent<Props> = ({ className, children }): ReactElem
   return (
     <div className={`${className ?? ''} flex flex-row items-center gap-x-4 bg-surface-error border border-solid border-outline-error rounded-xl px-4 py-2`}>
       <TriangleAlert
-        className="text-content-error"
+        className="shrink-0 text-content-error"
         size={18}
       />
       <p className="text-content-error pt-0.5">

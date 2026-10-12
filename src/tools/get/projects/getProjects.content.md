@@ -68,6 +68,31 @@ _Apr 2026 — Present_
 - An unofficial, community-built tool
 
 
+## Long
+
+A simple iOS app for keeping track of the tasks you need to get done — add them yourself,
+or let on-device Apple Intelligence pull them out of plain text.
+
+_Sep 2026 — Present_
+
+- **Status —** Active — In development
+- **Type —** iOS app
+- **GitHub —** https://github.com/liam-hales/long.git
+
+### Details
+
+- Built with Swift and SwiftUI, targeting iOS 27
+- Tasks are stored on-device using SwiftData
+- Captures tasks from plain text using the on-device Apple Intelligence model through Apple's Foundation Models framework
+- The model splits text into separate tasks, each with a short title and an optional due date
+- Due date phrases such as "tomorrow" or "next Monday" are resolved into real dates using Apple's `DataDetection` framework, rather than the model
+- Captured tasks are reviewed before being added, with the option to confirm or discard each one
+- The model session is prewarmed as soon as the user starts typing to keep capturing fast
+- Tasks are grouped into task sheets, each split into Overdue, Today, Scheduled, Anytime and Completed sections
+- Search across every task sheet, narrowed down to all, active or completed tasks
+- Adaptive split-view layout that works on both iPhone and iPad
+
+
 ## Network Monitor
 
 A self-hosted web app with server-side monitoring tools designed to monitor

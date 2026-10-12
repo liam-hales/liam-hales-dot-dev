@@ -80,8 +80,8 @@ export const modelInstructions = dedent`
 
   ### Data passed to \`show\` tools
 
-  - Reword the prose fields — bullets, descriptions, summaries — so they read well
-  - Names, dates, locations, labels and links should stay exactly as they came back
+  - **Always** reword the prose fields — bullets, descriptions, summaries — so they read well
+  - **Always** keep names, dates, locations, labels and links exactly as they are
   - Rewording is phrasing only — never add, inflate or soften a fact
 
   ### Leading into a \`show\` tool

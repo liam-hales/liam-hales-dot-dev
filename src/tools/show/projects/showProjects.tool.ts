@@ -17,8 +17,11 @@ const showProjectsTool = tool({
     - "Tell me about your website" — is that one project alone
     - "What have you built?" — is everything
 
-    > Call this immediately after \`getProjects\`, every time — the projects replace
-    > writing them out in the reply, they don't accompany it.
+    Don't call this for a specific question the data answers in a sentence or two
+    - "What's your website built with?" — answer it directly in the reply instead
+
+    > Call this after \`getProjects\` when the user wants to see the projects — they
+    > replace writing them out in the reply, they don't accompany it.
   `,
   inputSchema: projectsSchema,
   execute: (): string => {

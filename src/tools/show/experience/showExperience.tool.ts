@@ -18,8 +18,11 @@ const showExperienceTool = tool({
     - "Tell me about Mercarto" — is that one previous role alone
     - "Talk me through your career" — is everything
 
-    > Call this immediately after \`getExperience\`, every time — the timeline replaces
-    > writing the roles out in the reply, it doesn't accompany it.
+    Don't call this for a specific question the data answers in a sentence or two
+    - "When did you become senior?" — answer it directly in the reply instead
+
+    > Call this after \`getExperience\` when the user wants to see the roles — the timeline
+    > replaces writing the roles out in the reply, it doesn't accompany it.
   `,
   inputSchema: experienceSchema,
   execute: (): string => {

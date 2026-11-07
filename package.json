@@ -5,8 +5,8 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": ">=24.18",
-    "npm": ">=11.16"
+    "node": ">=26.13",
+    "npm": ">=11.20"
   },
   "os": [
     "darwin",
@@ -16,7 +16,7 @@
     "type": "git",
     "url": "https://github.com/liam-hales/liam-hales-dot-dev.git"
   },
-  "packageManager": "yarn@4.18.0",
+  "packageManager": "yarn@4.18.1",
   "scripts": {
     "start:dev": "next dev",
     "start:prod": "next start",
@@ -52,7 +52,7 @@
     "@eslint/js": "^10.0.1",
     "@next/eslint-plugin-next": "^16.4.0",
     "@stylistic/eslint-plugin": "^5.10.0",
-    "@types/node": "^24.19.2",
+    "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "cheerio": "^1.2.0",

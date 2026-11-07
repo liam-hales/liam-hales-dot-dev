@@ -20,40 +20,41 @@ To get up and running with local development you must follow all the steps in th
 Follow the steps below to install Node.js using [`nvm`] (Node Version Manager)
 
 1. Download and install [`nvm`]
-2. Install and use Node.js `>= v24.18`
+2. Install and use Node.js `>= v26.13`
 
 ```sh
-$ nvm install 24.18
-$ nvm use 24.18
+$ nvm install 26.13
+$ nvm use 26.13
 ```
 
-3. Verify you are running a version of Node.js `>= v24.18`
+3. Verify you are running a version of Node.js `>= v26.13`
 
 ```sh
 $ node --version
-v24.18.0
+v26.13.0
 
 $ npm --version
-v11.16.0
+v11.20.0
 ```
 
 Check out their official [installation guide](https://nodejs.org/en/download) for more info.
 
 ## Install Dependencies
 
-1. Run `corepack enable` to enable [Corepack]
-2. You should now be able to use the [`yarn`] package manager which you **MUST** use for this project
+1. Run `npm install -g corepack` to install [Corepack] globally
+2. Run `corepack enable` to enable [Corepack]
+3. You should now be able to use the [`yarn`] package manager which you **MUST** use for this project
 
-> 📝 _**NOTE** — Yarn comes bundled with [Corepack] and is the preferred way to install/manage Yarn. Check out their official [installation guide](https://yarnpkg.com/getting-started/install) for more info_
+> 📝 _**NOTE** — [Corepack] is the preferred way to install/manage Yarn. Check out their official [installation guide](https://yarnpkg.com/getting-started/install) for more info_
 
 ```sh
 $ yarn --version
-v4.18.0
+v4.18.1
 ```
 
 > 📝 _**NOTE** — The current version of Yarn should match the `packageManager` version in the [`package.json`](/package.json)_
 
-3. Run `yarn` in the project root to install dependencies
+4. Run `yarn` in the project root to install dependencies
 
 ## Setup Environment
 
